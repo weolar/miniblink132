@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "../../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../../third_party/blink/public/mojom/quota/quota.build_metadata",
+    "../../../../../../third_party/blink/public/mojom/storage_key/storage_key.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../../components/services/storage/public/mojom/buckets/bucket_id.mojom",
+    "../../../../../../../../../components/services/storage/public/mojom/buckets/bucket_info.mojom",
+    "../../../../../../../../../components/services/storage/public/mojom/buckets/bucket_locator.mojom"
+  ]
+}

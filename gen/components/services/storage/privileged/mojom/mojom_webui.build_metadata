@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "../../public/mojom/buckets/buckets.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../third_party/blink/public/mojom/tokens/tokens.build_metadata",
+    "../../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../components/services/storage/privileged/mojom/bucket_client_info.mojom",
+    "../../../../../../../../components/services/storage/privileged/mojom/indexed_db_internals_types.mojom"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "tsc",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "chrome://resources/js/jstemplate_compiled.js": [
+        "./../../../../../../../third_party/jstemplate/jstemplate.d.ts"
+      ],
+      "//resources/cr_elements/*": [
+        "./../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "chrome://resources/cr_elements/*": [
+        "./../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "chrome://resources/js/*": [
+        "./../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\about.ts",
+    "preprocessed\\chrome_sync.ts",
+    "preprocessed\\data.ts",
+    "preprocessed\\invalidations.ts",
+    "preprocessed\\search.ts",
+    "preprocessed\\sync_index.ts",
+    "preprocessed\\sync_log.ts",
+    "preprocessed\\sync_node_browser.ts",
+    "preprocessed\\sync_search.ts",
+    "preprocessed\\traffic_log.ts",
+    "preprocessed\\user_events.ts",
+    "../../../../../../../tools/typescript/definitions/strings.d.ts",
+    "../../../../../../../tools/typescript/definitions/chrome_send.d.ts",
+    "../../../../../../../tools/typescript/definitions/pending.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../third_party/jstemplate/tsconfig_library.json"
+    },
+    {
+      "path": "../../../../ui/webui/resources/cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../ui/webui/resources/js/tsconfig_build_ts.json"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "tsc",
+    "allowJs": true,
+    "paths": {
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\constants.js",
+    "preprocessed\\neterror.js",
+    "preprocessed\\dino_game/background_el.js",
+    "preprocessed\\dino_game/cloud.js",
+    "preprocessed\\dino_game/constants.js",
+    "preprocessed\\dino_game/distance_meter.js",
+    "preprocessed\\dino_game/generated_sound_fx.js",
+    "preprocessed\\dino_game/game_over_panel.js",
+    "preprocessed\\dino_game/horizon_line.js",
+    "preprocessed\\dino_game/horizon.js",
+    "preprocessed\\dino_game/night_mode.js",
+    "preprocessed\\dino_game/obstacle.js",
+    "preprocessed\\dino_game/offline.js",
+    "preprocessed\\dino_game/offline-sprite-definitions.js",
+    "preprocessed\\dino_game/trex.js",
+    "preprocessed\\dino_game/utils.js",
+    "../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../ui/webui/resources/js/tsconfig_build_ts.json"
+    }
+  ]
+}

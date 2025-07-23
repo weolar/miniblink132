@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/sample_import.mojom"
+  ]
+}

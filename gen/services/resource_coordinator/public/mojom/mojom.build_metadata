@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../metrics/public/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/resource_coordinator/public/mojom/memory_instrumentation/constants.mojom",
+    "../../../../../../../services/resource_coordinator/public/mojom/memory_instrumentation/memory_instrumentation.mojom"
+  ]
+}

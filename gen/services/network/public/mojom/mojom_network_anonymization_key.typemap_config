@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::NetworkAnonymizationKey",
+        "mojom": "network.mojom.NetworkAnonymizationKey"
+      }
+    ]
+  }
+]

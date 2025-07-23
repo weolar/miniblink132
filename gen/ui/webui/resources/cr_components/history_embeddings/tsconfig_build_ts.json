@@ -1,0 +1,72 @@
+{
+  "extends": "../../../../../../../../tools/typescript/tsconfig_base_polymer.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\history_embeddings",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/lit/v3_0/lit.rollup.js": [
+        "./../../../../../third_party/lit/v3_0/lit.d.ts"
+      ],
+      "//resources/polymer/v3_0/polymer/polymer_bundled.min.js": [
+        "./../../../../../../../../third_party/polymer/v3_0/components-chromium/polymer/polymer.d.ts"
+      ],
+      "//resources/polymer/v3_0/*": [
+        "./../../../../../../../../third_party/polymer/v3_0/components-chromium/*"
+      ],
+      "//resources/cr_components/history/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_components/history/*"
+      ],
+      "//resources/cr_elements/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\filter_chips.ts",
+    "preprocessed\\history_embeddings.ts",
+    "preprocessed\\browser_proxy.ts",
+    "preprocessed\\result_image.html.ts",
+    "preprocessed\\result_image.ts",
+    "preprocessed\\filter_chips.html.ts",
+    "preprocessed\\history_embeddings.html.ts",
+    "preprocessed\\icons.html.ts",
+    "preprocessed\\result_image.css.ts",
+    "preprocessed\\history_embeddings.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../../third_party/lit/v3_0/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../../third_party/polymer/v3_0/tsconfig_library.json"
+    },
+    {
+      "path": "../history/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

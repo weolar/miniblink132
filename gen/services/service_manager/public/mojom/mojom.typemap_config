@@ -1,0 +1,69 @@
+[
+  {
+    "traits_headers": [
+      "services/service_manager/public/cpp/bind_source_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/service_manager/public/cpp:cpp_types",
+      "//services/service_manager/public/cpp:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::service_manager::BindSourceInfo",
+        "mojom": "service_manager.mojom.BindSourceInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/service_manager/public/cpp/identity_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/service_manager/public/cpp:cpp_types",
+      "//services/service_manager/public/cpp:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::service_manager::Identity",
+        "mojom": "service_manager.mojom.Identity"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/service_manager/public/cpp/interface_provider_spec_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/service_manager/public/cpp:cpp_types"
+    ],
+    "types": [
+      {
+        "cpp": "::service_manager::InterfaceProviderSpec",
+        "mojom": "service_manager.mojom.InterfaceProviderSpec"
+      },
+      {
+        "cpp": "::service_manager::InterfaceSet",
+        "mojom": "service_manager.mojom.InterfaceSet"
+      },
+      {
+        "cpp": "::service_manager::CapabilitySet",
+        "mojom": "service_manager.mojom.CapabilitySet"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/service_manager/public/cpp/service_filter_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/service_manager/public/cpp:cpp_types",
+      "//services/service_manager/public/cpp:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::service_manager::ServiceFilter",
+        "mojom": "service_manager.mojom.ServiceFilter"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_HISTORY_EMBEDDINGS_CONSTANTS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/history/minified/constants.js" resource_path="cr_components/history/constants.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

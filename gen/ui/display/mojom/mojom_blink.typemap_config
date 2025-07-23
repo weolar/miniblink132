@@ -1,0 +1,44 @@
+[
+  {
+    "traits_headers": [
+      "ui/display/mojom/display_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::Display::Rotation",
+        "mojom": "display.mojom.Rotation"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/screen_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::ScreenInfo",
+        "mojom": "display.mojom.ScreenInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/screen_infos_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::ScreenInfos",
+        "mojom": "display.mojom.ScreenInfos"
+      }
+    ]
+  }
+]

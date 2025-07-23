@@ -1,0 +1,66 @@
+[
+  {
+    "traits_headers": [
+      "gpu/ipc/common/vulkan_info_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::VulkanPhysicalDeviceInfo",
+        "mojom": "gpu.mojom.VulkanPhysicalDeviceInfo"
+      },
+      {
+        "cpp": "::gpu::VulkanInfo",
+        "mojom": "gpu.mojom.VulkanInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/vulkan_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":vulkan_types"
+    ],
+    "traits_sources": [
+      "vulkan_types_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::VkExtensionProperties",
+        "mojom": "gpu.mojom.VkExtensionProperties"
+      },
+      {
+        "cpp": "::VkLayerProperties",
+        "mojom": "gpu.mojom.VkLayerProperties"
+      },
+      {
+        "cpp": "::VkPhysicalDeviceProperties",
+        "mojom": "gpu.mojom.VkPhysicalDeviceProperties"
+      },
+      {
+        "cpp": "::VkPhysicalDeviceType",
+        "mojom": "gpu.mojom.VkPhysicalDeviceType"
+      },
+      {
+        "cpp": "::VkPhysicalDeviceLimits",
+        "mojom": "gpu.mojom.VkPhysicalDeviceLimits"
+      },
+      {
+        "cpp": "::VkPhysicalDeviceSparseProperties",
+        "mojom": "gpu.mojom.VkPhysicalDeviceSparseProperties"
+      },
+      {
+        "cpp": "::VkPhysicalDeviceFeatures",
+        "mojom": "gpu.mojom.VkPhysicalDeviceFeatures"
+      },
+      {
+        "cpp": "::VkQueueFamilyProperties",
+        "mojom": "gpu.mojom.VkQueueFamilyProperties"
+      },
+      {
+        "cpp": "::VkExtent3D",
+        "mojom": "gpu.mojom.VkExtent3D"
+      }
+    ]
+  }
+]

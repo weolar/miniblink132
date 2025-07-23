@@ -1,0 +1,40 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\commerce",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\product_specifications_browser_proxy.ts",
+    "preprocessed\\shopping_service_browser_proxy.ts",
+    "preprocessed\\product_specifications.mojom-webui.ts",
+    "preprocessed\\shared.mojom-webui.ts",
+    "preprocessed\\shopping_service.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/media_session/public/mojom/audio_focus.mojom",
+    "../../../../../../../services/media_session/public/mojom/constants.mojom",
+    "../../../../../../../services/media_session/public/mojom/media_controller.mojom",
+    "../../../../../../../services/media_session/public/mojom/media_session.mojom"
+  ]
+}

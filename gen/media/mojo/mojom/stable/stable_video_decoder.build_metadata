@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "native_pixmap_handle.build_metadata",
+    "../../../../gpu/ipc/common/interfaces.build_metadata",
+    "../encryption_pattern.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../ui/gfx/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../media/mojo/mojom/stable/stable_video_decoder.mojom",
+    "../../../../../../../media/mojo/mojom/stable/stable_video_decoder_types.mojom"
+  ]
+}

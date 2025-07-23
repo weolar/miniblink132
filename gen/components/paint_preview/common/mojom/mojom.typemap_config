@@ -1,0 +1,24 @@
+[
+  {
+    "traits_headers": [
+      "components/paint_preview/common/mojom/paint_preview_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "traits_sources": [
+      "paint_preview_types_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::paint_preview::RecordingPersistence",
+        "mojom": "paint_preview.mojom.RecordingPersistence"
+      },
+      {
+        "cpp": "::paint_preview::SerializedRecording",
+        "mojom": "paint_preview.mojom.SerializedRecording",
+        "move_only": true
+      }
+    ]
+  }
+]

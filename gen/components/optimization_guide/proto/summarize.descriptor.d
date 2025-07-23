@@ -1,0 +1,1 @@
+gen/components/optimization_guide/proto/summarize.descriptor: ../../components/optimization_guide/proto/features/summarize.proto

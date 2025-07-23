@@ -1,0 +1,137 @@
+<!doctype html>
+
+<!--
+about:version template page
+-->
+
+<html id="t" dir="$i18n{textdirection}" lang="$i18n{language}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <title>$i18n{title}</title>
+
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="chrome://theme/current-channel-logo">
+
+    <link rel="stylesheet" href="chrome://resources/css/text_defaults.css">
+
+    <link rel="stylesheet" href="chrome://version/about_version.css">
+
+
+
+    <script type ="module" src="about_version.js"></script>
+  </head>
+
+  <body>
+
+
+    <div id="outer">
+      <div id="logo">
+
+        <!-- Version for themes. -->
+        <picture>
+          <source srcset="chrome://theme/IDR_PRODUCT_LOGO_WHITE,
+                          chrome://theme/IDR_PRODUCT_LOGO_WHITE@2x 2x"
+                  media="(prefers-color-scheme: dark)">
+          <source srcset="chrome://theme/IDR_PRODUCT_LOGO,
+                          chrome://theme/IDR_PRODUCT_LOGO@2x 2x"
+                  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+          <img alt="$i18n{logo_alt_text}" src="chrome://theme/IDR_PRODUCT_LOGO">
+        </picture>
+
+
+        <div id="company">$i18n{company}</div>
+        <div id="copyright">$i18n{copyright}</div>
+      </div>
+      <table id="inner" cellpadding="0" cellspacing="0" border="0">
+        <tr><td class="label">$i18n{application_label}</td>
+          <td class="version" id="version">
+            <span id="copy-content">
+              <span>$i18n{version}</span>
+              (<span>$i18n{official}</span>)
+              <span>$i18n{version_modifier}</span>
+              <span>$i18n{version_processor_variation}</span>
+  
+              <span>$i18n{update_cohort_name}</span>
+  
+            </span>
+            <button id="copy-to-clipboard" aria-label="$i18n{copy_label}">
+              <div id="copy-to-clipboard-icon"></div>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">$i18n{revision}</td>
+          <td class="version">
+            <span>$i18n{cl}</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">$i18n{os_name}</td>
+          <td class="version" id="os_type">
+            <span id="copy-os-content">
+              <span>$i18n{os_type}</span>
+
+
+              <span id="os_version"></span>
+
+            </span>
+
+          </td>
+        </tr>
+
+
+
+
+        <tr><td class="label">JavaScript</td>
+          <td class="version" id="js_engine">
+            <span>$i18n{js_engine}</span>
+            <span>$i18n{js_version}</span>
+          </td>
+        </tr>
+
+        <tr><td class="label">$i18n{user_agent_name}</td>
+          <td class="version" id="useragent">$i18n{useragent}</td>
+        </tr>
+        <tr><td class="label">$i18n{command_line_name}</td>
+          <td class="version" id="command_line">$i18n{command_line}</td>
+        </tr>
+
+        <tr><td class="label">$i18n{executable_path_name}</td>
+          <td class="version" id="executable_path">$i18n{executable_path}</td>
+        </tr>
+        <tr><td class="label">$i18n{profile_path_name}</td>
+          <td class="version" id="profile_path">$i18n{profile_path}</td>
+        </tr>
+
+
+        <tr id="variations-seed-section" hidden>
+          <td class="label">$i18n{variations_seed_name}</td>
+          <td class="version" id="variations-seed">$i18n{variations_seed}</td>
+        </tr>
+        <tr id="variations-cmd-section">
+          <td class="label">$i18n{variations_cmd_name}</td>
+          <td class="version-wide" id="variations-cmd"></td>
+          <td>
+            <button id="copy-variations-to-clipboard"
+                aria-label="$i18n{copy_variations_label}">
+              <div id="copy-to-clipboard-icon"></div>
+            </button>
+          </td>
+        </tr>
+        <tr id="variations-section">
+          <td class="label">$i18n{variations_name}</td>
+          <td class="version" id="variations-list"></td>
+        </tr>
+        <tr id="sanitizer-section" hidden>
+          <td class="label">Sanitizer</td>
+          <td class="version" id="sanitizer">$i18n{sanitizer}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="messages" role="alert" aria-live="polite" aria-relevant="additions">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "deps": [
+    "../../../../../gpu/ipc/common/gmb_interface.build_metadata",
+    "../../../../../gpu/ipc/common/interfaces.build_metadata",
+    "../../../../../gpu/ipc/common/surface_handle.build_metadata",
+    "../../../../../media/mojo/mojom/mojom.build_metadata",
+    "../../../../webnn/public/mojom/mojom.build_metadata",
+    "../../../../../third_party/blink/public/mojom/tokens/tokens.build_metadata",
+    "../../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../../ui/gfx/mojom/mojom.build_metadata",
+    "../../../../../ui/gl/mojom/mojom.build_metadata",
+    "../../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../../ui/gfx/mojom/dxgi_info.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../services/viz/privileged/mojom/gl/context_lost_reason.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/gl/gpu_host.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/gl/gpu_service.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/gl/info_collection_gpu_service.mojom"
+  ]
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "traits_headers": [
+      "gpu/ipc/common/context_creation_attribs_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/command_buffer/common:common_base_sources"
+    ],
+    "traits_sources": [
+      "context_creation_attribs_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::ColorSpace",
+        "mojom": "gpu.mojom.ContextColorspace"
+      },
+      {
+        "cpp": "::gpu::ContextCreationAttribs",
+        "mojom": "gpu.mojom.ContextCreationAttribs"
+      },
+      {
+        "cpp": "::gpu::ContextType",
+        "mojom": "gpu.mojom.ContextType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/command_buffer_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/command_buffer/common:common_sources"
+    ],
+    "traits_sources": [
+      "command_buffer_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::error::Error",
+        "mojom": "gpu.mojom.Error"
+      },
+      {
+        "cpp": "::gpu::error::ContextLostReason",
+        "mojom": "gpu.mojom.ContextLostReason"
+      },
+      {
+        "cpp": "::gpu::CommandBuffer::State",
+        "mojom": "gpu.mojom.CommandBufferState"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/scheduling_priority_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/command_buffer/common:common_base_sources"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SchedulingPriority",
+        "mojom": "gpu.mojom.SchedulingPriority"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_param_traits_macros.h"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SwapBuffersCompleteParams",
+        "mojom": "gpu.mojom.SwapBuffersCompleteParams"
+      }
+    ]
+  }
+]

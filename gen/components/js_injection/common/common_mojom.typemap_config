@@ -1,0 +1,43 @@
+[
+  {
+    "traits_headers": [
+      "components/js_injection/common/origin_matcher_mojom_traits.h",
+      "components/js_injection/common/origin_matcher.h"
+    ],
+    "traits_public_deps": [
+      ":common"
+    ],
+    "traits_sources": [
+      "origin_matcher_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::js_injection::OriginMatcher",
+        "mojom": "js_injection.mojom.OriginMatcher"
+      },
+      {
+        "cpp": "::std::unique_ptr<::js_injection::OriginMatcherRule>",
+        "mojom": "js_injection.mojom.OriginMatcherRule",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "components/js_injection/common/web_message_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common"
+    ],
+    "traits_sources": [
+      "web_message_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::WebMessagePayload",
+        "mojom": "js_injection.mojom.JsWebMessage",
+        "move_only": true
+      }
+    ]
+  }
+]

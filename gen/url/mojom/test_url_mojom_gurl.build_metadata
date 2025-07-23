@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "url_mojom_gurl.build_metadata",
+    "url_mojom_origin.build_metadata",
+    "url_mojom_scheme_host_port.build_metadata"
+  ],
+  "sources": [
+    "../../../../../url/mojom/url_test.mojom"
+  ]
+}

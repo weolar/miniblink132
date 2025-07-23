@@ -1,0 +1,85 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/net_ipc_param_traits.h",
+      "services/network/public/cpp/network_param_mojom_traits.h"
+    ],
+    "traits_private_headers": [
+      "net/cert/cert_verify_result.h"
+    ],
+    "traits_public_deps": [
+      "//services/network/public/cpp:network_param_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AuthCredentials",
+        "mojom": "network.mojom.AuthCredentials"
+      },
+      {
+        "cpp": "::net::CertVerifyResult",
+        "mojom": "network.mojom.CertVerifyResult"
+      },
+      {
+        "cpp": "::scoped_refptr<::net::HttpResponseHeaders>",
+        "mojom": "network.mojom.HttpResponseHeaders",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::net::HttpVersion",
+        "mojom": "network.mojom.HttpVersion"
+      },
+      {
+        "cpp": "::net::ProxyServer",
+        "mojom": "network.mojom.ProxyServer"
+      },
+      {
+        "cpp": "::net::ProxyServer::Scheme",
+        "mojom": "network.mojom.ProxyScheme"
+      },
+      {
+        "cpp": "::net::ResolveErrorInfo",
+        "mojom": "network.mojom.ResolveErrorInfo"
+      },
+      {
+        "cpp": "::scoped_refptr<::net::SSLCertRequestInfo>",
+        "mojom": "network.mojom.SSLCertRequestInfo",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::net::SSLInfo",
+        "mojom": "network.mojom.SSLInfo"
+      },
+      {
+        "cpp": "::scoped_refptr<::net::X509Certificate>",
+        "mojom": "network.mojom.X509Certificate",
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/network_param_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/network/public/cpp:network_param_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AuthChallengeInfo",
+        "mojom": "network.mojom.AuthChallengeInfo"
+      },
+      {
+        "cpp": "::net::HostPortPair",
+        "mojom": "network.mojom.HostPortPair"
+      },
+      {
+        "cpp": "::net::NetLogSource",
+        "mojom": "network.mojom.NetLogSource"
+      },
+      {
+        "cpp": "::net::ProxyChain",
+        "mojom": "network.mojom.ProxyChain"
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "traits_headers": [
+      "components/tab_groups/public/mojom/tab_groups_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::tab_groups::TabGroupColorId",
+        "mojom": "tab_groups.mojom.Color"
+      }
+    ]
+  }
+]

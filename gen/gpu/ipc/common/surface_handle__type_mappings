@@ -1,0 +1,21 @@
+{
+  "c++": {
+    "gpu.mojom.SurfaceHandle": {
+      "typename": "::gpu::SurfaceHandle",
+      "forward_declaration": null,
+      "public_headers": [
+        "gpu/ipc/common/surface_handle_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

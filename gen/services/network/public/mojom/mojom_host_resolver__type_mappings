@@ -1,0 +1,2746 @@
+{
+  "c++": {
+    "network.mojom.DnsConfigOverrides": {
+      "typename": "::net::DnsConfigOverrides",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DnsOverHttpsServerConfig": {
+      "typename": "::net::DnsOverHttpsServerConfig",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DnsOverHttpsConfig": {
+      "typename": "::net::DnsOverHttpsConfig",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ResolveHostParameters.Source": {
+      "typename": "::net::HostResolverSource",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.MdnsListenClient.UpdateType": {
+      "typename": "::net::MdnsListenerUpdateType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SecureDnsMode": {
+      "typename": "::net::SecureDnsMode",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DnsQueryType": {
+      "typename": "::net::DnsQueryType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.IPAddress": {
+      "typename": "::net::IPAddress",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/ip_address_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.AddressFamily": {
+      "typename": "::net::AddressFamily",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/address_family_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.AddressList": {
+      "typename": "::net::AddressList",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/address_list_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.WebTransportError": {
+      "typename": "::net::WebTransportError",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/web_transport_error_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ConnectionEndpointMetadata": {
+      "typename": "::net::ConnectionEndpointMetadata",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/connection_endpoint_metadata_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.HostResolverEndpointResult": {
+      "typename": "::net::HostResolverEndpointResult",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/host_resolver_endpoint_result_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.IPEndPoint": {
+      "typename": "::net::IPEndPoint",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/ip_endpoint_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ConnectionInfo": {
+      "typename": "::net::HttpConnectionInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "net/http/http_response_info.h",
+        "services/network/public/cpp/network_ipc_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.AlternateProtocolUsage": {
+      "typename": "::net::AlternateProtocolUsage",
+      "forward_declaration": null,
+      "public_headers": [
+        "net/http/alternate_protocol_usage.h",
+        "services/network/public/cpp/alternate_protocol_usage_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "url.mojom.Url": {
+      "typename": "::GURL",
+      "forward_declaration": null,
+      "public_headers": [
+        "url/mojom/url_gurl_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.NetworkAnonymizationKey": {
+      "typename": "::net::NetworkAnonymizationKey",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SchemefulSite": {
+      "typename": "::net::SchemefulSite",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/schemeful_site_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "url.mojom.Origin": {
+      "typename": "::url::Origin",
+      "forward_declaration": null,
+      "public_headers": [
+        "url/mojom/origin_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.SafeBaseName": {
+      "typename": "::base::SafeBaseName",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/safe_base_name_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BigBuffer": {
+      "typename": "::mojo_base::BigBuffer",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/big_buffer_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ByteString": {
+      "typename": "std::string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/byte_string_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.FileError": {
+      "typename": "::base::File::Error",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_error_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.FileInfo": {
+      "typename": "::base::File::Info",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_info_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.FilePath": {
+      "typename": "::base::FilePath",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_path_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.RelativeFilePath": {
+      "typename": "::base::FilePath",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_path_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.File": {
+      "typename": "::base::File",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ReadOnlyFile": {
+      "typename": "::base::File",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/read_only_file_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": true,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.GenericPendingAssociatedReceiver": {
+      "typename": "::mojo::GenericPendingAssociatedReceiver",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/generic_pending_associated_receiver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.GenericPendingReceiver": {
+      "typename": "::mojo::GenericPendingReceiver",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/generic_pending_receiver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ReadOnlyBuffer": {
+      "typename": "::base::span<const ::uint8_t>",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/read_only_buffer_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": true,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.PlatformSharedMemoryHandle": {
+      "typename": "::base::subtle::PlatformSharedMemoryRegion::ScopedPlatformHandle",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.PlatformSharedMemoryRegion": {
+      "typename": "::base::subtle::PlatformSharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ReadOnlySharedMemoryRegion": {
+      "typename": "::base::ReadOnlySharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.UnsafeSharedMemoryRegion": {
+      "typename": "::base::UnsafeSharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.WritableSharedMemoryRegion": {
+      "typename": "::base::WritableSharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Time": {
+      "typename": "::base::Time",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.JSTime": {
+      "typename": "::base::Time",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.TimeDelta": {
+      "typename": "::base::TimeDelta",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.TimeTicks": {
+      "typename": "::base::TimeTicks",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Token": {
+      "typename": "::base::Token",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/token_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.UnguessableToken": {
+      "typename": "::base::UnguessableToken",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/unguessable_token_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Uuid": {
+      "typename": "::base::Uuid",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/uuid_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Value": {
+      "typename": "::base::Value",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/values_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.DictionaryValue": {
+      "typename": "::base::Value::Dict",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/values_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ListValue": {
+      "typename": "::base::Value::List",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/values_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.TextDirection": {
+      "typename": "::base::i18n::TextDirection",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/text_direction_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Int128": {
+      "typename": "::absl::int128",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/int128_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Uint128": {
+      "typename": "::absl::uint128",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/int128_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Version": {
+      "typename": "::base::Version",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/version_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BigString": {
+      "typename": "::std::string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/big_string_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojom_base.mojom.MemoryAllocatorDumpCrossProcessUid": {
+      "typename": "::base::trace_event::MemoryAllocatorDumpGuid",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/memory_allocator_dump_cross_process_uid_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.MemoryPressureLevel": {
+      "typename": "::base::MemoryPressureListener::MemoryPressureLevel",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/memory_pressure_level_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.MessagePumpType": {
+      "typename": "::base::MessagePumpType",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/message_pump_type_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ProcessPriority": {
+      "typename": "::base::Process::Priority",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/process_priority_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.RefCountedMemory": {
+      "typename": "::scoped_refptr<::base::RefCountedMemory>",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/ref_counted_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ProcessId": {
+      "typename": "::base::ProcessId",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/process_id_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.String16": {
+      "typename": "::std::u16string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/string16_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BigString16": {
+      "typename": "::std::u16string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/string16_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ThreadType": {
+      "typename": "::base::ThreadType",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/thread_type_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BatteryPowerStatus": {
+      "typename": "::base::PowerStateObserver::BatteryPowerStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/battery_power_status_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.LOGFONT": {
+      "typename": "::LOGFONT",
+      "forward_declaration": null,
+      "public_headers": [
+        "base/win/windows_full.h",
+        "mojo/public/cpp/base/logfont_win_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.WString": {
+      "typename": "::std::wstring",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/wstring_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.AuthCredentials": {
+      "typename": "::net::AuthCredentials",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CertVerifyResult": {
+      "typename": "::net::CertVerifyResult",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.HttpResponseHeaders": {
+      "typename": "::scoped_refptr<::net::HttpResponseHeaders>",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.HttpVersion": {
+      "typename": "::net::HttpVersion",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyServer": {
+      "typename": "::net::ProxyServer",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyScheme": {
+      "typename": "::net::ProxyServer::Scheme",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ResolveErrorInfo": {
+      "typename": "::net::ResolveErrorInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SSLCertRequestInfo": {
+      "typename": "::scoped_refptr<::net::SSLCertRequestInfo>",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SSLInfo": {
+      "typename": "::net::SSLInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.X509Certificate": {
+      "typename": "::scoped_refptr<::net::X509Certificate>",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/net_ipc_param_traits.h",
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "net/cert/cert_verify_result.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.AuthChallengeInfo": {
+      "typename": "::net::AuthChallengeInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.HostPortPair": {
+      "typename": "::net::HostPortPair",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.NetLogSource": {
+      "typename": "::net::NetLogSource",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyChain": {
+      "typename": "::net::ProxyChain",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_param_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "url.mojom.SchemeHostPort": {
+      "typename": "::url::SchemeHostPort",
+      "forward_declaration": null,
+      "public_headers": [
+        "url/mojom/scheme_host_port_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CorsErrorStatus": {
+      "typename": "::network::CorsErrorStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cors/cors_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": false,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CTPolicyCompliance": {
+      "typename": "::net::ct::CTPolicyCompliance",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.EffectiveConnectionType": {
+      "typename": "::net::EffectiveConnectionType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.OriginPolicy": {
+      "typename": "::network::OriginPolicy",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.URLRequestRedirectInfo": {
+      "typename": "::net::RedirectInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.LoadTimingInfo": {
+      "typename": "::net::LoadTimingInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/load_timing_info_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.LoadTimingInfoConnectTiming": {
+      "typename": "::net::LoadTimingInfo::ConnectTiming",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/load_timing_info_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DeviceBoundSessionKey": {
+      "typename": "::net::device_bound_sessions::SessionKey",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/device_bound_sessions_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.RequestPriority": {
+      "typename": "::net::RequestPriority",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/url_request_param_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.URLRequestReferrerPolicy": {
+      "typename": "::net::ReferrerPolicy",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/url_request_param_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CrossOriginEmbedderPolicy": {
+      "typename": "::network::CrossOriginEmbedderPolicy",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cross_origin_embedder_policy_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.URLLoaderCompletionStatus": {
+      "typename": "::network::URLLoaderCompletionStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/url_loader_completion_status_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CrossOriginOpenerPolicy": {
+      "typename": "::network::CrossOriginOpenerPolicy",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cross_origin_opener_policy_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DocumentIsolationPolicy": {
+      "typename": "::network::DocumentIsolationPolicy",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/document_isolation_policy_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.TrustedUrlRequestParams": {
+      "typename": "::network::ResourceRequest::TrustedParams",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.WebBundleTokenParams": {
+      "typename": "::network::ResourceRequest::WebBundleTokenParams",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.URLRequest": {
+      "typename": "::network::ResourceRequest",
+      "forward_declaration": "namespace network { struct ResourceRequest; }",
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": true,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.URLRequestBody": {
+      "typename": "::scoped_refptr<::network::ResourceRequestBody>",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SourceType": {
+      "typename": "::net::SourceStream::SourceType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DataElementBytes": {
+      "typename": "::network::DataElementBytes",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DataElementDataPipe": {
+      "typename": "::network::DataElementDataPipe",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DataElementChunkedDataPipe": {
+      "typename": "::network::DataElementChunkedDataPipe",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DataElementFile": {
+      "typename": "::network::DataElementFile",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.DataElement": {
+      "typename": "::network::DataElement",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_ipc_param_traits.h",
+        "services/network/public/cpp/url_request_mojom_traits.h",
+        "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+        "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "services/network/public/mojom/devtools_observer.mojom.h",
+        "services/network/public/mojom/cookie_access_observer.mojom.h",
+        "services/network/public/mojom/trust_token_access_observer.mojom.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.HttpRequestHeaders": {
+      "typename": "::net::HttpRequestHeaders",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/http_request_headers_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.IsolationInfo": {
+      "typename": "::net::IsolationInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/isolation_info_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.NetworkInterface": {
+      "typename": "::net::NetworkInterface",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/network_interface_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ParsedRequestCookie": {
+      "typename": "::net::cookie_util::ParsedRequestCookie",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/parsed_request_cookie_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.P2PPacketInfo": {
+      "typename": "::network::P2PPacketInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.P2PSendPacketMetrics": {
+      "typename": "::network::P2PSendPacketMetrics",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.P2PPortRange": {
+      "typename": "::network::P2PPortRange",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.P2PHostAndIPEndPoint": {
+      "typename": "::network::P2PHostAndIPEndPoint",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.P2PSocketOption": {
+      "typename": "::network::P2PSocketOption",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.P2PSocketType": {
+      "typename": "::network::P2PSocketType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.EcnMarking": {
+      "typename": "::rtc::EcnMarking",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/p2p_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookiePriority": {
+      "typename": "::net::CookiePriority",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieSameSite": {
+      "typename": "::net::CookieSameSite",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieEffectiveSameSite": {
+      "typename": "::net::CookieEffectiveSameSite",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieSameSiteContextMetadataDowngradeType": {
+      "typename": "::net::CookieOptions::SameSiteCookieContext::ContextMetadata::ContextDowngradeType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ContextRedirectTypeBug1221316": {
+      "typename": "::net::CookieOptions::SameSiteCookieContext::ContextMetadata::ContextRedirectTypeBug1221316",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieSameSiteContextMetadata": {
+      "typename": "::net::CookieOptions::SameSiteCookieContext::ContextMetadata",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieSameSiteContext": {
+      "typename": "::net::CookieOptions::SameSiteCookieContext",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieAccessSemantics": {
+      "typename": "::net::CookieAccessSemantics",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieOptions": {
+      "typename": "::net::CookieOptions",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookiePartitionKey": {
+      "typename": "::net::CookiePartitionKey",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": false,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookiePartitionKeyCollection": {
+      "typename": "::net::CookiePartitionKeyCollection",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CanonicalCookie": {
+      "typename": "::net::CanonicalCookie",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieAccessResult": {
+      "typename": "::net::CookieAccessResult",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieWithAccessResult": {
+      "typename": "::net::CookieWithAccessResult",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieAndLineWithAccessResult": {
+      "typename": "::net::CookieAndLineWithAccessResult",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieChangeCause": {
+      "typename": "::net::CookieChangeCause",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieChangeInfo": {
+      "typename": "::net::CookieChangeInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieSourceScheme": {
+      "typename": "::net::CookieSourceScheme",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.HttpMethod": {
+      "typename": "::net::CookieOptions::SameSiteCookieContext::ContextMetadata::HttpMethod",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieSettingOverrides": {
+      "typename": "::net::CookieSettingOverrides",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_setting_overrides_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SiteForCookies": {
+      "typename": "::net::SiteForCookies",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_shared_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.CookieInclusionStatus": {
+      "typename": "::net::CookieInclusionStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/cookie_manager_shared_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SiteIndex": {
+      "typename": "::net::FirstPartySetEntry::SiteIndex",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SiteType": {
+      "typename": "::net::SiteType",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.FirstPartySetEntry": {
+      "typename": "::net::FirstPartySetEntry",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.FirstPartySetMetadata": {
+      "typename": "::net::FirstPartySetMetadata",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.GlobalFirstPartySets": {
+      "typename": "::net::GlobalFirstPartySets",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.FirstPartySetsContextConfig": {
+      "typename": "::net::FirstPartySetsContextConfig",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.FirstPartySetsCacheFilter": {
+      "typename": "::net::FirstPartySetsCacheFilter",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.FirstPartySetEntryOverride": {
+      "typename": "::net::FirstPartySetEntryOverride",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/first_party_sets_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.StorageAccessApiStatus": {
+      "typename": "::net::StorageAccessApiStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/storage_access_api_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "content_settings.mojom.PatternParts": {
+      "typename": "::ContentSettingsPattern::PatternParts",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/content_settings/core/common/content_settings_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "components/content_settings/core/common/content_settings_param_traits.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "content_settings.mojom.ContentSettingsPattern": {
+      "typename": "::ContentSettingsPattern",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/content_settings/core/common/content_settings_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "components/content_settings/core/common/content_settings_param_traits.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "content_settings.mojom.ContentSetting": {
+      "typename": "::ContentSetting",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/content_settings/core/common/content_settings_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "components/content_settings/core/common/content_settings_param_traits.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "content_settings.mojom.ContentSettingPatternSource": {
+      "typename": "::ContentSettingPatternSource",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/content_settings/core/common/content_settings_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "components/content_settings/core/common/content_settings_param_traits.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "content_settings.mojom.RendererContentSettingRules": {
+      "typename": "::RendererContentSettingRules",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/content_settings/core/common/content_settings_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "components/content_settings/core/common/content_settings_param_traits.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "content_settings.mojom.RuleMetaData": {
+      "typename": "::content_settings::RuleMetaData",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/content_settings/core/common/content_settings_mojom_traits.h"
+      ],
+      "traits_headers": [
+        "components/content_settings/core/common/content_settings_param_traits.h"
+      ],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.MutablePartialNetworkTrafficAnnotationTag": {
+      "typename": "::net::MutablePartialNetworkTrafficAnnotationTag",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/mutable_partial_network_traffic_annotation_tag_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyBypassRules": {
+      "typename": "::net::ProxyBypassRules",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/proxy_config_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyList": {
+      "typename": "::net::ProxyList",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/proxy_config_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyRulesType": {
+      "typename": "::net::ProxyConfig::ProxyRules::Type",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/proxy_config_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyRules": {
+      "typename": "::net::ProxyConfig::ProxyRules",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/proxy_config_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyConfig": {
+      "typename": "::net::ProxyConfig",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/proxy_config_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ProxyConfigWithAnnotation": {
+      "typename": "::net::ProxyConfigWithAnnotation",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/proxy_config_with_annotation_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.MutableNetworkTrafficAnnotationTag": {
+      "typename": "::net::MutableNetworkTrafficAnnotationTag",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/mutable_network_traffic_annotation_tag_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SharedDictionaryIsolationKey": {
+      "typename": "::net::SharedDictionaryIsolationKey",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/shared_dictionary_isolation_key_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.SharedDictionaryUsageInfo": {
+      "typename": "::net::SharedDictionaryUsageInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/shared_dictionary_usage_info_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "proxy_resolver.mojom.HostResolveOperation": {
+      "typename": "::net::ProxyResolveDnsOperation",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/proxy_resolver/public/cpp/mojo_host_mojom_traits.h",
+        "services/proxy_resolver/public/cpp/proxy_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "proxy_resolver.mojom.ProxyInfo": {
+      "typename": "::net::ProxyInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/proxy_resolver/public/cpp/mojo_host_mojom_traits.h",
+        "services/proxy_resolver/public/cpp/proxy_resolver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "proxy_resolver_win.mojom.WinHttpStatus": {
+      "typename": "::net::WinHttpStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/proxy_resolver_win/public/cpp/proxy_resolver_win_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

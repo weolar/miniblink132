@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../services/image_annotation/public/mojom/image_annotation.mojom"
+  ]
+}

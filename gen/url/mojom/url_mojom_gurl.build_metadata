@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../url/mojom/url.mojom"
+  ]
+}

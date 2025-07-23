@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../skia/public/mojom/bitmap.mojom",
+    "../../../../../../skia/public/mojom/image_info.mojom",
+    "../../../../../../skia/public/mojom/skcolor.mojom",
+    "../../../../../../skia/public/mojom/skcolor4f.mojom",
+    "../../../../../../skia/public/mojom/skcolorspace.mojom",
+    "../../../../../../skia/public/mojom/skcolorspace_primaries.mojom",
+    "../../../../../../skia/public/mojom/surface_origin.mojom",
+    "../../../../../../skia/public/mojom/tile_mode.mojom"
+  ]
+}

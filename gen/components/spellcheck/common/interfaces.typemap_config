@@ -1,0 +1,23 @@
+[
+  {
+    "traits_headers": [
+      "components/spellcheck/common/spellcheck_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/spellcheck:buildflags"
+    ],
+    "traits_sources": [
+      "spellcheck_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::SpellCheckResult::Decoration",
+        "mojom": "spellcheck.mojom.Decoration"
+      },
+      {
+        "cpp": "::SpellCheckResult",
+        "mojom": "spellcheck.mojom.SpellCheckResult"
+      }
+    ]
+  }
+]

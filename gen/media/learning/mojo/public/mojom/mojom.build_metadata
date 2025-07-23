@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../media/learning/mojo/public/mojom/learning_task_controller.mojom",
+    "../../../../../../../../media/learning/mojo/public/mojom/learning_types.mojom"
+  ]
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "traits_headers": [
+      "mojo/public/cpp/bindings/tests/rect_blink_traits.h",
+      "mojo/public/cpp/bindings/tests/shared_rect_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo::test::RectBlink",
+        "hashable": true,
+        "mojom": "mojo.test.TypemappedRect"
+      },
+      {
+        "cpp": "::mojo::test::SharedRect",
+        "mojom": "mojo.test.SharedTypemappedRect"
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//ipc"
+    ],
+    "traits_headers": [
+      "mojo/public/cpp/bindings/tests/pickled_types_blink.h"
+    ],
+    "traits_sources": [
+      "//mojo/public/cpp/bindings/tests/pickled_types_blink.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo::test::PickledEnumBlink",
+        "mojom": "mojo.test.PickledEnum"
+      },
+      {
+        "cpp": "::mojo::test::PickledStructBlink",
+        "mojom": "mojo.test.PickledStruct",
+        "move_only": true
+      }
+    ]
+  }
+]

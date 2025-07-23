@@ -1,0 +1,31 @@
+{
+  "deps": [
+    "echo.build_metadata",
+    "test_deserializer_interface.build_metadata",
+    "test_mojom_import.build_metadata",
+    "test_mojom_import2.build_metadata",
+    "../../../mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/math_calculator.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/no_module.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/nullable_value_types.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/ping_service.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/rect.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/regression_tests.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/sample_factory.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/sample_interfaces.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/sample_service.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/scoping.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/serialization_test_structs.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_bad_messages.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_constants.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_data_view.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_name_generator.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_native_types.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_structs.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_sync_methods.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_unions.mojom",
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/validation_test_interfaces.mojom"
+  ]
+}

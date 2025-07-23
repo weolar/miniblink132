@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../payments/mojom/mojom.build_metadata",
+    "../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/digital_goods/mojom/digital_goods.mojom"
+  ]
+}

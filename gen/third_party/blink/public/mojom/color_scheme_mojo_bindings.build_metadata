@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../third_party/blink/public/mojom/frame/color_scheme.mojom"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../components/named_mojo_ipc_server/testing.test-mojom"
+  ]
+}

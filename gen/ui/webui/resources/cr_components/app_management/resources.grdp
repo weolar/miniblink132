@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_APP_MANAGEMENT_CONSTANTS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/app_management/minified/constants.js" resource_path="cr_components/app_management/constants.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_APP_MANAGEMENT_PERMISSION_CONSTANTS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/app_management/minified/permission_constants.js" resource_path="cr_components/app_management/permission_constants.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_APP_MANAGEMENT_PERMISSION_UTIL_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/app_management/minified/permission_util.js" resource_path="cr_components/app_management/permission_util.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_APP_MANAGEMENT_BROWSER_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/app_management/minified/browser_proxy.js" resource_path="cr_components/app_management/browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_APP_MANAGEMENT_UTIL_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/app_management/minified/util.js" resource_path="cr_components/app_management/util.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_APP_MANAGEMENT_APP_MANAGEMENT_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/app_management/minified/app_management.mojom-webui.js" resource_path="cr_components/app_management/app_management.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

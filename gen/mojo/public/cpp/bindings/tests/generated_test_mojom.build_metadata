@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "generated.test-mojom"
+  ]
+}

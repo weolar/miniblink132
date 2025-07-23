@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "mojom_schemeful_site.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/shared_dictionary_error.mojom",
+    "../../../../../../../services/network/public/mojom/shared_dictionary_isolation_key.mojom",
+    "../../../../../../../services/network/public/mojom/shared_dictionary_usage_info.mojom"
+  ]
+}

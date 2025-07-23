@@ -1,0 +1,195 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/buffer_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::BufferFormat",
+        "mojom": "gfx.mojom.BufferFormat"
+      },
+      {
+        "cpp": "::gfx::BufferUsage",
+        "mojom": "gfx.mojom.BufferUsage"
+      },
+      {
+        "cpp": "::gfx::BufferUsageAndFormat",
+        "mojom": "gfx.mojom.BufferUsageAndFormat"
+      },
+      {
+        "cpp": "::gfx::BufferPlane",
+        "mojom": "gfx.mojom.BufferPlane"
+      },
+      {
+        "cpp": "::gfx::GpuMemoryBufferHandle",
+        "mojom": "gfx.mojom.GpuMemoryBufferHandle",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::gfx::GpuMemoryBufferId",
+        "mojom": "gfx.mojom.GpuMemoryBufferId"
+      },
+      {
+        "cpp": "::gfx::GpuMemoryBufferType",
+        "mojom": "gfx.mojom.GpuMemoryBufferType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/color_space_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::ColorSpace",
+        "mojom": "gfx.mojom.ColorSpace"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/display_color_spaces_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::ContentColorUsage",
+        "mojom": "gfx.mojom.ContentColorUsage"
+      },
+      {
+        "cpp": "::gfx::DisplayColorSpaces",
+        "mojom": "gfx.mojom.DisplayColorSpaces"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/gpu_extra_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::GpuExtraInfo",
+        "mojom": "gfx.mojom.GpuExtraInfo"
+      },
+      {
+        "cpp": "::gfx::ANGLEFeature",
+        "mojom": "gfx.mojom.ANGLEFeature"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/gpu_fence_handle_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::GpuFenceHandle",
+        "mojom": "gfx.mojom.GpuFenceHandle",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/hdr_static_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::HDRStaticMetadata",
+        "mojom": "gfx.mojom.HDRStaticMetadata"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/presentation_feedback_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::PresentationFeedback",
+        "mojom": "gfx.mojom.PresentationFeedback"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/selection_bound_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx/geometry/mojom:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::SelectionBound",
+        "mojom": "gfx.mojom.SelectionBound"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/swap_timings_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::SwapTimings",
+        "mojom": "gfx.mojom.SwapTimings"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/transform_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::Transform",
+        "mojom": "gfx.mojom.Transform"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/delegated_ink_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::gfx::DelegatedInkMetadata>",
+        "mojom": "gfx.mojom.DelegatedInkMetadata",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  }
+]

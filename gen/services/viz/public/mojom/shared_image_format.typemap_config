@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/shared_image_format_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/shared_image_format_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SharedImageFormat",
+        "mojom": "viz.mojom.SharedImageFormat"
+      }
+    ]
+  }
+]

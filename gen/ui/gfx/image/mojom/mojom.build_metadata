@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../skia/public/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../ui/gfx/image/mojom/image.mojom"
+  ]
+}

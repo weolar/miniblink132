@@ -1,0 +1,41 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../mojo/public/mojom/base/absl_status.mojom",
+    "../../../../../../../mojo/public/mojom/base/application_state.mojom",
+    "../../../../../../../mojo/public/mojom/base/battery_power_status.mojom",
+    "../../../../../../../mojo/public/mojom/base/big_buffer.mojom",
+    "../../../../../../../mojo/public/mojom/base/big_string.mojom",
+    "../../../../../../../mojo/public/mojom/base/binder.mojom",
+    "../../../../../../../mojo/public/mojom/base/byte_string.mojom",
+    "../../../../../../../mojo/public/mojom/base/file.mojom",
+    "../../../../../../../mojo/public/mojom/base/file_error.mojom",
+    "../../../../../../../mojo/public/mojom/base/file_info.mojom",
+    "../../../../../../../mojo/public/mojom/base/file_path.mojom",
+    "../../../../../../../mojo/public/mojom/base/generic_pending_associated_receiver.mojom",
+    "../../../../../../../mojo/public/mojom/base/generic_pending_receiver.mojom",
+    "../../../../../../../mojo/public/mojom/base/int128.mojom",
+    "../../../../../../../mojo/public/mojom/base/memory_allocator_dump_cross_process_uid.mojom",
+    "../../../../../../../mojo/public/mojom/base/memory_pressure_level.mojom",
+    "../../../../../../../mojo/public/mojom/base/message_pump_type.mojom",
+    "../../../../../../../mojo/public/mojom/base/process_id.mojom",
+    "../../../../../../../mojo/public/mojom/base/process_priority.mojom",
+    "../../../../../../../mojo/public/mojom/base/read_only_buffer.mojom",
+    "../../../../../../../mojo/public/mojom/base/ref_counted_memory.mojom",
+    "../../../../../../../mojo/public/mojom/base/safe_base_name.mojom",
+    "../../../../../../../mojo/public/mojom/base/shared_memory.mojom",
+    "../../../../../../../mojo/public/mojom/base/string16.mojom",
+    "../../../../../../../mojo/public/mojom/base/text_direction.mojom",
+    "../../../../../../../mojo/public/mojom/base/thread_type.mojom",
+    "../../../../../../../mojo/public/mojom/base/time.mojom",
+    "../../../../../../../mojo/public/mojom/base/token.mojom",
+    "../../../../../../../mojo/public/mojom/base/unguessable_token.mojom",
+    "../../../../../../../mojo/public/mojom/base/uuid.mojom",
+    "../../../../../../../mojo/public/mojom/base/values.mojom",
+    "../../../../../../../mojo/public/mojom/base/version.mojom",
+    "../../../../../../../mojo/public/mojom/base/logfont_win.mojom",
+    "../../../../../../../mojo/public/mojom/base/wstring.mojom"
+  ]
+}

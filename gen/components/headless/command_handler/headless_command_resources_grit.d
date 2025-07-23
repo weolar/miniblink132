@@ -1,0 +1,1 @@
+gen\components\headless\command_handler\headless_command_resources_grit.d.stamp: .\..\..\components\headless\command_handler\headless_command.html .\..\..\components\headless\command_handler\headless_command.js .\gen/tools/gritsettings/default_resource_ids

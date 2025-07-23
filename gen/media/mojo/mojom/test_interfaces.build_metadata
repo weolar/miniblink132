@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../media/mojo/mojom/traits_test_service.mojom"
+  ]
+}

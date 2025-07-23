@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "mojom_ip_address.build_metadata",
+    "mojom_network_anonymization_key.build_metadata",
+    "mojom_network_param.build_metadata",
+    "url_loader_base.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../url/mojom/url_mojom_scheme_host_port.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/host_resolver.mojom"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "mojo_types.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/content_capture/common/content_capture.mojom"
+  ]
+}

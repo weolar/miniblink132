@@ -1,0 +1,33 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/cookie_manager_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::net::CanonicalCookie",
+        "mojom": "network.mojom.CanonicalCookie"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/cookie_manager_shared_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:cookies_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::SiteForCookies",
+        "mojom": "network.mojom.SiteForCookies"
+      },
+      {
+        "cpp": "::net::CookieInclusionStatus",
+        "mojom": "network.mojom.CookieInclusionStatus",
+        "move_only": true
+      }
+    ]
+  }
+]

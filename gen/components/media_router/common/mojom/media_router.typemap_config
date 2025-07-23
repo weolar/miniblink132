@@ -1,0 +1,45 @@
+[
+  {
+    "traits_deps": [
+      "//services/network/public/cpp",
+      "//url/mojom:url_mojom_gurl"
+    ],
+    "traits_headers": [
+      "components/media_router/common/mojom/media_router_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/media_router/common",
+      "//components/media_router/common/providers/cast/channel:capability",
+      "//net"
+    ],
+    "traits_sources": [
+      "media_router_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::media_router::IssueInfo",
+        "mojom": "media_router.mojom.Issue"
+      },
+      {
+        "cpp": "::media_router::IssueInfo::Action",
+        "mojom": "media_router.mojom.Issue.ActionType"
+      },
+      {
+        "cpp": "::media_router::IssueInfo::Severity",
+        "mojom": "media_router.mojom.Issue.Severity"
+      },
+      {
+        "cpp": "::media_router::MediaRoute",
+        "mojom": "media_router.mojom.MediaRoute"
+      },
+      {
+        "cpp": "::media_router::mojom::MediaRouteProviderId",
+        "mojom": "media_router.mojom.MediaRouteProvider.Id"
+      },
+      {
+        "cpp": "::media_router::MediaSinkInternal",
+        "mojom": "media_router.mojom.MediaSink"
+      }
+    ]
+  }
+]

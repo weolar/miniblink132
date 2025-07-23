@@ -1,0 +1,74 @@
+{
+  "extends": "../../../../../../../../tools/typescript/tsconfig_base_lit.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "tsc",
+    "paths": {
+      "//resources/lit/v3_0/lit.rollup.js": [
+        "./../../../../../third_party/lit/v3_0/lit.d.ts"
+      ],
+      "chrome://resources/lit/v3_0/lit.rollup.js": [
+        "./../../../../../third_party/lit/v3_0/lit.d.ts"
+      ],
+      "//resources/cr_components/commerce/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_components/commerce/*"
+      ],
+      "chrome://resources/cr_components/commerce/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_components/commerce/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "chrome://resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "chrome://resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\app.html.ts",
+    "preprocessed\\app.ts",
+    "preprocessed\\commerce_internals_api_proxy.ts",
+    "preprocessed\\eligibility_list.html.ts",
+    "preprocessed\\eligibility_list.ts",
+    "preprocessed\\product_specifications_set_list.html.ts",
+    "preprocessed\\product_specifications_set_list.ts",
+    "preprocessed\\product_viewer/app.html.ts",
+    "preprocessed\\product_viewer/app.ts",
+    "preprocessed\\subscription_list.html.ts",
+    "preprocessed\\subscription_list.ts",
+    "preprocessed\\app.css.ts",
+    "preprocessed\\eligibility_list.css.ts",
+    "preprocessed\\product_viewer/app.css.ts",
+    "preprocessed\\shared_style.css.ts",
+    "preprocessed\\commerce_internals.mojom-webui.ts",
+    "preprocessed\\shared.mojom-webui.ts",
+    "preprocessed\\shopping_service.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../../third_party/lit/v3_0/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../../ui/webui/resources/cr_components/commerce/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../../ui/webui/resources/js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../../ui/webui/resources/mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

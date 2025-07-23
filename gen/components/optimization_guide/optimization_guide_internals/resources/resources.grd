@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit latest_public_release="0" current_release="1" output_all_resource_defines="false">
+  <outputs>
+    <output filename="grit/optimization_guide_internals_resources.h" type="rc_header">
+      <emit emit_type='prepend'></emit>
+    </output>
+    <output filename="grit/optimization_guide_internals_resources_map.cc"
+            type="resource_file_map_source" />
+    <output filename="grit/optimization_guide_internals_resources_map.h"
+            type="resource_map_header" />
+    <output filename="optimization_guide_internals_resources.pak" type="data_package" />
+  </outputs>
+  <release seq="1">
+    <includes>
+      <include name="IDR_OPTIMIZATION_GUIDE_INTERNALS_OPTIMIZATION_GUIDE_INTERNALS_HTML" file="${root_gen_dir}/components/optimization_guide/optimization_guide_internals/resources/preprocessed/optimization_guide_internals.html" resource_path="optimization_guide_internals.html" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_OPTIMIZATION_GUIDE_INTERNALS_OPTIMIZATION_GUIDE_INTERNALS_CSS" file="${root_gen_dir}/components/optimization_guide/optimization_guide_internals/resources/preprocessed/optimization_guide_internals.css" resource_path="optimization_guide_internals.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_OPTIMIZATION_GUIDE_INTERNALS_OPTIMIZATION_GUIDE_INTERNALS_JS" file="${root_gen_dir}/components/optimization_guide/optimization_guide_internals/resources/minified/optimization_guide_internals.js" resource_path="optimization_guide_internals.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_OPTIMIZATION_GUIDE_INTERNALS_OPTIMIZATION_GUIDE_INTERNALS_BROWSER_PROXY_JS" file="${root_gen_dir}/components/optimization_guide/optimization_guide_internals/resources/minified/optimization_guide_internals_browser_proxy.js" resource_path="optimization_guide_internals_browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_OPTIMIZATION_GUIDE_INTERNALS_OPTIMIZATION_GUIDE_COMMON_MOJOM_WEBUI_JS" file="${root_gen_dir}/components/optimization_guide/optimization_guide_internals/resources/minified/optimization_guide_common.mojom-webui.js" resource_path="optimization_guide_common.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_OPTIMIZATION_GUIDE_INTERNALS_OPTIMIZATION_GUIDE_INTERNALS_MOJOM_WEBUI_JS" file="${root_gen_dir}/components/optimization_guide/optimization_guide_internals/resources/minified/optimization_guide_internals.mojom-webui.js" resource_path="optimization_guide_internals.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+    </includes>
+  </release>
+</grit>

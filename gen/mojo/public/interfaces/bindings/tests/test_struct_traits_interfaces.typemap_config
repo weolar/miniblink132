@@ -1,0 +1,62 @@
+[
+  {
+    "traits_headers": [
+      "mojo/public/cpp/bindings/tests/struct_with_traits_impl_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/bindings/tests:struct_with_traits_impl"
+    ],
+    "traits_sources": [
+      "//mojo/public/cpp/bindings/tests/struct_with_traits_impl_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo::test::EnumWithTraitsImpl",
+        "mojom": "mojo.test.EnumWithTraits"
+      },
+      {
+        "cpp": "::mojo::test::StructWithTraitsImpl",
+        "mojom": "mojo.test.StructWithTraits"
+      },
+      {
+        "cpp": "::mojo::test::StructWithUnreachableTraitsImpl",
+        "mojom": "mojo.test.StructWithUnreachableTraits"
+      },
+      {
+        "cpp": "::mojo::test::NestedStructWithTraitsImpl",
+        "mojom": "mojo.test.NestedStructWithTraits"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::mojo::test::TrivialStructWithTraitsImpl",
+        "mojom": "mojo.test.TrivialStructWithTraits"
+      },
+      {
+        "cpp": "::mojo::test::MoveOnlyStructWithTraitsImpl",
+        "mojom": "mojo.test.MoveOnlyStructWithTraits",
+        "move_only": true
+      },
+      {
+        "cpp": "::std::unique_ptr<int>",
+        "mojom": "mojo.test.StructWithTraitsForUniquePtr",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::std::unique_ptr<::mojo::test::UnionWithTraitsBase>",
+        "mojom": "mojo.test.UnionWithTraits",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::mojo::test::StructForceSerializeImpl",
+        "force_serialize": true,
+        "mojom": "mojo.test.StructForceSerialize"
+      },
+      {
+        "cpp": "::mojo::test::StructNestedForceSerializeImpl",
+        "mojom": "mojo.test.StructNestedForceSerialize"
+      }
+    ]
+  }
+]

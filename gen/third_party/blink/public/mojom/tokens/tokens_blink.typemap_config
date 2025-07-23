@@ -1,0 +1,101 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/tokens/token_mojom_traits_helper.h",
+      "third_party/blink/public/common/tokens/tokens_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":tokens_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::DocumentToken",
+        "mojom": "blink.mojom.DocumentToken"
+      },
+      {
+        "cpp": "::blink::LocalFrameToken",
+        "mojom": "blink.mojom.LocalFrameToken"
+      },
+      {
+        "cpp": "::blink::RemoteFrameToken",
+        "mojom": "blink.mojom.RemoteFrameToken"
+      },
+      {
+        "cpp": "::blink::FrameToken",
+        "mojom": "blink.mojom.FrameToken"
+      },
+      {
+        "cpp": "::blink::DedicatedWorkerToken",
+        "mojom": "blink.mojom.DedicatedWorkerToken"
+      },
+      {
+        "cpp": "::blink::ServiceWorkerToken",
+        "mojom": "blink.mojom.ServiceWorkerToken"
+      },
+      {
+        "cpp": "::blink::SharedWorkerToken",
+        "mojom": "blink.mojom.SharedWorkerToken"
+      },
+      {
+        "cpp": "::blink::WorkerToken",
+        "mojom": "blink.mojom.WorkerToken"
+      },
+      {
+        "cpp": "::blink::AnimationWorkletToken",
+        "mojom": "blink.mojom.AnimationWorkletToken"
+      },
+      {
+        "cpp": "::blink::AudioWorkletToken",
+        "mojom": "blink.mojom.AudioWorkletToken"
+      },
+      {
+        "cpp": "::blink::PaintWorkletToken",
+        "mojom": "blink.mojom.PaintWorkletToken"
+      },
+      {
+        "cpp": "::blink::WorkletToken",
+        "mojom": "blink.mojom.WorkletToken"
+      },
+      {
+        "cpp": "::blink::ShadowRealmToken",
+        "mojom": "blink.mojom.ShadowRealmToken"
+      },
+      {
+        "cpp": "::blink::AttributionSrcToken",
+        "mojom": "blink.mojom.AttributionSrcToken"
+      },
+      {
+        "cpp": "::blink::ClipboardSequenceNumberToken",
+        "mojom": "blink.mojom.ClipboardSequenceNumberToken"
+      },
+      {
+        "cpp": "::blink::ExecutionContextToken",
+        "mojom": "blink.mojom.ExecutionContextToken"
+      },
+      {
+        "cpp": "::blink::SameDocNavigationScreenshotDestinationToken",
+        "mojom": "blink.mojom.SameDocNavigationScreenshotDestinationToken"
+      },
+      {
+        "cpp": "::blink::V8ContextToken",
+        "mojom": "blink.mojom.V8ContextToken"
+      },
+      {
+        "cpp": "::blink::ViewTransitionToken",
+        "mojom": "blink.mojom.ViewTransitionToken"
+      },
+      {
+        "cpp": "::blink::WebGPUExecutionContextToken",
+        "mojom": "blink.mojom.WebGPUExecutionContextToken"
+      },
+      {
+        "cpp": "::blink::WebNNContextToken",
+        "mojom": "blink.mojom.WebNNContextToken"
+      },
+      {
+        "cpp": "::blink::WebNNTensorToken",
+        "mojom": "blink.mojom.WebNNTensorToken"
+      }
+    ]
+  }
+]

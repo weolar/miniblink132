@@ -1,0 +1,22 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\history",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\constants.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ]
+}

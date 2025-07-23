@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/passage_embeddings/public/mojom/passage_embeddings.mojom"
+  ]
+}

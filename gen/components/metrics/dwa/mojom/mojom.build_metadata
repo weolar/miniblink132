@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/metrics/dwa/mojom/dwa_interface.mojom"
+  ]
+}

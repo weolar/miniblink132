@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/network/blink_schemeful_site_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//url"
+    ],
+    "traits_sources": [
+      "//third_party/blink/renderer/platform/network/blink_schemeful_site_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::BlinkSchemefulSite",
+        "mojom": "network.mojom.SchemefulSite"
+      }
+    ]
+  }
+]

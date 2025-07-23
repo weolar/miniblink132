@@ -1,0 +1,22 @@
+{
+  "deps": [
+    "mojom_first_party_sets.build_metadata",
+    "mojom_schemeful_site.build_metadata",
+    "mojom_storage_access_api.build_metadata",
+    "../../../../components/content_settings/core/common/content_settings_enums.build_metadata",
+    "../../../../components/content_settings/core/common/content_settings_types.build_metadata",
+    "../../../../components/content_settings/core/common/mojo_bindings.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/cookie_access_observer.mojom",
+    "../../../../../../../services/network/public/mojom/cookie_manager.mojom",
+    "../../../../../../../services/network/public/mojom/cookie_partition_key.mojom",
+    "../../../../../../../services/network/public/mojom/cookie_setting_overrides.mojom",
+    "../../../../../../../services/network/public/mojom/restricted_cookie_manager.mojom",
+    "../../../../../../../services/network/public/mojom/site_for_cookies.mojom"
+  ]
+}

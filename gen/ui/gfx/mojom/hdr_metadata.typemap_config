@@ -1,0 +1,32 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/hdr_metadata_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "hdr_metadata_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::HdrMetadataCta861_3",
+        "mojom": "gfx.mojom.HdrMetadataCta861_3"
+      },
+      {
+        "cpp": "::gfx::HdrMetadataSmpteSt2086",
+        "mojom": "gfx.mojom.HdrMetadataSmpteSt2086"
+      },
+      {
+        "cpp": "::gfx::HdrMetadataNdwl",
+        "mojom": "gfx.mojom.HdrMetadataNdwl"
+      },
+      {
+        "cpp": "::gfx::HdrMetadataExtendedRange",
+        "mojom": "gfx.mojom.HdrMetadataExtendedRange"
+      },
+      {
+        "cpp": "::gfx::HDRMetadata",
+        "mojom": "gfx.mojom.HDRMetadata"
+      }
+    ]
+  }
+]

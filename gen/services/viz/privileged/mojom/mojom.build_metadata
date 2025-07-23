@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "../../../../components/discardable_memory/public/mojom/mojom.build_metadata",
+    "../../../../components/viz/service/debugger/mojom/mojom.build_metadata",
+    "../../../network/public/mojom/mojom.build_metadata",
+    "compositing/compositing.build_metadata",
+    "gl/gl.build_metadata",
+    "../../public/mojom/mojom.build_metadata",
+    "../../../../ui/gfx/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/viz/privileged/mojom/viz_main.mojom"
+  ]
+}

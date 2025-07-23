@@ -1,0 +1,19 @@
+[
+  {
+    "traits_deps": [
+      "//mojo/public/mojom/base"
+    ],
+    "traits_headers": [
+      "printing/mojom/print_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "print_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::printing::PageRange",
+        "mojom": "printing.mojom.PageRange"
+      }
+    ]
+  }
+]

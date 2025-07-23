@@ -1,0 +1,34 @@
+[
+  {
+    "traits_headers": [
+      "components/services/storage/public/mojom/buckets/bucket_id_mojom_traits.h",
+      "components/services/storage/public/mojom/buckets/bucket_info_mojom_traits.h",
+      "components/services/storage/public/mojom/buckets/bucket_locator_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/services/storage/public/cpp/buckets",
+      "//third_party/blink/public/mojom/storage_key"
+    ],
+    "traits_sources": [
+      "bucket_id_mojom_traits.cc",
+      "bucket_info_mojom_traits.cc",
+      "bucket_locator_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::storage::BucketId",
+        "mojom": "storage.mojom.BucketId",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::storage::BucketInfo",
+        "mojom": "storage.mojom.BucketInfo"
+      },
+      {
+        "cpp": "::storage::BucketLocator",
+        "mojom": "storage.mojom.BucketLocator"
+      }
+    ]
+  }
+]

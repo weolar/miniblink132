@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "url/mojom/scheme_host_port_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//url"
+    ],
+    "types": [
+      {
+        "cpp": "::url::SchemeHostPort",
+        "mojom": "url.mojom.SchemeHostPort"
+      }
+    ]
+  }
+]

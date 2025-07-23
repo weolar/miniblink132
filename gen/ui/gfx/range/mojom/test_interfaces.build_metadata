@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../ui/gfx/range/mojom/range_traits_test_service.mojom"
+  ]
+}

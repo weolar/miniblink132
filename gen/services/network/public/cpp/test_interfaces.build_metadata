@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/cpp/network_traits_test_service.mojom"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/device/public/mojom/sensor.mojom",
+    "../../../../../../../services/device/public/mojom/sensor_provider.mojom"
+  ]
+}

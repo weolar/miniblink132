@@ -1,0 +1,23 @@
+[
+  {
+    "traits_headers": [
+      "components/page_load_metrics/common/page_load_metrics_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common"
+    ],
+    "traits_sources": [
+      "page_load_metrics_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::SubresourceLoadMetrics",
+        "mojom": "page_load_metrics.mojom.SubresourceLoadMetrics"
+      },
+      {
+        "cpp": "::blink::ServiceWorkerSubresourceLoadMetrics",
+        "mojom": "page_load_metrics.mojom.ServiceWorkerSubresourceLoadMetrics"
+      }
+    ]
+  }
+]

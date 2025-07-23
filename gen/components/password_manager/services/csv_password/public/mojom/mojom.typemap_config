@@ -1,0 +1,19 @@
+[
+  {
+    "traits_headers": [
+      "components/password_manager/services/csv_password/public/mojom/csv_password_parser_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/password_manager/core/browser/import:csv"
+    ],
+    "traits_sources": [
+      "csv_password_parser_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::password_manager::CSVPassword",
+        "mojom": "password_manager.mojom.CSVPassword"
+      }
+    ]
+  }
+]

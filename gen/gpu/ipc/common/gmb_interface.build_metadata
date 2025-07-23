@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "surface_handle.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../ui/gfx/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../gpu/ipc/common/client_gmb_interface.mojom"
+  ]
+}

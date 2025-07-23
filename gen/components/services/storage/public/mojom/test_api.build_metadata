@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../../components/services/storage/public/mojom/test_api.test-mojom"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../mojo/public/mojom/base/protobuf_support.build_metadata",
+    "../../../network/public/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/cert_verifier/public/mojom/cert_verifier_service_factory.mojom"
+  ]
+}

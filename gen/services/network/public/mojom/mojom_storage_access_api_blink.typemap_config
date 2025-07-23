@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/storage_access_api_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/network/public/cpp:storage_access_api_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::StorageAccessApiStatus",
+        "mojom": "network.mojom.StorageAccessApiStatus"
+      }
+    ]
+  }
+]

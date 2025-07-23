@@ -1,0 +1,9 @@
+# This file was created just for the purpose of timestamp of a successful
+# completion, mainly in order to corporate with a build system.
+
+
+Command line arguments:
+  --web_idl_database = gen/third_party/blink/renderer/bindings/web_idl_database.pickle
+  --idl_syntax_known_issues = ../../third_party/blink/renderer/bindings/idl_syntax_known_issues.txt
+Results:
+  No new error

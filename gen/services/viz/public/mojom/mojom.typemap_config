@@ -1,0 +1,610 @@
+[
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/frame_sink_bundle_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::FrameSinkBundleId",
+        "mojom": "viz.mojom.FrameSinkBundleId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/frame_sink_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::FrameSinkId",
+        "mojom": "viz.mojom.FrameSinkId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/local_surface_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::LocalSurfaceId",
+        "mojom": "viz.mojom.LocalSurfaceId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/region_capture_bounds_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::RegionCaptureBounds",
+        "mojom": "viz.mojom.RegionCaptureBounds"
+      },
+      {
+        "cpp": "base::flat_map",
+        "mojom": "map"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/returned_resource_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//gpu/command_buffer/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::ReturnedResource",
+        "mojom": "viz.mojom.ReturnedResource",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/subtree_capture_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SubtreeCaptureId",
+        "mojom": "viz.mojom.SubtreeCaptureId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/surface_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SurfaceId",
+        "mojom": "viz.mojom.SurfaceId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/surface_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SurfaceInfo",
+        "mojom": "viz.mojom.SurfaceInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/selection_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::Selection<::gfx::SelectionBound>",
+        "mojom": "viz.mojom.Selection"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/vertical_scroll_direction_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::VerticalScrollDirection",
+        "mojom": "viz.mojom.VerticalScrollDirection"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/video_capture_target_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::VideoCaptureTarget",
+        "mojom": "viz.mojom.VideoCaptureTarget"
+      },
+      {
+        "cpp": "::viz::VideoCaptureSubTarget",
+        "mojom": "viz.mojom.VideoCaptureSubTarget",
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/shared_bitmap_id_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SharedBitmapId",
+        "mojom": "viz.mojom.SharedBitmapId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/hit_test/aggregated_hit_test_region_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/hit_test/aggregated_hit_test_region_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::AggregatedHitTestRegion",
+        "mojom": "viz.mojom.AggregatedHitTestRegion"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "components/viz/common/frame_sinks/begin_frame_args.h"
+    ],
+    "traits_private_headers": [
+      "services/viz/public/cpp/compositing/begin_frame_args_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/begin_frame_args_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::BeginFrameArgs",
+        "mojom": "viz.mojom.BeginFrameArgs"
+      },
+      {
+        "cpp": "::viz::BeginFrameAck",
+        "mojom": "viz.mojom.BeginFrameAck"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "components/viz/common/quads/compositor_frame.h"
+    ],
+    "traits_private_headers": [
+      "services/viz/public/cpp/compositing/compositor_frame_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//services/viz/public/cpp:crash_keys"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/compositor_frame_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::CompositorFrame",
+        "forward_declaration": "namespace viz { class CompositorFrame; }",
+        "mojom": "viz.mojom.CompositorFrame",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/compositor_frame_transition_directive_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/compositor_frame_transition_directive_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::CompositorFrameTransitionDirective",
+        "mojom": "viz.mojom.CompositorFrameTransitionDirective",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/compositor_frame_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/compositor_frame_metadata_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::CompositorFrameMetadata",
+        "mojom": "viz.mojom.CompositorFrameMetadata",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/copy_output_request_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/copy_output_request_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::viz::CopyOutputRequest>",
+        "mojom": "viz.mojom.CopyOutputRequest",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/copy_output_result_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/bitmap_in_shared_memory_mojom_traits.cc",
+      "//services/viz/public/cpp/compositing/bitmap_in_shared_memory_mojom_traits.h",
+      "//services/viz/public/cpp/compositing/copy_output_result_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::viz::CopyOutputResult>",
+        "mojom": "viz.mojom.CopyOutputResult",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/offset_tag_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/offset_tag_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::OffsetTag",
+        "mojom": "viz.mojom.OffsetTag"
+      },
+      {
+        "cpp": "::viz::OffsetTagValue",
+        "mojom": "viz.mojom.OffsetTagValue"
+      },
+      {
+        "cpp": "::viz::OffsetTagDefintion",
+        "mojom": "viz.mojom.OffsetTagDefinitoin"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/filter_operation_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//cc/paint"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/filter_operation_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::cc::FilterOperation",
+        "mojom": "viz.mojom.FilterOperation"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/filter_operations_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//cc/paint"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/filter_operations_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::cc::FilterOperations",
+        "mojom": "viz.mojom.FilterOperations"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/frame_deadline_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/frame_deadline_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::FrameDeadline",
+        "mojom": "viz.mojom.FrameDeadline"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/frame_interval_inputs_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/frame_interval_inputs_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::FrameIntervalInputs",
+        "mojom": "viz.mojom.FrameIntervalInputs"
+      },
+      {
+        "cpp": "::viz::ContentFrameIntervalInfo",
+        "mojom": "viz.mojom.ContentFrameIntervalInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/frame_timing_details_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/frame_timing_details_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::FrameTimingDetails",
+        "mojom": "viz.mojom.FrameTimingDetails"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/hit_test/hit_test_region_list_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//services/viz/public/cpp:crash_keys",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/hit_test/hit_test_region_list_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::HitTestRegion",
+        "mojom": "viz.mojom.HitTestRegion"
+      },
+      {
+        "cpp": "::viz::HitTestRegionList",
+        "mojom": "viz.mojom.HitTestRegionList",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/paint_filter_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//cc/paint"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/paint_filter_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::sk_sp<::cc::PaintFilter>",
+        "mojom": "viz.mojom.PaintFilter"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/compositor_render_pass_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/compositor_render_pass_id_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::CompositorRenderPassId",
+        "mojom": "viz.mojom.CompositorRenderPassId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/compositor_render_pass_mojom_traits.h",
+      "services/viz/public/cpp/compositing/quads_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gl"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/compositor_render_pass_mojom_traits.cc",
+      "//services/viz/public/cpp/compositing/quads_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::viz::CompositorRenderPass>",
+        "mojom": "viz.mojom.CompositorRenderPass",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::gfx::ProtectedVideoType",
+        "mojom": "viz.mojom.ProtectedVideoState"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/resource_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/resource_id_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::ResourceId",
+        "mojom": "viz.mojom.ResourceId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/view_transition_element_resource_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::ViewTransitionElementResourceId",
+        "mojom": "viz.mojom.ViewTransitionElementResourceId"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/shared_quad_state_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SharedQuadState",
+        "mojom": "viz.mojom.SharedQuadState"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/surface_range_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::SurfaceRange",
+        "mojom": "viz.mojom.SurfaceRange"
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//gpu/ipc/common",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/transferable_resource_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/transferable_resource_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::TransferableResource",
+        "mojom": "viz.mojom.TransferableResource"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/public/cpp/compositing/thread_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "traits_sources": [
+      "//services/viz/public/cpp/compositing/thread_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::Thread",
+        "mojom": "viz.mojom.Thread"
+      }
+    ]
+  }
+]

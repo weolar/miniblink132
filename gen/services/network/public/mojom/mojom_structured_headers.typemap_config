@@ -1,0 +1,43 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/structured_headers_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:structured_headers_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::structured_headers::Item",
+        "mojom": "network.mojom.StructuredHeadersItem",
+        "move_only": true
+      },
+      {
+        "cpp": "std::pair<std::string, ::net::structured_headers::Item>",
+        "mojom": "network.mojom.StructuredHeadersParameter",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::structured_headers::ParameterizedItem",
+        "mojom": "network.mojom.StructuredHeadersParameterizedItem",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::structured_headers::ParameterizedMember",
+        "mojom": "network.mojom.StructuredHeadersParameterizedMember",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::structured_headers::DictionaryMember",
+        "mojom": "network.mojom.StructuredHeadersDictionaryMember",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::structured_headers::Dictionary",
+        "mojom": "network.mojom.StructuredHeadersDictionary",
+        "move_only": true
+      }
+    ]
+  }
+]

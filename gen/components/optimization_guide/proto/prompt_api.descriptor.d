@@ -1,0 +1,1 @@
+gen/components/optimization_guide/proto/prompt_api.descriptor: ../../components/optimization_guide/proto/features/prompt_api.proto

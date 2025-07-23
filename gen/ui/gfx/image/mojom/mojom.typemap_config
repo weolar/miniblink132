@@ -1,0 +1,21 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/image/mojom/image_skia_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::ImageSkia",
+        "mojom": "gfx.mojom.ImageSkia",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::gfx::ImageSkiaRep",
+        "mojom": "gfx.mojom.ImageSkiaRep"
+      }
+    ]
+  }
+]

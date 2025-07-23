@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../public/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/service_manager/tests/service_manager/service_manager.test-mojom"
+  ]
+}

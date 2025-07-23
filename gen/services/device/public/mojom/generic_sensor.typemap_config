@@ -1,0 +1,24 @@
+[
+  {
+    "traits_headers": [
+      "services/device/public/cpp/generic_sensor/sensor_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/device/public/cpp/generic_sensor:sensor_configuration",
+      "//services/device/public/cpp/generic_sensor:sensor_reading"
+    ],
+    "traits_sources": [
+      "//services/device/public/cpp/generic_sensor/sensor_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::device::PlatformSensorConfiguration",
+        "mojom": "device.mojom.SensorConfiguration"
+      },
+      {
+        "cpp": "::device::SensorReading",
+        "mojom": "device.mojom.SensorReadingRaw"
+      }
+    ]
+  }
+]

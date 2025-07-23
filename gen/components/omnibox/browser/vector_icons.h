@@ -1,0 +1,98 @@
+// Copyright 2017 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// vector_icons.h.template is used to generate vector_icons.h. Edit the former
+// rather than the latter.
+
+#ifndef COMPONENTS_OMNIBOX_BROWSER_VECTOR_ICONS_H_
+#define COMPONENTS_OMNIBOX_BROWSER_VECTOR_ICONS_H_
+
+namespace gfx {
+struct VectorIcon;
+}
+
+#define VECTOR_ICON_TEMPLATE_H(icon_name) extern const gfx::VectorIcon icon_name;
+
+namespace omnibox {
+
+VECTOR_ICON_TEMPLATE_H(kAnswerCalculatorIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerCurrencyIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerCurrencyChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerDefaultIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerDictionaryIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerDictionaryChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerFinanceIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerFinanceChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerSunriseIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerSunriseChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerTranslationIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerTranslationChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerWhenIsIcon)
+VECTOR_ICON_TEMPLATE_H(kAnswerWhenIsChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kArrowDownChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kArrowUpChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kBookmarkIcon)
+VECTOR_ICON_TEMPLATE_H(kBookmarkChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kCalculatorIcon)
+VECTOR_ICON_TEMPLATE_H(kCalculatorChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kChevronIcon)
+VECTOR_ICON_TEMPLATE_H(kClearIcon)
+VECTOR_ICON_TEMPLATE_H(kClockIcon)
+VECTOR_ICON_TEMPLATE_H(kClockChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kCookieChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kDinoIcon)
+VECTOR_ICON_TEMPLATE_H(kDinoCr2023Icon)
+VECTOR_ICON_TEMPLATE_H(kDriveDocsIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveFolderIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveFormsIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveImageIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveLogoIcon)
+VECTOR_ICON_TEMPLATE_H(kDrivePdfIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveSheetsIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveSlidesIcon)
+VECTOR_ICON_TEMPLATE_H(kDriveVideoIcon)
+VECTOR_ICON_TEMPLATE_H(kEnterpriseIcon)
+VECTOR_ICON_TEMPLATE_H(kExtensionAppIcon)
+VECTOR_ICON_TEMPLATE_H(kFindInPageChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kHttpIcon)
+VECTOR_ICON_TEMPLATE_H(kHttpChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kIncognitoIcon)
+VECTOR_ICON_TEMPLATE_H(kIncognitoCr2023Icon)
+VECTOR_ICON_TEMPLATE_H(kInstallDesktopIcon)
+VECTOR_ICON_TEMPLATE_H(kJourneysIcon)
+VECTOR_ICON_TEMPLATE_H(kJourneysChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kOfflinePinIcon)
+VECTOR_ICON_TEMPLATE_H(kPageIcon)
+VECTOR_ICON_TEMPLATE_H(kPageChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kPedalIcon)
+VECTOR_ICON_TEMPLATE_H(kPriceTrackingDisabledIcon)
+VECTOR_ICON_TEMPLATE_H(kPriceTrackingDisabledRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kPriceTrackingEnabledRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kProductIcon)
+VECTOR_ICON_TEMPLATE_H(kProductChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kProductSpecificationsAddIcon)
+VECTOR_ICON_TEMPLATE_H(kProductSpecificationsAddedIcon)
+VECTOR_ICON_TEMPLATE_H(kSearchSparkIcon)
+VECTOR_ICON_TEMPLATE_H(kSecurePageInfoChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kShareIcon)
+VECTOR_ICON_TEMPLATE_H(kShareChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kSparkIcon)
+VECTOR_ICON_TEMPLATE_H(kStarIcon)
+VECTOR_ICON_TEMPLATE_H(kStarActiveIcon)
+VECTOR_ICON_TEMPLATE_H(kStarActiveChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kStarChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kSummarizeAutoIcon)
+VECTOR_ICON_TEMPLATE_H(kSwitchIcon)
+VECTOR_ICON_TEMPLATE_H(kSwitchCr2023Icon)
+VECTOR_ICON_TEMPLATE_H(kTabIcon)
+VECTOR_ICON_TEMPLATE_H(kTrendingUpIcon)
+VECTOR_ICON_TEMPLATE_H(kTrendingUpChromeRefreshIcon)
+VECTOR_ICON_TEMPLATE_H(kShareWinIcon)
+VECTOR_ICON_TEMPLATE_H(kShareWinChromeRefreshIcon)
+
+}
+
+#undef VECTOR_ICON_TEMPLATE_H
+
+#endif // COMPONENTS_OMNIBOX_BROWSER_VECTOR_ICONS_H_

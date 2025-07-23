@@ -1,0 +1,40 @@
+{
+  "deps": [
+    "geoposition.build_metadata",
+    "../../../../device/bluetooth/public/mojom/mojom.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../network/public/mojom/mojom.build_metadata",
+    "../../../network/public/mojom/mojom_proxy_config.build_metadata",
+    "../../../network/public/mojom/url_loader_base.build_metadata",
+    "../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/device/public/mojom/battery_monitor.mojom",
+    "../../../../../../../services/device/public/mojom/battery_status.mojom",
+    "../../../../../../../services/device/public/mojom/fingerprint.mojom",
+    "../../../../../../../services/device/public/mojom/geolocation.mojom",
+    "../../../../../../../services/device/public/mojom/geolocation_client_id.mojom",
+    "../../../../../../../services/device/public/mojom/geolocation_config.mojom",
+    "../../../../../../../services/device/public/mojom/geolocation_context.mojom",
+    "../../../../../../../services/device/public/mojom/geolocation_control.mojom",
+    "../../../../../../../services/device/public/mojom/hid.mojom",
+    "../../../../../../../services/device/public/mojom/input_service.mojom",
+    "../../../../../../../services/device/public/mojom/nfc.mojom",
+    "../../../../../../../services/device/public/mojom/nfc_provider.mojom",
+    "../../../../../../../services/device/public/mojom/power_monitor.mojom",
+    "../../../../../../../services/device/public/mojom/pressure_manager.mojom",
+    "../../../../../../../services/device/public/mojom/pressure_update.mojom",
+    "../../../../../../../services/device/public/mojom/public_ip_address_geolocation_provider.mojom",
+    "../../../../../../../services/device/public/mojom/screen_orientation.mojom",
+    "../../../../../../../services/device/public/mojom/screen_orientation_lock_types.mojom",
+    "../../../../../../../services/device/public/mojom/serial.mojom",
+    "../../../../../../../services/device/public/mojom/smart_card.mojom",
+    "../../../../../../../services/device/public/mojom/time_zone_monitor.mojom",
+    "../../../../../../../services/device/public/mojom/vibration_manager.mojom",
+    "../../../../../../../services/device/public/mojom/wake_lock.mojom",
+    "../../../../../../../services/device/public/mojom/wake_lock_context.mojom",
+    "../../../../../../../services/device/public/mojom/wake_lock_provider.mojom"
+  ]
+}

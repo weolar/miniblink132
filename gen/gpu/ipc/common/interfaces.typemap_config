@@ -1,0 +1,318 @@
+[
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_command_buffer_traits.h"
+    ],
+    "traits_public_deps": [
+      ":command_buffer_traits_sources"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::Capabilities",
+        "mojom": "gpu.mojom.Capabilities"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_command_buffer_traits.h"
+    ],
+    "traits_public_deps": [
+      ":command_buffer_traits_sources"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::GLCapabilities",
+        "mojom": "gpu.mojom.GLCapabilities"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/context_result_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/command_buffer/common:common_base_sources"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::ContextResult",
+        "mojom": "gpu.mojom.ContextResult"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/device_perf_info_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "device_perf_info_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::IntelGpuGeneration",
+        "mojom": "gpu.mojom.IntelGpuGeneration"
+      },
+      {
+        "cpp": "::D3D_FEATURE_LEVEL",
+        "mojom": "gpu.mojom.D3D_FEATURE_LEVEL"
+      },
+      {
+        "cpp": "::gpu::DevicePerfInfo",
+        "mojom": "gpu.mojom.DevicePerfInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/exported_shared_image_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::ExportedSharedImage",
+        "mojom": "gpu.mojom.ExportedSharedImage"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_feature_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/config:config_sources",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_sources": [
+      "gpu_feature_info_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::GpuFeatureStatus",
+        "mojom": "gpu.mojom.GpuFeatureStatus"
+      },
+      {
+        "cpp": "::gpu::GpuFeatureInfo",
+        "mojom": "gpu.mojom.GpuFeatureInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/config:config_sources",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_sources": [
+      "gpu_info_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::CollectInfoResult",
+        "mojom": "gpu.mojom.CollectInfoResult"
+      },
+      {
+        "cpp": "::gpu::OverlayInfo",
+        "mojom": "gpu.mojom.OverlayInfo"
+      },
+      {
+        "cpp": "::gpu::GPUInfo::GPUDevice",
+        "mojom": "gpu.mojom.GpuDevice"
+      },
+      {
+        "cpp": "::gpu::GPUInfo",
+        "mojom": "gpu.mojom.GpuInfo"
+      },
+      {
+        "cpp": "::gpu::VideoCodecProfile",
+        "mojom": "gpu.mojom.VideoCodecProfile"
+      },
+      {
+        "cpp": "::gpu::VideoDecodeAcceleratorSupportedProfile",
+        "mojom": "gpu.mojom.VideoDecodeAcceleratorSupportedProfile"
+      },
+      {
+        "cpp": "::gpu::VideoDecodeAcceleratorCapabilities",
+        "mojom": "gpu.mojom.VideoDecodeAcceleratorCapabilities"
+      },
+      {
+        "cpp": "::gpu::VideoEncodeAcceleratorSupportedProfile",
+        "mojom": "gpu.mojom.VideoEncodeAcceleratorSupportedProfile"
+      },
+      {
+        "cpp": "::gpu::ImageDecodeAcceleratorSupportedProfile",
+        "mojom": "gpu.mojom.ImageDecodeAcceleratorSupportedProfile"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_peak_memory_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":gpu_peak_memory"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::GpuPeakMemoryAllocationSource",
+        "mojom": "gpu.mojom.GpuPeakMemoryAllocationSource"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/mailbox_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::Mailbox",
+        "mojom": "gpu.mojom.Mailbox"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/mailbox_holder_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::MailboxHolder",
+        "mojom": "gpu.mojom.MailboxHolder"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/shared_image_capabilities_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "traits_sources": [
+      "shared_image_capabilities_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SharedImageCapabilities",
+        "mojom": "gpu.mojom.SharedImageCapabilities"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/shared_image_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SharedImageMetadata",
+        "mojom": "gpu.mojom.SharedImageMetadata"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/sync_token_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SyncToken",
+        "mojom": "gpu.mojom.SyncToken"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/memory_stats_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::VideoMemoryUsageStats::ProcessStats",
+        "mojom": "gpu.mojom.VideoMemoryProcessStats"
+      },
+      {
+        "cpp": "::gpu::VideoMemoryUsageStats",
+        "mojom": "gpu.mojom.VideoMemoryUsageStats"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/vulkan_ycbcr_info_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::gpu::VulkanYCbCrInfo",
+        "mojom": "gpu.mojom.VulkanYCbCrInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/gpu_disk_cache_type_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "gpu_disk_cache_type_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::GpuDiskCacheGlShaderHandle",
+        "mojom": "gpu.mojom.GpuDiskCacheGlShaderHandle",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::gpu::GpuDiskCacheDawnWebGPUHandle",
+        "mojom": "gpu.mojom.GpuDiskCacheDawnWebGPUHandle",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::gpu::GpuDiskCacheDawnGraphiteHandle",
+        "mojom": "gpu.mojom.GpuDiskCacheDawnGraphiteHandle",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::gpu::GpuDiskCacheHandle",
+        "mojom": "gpu.mojom.GpuDiskCacheHandle",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::gpu::GpuDiskCacheType",
+        "mojom": "gpu.mojom.GpuDiskCacheType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/luid_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits",
+      "//gpu/config:config_sources"
+    ],
+    "traits_sources": [
+      "luid_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::CHROME_LUID",
+        "mojom": "gpu.mojom.Luid"
+      }
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "traits_headers": [
+      "media/base/ipc/media_param_traits.h"
+    ],
+    "traits_public_deps": [
+      "//media",
+      "//media/base/ipc"
+    ],
+    "types": [
+      {
+        "cpp": "::media::AudioParameters",
+        "mojom": "media.mojom.AudioParameters"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "media/mojo/mojom/audio_processing_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::media::AudioProcessingSettings",
+        "mojom": "media.mojom.AudioProcessingSettings"
+      },
+      {
+        "cpp": "::media::AudioProcessingStats",
+        "mojom": "media.mojom.AudioProcessingStats"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "media/base/ipc/media_param_traits_macros.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::WebFullscreenVideoStatus",
+        "mojom": "media.mojom.FullscreenVideoStatus"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "media/base/ipc/media_param_traits_macros.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//media",
+      "//media/base/ipc"
+    ],
+    "types": [
+      {
+        "cpp": "::media::MediaContentType",
+        "mojom": "media.mojom.MediaContentType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "media/mojo/mojom/video_frame_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::media::VideoFrameMetadata",
+        "mojom": "media.mojom.VideoFrameMetadata"
+      }
+    ]
+  }
+]

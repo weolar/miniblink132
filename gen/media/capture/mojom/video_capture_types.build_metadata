@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../media/capture/mojom/video_capture_types.mojom"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "deps": [
+    "hdr_metadata.build_metadata",
+    "native_handle_types.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../skia/public/mojom/mojom.build_metadata",
+    "../geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../ui/gfx/mojom/accelerated_widget.mojom",
+    "../../../../../../ui/gfx/mojom/buffer_types.mojom",
+    "../../../../../../ui/gfx/mojom/ca_layer_params.mojom",
+    "../../../../../../ui/gfx/mojom/color_space.mojom",
+    "../../../../../../ui/gfx/mojom/delegated_ink_metadata.mojom",
+    "../../../../../../ui/gfx/mojom/delegated_ink_point.mojom",
+    "../../../../../../ui/gfx/mojom/delegated_ink_point_renderer.mojom",
+    "../../../../../../ui/gfx/mojom/display_color_spaces.mojom",
+    "../../../../../../ui/gfx/mojom/font_render_params.mojom",
+    "../../../../../../ui/gfx/mojom/frame_data.mojom",
+    "../../../../../../ui/gfx/mojom/gpu_extra_info.mojom",
+    "../../../../../../ui/gfx/mojom/gpu_fence_handle.mojom",
+    "../../../../../../ui/gfx/mojom/hdr_static_metadata.mojom",
+    "../../../../../../ui/gfx/mojom/linear_gradient.mojom",
+    "../../../../../../ui/gfx/mojom/mask_filter_info.mojom",
+    "../../../../../../ui/gfx/mojom/overlay_priority_hint.mojom",
+    "../../../../../../ui/gfx/mojom/overlay_transform.mojom",
+    "../../../../../../ui/gfx/mojom/overlay_type.mojom",
+    "../../../../../../ui/gfx/mojom/presentation_feedback.mojom",
+    "../../../../../../ui/gfx/mojom/rrect_f.mojom",
+    "../../../../../../ui/gfx/mojom/selection_bound.mojom",
+    "../../../../../../ui/gfx/mojom/swap_result.mojom",
+    "../../../../../../ui/gfx/mojom/swap_timings.mojom",
+    "../../../../../../ui/gfx/mojom/transform.mojom"
+  ]
+}

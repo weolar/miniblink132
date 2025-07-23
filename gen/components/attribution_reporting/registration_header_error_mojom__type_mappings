@@ -1,0 +1,37 @@
+{
+  "c++": {
+    "attribution_reporting.mojom.RegistrationHeaderError": {
+      "typename": "::attribution_reporting::RegistrationHeaderError",
+      "forward_declaration": "namespace attribution_reporting { struct RegistrationHeaderError; }",
+      "public_headers": [
+        "components/attribution_reporting/registration_header_error_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "attribution_reporting.mojom.RegistrationHeaderErrorDetails": {
+      "typename": "::attribution_reporting::RegistrationHeaderErrorDetails",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/attribution_reporting/registration_header_error_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

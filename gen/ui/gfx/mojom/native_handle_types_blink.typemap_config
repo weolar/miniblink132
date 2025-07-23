@@ -1,0 +1,26 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/native_handle_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":native_handle_types_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::DXGIHandleToken",
+        "mojom": "gfx.mojom.DXGIHandleToken"
+      },
+      {
+        "cpp": "::gfx::NativePixmapHandle",
+        "mojom": "gfx.mojom.NativePixmapHandle",
+        "move_only": true
+      },
+      {
+        "cpp": "::gfx::NativePixmapPlane",
+        "mojom": "gfx.mojom.NativePixmapPlane",
+        "move_only": true
+      }
+    ]
+  }
+]

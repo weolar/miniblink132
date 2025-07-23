@@ -1,0 +1,85 @@
+[
+  {
+    "traits_headers": [
+      "components/autofill/core/common/mojom/autofill_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//base:i18n",
+      "//components/autofill/core/common",
+      "//third_party/abseil-cpp:absl",
+      "//ui/gfx/geometry/mojom:mojom_traits"
+    ],
+    "traits_sources": [
+      "autofill_types_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::autofill::Section",
+        "mojom": "autofill.mojom.Section"
+      },
+      {
+        "cpp": "::autofill::FormData",
+        "mojom": "autofill.mojom.FormData"
+      },
+      {
+        "cpp": "::autofill::FormDataPredictions",
+        "mojom": "autofill.mojom.FormDataPredictions"
+      },
+      {
+        "cpp": "::autofill::FormFieldData",
+        "mojom": "autofill.mojom.FormFieldData"
+      },
+      {
+        "cpp": "::autofill::FormFieldData::FillData",
+        "mojom": "autofill.mojom.FormFieldData_FillData"
+      },
+      {
+        "cpp": "::autofill::FormFieldDataPredictions",
+        "mojom": "autofill.mojom.FormFieldDataPredictions"
+      },
+      {
+        "cpp": "::autofill::FormsPredictionsMap",
+        "mojom": "autofill.mojom.FormsPredictionsMap"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::autofill::FormRendererId",
+        "mojom": "autofill.mojom.FormRendererId"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::autofill::FieldRendererId",
+        "mojom": "autofill.mojom.FieldRendererId"
+      },
+      {
+        "cpp": "::autofill::ParsingResult",
+        "mojom": "autofill.mojom.ParsingResult"
+      },
+      {
+        "cpp": "::autofill::PasswordAndMetadata",
+        "mojom": "autofill.mojom.PasswordAndMetadata"
+      },
+      {
+        "cpp": "::autofill::PasswordFormFieldPredictionMap",
+        "mojom": "autofill.mojom.PasswordFormFieldPredictionMap"
+      },
+      {
+        "cpp": "::autofill::PasswordFormFillData",
+        "mojom": "autofill.mojom.PasswordFormFillData"
+      },
+      {
+        "cpp": "::autofill::PasswordFormGenerationData",
+        "mojom": "autofill.mojom.PasswordFormGenerationData"
+      },
+      {
+        "cpp": "::autofill::password_generation::PasswordGenerationUIData",
+        "mojom": "autofill.mojom.PasswordGenerationUIData"
+      },
+      {
+        "cpp": "::autofill::PasswordSuggestionRequest",
+        "mojom": "autofill.mojom.PasswordSuggestionRequest"
+      }
+    ]
+  }
+]

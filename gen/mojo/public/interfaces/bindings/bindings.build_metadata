@@ -1,0 +1,10 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../mojo/public/interfaces/bindings/interface_control_messages.mojom",
+    "../../../../../../../mojo/public/interfaces/bindings/native_struct.mojom",
+    "../../../../../../../mojo/public/interfaces/bindings/pipe_control_messages.mojom"
+  ]
+}

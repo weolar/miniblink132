@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/attribution.mojom"
+  ]
+}

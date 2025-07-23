@@ -1,0 +1,21 @@
+[
+  {
+    "traits_headers": [
+      "services/proxy_resolver/public/cpp/mojo_host_mojom_traits.h",
+      "services/proxy_resolver/public/cpp/proxy_resolver_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/proxy_resolver/public/cpp:proxy_resolver_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ProxyResolveDnsOperation",
+        "mojom": "proxy_resolver.mojom.HostResolveOperation"
+      },
+      {
+        "cpp": "::net::ProxyInfo",
+        "mojom": "proxy_resolver.mojom.ProxyInfo"
+      }
+    ]
+  }
+]

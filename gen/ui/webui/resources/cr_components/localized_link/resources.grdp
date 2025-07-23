@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_LOCALIZED_LINK_LOCALIZED_LINK_HTML_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/localized_link/minified/localized_link.html.js" resource_path="cr_components/localized_link/localized_link.html.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_LOCALIZED_LINK_LOCALIZED_LINK_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/localized_link/minified/localized_link.js" resource_path="cr_components/localized_link/localized_link.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_LOCALIZED_LINK_LOCALIZED_LINK_CSS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/localized_link/minified/localized_link.css.js" resource_path="cr_components/localized_link/localized_link.css.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

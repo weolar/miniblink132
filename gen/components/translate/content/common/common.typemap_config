@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "components/translate/content/common/translate_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "translate_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::translate::LanguageDetectionDetails",
+        "mojom": "translate.mojom.LanguageDetectionDetails"
+      },
+      {
+        "cpp": "::translate::TranslateErrors",
+        "mojom": "translate.mojom.TranslateError"
+      }
+    ]
+  }
+]

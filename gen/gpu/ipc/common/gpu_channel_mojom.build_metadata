@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "surface_handle.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../services/viz/public/mojom/shared_image_format.build_metadata",
+    "../../../skia/public/mojom/mojom.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../ui/gfx/mojom/mojom.build_metadata",
+    "../../../ui/gl/mojom/mojom.build_metadata",
+    "../../../url/mojom/url_mojom_gurl.build_metadata",
+    "interfaces.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../gpu/ipc/common/gpu_channel.mojom"
+  ]
+}

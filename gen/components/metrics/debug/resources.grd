@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit latest_public_release="0" current_release="1" output_all_resource_defines="false">
+  <outputs>
+    <output filename="grit/metrics_internals_resources.h" type="rc_header">
+      <emit emit_type='prepend'></emit>
+    </output>
+    <output filename="grit/metrics_internals_resources_map.cc"
+            type="resource_file_map_source" />
+    <output filename="grit/metrics_internals_resources_map.h"
+            type="resource_map_header" />
+    <output filename="metrics_internals_resources.pak" type="data_package" />
+  </outputs>
+  <release seq="1">
+    <includes>
+      <include name="IDR_METRICS_INTERNALS_METRICS_INTERNALS_HTML" file="${root_gen_dir}/components/metrics/debug/preprocessed/metrics_internals.html" resource_path="metrics_internals.html" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_STRUCTURED_STRUCTURED_INTERNALS_HTML" file="${root_gen_dir}/components/metrics/debug/preprocessed/structured/structured_internals.html" resource_path="structured/structured_internals.html" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_APP_JS" file="${root_gen_dir}/components/metrics/debug/minified/app.js" resource_path="app.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_FIELD_TRIALS_JS" file="${root_gen_dir}/components/metrics/debug/minified/field_trials.js" resource_path="field_trials.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_STRUCTURED_APP_JS" file="${root_gen_dir}/components/metrics/debug/minified/structured/app.js" resource_path="structured/app.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_BROWSER_PROXY_JS" file="${root_gen_dir}/components/metrics/debug/minified/browser_proxy.js" resource_path="browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_LOG_UTILS_JS" file="${root_gen_dir}/components/metrics/debug/minified/log_utils.js" resource_path="log_utils.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_METRICS_INTERNALS_JS" file="${root_gen_dir}/components/metrics/debug/minified/metrics_internals.js" resource_path="metrics_internals.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_STRUCTURED_STRUCTURED_METRICS_BROWSER_PROXY_JS" file="${root_gen_dir}/components/metrics/debug/minified/structured/structured_metrics_browser_proxy.js" resource_path="structured/structured_metrics_browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_STRUCTURED_STRUCTURED_UTILS_JS" file="${root_gen_dir}/components/metrics/debug/minified/structured/structured_utils.js" resource_path="structured/structured_utils.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_APP_HTML_JS" file="${root_gen_dir}/components/metrics/debug/minified/app.html.js" resource_path="app.html.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_FIELD_TRIALS_HTML_JS" file="${root_gen_dir}/components/metrics/debug/minified/field_trials.html.js" resource_path="field_trials.html.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_METRICS_INTERNALS_STRUCTURED_APP_HTML_JS" file="${root_gen_dir}/components/metrics/debug/minified/structured/app.html.js" resource_path="structured/app.html.js" use_base_dir="false" type="chrome_html" />
+    </includes>
+  </release>
+</grit>

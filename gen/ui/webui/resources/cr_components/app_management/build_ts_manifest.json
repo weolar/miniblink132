@@ -1,0 +1,1 @@
+{"base_dir": "gen/ui/webui/resources/tsc/cr_components/app_management", "files": ["constants.js", "permission_constants.js", "permission_util.js", "browser_proxy.js", "util.js", "app_management.mojom-webui.js"]}

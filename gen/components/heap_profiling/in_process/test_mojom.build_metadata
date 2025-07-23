@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "mojom.build_metadata",
+    "../../metrics/public/mojom/call_stack_mojo_bindings.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/heap_profiling/in_process/mojom/test_connector.mojom"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\tsc\\js",
+    "allowJs": true,
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/mojo/*": [
+        "./../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\action_link.ts",
+    "preprocessed\\assert.ts",
+    "preprocessed\\color_utils.ts",
+    "preprocessed\\cr.ts",
+    "preprocessed\\cr_router.ts",
+    "preprocessed\\custom_element.ts",
+    "preprocessed\\drag_wrapper.ts",
+    "preprocessed\\event_tracker.ts",
+    "preprocessed\\focus_grid.ts",
+    "preprocessed\\focus_outline_manager.ts",
+    "preprocessed\\focus_row.ts",
+    "preprocessed\\icon.ts",
+    "preprocessed\\keyboard_shortcut_list.ts",
+    "preprocessed\\load_time_data_deprecated.js",
+    "preprocessed\\load_time_data.ts",
+    "preprocessed\\metrics_reporter/browser_proxy.ts",
+    "preprocessed\\metrics_reporter/metrics_reporter.ts",
+    "preprocessed\\mojo_type_util.ts",
+    "preprocessed\\open_window_proxy.ts",
+    "preprocessed\\parse_html_subset.ts",
+    "preprocessed\\platform.ts",
+    "preprocessed\\plural_string_proxy.ts",
+    "preprocessed\\promise_resolver.ts",
+    "preprocessed\\search_highlight_utils.ts",
+    "preprocessed\\static_types.ts",
+    "preprocessed\\store.ts",
+    "preprocessed\\test_loader.ts",
+    "preprocessed\\test_loader_util.ts",
+    "preprocessed\\util.ts",
+    "preprocessed\\focus_without_ink.ts",
+    "preprocessed\\browser_command/browser_command_proxy.ts",
+    "preprocessed\\metrics_reporter.mojom-webui.ts",
+    "preprocessed\\browser_command.mojom-webui.ts",
+    "../../../../../../../tools/typescript/definitions/strings.d.ts",
+    "../../../../../../../tools/typescript/definitions/chrome_send.d.ts",
+    "../../../../../../../tools/typescript/definitions/chrome_timeticks.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

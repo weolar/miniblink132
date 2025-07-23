@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "mojom_network_param.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/mutable_network_traffic_annotation_tag.mojom",
+    "../../../../../../../services/network/public/mojom/mutable_partial_network_traffic_annotation_tag.mojom",
+    "../../../../../../../services/network/public/mojom/proxy_config.mojom",
+    "../../../../../../../services/network/public/mojom/proxy_config_with_annotation.mojom"
+  ]
+}

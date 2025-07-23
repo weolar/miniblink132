@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/address_family.mojom",
+    "../../../../../../../services/network/public/mojom/address_list.mojom",
+    "../../../../../../../services/network/public/mojom/alternate_protocol_usage.mojom",
+    "../../../../../../../services/network/public/mojom/connection_endpoint_metadata.mojom",
+    "../../../../../../../services/network/public/mojom/host_resolver_endpoint_result.mojom",
+    "../../../../../../../services/network/public/mojom/ip_address.mojom",
+    "../../../../../../../services/network/public/mojom/ip_endpoint.mojom"
+  ]
+}

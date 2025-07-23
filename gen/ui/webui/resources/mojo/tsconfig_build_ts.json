@@ -1,0 +1,51 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\tsc\\mojo",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ],
+      "//resources/mojo/*": [
+        "./../tsc/mojo/*"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\skia/public/mojom/skcolor.mojom-webui.ts",
+    "preprocessed\\skia/public/mojom/bitmap.mojom-webui.ts",
+    "preprocessed\\skia/public/mojom/image_info.mojom-webui.ts",
+    "preprocessed\\ui/base/mojom/themes.mojom-webui.ts",
+    "preprocessed\\ui/base/mojom/window_open_disposition.mojom-webui.ts",
+    "preprocessed\\ui/gfx/image/mojom/image.mojom-webui.ts",
+    "preprocessed\\ui/gfx/range/mojom/range.mojom-webui.ts",
+    "preprocessed\\ui/gfx/geometry/mojom/geometry.mojom-webui.ts",
+    "preprocessed\\url/mojom/origin.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/absl_status.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/big_string.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/big_buffer.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/file.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/file_path.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/int128.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/process_id.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/read_only_buffer.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/safe_base_name.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/string16.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/text_direction.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/time.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/token.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/unguessable_token.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/uuid.mojom-webui.ts",
+    "preprocessed\\mojo/public/mojom/base/values.mojom-webui.ts",
+    "preprocessed\\url/mojom/url.mojom-webui.ts",
+    "../../../../../../../tools/typescript/definitions/strings.d.ts",
+    "../tsc/mojo/mojo/public/js/bindings.d.ts"
+  ]
+}

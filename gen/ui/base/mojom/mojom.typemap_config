@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "ui/base/mojom/window_open_disposition_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/base:types"
+    ],
+    "types": [
+      {
+        "cpp": "::WindowOpenDisposition",
+        "mojom": "ui.mojom.WindowOpenDisposition"
+      }
+    ]
+  }
+]

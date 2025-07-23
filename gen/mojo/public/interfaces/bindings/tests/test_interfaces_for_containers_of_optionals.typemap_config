@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "mojo/public/cpp/bindings/tests/containers_of_nullable_types_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "//mojo/public/cpp/bindings/tests/containers_of_nullable_types_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo::test::containers_of_nullable_types::NativeStruct",
+        "mojom": "mojo.test.containers_of_nullable_types.mojom.TypemappedStruct"
+      }
+    ]
+  }
+]

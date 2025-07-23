@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "media/mojo/mojom/encryption_pattern_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//media",
+      "//media/base/ipc"
+    ],
+    "traits_sources": [
+      "encryption_pattern_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::media::EncryptionPattern",
+        "mojom": "media.mojom.EncryptionPattern"
+      }
+    ]
+  }
+]

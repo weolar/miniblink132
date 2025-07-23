@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../../ui/webui/resources/js/browser_command/browser_command.mojom"
+  ]
+}

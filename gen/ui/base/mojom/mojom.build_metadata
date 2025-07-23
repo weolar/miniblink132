@@ -1,0 +1,10 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../ui/base/mojom/themes.mojom",
+    "../../../../../../ui/base/mojom/ui_base_types.mojom",
+    "../../../../../../ui/base/mojom/window_open_disposition.mojom"
+  ]
+}

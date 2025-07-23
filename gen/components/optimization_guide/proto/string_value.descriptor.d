@@ -1,0 +1,1 @@
+gen/components/optimization_guide/proto/string_value.descriptor: ../../components/optimization_guide/proto/string_value.proto

@@ -1,0 +1,28 @@
+// Copyright 2014 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Generated from template:
+//   templates/runtime_feature.mojom.tmpl
+// and input files:
+//   ../../third_party/blink/renderer/platform/runtime_enabled_features.json5
+
+
+module blink.mojom;
+
+
+// A RuntimeFeature represents a Blink runtime feature whose enablement state
+// are tracked in both the browser and the renderer.
+//
+// These enum values should not be persisted nor logged to histograms.
+enum RuntimeFeature {
+  kBlinkExtensionChromeOS,
+  kBlinkExtensionChromeOSKiosk,
+  kBlinkExtensionDiagnostics,
+  kDisableThirdPartyStoragePartitioning2,
+  kFedCmAuthz,
+  kFedCmIdpSigninStatus,
+  kFedCmWithStorageAccessAPI,
+  kOriginTrialsSampleAPIBrowserReadWrite,
+  kTestFeature,
+};

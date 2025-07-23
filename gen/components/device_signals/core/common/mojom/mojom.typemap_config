@@ -1,0 +1,59 @@
+[
+  {
+    "traits_headers": [
+      "components/device_signals/core/common/mojom/system_signals_mojom_traits_common.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//components/device_signals/core/common",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "traits_sources": [
+      "system_signals_mojom_traits_common.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::device_signals::PresenceValue",
+        "mojom": "device_signals.mojom.PresenceValue"
+      },
+      {
+        "cpp": "::device_signals::ExecutableMetadata",
+        "mojom": "device_signals.mojom.ExecutableMetadata"
+      },
+      {
+        "cpp": "::device_signals::FileSystemItem",
+        "mojom": "device_signals.mojom.FileSystemItem"
+      },
+      {
+        "cpp": "::device_signals::GetFileSystemInfoOptions",
+        "mojom": "device_signals.mojom.FileSystemItemRequest"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "components/device_signals/core/common/mojom/system_signals_mojom_traits_win.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//components/device_signals/core/common/win"
+    ],
+    "traits_sources": [
+      "system_signals_mojom_traits_win.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::device_signals::AvProductState",
+        "mojom": "device_signals.mojom.AntiVirusProductState"
+      },
+      {
+        "cpp": "::device_signals::AvProduct",
+        "mojom": "device_signals.mojom.AntiVirusSignal"
+      },
+      {
+        "cpp": "::device_signals::InstalledHotfix",
+        "mojom": "device_signals.mojom.HotfixSignal"
+      }
+    ]
+  }
+]

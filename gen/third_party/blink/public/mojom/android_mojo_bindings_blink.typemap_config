@@ -1,0 +1,14 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/blob/serialized_blob_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::scoped_refptr<::blink::BlobDataHandle>",
+        "mojom": "blink.mojom.SerializedBlob",
+        "nullable_is_same_type": true
+      }
+    ]
+  }
+]

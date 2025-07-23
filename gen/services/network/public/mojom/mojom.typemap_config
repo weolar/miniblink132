@@ -1,0 +1,190 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/digitally_signed_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/digitally_signed_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ct::DigitallySigned::HashAlgorithm",
+        "mojom": "network.mojom.HashAlgorithm"
+      },
+      {
+        "cpp": "::net::ct::DigitallySigned::SignatureAlgorithm",
+        "mojom": "network.mojom.SignatureAlgorithm"
+      },
+      {
+        "cpp": "::net::ct::DigitallySigned",
+        "mojom": "network.mojom.DigitallySigned"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/cert_verifier/cert_verifier_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base",
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/cert_verifier/cert_verifier_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::CertVerifier::RequestParams",
+        "mojom": "cert_verifier.mojom.RequestParams"
+      },
+      {
+        "cpp": "::net::CertVerifier::Config",
+        "mojom": "cert_verifier.mojom.CertVerifierConfig"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/default_credentials_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/default_credentials_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::HttpAuthPreferences::DefaultCredentials",
+        "mojom": "network.mojom.DefaultCredentials"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/net_log_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/net_log_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::NetLogCaptureMode",
+        "mojom": "network.mojom.NetLogCaptureMode"
+      },
+      {
+        "cpp": "::net::NetLogEventPhase",
+        "mojom": "network.mojom.NetLogEventPhase"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/transferable_directory_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/transferable_directory_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::network::TransferableDirectory",
+        "mojom": "network.mojom.TransferableDirectory",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/file_enumeration_entry_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:cpp_base"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/file_enumeration_entry_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::disk_cache::BackendFileOperations::FileEnumerationEntry",
+        "mojom": "network.mojom.FileEnumerationEntry"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/transferable_socket_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/transferable_socket_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::network::TransferableSocket",
+        "mojom": "network.mojom.TransferableSocket",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/hash_value_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/hash_value_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::SHA256HashValue",
+        "mojom": "network.mojom.SHA256HashValue"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/reporting_api_report_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/reporting_api_report_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ReportingReport::Status",
+        "mojom": "network::mojom::ReportingApiReportStatus"
+      },
+      {
+        "cpp": "::net::ReportingReport",
+        "mojom": "network.mojom.ReportingApiReport"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/reporting_api_endpoint_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/reporting_api_endpoint_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ReportingEndpoint",
+        "mojom": "network.mojom.ReportingApiEndpoint"
+      }
+    ]
+  }
+]

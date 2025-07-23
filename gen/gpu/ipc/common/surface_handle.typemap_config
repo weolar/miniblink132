@@ -1,0 +1,17 @@
+[
+  {
+    "traits_headers": [
+      "gpu/ipc/common/surface_handle_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx:native_widget_types"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::gpu::SurfaceHandle",
+        "mojom": "gpu.mojom.SurfaceHandle"
+      }
+    ]
+  }
+]

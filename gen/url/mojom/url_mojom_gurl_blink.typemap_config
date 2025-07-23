@@ -1,0 +1,18 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/mojo/kurl_mojom_traits.h",
+      "third_party/blink/renderer/platform/weborigin/kurl_hash.h"
+    ],
+    "traits_public_deps": [
+      "//url"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::KURL",
+        "force_serialize": true,
+        "mojom": "url.mojom.Url"
+      }
+    ]
+  }
+]

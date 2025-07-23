@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "generic_sensor.build_metadata",
+    "geolocation_internals.build_metadata",
+    "mojom.build_metadata",
+    "usb.build_metadata",
+    "usb_test.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/device/public/mojom/device_service.mojom"
+  ]
+}

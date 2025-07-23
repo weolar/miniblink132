@@ -1,0 +1,21 @@
+[
+  {
+    "traits_headers": [
+      "components/content_capture/common/content_capture_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":common",
+      "//base",
+      "//ui/gfx/geometry/mojom:mojom_traits"
+    ],
+    "traits_sources": [
+      "content_capture_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::content_capture::ContentCaptureData",
+        "mojom": "content_capture.mojom.ContentCaptureData"
+      }
+    ]
+  }
+]

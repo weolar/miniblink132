@@ -1,0 +1,22 @@
+{
+  "c++": {
+    "url.mojom.Url": {
+      "typename": "::blink::KURL",
+      "forward_declaration": null,
+      "public_headers": [
+        "third_party/blink/renderer/platform/mojo/kurl_mojom_traits.h",
+        "third_party/blink/renderer/platform/weborigin/kurl_hash.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": true,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

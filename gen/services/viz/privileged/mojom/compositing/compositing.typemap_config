@@ -1,0 +1,25 @@
+[
+  {
+    "traits_headers": [
+      "services/viz/privileged/cpp/renderer_settings_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common",
+      "//ui/base:features",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_sources": [
+      "//services/viz/privileged/cpp/renderer_settings_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::RendererSettings",
+        "mojom": "viz.mojom.RendererSettings"
+      },
+      {
+        "cpp": "::viz::DebugRendererSettings",
+        "mojom": "viz.mojom.DebugRendererSettings"
+      }
+    ]
+  }
+]

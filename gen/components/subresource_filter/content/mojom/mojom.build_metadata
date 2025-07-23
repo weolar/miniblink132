@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../core/mojom/mojom.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../third_party/blink/public/mojom/mojom_platform.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/subresource_filter/content/mojom/subresource_filter.mojom"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/device/public/mojom/usb_manager_test.mojom"
+  ]
+}

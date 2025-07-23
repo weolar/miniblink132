@@ -1,0 +1,65 @@
+[
+  {
+    "traits_headers": [
+      "services/audio/public/cpp/audio_device_description_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//media"
+    ],
+    "traits_sources": [
+      "//services/audio/public/cpp/audio_device_description_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::media::AudioDeviceDescription",
+        "mojom": "audio.mojom.AudioDeviceDescription",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_public_deps": [
+      "//media",
+      "//third_party/webrtc_overrides:webrtc_component"
+    ],
+    "types": [
+      {
+        "cpp": "::media::AudioProcessingSettings",
+        "mojom": "audio.mojom.AudioProcessingSettings"
+      },
+      {
+        "cpp": "::webrtc::AudioProcessorInterface::AudioProcessorStatistics",
+        "mojom": "audio.mojom.AudioProcessingStats"
+      },
+      {
+        "cpp": "::media::AutomaticGainControlType",
+        "mojom": "audio.mojom.AutomaticGainControlType"
+      },
+      {
+        "cpp": "::media::EchoCancellationType",
+        "mojom": "audio.mojom.EchoCancellationType"
+      },
+      {
+        "cpp": "::media::NoiseSuppressionType",
+        "mojom": "audio.mojom.NoiseSuppressionType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/audio/public/cpp/debug_recording_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//media"
+    ],
+    "traits_sources": [
+      "//services/audio/public/cpp/debug_recording_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::media::AudioDebugRecordingStreamType",
+        "mojom": "audio.mojom.DebugRecordingStreamType"
+      }
+    ]
+  }
+]

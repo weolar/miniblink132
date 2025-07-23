@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../subresource_filter/core/mojom/mojom.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/fingerprinting_protection_filter/mojom/fingerprinting_protection_filter.mojom"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../mojo/public/js/test/module_a.test-mojom",
+    "../../../../../../../mojo/public/js/test/module_b_1.test-mojom",
+    "../../../../../../../mojo/public/js/test/module_b_2.test-mojom"
+  ]
+}

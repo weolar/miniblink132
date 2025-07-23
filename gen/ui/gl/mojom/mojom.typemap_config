@@ -1,0 +1,24 @@
+[
+  {
+    "traits_headers": [
+      "ui/gl/mojom/gl_implementation_mojom_traits.h",
+      "ui/gl/mojom/gpu_preference_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gl"
+    ],
+    "traits_sources": [
+      "gl_implementation_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gl::GLImplementation",
+        "mojom": "gl.mojom.GLImplementation"
+      },
+      {
+        "cpp": "::gl::GpuPreference",
+        "mojom": "gl.mojom.GpuPreference"
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "traits_public_deps": [
+      "//base"
+    ],
+    "types": [
+      {
+        "cpp": "::std::array<::uint8_t, 6>",
+        "mojom": "device.mojom.BluetoothAddress"
+      }
+    ]
+  }
+]

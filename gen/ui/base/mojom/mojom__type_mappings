@@ -1,0 +1,21 @@
+{
+  "c++": {
+    "ui.mojom.WindowOpenDisposition": {
+      "typename": "::WindowOpenDisposition",
+      "forward_declaration": null,
+      "public_headers": [
+        "ui/base/mojom/window_open_disposition_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

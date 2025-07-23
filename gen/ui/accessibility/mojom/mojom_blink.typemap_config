@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_relative_bounds_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits",
+      "//ui/gfx",
+      "//ui/gfx/geometry/mojom",
+      "//ui/gfx/geometry/mojom:mojom_traits",
+      "//ui/gfx/mojom"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXRelativeBounds",
+        "mojom": "ax.mojom.AXRelativeBounds"
+      }
+    ]
+  }
+]

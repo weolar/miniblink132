@@ -1,0 +1,30 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "tsc",
+    "paths": {
+      "//resources/js/*": [
+        "./../../../ui/webui/resources/tsc/js/*"
+      ],
+      "chrome://resources/js/*": [
+        "./../../../ui/webui/resources/tsc/js/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\ukm_internals.ts",
+    "../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../ui/webui/resources/js/tsconfig_build_ts.json"
+    }
+  ]
+}

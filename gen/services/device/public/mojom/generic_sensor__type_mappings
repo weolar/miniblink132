@@ -1,0 +1,742 @@
+{
+  "c++": {
+    "device.mojom.SensorConfiguration": {
+      "typename": "::device::PlatformSensorConfiguration",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/device/public/cpp/generic_sensor/sensor_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "device.mojom.SensorReadingRaw": {
+      "typename": "::device::SensorReading",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/device/public/cpp/generic_sensor/sensor_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.SafeBaseName": {
+      "typename": "::base::SafeBaseName",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/safe_base_name_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BigBuffer": {
+      "typename": "::mojo_base::BigBuffer",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/big_buffer_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ByteString": {
+      "typename": "std::string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/byte_string_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.FileError": {
+      "typename": "::base::File::Error",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_error_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.FileInfo": {
+      "typename": "::base::File::Info",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_info_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.FilePath": {
+      "typename": "::base::FilePath",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_path_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.RelativeFilePath": {
+      "typename": "::base::FilePath",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_path_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.File": {
+      "typename": "::base::File",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/file_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ReadOnlyFile": {
+      "typename": "::base::File",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/read_only_file_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": true,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.GenericPendingAssociatedReceiver": {
+      "typename": "::mojo::GenericPendingAssociatedReceiver",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/generic_pending_associated_receiver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.GenericPendingReceiver": {
+      "typename": "::mojo::GenericPendingReceiver",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/generic_pending_receiver_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ReadOnlyBuffer": {
+      "typename": "::base::span<const ::uint8_t>",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/read_only_buffer_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": true,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.PlatformSharedMemoryHandle": {
+      "typename": "::base::subtle::PlatformSharedMemoryRegion::ScopedPlatformHandle",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.PlatformSharedMemoryRegion": {
+      "typename": "::base::subtle::PlatformSharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ReadOnlySharedMemoryRegion": {
+      "typename": "::base::ReadOnlySharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.UnsafeSharedMemoryRegion": {
+      "typename": "::base::UnsafeSharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.WritableSharedMemoryRegion": {
+      "typename": "::base::WritableSharedMemoryRegion",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Time": {
+      "typename": "::base::Time",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.JSTime": {
+      "typename": "::base::Time",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.TimeDelta": {
+      "typename": "::base::TimeDelta",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.TimeTicks": {
+      "typename": "::base::TimeTicks",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/time_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Token": {
+      "typename": "::base::Token",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/token_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.UnguessableToken": {
+      "typename": "::base::UnguessableToken",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/unguessable_token_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Uuid": {
+      "typename": "::base::Uuid",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/uuid_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Value": {
+      "typename": "::base::Value",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/values_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.DictionaryValue": {
+      "typename": "::base::Value::Dict",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/values_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ListValue": {
+      "typename": "::base::Value::List",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/values_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": true,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.TextDirection": {
+      "typename": "::base::i18n::TextDirection",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/text_direction_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Int128": {
+      "typename": "::absl::int128",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/int128_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Uint128": {
+      "typename": "::absl::uint128",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/int128_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.Version": {
+      "typename": "::base::Version",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/version_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BigString": {
+      "typename": "::std::string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/big_string_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojom_base.mojom.MemoryAllocatorDumpCrossProcessUid": {
+      "typename": "::base::trace_event::MemoryAllocatorDumpGuid",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/memory_allocator_dump_cross_process_uid_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.MemoryPressureLevel": {
+      "typename": "::base::MemoryPressureListener::MemoryPressureLevel",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/memory_pressure_level_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.MessagePumpType": {
+      "typename": "::base::MessagePumpType",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/message_pump_type_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ProcessPriority": {
+      "typename": "::base::Process::Priority",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/process_priority_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.RefCountedMemory": {
+      "typename": "::scoped_refptr<::base::RefCountedMemory>",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/ref_counted_memory_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": true,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ProcessId": {
+      "typename": "::base::ProcessId",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/process_id_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": true,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.String16": {
+      "typename": "::std::u16string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/string16_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BigString16": {
+      "typename": "::std::u16string",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/string16_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.ThreadType": {
+      "typename": "::base::ThreadType",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/thread_type_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.BatteryPowerStatus": {
+      "typename": "::base::PowerStateObserver::BatteryPowerStatus",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/battery_power_status_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.LOGFONT": {
+      "typename": "::LOGFONT",
+      "forward_declaration": null,
+      "public_headers": [
+        "base/win/windows_full.h",
+        "mojo/public/cpp/base/logfont_win_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "mojo_base.mojom.WString": {
+      "typename": "::std::wstring",
+      "forward_declaration": null,
+      "public_headers": [
+        "mojo/public/cpp/base/wstring_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

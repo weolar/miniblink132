@@ -1,0 +1,37 @@
+{
+  "c++": {
+    "password_manager.mojom.CSVPassword": {
+      "typename": "::password_manager::CSVPassword",
+      "forward_declaration": null,
+      "public_headers": [
+        "components/password_manager/services/csv_password/public/mojom/csv_password_parser_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "url.mojom.Url": {
+      "typename": "::GURL",
+      "forward_declaration": null,
+      "public_headers": [
+        "url/mojom/url_gurl_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

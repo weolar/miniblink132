@@ -1,0 +1,42 @@
+[
+  {
+    "traits_headers": [
+      "components/content_settings/core/common/content_settings_mojom_traits.h"
+    ],
+    "traits_private_headers": [
+      "components/content_settings/core/common/content_settings_param_traits.h"
+    ],
+    "traits_public_deps": [
+      ":common"
+    ],
+    "traits_sources": [
+      "content_settings_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ContentSettingsPattern::PatternParts",
+        "mojom": "content_settings.mojom.PatternParts"
+      },
+      {
+        "cpp": "::ContentSettingsPattern",
+        "mojom": "content_settings.mojom.ContentSettingsPattern"
+      },
+      {
+        "cpp": "::ContentSetting",
+        "mojom": "content_settings.mojom.ContentSetting"
+      },
+      {
+        "cpp": "::ContentSettingPatternSource",
+        "mojom": "content_settings.mojom.ContentSettingPatternSource"
+      },
+      {
+        "cpp": "::RendererContentSettingRules",
+        "mojom": "content_settings.mojom.RendererContentSettingRules"
+      },
+      {
+        "cpp": "::content_settings::RuleMetaData",
+        "mojom": "content_settings.mojom.RuleMetaData"
+      }
+    ]
+  }
+]

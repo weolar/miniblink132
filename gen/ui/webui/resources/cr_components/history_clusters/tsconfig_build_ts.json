@@ -1,0 +1,89 @@
+{
+  "extends": "../../../../../../../../tools/typescript/tsconfig_base_lit.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\history_clusters",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/cr_components/page_image_service/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_components/page_image_service/*"
+      ],
+      "//resources/lit/v3_0/lit.rollup.js": [
+        "./../../../../../third_party/lit/v3_0/lit.d.ts"
+      ],
+      "//resources/cr_components/history/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_components/history/*"
+      ],
+      "//resources/cr_elements/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\browser_proxy.ts",
+    "preprocessed\\cluster.ts",
+    "preprocessed\\cluster.html.ts",
+    "preprocessed\\clusters.ts",
+    "preprocessed\\clusters.html.ts",
+    "preprocessed\\cluster_menu.ts",
+    "preprocessed\\cluster_menu.html.ts",
+    "preprocessed\\horizontal_carousel.ts",
+    "preprocessed\\horizontal_carousel.html.ts",
+    "preprocessed\\page_favicon.ts",
+    "preprocessed\\page_favicon.html.ts",
+    "preprocessed\\search_query.ts",
+    "preprocessed\\search_query.html.ts",
+    "preprocessed\\url_visit.ts",
+    "preprocessed\\url_visit.html.ts",
+    "preprocessed\\metrics_proxy.ts",
+    "preprocessed\\utils.ts",
+    "preprocessed\\cluster.css.ts",
+    "preprocessed\\clusters.css.ts",
+    "preprocessed\\cluster_menu.css.ts",
+    "preprocessed\\history_clusters_shared_style.css.ts",
+    "preprocessed\\horizontal_carousel.css.ts",
+    "preprocessed\\page_favicon.css.ts",
+    "preprocessed\\search_query.css.ts",
+    "preprocessed\\shared_vars.css.ts",
+    "preprocessed\\url_visit.css.ts",
+    "preprocessed\\history_cluster_types.mojom-webui.ts",
+    "preprocessed\\history_clusters.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts",
+    "../../../../../../../../tools/typescript/definitions/metrics_private.d.ts",
+    "../../../../../../../../tools/typescript/definitions/pending.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../page_image_service/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../../third_party/lit/v3_0/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../history/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

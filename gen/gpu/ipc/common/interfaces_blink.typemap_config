@@ -1,0 +1,86 @@
+[
+  {
+    "traits_headers": [
+      "gpu/ipc/common/mailbox_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::Mailbox",
+        "mojom": "gpu.mojom.Mailbox"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/mailbox_holder_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::MailboxHolder",
+        "mojom": "gpu.mojom.MailboxHolder"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/exported_shared_image_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::ExportedSharedImage",
+        "mojom": "gpu.mojom.ExportedSharedImage"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/shared_image_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/viz/public/mojom:shared_image_format"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SharedImageMetadata",
+        "mojom": "gpu.mojom.SharedImageMetadata"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/sync_token_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::SyncToken",
+        "mojom": "gpu.mojom.SyncToken"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "gpu/ipc/common/luid_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu"
+    ],
+    "types": [
+      {
+        "cpp": "::CHROME_LUID",
+        "mojom": "gpu.mojom.Luid"
+      }
+    ]
+  }
+]

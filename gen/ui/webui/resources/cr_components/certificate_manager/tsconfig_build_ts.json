@@ -1,0 +1,80 @@
+{
+  "extends": "../../../../../../../../tools/typescript/tsconfig_base_polymer.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\certificate_manager",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/lit/v3_0/lit.rollup.js": [
+        "./../../../../../third_party/lit/v3_0/lit.d.ts"
+      ],
+      "//resources/polymer/v3_0/polymer/polymer_bundled.min.js": [
+        "./../../../../../../../../third_party/polymer/v3_0/components-chromium/polymer/polymer.d.ts"
+      ],
+      "//resources/polymer/v3_0/*": [
+        "./../../../../../../../../third_party/polymer/v3_0/components-chromium/*"
+      ],
+      "//resources/cr_elements/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\certificate_entry_v2.ts",
+    "preprocessed\\certificate_list_v2.ts",
+    "preprocessed\\certificate_manager_v2.ts",
+    "preprocessed\\certificate_subpage_v2.ts",
+    "preprocessed\\crs_section_v2.ts",
+    "preprocessed\\local_certs_section_v2.ts",
+    "preprocessed\\certificates_v2_browser_proxy.ts",
+    "preprocessed\\certificate_confirmation_dialog.html.ts",
+    "preprocessed\\certificate_confirmation_dialog.ts",
+    "preprocessed\\certificate_info_dialog.html.ts",
+    "preprocessed\\certificate_info_dialog.ts",
+    "preprocessed\\certificate_password_dialog.html.ts",
+    "preprocessed\\certificate_password_dialog.ts",
+    "preprocessed\\navigation_v2.ts",
+    "preprocessed\\certificate_entry_v2.html.ts",
+    "preprocessed\\certificate_list_v2.html.ts",
+    "preprocessed\\certificate_manager_v2.html.ts",
+    "preprocessed\\certificate_subpage_v2.html.ts",
+    "preprocessed\\crs_section_v2.html.ts",
+    "preprocessed\\local_certs_section_v2.html.ts",
+    "preprocessed\\certificate_manager_v2_icons.html.ts",
+    "preprocessed\\certificate_manager_style_v2.css.ts",
+    "preprocessed\\certificate_manager_v2.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts",
+    "../../../../../../../../tools/typescript/definitions/chrome_send.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../../third_party/lit/v3_0/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../../third_party/polymer/v3_0/tsconfig_library.json"
+    },
+    {
+      "path": "../../cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

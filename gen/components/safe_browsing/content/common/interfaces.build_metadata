@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "../../core/common/interfaces.build_metadata",
+    "../../../../mojo/public/mojom/base/protobuf_support.build_metadata",
+    "../../../../services/network/public/mojom/mojom.build_metadata",
+    "../../../../third_party/blink/public/mojom/tokens/tokens.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/safe_browsing/content/common/safe_browsing.mojom"
+  ]
+}

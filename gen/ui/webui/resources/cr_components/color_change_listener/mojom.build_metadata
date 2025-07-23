@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../ui/webui/resources/cr_components/color_change_listener/color_change_listener.mojom"
+  ]
+}

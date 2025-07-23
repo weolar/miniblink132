@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../skia/public/mojom/mojom.build_metadata",
+    "../../../../base/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../ui/webui/resources/cr_components/theme_color_picker/theme_color_picker.mojom"
+  ]
+}

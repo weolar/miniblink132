@@ -1,0 +1,68 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/geometry/mojom/geometry_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::Point",
+        "mojom": "gfx.mojom.Point"
+      },
+      {
+        "cpp": "::gfx::PointF",
+        "mojom": "gfx.mojom.PointF"
+      },
+      {
+        "cpp": "::gfx::Point3F",
+        "mojom": "gfx.mojom.Point3F"
+      },
+      {
+        "cpp": "::gfx::Size",
+        "mojom": "gfx.mojom.Size"
+      },
+      {
+        "cpp": "::gfx::SizeF",
+        "mojom": "gfx.mojom.SizeF"
+      },
+      {
+        "cpp": "::gfx::Rect",
+        "mojom": "gfx.mojom.Rect"
+      },
+      {
+        "cpp": "::gfx::RectF",
+        "mojom": "gfx.mojom.RectF"
+      },
+      {
+        "cpp": "::gfx::Insets",
+        "mojom": "gfx.mojom.Insets"
+      },
+      {
+        "cpp": "::gfx::InsetsF",
+        "mojom": "gfx.mojom.InsetsF"
+      },
+      {
+        "cpp": "::gfx::QuadF",
+        "mojom": "gfx.mojom.QuadF"
+      },
+      {
+        "cpp": "::gfx::Quaternion",
+        "mojom": "gfx.mojom.Quaternion"
+      },
+      {
+        "cpp": "::gfx::Vector2d",
+        "mojom": "gfx.mojom.Vector2d"
+      },
+      {
+        "cpp": "::gfx::Vector2dF",
+        "mojom": "gfx.mojom.Vector2dF"
+      },
+      {
+        "cpp": "::gfx::Vector3dF",
+        "mojom": "gfx.mojom.Vector3dF"
+      }
+    ]
+  }
+]

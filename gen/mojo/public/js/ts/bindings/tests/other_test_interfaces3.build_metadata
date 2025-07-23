@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "other_test_interfaces2.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../../mojo/public/js/ts/bindings/tests/export_other3.test-mojom"
+  ]
+}

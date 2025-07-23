@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_MANAGED_FOOTNOTE_MANAGED_FOOTNOTE_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/managed_footnote/minified/managed_footnote.js" resource_path="cr_components/managed_footnote/managed_footnote.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MANAGED_FOOTNOTE_MANAGED_FOOTNOTE_HTML_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/managed_footnote/minified/managed_footnote.html.js" resource_path="cr_components/managed_footnote/managed_footnote.html.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MANAGED_FOOTNOTE_MANAGED_FOOTNOTE_CSS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/managed_footnote/minified/managed_footnote.css.js" resource_path="cr_components/managed_footnote/managed_footnote.css.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

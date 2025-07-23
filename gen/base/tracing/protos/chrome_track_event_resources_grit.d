@@ -1,0 +1,1 @@
+gen\base\tracing\protos\chrome_track_event_resources_grit.d.stamp: .\..\..\out\r32\gen\base\tracing\protos\chrome_track_event.descriptor .\gen/tools/gritsettings/default_resource_ids

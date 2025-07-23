@@ -1,0 +1,19 @@
+[
+  {
+    "traits_deps": [
+      "//ui/events:events_base"
+    ],
+    "traits_headers": [
+      "ui/events/mojom/event_latency_metadata_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "event_latency_metadata_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::EventLatencyMetadata",
+        "mojom": "ui.mojom.EventLatencyMetadata"
+      }
+    ]
+  }
+]

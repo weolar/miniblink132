@@ -1,0 +1,18 @@
+[
+  {
+    "traits_headers": [
+      "cc/mojom/element_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//cc/paint"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::cc::ElementId",
+        "mojom": "cc.mojom.ElementId",
+        "nullable_is_same_type": true
+      }
+    ]
+  }
+]

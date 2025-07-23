@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/on_device_model/public/mojom/on_device_model.mojom",
+    "../../../../../../../services/on_device_model/public/mojom/on_device_model_service.mojom"
+  ]
+}

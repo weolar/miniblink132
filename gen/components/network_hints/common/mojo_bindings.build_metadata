@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../url/mojom/url_mojom_scheme_host_port.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/network_hints/common/network_hints.mojom"
+  ]
+}

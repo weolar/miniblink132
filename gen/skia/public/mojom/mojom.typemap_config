@@ -1,0 +1,178 @@
+[
+  {
+    "traits_headers": [
+      "skia/public/mojom/tile_mode_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkTileMode",
+        "mojom": "skia.mojom.TileMode"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/bitmap_skbitmap_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_typemap_traits",
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapN32",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapWithArbitraryBpp",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapWithArbitraryBpp",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapMappedFromTrustedProcess",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.InlineBitmap",
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolorspace_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::skcms_Matrix3x3",
+        "mojom": "skia.mojom.SkcmsMatrix3x3"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolorspace_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::skcms_TransferFunction",
+        "mojom": "skia.mojom.SkcmsTransferFunction"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolor_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::SkColor",
+        "mojom": "skia.mojom.SkColor"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolor4f_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkColor4f",
+        "mojom": "skia.mojom.SkColor4f"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolorspace_primaries_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkColorSpacePrimaries",
+        "mojom": "skia.mojom.SkColorSpacePrimaries"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolorspace_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::sk_sp<SkColorSpace>",
+        "mojom": "skia.mojom.SkColorSpace"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/image_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_typemap_traits",
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkAlphaType",
+        "mojom": "skia.mojom.AlphaType"
+      },
+      {
+        "cpp": "::SkColorType",
+        "mojom": "skia.mojom.ColorType"
+      },
+      {
+        "cpp": "::SkImageInfo",
+        "mojom": "skia.mojom.ImageInfo"
+      },
+      {
+        "cpp": "::SkImageInfo",
+        "mojom": "skia.mojom.BitmapN32ImageInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/surface_origin_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::GrSurfaceOrigin",
+        "mojom": "skia.mojom.SurfaceOrigin"
+      }
+    ]
+  }
+]

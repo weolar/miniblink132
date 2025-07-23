@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "mojom.build_metadata",
+    "remoting_common.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../media/mojo/mojom/remoting.mojom"
+  ]
+}

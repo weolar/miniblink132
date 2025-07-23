@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../services/network/public/mojom/mojom_ip_address.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/mirroring/mojom/cast_message_channel.mojom",
+    "../../../../../../components/mirroring/mojom/session_observer.mojom",
+    "../../../../../../components/mirroring/mojom/session_parameters.mojom"
+  ]
+}

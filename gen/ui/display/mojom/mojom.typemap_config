@@ -1,0 +1,247 @@
+[
+  {
+    "traits_headers": [
+      "ui/display/mojom/display_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::Display",
+        "mojom": "display.mojom.Display"
+      },
+      {
+        "cpp": "::display::Display::TouchSupport",
+        "mojom": "display.mojom.TouchSupport"
+      },
+      {
+        "cpp": "::display::Display::AccelerometerSupport",
+        "mojom": "display.mojom.AccelerometerSupport"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/display_constants_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "display_constants_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::display::DisplayConnectionType",
+        "mojom": "display.mojom.DisplayConnectionType"
+      },
+      {
+        "cpp": "::display::HDCPState",
+        "mojom": "display.mojom.HDCPState"
+      },
+      {
+        "cpp": "::display::ContentProtectionMethod",
+        "mojom": "display.mojom.ContentProtectionMethod"
+      },
+      {
+        "cpp": "::display::PrivacyScreenState",
+        "mojom": "display.mojom.PrivacyScreenState"
+      },
+      {
+        "cpp": "::display::VariableRefreshRateState",
+        "mojom": "display.mojom.VariableRefreshRateState"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::display::ModesetFlags",
+        "mojom": "display.mojom.ModesetFlags"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/display_layout_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "display_layout_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::display::DisplayPlacement::Position",
+        "mojom": "display.mojom.Position"
+      },
+      {
+        "cpp": "::display::DisplayPlacement::OffsetReference",
+        "mojom": "display.mojom.OffsetReference"
+      },
+      {
+        "cpp": "::display::DisplayPlacement",
+        "mojom": "display.mojom.DisplayPlacement"
+      },
+      {
+        "cpp": "::std::unique_ptr<::display::DisplayLayout>",
+        "mojom": "display.mojom.DisplayLayout",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//ui/gfx/geometry"
+    ],
+    "traits_headers": [
+      "ui/display/mojom/display_mode_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "display_mode_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::display::DisplayMode>",
+        "mojom": "display.mojom.DisplayMode",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//ui/gfx/geometry"
+    ],
+    "traits_headers": [
+      "ui/display/mojom/display_snapshot_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "display_snapshot_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::display::DisplaySnapshot>",
+        "mojom": "display.mojom.DisplaySnapshot",
+        "move_only": true
+      },
+      {
+        "cpp": "::display::DisplaySnapshot::ColorInfo",
+        "mojom": "display.mojom.DisplaySnapshotColorInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/gamma_ramp_rgb_entry_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "gamma_ramp_rgb_entry_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::display::GammaRampRGBEntry",
+        "mojom": "display.mojom.GammaRampRGBEntry"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/display_color_management_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "display_color_management_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::display::GammaCurve",
+        "mojom": "display.mojom.GammaCurve"
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//ui/gfx/geometry"
+    ],
+    "traits_headers": [
+      "ui/display/mojom/display_configuration_params_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/display"
+    ],
+    "traits_sources": [
+      "display_configuration_params_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::display::ColorCalibration",
+        "mojom": "display.mojom.ColorCalibration"
+      },
+      {
+        "cpp": "::display::ColorTemperatureAdjustment",
+        "mojom": "display.mojom.ColorTemperatureAdjustment"
+      },
+      {
+        "cpp": "::display::DisplayConfigurationParams",
+        "mojom": "display.mojom.DisplayConfigurationParams"
+      },
+      {
+        "cpp": "::display::GammaAdjustment",
+        "mojom": "display.mojom.GammaAdjustment"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/display_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::Display::Rotation",
+        "mojom": "display.mojom.Rotation"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/screen_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::ScreenInfo",
+        "mojom": "display.mojom.ScreenInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/display/mojom/screen_infos_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::display::ScreenInfos",
+        "mojom": "display.mojom.ScreenInfos"
+      }
+    ]
+  }
+]

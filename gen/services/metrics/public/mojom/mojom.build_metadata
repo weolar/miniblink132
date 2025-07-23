@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/metrics/public/mojom/ukm_interface.mojom"
+  ]
+}

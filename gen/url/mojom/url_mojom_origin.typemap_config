@@ -1,0 +1,17 @@
+[
+  {
+    "traits_headers": [
+      "url/mojom/origin_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits",
+      "//url"
+    ],
+    "types": [
+      {
+        "cpp": "::url::Origin",
+        "mojom": "url.mojom.Origin"
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "traits_headers": [
+      "components/attribution_reporting/registration_header_error_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":registration_header_error_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::attribution_reporting::RegistrationHeaderError",
+        "forward_declaration": "namespace attribution_reporting { struct RegistrationHeaderError; }",
+        "mojom": "attribution_reporting.mojom.RegistrationHeaderError",
+        "move_only": true
+      },
+      {
+        "cpp": "::attribution_reporting::RegistrationHeaderErrorDetails",
+        "mojom": "attribution_reporting.mojom.RegistrationHeaderErrorDetails"
+      }
+    ]
+  }
+]

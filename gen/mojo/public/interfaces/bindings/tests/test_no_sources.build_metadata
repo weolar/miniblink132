@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "test_interfaces.build_metadata"
+  ],
+  "sources": [
+
+  ]
+}

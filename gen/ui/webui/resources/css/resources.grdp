@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_WEBUI_CSS_ACTION_LINK_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/action_link.css" resource_path="css/action_link.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_WEBUI_CSS_CHROME_SHARED_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/chrome_shared.css" resource_path="css/chrome_shared.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_WEBUI_CSS_SPINNER_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/spinner.css" resource_path="css/spinner.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_WEBUI_CSS_TEXT_DEFAULTS_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/text_defaults.css" resource_path="css/text_defaults.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_WEBUI_CSS_TEXT_DEFAULTS_MD_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/text_defaults_md.css" resource_path="css/text_defaults_md.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_WEBUI_CSS_WIDGETS_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/widgets.css" resource_path="css/widgets.css" use_base_dir="false" type="BINDATA" />
+      <include name="IDR_WEBUI_CSS_MD_COLORS_CSS" file="${root_gen_dir}/ui/webui/resources/css/preprocessed/md_colors.css" resource_path="css/md_colors.css" use_base_dir="false" type="BINDATA" />
+</grit-part>

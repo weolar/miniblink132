@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../third_party/blink/public/mojom/gpu/gpu.mojom"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../components/web_cache/public/mojom/web_cache.mojom"
+  ]
+}

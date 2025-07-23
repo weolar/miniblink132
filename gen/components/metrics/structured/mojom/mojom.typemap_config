@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "components/metrics/structured/mojom/event_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/metrics/structured:events"
+    ],
+    "traits_sources": [
+      "event_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::metrics::structured::Event",
+        "mojom": "metrics.structured.mojom.Event",
+        "move_only": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/ip_address_mojom_traits.h",
+      "third_party/blink/renderer/platform/network/ip_address.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support",
+      "//url"
+    ],
+    "types": [
+      {
+        "cpp": "::net::IPAddress",
+        "mojom": "network.mojom.IPAddress"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/ip_endpoint_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::IPEndPoint",
+        "mojom": "network.mojom.IPEndPoint"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "net/http/http_response_info.h",
+      "services/network/public/cpp/network_ipc_param_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::HttpConnectionInfo",
+        "mojom": "network.mojom.ConnectionInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "net/http/alternate_protocol_usage.h",
+      "services/network/public/cpp/alternate_protocol_usage_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AlternateProtocolUsage",
+        "mojom": "network.mojom.AlternateProtocolUsage"
+      }
+    ]
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/mutable_partial_network_traffic_annotation_tag_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net/traffic_annotation",
+      "//services/network/public/cpp:proxy_config_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::MutablePartialNetworkTrafficAnnotationTag",
+        "mojom": "network.mojom.MutablePartialNetworkTrafficAnnotationTag"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/proxy_config_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:proxy_config_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ProxyBypassRules",
+        "mojom": "network.mojom.ProxyBypassRules"
+      },
+      {
+        "cpp": "::net::ProxyList",
+        "mojom": "network.mojom.ProxyList"
+      },
+      {
+        "cpp": "::net::ProxyConfig::ProxyRules::Type",
+        "mojom": "network.mojom.ProxyRulesType"
+      },
+      {
+        "cpp": "::net::ProxyConfig::ProxyRules",
+        "mojom": "network.mojom.ProxyRules"
+      },
+      {
+        "cpp": "::net::ProxyConfig",
+        "mojom": "network.mojom.ProxyConfig"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/proxy_config_with_annotation_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:proxy_config_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ProxyConfigWithAnnotation",
+        "mojom": "network.mojom.ProxyConfigWithAnnotation"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/mutable_network_traffic_annotation_tag_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net/traffic_annotation",
+      "//services/network/public/cpp:proxy_config_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::MutableNetworkTrafficAnnotationTag",
+        "mojom": "network.mojom.MutableNetworkTrafficAnnotationTag"
+      }
+    ]
+  }
+]

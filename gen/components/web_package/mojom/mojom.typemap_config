@@ -1,0 +1,42 @@
+[
+  {
+    "traits_deps": [
+      "//base",
+      "//components/web_package:mojom_mapped_types",
+      "//mojo/public/mojom/base"
+    ],
+    "traits_headers": [
+      "components/web_package/mojom/web_bundle_parser_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "//components/web_package/mojom/web_bundle_parser_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::web_package::Ed25519PublicKey",
+        "default_constructible": false,
+        "mojom": "web_package.mojom.Ed25519PublicKey"
+      },
+      {
+        "cpp": "::web_package::Ed25519Signature",
+        "default_constructible": false,
+        "mojom": "web_package.mojom.Ed25519Signature"
+      },
+      {
+        "cpp": "::web_package::EcdsaP256PublicKey",
+        "default_constructible": false,
+        "mojom": "web_package.mojom.EcdsaP256PublicKey"
+      },
+      {
+        "cpp": "::web_package::EcdsaP256SHA256Signature",
+        "default_constructible": false,
+        "mojom": "web_package.mojom.EcdsaP256SHA256Signature"
+      },
+      {
+        "cpp": "::web_package::IntegrityBlockAttributes",
+        "default_constructible": false,
+        "mojom": "web_package.mojom.BundleIntegrityBlockAttributes"
+      }
+    ]
+  }
+]

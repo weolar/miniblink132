@@ -1,0 +1,45 @@
+[
+  {
+    "traits_headers": [
+      "services/webnn/public/mojom/context_properties_mojom_traits.h",
+      "services/webnn/public/mojom/data_type_limits_mojom_traits.h",
+      "services/webnn/public/mojom/operand_descriptor_mojom_traits.h",
+      "services/webnn/public/mojom/range_traits.h",
+      "services/webnn/public/mojom/supported_data_types_mojom_traits.h",
+      "services/webnn/public/mojom/tensor_usage_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":webnn_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::webnn::ContextProperties",
+        "default_constructible": false,
+        "mojom": "webnn.mojom.ContextProperties"
+      },
+      {
+        "cpp": "::webnn::DataTypeLimits",
+        "default_constructible": false,
+        "mojom": "webnn.mojom.DataTypeLimits"
+      },
+      {
+        "cpp": "::webnn::OperandDescriptor",
+        "default_constructible": false,
+        "mojom": "webnn.mojom.OperandDescriptor"
+      },
+      {
+        "cpp": "::webnn::Range",
+        "mojom": "webnn.mojom.Range"
+      },
+      {
+        "cpp": "::webnn::SupportedDataTypes",
+        "mojom": "webnn.mojom.SupportedDataTypes"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::webnn::MLTensorUsage",
+        "mojom": "webnn.mojom.TensorUsage"
+      }
+    ]
+  }
+]

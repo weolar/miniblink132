@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_MOST_VISITED_BROWSER_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/most_visited/minified/browser_proxy.js" resource_path="cr_components/most_visited/browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MOST_VISITED_MOST_VISITED_HTML_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/most_visited/minified/most_visited.html.js" resource_path="cr_components/most_visited/most_visited.html.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MOST_VISITED_MOST_VISITED_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/most_visited/minified/most_visited.js" resource_path="cr_components/most_visited/most_visited.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MOST_VISITED_WINDOW_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/most_visited/minified/window_proxy.js" resource_path="cr_components/most_visited/window_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MOST_VISITED_MOST_VISITED_CSS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/most_visited/minified/most_visited.css.js" resource_path="cr_components/most_visited/most_visited.css.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MOST_VISITED_MOST_VISITED_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/most_visited/minified/most_visited.mojom-webui.js" resource_path="cr_components/most_visited/most_visited.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

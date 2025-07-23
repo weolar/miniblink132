@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/facilitated_payments/core/mojom/facilitated_payments_agent.mojom"
+  ]
+}

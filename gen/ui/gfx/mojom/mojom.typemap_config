@@ -1,0 +1,400 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/accelerated_widget_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::gfx::AcceleratedWidget",
+        "mojom": "gfx.mojom.AcceleratedWidget"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/ca_layer_result_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "traits_sources": [
+      "ca_layer_result_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::CALayerResult",
+        "mojom": "gfx.mojom.CALayerResult"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/delegated_ink_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "traits_sources": [
+      "delegated_ink_metadata_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::gfx::DelegatedInkMetadata>",
+        "mojom": "gfx.mojom.DelegatedInkMetadata",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/delegated_ink_point_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "traits_sources": [
+      "delegated_ink_point_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::DelegatedInkPoint",
+        "mojom": "gfx.mojom.DelegatedInkPoint"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/font_render_params_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::FontRenderParams::Hinting",
+        "mojom": "gfx.mojom.Hinting"
+      },
+      {
+        "cpp": "::gfx::FontRenderParams::SubpixelRendering",
+        "mojom": "gfx.mojom.SubpixelRendering"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/overlay_transform_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::OverlayTransform",
+        "mojom": "gfx.mojom.OverlayTransform"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/overlay_priority_hint_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::OverlayPriorityHint",
+        "mojom": "gfx.mojom.OverlayPriorityHint"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/rrect_f_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx/geometry/mojom:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::RRectF",
+        "mojom": "gfx.mojom.RRectF"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/swap_result_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::SwapResult",
+        "mojom": "gfx.mojom.SwapResult"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/mask_filter_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx/geometry:geometry_skia"
+    ],
+    "traits_sources": [
+      "mask_filter_info_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::MaskFilterInfo",
+        "mojom": "gfx.mojom.MaskFilterInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/linear_gradient_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx/geometry:geometry_skia"
+    ],
+    "traits_sources": [
+      "linear_gradient_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::LinearGradient",
+        "mojom": "gfx.mojom.LinearGradient"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/frame_data_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::FrameData",
+        "mojom": "gfx.mojom.FrameData"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/overlay_type_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::OverlayType",
+        "mojom": "gfx.mojom.OverlayType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/ca_layer_params_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "traits_sources": [
+      "ca_layer_params_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::CALayerParams",
+        "mojom": "gfx.mojom.CALayerParams"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/buffer_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::BufferFormat",
+        "mojom": "gfx.mojom.BufferFormat"
+      },
+      {
+        "cpp": "::gfx::BufferUsage",
+        "mojom": "gfx.mojom.BufferUsage"
+      },
+      {
+        "cpp": "::gfx::BufferUsageAndFormat",
+        "mojom": "gfx.mojom.BufferUsageAndFormat"
+      },
+      {
+        "cpp": "::gfx::BufferPlane",
+        "mojom": "gfx.mojom.BufferPlane"
+      },
+      {
+        "cpp": "::gfx::GpuMemoryBufferHandle",
+        "mojom": "gfx.mojom.GpuMemoryBufferHandle",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::gfx::GpuMemoryBufferId",
+        "mojom": "gfx.mojom.GpuMemoryBufferId"
+      },
+      {
+        "cpp": "::gfx::GpuMemoryBufferType",
+        "mojom": "gfx.mojom.GpuMemoryBufferType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/color_space_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::ColorSpace",
+        "mojom": "gfx.mojom.ColorSpace"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/display_color_spaces_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::ContentColorUsage",
+        "mojom": "gfx.mojom.ContentColorUsage"
+      },
+      {
+        "cpp": "::gfx::DisplayColorSpaces",
+        "mojom": "gfx.mojom.DisplayColorSpaces"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/gpu_extra_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::GpuExtraInfo",
+        "mojom": "gfx.mojom.GpuExtraInfo"
+      },
+      {
+        "cpp": "::gfx::ANGLEFeature",
+        "mojom": "gfx.mojom.ANGLEFeature"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/gpu_fence_handle_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::GpuFenceHandle",
+        "mojom": "gfx.mojom.GpuFenceHandle",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/hdr_static_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::HDRStaticMetadata",
+        "mojom": "gfx.mojom.HDRStaticMetadata"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/presentation_feedback_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::PresentationFeedback",
+        "mojom": "gfx.mojom.PresentationFeedback"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/selection_bound_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx/geometry/mojom:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::SelectionBound",
+        "mojom": "gfx.mojom.SelectionBound"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/swap_timings_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::SwapTimings",
+        "mojom": "gfx.mojom.SwapTimings"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/gfx/mojom/transform_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/gfx"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::Transform",
+        "mojom": "gfx.mojom.Transform"
+      }
+    ]
+  }
+]

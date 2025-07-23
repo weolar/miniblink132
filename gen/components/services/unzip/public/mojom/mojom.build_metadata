@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../storage/public/mojom/filesystem/filesystem.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../components/services/unzip/public/mojom/unzipper.mojom"
+  ]
+}

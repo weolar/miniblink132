@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../../third_party/blink/public/mojom/tokens/tokens.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/webnn/public/mojom/features.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_context.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_context_properties.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_context_provider.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_error.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_graph.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_graph_builder.mojom",
+    "../../../../../../../services/webnn/public/mojom/webnn_tensor.mojom"
+  ]
+}

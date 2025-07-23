@@ -1,0 +1,28 @@
+{
+  "deps": [
+    "buckets/buckets.build_metadata",
+    "filesystem/filesystem.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../../../services/network/public/mojom/mojom.build_metadata",
+    "../../../../../third_party/blink/public/mojom/mojom_core.build_metadata",
+    "../../../../../third_party/blink/public/mojom/mojom_modules.build_metadata",
+    "../../../../../third_party/blink/public/mojom/mojom_platform.build_metadata",
+    "../../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../components/services/storage/public/mojom/blob_storage_context.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/cache_storage_control.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/file_system_access_context.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/local_storage_control.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/origin_context.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/partition.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/quota_client.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/service_worker_database.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/service_worker_storage_control.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/session_storage_control.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/storage_policy_update.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/storage_service.mojom",
+    "../../../../../../../../components/services/storage/public/mojom/storage_usage_info.mojom"
+  ]
+}

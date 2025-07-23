@@ -1,0 +1,31 @@
+{
+  "deps": [
+    "features.build_metadata",
+    "../../../../../components/input/mojom.build_metadata",
+    "../../../../../gpu/ipc/common/interfaces.build_metadata",
+    "../../../../../gpu/ipc/common/surface_handle.build_metadata",
+    "../../../../../media/capture/mojom/video_capture.build_metadata",
+    "../../../../../media/mojo/mojom/mojom.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../public/mojom/mojom.build_metadata",
+    "../../../../../skia/public/mojom/mojom.build_metadata",
+    "../../../../../third_party/blink/public/mojom/mojom_platform.build_metadata",
+    "../../../../../ui/display/mojom/mojom.build_metadata",
+    "../../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../../ui/gfx/mojom/mojom.build_metadata",
+    "../../../../../ui/latency/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../services/viz/privileged/mojom/compositing/begin_frame_observer.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/display_private.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/external_begin_frame_controller.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/frame_sink_manager.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/frame_sink_manager_test_api.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/frame_sink_video_capture.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/frame_sinks_metrics_recorder.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/layered_window_updater.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/overlay_strategy.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/renderer_settings.mojom",
+    "../../../../../../../../services/viz/privileged/mojom/compositing/vsync_parameter_observer.mojom"
+  ]
+}

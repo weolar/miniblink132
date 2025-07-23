@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "../../../../discardable_memory/public/mojom/mojom.build_metadata",
+    "../../../../paint_preview/common/mojom/mojom.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../mojo/public/mojom/base/protobuf_support.build_metadata",
+    "../../../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../../../skia/public/mojom/mojom.build_metadata",
+    "../../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../components/services/paint_preview_compositor/public/mojom/paint_preview_compositor.mojom"
+  ]
+}

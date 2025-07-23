@@ -1,0 +1,89 @@
+{
+  "c++": {
+    "network.mojom.IPAddress": {
+      "typename": "::net::IPAddress",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/ip_address_mojom_traits.h",
+        "third_party/blink/renderer/platform/network/ip_address.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.IPEndPoint": {
+      "typename": "::net::IPEndPoint",
+      "forward_declaration": null,
+      "public_headers": [
+        "services/network/public/cpp/ip_endpoint_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.ConnectionInfo": {
+      "typename": "::net::HttpConnectionInfo",
+      "forward_declaration": null,
+      "public_headers": [
+        "net/http/http_response_info.h",
+        "services/network/public/cpp/network_ipc_param_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "network.mojom.AlternateProtocolUsage": {
+      "typename": "::net::AlternateProtocolUsage",
+      "forward_declaration": null,
+      "public_headers": [
+        "net/http/alternate_protocol_usage.h",
+        "services/network/public/cpp/alternate_protocol_usage_mojom_traits.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": false,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    },
+    "url.mojom.Url": {
+      "typename": "::blink::KURL",
+      "forward_declaration": null,
+      "public_headers": [
+        "third_party/blink/renderer/platform/mojo/kurl_mojom_traits.h",
+        "third_party/blink/renderer/platform/weborigin/kurl_hash.h"
+      ],
+      "traits_headers": [],
+      "copyable_pass_by_value": false,
+      "default_constructible": true,
+      "force_serialize": true,
+      "hashable": false,
+      "move_only": false,
+      "non_const_ref": false,
+      "nullable_is_same_type": false,
+      "non_copyable_non_movable": false
+    }
+  },
+  "typescript": {}
+}

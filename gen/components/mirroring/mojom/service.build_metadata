@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "common.build_metadata",
+    "../../../media/capture/mojom/video_capture.build_metadata",
+    "../../../media/mojo/mojom/mojom.build_metadata",
+    "../../../media/mojo/mojom/remoting.build_metadata",
+    "../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../services/network/public/mojom/mojom.build_metadata",
+    "../../../services/viz/public/mojom/mojom.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/mirroring/mojom/mirroring_service.mojom",
+    "../../../../../../components/mirroring/mojom/resource_provider.mojom"
+  ]
+}

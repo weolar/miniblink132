@@ -1,0 +1,29 @@
+[
+  {
+    "traits_headers": [
+      "media/mojo/mojom/speech_recognition_result_mojom_traits.h",
+      "media/mojo/mojom/speech_recognition_result.h"
+    ],
+    "traits_public_deps": [
+      "//base"
+    ],
+    "traits_sources": [
+      "speech_recognition_result.cc",
+      "speech_recognition_result_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::media::HypothesisParts",
+        "mojom": "media.mojom.HypothesisParts"
+      },
+      {
+        "cpp": "::media::TimingInformation",
+        "mojom": "media.mojom.TimingInformation"
+      },
+      {
+        "cpp": "::media::SpeechRecognitionResult",
+        "mojom": "media.mojom.SpeechRecognitionResult"
+      }
+    ]
+  }
+]

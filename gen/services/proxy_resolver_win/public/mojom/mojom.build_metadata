@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../network/public/mojom/mojom_proxy_config.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/proxy_resolver_win/public/mojom/proxy_resolver_win.mojom"
+  ]
+}

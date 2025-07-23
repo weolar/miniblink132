@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../gfx/geometry/mojom/mojom.build_metadata",
+    "../../latency/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../ui/events/mojom/event.mojom",
+    "../../../../../../ui/events/mojom/event_constants.mojom",
+    "../../../../../../ui/events/mojom/keyboard_codes.mojom",
+    "../../../../../../ui/events/mojom/scroll_granularity.mojom"
+  ]
+}

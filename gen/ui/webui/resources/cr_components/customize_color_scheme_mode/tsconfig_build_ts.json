@@ -1,0 +1,58 @@
+{
+  "extends": "../../../../../../../../tools/typescript/tsconfig_base_lit.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\customize_color_scheme_mode",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/lit/v3_0/lit.rollup.js": [
+        "./../../../../../third_party/lit/v3_0/lit.d.ts"
+      ],
+      "//resources/cr_elements/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\browser_proxy.ts",
+    "preprocessed\\customize_color_scheme_mode.html.ts",
+    "preprocessed\\customize_color_scheme_mode.ts",
+    "preprocessed\\segmented_button.html.ts",
+    "preprocessed\\segmented_button_option.html.ts",
+    "preprocessed\\segmented_button_option.ts",
+    "preprocessed\\segmented_button.ts",
+    "preprocessed\\customize_color_scheme_mode.css.ts",
+    "preprocessed\\segmented_button.css.ts",
+    "preprocessed\\segmented_button_option.css.ts",
+    "preprocessed\\customize_color_scheme_mode.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../../third_party/lit/v3_0/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "extends": "../../../../../../../../tools/typescript/tsconfig_base_polymer.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "..\\..\\tsc\\cr_components\\searchbox",
+    "composite": true,
+    "declaration": true,
+    "tsBuildInfoFile": "tsconfig_build_ts.tsbuildinfo",
+    "paths": {
+      "//resources/polymer/v3_0/polymer/polymer_bundled.min.js": [
+        "./../../../../../../../../third_party/polymer/v3_0/components-chromium/polymer/polymer.d.ts"
+      ],
+      "//resources/polymer/v3_0/*": [
+        "./../../../../../../../../third_party/polymer/v3_0/components-chromium/*"
+      ],
+      "//resources/cr_elements/*": [
+        "./../../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\searchbox.ts",
+    "preprocessed\\searchbox_action.ts",
+    "preprocessed\\searchbox_dropdown.ts",
+    "preprocessed\\searchbox_icon.ts",
+    "preprocessed\\searchbox_match.ts",
+    "preprocessed\\searchbox_thumbnail.ts",
+    "preprocessed\\searchbox_browser_proxy.ts",
+    "preprocessed\\utils.ts",
+    "preprocessed\\searchbox.html.ts",
+    "preprocessed\\searchbox_action.html.ts",
+    "preprocessed\\searchbox_dropdown.html.ts",
+    "preprocessed\\searchbox_icon.html.ts",
+    "preprocessed\\searchbox_match.html.ts",
+    "preprocessed\\searchbox_thumbnail.html.ts",
+    "preprocessed\\searchbox_dropdown_shared_style.css.ts",
+    "preprocessed\\omnibox.mojom-webui.ts",
+    "preprocessed\\searchbox.mojom-webui.ts",
+    "../../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../../third_party/polymer/v3_0/tsconfig_library.json"
+    },
+    {
+      "path": "../../cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

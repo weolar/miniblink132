@@ -1,0 +1,31 @@
+{
+  "deps": [
+    "gpu_preferences_interface.build_metadata",
+    "surface_handle.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../services/viz/public/mojom/shared_image_format.build_metadata",
+    "../../../skia/public/mojom/mojom.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../ui/gfx/mojom/mojom.build_metadata",
+    "../../../ui/gl/mojom/mojom.build_metadata",
+    "vulkan_interface.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../gpu/ipc/common/capabilities.mojom",
+    "../../../../../../gpu/ipc/common/context_result.mojom",
+    "../../../../../../gpu/ipc/common/device_perf_info.mojom",
+    "../../../../../../gpu/ipc/common/exported_shared_image.mojom",
+    "../../../../../../gpu/ipc/common/gpu_disk_cache_type.mojom",
+    "../../../../../../gpu/ipc/common/gpu_feature_info.mojom",
+    "../../../../../../gpu/ipc/common/gpu_info.mojom",
+    "../../../../../../gpu/ipc/common/gpu_peak_memory.mojom",
+    "../../../../../../gpu/ipc/common/mailbox.mojom",
+    "../../../../../../gpu/ipc/common/mailbox_holder.mojom",
+    "../../../../../../gpu/ipc/common/memory_stats.mojom",
+    "../../../../../../gpu/ipc/common/shared_image_capabilities.mojom",
+    "../../../../../../gpu/ipc/common/shared_image_metadata.mojom",
+    "../../../../../../gpu/ipc/common/sync_token.mojom",
+    "../../../../../../gpu/ipc/common/vulkan_ycbcr_info.mojom",
+    "../../../../../../gpu/ipc/common/luid.mojom"
+  ]
+}

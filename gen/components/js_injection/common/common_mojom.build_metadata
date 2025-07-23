@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../third_party/blink/public/mojom/mojom_core.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/js_injection/common/interfaces.mojom",
+    "../../../../../../components/js_injection/common/origin_matcher.mojom"
+  ]
+}

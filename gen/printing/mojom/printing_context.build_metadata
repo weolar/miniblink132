@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "mojom.build_metadata",
+    "../../mojo/public/mojom/base/base.build_metadata",
+    "../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../printing/mojom/printing_context.mojom"
+  ]
+}

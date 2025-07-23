@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "test_export.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../mojo/public/interfaces/bindings/tests/test_import.mojom"
+  ]
+}

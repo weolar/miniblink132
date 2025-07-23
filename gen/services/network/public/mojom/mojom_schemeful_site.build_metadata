@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/schemeful_site.mojom"
+  ]
+}

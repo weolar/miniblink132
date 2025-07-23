@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/accessibility/public/mojom/assistive_technology_type.mojom"
+  ]
+}

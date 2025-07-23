@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/safe_browsing/core/common/safe_browsing_url_checker.mojom"
+  ]
+}

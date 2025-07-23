@@ -1,0 +1,41 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "tsc",
+    "paths": {
+      "//resources/js/*": [
+        "./../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "chrome://resources/js/*": [
+        "./../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "chrome://resources/mojo/*": [
+        "./../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\history_clusters_internals.ts",
+    "preprocessed\\history_clusters_internals_browser_proxy.ts",
+    "preprocessed\\history_clusters_internals.mojom-webui.ts",
+    "../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../ui/webui/resources/js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../ui/webui/resources/mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

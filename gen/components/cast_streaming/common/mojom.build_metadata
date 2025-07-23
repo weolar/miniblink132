@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../media/mojo/mojom/mojom.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/cast_streaming/common/public/mojom/demuxer_connector.mojom",
+    "../../../../../../components/cast_streaming/common/public/mojom/renderer_controller.mojom"
+  ]
+}

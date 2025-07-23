@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../url/mojom/url_mojom_scheme_host_port.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/network_param.mojom"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "audio_data.build_metadata",
+    "speech_recognition_audio_forwarder.build_metadata",
+    "web_speech_recognition.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../media/mojo/mojom/speech_recognition.mojom"
+  ]
+}

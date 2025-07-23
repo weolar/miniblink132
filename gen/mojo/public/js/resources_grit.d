@@ -1,0 +1,1 @@
+gen\mojo\public\js\resources_grit.d.stamp: .\..\..\out\r32\gen\mojo\public\js\bindings.js .\..\..\out\r32\gen\mojo\public\js\mojo_bindings.js .\gen/tools/gritsettings/default_resource_ids

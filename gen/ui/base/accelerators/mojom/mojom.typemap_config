@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "ui/base/accelerators/mojom/accelerator_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::Accelerator",
+        "mojom": "ui.mojom.Accelerator"
+      },
+      {
+        "cpp": "::ui::Accelerator::KeyState",
+        "mojom": "ui.mojom.AcceleratorKeyState"
+      }
+    ]
+  }
+]

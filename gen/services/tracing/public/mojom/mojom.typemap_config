@@ -1,0 +1,79 @@
+[
+  {
+    "traits_headers": [
+      "third_party/perfetto/include/perfetto/ext/tracing/core/commit_data_request.h",
+      "third_party/perfetto/include/perfetto/tracing/core/data_source_config.h",
+      "third_party/perfetto/include/perfetto/tracing/core/data_source_descriptor.h",
+      "third_party/perfetto/include/perfetto/tracing/core/chrome_config.h",
+      "third_party/perfetto/protos/perfetto/config/interceptor_config.gen.h",
+      "third_party/perfetto/include/perfetto/tracing/core/trace_config.h"
+    ],
+    "traits_private_headers": [
+      "services/tracing/public/mojom/chrome_config_mojom_traits.h",
+      "services/tracing/public/mojom/commit_data_request_mojom_traits.h",
+      "services/tracing/public/mojom/data_source_config_mojom_traits.h",
+      "services/tracing/public/mojom/data_source_descriptor_mojom_traits.h",
+      "services/tracing/public/mojom/interceptor_config_mojom_traits.h",
+      "services/tracing/public/mojom/console_config_mojom_traits.h",
+      "services/tracing/public/mojom/trace_config_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/perfetto:libperfetto"
+    ],
+    "traits_sources": [
+      "chrome_config_mojom_traits.cc",
+      "commit_data_request_mojom_traits.cc",
+      "console_config_mojom_traits.cc",
+      "data_source_config_mojom_traits.cc",
+      "data_source_descriptor_mojom_traits.cc",
+      "interceptor_config_mojom_traits.cc",
+      "trace_config_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::perfetto::TraceConfig::BufferConfig::FillPolicy",
+        "mojom": "tracing.mojom.BufferFillPolicy"
+      },
+      {
+        "cpp": "::perfetto::CommitDataRequest",
+        "mojom": "tracing.mojom.CommitDataRequest"
+      },
+      {
+        "cpp": "::perfetto::CommitDataRequest::ChunksToMove",
+        "mojom": "tracing.mojom.ChunksToMove"
+      },
+      {
+        "cpp": "::perfetto::CommitDataRequest::ChunkToPatch::Patch",
+        "mojom": "tracing.mojom.ChunkPatch"
+      },
+      {
+        "cpp": "::perfetto::CommitDataRequest::ChunkToPatch",
+        "mojom": "tracing.mojom.ChunkToPatch"
+      },
+      {
+        "cpp": "::perfetto::DataSourceConfig",
+        "mojom": "tracing.mojom.DataSourceConfig"
+      },
+      {
+        "cpp": "::perfetto::ChromeConfig",
+        "mojom": "tracing.mojom.ChromeConfig"
+      },
+      {
+        "cpp": "::perfetto::DataSourceDescriptor",
+        "mojom": "tracing.mojom.DataSourceRegistration"
+      },
+      {
+        "cpp": "::perfetto::TraceConfig::BuiltinDataSource",
+        "mojom": "tracing.mojom.PerfettoBuiltinDataSource"
+      },
+      {
+        "cpp": "::perfetto::TraceConfig::IncrementalStateConfig",
+        "mojom": "tracing.mojom.IncrementalStateConfig"
+      },
+      {
+        "cpp": "::perfetto::TraceConfig",
+        "mojom": "tracing.mojom.TraceConfig"
+      }
+    ]
+  }
+]

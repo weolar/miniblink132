@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../services/network/public/mojom/mojom_network_param.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/ip_protection/mojom/core.mojom",
+    "../../../../../../components/ip_protection/mojom/data_types.mojom"
+  ]
+}

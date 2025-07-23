@@ -1,0 +1,27 @@
+{
+  "deps": [
+    "generated_test_mojom.build_metadata",
+    "../../../mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../mojo/public/cpp/bindings/tests/associated_interface_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/binder_map_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/connection_group_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/default_construct_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/direct_receiver_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/enum_default_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/enum_headers_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/feature_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/feature_unittest_other.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/flush_async_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/idle_tracking_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/interface_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/receiver_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/remote_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/service_factory_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/struct_headers_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/supports_urgent_attribute_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/sync_method_unittest.test-mojom",
+    "../../../../../../../../mojo/public/cpp/bindings/tests/union_unittest.test-mojom"
+  ]
+}

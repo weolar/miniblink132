@@ -1,0 +1,46 @@
+[
+  {
+    "traits_headers": [
+      "ui/base/ime/mojom/ime_types_mojom_traits.h",
+      "ui/base/ime/mojom/text_edit_command_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits",
+      "//ui/gfx/range"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::ImeTextSpan",
+        "mojom": "ui.mojom.ImeTextSpan"
+      },
+      {
+        "cpp": "::ui::ImeTextSpan::Thickness",
+        "mojom": "ui.mojom.ImeTextSpanThickness"
+      },
+      {
+        "cpp": "::ui::ImeTextSpan::Type",
+        "mojom": "ui.mojom.ImeTextSpanType"
+      },
+      {
+        "cpp": "::ui::ImeTextSpan::UnderlineStyle",
+        "mojom": "ui.mojom.ImeTextSpanUnderlineStyle"
+      },
+      {
+        "cpp": "::ui::TextInputAction",
+        "mojom": "ui.mojom.TextInputAction"
+      },
+      {
+        "cpp": "::ui::TextEditCommand",
+        "mojom": "ui.mojom.TextEditCommand"
+      },
+      {
+        "cpp": "::ui::TextInputMode",
+        "mojom": "ui.mojom.TextInputMode"
+      },
+      {
+        "cpp": "::ui::TextInputType",
+        "mojom": "ui.mojom.TextInputType"
+      }
+    ]
+  }
+]

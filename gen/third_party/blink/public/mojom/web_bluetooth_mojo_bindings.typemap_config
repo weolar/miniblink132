@@ -1,0 +1,13 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/bluetooth/web_bluetooth_device_id_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::WebBluetoothDeviceId",
+        "mojom": "blink.mojom.WebBluetoothDeviceId"
+      }
+    ]
+  }
+]

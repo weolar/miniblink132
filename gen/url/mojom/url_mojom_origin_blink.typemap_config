@@ -1,0 +1,17 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/mojo/security_origin_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//url"
+    ],
+    "types": [
+      {
+        "cpp": "::scoped_refptr<const ::blink::SecurityOrigin>",
+        "mojom": "url.mojom.Origin",
+        "nullable_is_same_type": true
+      }
+    ]
+  }
+]

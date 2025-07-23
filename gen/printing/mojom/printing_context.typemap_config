@@ -1,0 +1,35 @@
+[
+  {
+    "traits_deps": [
+      "//base",
+      "//mojo/public/mojom/base",
+      "//printing",
+      "//ui/gfx/geometry",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_headers": [
+      "printing/mojom/printing_context_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "printing_context_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::printing::PageMargins",
+        "mojom": "printing.mojom.PageMargins"
+      },
+      {
+        "cpp": "::printing::PageSetup",
+        "mojom": "printing.mojom.PageSetup"
+      },
+      {
+        "cpp": "::printing::PrintSettings::RequestedMedia",
+        "mojom": "printing.mojom.RequestedMedia"
+      },
+      {
+        "cpp": "::printing::PrintSettings",
+        "mojom": "printing.mojom.PrintSettings"
+      }
+    ]
+  }
+]

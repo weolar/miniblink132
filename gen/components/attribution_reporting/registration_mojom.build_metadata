@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "mojom.build_metadata",
+    "../../mojo/public/mojom/base/base.build_metadata",
+    "../../services/network/public/mojom/mojom_schemeful_site.build_metadata",
+    "../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../components/attribution_reporting/registration.mojom"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/device/public/mojom/usb_device.mojom",
+    "../../../../../../../services/device/public/mojom/usb_enumeration_options.mojom",
+    "../../../../../../../services/device/public/mojom/usb_manager.mojom",
+    "../../../../../../../services/device/public/mojom/usb_manager_client.mojom"
+  ]
+}

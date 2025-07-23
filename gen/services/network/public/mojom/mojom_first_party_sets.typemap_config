@@ -1,0 +1,48 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/first_party_sets_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/network/public/cpp:first_party_sets_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::FirstPartySetEntry::SiteIndex",
+        "mojom": "network.mojom.SiteIndex"
+      },
+      {
+        "cpp": "::net::SiteType",
+        "mojom": "network.mojom.SiteType"
+      },
+      {
+        "cpp": "::net::FirstPartySetEntry",
+        "mojom": "network.mojom.FirstPartySetEntry"
+      },
+      {
+        "cpp": "::net::FirstPartySetMetadata",
+        "mojom": "network.mojom.FirstPartySetMetadata",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::GlobalFirstPartySets",
+        "mojom": "network.mojom.GlobalFirstPartySets",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::FirstPartySetsContextConfig",
+        "mojom": "network.mojom.FirstPartySetsContextConfig",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::FirstPartySetsCacheFilter",
+        "mojom": "network.mojom.FirstPartySetsCacheFilter",
+        "move_only": true
+      },
+      {
+        "cpp": "::net::FirstPartySetEntryOverride",
+        "mojom": "network.mojom.FirstPartySetEntryOverride"
+      }
+    ]
+  }
+]

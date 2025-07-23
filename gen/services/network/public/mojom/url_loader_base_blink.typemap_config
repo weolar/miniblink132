@@ -1,0 +1,233 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/url_request_param_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::RequestPriority",
+        "mojom": "network.mojom.RequestPriority"
+      },
+      {
+        "cpp": "::net::ReferrerPolicy",
+        "mojom": "network.mojom.URLRequestReferrerPolicy"
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//services/network/public/cpp:cross_origin_embedder_policy"
+    ],
+    "traits_headers": [
+      "services/network/public/cpp/cross_origin_embedder_policy_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::network::CrossOriginEmbedderPolicy",
+        "mojom": "network.mojom.CrossOriginEmbedderPolicy"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/url_loader_completion_status_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::network::URLLoaderCompletionStatus",
+        "mojom": "network.mojom.URLLoaderCompletionStatus"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/cross_origin_opener_policy_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::network::CrossOriginOpenerPolicy",
+        "mojom": "network.mojom.CrossOriginOpenerPolicy"
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//services/network/public/cpp:document_isolation_policy"
+    ],
+    "traits_headers": [
+      "services/network/public/cpp/document_isolation_policy_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::network::DocumentIsolationPolicy",
+        "mojom": "network.mojom.DocumentIsolationPolicy"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/network_ipc_param_traits.h",
+      "services/network/public/cpp/url_request_mojom_traits.h",
+      "services/network/public/cpp/network_isolation_key_mojom_traits.h",
+      "services/network/public/cpp/network_anonymization_key_mojom_traits.h"
+    ],
+    "traits_private_headers": [
+      "services/network/public/mojom/devtools_observer.mojom.h",
+      "services/network/public/mojom/cookie_access_observer.mojom.h",
+      "services/network/public/mojom/trust_token_access_observer.mojom.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_network_isolation_key",
+      "//base",
+      "//url/mojom:url_mojom_gurl"
+    ],
+    "types": [
+      {
+        "cpp": "::network::ResourceRequest::TrustedParams",
+        "mojom": "network.mojom.TrustedUrlRequestParams"
+      },
+      {
+        "cpp": "::network::ResourceRequest::WebBundleTokenParams",
+        "mojom": "network.mojom.WebBundleTokenParams"
+      },
+      {
+        "cpp": "::network::ResourceRequest",
+        "forward_declaration": "namespace network { struct ResourceRequest; }",
+        "mojom": "network.mojom.URLRequest",
+        "non_const_ref": true
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::scoped_refptr<::network::ResourceRequestBody>",
+        "mojom": "network.mojom.URLRequestBody",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::net::SourceStream::SourceType",
+        "mojom": "network.mojom.SourceType"
+      },
+      {
+        "cpp": "::network::DataElementBytes",
+        "mojom": "network.mojom.DataElementBytes",
+        "move_only": true
+      },
+      {
+        "cpp": "::network::DataElementDataPipe",
+        "mojom": "network.mojom.DataElementDataPipe",
+        "move_only": true
+      },
+      {
+        "cpp": "::network::DataElementChunkedDataPipe",
+        "mojom": "network.mojom.DataElementChunkedDataPipe",
+        "move_only": true
+      },
+      {
+        "cpp": "::network::DataElementFile",
+        "mojom": "network.mojom.DataElementFile",
+        "move_only": true
+      },
+      {
+        "cpp": "::network::DataElement",
+        "mojom": "network.mojom.DataElement",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/http_request_headers_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::HttpRequestHeaders",
+        "mojom": "network.mojom.HttpRequestHeaders"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/isolation_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::IsolationInfo",
+        "mojom": "network.mojom.IsolationInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/network_interface_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::NetworkInterface",
+        "mojom": "network.mojom.NetworkInterface"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/parsed_request_cookie_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::cookie_util::ParsedRequestCookie",
+        "mojom": "network.mojom.ParsedRequestCookie"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/p2p_param_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/webrtc_overrides:webrtc_component"
+    ],
+    "types": [
+      {
+        "cpp": "::network::P2PPacketInfo",
+        "mojom": "network.mojom.P2PPacketInfo"
+      },
+      {
+        "cpp": "::network::P2PSendPacketMetrics",
+        "mojom": "network.mojom.P2PSendPacketMetrics"
+      },
+      {
+        "cpp": "::network::P2PPortRange",
+        "mojom": "network.mojom.P2PPortRange"
+      },
+      {
+        "cpp": "::network::P2PHostAndIPEndPoint",
+        "mojom": "network.mojom.P2PHostAndIPEndPoint"
+      },
+      {
+        "cpp": "::network::P2PSocketOption",
+        "mojom": "network.mojom.P2PSocketOption"
+      },
+      {
+        "cpp": "::network::P2PSocketType",
+        "mojom": "network.mojom.P2PSocketType"
+      },
+      {
+        "cpp": "::rtc::EcnMarking",
+        "mojom": "network.mojom.EcnMarking"
+      }
+    ]
+  }
+]

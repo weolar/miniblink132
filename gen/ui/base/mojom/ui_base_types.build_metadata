@@ -1,0 +1,10 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../ui/base/mojom/dialog_button.mojom",
+    "../../../../../../ui/base/mojom/menu_source_type.mojom",
+    "../../../../../../ui/base/mojom/window_show_state.mojom"
+  ]
+}

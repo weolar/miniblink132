@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "geoposition.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/device/public/mojom/geolocation_internals.mojom"
+  ]
+}

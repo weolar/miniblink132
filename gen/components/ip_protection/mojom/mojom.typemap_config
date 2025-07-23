@@ -1,0 +1,23 @@
+[
+  {
+    "traits_headers": [
+      "components/ip_protection/mojom/data_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base"
+    ],
+    "traits_sources": [
+      "//components/ip_protection/mojom/data_types_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ip_protection::BlindSignedAuthToken",
+        "mojom": "ip_protection.mojom.BlindSignedAuthToken"
+      },
+      {
+        "cpp": "::ip_protection::GeoHint",
+        "mojom": "ip_protection.mojom.GeoHint"
+      }
+    ]
+  }
+]

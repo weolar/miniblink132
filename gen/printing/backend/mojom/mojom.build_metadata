@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../mojom/mojom.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../printing/backend/mojom/print_backend.mojom"
+  ]
+}

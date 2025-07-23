@@ -1,0 +1,130 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/core/messaging/blink_cloneable_message_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::BlinkCloneableMessage",
+        "mojom": "blink.mojom.CloneableMessage",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/core/messaging/blink_transferable_message_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common",
+      "//third_party/blink/renderer/platform/wtf"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::BlinkTransferableMessage",
+        "mojom": "blink.mojom.TransferableMessage",
+        "move_only": true
+      },
+      {
+        "cpp": "::blink::ArrayBufferContents",
+        "mojom": "blink.mojom.SerializedArrayBufferContents",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/frame/view_transition_state.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/frame/view_transition_state_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::ViewTransitionState",
+        "mojom": "blink.mojom.ViewTransitionState"
+      },
+      {
+        "cpp": "::blink::ViewTransitionElement",
+        "mojom": "blink.mojom.ViewTransitionElement"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/messaging/message_port_descriptor_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::MessagePortDescriptor",
+        "mojom": "blink.mojom.MessagePortDescriptor",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/scheduler/task_attribution_id.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/messaging/task_attribution_id_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::scheduler::TaskAttributionId",
+        "mojom": "blink.mojom.TaskAttributionId",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//gpu/ipc/common"
+    ],
+    "traits_headers": [
+      "third_party/blink/public/common/messaging/accelerated_image_info.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/messaging/accelerated_static_bitmap_image_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::AcceleratedImageInfo",
+        "mojom": "blink.mojom.AcceleratedStaticBitmapImage",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/page/browsing_context_group_info.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/page/browsing_context_group_info_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::BrowsingContextGroupInfo",
+        "default_constructible": false,
+        "mojom": "blink.mojom.BrowsingContextGroupInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/service_worker/service_worker_router_rule.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/service_worker/service_worker_router_rule_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::ServiceWorkerRouterRules",
+        "mojom": "blink.mojom.ServiceWorkerRouterRules"
+      }
+    ]
+  }
+]

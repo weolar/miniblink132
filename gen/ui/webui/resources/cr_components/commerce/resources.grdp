@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_COMMERCE_PRODUCT_SPECIFICATIONS_BROWSER_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/commerce/minified/product_specifications_browser_proxy.js" resource_path="cr_components/commerce/product_specifications_browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_COMMERCE_SHOPPING_SERVICE_BROWSER_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/commerce/minified/shopping_service_browser_proxy.js" resource_path="cr_components/commerce/shopping_service_browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_COMMERCE_PRODUCT_SPECIFICATIONS_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/commerce/minified/product_specifications.mojom-webui.js" resource_path="cr_components/commerce/product_specifications.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_COMMERCE_SHARED_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/commerce/minified/shared.mojom-webui.js" resource_path="cr_components/commerce/shared.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_COMMERCE_SHOPPING_SERVICE_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/commerce/minified/shopping_service.mojom-webui.js" resource_path="cr_components/commerce/shopping_service.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

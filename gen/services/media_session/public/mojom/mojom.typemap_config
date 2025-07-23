@@ -1,0 +1,42 @@
+[
+  {
+    "traits_deps": [
+      "//mojo/public/mojom/base",
+      "//ui/gfx/geometry/mojom"
+    ],
+    "traits_headers": [
+      "services/media_session/public/cpp/media_session_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//services/media_session/public/cpp:base_cpp",
+      "//skia"
+    ],
+    "traits_sources": [
+      "//services/media_session/public/cpp/media_session_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::media_session::ChapterInformation",
+        "mojom": "media_session.mojom.ChapterInformation"
+      },
+      {
+        "cpp": "::media_session::MediaImage",
+        "mojom": "media_session.mojom.MediaImage"
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "media_session.mojom.MediaImageBitmap",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::media_session::MediaMetadata",
+        "mojom": "media_session.mojom.MediaMetadata"
+      },
+      {
+        "cpp": "::media_session::MediaPosition",
+        "mojom": "media_session.mojom.MediaPosition"
+      }
+    ]
+  }
+]

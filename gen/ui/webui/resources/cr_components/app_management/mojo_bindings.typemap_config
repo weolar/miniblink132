@@ -1,0 +1,52 @@
+[
+  {
+    "traits_headers": [
+      "components/services/app_service/public/cpp/app_types.h",
+      "components/services/app_service/public/cpp/permission.h",
+      "components/services/app_service/public/cpp/run_on_os_login_types.h",
+      "ui/webui/resources/cr_components/app_management/app_management_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/services/app_service"
+    ],
+    "traits_sources": [
+      "//ui/webui/resources/cr_components/app_management/app_management_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::apps::AppType",
+        "mojom": "app_management.mojom.AppType"
+      },
+      {
+        "cpp": "::apps::PermissionType",
+        "mojom": "app_management.mojom.PermissionType"
+      },
+      {
+        "cpp": "::apps::PermissionPtr",
+        "mojom": "app_management.mojom.Permission",
+        "move_only": true
+      },
+      {
+        "cpp": "::apps::InstallReason",
+        "mojom": "app_management.mojom.InstallReason"
+      },
+      {
+        "cpp": "::apps::InstallSource",
+        "mojom": "app_management.mojom.InstallSource"
+      },
+      {
+        "cpp": "::apps::WindowMode",
+        "mojom": "app_management.mojom.WindowMode"
+      },
+      {
+        "cpp": "::apps::RunOnOsLoginMode",
+        "mojom": "app_management.mojom.RunOnOsLoginMode"
+      },
+      {
+        "cpp": "::apps::RunOnOsLoginPtr",
+        "mojom": "app_management.mojom.RunOnOsLogin",
+        "move_only": true
+      }
+    ]
+  }
+]

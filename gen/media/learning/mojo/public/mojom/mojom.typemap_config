@@ -1,0 +1,37 @@
+[
+  {
+    "traits_headers": [
+      "media/learning/mojo/public/cpp/learning_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//media/learning/common",
+      "//media/learning/mojo/public/cpp:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::media::learning::LabelledExample",
+        "mojom": "media.learning.mojom.LabelledExample"
+      },
+      {
+        "cpp": "::media::learning::FeatureValue",
+        "mojom": "media.learning.mojom.FeatureValue"
+      },
+      {
+        "cpp": "::media::learning::TargetValue",
+        "mojom": "media.learning.mojom.TargetValue"
+      },
+      {
+        "cpp": "::media::learning::ObservationCompletion",
+        "mojom": "media.learning.mojom.ObservationCompletion"
+      },
+      {
+        "cpp": "::media::learning::TargetHistogramPair",
+        "mojom": "media.learning.mojom.TargetHistogramPair"
+      },
+      {
+        "cpp": "::media::learning::TargetHistogram",
+        "mojom": "media.learning.mojom.TargetHistogram"
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/schemeful_site_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::SchemefulSite",
+        "mojom": "network.mojom.SchemefulSite"
+      }
+    ]
+  }
+]

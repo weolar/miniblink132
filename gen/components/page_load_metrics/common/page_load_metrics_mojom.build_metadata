@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../third_party/blink/public/mojom/mojom_platform.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../components/page_load_metrics/common/page_load_metrics.mojom"
+  ]
+}

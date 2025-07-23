@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "mojom_schemeful_site.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/first_party_sets.mojom"
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "traits_headers": [
+      "services/viz/privileged/cpp/context_lost_reason_traits.h"
+    ],
+    "traits_public_deps": [
+      "//gpu/command_buffer/common"
+    ],
+    "types": [
+      {
+        "cpp": "::gpu::error::ContextLostReason",
+        "mojom": "viz.mojom.ContextLostReason"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/viz/privileged/cpp/overlay_strategy_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/viz/common"
+    ],
+    "types": [
+      {
+        "cpp": "::viz::OverlayStrategy",
+        "mojom": "viz.mojom.OverlayStrategy"
+      }
+    ]
+  }
+]

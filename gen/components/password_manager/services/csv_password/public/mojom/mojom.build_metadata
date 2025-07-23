@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../../../../sandbox/policy/mojom/mojom.build_metadata",
+    "../../../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../../components/password_manager/services/csv_password/public/mojom/csv_password_parser.mojom"
+  ]
+}

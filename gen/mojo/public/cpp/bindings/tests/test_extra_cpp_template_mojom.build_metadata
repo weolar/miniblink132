@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../mojo/public/cpp/bindings/tests/extra_cpp_template_unittest.test-mojom"
+  ]
+}

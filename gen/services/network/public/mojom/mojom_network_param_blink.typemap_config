@@ -1,0 +1,28 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/network_param_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//services/network/public/cpp:network_param_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AuthChallengeInfo",
+        "mojom": "network.mojom.AuthChallengeInfo"
+      },
+      {
+        "cpp": "::net::HostPortPair",
+        "mojom": "network.mojom.HostPortPair"
+      },
+      {
+        "cpp": "::net::NetLogSource",
+        "mojom": "network.mojom.NetLogSource"
+      },
+      {
+        "cpp": "::net::ProxyChain",
+        "mojom": "network.mojom.ProxyChain"
+      }
+    ]
+  }
+]

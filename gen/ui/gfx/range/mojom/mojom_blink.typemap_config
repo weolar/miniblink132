@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "ui/gfx/range/mojom/range_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::gfx::Range",
+        "mojom": "gfx.mojom.Range"
+      },
+      {
+        "cpp": "::gfx::RangeF",
+        "mojom": "gfx.mojom.RangeF"
+      }
+    ]
+  }
+]

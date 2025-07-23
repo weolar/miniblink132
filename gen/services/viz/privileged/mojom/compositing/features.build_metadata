@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../../services/viz/privileged/mojom/compositing/features.mojom"
+  ]
+}

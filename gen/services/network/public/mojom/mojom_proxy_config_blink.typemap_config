@@ -1,0 +1,17 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/mutable_network_traffic_annotation_tag_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net/traffic_annotation",
+      "//services/network/public/cpp:proxy_config_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::MutableNetworkTrafficAnnotationTag",
+        "mojom": "network.mojom.MutableNetworkTrafficAnnotationTag"
+      }
+    ]
+  }
+]

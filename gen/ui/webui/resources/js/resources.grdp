@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_WEBUI_JS_ACTION_LINK_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/action_link.js" resource_path="js/action_link.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_ASSERT_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/assert.js" resource_path="js/assert.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_COLOR_UTILS_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/color_utils.js" resource_path="js/color_utils.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_CR_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/cr.js" resource_path="js/cr.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_CR_ROUTER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/cr_router.js" resource_path="js/cr_router.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_CUSTOM_ELEMENT_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/custom_element.js" resource_path="js/custom_element.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_DRAG_WRAPPER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/drag_wrapper.js" resource_path="js/drag_wrapper.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_EVENT_TRACKER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/event_tracker.js" resource_path="js/event_tracker.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_FOCUS_GRID_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/focus_grid.js" resource_path="js/focus_grid.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_FOCUS_OUTLINE_MANAGER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/focus_outline_manager.js" resource_path="js/focus_outline_manager.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_FOCUS_ROW_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/focus_row.js" resource_path="js/focus_row.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_ICON_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/icon.js" resource_path="js/icon.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_KEYBOARD_SHORTCUT_LIST_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/keyboard_shortcut_list.js" resource_path="js/keyboard_shortcut_list.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_LOAD_TIME_DATA_DEPRECATED_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/load_time_data_deprecated.js" resource_path="js/load_time_data_deprecated.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_LOAD_TIME_DATA_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/load_time_data.js" resource_path="js/load_time_data.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_METRICS_REPORTER_BROWSER_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/metrics_reporter/browser_proxy.js" resource_path="js/metrics_reporter/browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_METRICS_REPORTER_METRICS_REPORTER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/metrics_reporter/metrics_reporter.js" resource_path="js/metrics_reporter/metrics_reporter.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_MOJO_TYPE_UTIL_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/mojo_type_util.js" resource_path="js/mojo_type_util.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_OPEN_WINDOW_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/open_window_proxy.js" resource_path="js/open_window_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_PARSE_HTML_SUBSET_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/parse_html_subset.js" resource_path="js/parse_html_subset.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_PLATFORM_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/platform.js" resource_path="js/platform.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_PLURAL_STRING_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/plural_string_proxy.js" resource_path="js/plural_string_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_PROMISE_RESOLVER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/promise_resolver.js" resource_path="js/promise_resolver.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_SEARCH_HIGHLIGHT_UTILS_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/search_highlight_utils.js" resource_path="js/search_highlight_utils.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_STATIC_TYPES_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/static_types.js" resource_path="js/static_types.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_STORE_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/store.js" resource_path="js/store.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_TEST_LOADER_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/test_loader.js" resource_path="js/test_loader.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_TEST_LOADER_UTIL_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/test_loader_util.js" resource_path="js/test_loader_util.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_UTIL_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/util.js" resource_path="js/util.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_FOCUS_WITHOUT_INK_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/focus_without_ink.js" resource_path="js/focus_without_ink.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_BROWSER_COMMAND_BROWSER_COMMAND_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/browser_command/browser_command_proxy.js" resource_path="js/browser_command/browser_command_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_METRICS_REPORTER_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/metrics_reporter.mojom-webui.js" resource_path="js/metrics_reporter.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_WEBUI_JS_BROWSER_COMMAND_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/js/minified/browser_command.mojom-webui.js" resource_path="js/browser_command.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

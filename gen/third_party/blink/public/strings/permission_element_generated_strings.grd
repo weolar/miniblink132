@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+This file contains all Permission element strings in all locales.
+This is a generated grd file.
+The script to generate the grd file is located at
+third_party/blink/renderer/build/scripts/generate_permission_element_grd.py
+--><grit base_dir="." latest_public_release="0" current_release="1" source_lang_id="en" enc_check="möl">
+<outputs>
+    <output filename="grit/permission_element_generated_strings.h" type="rc_header">
+      <emit emit_type="prepend"/>
+    </output>
+    <output filename="permission_element_generated_strings.pak" type="data_package"/>
+</outputs>
+<release seq="1" allow_pseudo="false">
+    <messages fallback_to_english="true">
+    <message name="IDS_PERMISSION_REQUEST_CAMERA_af" translateable="false">Gebruik kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_af" translateable="false">Kamera en mikrofoon word toegelaat</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_af" translateable="false">Presiese ligging word toegelaat</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_af" translateable="false">Mikrofoon word toegelaat</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_af" translateable="false">Kamera word toegelaat</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_af" translateable="false">Gebruik mikrofoon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_af" translateable="false">Ligging toegelaat</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_af" translateable="false">Gebruik ligging</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_af" translateable="false">Gebruik mikrofoon en kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_af" translateable="false">Gebruik presiese ligging</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_am" translateable="false">ካሜራ ይጠቀሙ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_am" translateable="false">ካሜራ እና ማይክሮፎን ይፈቀዳሉ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_am" translateable="false">ትክክለኛ አካባቢ ተፈቅዷል</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_am" translateable="false">ማይክሮፎን ተፈቅዷል</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_am" translateable="false">ካሜራ ተፈቅዷል</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_am" translateable="false">ማይክፎሮን ይጠቀሙ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_am" translateable="false">አካባቢ ይፈቀዳል</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_am" translateable="false">አካባቢን ተጠቀም</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_am" translateable="false">ማይክሮፎን እና ካሜራ ይጠቀሙ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_am" translateable="false">ትክክለኛ አካባቢ ተጠቀም</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ar" translateable="false">استخدام الكاميرا</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ar" translateable="false">تم السماح باستخدام الكاميرا والميكروفون</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ar" translateable="false">تمّ السماح بالوصول إلى الموقع الجغرافي الدقيق</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ar" translateable="false">تم السماح باستخدام الميكروفون</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ar" translateable="false">تم السماح باستخدام الكاميرا</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ar" translateable="false">استخدام الميكروفون</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ar" translateable="false">تمت الموافقة على طلب الوصول إلى الموقع الجغرافي.</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ar" translateable="false">استخدام الموقع الجغرافي</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ar" translateable="false">استخدام الميكروفون والكاميرا</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ar" translateable="false">استخدام الموقع الدقيق</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_as" translateable="false">কেমেৰা ব্যৱহাৰ কৰক</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_as" translateable="false">কেমেৰা আৰু মাইক্ৰ’ফ’নৰ ব্যৱহাৰৰ অনুমতি দিয়া হৈছে</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_as" translateable="false">সঠিক অৱস্থানৰ অনুমতি দিয়া হৈছে</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_as" translateable="false">মাইক্ৰ’ফ’নৰ অনুমতি আছে</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_as" translateable="false">কেমেৰা ব্যৱহাৰৰ অনুমতি দিয়া হৈছে</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_as" translateable="false">মাইক্ৰ’ফ’ন ব্যৱহাৰ কৰক</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_as" translateable="false">অৱস্থানৰ অনুমতি আছে</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_as" translateable="false">অৱস্থান ব্যৱহাৰ কৰক</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_as" translateable="false">মাইক্ৰ’ফ’ন আৰু কেমেৰা ব্যৱহাৰ কৰক</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_as" translateable="false">সঠিক অৱস্থান ব্যৱহাৰ কৰক</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_az" translateable="false">Kameradan istifadə edin</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_az" translateable="false">Kamera və mikrofona icazə verildi</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_az" translateable="false">Dəqiq məkana icazə verilir</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_az" translateable="false">Mikrofona icazə verildi</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_az" translateable="false">Kameraya icazə verildi</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_az" translateable="false">Mikrofondan istifadə edin</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_az" translateable="false">Məkana icazə verilib</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_az" translateable="false">Məkandan istifadə edin</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_az" translateable="false">Mikrofon və kameradan istifadə edin</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_az" translateable="false">Məkan dəqiq aşkarlansın</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_be" translateable="false">Выкарыстоўваць камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_be" translateable="false">Камера і мікрафон дазволены</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_be" translateable="false">Доступ да дакладнага месцазнаходжання дазволены</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_be" translateable="false">Выкарыстанне мікрафона дазволена</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_be" translateable="false">Камера дазволена</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_be" translateable="false">Выкарыстоўваць мікрафон</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_be" translateable="false">Выкарыстанне геаданых дазволена</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_be" translateable="false">Выкарыстоўваць геалакацыю</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_be" translateable="false">Выкарыстоўваць мікрафон і камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_be" translateable="false">Улічваць маё месцазнаходжанне</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_bg" translateable="false">Използване на камерата</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_bg" translateable="false">Достъпът до камерата и микрофона е разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_bg" translateable="false">Достъпът до точното местоположение е разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_bg" translateable="false">Достъпът до микрофона е разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_bg" translateable="false">Достъпът до камерата е разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_bg" translateable="false">Използване на микрофона</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_bg" translateable="false">Достъпът до местоположението е разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_bg" translateable="false">Използване на местоположението</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_bg" translateable="false">Използване на микрофона и камерата</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_bg" translateable="false">Използв. на точно местополож.</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_bn" translateable="false">ক্যামেরা ব্যবহার করুন</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_bn" translateable="false">ক্যামেরা এবং মাইক্রোফোন ব্যবহারে অনুমতি দেওয়া হয়েছে</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_bn" translateable="false">সুনির্দিষ্ট লোকেশনের অনুমতি দেওয়া আছে</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_bn" translateable="false">মাইক্রোফোন ব্যবহারের অনুমতি দেওয়া হয়েছে</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_bn" translateable="false">ক্যামেরা ব্যবহারের অনুমতি দেওয়া হয়েছে</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_bn" translateable="false">মাইক্রোফোন ব্যবহার করুন</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_bn" translateable="false">লোকেশনের অনুমতি আছে</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_bn" translateable="false">লোকেশন ব্যবহার করুন</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_bn" translateable="false">মাইক্রোফোন ও ক্যামেরা ব্যবহার করুন</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_bn" translateable="false">যথাযথ লোকেশন ব্যবহার করুন</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_bs" translateable="false">Koristi kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_bs" translateable="false">Kamera i mikrofon su dozvoljeni</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_bs" translateable="false">Tačna lokacija je dozvoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_bs" translateable="false">Mikrofon je dozvoljen</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_bs" translateable="false">Kamera je dozvoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_bs" translateable="false">Koristi mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_bs" translateable="false">Lokacija je dozvoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_bs" translateable="false">Koristi lokaciju</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_bs" translateable="false">Koristi mikrofon i kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_bs" translateable="false">Koristi tačnu lokaciju</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ca" translateable="false">Utilitza la càmera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ca" translateable="false">La càmera i el micròfon es poden utilitzar</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ca" translateable="false">Està permès utilitzar la ubicació exacta</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ca" translateable="false">El micròfon es pot utilitzar</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ca" translateable="false">La càmera es pot utilitzar</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ca" translateable="false">Utilitza el micròfon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ca" translateable="false">Està permès utilitzar la ubicació</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ca" translateable="false">Utilitza la ubicació</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ca" translateable="false">Utilitza el micròfon i la càmera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ca" translateable="false">Utilitza la ubicació precisa</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_cs" translateable="false">Použít kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_cs" translateable="false">Kamera a mikrofon jsou povoleny</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_cs" translateable="false">Přesná poloha povolena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_cs" translateable="false">Mikrofon je povolen</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_cs" translateable="false">Kamera je povolena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_cs" translateable="false">Použít mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_cs" translateable="false">Poloha je povolena</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_cs" translateable="false">Používat polohu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_cs" translateable="false">Použít mikrofon a kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_cs" translateable="false">Použít přesnou polohu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_cy" translateable="false">Defnyddio'ch camera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_cy" translateable="false">Caniateir y camera a'r meicroffon</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_cy" translateable="false">Caniateir union leoliad</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_cy" translateable="false">Caniateir meicroffon</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_cy" translateable="false">Caniateir camera</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_cy" translateable="false">Defnyddio'r meicroffon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_cy" translateable="false">Caniateir lleoliad</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_cy" translateable="false">Defnyddio lleoliad</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_cy" translateable="false">Defnyddio'r meicroffon a'r camera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_cy" translateable="false">Defnyddio union leoliad</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_da" translateable="false">Brug kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_da" translateable="false">Der er givet adgang til kameraet og mikrofonen</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_da" translateable="false">Præcis lokation er tilladt</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_da" translateable="false">Der er givet adgang til mikrofonen</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_da" translateable="false">Der er givet adgang til kameraet</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_da" translateable="false">Brug mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_da" translateable="false">Adgang til lokation er tilladt</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_da" translateable="false">Brug lokation</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_da" translateable="false">Brug mikrofon og kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_da" translateable="false">Brug præcis lokation</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_de" translateable="false">Kamera verwenden</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_de" translateable="false">Kamera- und Mikrofonnutzung zulässig</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_de" translateable="false">Genaue Standortbestimmung erlaubt</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_de" translateable="false">Mikrofonnutzung zulässig</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_de" translateable="false">Kameranutzung zulässig</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_de" translateable="false">Mikrofon verwenden</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_de" translateable="false">Berechtigung zur Standortermittlung gewährt</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_de" translateable="false">Standort verwenden</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_de" translateable="false">Mikrofon und Kamera verwenden</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_de" translateable="false">Genauen Standort verwenden</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_el" translateable="false">Χρήση κάμερας</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_el" translateable="false">Η κάμερα και το μικρόφωνο επιτρέπονται</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_el" translateable="false">Η ακριβής τοποθεσία επιτρέπεται</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_el" translateable="false">Επιτρέπεται το μικρόφωνο</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_el" translateable="false">Επιτρέπεται η κάμερα</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_el" translateable="false">Χρήση μικροφώνου</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_el" translateable="false">Η πρόσβαση στην τοποθεσία επιτράπηκε</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_el" translateable="false">Χρήση τοποθεσίας</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_el" translateable="false">Χρήση μικροφώνου και κάμερας</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_el" translateable="false">Χρήση ακριβούς τοποθεσίας</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_en_GB" translateable="false">Use camera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_en_GB" translateable="false">Camera and microphone allowed</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_en_GB" translateable="false">Precise location allowed</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_en_GB" translateable="false">Microphone allowed</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_en_GB" translateable="false">Camera allowed</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_en_GB" translateable="false">Use microphone</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_en_GB" translateable="false">Location allowed</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_en_GB" translateable="false">Use location</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_en_GB" translateable="false">Use microphone and camera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_en_GB" translateable="false">Use precise location</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_es_419" translateable="false">Usar la cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_es_419" translateable="false">Cámara y micrófono permitidos</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_es_419" translateable="false">Se permite la ubicación precisa</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_es_419" translateable="false">Micrófono permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_es_419" translateable="false">Cámara permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_es_419" translateable="false">Usar el micrófono</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_es_419" translateable="false">Se permite la ubicación</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_es_419" translateable="false">Usar ubicación</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_es_419" translateable="false">Usar el micrófono y la cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_es_419" translateable="false">Usar la ubicación precisa</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_es" translateable="false">Usar cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_es" translateable="false">Cámara y micrófono permitidos</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_es" translateable="false">Acceso a la ubicación precisa permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_es" translateable="false">Micrófono permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_es" translateable="false">Cámara permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_es" translateable="false">Usar micrófono</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_es" translateable="false">Ubicación permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_es" translateable="false">Usar ubicación</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_es" translateable="false">Usar micrófono y cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_es" translateable="false">Usar ubicación precisa</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_et" translateable="false">Kasuta kaamerat</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_et" translateable="false">Kaamera ja mikrofon on lubatud</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_et" translateable="false">Täpne asukoht on lubatud</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_et" translateable="false">Mikrofon on lubatud</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_et" translateable="false">Kaamera on lubatud</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_et" translateable="false">Kasuta mikrofoni</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_et" translateable="false">Asukoht on lubatud</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_et" translateable="false">Kasuta asukohta</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_et" translateable="false">Kasuta mikrofoni ja kaamerat</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_et" translateable="false">Kasuta täpset asukohta</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_eu" translateable="false">Erabili kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_eu" translateable="false">Kamera eta mikrofonoa erabil daitezke</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_eu" translateable="false">Kokapen zehatza erabil daiteke</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_eu" translateable="false">Mikrofonoa erabil daiteke</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_eu" translateable="false">Kamera erabil daiteke</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_eu" translateable="false">Erabili mikrofonoa</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_eu" translateable="false">Eman da kokapena erabiltzeko baimena</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_eu" translateable="false">Erabili kokapena</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_eu" translateable="false">Erabili mikrofonoa eta kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_eu" translateable="false">Erabili kokapen zehatza</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_fa" translateable="false">استفاده از دوربین</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_fa" translateable="false">دوربین و میکروفون مجاز هستند</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_fa" translateable="false">«مکان دقیق» مجاز است</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_fa" translateable="false">میکروفون مجاز است</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_fa" translateable="false">دوربین مجاز است</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_fa" translateable="false">استفاده از میکروفون</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_fa" translateable="false">مکان مجاز است</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_fa" translateable="false">استفاده از مکان</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_fa" translateable="false">استفاده از میکروفون و دوربین</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_fa" translateable="false">استفاده از مکان دقیق</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_fi" translateable="false">Käytä kameraa</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_fi" translateable="false">Kamera ja mikrofoni sallittu</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_fi" translateable="false">Tarkka sijainti sallittu</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_fi" translateable="false">Mikrofoni sallittu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_fi" translateable="false">Kamera sallittu</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_fi" translateable="false">Käytä mikrofonia</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_fi" translateable="false">Sijainti sallittu</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_fi" translateable="false">Käytä sijaintia</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_fi" translateable="false">Käytä mikrofonia ja kameraa</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_fi" translateable="false">Käytä tarkkaa sijaintia</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_fil" translateable="false">Gamitin ang camera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_fil" translateable="false">Pinapayagan ang camera at mikropono</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_fil" translateable="false">Pinapayagan ang eksaktong lokasyon</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_fil" translateable="false">Pinapayagan ang mikropono</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_fil" translateable="false">Pinapayagan ang camera</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_fil" translateable="false">Gamitin ang mikropono</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_fil" translateable="false">Pinapayagan ang lokasyon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_fil" translateable="false">Gumamit ng lokasyon</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_fil" translateable="false">Gamitin ang mikropono at camera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_fil" translateable="false">Gumamit ng tumpak na lokasyon</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_fr_CA" translateable="false">Utiliser l'appareil photo</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_fr_CA" translateable="false">La caméra et le microphone sont autorisés</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_fr_CA" translateable="false">Position exacte autorisée</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_fr_CA" translateable="false">Le microphone est autorisé</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_fr_CA" translateable="false">La caméra est autorisée</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_fr_CA" translateable="false">Utiliser le microphone</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_fr_CA" translateable="false">Accès à la position autorisé</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_fr_CA" translateable="false">Utiliser la localisation</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_fr_CA" translateable="false">Utiliser le microphone et l'appareil photo</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_fr_CA" translateable="false">Utiliser la position exacte</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_fr" translateable="false">Utiliser l'appareil photo</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_fr" translateable="false">Caméra et micro autorisés</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_fr" translateable="false">Position exacte autorisée</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_fr" translateable="false">Micro autorisé</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_fr" translateable="false">Caméra autorisée</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_fr" translateable="false">Utiliser le micro</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_fr" translateable="false">Position autorisée</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_fr" translateable="false">Utiliser la position</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_fr" translateable="false">Utiliser le micro et l'appareil photo</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_fr" translateable="false">Utiliser la position exacte</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_gl" translateable="false">Usar cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_gl" translateable="false">Permítense a cámara e o micrófono</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_gl" translateable="false">Localización precisa permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_gl" translateable="false">Permítese o micrófono</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_gl" translateable="false">Permítese a cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_gl" translateable="false">Usar micrófono</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_gl" translateable="false">O acceso á localización está permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_gl" translateable="false">Usar localización</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_gl" translateable="false">Usar micrófono e cámara</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_gl" translateable="false">Usar situación exacta</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_gu" translateable="false">કૅમેરાનો ઉપયોગ કરો</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_gu" translateable="false">કૅમેરા અને માઇક્રોફોનની મંજૂરી</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_gu" translateable="false">સચોટ લોકેશનની મંજૂરી છે</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_gu" translateable="false">માઇક્રોફોનને મંજૂરી</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_gu" translateable="false">કૅમેરાને મંજૂરી</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_gu" translateable="false">માઇક્રોફોનનો ઉપયોગ કરો</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_gu" translateable="false">લોકેશનની મંજૂરી છે</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_gu" translateable="false">લોકેશનનો ઉપયોગ કરો</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_gu" translateable="false">માઇક્રોફોન અને કૅમેરાનો ઉપયોગ કરો</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_gu" translateable="false">સચોટ લોકેશનનો ઉપયોગ કરો</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_hi" translateable="false">कैमरे इस्तेमाल करने की अनुमति दें</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_hi" translateable="false">कैमरे और माइक्रोफ़ोन की अनुमति है</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_hi" translateable="false">जगह की सटीक जानकारी ऐक्सेस करने की अनुमति है</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_hi" translateable="false">माइक्रोफ़ोन की अनुमति है</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_hi" translateable="false">कैमरे की अनुमति है</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_hi" translateable="false">माइक्रोफ़ोन इस्तेमाल करने की अनुमति दें</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_hi" translateable="false">जगह की जानकारी ऐक्सेस करने की अनुमति है</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_hi" translateable="false">जगह की जानकारी का इस्तेमाल करें</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_hi" translateable="false">माइक्रोफ़ोन और कैमरे इस्तेमाल करने की अनुमति दें</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_hi" translateable="false">जगह की सटीक जानकारी लागू करें</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_hr" translateable="false">Upotrijebi kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_hr" translateable="false">Dopušteni su kamera i mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_hr" translateable="false">Dopuštena je točna lokacija</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_hr" translateable="false">Mikrofon je dopušten</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_hr" translateable="false">Kamera je dopuštena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_hr" translateable="false">Upotrijebi mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_hr" translateable="false">Lokacija je dopuštena</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_hr" translateable="false">Upotreba lokacije</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_hr" translateable="false">Upotrijebi mikrofon i kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_hr" translateable="false">Koristi točnu lokaciju</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_hu" translateable="false">Kamera használata</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_hu" translateable="false">Kamera és mikrofon engedélyezve</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_hu" translateable="false">Pontos hely engedélyezve</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_hu" translateable="false">Mikrofon engedélyezve</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_hu" translateable="false">Kamera engedélyezve</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_hu" translateable="false">Mikrofon használata</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_hu" translateable="false">Helyadatok engedélyezve</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_hu" translateable="false">Hely használata</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_hu" translateable="false">Mikrofon és kamera használata</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_hu" translateable="false">Pontos helyadatok használata</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_hy" translateable="false">Օգտագործել տեսախցիկը</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_hy" translateable="false">Տեսախցիկի ու խոսափողի օգտագործումը թույլատրված է</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_hy" translateable="false">Ճշգրիտ տեղադրությունը թույլատրված է</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_hy" translateable="false">Խոսափողի օգտագործումը թույլատրված է</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_hy" translateable="false">Տեսախցիկի օգտագործումը թույլատրված է</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_hy" translateable="false">Օգտագործել խոսափողը</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_hy" translateable="false">Տեղադրության տվյալների օգտագործումը թույլատրված է</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_hy" translateable="false">Օգտագործել տեղորոշումը</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_hy" translateable="false">Օգտագործել խոսափողը և տեսախցիկը</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_hy" translateable="false">Օգտագործել ճշգրիտ վայրը</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_id" translateable="false">Gunakan kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_id" translateable="false">Kamera dan mikrofon diizinkan</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_id" translateable="false">Lokasi presisi diizinkan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_id" translateable="false">Mikrofon diizinkan</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_id" translateable="false">Kamera diizinkan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_id" translateable="false">Gunakan mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_id" translateable="false">Lokasi diizinkan</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_id" translateable="false">Gunakan lokasi</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_id" translateable="false">Gunakan mikrofon dan kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_id" translateable="false">Gunakan lokasi presisi</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_is" translateable="false">Nota myndavél</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_is" translateable="false">Myndavél og hljóðnemi eru leyfð</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_is" translateable="false">Nákvæm staðsetning leyfð</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_is" translateable="false">Hljóðnemi er leyfður</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_is" translateable="false">Myndavél er leyfð</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_is" translateable="false">Nota hljóðnema</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_is" translateable="false">Staðsetning leyfð</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_is" translateable="false">Nota staðsetningu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_is" translateable="false">Nota hljóðnema og myndavél</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_is" translateable="false">Nota nákvæma staðsetningu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_it" translateable="false">Usa videocamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_it" translateable="false">Videocamera e microfono consentiti</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_it" translateable="false">Posizione esatta consentita</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_it" translateable="false">Microfono consentito</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_it" translateable="false">Videocamera consentita</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_it" translateable="false">Usa microfono</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_it" translateable="false">Posizione consentita</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_it" translateable="false">Usa posizione</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_it" translateable="false">Usa microfono e videocamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_it" translateable="false">Usa posizione esatta</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_iw" translateable="false">הרשאה לשימוש במצלמה</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_iw" translateable="false">ניתן להשתמש בדף זה במצלמה ובמיקרופון</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_iw" translateable="false">יש הרשאת גישה למיקום המדויק</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_iw" translateable="false">ניתן להשתמש במיקרופון בדף זה</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_iw" translateable="false">ניתן להשתמש במצלמה בדף זה</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_iw" translateable="false">הרשאה לשימוש במיקרופון</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_iw" translateable="false">יש הרשאת גישה למיקום</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_iw" translateable="false">שימוש במיקום</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_iw" translateable="false">הרשאה לשימוש במיקרופון ובמצלמה</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_iw" translateable="false">שימוש במיקום מדויק</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ja" translateable="false">カメラの使用</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ja" translateable="false">カメラとマイクを使用できます</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ja" translateable="false">正確な位置情報の使用が許可されています</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ja" translateable="false">マイクを使用できます</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ja" translateable="false">カメラを使用できます</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ja" translateable="false">マイクの使用</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ja" translateable="false">位置情報が許可されています</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ja" translateable="false">位置情報の使用</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ja" translateable="false">マイクとカメラの使用</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ja" translateable="false">正確な現在地を使用</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ka" translateable="false">კამერის გამოყენება</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ka" translateable="false">კამერა და მიკროფონი დაშვებულია</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ka" translateable="false">დაშვებულია ზუსტი მდებარეობა</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ka" translateable="false">მიკროფონი დაშვებულია</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ka" translateable="false">კამერა დაშვებულია</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ka" translateable="false">მიკროფონის გამოყენება</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ka" translateable="false">მდებარეობაზე წვდომა დაშვებულია</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ka" translateable="false">მდებარეობის გამოყენება</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ka" translateable="false">მიკროფონისა და კამერის გამოყენება</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ka" translateable="false">ზუსტი მდებარეობის გამოყენება</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_kk" translateable="false">Камераны пайдалану</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_kk" translateable="false">Камера мен микрофонды пайдалануға рұқсат берілген</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_kk" translateable="false">Нақты локацияны пайдалануға рұқсат беріледі</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_kk" translateable="false">Микрофонды пайдалануға рұқсат берілген</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_kk" translateable="false">Камераны пайдалануға рұқсат берілген</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_kk" translateable="false">Микрофонды пайдалану</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_kk" translateable="false">Локацияны пайдалануға рұқсат берілді.</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_kk" translateable="false">Локацияны пайдалану</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_kk" translateable="false">Микрофон мен камераны пайдалану</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_kk" translateable="false">Нақты локацияны пайдалану</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_km" translateable="false">ប្រើ​កាមេរ៉ា</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_km" translateable="false">បាន​អនុញ្ញាត​ឱ្យប្រើ​កាមេរ៉ា និង​មីក្រូហ្វូន</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_km" translateable="false">បានអនុញ្ញាតទីតាំងជាក់លាក់</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_km" translateable="false">បាន​អនុញ្ញាត​ឱ្យប្រើ​មីក្រូហ្វូន</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_km" translateable="false">បាន​អនុញ្ញាត​ឱ្យប្រើ​កាមេរ៉ា</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_km" translateable="false">ប្រើមីក្រូហ្វូន</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_km" translateable="false">បានអនុញ្ញាតឱ្យប្រើទីតាំង</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_km" translateable="false">ប្រើទីតាំង</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_km" translateable="false">ប្រើមីក្រូហ្វូន និងកាមេរ៉ា</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_km" translateable="false">ប្រើ​ទីតាំង​ជាក់លាក់</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_kn" translateable="false">ಕ್ಯಾಮರಾವನ್ನು ಬಳಸಿ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_kn" translateable="false">ಕ್ಯಾಮೆರಾ ಮತ್ತು ಮೈಕ್ರೊಫೋನ್ ಗಳನ್ನು ಅನುಮತಿಸಲಾಗಿದೆ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_kn" translateable="false">ನಿಖರವಾದ ಸ್ಥಳವನ್ನು ಅನುಮತಿಸಲಾಗಿದೆ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_kn" translateable="false">ಮೈಕ್ರೊಫೋನ್ ಅನುಮತಿಸಲಾಗಿದೆ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_kn" translateable="false">ಕ್ಯಾಮೆರಾಗೆ ಅನುಮತಿಸಲಾಗಿದೆ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_kn" translateable="false">ಮೈಕ್ರೋಫೋನ್ ಅನ್ನು ಬಳಸಿ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_kn" translateable="false">ಸ್ಥಳವನ್ನು ಅನುಮತಿಸಲಾಗಿದೆ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_kn" translateable="false">ಸ್ಥಳವನ್ನು ಬಳಸಿ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_kn" translateable="false">ಮೈಕ್ರೊಫೋನ್ ಮತ್ತು ಕ್ಯಾಮರಾವನ್ನು ಬಳಸಿ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_kn" translateable="false">ನಿಖರ ಸ್ಥಾನ ಬಳಸಿ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ko" translateable="false">카메라 사용</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ko" translateable="false">카메라 및 마이크 허용됨</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ko" translateable="false">정확한 위치 허용됨</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ko" translateable="false">마이크 허용됨</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ko" translateable="false">카메라 허용됨</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ko" translateable="false">마이크 사용</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ko" translateable="false">위치 허용됨</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ko" translateable="false">위치 사용</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ko" translateable="false">마이크 및 카메라 사용</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ko" translateable="false">정확한 위치 사용</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ky" translateable="false">Камераны иштетүү</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ky" translateable="false">Камера менен микрофонду колдонууга уруксат берилди</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ky" translateable="false">Так дарекке уруксат берилет</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ky" translateable="false">Микрофонду колдонууга уруксат берилди</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ky" translateable="false">Камераны колдонууга уруксат берилди</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ky" translateable="false">Микрофонду иштетүү</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ky" translateable="false">Жайгашкан жери аныктоого уруксат берилди</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ky" translateable="false">Жайгашкан жерди аныктоо</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ky" translateable="false">Камера менен микрофонду иштетүү</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ky" translateable="false">Турган жерим боюнча</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_lo" translateable="false">ໃຊ້ກ້ອງຖ່າຍຮູບ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_lo" translateable="false">ອະນຸຍາດກ້ອງຖ່າຍຮູບ ແລະ ໄມໂຄຣໂຟນ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_lo" translateable="false">ອະນຸຍາດໃຫ້ເຂົ້າເຖິງສະຖານທີ່ແບບລະອຽດແລ້ວ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_lo" translateable="false">ອະນຸຍາດໄມໂຄຣໂຟນແລ້ວ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_lo" translateable="false">ອະນຸຍາດກ້ອງຖ່າຍຮູບແລ້ວ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_lo" translateable="false">ໃຊ້ໄມໂຄຣໂຟນ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_lo" translateable="false">ອະນຸຍາດໃຫ້ເຂົ້າເຖິງສະຖານທີ່ແລ້ວ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_lo" translateable="false">ໃຊ້ສະຖານທີ່</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_lo" translateable="false">ໃຊ້ໄມໂຄຣໂຟນ ແລະ ກ້ອງຖ່າຍຮູບ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_lo" translateable="false">ໃຊ້ສະຖານທີ່ທີ່ແນ່ນອນ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_lt" translateable="false">Naudoti vaizdo kamerą</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_lt" translateable="false">Fotoaparatas ir mikrofonas leidžiami</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_lt" translateable="false">Tiksli vietovė leidžiama</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_lt" translateable="false">Mikrofonas leidžiamas</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_lt" translateable="false">Fotoaparatas leidžiamas</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_lt" translateable="false">Naudoti mikrofoną</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_lt" translateable="false">Vietovė leidžiama</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_lt" translateable="false">Naudoti vietovę</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_lt" translateable="false">Naudoti mikrofoną ir vaizdo kamerą</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_lt" translateable="false">Naudoti tikslią vietą</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_lv" translateable="false">Izmantot kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_lv" translateable="false">Kameras un mikrofona lietošana ir atļauta</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_lv" translateable="false">Precīzas atrašanās vietas noteikšana ir atļauta</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_lv" translateable="false">Mikrofona lietošana ir atļauta</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_lv" translateable="false">Kameras lietošana ir atļauta</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_lv" translateable="false">Izmantot mikrofonu</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_lv" translateable="false">Piekļuve atrašanās vietai ir atļauta</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_lv" translateable="false">Izmantot atrašanās vietu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_lv" translateable="false">Izmantot mikrofonu un kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_lv" translateable="false">Izmantot precīzu vietu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_mk" translateable="false">Користи камера</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_mk" translateable="false">Камерата и микрофонот се дозволени</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_mk" translateable="false">Прецизната локација е дозволена</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_mk" translateable="false">Микрофон е дозволен</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_mk" translateable="false">Камерата е дозволена</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_mk" translateable="false">Користи микрофон</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_mk" translateable="false">Локацијата е дозволена</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_mk" translateable="false">Користи ја локацијата</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_mk" translateable="false">Користи микрофон и камера</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_mk" translateable="false">Користи прецизна локација</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ml" translateable="false">ക്യാമറ ഉപയോഗിക്കുക</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ml" translateable="false">ക്യാമറയും മൈക്രോഫോണും അനുവദനീയം</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ml" translateable="false">കൃത്യമായ ലൊക്കേഷൻ അനുവദിച്ചു</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ml" translateable="false">മൈക്രോഫോൺ അനുവദനീയം</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ml" translateable="false">ക്യാമറ അനുവദനീയം</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ml" translateable="false">മൈക്രോഫോൺ ഉപയോഗിക്കുക</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ml" translateable="false">ലൊക്കേഷൻ ആക്സസ് അനുവദിച്ചു</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ml" translateable="false">ലൊക്കേഷൻ ഉപയോഗിക്കുക</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ml" translateable="false">മൈക്രോഫോണും ക്യാമറയും ഉപയോഗിക്കുക</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ml" translateable="false">കൃത്യ ലൊക്കേഷൻ ഉപയോഗിക്കൂ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_mn" translateable="false">Камер ашиглах</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_mn" translateable="false">Камер болон микрофоныг зөвшөөрсөн</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_mn" translateable="false">Нарийвчилсан байршлыг зөвшөөрсөн</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_mn" translateable="false">Микрофоныг зөвшөөрсөн</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_mn" translateable="false">Камерыг зөвшөөрсөн</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_mn" translateable="false">Микрофон ашиглах</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_mn" translateable="false">Байршлыг зөвшөөрсөн</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_mn" translateable="false">Байршлыг ашиглах</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_mn" translateable="false">Микрофон, камер ашиглах</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_mn" translateable="false">Нарийвчилсан байршлыг ашиглах</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_mr" translateable="false">कॅमेरा वापरा</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_mr" translateable="false">कॅमेरा आणि मायक्रोफोनला अनुमती आहे</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_mr" translateable="false">अचूक स्थानाला अनुमती आहे</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_mr" translateable="false">मायक्रोफोनला अनुमती आहे</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_mr" translateable="false">कॅमेऱ्याला अनुमती आहे</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_mr" translateable="false">मायक्रोफोन वापरा</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_mr" translateable="false">स्थानाला अनुमती आहे</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_mr" translateable="false">स्थान वापरा</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_mr" translateable="false">मायक्रोफोन आणि कॅमेरा वापरा</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_mr" translateable="false">तंतोतंत स्थान वापरा</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ms" translateable="false">Gunakan kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ms" translateable="false">Kamera dan mikrofon dibenarkan</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ms" translateable="false">Lokasi tepat dibenarkan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ms" translateable="false">Mikrofon dibenarkan</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ms" translateable="false">Kamera dibenarkan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ms" translateable="false">Gunakan mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ms" translateable="false">Lokasi dibenarkan</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ms" translateable="false">Gunakan lokasi</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ms" translateable="false">Gunakan mikrofon dan kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ms" translateable="false">Gunakan lokasi tepat</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_my" translateable="false">ကင်မရာသုံးရန်</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_my" translateable="false">ကင်မရာနှင့် မိုက်ခရိုဖုန်းကို သုံးခွင့်ပြုထားသည်</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_my" translateable="false">နေရာအတိအကျ ခွင့်ပြုသည်</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_my" translateable="false">မိုက်ခရိုဖုန်းကို သုံးခွင့်ပြုထားသည်</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_my" translateable="false">ကင်မရာကို သုံးခွင့်ပြုထားသည်</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_my" translateable="false">မိုက်ခရိုဖုန်း သုံးရန်</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_my" translateable="false">တည်နေရာ ခွင့်ပြုထားသည်</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_my" translateable="false">တည်နေရာကို သုံးရန်</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_my" translateable="false">မိုက်ခရိုဖုန်းနှင့် ကင်မရာသုံးရန်</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_my" translateable="false">နေရာအတိအကျ သုံးရန်</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ne" translateable="false">क्यामेरा प्रयोग गर्नुहोस्</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ne" translateable="false">क्यामेरा तथा माइक्रोफोन प्रयोग गर्ने अनुमति छ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ne" translateable="false">सटीक लोकेसन प्रयोग गर्ने अनुमति दिइएको छ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ne" translateable="false">माइक्रोफोन प्रयोग गर्ने अनुमति छ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ne" translateable="false">क्यामेरा प्रयोग गर्ने अनुमति छ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ne" translateable="false">माइक्रोफोन प्रयोग गर्नुहोस्</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ne" translateable="false">लोकेसन प्रयोग गर्ने अनुमति दिइएको छ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ne" translateable="false">लोकेसन प्रयोग गर्नुहोस्</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ne" translateable="false">माइक्रोफोन र क्यामेरा प्रयोग गर्नुहोस्</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ne" translateable="false">सटीक स्थान को प्रयोग गर्नुहोस्</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_nl" translateable="false">Camera gebruiken</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_nl" translateable="false">Camera en microfoon toegestaan</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_nl" translateable="false">Exacte locatie toegestaan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_nl" translateable="false">Microfoon toegestaan</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_nl" translateable="false">Camera toegestaan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_nl" translateable="false">Microfoon gebruiken</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_nl" translateable="false">Locatie toegestaan</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_nl" translateable="false">Locatie gebruiken</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_nl" translateable="false">Microfoon en camera gebruiken</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_nl" translateable="false">Precieze locatie gebruiken</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_no" translateable="false">Bruk kameraet</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_no" translateable="false">Kameraet og mikrofonen er tillatt</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_no" translateable="false">Nøyaktig posisjon er tillatt</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_no" translateable="false">Mikrofonen er tillatt</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_no" translateable="false">Kameraet er tillatt</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_no" translateable="false">Bruk mikrofonen</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_no" translateable="false">Posisjon er tillatt</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_no" translateable="false">Bruk posisjon</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_no" translateable="false">Bruk mikrofonen og kameraet</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_no" translateable="false">Bruk nøyaktig posisjon</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_or" translateable="false">କେମେରା ବ୍ୟବହାର କରନ୍ତୁ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_or" translateable="false">କ୍ୟାମେରା ଏବଂ ମାଇକ୍ରୋଫୋନ୍ ବ୍ୟବହାର କରିପାରିବେ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_or" translateable="false">ସଠିକ ଲୋକେସନକୁ ଅନୁମତି ଦିଆଯାଇଛି</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_or" translateable="false">ମାଇକ୍ରୋଫୋନ୍‌କୁ ଅନୁମତି ଦିଆଯାଇଛି</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_or" translateable="false">କ୍ୟାମେରା ଅନୁମୋଦିତ ଅଟେ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_or" translateable="false">ମାଇକ୍ରୋଫୋନ ବ୍ୟବହାର କରନ୍ତୁ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_or" translateable="false">ଲୋକେସନକୁ ଅନୁମତି ଦିଆଯାଇଛି</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_or" translateable="false">ଲୋକେସନ ବ୍ୟବହାର କରନ୍ତୁ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_or" translateable="false">ମାଇକ୍ରୋଫୋନ ଏବଂ କେମେରା ବ୍ୟବହାର କରନ୍ତୁ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_or" translateable="false">ସଠିକ୍ ଲୋକେସନ୍ ବ୍ୟବହାର କରନ୍ତୁ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_pa" translateable="false">ਕੈਮਰਾ ਵਰਤੋ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_pa" translateable="false">ਕੈਮਰਾ ਅਤੇ ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਸੰਬੰਧੀ ਇਜਾਜ਼ਤ ਦਿੱਤੀ ਗਈ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_pa" translateable="false">ਸਟੀਕ ਟਿਕਾਣੇ ਸੰਬੰਧੀ ਆਗਿਆ ਹੈ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_pa" translateable="false">ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿੱਤੀ ਗਈ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_pa" translateable="false">ਕੈਮਰੇ ਦੀ ਇਜਾਜ਼ਤ ਦਿੱਤੀ ਗਈ</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_pa" translateable="false">ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਵਰਤੋ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_pa" translateable="false">ਟਿਕਾਣੇ ਦੀ ਇਜਾਜ਼ਤ ਹੈ</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_pa" translateable="false">ਟਿਕਾਣਾ ਵਰਤੋ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_pa" translateable="false">ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਅਤੇ ਕੈਮਰਾ ਵਰਤੋ</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_pa" translateable="false">ਸਟੀਕ ਟਿਕਾਣਾ ਵਰਤੋ</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_pl" translateable="false">Używaj kamery</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_pl" translateable="false">Zezwolono na dostęp do kamery i mikrofonu</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_pl" translateable="false">Dokładna lokalizacja jest dozwolona</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_pl" translateable="false">Zezwolono na dostęp do mikrofonu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_pl" translateable="false">Zezwolono na dostęp do kamery</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_pl" translateable="false">Używaj mikrofonu</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_pl" translateable="false">Lokalizacja jest dozwolona</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_pl" translateable="false">Włącz lokalizację</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_pl" translateable="false">Używaj mikrofonu i kamery</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_pl" translateable="false">Użyj dokładnej lokalizacji</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_pt_BR" translateable="false">Usar a câmera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_pt_BR" translateable="false">Câmera e microfone permitidos</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_pt_BR" translateable="false">Acesso ao local exato permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_pt_BR" translateable="false">Microfone permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_pt_BR" translateable="false">Câmera permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_pt_BR" translateable="false">Usar o microfone</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_pt_BR" translateable="false">Acesso à localização permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_pt_BR" translateable="false">Usar local</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_pt_BR" translateable="false">Usar o microfone e a câmera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_pt_BR" translateable="false">Usar local exato</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_pt_PT" translateable="false">Usar câmara</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_pt_PT" translateable="false">Câmara e microfone permitidos</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_pt_PT" translateable="false">Localização exata permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_pt_PT" translateable="false">Microfone permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_pt_PT" translateable="false">Câmara permitida</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_pt_PT" translateable="false">Usar microfone</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_pt_PT" translateable="false">Acesso à localização permitido</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_pt_PT" translateable="false">Usar localização</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_pt_PT" translateable="false">Usar microfone e câmara</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_pt_PT" translateable="false">Usar localização precisa</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ro" translateable="false">Folosește camera foto</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ro" translateable="false">Camera foto și microfonul sunt permise</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ro" translateable="false">Locația exactă este permisă</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ro" translateable="false">Microfonul este permis</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ro" translateable="false">Camera foto este permisă</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ro" translateable="false">Folosește microfonul</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ro" translateable="false">Folosirea locației este permisă</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ro" translateable="false">Folosește locația</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ro" translateable="false">Folosește microfonul și camera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ro" translateable="false">Folosește locația exactă</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ru" translateable="false">Использовать камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ru" translateable="false">Доступ к камере и микрофону разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ru" translateable="false">Доступ к точному местоположению разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ru" translateable="false">Доступ к микрофону разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ru" translateable="false">Доступ к камере разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ru" translateable="false">Использовать микрофон</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ru" translateable="false">Доступ к данным о местоположении разрешен</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ru" translateable="false">Включить геолокацию</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ru" translateable="false">Использовать микрофон и камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ru" translateable="false">Точное местоположение</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_si" translateable="false">කැමරාව භාවිත කරන්න</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_si" translateable="false">කැමරාව සහ මයික්‍රෆෝනයට ඉඩ දෙන ලදී</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_si" translateable="false">ඉතා නිවැරදි ස්ථානයට අවසර දී ඇත</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_si" translateable="false">මයික්‍රෆෝනයට ඉඩ දෙන ලදී</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_si" translateable="false">කැමරාවට ඉඩ දෙන ලදී</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_si" translateable="false">මයික්‍රෆෝනය භාවිත කරන්න</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_si" translateable="false">ස්ථානය ඉඩ දී ඇත</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_si" translateable="false">ස්ථානය භාවිත කරන්න</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_si" translateable="false">මයික්‍රෆෝනය සහ කැමරාව භාවිතා කරන්න</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_si" translateable="false">ඉතා නිවැරදි ස්ථානය භාවිතා කරන.</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sk" translateable="false">Používať kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sk" translateable="false">Kamera a mikrofón sú povolené</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sk" translateable="false">Presná poloha je povolená</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sk" translateable="false">Mikrofón je povolený</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sk" translateable="false">Kamera je povolená</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sk" translateable="false">Používať mikrofón</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sk" translateable="false">Poloha je povolená</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sk" translateable="false">Používať polohu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sk" translateable="false">Používať mikrofón a kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sk" translateable="false">Použiť presnú polohu</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sl" translateable="false">Uporabi kamero</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sl" translateable="false">Kamera in mikrofon sta dovoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sl" translateable="false">Natančna lokacija je dovoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sl" translateable="false">Mikrofon je dovoljen</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sl" translateable="false">Kamera je dovoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sl" translateable="false">Uporabi mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sl" translateable="false">Lokacija je dovoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sl" translateable="false">Uporaba lokacije</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sl" translateable="false">Uporabi mikrofon in kamero</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sl" translateable="false">Uporabi točno lokacijo</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sq" translateable="false">Përdor kamerën</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sq" translateable="false">Kamera dhe mikrofoni lejohen</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sq" translateable="false">Vendndodhja e saktë lejohet</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sq" translateable="false">Mikrofoni lejohet</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sq" translateable="false">Kamera lejohet</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sq" translateable="false">Përdor mikrofonin</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sq" translateable="false">Vendndodhja lejohet</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sq" translateable="false">Përdor vendndodhjen</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sq" translateable="false">Përdor mikrofonin dhe kamerën</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sq" translateable="false">Përdor vendndodhjen e saktë</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sr_Latn" translateable="false">Koristi kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sr_Latn" translateable="false">Kamera i mikrofon su dozvoljeni</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sr_Latn" translateable="false">Precizna lokacija je dozvoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sr_Latn" translateable="false">Mikrofon je dozvoljen</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sr_Latn" translateable="false">Kamera je dozvoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sr_Latn" translateable="false">Koristi mikrofon</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sr_Latn" translateable="false">Lokacija je dozvoljena</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sr_Latn" translateable="false">Koristite lokaciju</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sr_Latn" translateable="false">Koristi mikrofon i kameru</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sr_Latn" translateable="false">Koristi preciznu lokaciju</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sr" translateable="false">Користи камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sr" translateable="false">Камера и микрофон су дозвољени</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sr" translateable="false">Прецизна локација је дозвољена</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sr" translateable="false">Микрофон је дозвољен</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sr" translateable="false">Камера је дозвољена</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sr" translateable="false">Користи микрофон</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sr" translateable="false">Локација је дозвољена</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sr" translateable="false">Користите локацију</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sr" translateable="false">Користи микрофон и камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sr" translateable="false">Користи прецизну локацију</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sv" translateable="false">Använd kameran</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sv" translateable="false">Kamera och mikrofon är tillåtna</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sv" translateable="false">Exakt plats tillåts</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sv" translateable="false">Mikrofon är tillåten</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sv" translateable="false">Kamera är tillåten</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sv" translateable="false">Använd mikrofonen</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sv" translateable="false">Plats tillåts</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sv" translateable="false">Använd plats</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sv" translateable="false">Använd mikrofonen och kameran</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sv" translateable="false">Använd exakt plats</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_sw" translateable="false">Tumia kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_sw" translateable="false">Kamera na maikrofoni zimeruhusiwa</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_sw" translateable="false">Maelezo ya eneo mahususi yanaruhusiwa</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_sw" translateable="false">Maikrofoni imeruhusiwa</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_sw" translateable="false">Kamera imeruhusiwa</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_sw" translateable="false">Tumia maikrofoni</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_sw" translateable="false">Ufikiaji wa data ya mahali umeruhusiwa</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_sw" translateable="false">Tumia data ya mahali</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_sw" translateable="false">Tumia maikrofoni na kamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_sw" translateable="false">Tumia Eneo Mahususi</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ta" translateable="false">கேமராவைப் பயன்படுத்து</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ta" translateable="false">கேமராவும் மைக்ரோஃபோனும் அனுமதிக்கப்பட்டன</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ta" translateable="false">துல்லியமான இருப்பிடம் அனுமதிக்கப்பட்டுள்ளது</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ta" translateable="false">மைக்ரோஃபோன் அனுமதிக்கப்பட்டது</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ta" translateable="false">கேமரா அனுமதிக்கப்பட்டது</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ta" translateable="false">மைக்ரோஃபோனைப் பயன்படுத்து</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ta" translateable="false">இருப்பிட அனுமதி வழங்கப்பட்டது</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ta" translateable="false">இருப்பிடத்தைப் பயன்படுத்து</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ta" translateable="false">மைக்ரோஃபோனையும் கேமராவையும் பயன்படுத்து</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ta" translateable="false">துல்லிய இருப்பிடம் பயன்படுத்து</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_te" translateable="false">కెమెరాను ఉపయోగించండి</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_te" translateable="false">కెమెరా మరియు మైక్రోఫోన్ అనుమతించబడ్డాయి</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_te" translateable="false">ఖచ్చితమైన లొకేషన్‌కు అనుమతి ఉంది</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_te" translateable="false">మైక్రోఫోన్ అనుమతించబడింది</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_te" translateable="false">కెమెరా అనుమతించబడింది</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_te" translateable="false">మైక్రోఫోన్‌ను ఉపయోగించండి</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_te" translateable="false">లొకేషన్ అనుమతించబడింది</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_te" translateable="false">లొకేషన్‌ను ఉపయోగించండి</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_te" translateable="false">మైక్రోఫోన్, కెమెరాను ఉపయోగించండి</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_te" translateable="false">ఖచ్చితమైన స్థానం ఉపయోగించండి</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_th" translateable="false">ใช้กล้อง</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_th" translateable="false">อนุญาตให้ใช้กล้องถ่ายรูปและไมโครโฟน</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_th" translateable="false">อนุญาตให้เข้าถึงตำแหน่งที่แน่นอนแล้ว</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_th" translateable="false">อนุญาตให้ใช้ไมโครโฟน</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_th" translateable="false">อนุญาตให้ใช้กล้องถ่ายรูป</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_th" translateable="false">ใช้ไมโครโฟน</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_th" translateable="false">อนุญาตให้เข้าถึงตําแหน่ง</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_th" translateable="false">ใช้ตำแหน่ง</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_th" translateable="false">ใช้ไมโครโฟนและกล้อง</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_th" translateable="false">ใช้ตำแหน่งที่แน่นอน</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_tr" translateable="false">Kamerayı kullan</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_tr" translateable="false">Kamera ve mikrofona izin verildi</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_tr" translateable="false">Tam konuma erişim izin verildi</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_tr" translateable="false">Mikrofona izin verildi</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_tr" translateable="false">Kameraya izin veriliyor</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_tr" translateable="false">Mikrofonu kullan</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_tr" translateable="false">Konuma izin veriliyor</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_tr" translateable="false">Konumu kullan</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_tr" translateable="false">Mikrofon ve kamerayı kullan</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_tr" translateable="false">Tam konumu kullan</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_uk" translateable="false">Використовувати камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_uk" translateable="false">Дозволено використовувати камеру та мікрофон</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_uk" translateable="false">Доступ до даних про точне місцезнаходження надано</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_uk" translateable="false">Дозволено використовувати мікрофон</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_uk" translateable="false">Дозволено використовувати камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_uk" translateable="false">Використовувати мікрофон</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_uk" translateable="false">Доступ до геоданих дозволено</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_uk" translateable="false">Використовувати геодані</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_uk" translateable="false">Використовувати мікрофон і камеру</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_uk" translateable="false">Використати моє місцезнаходження</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ur" translateable="false">کیمرا استعمال کریں</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_ur" translateable="false">کیمرا اور مائیکروفون اجازت یافتہ ہے</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_ur" translateable="false">قطعی مقام کی اجازت ہے</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_ur" translateable="false">مائیکروفون اجازت یافتہ ہے</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_ur" translateable="false">کیمرا اجازت یافتہ ہے</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ur" translateable="false">مائیکروفون کا استعمال کریں</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_ur" translateable="false">مقام کی اجازت ہے</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ur" translateable="false">مقام استعمال کریں</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ur" translateable="false">مائیکروفون اور کیمرا استعمال کریں</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ur" translateable="false">درست جائے وقوع استعمال کریں</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_uz" translateable="false">Kamera ishlatish</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_uz" translateable="false">Kamera va mikrofondan foydalanish mumkin</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_uz" translateable="false">Aniq joylashuvga ruxsat berilgan</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_uz" translateable="false">Mikrofondan foydalanish mumkin</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_uz" translateable="false">Kameradan foydalanish mumkin</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_uz" translateable="false">Mikrofon ishlatish</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_uz" translateable="false">Joylashuv axborotiga kirishga ruxsat berilgan</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_uz" translateable="false">Geolokatsiyani yoqish</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_uz" translateable="false">Mikrofon va kamera ishlatish</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_uz" translateable="false">Aniq joylashuv ishlatilsin</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_vi" translateable="false">Sử dụng camera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_vi" translateable="false">Cho phép máy ảnh và micrô</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_vi" translateable="false">Được phép truy cập thông tin vị trí chính xác</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_vi" translateable="false">Cho phép micrô</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_vi" translateable="false">Cho phép máy ảnh</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_vi" translateable="false">Sử dụng micrô</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_vi" translateable="false">Cho phép truy cập thông tin vị trí</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_vi" translateable="false">Sử dụng thông tin vị trí</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_vi" translateable="false">Sử dụng micrô và camera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_vi" translateable="false">Sử dụng vị trí chính xác</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_zh_CN" translateable="false">使用摄像头</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_zh_CN" translateable="false">已允许使用摄像头和麦克风</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_zh_CN" translateable="false">已允许获取确切位置信息</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_zh_CN" translateable="false">已允许使用麦克风</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_zh_CN" translateable="false">已允许使用摄像头</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_zh_CN" translateable="false">使用麦克风</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_zh_CN" translateable="false">已授予位置信息使用权限</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_zh_CN" translateable="false">使用位置信息</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_zh_CN" translateable="false">使用麦克风和摄像头</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_zh_CN" translateable="false">使用确切位置</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_zh_HK" translateable="false">使用相機</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_zh_HK" translateable="false">已允許使用相機和麥克風</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_zh_HK" translateable="false">已允許存取精確位置</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_zh_HK" translateable="false">已允許使用麥克風</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_zh_HK" translateable="false">已允許使用相機</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_zh_HK" translateable="false">使用麥克風</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_zh_HK" translateable="false">批准存取位置資料</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_zh_HK" translateable="false">使用位置資訊</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_zh_HK" translateable="false">使用麥克風和相機</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_zh_HK" translateable="false">使用精確定位</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_zh_TW" translateable="false">使用攝影機</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_zh_TW" translateable="false">可使用攝影機和麥克風</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_zh_TW" translateable="false">已允許存取精確位置</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_zh_TW" translateable="false">可使用麥克風</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_zh_TW" translateable="false">可使用攝影機</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_zh_TW" translateable="false">使用麥克風</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_zh_TW" translateable="false">允許存取位置資訊</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_zh_TW" translateable="false">使用位置資訊</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_zh_TW" translateable="false">使用麥克風和攝影機</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_zh_TW" translateable="false">使用精確位置</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_zu" translateable="false">Sebenzisa ikhamera</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_ALLOWED_zu" translateable="false">Ikhamera nemakrofoni ivunyelwe</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_ALLOWED_zu" translateable="false">Indawo eqondile ivunyelwe</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_ALLOWED_zu" translateable="false">Imakrofoni ivunyelwe</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_ALLOWED_zu" translateable="false">Ikhamera ivunyelwe</message>
+      <message name="IDS_PERMISSION_REQUEST_MICROPHONE_zu" translateable="false">Sebenzisa imakrofoni</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_ALLOWED_zu" translateable="false">Indawo ivunyelwe</message>
+      <message name="IDS_PERMISSION_REQUEST_GEOLOCATION_zu" translateable="false">Sebenzisa indawo</message>
+      <message name="IDS_PERMISSION_REQUEST_CAMERA_MICROPHONE_zu" translateable="false">Sebenzisa imakrofoni nekhamera</message>
+      <message name="IDS_PERMISSION_REQUEST_PRECISE_GEOLOCATION_zu" translateable="false">Sebenzisa indawo eqondile</message>
+      </messages>
+</release>
+</grit>

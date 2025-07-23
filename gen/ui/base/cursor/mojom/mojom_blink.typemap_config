@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "ui/base/cursor/mojom/cursor_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::Cursor",
+        "mojom": "ui.mojom.Cursor"
+      }
+    ]
+  }
+]

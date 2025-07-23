@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "video_capture_buffer.build_metadata",
+    "video_capture_types.build_metadata",
+    "../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../media/capture/mojom/video_capture.mojom"
+  ]
+}

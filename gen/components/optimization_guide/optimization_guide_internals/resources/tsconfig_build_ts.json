@@ -1,0 +1,51 @@
+{
+  "extends": "..\\..\\..\\..\\..\\..\\..\\tools\\typescript\\tsconfig_base.json",
+  "compilerOptions": {
+    "rootDir": "preprocessed",
+    "outDir": "tsc",
+    "paths": {
+      "//resources/cr_elements/*": [
+        "./../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "chrome://resources/cr_elements/*": [
+        "./../../../../ui/webui/resources/tsc/cr_elements/*"
+      ],
+      "//resources/js/*": [
+        "./../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "chrome://resources/js/*": [
+        "./../../../../ui/webui/resources/tsc/js/*"
+      ],
+      "//resources/mojo/*": [
+        "./../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "chrome://resources/mojo/*": [
+        "./../../../../ui/webui/resources/tsc/mojo/*"
+      ],
+      "/tools/typescript/definitions/*": [
+        "./../../../../../../../tools/typescript/definitions/*"
+      ],
+      "/strings.m.js": [
+        "./../../../../../../../tools/typescript/definitions/strings.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "preprocessed\\optimization_guide_internals.ts",
+    "preprocessed\\optimization_guide_internals_browser_proxy.ts",
+    "preprocessed\\optimization_guide_common.mojom-webui.ts",
+    "preprocessed\\optimization_guide_internals.mojom-webui.ts",
+    "../../../../../../../tools/typescript/definitions/strings.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../../../ui/webui/resources/cr_elements/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../ui/webui/resources/js/tsconfig_build_ts.json"
+    },
+    {
+      "path": "../../../../ui/webui/resources/mojo/tsconfig_build_ts.json"
+    }
+  ]
+}

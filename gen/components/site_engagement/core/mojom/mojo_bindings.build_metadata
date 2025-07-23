@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/site_engagement/core/mojom/site_engagement_details.mojom"
+  ]
+}

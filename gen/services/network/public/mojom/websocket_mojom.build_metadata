@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "mojom_ip_address.build_metadata",
+    "mojom_network_param.build_metadata",
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/websocket.mojom"
+  ]
+}

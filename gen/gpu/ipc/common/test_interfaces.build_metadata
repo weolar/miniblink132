@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "gpu_preferences_interface.build_metadata",
+    "interfaces.build_metadata",
+    "vulkan_interface.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../gpu/ipc/common/traits_test_service.mojom"
+  ]
+}

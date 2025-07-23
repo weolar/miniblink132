@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "../../services/viz/public/mojom/mojom.build_metadata",
+    "../../third_party/blink/public/mojom/mojom_platform.build_metadata",
+    "../../ui/events/mojom/mojom.build_metadata",
+    "../../ui/events/mojom/event_latency_metadata_mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../components/input/render_input_router.mojom"
+  ]
+}

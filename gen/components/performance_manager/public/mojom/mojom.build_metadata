@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../third_party/blink/public/mojom/tokens/tokens.build_metadata",
+    "../../../../ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/performance_manager/public/mojom/coordination_unit.mojom",
+    "../../../../../../../components/performance_manager/public/mojom/lifecycle.mojom",
+    "../../../../../../../components/performance_manager/public/mojom/v8_contexts.mojom",
+    "../../../../../../../components/performance_manager/public/mojom/web_memory.mojom"
+  ]
+}

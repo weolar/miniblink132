@@ -1,0 +1,1 @@
+{"base_dir": "gen/components/metrics/debug/tsc", "files": ["app.js", "field_trials.js", "structured/app.js", "browser_proxy.js", "log_utils.js", "metrics_internals.js", "structured/structured_metrics_browser_proxy.js", "structured/structured_utils.js", "app.html.js", "field_trials.html.js", "structured/app.html.js"]}

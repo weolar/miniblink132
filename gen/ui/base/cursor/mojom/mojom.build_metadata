@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "cursor_type.build_metadata",
+    "../../../../skia/public/mojom/mojom.build_metadata",
+    "../../../gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../ui/base/cursor/mojom/cursor.mojom"
+  ]
+}

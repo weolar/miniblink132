@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../../../components/os_crypt/async/common/common_mojom.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../services/test/echo/public/mojom/echo.mojom"
+  ]
+}

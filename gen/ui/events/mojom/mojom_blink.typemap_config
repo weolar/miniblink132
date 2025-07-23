@@ -1,0 +1,20 @@
+[
+  {
+    "traits_headers": [
+      "ui/events/ipc/ui_events_param_traits_macros.h"
+    ],
+    "traits_public_deps": [
+      "//ui/events/ipc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::EventPointerType",
+        "mojom": "ui.mojom.EventPointerType"
+      },
+      {
+        "cpp": "::ui::ScrollGranularity",
+        "mojom": "ui.mojom.ScrollGranularity"
+      }
+    ]
+  }
+]

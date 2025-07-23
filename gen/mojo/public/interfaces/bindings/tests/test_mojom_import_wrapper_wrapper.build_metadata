@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "test_mojom_import_wrapper.build_metadata"
+  ],
+  "sources": [
+
+  ]
+}

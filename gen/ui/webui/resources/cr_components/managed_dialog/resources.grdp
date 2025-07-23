@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_MANAGED_DIALOG_MANAGED_DIALOG_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/managed_dialog/minified/managed_dialog.js" resource_path="cr_components/managed_dialog/managed_dialog.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MANAGED_DIALOG_MANAGED_DIALOG_HTML_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/managed_dialog/minified/managed_dialog.html.js" resource_path="cr_components/managed_dialog/managed_dialog.html.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_MANAGED_DIALOG_MANAGED_DIALOG_CSS_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/managed_dialog/minified/managed_dialog.css.js" resource_path="cr_components/managed_dialog/managed_dialog.css.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

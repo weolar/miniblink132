@@ -1,0 +1,1 @@
+gen\third_party\blink\public\devtools_inspector_resources_grit.d.stamp: .\resources\inspector_overlay\main.js .\gen/tools/gritsettings/default_resource_ids

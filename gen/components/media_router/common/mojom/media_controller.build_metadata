@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../ui/gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../components/media_router/common/mojom/media_controller.mojom",
+    "../../../../../../../components/media_router/common/mojom/media_status.mojom"
+  ]
+}

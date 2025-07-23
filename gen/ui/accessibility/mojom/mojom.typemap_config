@@ -1,0 +1,233 @@
+[
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_relative_bounds_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits",
+      "//ui/gfx",
+      "//ui/gfx/geometry/mojom",
+      "//ui/gfx/geometry/mojom:mojom_traits",
+      "//ui/gfx/mojom"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXRelativeBounds",
+        "mojom": "ax.mojom.AXRelativeBounds"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_action_data_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_action_data_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXActionData",
+        "mojom": "ax.mojom.AXActionData"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_event_intent_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_event_intent_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXEventIntent",
+        "mojom": "ax.mojom.AXEventIntent"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_event_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_event_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXEvent",
+        "mojom": "ax.mojom.AXEvent"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_location_and_scroll_updates_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_location_and_scroll_updates_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXLocationChange",
+        "mojom": "ax.mojom.AXLocationChange"
+      },
+      {
+        "cpp": "::ui::AXScrollChange",
+        "mojom": "ax.mojom.AXScrollChange"
+      },
+      {
+        "cpp": "::ui::AXLocationAndScrollUpdates",
+        "mojom": "ax.mojom.AXLocationAndScrollUpdates",
+        "non_const_ref": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_mode_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_mode_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXMode",
+        "mojom": "ax.mojom.AXMode"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_node_data_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_node_data_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXNodeData",
+        "mojom": "ax.mojom.AXNodeData"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_relative_bounds_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base",
+      "//ui/gfx/geometry/mojom",
+      "//ui/gfx/mojom"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXRelativeBounds",
+        "mojom": "ax.mojom.AXRelativeBounds"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_tree_checks_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_tree_checks_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXTreeChecks",
+        "mojom": "ax.mojom.AXTreeChecks"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_tree_data_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_tree_data_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXTreeData",
+        "mojom": "ax.mojom.AXTreeData"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_tree_id_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_tree_id_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXTreeID",
+        "mojom": "ax.mojom.AXTreeID"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_tree_update_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_tree_update_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXTreeUpdate",
+        "mojom": "ax.mojom.AXTreeUpdate"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "ui/accessibility/mojom/ax_updates_and_events_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/accessibility:ax_base"
+    ],
+    "traits_sources": [
+      "ax_updates_and_events_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::AXUpdatesAndEvents",
+        "mojom": "ax.mojom.AXUpdatesAndEvents",
+        "non_const_ref": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../gpu/ipc/common/vulkan_info.mojom",
+    "../../../../../../gpu/ipc/common/vulkan_types.mojom"
+  ]
+}

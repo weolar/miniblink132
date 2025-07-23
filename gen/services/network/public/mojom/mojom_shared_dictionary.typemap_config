@@ -1,0 +1,37 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/shared_dictionary_isolation_key_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:schemeful_site_mojom_support"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/shared_dictionary_isolation_key_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::SharedDictionaryIsolationKey",
+        "mojom": "network.mojom.SharedDictionaryIsolationKey"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/shared_dictionary_usage_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net:shared_dictionary_info"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/shared_dictionary_usage_info_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::SharedDictionaryUsageInfo",
+        "mojom": "network.mojom.SharedDictionaryUsageInfo"
+      }
+    ]
+  }
+]

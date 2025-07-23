@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grit-part>
+      <include name="IDR_CR_COMPONENTS_PAGE_IMAGE_SERVICE_BROWSER_PROXY_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/page_image_service/minified/browser_proxy.js" resource_path="cr_components/page_image_service/browser_proxy.js" use_base_dir="false" type="chrome_html" />
+      <include name="IDR_CR_COMPONENTS_PAGE_IMAGE_SERVICE_PAGE_IMAGE_SERVICE_MOJOM_WEBUI_JS" file="${root_gen_dir}/ui/webui/resources/cr_components/page_image_service/minified/page_image_service.mojom-webui.js" resource_path="cr_components/page_image_service/page_image_service.mojom-webui.js" use_base_dir="false" type="chrome_html" />
+</grit-part>

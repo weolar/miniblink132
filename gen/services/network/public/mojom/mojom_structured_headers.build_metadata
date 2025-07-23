@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/network/public/mojom/structured_headers.mojom"
+  ]
+}

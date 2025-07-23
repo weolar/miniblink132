@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "../../../../media/capture/mojom/video_capture.build_metadata",
+    "../../../../media/capture/mojom/video_effects_manager.build_metadata",
+    "../../../viz/public/mojom/mojom.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/video_effects/public/mojom/video_effects_processor.mojom",
+    "../../../../../../../services/video_effects/public/mojom/video_effects_service.mojom"
+  ]
+}

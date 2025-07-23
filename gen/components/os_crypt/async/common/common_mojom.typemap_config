@@ -1,0 +1,30 @@
+[
+  {
+    "traits_deps": [
+      ":algorithm_mojom",
+      ":common",
+      ":crypto_lib"
+    ],
+    "traits_headers": [
+      "components/os_crypt/async/common/encryptor.h",
+      "components/os_crypt/async/common/encryptor_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "encryptor_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::os_crypt_async::Encryptor",
+        "default_constructible": false,
+        "mojom": "os_crypt_async.mojom.Encryptor",
+        "move_only": true
+      },
+      {
+        "cpp": "::os_crypt_async::Encryptor::Key",
+        "default_constructible": false,
+        "mojom": "os_crypt_async.mojom.Key",
+        "move_only": true
+      }
+    ]
+  }
+]

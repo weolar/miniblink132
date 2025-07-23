@@ -1,0 +1,64 @@
+[
+  {
+    "traits_headers": [
+      "media/capture/mojom/video_capture_types_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":video_capture_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::media::ResolutionChangePolicy",
+        "mojom": "media.mojom.ResolutionChangePolicy"
+      },
+      {
+        "cpp": "::media::PowerLineFrequency",
+        "mojom": "media.mojom.PowerLineFrequency"
+      },
+      {
+        "cpp": "::media::VideoPixelFormat",
+        "mojom": "media.mojom.VideoCapturePixelFormat"
+      },
+      {
+        "cpp": "::media::VideoCaptureBufferType",
+        "mojom": "media.mojom.VideoCaptureBufferType"
+      },
+      {
+        "cpp": "::media::VideoCaptureControlSupport",
+        "mojom": "media.mojom.VideoCaptureControlSupport"
+      },
+      {
+        "cpp": "::media::VideoCaptureError",
+        "mojom": "media.mojom.VideoCaptureError"
+      },
+      {
+        "cpp": "::media::VideoCaptureFeedback",
+        "mojom": "media.mojom.VideoCaptureFeedback"
+      },
+      {
+        "cpp": "::media::VideoCaptureFrameDropReason",
+        "mojom": "media.mojom.VideoCaptureFrameDropReason"
+      },
+      {
+        "cpp": "::media::VideoCaptureFormat",
+        "mojom": "media.mojom.VideoCaptureFormat"
+      },
+      {
+        "cpp": "::media::VideoCaptureParams",
+        "mojom": "media.mojom.VideoCaptureParams"
+      },
+      {
+        "cpp": "::media::VideoCaptureDeviceDescriptor",
+        "mojom": "media.mojom.VideoCaptureDeviceDescriptor"
+      },
+      {
+        "cpp": "::media::VideoCaptureDeviceInfo",
+        "mojom": "media.mojom.VideoCaptureDeviceInfo"
+      },
+      {
+        "cpp": "::media::VideoFacingMode",
+        "mojom": "media.mojom.VideoFacingMode"
+      }
+    ]
+  }
+]

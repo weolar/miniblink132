@@ -1,0 +1,445 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/mojo/drag_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::WebDragData",
+        "mojom": "blink.mojom.DragData"
+      }
+    ]
+  },
+  {
+    "traits_deps": [
+      "//third_party/blink/renderer/platform/network:make_generated"
+    ],
+    "traits_headers": [
+      "third_party/blink/renderer/platform/loader/fetch/resource_request.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/renderer/platform/loader/fetch/fetch_api_request_body_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::ResourceRequestBody",
+        "mojom": "blink.mojom.FetchAPIRequestBody",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/mojo/fetch_api_request_headers_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/renderer/platform/wtf"
+    ],
+    "types": [
+      {
+        "cpp": "::WTF::HashMap<::WTF::String, WTF::String, WTF::CaseFoldingHashTraits<WTF::String>>",
+        "mojom": "blink.mojom.FetchAPIRequestHeaders",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/page/drag_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common:headers"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::blink::DragOperationsMask",
+        "mojom": "blink.mojom.AllowedDragOperations"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/input/web_coalesced_input_event_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::blink::WebCoalescedInputEvent>",
+        "mojom": "blink.mojom.Event",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/permissions_policy/origin_with_possible_wildcards.h",
+      "third_party/blink/public/common/permissions_policy/permissions_policy_declaration.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/common/permissions_policy/permissions_policy_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::OriginWithPossibleWildcards",
+        "mojom": "blink.mojom.OriginWithPossibleWildcards"
+      },
+      {
+        "cpp": "::blink::ParsedPermissionsPolicyDeclaration",
+        "mojom": "blink.mojom.ParsedPermissionsPolicyDeclaration"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/common/frame/frame_policy_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::FramePolicy",
+        "mojom": "blink.mojom.FramePolicy"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/navigation/navigation_policy_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::NavigationDownloadPolicy",
+        "mojom": "blink.mojom.NavigationDownloadPolicy"
+      },
+      {
+        "cpp": "::blink::NavigationDownloadPolicy::NavigationDownloadTypes",
+        "mojom": "blink.mojom.NavigationDownloadTypes"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/mediastream/media_devices_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::WebMediaDeviceInfo",
+        "mojom": "blink.mojom.MediaDeviceInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/mediastream/media_stream_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::MediaStreamDevice",
+        "mojom": "blink.mojom.MediaStreamDevice"
+      },
+      {
+        "cpp": "::blink::StreamControls",
+        "mojom": "blink.mojom.StreamControls"
+      },
+      {
+        "cpp": "::blink::TrackControls",
+        "mojom": "blink.mojom.TrackControls"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/widget/visual_properties_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::VisualProperties",
+        "mojom": "blink.mojom.VisualProperties"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/frame/frame_visual_properties_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::FrameVisualProperties",
+        "mojom": "blink.mojom.FrameVisualProperties"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/widget/device_emulation_params_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::DeviceEmulationParams",
+        "mojom": "blink.mojom.DeviceEmulationParams"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/loader/url_loader_factory_bundle_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//url/mojom:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::std::unique_ptr<::blink::PendingURLLoaderFactoryBundle>",
+        "mojom": "blink.mojom.URLLoaderFactoryBundle",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::RendererPreferences",
+        "mojom": "blink.mojom.RendererPreferences"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/web_preferences/web_preferences_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::web_pref::WebPreferences",
+        "mojom": "blink.mojom.WebPreferences"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/page/color_provider_color_maps_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/color"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::ColorProviderColorMaps",
+        "mojom": "blink.mojom.ColorProviderColorMaps"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/navigation/impression_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::Impression",
+        "mojom": "blink.mojom.Impression"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/context_menu_data/context_menu_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//ui/base/mojom:ui_base_types"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::UntrustworthyContextMenuParams",
+        "mojom": "blink.mojom.UntrustworthyContextMenuParams"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/frame/frame_ad_evidence_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::FrameAdEvidence",
+        "mojom": "blink.mojom.FrameAdEvidence"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/frame/frame_owner_element_type_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::FrameOwnerElementType",
+        "mojom": "blink.mojom.FrameOwnerElementType"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/loader/javascript_framework_detection_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::JavaScriptFrameworkDetectionResult",
+        "mojom": "blink.mojom.JavaScriptFrameworkDetectionResult"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/navigation/prefetched_signed_exchange_info_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::net::SHA256HashValue",
+        "mojom": "blink.mojom.SHA256HashValue"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/link_to_text/link_to_text_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/shared_highlighting/core/common"
+    ],
+    "types": [
+      {
+        "cpp": "::shared_highlighting::LinkGenerationError",
+        "mojom": "blink.mojom.LinkGenerationError"
+      },
+      {
+        "cpp": "::shared_highlighting::LinkGenerationReadyStatus",
+        "mojom": "blink.mojom.LinkGenerationReadyStatus"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/fenced_frame/redacted_fenced_frame_config_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common:headers"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::FencedFrame::Opaque",
+        "mojom": "blink.mojom.Opaque"
+      },
+      {
+        "cpp": "::blink::FencedFrame::AdAuctionData",
+        "mojom": "blink.mojom.AdAuctionData"
+      },
+      {
+        "cpp": "::blink::FencedFrame::SharedStorageBudgetMetadata",
+        "mojom": "blink.mojom.SharedStorageBudgetMetadata"
+      },
+      {
+        "cpp": "::blink::FencedFrame::ReportingDestination",
+        "mojom": "blink.mojom.ReportingDestination"
+      },
+      {
+        "cpp": "::blink::FencedFrame::DeprecatedFencedFrameMode",
+        "mojom": "blink.mojom.DeprecatedFencedFrameMode"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperty<GURL>",
+        "mojom": "blink.mojom.PotentiallyOpaqueURL"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperty<::gfx::Size>",
+        "mojom": "blink.mojom.PotentiallyOpaqueSize"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperty<bool>",
+        "mojom": "blink.mojom.PotentiallyOpaqueBool"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperty<::blink::FencedFrame::AdAuctionData>",
+        "mojom": "blink.mojom.PotentiallyOpaqueAdAuctionData"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperty<std::vector<::blink::FencedFrame::RedactedFencedFrameConfig>>",
+        "mojom": "blink.mojom.PotentiallyOpaqueConfigVector"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperty<::blink::FencedFrame::SharedStorageBudgetMetadata>",
+        "mojom": "blink.mojom.PotentiallyOpaqueSharedStorageBudgetMetadata"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameConfig",
+        "mojom": "blink.mojom.FencedFrameConfig"
+      },
+      {
+        "cpp": "::blink::FencedFrame::RedactedFencedFrameProperties",
+        "mojom": "blink.mojom.FencedFrameProperties"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/safe_url_pattern_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//third_party/blink/public/common:headers"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::SafeUrlPattern",
+        "mojom": "blink.mojom.SafeUrlPattern"
+      },
+      {
+        "cpp": "::liburlpattern::Part",
+        "mojom": "blink.mojom.UrlPatternPart"
+      },
+      {
+        "cpp": "::liburlpattern::Part",
+        "mojom": "blink.mojom.PatternTemplate"
+      },
+      {
+        "cpp": "::liburlpattern::Part",
+        "mojom": "blink.mojom.FixedPattern"
+      },
+      {
+        "cpp": "::liburlpattern::Part",
+        "mojom": "blink.mojom.WildcardPattern"
+      },
+      {
+        "cpp": "::liburlpattern::Modifier",
+        "mojom": "blink.mojom.Modifier"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/interest_group/auction_config_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//url/mojom:mojom_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::AdCurrency",
+        "mojom": "blink.mojom.AdCurrency"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/service_worker/embedded_worker_status.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/service_worker/service_worker_embedded_worker_status_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::EmbeddedWorkerStatus",
+        "mojom": "blink.mojom.ServiceWorkerEmbeddedWorkerStatus"
+      }
+    ]
+  }
+]

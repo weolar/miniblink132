@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../events/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../ui/base/accelerators/mojom/accelerator.mojom"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "../../../../../components/history_clusters/public/mojom/mojo_bindings.build_metadata",
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../base/mojom/mojom.build_metadata",
+    "../../../../gfx/geometry/mojom/mojom.build_metadata",
+    "../../../../../url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../ui/webui/resources/cr_components/history_clusters/history_clusters.mojom"
+  ]
+}

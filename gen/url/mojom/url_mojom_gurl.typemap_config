@@ -1,0 +1,17 @@
+[
+  {
+    "traits_headers": [
+      "url/mojom/url_gurl_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":mojom_traits",
+      "//url"
+    ],
+    "types": [
+      {
+        "cpp": "::GURL",
+        "mojom": "url.mojom.Url"
+      }
+    ]
+  }
+]

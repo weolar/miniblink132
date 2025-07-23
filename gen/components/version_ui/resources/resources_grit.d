@@ -1,0 +1,1 @@
+gen\components\version_ui\resources\resources_grit.d.stamp: .\gen\components\version_ui\resources\minified\about_version.js .\gen\components\version_ui\resources\preprocessed\about_version.css .\gen\components\version_ui\resources\preprocessed\about_version.html .\gen/tools/gritsettings/default_resource_ids

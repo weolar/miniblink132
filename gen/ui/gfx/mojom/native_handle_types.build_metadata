@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../ui/gfx/mojom/native_handle_types.mojom"
+  ]
+}

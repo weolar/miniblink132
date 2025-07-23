@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "../../../../../mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../ui/webui/resources/js/metrics_reporter/metrics_reporter.mojom"
+  ]
+}

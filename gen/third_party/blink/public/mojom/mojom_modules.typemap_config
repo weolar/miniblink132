@@ -1,0 +1,43 @@
+[
+  {
+    "traits_headers": [
+      "third_party/blink/public/common/indexeddb/indexeddb_key.h",
+      "third_party/blink/public/common/indexeddb/indexeddb_key_path.h",
+      "third_party/blink/public/common/indexeddb/indexeddb_key_range.h",
+      "third_party/blink/public/common/indexeddb/indexeddb_metadata.h"
+    ],
+    "traits_private_headers": [
+      "third_party/blink/public/common/indexeddb/indexed_db_default_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::blink::IndexedDBDatabaseMetadata",
+        "mojom": "blink.mojom.IDBDatabaseMetadata"
+      },
+      {
+        "cpp": "::blink::IndexedDBIndexKeys",
+        "mojom": "blink.mojom.IDBIndexKeys"
+      },
+      {
+        "cpp": "::blink::IndexedDBIndexMetadata",
+        "mojom": "blink.mojom.IDBIndexMetadata"
+      },
+      {
+        "cpp": "::blink::IndexedDBKey",
+        "mojom": "blink.mojom.IDBKey"
+      },
+      {
+        "cpp": "::blink::IndexedDBKeyPath",
+        "mojom": "blink.mojom.IDBKeyPath"
+      },
+      {
+        "cpp": "::blink::IndexedDBKeyRange",
+        "mojom": "blink.mojom.IDBKeyRange"
+      },
+      {
+        "cpp": "::blink::IndexedDBObjectStoreMetadata",
+        "mojom": "blink.mojom.IDBObjectStoreMetadata"
+      }
+    ]
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/ip_address_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::IPAddress",
+        "mojom": "network.mojom.IPAddress"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/address_family_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "traits_sources": [
+      "//services/network/public/cpp/address_family_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AddressFamily",
+        "mojom": "network.mojom.AddressFamily"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/address_list_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AddressList",
+        "mojom": "network.mojom.AddressList"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/web_transport_error_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::WebTransportError",
+        "mojom": "network.mojom.WebTransportError"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/connection_endpoint_metadata_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::ConnectionEndpointMetadata",
+        "mojom": "network.mojom.ConnectionEndpointMetadata"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/host_resolver_endpoint_result_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net"
+    ],
+    "types": [
+      {
+        "cpp": "::net::HostResolverEndpointResult",
+        "mojom": "network.mojom.HostResolverEndpointResult"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/ip_endpoint_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::IPEndPoint",
+        "mojom": "network.mojom.IPEndPoint"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "net/http/http_response_info.h",
+      "services/network/public/cpp/network_ipc_param_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::HttpConnectionInfo",
+        "mojom": "network.mojom.ConnectionInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "net/http/alternate_protocol_usage.h",
+      "services/network/public/cpp/alternate_protocol_usage_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:ip_address_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::AlternateProtocolUsage",
+        "mojom": "network.mojom.AlternateProtocolUsage"
+      }
+    ]
+  }
+]

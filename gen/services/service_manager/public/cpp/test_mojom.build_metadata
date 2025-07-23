@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "../../../../../../../services/service_manager/public/cpp/standalone_connector_impl_unittest.test-mojom"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "audio_data.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../media/mojo/mojom/speech_recognition_audio_forwarder.mojom"
+  ]
+}

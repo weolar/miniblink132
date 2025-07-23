@@ -1,0 +1,41 @@
+[
+  {
+    "traits_deps": [
+      "//base",
+      "//build:chromeos_buildflags",
+      "//printing/backend"
+    ],
+    "traits_headers": [
+      "printing/backend/mojom/print_backend_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "print_backend_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::printing::PrinterBasicInfo",
+        "mojom": "printing.mojom.PrinterBasicInfo"
+      },
+      {
+        "cpp": "::printing::PrinterSemanticCapsAndDefaults::Paper",
+        "mojom": "printing.mojom.Paper"
+      },
+      {
+        "cpp": "::printing::PrinterSemanticCapsAndDefaults",
+        "mojom": "printing.mojom.PrinterSemanticCapsAndDefaults"
+      }
+    ]
+  },
+  {
+    "types": [
+      {
+        "cpp": "::printing::PageOutputQualityAttribute",
+        "mojom": "printing.mojom.PageOutputQualityAttribute"
+      },
+      {
+        "cpp": "::printing::PageOutputQuality",
+        "mojom": "printing.mojom.PageOutputQuality"
+      }
+    ]
+  }
+]

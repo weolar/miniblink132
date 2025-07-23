@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../ui/base/ime/mojom/ime_mojom_traits_test.mojom"
+  ]
+}

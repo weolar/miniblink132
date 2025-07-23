@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "../../../network/public/mojom/mojom_ip_address.build_metadata",
+    "../../../network/public/mojom/mojom_network_anonymization_key.build_metadata",
+    "../../../network/public/mojom/mojom_network_param.build_metadata",
+    "../../../../url/mojom/url_mojom_gurl.build_metadata",
+    "../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../services/proxy_resolver/public/mojom/proxy_resolver.mojom"
+  ]
+}

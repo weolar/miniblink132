@@ -1,0 +1,415 @@
+[
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/safe_base_name_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::SafeBaseName",
+        "mojom": "mojo_base.mojom.SafeBaseName"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/big_buffer_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo_base::BigBuffer",
+        "mojom": "mojo_base.mojom.BigBuffer",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/byte_string_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "std::string",
+        "mojom": "mojo_base.mojom.ByteString"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/file_error_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":base_shared",
+      "//base"
+    ],
+    "traits_sources": [
+      "//mojo/public/cpp/base/file_error_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::base::File::Error",
+        "mojom": "mojo_base.mojom.FileError"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/file_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::File::Info",
+        "mojom": "mojo_base.mojom.FileInfo"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/file_path_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::FilePath",
+        "mojom": "mojo_base.mojom.FilePath"
+      },
+      {
+        "cpp": "::base::FilePath",
+        "mojom": "mojo_base.mojom.RelativeFilePath"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/file_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::File",
+        "mojom": "mojo_base.mojom.File",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/read_only_file_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::File",
+        "force_serialize": true,
+        "mojom": "mojo_base.mojom.ReadOnlyFile",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/generic_pending_associated_receiver_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base:shared_typemap_traits",
+      "//mojo/public/cpp/bindings"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo::GenericPendingAssociatedReceiver",
+        "mojom": "mojo_base.mojom.GenericPendingAssociatedReceiver",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/generic_pending_receiver_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base:shared_typemap_traits",
+      "//mojo/public/cpp/bindings"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo::GenericPendingReceiver",
+        "mojom": "mojo_base.mojom.GenericPendingReceiver",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/read_only_buffer_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::base::span<const ::uint8_t>",
+        "force_serialize": true,
+        "mojom": "mojo_base.mojom.ReadOnlyBuffer"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/shared_memory_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::subtle::PlatformSharedMemoryRegion::ScopedPlatformHandle",
+        "mojom": "mojo_base.mojom.PlatformSharedMemoryHandle",
+        "move_only": true
+      },
+      {
+        "cpp": "::base::subtle::PlatformSharedMemoryRegion",
+        "mojom": "mojo_base.mojom.PlatformSharedMemoryRegion",
+        "move_only": true
+      },
+      {
+        "cpp": "::base::ReadOnlySharedMemoryRegion",
+        "mojom": "mojo_base.mojom.ReadOnlySharedMemoryRegion",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::base::UnsafeSharedMemoryRegion",
+        "mojom": "mojo_base.mojom.UnsafeSharedMemoryRegion",
+        "move_only": true,
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::base::WritableSharedMemoryRegion",
+        "mojom": "mojo_base.mojom.WritableSharedMemoryRegion",
+        "move_only": true,
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/time_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::base::Time",
+        "mojom": "mojo_base.mojom.Time"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::base::Time",
+        "mojom": "mojo_base.mojom.JSTime"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::base::TimeDelta",
+        "mojom": "mojo_base.mojom.TimeDelta"
+      },
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::base::TimeTicks",
+        "mojom": "mojo_base.mojom.TimeTicks"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/token_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::Token",
+        "mojom": "mojo_base.mojom.Token"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/unguessable_token_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::UnguessableToken",
+        "mojom": "mojo_base.mojom.UnguessableToken"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/uuid_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::Uuid",
+        "mojom": "mojo_base.mojom.Uuid"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/values_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::Value",
+        "mojom": "mojo_base.mojom.Value",
+        "move_only": true
+      },
+      {
+        "cpp": "::base::Value::Dict",
+        "mojom": "mojo_base.mojom.DictionaryValue",
+        "move_only": true
+      },
+      {
+        "cpp": "::base::Value::List",
+        "mojom": "mojo_base.mojom.ListValue",
+        "move_only": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/text_direction_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base:i18n",
+      "//mojo/public/cpp/base:typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::i18n::TextDirection",
+        "mojom": "mojo_base.mojom.TextDirection"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/int128_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base:shared_typemap_traits",
+      "//third_party/abseil-cpp:absl"
+    ],
+    "types": [
+      {
+        "cpp": "::absl::int128",
+        "mojom": "mojo_base.mojom.Int128"
+      },
+      {
+        "cpp": "::absl::uint128",
+        "mojom": "mojo_base.mojom.Uint128"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/version_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//base",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::base::Version",
+        "mojom": "mojo_base.mojom.Version"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/mojo/big_string_mojom_traits.h",
+      "third_party/blink/renderer/platform/wtf/text/wtf_string.h"
+    ],
+    "traits_public_deps": [
+      "//mojo/public/cpp/base"
+    ],
+    "types": [
+      {
+        "cpp": "::WTF::String",
+        "mojom": "mojo_base.mojom.BigString",
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "third_party/blink/renderer/platform/mojo/string16_mojom_traits.h"
+    ],
+    "types": [
+      {
+        "cpp": "::WTF::String",
+        "force_serialize": true,
+        "mojom": "mojo_base.mojom.BigString16",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::WTF::String",
+        "force_serialize": true,
+        "mojom": "mojo_base.mojom.String16",
+        "nullable_is_same_type": true
+      }
+    ]
+  }
+]

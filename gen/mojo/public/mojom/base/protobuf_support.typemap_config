@@ -1,0 +1,21 @@
+[
+  {
+    "traits_headers": [
+      "mojo/public/cpp/base/proto_wrapper_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":base",
+      "//base",
+      "//mojo/public/cpp/base:protobuf_support_traits",
+      "//mojo/public/cpp/base:shared_typemap_traits"
+    ],
+    "types": [
+      {
+        "cpp": "::mojo_base::ProtoWrapper",
+        "default_constructible": false,
+        "mojom": "mojo_base.mojom.ProtoWrapper",
+        "move_only": true
+      }
+    ]
+  }
+]

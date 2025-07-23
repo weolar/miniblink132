@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "mojom_webui.build_metadata",
+    "../../public/mojom/mojom.build_metadata",
+    "../../../../../third_party/blink/public/mojom/mojom_core.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../components/services/storage/privileged/mojom/indexed_db_client_state_checker.mojom",
+    "../../../../../../../../components/services/storage/privileged/mojom/indexed_db_control.mojom",
+    "../../../../../../../../components/services/storage/privileged/mojom/indexed_db_control_test.mojom"
+  ]
+}

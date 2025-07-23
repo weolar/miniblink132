@@ -1,0 +1,21 @@
+[
+  {
+    "traits_headers": [
+      "ui/latency/mojom/latency_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_mojom_traits",
+      "//ui/latency"
+    ],
+    "types": [
+      {
+        "cpp": "::ui::LatencyComponentType",
+        "mojom": "ui.mojom.LatencyComponentType"
+      },
+      {
+        "cpp": "::ui::LatencyInfo",
+        "mojom": "ui.mojom.LatencyInfo"
+      }
+    ]
+  }
+]

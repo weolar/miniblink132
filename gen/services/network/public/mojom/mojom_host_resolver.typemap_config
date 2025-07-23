@@ -1,0 +1,52 @@
+[
+  {
+    "traits_headers": [
+      "services/network/public/cpp/host_resolver_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:host_resolver_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::DnsConfigOverrides",
+        "mojom": "network.mojom.DnsConfigOverrides"
+      },
+      {
+        "cpp": "::net::DnsOverHttpsServerConfig",
+        "mojom": "network.mojom.DnsOverHttpsServerConfig"
+      },
+      {
+        "cpp": "::net::DnsOverHttpsConfig",
+        "mojom": "network.mojom.DnsOverHttpsConfig"
+      },
+      {
+        "cpp": "::net::HostResolverSource",
+        "mojom": "network.mojom.ResolveHostParameters.Source"
+      },
+      {
+        "cpp": "::net::MdnsListenerUpdateType",
+        "mojom": "network.mojom.MdnsListenClient.UpdateType"
+      },
+      {
+        "cpp": "::net::SecureDnsMode",
+        "mojom": "network.mojom.SecureDnsMode"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "services/network/public/cpp/host_resolver_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//net",
+      "//services/network/public/cpp:host_resolver_mojom_support"
+    ],
+    "types": [
+      {
+        "cpp": "::net::DnsQueryType",
+        "mojom": "network.mojom.DnsQueryType"
+      }
+    ]
+  }
+]

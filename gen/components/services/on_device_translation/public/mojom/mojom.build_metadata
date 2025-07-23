@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "../../../../../mojo/public/mojom/base/base.build_metadata",
+    "../../../../../sandbox/policy/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "../../../../../../../../components/services/on_device_translation/public/mojom/on_device_translation_service.mojom",
+    "../../../../../../../../components/services/on_device_translation/public/mojom/translator.mojom"
+  ]
+}
