@@ -1,0 +1,1077 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4e5b9ec3-6c30-4680-a165-9a98b94e0116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party">
+      <UniqueIdentifier>{168b397c-12b2-44e9-ba50-135e1f2b58e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink">
+      <UniqueIdentifier>{788f62fd-165b-4be4-856e-0eae086518f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer">
+      <UniqueIdentifier>{d23dd04d-1568-473b-a5e0-428254e7d288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core">
+      <UniqueIdentifier>{4389aab5-8faf-4298-93db-cd02c2f81c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\accessibility">
+      <UniqueIdentifier>{ef5afb53-183a-481e-a15f-5aab196f4098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\animation">
+      <UniqueIdentifier>{70415114-5ff6-474f-9450-dab858d63eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\animation\css">
+      <UniqueIdentifier>{e8d4404f-b733-46f7-9e0d-e97dbd9e19a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\animation\images">
+      <UniqueIdentifier>{174fd62b-f4cf-4d14-9c00-7ec60acf3437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\animation_frame">
+      <UniqueIdentifier>{7a4492a9-82ca-4ccb-a815-2150fb6b6085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\annotation">
+      <UniqueIdentifier>{b42d0b5b-93f0-49ff-ae5c-70c93c575262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\aom">
+      <UniqueIdentifier>{74552728-8263-40b9-b513-1e83ce4c7550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\clipboard">
+      <UniqueIdentifier>{1efb0e67-d496-45d6-9f4f-c89992e6d503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\content_capture">
+      <UniqueIdentifier>{e3b52f7d-27c6-41b1-abd7-f4ed4cf2e612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\context_features">
+      <UniqueIdentifier>{b99bc91a-468b-4fdf-aa9a-d3f5f4e4e3bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\accessibility\axid.h">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\accessibility\ax_context.h">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\accessibility\ax_object_cache.h">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\accessibility\ax_object_cache_base.h">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\accessibility\blink_ax_event_intent.h">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\accessibility\scoped_blink_ax_event_intent.h">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animatable.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_clock.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_effect.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_effect_owner.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_input_helpers.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_time_delta.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\animation_utils.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\basic_shape_interpolation_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\color_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\compositor_animations.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_angle_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_aspect_ratio_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_basic_shape_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_border_image_length_box_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_clip_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_color_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_custom_length_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_custom_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_default_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_filter_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_font_size_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_font_stretch_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_font_variation_settings_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_font_weight_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_grid_template_property_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_image_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_image_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_image_slice_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_interpolation_environment.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_interpolation_types_map.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_intrinsic_length_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_length_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_length_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_length_pair_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_number_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_offset_rotate_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_paint_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_path_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_percentage_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_position_axis_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_position_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_ray_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_resolution_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_rotate_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_scale_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_shadow_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_size_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_text_indent_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_time_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_transform_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_transform_origin_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_translate_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_var_cycle_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css_visibility_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\document_animation.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\document_animations.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\document_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\effect_input.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\effect_model.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\effect_stack.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\element_animations.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\image_list_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\image_slice_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\inert_effect.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_aspect_ratio.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_filter.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_length.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_track_list.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_track_repeater.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_track_size.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_length.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_shadow.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_transform_list.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolable_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolated_svg_path_source.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolation.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolation_effect.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolation_environment.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolation_types_map.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\interpolation_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\invalidatable_interpolation.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\keyframe.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\keyframe_effect.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\keyframe_effect_model.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\length_list_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\length_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\length_units_checker.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\list_interpolation_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\non_interpolable_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\number_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\pairwise_interpolation_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\path_interpolation_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\pending_animations.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\primitive_interpolation.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\property_handle.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\sampled_effect.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\scroll_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\scroll_timeline_util.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\side_index.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\size_interpolation_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\size_list_property_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\string_keyframe.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_angle_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_integer_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_integer_optional_integer_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_interpolation_environment.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_interpolation_types_map.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_length_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_length_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_number_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_number_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_number_optional_number_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_path_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_path_seg_interpolation_functions.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_point_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_rect_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_transform_list_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\svg_value_interpolation_type.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\timing.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\timing_calculations.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\timing_input.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\transition_interpolation.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\transition_keyframe.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\typed_interpolation_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\underlying_length_checker.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\underlying_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\underlying_value_owner.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\view_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\worklet_animation_base.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\worklet_animation_controller.h">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_color.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_double.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_filter_operations.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_transform.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_value.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_value_factory.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_animation.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_animations.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_animation_data.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_animation_update.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_keyframe_effect_model.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_scroll_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_timing_data.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_transition.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_transition_data.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation\css\css_view_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\animation_frame\worker_animation_frame_provider.h">
+      <Filter>src\third_party\blink\renderer\core\animation_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\annotation\annotation_agent_container_impl.h">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\annotation\annotation_agent_generator.h">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\annotation\annotation_agent_impl.h">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\annotation\annotation_selector.h">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\annotation\annotation_test_utils.h">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\annotation\text_annotation_selector.h">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\aom\accessible_node.h">
+      <Filter>src\third_party\blink\renderer\core\aom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\aom\accessible_node_list.h">
+      <Filter>src\third_party\blink\renderer\core\aom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\aom\computed_accessible_node.h">
+      <Filter>src\third_party\blink\renderer\core\aom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\clipboard_mime_types.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\clipboard_utilities.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\data_object.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\data_object_item.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer_access_policy.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer_item.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer_item_list.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\dragged_isolated_file_system.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\paste_mode.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\clipboard\system_clipboard.h">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\content_capture\content_capture_manager.h">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\content_capture\content_capture_task.h">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\content_capture\content_capture_task_histogram_reporter.h">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\content_capture\content_holder.h">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\content_capture\task_session.h">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\context_features\context_feature_settings.h">
+      <Filter>src\third_party\blink\renderer\core\context_features</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\accessibility\ax_context.cc">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\accessibility\ax_object_cache.cc">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\accessibility\blink_ax_event_intent.cc">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\accessibility\scoped_blink_ax_event_intent.cc">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animatable.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation_clock.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation_effect.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation_input_helpers.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation_time_delta.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\animation_utils.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\basic_shape_interpolation_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\color_property_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\compositor_animations.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_angle_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_aspect_ratio_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_basic_shape_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_border_image_length_box_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_clip_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_color_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_custom_length_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_custom_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_default_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_filter_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_font_size_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_font_stretch_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_font_variation_settings_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_font_weight_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_grid_template_property_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_image_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_image_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_image_slice_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_interpolation_environment.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_interpolation_types_map.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_intrinsic_length_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_length_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_length_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_number_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_offset_rotate_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_paint_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_path_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_percentage_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_position_axis_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_ray_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_resolution_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_rotate_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_scale_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_shadow_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_size_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_text_indent_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_time_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_transform_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_translate_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_var_cycle_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css_visibility_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\document_animations.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\document_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\effect_input.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\effect_model.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\effect_stack.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\element_animations.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\inert_effect.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_aspect_ratio.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_filter.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_length.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_track_list.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_track_repeater.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_grid_track_size.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_length.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_shadow.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_transform_list.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolable_value.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\interpolation_effect.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\invalidatable_interpolation.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\keyframe.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\keyframe_effect.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\keyframe_effect_model.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\length_list_property_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\length_property_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\list_interpolation_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\number_property_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\path_interpolation_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\pending_animations.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\property_handle.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\sampled_effect.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\scroll_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\scroll_timeline_util.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\size_interpolation_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\size_list_property_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\string_keyframe.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_angle_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_integer_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_integer_optional_integer_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_interpolation_types_map.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_length_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_length_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_number_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_number_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_number_optional_number_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_path_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_path_seg_interpolation_functions.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_point_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_rect_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_transform_list_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\svg_value_interpolation_type.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\timing.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\timing_input.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\transition_interpolation.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\transition_keyframe.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\underlying_value_owner.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\view_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\worklet_animation_controller.cc">
+      <Filter>src\third_party\blink\renderer\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\compositor_keyframe_value_factory.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_animation.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_animations.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_animation_data.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_animation_update.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_keyframe_effect_model.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_scroll_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_timing_data.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_transition.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_transition_data.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation\css\css_view_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\animation\css</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\animation_frame\worker_animation_frame_provider.cc">
+      <Filter>src\third_party\blink\renderer\core\animation_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\annotation\annotation_agent_container_impl.cc">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\annotation\annotation_agent_generator.cc">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\annotation\annotation_agent_impl.cc">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\annotation\annotation_selector.cc">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\annotation\text_annotation_selector.cc">
+      <Filter>src\third_party\blink\renderer\core\annotation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\aom\accessible_node.cc">
+      <Filter>src\third_party\blink\renderer\core\aom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\aom\accessible_node_list.cc">
+      <Filter>src\third_party\blink\renderer\core\aom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\aom\computed_accessible_node.cc">
+      <Filter>src\third_party\blink\renderer\core\aom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\clipboard_mime_types.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\clipboard_utilities.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\clipboard_utilities_win.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\data_object.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\data_object_item.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer_item.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\data_transfer_item_list.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\dragged_isolated_file_system.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\clipboard\system_clipboard.cc">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\content_capture\content_capture_manager.cc">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\content_capture\content_capture_task.cc">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\content_capture\content_capture_task_histogram_reporter.cc">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\content_capture\content_holder.cc">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\content_capture\task_session.cc">
+      <Filter>src\third_party\blink\renderer\core\content_capture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\context_features\context_feature_settings.cc">
+      <Filter>src\third_party\blink\renderer\core\context_features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\third_party\blink\renderer\core\accessibility\build.gni">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </None>
+    <None Include="..\..\third_party\blink\renderer\core\accessibility\DIR_METADATA">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </None>
+    <None Include="..\..\third_party\blink\renderer\core\accessibility\OWNERS">
+      <Filter>src\third_party\blink\renderer\core\accessibility</Filter>
+    </None>
+    <None Include="..\..\third_party\blink\renderer\core\clipboard\DIR_METADATA">
+      <Filter>src\third_party\blink\renderer\core\clipboard</Filter>
+    </None>
+  </ItemGroup>
+</Project>

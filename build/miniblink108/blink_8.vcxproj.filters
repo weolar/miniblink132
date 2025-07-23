@@ -1,0 +1,2076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4e5b9ec3-6c30-4680-a165-9a98b94e0116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party">
+      <UniqueIdentifier>{168b397c-12b2-44e9-ba50-135e1f2b58e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink">
+      <UniqueIdentifier>{788f62fd-165b-4be4-856e-0eae086518f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer">
+      <UniqueIdentifier>{d23dd04d-1568-473b-a5e0-428254e7d288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core">
+      <UniqueIdentifier>{4389aab5-8faf-4298-93db-cd02c2f81c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\imagebitmap">
+      <UniqueIdentifier>{cbf85d07-e973-46e5-9301-cdd5fedd45b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\geometry">
+      <UniqueIdentifier>{8d38fd31-cd8c-4f90-992d-b3148f3bc684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\highlight">
+      <UniqueIdentifier>{3fb76f02-bf50-4051-b51f-053cabfa2674}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html">
+      <UniqueIdentifier>{ce0b55ce-db2f-420f-abc0-719d3af441fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\canvas">
+      <UniqueIdentifier>{4554e74f-137a-4c1b-8d22-6efcf61a1047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\closewatcher">
+      <UniqueIdentifier>{b2b2d460-0a56-4814-8048-9633c3c81183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\custom">
+      <UniqueIdentifier>{147ffbe2-2f49-4618-9dab-af9db7d05fd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\fenced_frame">
+      <UniqueIdentifier>{d6702c9a-aa8c-410f-bd50-b539bec17ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\forms">
+      <UniqueIdentifier>{7ed38a9d-2152-49bf-9808-b5ccb91fcb30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\media">
+      <UniqueIdentifier>{dbb96c9b-ef3e-4292-b683-496f1d689494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\parser">
+      <UniqueIdentifier>{f7553784-77e7-498d-aea1-87ba778b83d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\portal">
+      <UniqueIdentifier>{52a3ba25-e5e7-42fb-8754-5f2d52d00e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\resources">
+      <UniqueIdentifier>{d793052e-cf85-4f79-8e3e-0011d8f3da02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\shadow">
+      <UniqueIdentifier>{93a3a1bb-81b6-49cb-998e-2b9dfac8c1d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\track">
+      <UniqueIdentifier>{5c99a9f0-a439-4157-94d1-8085971928a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\third_party\blink\renderer\core\html\track\vtt">
+      <UniqueIdentifier>{d4653ed3-ba0e-4fa9-af11-4edb09ffa9f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\imagebitmap\image_bitmap.cc">
+      <Filter>src\third_party\blink\renderer\core\imagebitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\imagebitmap\image_bitmap_source.cc">
+      <Filter>src\third_party\blink\renderer\core\imagebitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_matrix.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_matrix_read_only.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_point.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_point_read_only.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_quad.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_rect.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_rect_list.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\geometry\dom_rect_read_only.cc">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\highlight\css_highlight_registry.cc">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\highlight\highlight.cc">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\highlight\highlight_pointer_event.cc">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\highlight\highlight_registry.cc">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\anchor_element_metrics.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\anchor_element_metrics_sender.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\blocking_attribute.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\client_hints_util.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\cross_origin_attribute.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\document_all_name_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\document_name_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_all_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_anchor_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_area_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_base_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_body_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_br_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_data_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_details_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_dialog_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_dimension.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_directory_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_div_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_dlist_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_document.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_embed_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_font_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_frame_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_frame_element_base.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_frame_owner_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_frame_set_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_heading_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_head_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_hr_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_html_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_iframe_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_iframe_element_sandbox.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_image_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_image_fallback_helper.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_image_loader.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_link_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_li_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_map_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_marquee_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_menu_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_meta_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_meter_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_mod_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_name_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_no_embed_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_no_script_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_object_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_olist_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_paragraph_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_param_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_picture_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_plugin_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_pre_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_progress_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_quote_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_rt_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_ruby_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_script_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_slot_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_source_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_span_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_style_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_summary_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_caption_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_cell_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_col_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_part_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_rows_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_row_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_table_section_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_tag_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_template_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_time_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_title_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_ulist_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_unknown_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_view_source_document.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\html_wbr_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\image_document.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\lazy_load_frame_observer.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\lazy_load_image_observer.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\link_manifest.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\link_rel_attribute.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\link_resource.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\link_style.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\list_item_ordinal.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\loading_attribute.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\plugin_document.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\rel_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\text_document.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\time_ranges.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\trust_token_attribute_parsing.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\window_name_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_async_blob_creator.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_context_creation_attributes_core.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_draw_listener.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_font_cache.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_image_source.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_performance_monitor.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_rendering_context.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_rendering_context_host.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_resource_tracker.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\html_canvas_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\image_data.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\image_element_base.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\predefined_color_space.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\canvas\text_metrics.cc">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\closewatcher\close_watcher.cc">
+      <Filter>src\third_party\blink\renderer\core\html\closewatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\ce_reactions_scope.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_definition.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_factory.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_queue.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_stack.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_registry.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_upgrade_sorter.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\custom_state_set.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\custom\element_internals.cc">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\fenced_frame\document_fenced_frames.cc">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fence.cc">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fenced_frame_mparch_delegate.cc">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fenced_frame_shadow_dom_delegate.cc">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\fenced_frame\html_fenced_frame_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\base_button_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\base_checkable_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\base_temporal_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\base_text_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\button_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\checkbox_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\chooser_only_temporal_input_type_view.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\chooser_resource_loader.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\clear_button_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser_client.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser_popup_ui_controller.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser_ui_controller.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\color_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_chooser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_chooser_client.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_chooser_impl.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_edit_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_fields_state.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_field_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_field_elements.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_local_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_numeric_field_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\date_time_symbolic_field_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\email_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\external_date_time_chooser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\external_popup_menu.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\file_chooser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\file_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\form_controller.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\form_data.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\form_data_event.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\hidden_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_button_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_data_list_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_field_set_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_form_controls_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_form_control_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_form_control_element_with_state.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_form_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_input_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_label_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_legend_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_options_collection.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_option_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_opt_group_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_output_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_select_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_select_menu_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\html_text_area_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\image_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\input_type_view.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\internal_popup_menu.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\keyboard_clickable_input_type_view.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\labels_node_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\listed_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\menu_list_inner_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\month_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\multiple_fields_temporal_input_type_view.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\number_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\option_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\password_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\picker_indicator_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\radio_button_group_scope.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\radio_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\radio_node_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\range_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\reset_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\search_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\select_menu_part_traversal.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\select_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\slider_thumb_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\slider_track_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\spin_button_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\step_range.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\submit_event.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\submit_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\telephone_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\text_control_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\text_control_inner_elements.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\text_field_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\text_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\time_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\type_ahead.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\url_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\validity_state.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\forms\week_input_type.cc">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\audio_output_device_controller.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\autoplay_policy.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\autoplay_uma_helper.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\html_audio_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\html_media_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\html_media_element_controls_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\html_video_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_controls.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_custom_controls_fullscreen_detector.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_document.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_element_parser_helpers.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_fragment_uri_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_remoting_interstitial.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_source_attachment.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\media_source_tracer.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\picture_in_picture_interstitial.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\remote_playback_controller.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\video_frame_callback_requester.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\media\video_wake_lock.cc">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\atomic_html_token.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\background_html_scanner.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\background_html_token_producer.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\css_preload_scanner.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_construction_site.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_document_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_element_stack.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_entity_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_entity_search.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_formatting_element_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_meta_charset_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_idioms.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_metrics.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_options.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_reentry_permit.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_preload_scanner.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_resource_preloader.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_srcset_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_tokenizer.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_token_producer.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_tree_builder.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\html_view_source_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\literal_buffer.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\preload_request.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\resource_preloader.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\special_sequences_tracker.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\text_document_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\text_resource_decoder.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\parser\text_resource_decoder_builder.cc">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\document_portals.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\dom_window_portal_host.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\html_portal_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\portal_activate_event.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\portal_activation_delegate.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\portal_contents.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\portal_host.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\portal\portal_post_message_helper.cc">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\shadow\progress_shadow_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\shadow\shadow_element_utils.cc">
+      <Filter>src\third_party\blink\renderer\core\html\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\audio_track.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\audio_track_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\automatic_track_selection.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\cue_timeline.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\html_track_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\inband_text_track.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\loadable_text_track.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\text_track.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\text_track_container.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\text_track_cue.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\text_track_cue_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\text_track_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\track_base.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\track_event.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\video_track.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\video_track_list.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\buffered_line_reader.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_cue.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_cue_box.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_cue_layout_algorithm.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_element.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_parser.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_region.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_scanner.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_tokenizer.cc">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\imagebitmap\image_bitmap.h">
+      <Filter>src\third_party\blink\renderer\core\imagebitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\imagebitmap\image_bitmap_source.h">
+      <Filter>src\third_party\blink\renderer\core\imagebitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_matrix.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_matrix_read_only.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_point.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_point_read_only.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_quad.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_rect.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_rect_list.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\dom_rect_read_only.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\geometry\geometry_util.h">
+      <Filter>src\third_party\blink\renderer\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\highlight\css_highlight_registry.h">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\highlight\highlight.h">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\highlight\highlight_pointer_event.h">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\highlight\highlight_registry.h">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\highlight\highlight_registry_map_entry.h">
+      <Filter>src\third_party\blink\renderer\core\highlight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\anchor_element_metrics.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\anchor_element_metrics_sender.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\blocking_attribute.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\client_hints_util.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\collection_items_cache.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\collection_type.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\cross_origin_attribute.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\document_all_name_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\document_name_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\frame_edge_info.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_all_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_anchor_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_area_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_base_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_bdi_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_body_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_br_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_data_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_details_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_dialog_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_dimension.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_directory_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_div_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_dlist_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_document.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_embed_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_font_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_frame_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_frame_element_base.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_frame_owner_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_frame_set_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_heading_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_head_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_hr_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_html_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_iframe_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_iframe_element_sandbox.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_image_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_image_fallback_helper.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_image_loader.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_link_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_li_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_map_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_marquee_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_menu_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_meta_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_meter_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_mod_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_name_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_no_embed_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_no_script_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_object_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_olist_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_paragraph_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_param_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_picture_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_plugin_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_pre_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_progress_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_quote_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_rt_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_ruby_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_script_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_slot_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_source_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_span_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_style_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_summary_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_caption_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_cell_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_col_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_part_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_rows_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_row_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_table_section_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_tag_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_template_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_time_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_title_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_ulist_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_unknown_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_view_source_document.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\html_wbr_element.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\image_document.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\lazy_load_frame_observer.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\lazy_load_image_observer.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\link_manifest.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\link_rel_attribute.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\link_resource.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\link_style.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\list_item_ordinal.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\loading_attribute.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\nesting_level_incrementer.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\plugin_document.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\rel_list.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\table_constants.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\text_document.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\time_ranges.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\trust_token_attribute_parsing.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\window_name_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_async_blob_creator.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_context_creation_attributes_core.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_draw_listener.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_font_cache.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_image_source.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_performance_monitor.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_rendering_context.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_rendering_context_factory.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_rendering_context_host.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\canvas_resource_tracker.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\html_canvas_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\image_data.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\image_element_base.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\predefined_color_space.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\text_metrics.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\canvas\ukm_parameters.h">
+      <Filter>src\third_party\blink\renderer\core\html\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\closewatcher\close_watcher.h">
+      <Filter>src\third_party\blink\renderer\core\html\closewatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\ce_reactions_scope.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_definition.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_definition_builder.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_descriptor.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_descriptor_hash.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_factory.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_queue.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_stack.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_reaction_test_helpers.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_registry.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_test_helpers.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_element_upgrade_sorter.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\custom_state_set.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\custom\element_internals.h">
+      <Filter>src\third_party\blink\renderer\core\html\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\fenced_frame\document_fenced_frames.h">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fence.h">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fenced_frame_ad_sizes.h">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fenced_frame_mparch_delegate.h">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\fenced_frame\fenced_frame_shadow_dom_delegate.h">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\fenced_frame\html_fenced_frame_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\fenced_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\base_button_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\base_checkable_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\base_temporal_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\base_text_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\button_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\checkbox_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\chooser_only_temporal_input_type_view.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\chooser_resource_loader.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\clear_button_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser_client.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser_popup_ui_controller.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\color_chooser_ui_controller.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\color_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_chooser.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_chooser_client.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_chooser_impl.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_edit_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_fields_state.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_field_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_field_elements.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_local_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_numeric_field_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\date_time_symbolic_field_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\email_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\external_date_time_chooser.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\external_popup_menu.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\file_chooser.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\file_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\form_associated.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\form_controller.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\form_data.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\form_data_event.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\hidden_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_button_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_data_list_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_data_list_options_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_field_set_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_form_controls_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_form_control_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_form_control_element_with_state.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_form_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_input_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_label_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_legend_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_options_collection.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_option_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_opt_group_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_output_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_select_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_select_menu_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\html_text_area_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\image_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\input_type_view.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\internal_popup_menu.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\keyboard_clickable_input_type_view.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\labels_node_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\listed_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\menu_list_inner_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\mock_file_chooser.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\month_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\multiple_fields_temporal_input_type_view.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\number_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\option_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\password_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\picker_indicator_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\popup_menu.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\radio_button_group_scope.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\radio_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\radio_node_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\range_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\reset_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\search_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\select_menu_part_traversal.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\select_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\slider_thumb_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\slider_track_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\spin_button_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\step_range.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\submit_event.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\submit_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\telephone_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\text_control_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\text_control_inner_elements.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\text_field_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\text_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\time_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\type_ahead.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\url_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\validity_state.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\forms\week_input_type.h">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\audio_output_device_controller.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\autoplay_policy.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\autoplay_uma_helper.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\html_audio_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\html_media_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\html_media_element_controls_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\html_media_test_helper.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\html_video_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_controls.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_custom_controls_fullscreen_detector.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_document.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_element_parser_helpers.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_error.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_fragment_uri_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_remoting_interstitial.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_source_attachment.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_source_handle.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_source_registry.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\media_source_tracer.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\picture_in_picture_interstitial.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\remote_playback_controller.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\remote_playback_observer.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\video_frame_callback_requester.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\media\video_wake_lock.h">
+      <Filter>src\third_party\blink\renderer\core\html\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\atomic_html_token.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\background_html_scanner.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\background_html_token_producer.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\css_preload_scanner.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_construction_site.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_document_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_element_stack.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_entity_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_entity_search.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_entity_table.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_formatting_element_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_input_stream.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_meta_charset_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_idioms.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_metrics.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_options.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_parser_reentry_permit.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_preload_scanner.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_resource_preloader.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_srcset_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_stack_item.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_token.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_tokenizer.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_token_producer.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_tree_builder.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\html_view_source_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\input_stream_preprocessor.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\literal_buffer.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\markup_tokenizer_inlines.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\parser_scripting_flag_policy.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\parser_synchronization_policy.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\preload_request.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\resource_preloader.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\special_sequences_tracker.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\text_document_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\text_resource_decoder.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\parser\text_resource_decoder_builder.h">
+      <Filter>src\third_party\blink\renderer\core\html\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\document_portals.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\dom_window_portal_host.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\html_portal_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\portal_activate_event.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\portal_activation_delegate.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\portal_contents.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\portal_host.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\portal\portal_post_message_helper.h">
+      <Filter>src\third_party\blink\renderer\core\html\portal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\shadow\progress_shadow_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\shadow\shadow_element_utils.h">
+      <Filter>src\third_party\blink\renderer\core\html\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\audio_track.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\audio_track_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\automatic_track_selection.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\cue_timeline.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\html_track_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\inband_text_track.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\loadable_text_track.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\text_track.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\text_track_container.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\text_track_cue.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\text_track_cue_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\text_track_kind_user_preference.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\text_track_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\track_base.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\track_event.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\track_list_base.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\video_track.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\video_track_list.h">
+      <Filter>src\third_party\blink\renderer\core\html\track</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\buffered_line_reader.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_cue.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_cue_box.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_cue_layout_algorithm.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_element.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_parser.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_region.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_scanner.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_token.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\html\track\vtt\vtt_tokenizer.h">
+      <Filter>src\third_party\blink\renderer\core\html\track\vtt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\third_party\blink\renderer\core\html\forms\DEPS">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </None>
+    <None Include="..\..\third_party\blink\renderer\core\html\forms\DIR_METADATA">
+      <Filter>src\third_party\blink\renderer\core\html\forms</Filter>
+    </None>
+  </ItemGroup>
+</Project>

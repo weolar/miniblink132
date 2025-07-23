@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gen">
+      <UniqueIdentifier>{25b35838-c65a-485f-a424-1d6ec70f364e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\include">
+      <UniqueIdentifier>{f48e7344-2d2f-4428-8606-63cb343c6dd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\include\inspector">
+      <UniqueIdentifier>{ce8a9aaa-a41d-45dc-bc86-c381f7b6e558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\src">
+      <UniqueIdentifier>{b0abee36-6531-4559-82e1-ce7d33c93c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated">
+      <UniqueIdentifier>{f1e1d843-918c-4e06-b4a4-fdc39466df46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\src">
+      <UniqueIdentifier>{74f240c8-c0e3-4073-9c09-6f7f888485a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\src\builtins">
+      <UniqueIdentifier>{44080277-5715-47f0-9264-28d5b50ebd1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\src\debug">
+      <UniqueIdentifier>{07f2022b-3bd6-4cf4-a979-c2a8e0aefff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\third_party">
+      <UniqueIdentifier>{03b08c0d-b673-4e9b-b09a-b9cd2f4a1ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\third_party\v8">
+      <UniqueIdentifier>{b3f09454-6833-4f4b-8269-b115a283f3b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\third_party\v8\builtins">
+      <UniqueIdentifier>{b8910aa5-c9b0-4a55-bcf1-39ac9a9fd2b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\test">
+      <UniqueIdentifier>{1ba4c562-ba14-42ac-9da3-36742897d04a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\torque-generated\test\torque">
+      <UniqueIdentifier>{16e22c94-bf5d-44ac-a22e-36880c594421}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\include\inspector\Runtime.h">
+      <Filter>gen\include\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\include\inspector\Schema.h">
+      <Filter>gen\include\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\include\inspector\Debugger.h">
+      <Filter>gen\include\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\aggregate-error-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-at-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\arraybuffer-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-concat-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-copywithin-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-every-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-filter-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findindex-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlastindex-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlast-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-find-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-foreach-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-from-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-isarray-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-join-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-lastindexof-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-map-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-of-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-right-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reverse-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-shift-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-slice-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-some-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-splice-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-reversed-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-sorted-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-spliced-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-unshift-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-with-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\base-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\boolean-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-bigint-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-string-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\cast-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\collections-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\console-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\constructor-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\conversion-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\convert-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\data-view-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\finalization-registry-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\frame-arguments-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\frames-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\function-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\growable-fixed-array-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-callable-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-coverage-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\iterator-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\math-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\number-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-fromentries-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-abstract-operations-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-element-closure-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-any-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-constructor-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-finally-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-jobs-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-misc-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-race-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-reaction-job-tq-csa.h">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\debug\debug-wasm-objects-tq-csa.h">
+      <Filter>gen\torque-generated\src\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq-csa.h">
+      <Filter>gen\torque-generated\third_party\v8\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq-csa.h">
+      <Filter>gen\torque-generated\test\torque</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-coverage-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-coverage-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\iterator-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\iterator-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\math-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\math-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\number-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\number-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-fromentries-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-fromentries-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-abstract-operations-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-abstract-operations-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-element-closure-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-element-closure-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-any-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-any-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-constructor-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-constructor-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-finally-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-finally-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-jobs-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-jobs-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-misc-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-misc-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-race-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-race-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-reaction-job-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-reaction-job-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\aggregate-error-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\aggregate-error-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-at-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-at-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\arraybuffer-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\arraybuffer-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-concat-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-concat-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-copywithin-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-copywithin-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-every-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-every-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-filter-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-filter-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findindex-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findindex-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlastindex-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlastindex-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlast-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlast-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-find-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-find-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-foreach-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-foreach-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-from-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-from-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-isarray-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-isarray-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-join-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-join-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-lastindexof-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-lastindexof-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-map-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-map-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-of-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-of-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-right-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-right-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reverse-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reverse-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-shift-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-shift-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-slice-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-slice-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-some-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-some-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-splice-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-splice-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-reversed-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-reversed-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-sorted-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-sorted-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-spliced-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-spliced-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-unshift-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-unshift-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-with-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-with-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\base-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\base-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\boolean-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\boolean-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-bigint-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-bigint-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-string-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-string-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\cast-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\cast-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\collections-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\collections-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\console-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\console-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\constructor-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\constructor-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\conversion-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\conversion-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\convert-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\convert-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\data-view-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\data-view-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\finalization-registry-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\finalization-registry-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frame-arguments-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frame-arguments-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frames-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frames-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\function-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\function-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\growable-fixed-array-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\growable-fixed-array-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-callable-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-callable-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-tq.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-tq-csa.cc">
+      <Filter>gen\torque-generated\src\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\debug\debug-wasm-objects-tq.cc">
+      <Filter>gen\torque-generated\src\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\debug\debug-wasm-objects-tq-csa.cc">
+      <Filter>gen\torque-generated\src\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq.cc">
+      <Filter>gen\torque-generated\third_party\v8\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq-csa.cc">
+      <Filter>gen\torque-generated\third_party\v8\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq.cc">
+      <Filter>gen\torque-generated\test\torque</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq-csa.cc">
+      <Filter>gen\torque-generated\test\torque</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq.inc">
+      <Filter>gen\torque-generated\third_party\v8\builtins</Filter>
+    </None>
+    <None Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq.inc">
+      <Filter>gen\torque-generated\test\torque</Filter>
+    </None>
+  </ItemGroup>
+</Project>

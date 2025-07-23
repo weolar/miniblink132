@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{179FD6A5-82EB-46FB-BE7C-0EBD3B2369AE}</ProjectGuid>
+    <RootNamespace>base</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/harfbuzz-ng/src/src</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DisableSpecificWarnings>4530</DisableSpecificWarnings>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/harfbuzz-ng/src/src</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalOptions>-mno-avx %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/harfbuzz-ng/src/src</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/harfbuzz-ng/src/src</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\classdef-graph.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\coverage-graph.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\graph.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\gsubgpos-context.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\gsubgpos-graph.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\markbasepos-graph.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\pairpos-graph.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\serialize.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\graph\split-helpers.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-ankr-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-bsln-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-feat-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-just-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-kerx-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-morx-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-opbd-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout-trak-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-layout.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-ltag-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat-map.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-aat.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-algs.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-array.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-atomic.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-bimap.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-bit-page.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-bit-set-invertible.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-bit-set.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-blob.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-blob.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-buffer-deserialize-json.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-buffer-deserialize-text.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-buffer.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-buffer.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cache.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cff-interp-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cff-interp-cs-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cff-interp-dict-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cff1-interp-cs.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cff2-interp-cs.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-common.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-config.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-coretext.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-cplusplus.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-debug.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-deprecated.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-directwrite.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-dispatch.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-draw.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-draw.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-face.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-face.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-font.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-font.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ft.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-gdi.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-glib.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-gobject-structs.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-gobject.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-graphite2.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-icu.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-iter.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-kern.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-machinery.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-map.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-map.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-meta.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ms-feature-ranges.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-mutex.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-null.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-number-parser.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-number.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-object.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-open-file.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-open-type.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-cff-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-cff1-std-str.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-cff1-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-cff2-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-cmap-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color-cbdt-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color-colr-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color-colrv1-closure.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color-cpal-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color-sbix-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color-svg-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-color.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-deprecated.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-face-table-list.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-face.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-font.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-gasp-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-glyf-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-hdmx-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-head-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-hhea-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-hmtx-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-kern-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-base-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-gdef-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-gpos-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-gsub-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-gsubgpos.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout-jstf-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-layout.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-map.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-math-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-math.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-maxp-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-meta-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-meta.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-metrics.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-metrics.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-name-language-static.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-name-language.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-name-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-name.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-os2-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-os2-unicode-ranges.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-post-macroman.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-post-table-v2subset.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-post-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shape-fallback.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shape-normalize.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shape.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shape.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-arabic-fallback.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-arabic-joining-list.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-arabic-pua.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-arabic-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-arabic-win1256.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-arabic.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-indic-machine.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-indic.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-khmer-machine.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-myanmar-machine.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-syllabic.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-use-machine.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-use-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper-vowel-constraints.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-shaper.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-stat-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-tag-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var-avar-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var-fvar-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var-gvar-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var-hvar-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var-mvar-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-var.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot-vorg-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ot.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-pool.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-priority-queue.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-repacker.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-sanitize.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-serialize.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-set-digest.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-set.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-set.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-shape-plan.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-shape-plan.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-shape.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-shaper-impl.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-shaper-list.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-shaper.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-string-array.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-style.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset-cff-common.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset-cff1.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset-cff2.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset-input.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset-plan.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset-repacker.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-subset.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-ucd-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-unicode-emoji-table.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-unicode.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-unicode.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-uniscribe.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-utf.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-vector.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb-version.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\src\hb.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\ansi-print.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\batch.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\face-options.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\font-options.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\hb-fc.h" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\helper-cairo-ansi.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\helper-cairo-ft.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\helper-cairo-user.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\helper-cairo.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\main-font-text.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\options.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\output-options.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\shape-consumer.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\shape-format.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\shape-options.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\shape-output.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\text-options.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\view-cairo.hh" />
+    <ClInclude Include="..\..\third_party\harfbuzz-ng\src\util\view-options.hh" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\harfbuzz-ng\src\src\harfbuzz-subset.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{EFD6A7FA-0A6D-4C97-AB28-A165F15CDE25}</ProjectGuid>
+    <RootNamespace>v8</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <ProjectName>v8_gen_x64_2</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;DEBUG;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_NO_ASM;V8_TARGET_ARCH_IA32;NOMINMAX;_WIN32_WINNT=0x0602;ENABLE_DISASSEMBLER;OBJECT_PRINT;V8_INTL_SUPPORT;V8_USE_EXTERNAL_STARTUP_DATA;V8_GYP_BUILD;V8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;V8_EMBEDDER_STRING1111="-node.8";V8_PROMISE_INTERNAL_FIELD_COUNT=1;V8_SHORT_BUILTIN_CALLS;V8_ATOMIC_OBJECT_FIELD_WRITES;V8_ENABLE_LAZY_SOURCE_POSITIONS;V8_USE_SIPHASH;V8_SHARED_RO_HEAP;V8_WIN64_UNWINDING_INFO;V8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH;V8_USE_ZLIB;V8_ENABLE_SYSTEM_INSTRUMENTATION;V8_ENABLE_ETW_STACK_WALKING;V8_ENABLE_WEBASSEMBLY;V8_ENABLE_JAVASCRIPT_PROMISE_HOOKS;V8_ALLOCATION_FOLDING;V8_ALLOCATION_SITE_TRACKING;V8_ADVANCED_BIGINT_ALGORITHMS;V8_ENABLE_CHECKS;V8_ENABLE_ALLOCATION_TIMEOUT;V8_ENABLE_FORCE_SLOW_PATH;ENABLE_HANDLE_ZAPPING;ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_SHARED;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../gen/v8;$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../v8;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/fp16/src/include;$(SolutionDir)../third_party/zlib</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4251;4275;4661;4661;4291;</DisableSpecificWarnings>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_NO_ASM;V8_TARGET_ARCH_IA32;NOMINMAX;_WIN32_WINNT=0x0602;ENABLE_DISASSEMBLER;OBJECT_PRINT;V8_INTL_SUPPORT;V8_USE_EXTERNAL_STARTUP_DATA;V8_GYP_BUILD;V8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;V8_EMBEDDER_STRING22="-node.8";V8_PROMISE_INTERNAL_FIELD_COUNT=1;V8_SHORT_BUILTIN_CALLS;V8_ATOMIC_OBJECT_FIELD_WRITES;V8_ENABLE_LAZY_SOURCE_POSITIONS;V8_USE_SIPHASH;V8_SHARED_RO_HEAP;V8_WIN64_UNWINDING_INFO;V8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH;V8_USE_ZLIB;V8_ENABLE_SYSTEM_INSTRUMENTATION;V8_ENABLE_ETW_STACK_WALKING;V8_ENABLE_WEBASSEMBLY;V8_ENABLE_JAVASCRIPT_PROMISE_HOOKS;V8_ALLOCATION_FOLDING;V8_ALLOCATION_SITE_TRACKING;V8_ADVANCED_BIGINT_ALGORITHMS;V8_ENABLE_ALLOCATION_TIMEOUT;V8_ENABLE_FORCE_SLOW_PATH;ENABLE_HANDLE_ZAPPING;ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_SHARED;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../gen/v8;$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../v8;$(SolutionDir)../v8/include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251;4275;4661;4661;4291;</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_NO_ASM;V8_TARGET_ARCH_X64;NOMINMAX;_WIN32_WINNT=0x0602;V8_STATIC_ROOTS;V8_ENABLE_WASM_SIMD256_REVEC;V8_HOST_ARCH_X64;V8_TARGET_OS_WIN;V8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64;V8_INTL_SUPPORT;V8_USE_EXTERNAL_STARTUP_DATA;V8_ATOMIC_OBJECT_FIELD_WRITES;V8_ENABLE_LAZY_SOURCE_POSITIONS;V8_SHARED_RO_HEAP;V8_ENABLE_SPARKPLUG;V8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH;V8_SHORT_BUILTIN_CALLS;V8_EXTERNAL_CODE_SPACE;V8_ENABLE_MAGLEV;V8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA;V8_ENABLE_SYSTEM_INSTRUMENTATION;V8_ENABLE_ETW_STACK_WALKING;V8_ENABLE_WEBASSEMBLY;V8_ENABLE_JAVASCRIPT_PROMISE_HOOKS;V8_ALLOCATION_FOLDING;V8_ALLOCATION_SITE_TRACKING;V8_ADVANCED_BIGINT_ALGORITHMS;V8_USE_ZLIB;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ENABLE_BLACK_ALLOCATED_PAGES;V8_ENABLE_EXTENSIBLE_RO_SNAPSHOT;V8_ENABLE_BUILTIN_JUMP_TABLE_SWITCH;V8_ENABLE_TURBOFAN;V8_WIN64_UNWINDING_INFO;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_SLIM_WRITE_BARRIER;CPPGC_ENABLE_LARGER_CAGE;V8_HAVE_TARGET_OS;ENABLE_HANDLE_ZAPPING;ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_SHARED;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../gen/v8x64win;$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../v8;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/fp16/src/include;$(SolutionDir)../third_party/zlib</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251;4275;4661;4661;4291;</DisableSpecificWarnings>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_NO_ASM;V8_TARGET_ARCH_X64;NOMINMAX;_WIN32_WINNT=0x0602;V8_STATIC_ROOTS;V8_ENABLE_WASM_SIMD256_REVEC;V8_HOST_ARCH_X64;V8_TARGET_OS_WIN;V8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64;V8_INTL_SUPPORT;V8_USE_EXTERNAL_STARTUP_DATA;V8_ATOMIC_OBJECT_FIELD_WRITES;V8_ENABLE_LAZY_SOURCE_POSITIONS;V8_SHARED_RO_HEAP;V8_ENABLE_SPARKPLUG;V8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH;V8_SHORT_BUILTIN_CALLS;V8_EXTERNAL_CODE_SPACE;V8_ENABLE_MAGLEV;V8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA;V8_ENABLE_SYSTEM_INSTRUMENTATION;V8_ENABLE_ETW_STACK_WALKING;V8_ENABLE_WEBASSEMBLY;V8_ENABLE_JAVASCRIPT_PROMISE_HOOKS;V8_ALLOCATION_FOLDING;V8_ALLOCATION_SITE_TRACKING;V8_ADVANCED_BIGINT_ALGORITHMS;V8_USE_ZLIB;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ENABLE_BLACK_ALLOCATED_PAGES;V8_ENABLE_EXTENSIBLE_RO_SNAPSHOT;V8_ENABLE_BUILTIN_JUMP_TABLE_SWITCH;V8_ENABLE_TURBOFAN;V8_WIN64_UNWINDING_INFO;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_SLIM_WRITE_BARRIER;CPPGC_ENABLE_LARGER_CAGE;V8_HAVE_TARGET_OS;ENABLE_HANDLE_ZAPPING;ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_SHARED;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../gen/v8x64win;$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../v8;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/fp16/src/include;$(SolutionDir)../third_party/zlib</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251;4275;4661;4661;4291;</DisableSpecificWarnings>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\gen\v8x64win\include\inspector\Debugger.h" />
+    <ClInclude Include="..\..\gen\v8x64win\include\inspector\Runtime.h" />
+    <ClInclude Include="..\..\gen\v8x64win\include\inspector\Schema.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\aggregate-error-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-at-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-concat-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-copywithin-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-every-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-filter-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-find-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findindex-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlast-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlastindex-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-foreach-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-from-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-isarray-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-join-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-lastindexof-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-map-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-of-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-right-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reverse-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-shift-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-slice-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-some-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-splice-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-reversed-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-sorted-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-spliced-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-unshift-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-with-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\arraybuffer-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\base-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\boolean-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-bigint-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-string-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\cast-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\collections-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\console-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\constructor-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\conversion-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\convert-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\data-view-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\finalization-registry-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\frame-arguments-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\frames-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\function-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\growable-fixed-array-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-callable-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-coverage-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\iterator-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\math-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\number-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-fromentries-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-abstract-operations-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-element-closure-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-any-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-constructor-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-finally-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-jobs-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-misc-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-race-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-reaction-job-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\src\debug\debug-wasm-objects-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq-csa.h" />
+    <ClInclude Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq-csa.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\aggregate-error-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\aggregate-error-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-at-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-at-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-concat-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-concat-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-copywithin-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-copywithin-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-every-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-every-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-filter-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-filter-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-find-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-find-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findindex-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findindex-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlast-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlast-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlastindex-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-findlastindex-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-foreach-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-foreach-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-from-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-from-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-isarray-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-isarray-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-join-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-join-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-lastindexof-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-lastindexof-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-map-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-map-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-of-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-of-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-right-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-right-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reduce-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reverse-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-reverse-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-shift-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-shift-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-slice-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-slice-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-some-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-some-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-splice-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-splice-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-reversed-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-reversed-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-sorted-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-sorted-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-spliced-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-to-spliced-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-unshift-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-unshift-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-with-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\array-with-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\arraybuffer-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\arraybuffer-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\base-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\base-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\boolean-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\boolean-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-bigint-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-bigint-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-string-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\builtins-string-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\cast-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\cast-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\collections-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\collections-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\console-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\console-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\constructor-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\constructor-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\conversion-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\conversion-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\convert-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\convert-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\data-view-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\data-view-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\finalization-registry-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\finalization-registry-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frame-arguments-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frame-arguments-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frames-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\frames-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\function-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\function-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\growable-fixed-array-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\growable-fixed-array-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-callable-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-callable-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\ic-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-coverage-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-coverage-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\internal-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\iterator-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\iterator-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\math-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\math-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\number-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\number-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-fromentries-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-fromentries-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\object-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-abstract-operations-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-abstract-operations-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-element-closure-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-element-closure-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-all-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-any-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-any-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-constructor-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-constructor-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-finally-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-finally-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-jobs-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-jobs-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-misc-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-misc-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-race-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-race-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-reaction-job-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\builtins\promise-reaction-job-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\debug\debug-wasm-objects-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\src\debug\debug-wasm-objects-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq-csa.cc" />
+    <ClCompile Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\gen\v8x64win\torque-generated\test\torque\test-torque-tq.inc" />
+    <None Include="..\..\gen\v8x64win\torque-generated\third_party\v8\builtins\array-sort-tq.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

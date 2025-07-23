@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{27A45BEE-304B-44F0-B453-DBABC8FAE65B}</ProjectGuid>
+    <RootNamespace>miniblink108</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\out\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;MINIBLINK108_EXPORTS;_WINDOWS;NOMINMAX;V8_ENABLE_CHECKS;_USRDLL;USE_AURA;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4003;4819;4291;4530;4530;4334</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\out\debug\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)miniblink108_d.exe</OutputFile>
+    </Link>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;MINIBLINK108_EXPORTS;_WINDOWS;NOMINMAX;_USRDLL;USE_AURA;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4003;4819;4291;4530;4530;4334</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)miniblink108.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\out\release\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;MINIBLINK108_EXPORTS;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;MINIBLINK108_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\adjust_for_absolute_zoom.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\background_bleed_avoidance.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\bidi_run.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\bidi_run_for_line.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\box_layout_extra_input.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\collapsed_border_value.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\column_balancer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\content_change_type.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\counter_node.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\custom_scrollbar.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\deferred_shaping.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\deferred_shaping_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\depth_ordered_layout_object_list.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\flexible_box_algorithm.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\floating_objects.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\fragmentainer_iterator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\fragmentation_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\generated_children.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\grid.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\grid_baseline_alignment.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\grid_layout_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\grid_linked_list.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\grid_track_sizing_algorithm.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\hit_test_cache.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\hit_test_canvas_result.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\hit_test_location.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\hit_test_phase.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\hit_test_request.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\hit_test_result.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\intrinsic_sizing_info.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_block.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_block_flow.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_box.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_box_model_object.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_br.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_button.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_counter.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_custom_scrollbar_part.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_deprecated_flexible_box.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_document_transition_content.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_embedded_content.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_embedded_object.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_fieldset.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_file_upload_control.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_flexible_box.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_flow_thread.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_font_accessor_win.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_frame_set.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_grid.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_html_canvas.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_iframe.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_image.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_image_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_image_resource_style_image.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_inline.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_inside_list_marker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_list_item.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_list_marker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_list_marker_image.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_media.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_multi_column_flow_thread.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_multi_column_set.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_multi_column_spanner_placeholder.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_object.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_object_child_list.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_object_factory.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_object_inl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_object_inlines.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_outside_list_marker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_progress.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_quote.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_replaced.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_ruby.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_ruby_base.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_ruby_run.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_ruby_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_shift_region.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_shift_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_slider_track.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_state.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table_box_component.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table_caption.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table_cell.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table_col.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table_row.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_table_section.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_text_combine.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_text_control.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_text_control_multi_line.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_text_control_single_line.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_text_fragment.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_android.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_default.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_font_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_linux.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_mac.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_mobile.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_theme_win.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_tree_as_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_video.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_view.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_vtt_cue.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\layout_word_break.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\list_marker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\map_coordinates_flags.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\min_max_sizes.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\multi_column_fragmentainer_group.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\order_iterator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\overflow_model.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\pointer_events_hit_rules.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\scroll_anchor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\box_shape.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\ellipse_shape.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\polygon_shape.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\raster_shape.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\shape.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\shape_interval.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\shapes\shape_outside_info.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\style_retain_scope.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\subtree_layout_scope.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_block.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_ellipse.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_filter_primitive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_foreign_object.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_hidden_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_image.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_inline.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_inline_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_model_object.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_path.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_rect.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_clipper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_filter.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_gradient.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_linear_gradient.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_marker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_masker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_paint_server.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_pattern.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_radial_gradient.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_root.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_shape.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_text_path.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_transformable_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_tspan.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_viewport_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\line\svg_inline_flow_box.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\line\svg_inline_text_box.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\line\svg_root_inline_box.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_character_data.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_content_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_layout_support.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_layout_tree_as_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_marker_data.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_resources.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_chunk_builder.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_fragment.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_attributes_builder.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_engine.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_engine_baseline.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_engine_spacing.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_metrics.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_query.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\transformed_hit_test_location.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\svg\transform_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\table_grid_cell.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\table_layout_algorithm.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\table_layout_algorithm_auto.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\table_layout_algorithm_fixed.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\text_autosizer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\text_decoration_offset.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\text_decoration_offset_base.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\text_run_constructor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\traced_layout_object.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\vertical_position_cache.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\layout\view_fragmentation_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\alternate_signed_exchange_resource_info.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\anchor_element_interaction_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\back_forward_cache_loader_helper_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\base_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\beacon_data.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\cookie_jar.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\cross_thread_resource_timing_info_copier.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\document_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\document_load_timing.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\empty_clients.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\fetch_priority_attribute.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\form_submission.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\frame_client_hints_preferences_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\frame_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\frame_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\frame_loader_types.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\frame_load_request.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\frame_resource_fetcher_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\history_item.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\http_equiv.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\http_refresh_scheduler.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\idleness_detector.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\image_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\interactive_detector.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\lazy_image_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\link_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\link_loader_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\link_load_parameters.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\loader_factory_for_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\loader_factory_for_worker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\long_task_detector.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\mixed_content_checker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\mock_content_security_notifier.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\document_module_script_fetcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\installed_service_worker_module_script_fetcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_creation_params.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_fetcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_fetch_request.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_loader_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_loader_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_tree_linker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_tree_linker_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\worker_module_script_fetcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\modulescript\worklet_module_script_fetcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\navigation_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\no_state_prefetch_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\old_document_info_for_commit.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\pending_link_preload.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\ping_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\prefetched_signed_exchange_manager.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\preload_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\prerender_handle.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\progress_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\render_blocking_resource_manager.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\css_style_sheet_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\font_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\image_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\image_resource_content.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\image_resource_info.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\image_resource_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\link_prefetch_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\mock_font_resource_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\mock_image_resource_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\multipart_image_resource_parser.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\script_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\speculation_rules_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\text_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\video_timing.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource\xsl_style_sheet_resource.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource_load_observer_for_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\resource_load_observer_for_worker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\speculation_rule_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\subresource_filter.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\subresource_integrity_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\text_track_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\threadable_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\threadable_loader_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\threaded_icon_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\url_matcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\web_associated_url_loader_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\web_bundle\script_web_bundle.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\web_bundle\script_web_bundle_error.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\web_bundle\script_web_bundle_rule.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\web_bundle\web_bundle_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\worker_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\worker_resource_fetcher_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\loader\worker_resource_timing_notifier_impl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\bidi_run_for_line.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\collapsed_border_value.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\column_balancer.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\counter_node.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\custom_scrollbar.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\deferred_shaping.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\deferred_shaping_controller.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\depth_ordered_layout_object_list.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\flexible_box_algorithm.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\floating_objects.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\fragmentainer_iterator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\grid.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\grid_baseline_alignment.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\grid_layout_utils.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\grid_track_sizing_algorithm.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\hit_test_cache.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\hit_test_canvas_result.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\hit_test_location.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\hit_test_request.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\hit_test_result.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_block.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_block_flow.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_block_flow_hot.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_block_flow_line.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_box.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_box_hot.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_box_model_object.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_br.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_button.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_counter.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_custom_scrollbar_part.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_deprecated_flexible_box.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_document_transition_content.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_embedded_content.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_embedded_object.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_fieldset.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_file_upload_control.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_flexible_box.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_flow_thread.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_font_accessor_win.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_frame_set.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_grid.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_html_canvas.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_iframe.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_image.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_image_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_image_resource_style_image.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_inline.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_inside_list_marker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_list_item.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_list_marker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_list_marker_image.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_media.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_multi_column_flow_thread.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_multi_column_set.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_multi_column_spanner_placeholder.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_object.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_object_child_list.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_object_factory.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_object_hot.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_outside_list_marker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_progress.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_quote.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_replaced.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_ruby.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_ruby_base.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_ruby_run.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_ruby_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_shift_region.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_shift_tracker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_slider_track.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_state.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table_box_component.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table_caption.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table_cell.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table_col.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table_row.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_table_section.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_text_combine.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_text_control.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_text_control_multi_line.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_text_control_single_line.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_text_fragment.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_theme.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_theme_default.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_theme_font_provider.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_theme_font_provider_win.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_theme_mobile.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_theme_win.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_tree_as_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_video.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_view.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_vtt_cue.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\layout_word_break.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\list_marker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\min_max_sizes.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\multi_column_fragmentainer_group.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\order_iterator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\pointer_events_hit_rules.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\scroll_anchor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\shapes\box_shape.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\shapes\ellipse_shape.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\shapes\polygon_shape.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\shapes\raster_shape.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\shapes\shape.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\shapes\shape_outside_info.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\style_retain_scope.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\subtree_layout_scope.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_block.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_ellipse.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_filter_primitive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_foreign_object.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_hidden_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_image.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_inline.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_inline_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_model_object.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_path.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_rect.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_clipper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_filter.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_gradient.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_linear_gradient.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_marker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_masker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_pattern.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_resource_radial_gradient.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_root.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_shape.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_text_path.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_transformable_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_tspan.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\layout_svg_viewport_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\line\svg_inline_flow_box.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\line\svg_inline_text_box.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\line\svg_root_inline_box.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_content_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_layout_support.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_layout_tree_as_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_marker_data.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_resources.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_chunk_builder.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_attributes_builder.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_engine.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_engine_baseline.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_layout_engine_spacing.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_metrics.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\svg_text_query.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\transformed_hit_test_location.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\svg\transform_helper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\table_grid_cell.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\table_layout_algorithm_auto.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\table_layout_algorithm_fixed.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\text_autosizer.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\text_decoration_offset.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\text_decoration_offset_base.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\text_run_constructor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\traced_layout_object.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\view_fragmentation_context.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\layout\web_font_rendering_win.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\alternate_signed_exchange_resource_info.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\anchor_element_interaction_tracker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\back_forward_cache_loader_helper_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\base_fetch_context.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\beacon_data.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\cookie_jar.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\cross_thread_resource_timing_info_copier.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\document_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\document_load_timing.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\empty_clients.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\fetch_priority_attribute.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\form_submission.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\frame_client_hints_preferences_context.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\frame_fetch_context.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\frame_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\frame_load_request.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\frame_resource_fetcher_properties.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\history_item.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\http_equiv.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\http_refresh_scheduler.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\idleness_detector.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\image_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\interactive_detector.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\lazy_image_helper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\link_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\link_load_parameters.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\loader_factory_for_frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\loader_factory_for_worker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\long_task_detector.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\mixed_content_checker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\document_module_script_fetcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\installed_service_worker_module_script_fetcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_creation_params.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_fetcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_script_loader_registry.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_tree_linker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\module_tree_linker_registry.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\worker_module_script_fetcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\modulescript\worklet_module_script_fetcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\navigation_policy.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\no_state_prefetch_client.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\old_document_info_for_commit.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\pending_link_preload.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\ping_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\prefetched_signed_exchange_manager.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\preload_helper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\prerender_handle.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\progress_tracker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\render_blocking_resource_manager.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\css_style_sheet_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\font_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\image_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\image_resource_content.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\link_prefetch_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\multipart_image_resource_parser.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\script_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\speculation_rules_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\text_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource\xsl_style_sheet_resource.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource_load_observer_for_frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\resource_load_observer_for_worker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\speculation_rule_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\subresource_filter.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\subresource_integrity_helper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\text_track_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\threadable_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\threaded_icon_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\url_matcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\web_associated_url_loader_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\web_bundle\script_web_bundle.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\web_bundle\script_web_bundle_error.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\web_bundle\script_web_bundle_rule.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\web_bundle\web_bundle_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\worker_fetch_context.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\worker_resource_fetcher_properties.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\loader\worker_resource_timing_notifier_impl.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

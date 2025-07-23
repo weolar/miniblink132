@@ -1,0 +1,1407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5C6460DB-F7B1-5315-A0DE-79A9DFC525A1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>openssl</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>ClangCL</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_DEBUG;_REENTRANT;PURIFY;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_ASM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <CallingConvention>Cdecl</CallingConvention>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <MASM>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.;openssl;openssl\crypto;openssl\crypto\asn1;openssl\crypto\evp;openssl\crypto\md2;openssl\crypto\modes;openssl\crypto\store;openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_REENTRANT;PURIFY;OPENSSL_NO_COMP;OPENSSL_NO_SSL3;OPENSSL_NO_HEARTBEATS;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;AES_ASM;CPUID_ASM;OPENSSL_BN_ASM_MONT;OPENSSL_CPUID_OBJ;SHA1_ASM;SHA256_ASM;SHA512_ASM;GHASH_ASM;VPAES_ASM;BN_ASM;BF_ASM;BNCO_ASM;DES_ASM;LIB_BN_ASM;MD5_ASM;OPENSSL_BN_ASM;RIP_ASM;RMD160_ASM;WHIRLPOOL_ASM;WP_ASM;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_NO_CAPIENG;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_DEBUG;_REENTRANT;PURIFY;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;I386_ONLY;OPENSSL_NO_ASM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <MASM>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.;openssl;openssl\crypto;openssl\crypto\asn1;openssl\crypto\evp;openssl\crypto\md2;openssl\crypto\modes;openssl\crypto\store;openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_REENTRANT;PURIFY;OPENSSL_NO_COMP;OPENSSL_NO_SSL3;OPENSSL_NO_HEARTBEATS;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;AES_ASM;CPUID_ASM;OPENSSL_BN_ASM_MONT;OPENSSL_CPUID_OBJ;SHA1_ASM;SHA256_ASM;SHA512_ASM;GHASH_ASM;VPAES_ASM;BN_ASM;BF_ASM;BNCO_ASM;DES_ASM;LIB_BN_ASM;MD5_ASM;OPENSSL_BN_ASM;RIP_ASM;RMD160_ASM;WHIRLPOOL_ASM;WP_ASM;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_NO_CAPIENG;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-mno-avx %(AdditionalOptions)</AdditionalOptions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>NDEBUG;_REENTRANT;PURIFY;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_ASM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <MapExports>true</MapExports>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <MASM>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.;openssl;openssl\crypto;openssl\crypto\asn1;openssl\crypto\evp;openssl\crypto\md2;openssl\crypto\modes;openssl\crypto\store;openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_REENTRANT;PURIFY;OPENSSL_NO_COMP;OPENSSL_NO_SSL3;OPENSSL_NO_HEARTBEATS;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;AES_ASM;CPUID_ASM;OPENSSL_BN_ASM_MONT;OPENSSL_CPUID_OBJ;SHA1_ASM;SHA256_ASM;SHA512_ASM;GHASH_ASM;VPAES_ASM;BN_ASM;BF_ASM;BNCO_ASM;DES_ASM;LIB_BN_ASM;MD5_ASM;OPENSSL_BN_ASM;RIP_ASM;RMD160_ASM;WHIRLPOOL_ASM;WP_ASM;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_NO_CAPIENG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>NDEBUG;_REENTRANT;PURIFY;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;I386_ONLY;OPENSSL_NO_ASM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <MapExports>true</MapExports>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <MASM>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.;openssl;openssl\crypto;openssl\crypto\asn1;openssl\crypto\evp;openssl\crypto\md2;openssl\crypto\modes;openssl\crypto\store;openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_REENTRANT;PURIFY;OPENSSL_NO_COMP;OPENSSL_NO_SSL3;OPENSSL_NO_HEARTBEATS;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;AES_ASM;CPUID_ASM;OPENSSL_BN_ASM_MONT;OPENSSL_CPUID_OBJ;SHA1_ASM;SHA256_ASM;SHA512_ASM;GHASH_ASM;VPAES_ASM;BN_ASM;BF_ASM;BNCO_ASM;DES_ASM;LIB_BN_ASM;MD5_ASM;OPENSSL_BN_ASM;RIP_ASM;RMD160_ASM;WHIRLPOOL_ASM;WP_ASM;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_NO_CAPIENG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_digests_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_dsa_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_ecx_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_ec_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_rsa_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_sm2_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\config\archs\VC-WIN32\no-asm\providers\common\der\der_wrap_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_cbc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_cfb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_core.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_ige.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_misc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_ofb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_wrap.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aes\aes_x86core.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\aria\aria.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\ameth_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_item_list.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_parse.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn_mime.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn_moid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn_mstbl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\asn_pack.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_bitstr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_d2i_fp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_digest.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_dup.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_gentm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_i2d_fp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_int.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_mbstr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_object.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_octet.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_print.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_strex.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_strnid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_time.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_type.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_utctm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_utf8.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\a_verify.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\bio_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\bio_ndef.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\d2i_param.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\d2i_pr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\d2i_pu.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\evp_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\f_int.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\f_string.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\i2d_evp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\nsseq.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\n_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\p5_pbe.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\p5_pbev2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\p5_scrypt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\p8_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_dec.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_fre.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_new.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_scn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_typ.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\tasn_utl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\t_bitst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\t_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\t_spki.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_algor.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_bignum.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_info.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_int64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_long.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_spki.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1\x_val.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\asn1_dsa.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\async\arch\async_win.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\async\async.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\async\async_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\async\async_wait.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bf\bf_cfb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bf\bf_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bf\bf_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bf\bf_ofb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bf\bf_skey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bf_buff.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bf_lbuf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bf_nbio.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bf_null.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bf_prefix.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bf_readbuff.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_addr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_cb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_dump.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_print.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_sock.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bio_sock2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_acpt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_bio.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_conn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_core.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_dgram.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_fd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_file.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_log.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_mem.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_null.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\bss_sock.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bio\ossl_core_bio.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_add.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_asm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_blind.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_const.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_conv.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_ctx.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_depr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_dh.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_div.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_exp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_exp2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_gcd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_gf2m.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_intern.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_kron.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_mod.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_mont.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_mpi.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_mul.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_nist.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_ppc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_prime.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_print.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_rand.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_recp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_rsa_fips186_4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_shift.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_sparc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_sqr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_sqrt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_srp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_word.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\bn_x931p.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\rsaz_exp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bn\rsaz_exp_x2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\bsearch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\buffer\buffer.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\buffer\buf_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\camellia.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_cbc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_cfb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_ctr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_misc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_ofb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cast\c_cfb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cast\c_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cast\c_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cast\c_ofb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cast\c_skey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\chacha\chacha_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\chacha\chacha_ppc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmac\cmac.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_asn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_client.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_ctx.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_hdr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_http.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_msg.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_protect.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_server.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_status.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_util.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_vfy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_att.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_cd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_dd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_dh.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_ec.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_env.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_ess.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_io.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_kari.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_pwri.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_rsa.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_sd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cms\cms_smime.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_api.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_def.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_mall.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_mod.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_sap.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\conf\conf_ssl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\context.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\core_algorithm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\core_fetch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\core_namemap.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cpt_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cpuid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\crmf\crmf_asn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\crmf\crmf_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\crmf\crmf_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\crmf\crmf_pbm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cryptlib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ctype.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_b64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_log.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_oct.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_policy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_sct.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_sct_ctx.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_vfy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ct\ct_x509v3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\cversion.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\der_writer.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\cbc_cksm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\cbc_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\cfb64ede.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\cfb64enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\cfb_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\des_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\ecb3_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\ecb_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\fcrypt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\ofb64ede.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\ofb64enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\ofb_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\pcbc_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\qud_cksm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\rand_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\set_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\str2key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\des\xcbc_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_ameth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_backend.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_check.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_depr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_group_params.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_kdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_pmeth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dh\dh_rfc5114.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_ameth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_backend.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_check.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_depr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_ossl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_pmeth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_vrf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dso\dso_dl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dso\dso_dlfcn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dso\dso_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dso\dso_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dso\dso_openssl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\dso\dso_win32.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ebcdic.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve25519.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\arch_32\f_impl32.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\arch_64\f_impl64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\curve448.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\curve448_tables.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\eddsa.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\f_generic.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\scalar.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec2_oct.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec2_smpl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecdh_kdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecdh_ossl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecdsa_ossl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecdsa_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecdsa_vrf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\eck_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_mont.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_nist.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_nistputil.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_nistz256.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_oct.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_ppc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_s390x_nistp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecp_smpl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecx_backend.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecx_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecx_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ecx_s390x.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_ameth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_backend.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_check.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_curve.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_cvt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_deprecated.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_kmeth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_mult.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_oct.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_pmeth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ec\ec_print.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\decoder_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\decoder_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\decoder_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\decoder_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\encoder_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\encoder_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\encoder_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\encode_decode\encoder_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_all.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_cnf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_ctrl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_dyn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_fat.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_init.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_list.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_openssl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_rdrand.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\eng_table.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_asnmth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_cipher.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_dh.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_digest.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_dsa.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_eckey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_pkmeth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_rand.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\engine\tb_rsa.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\err\err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\err\err_all.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\err\err_all_legacy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\err\err_blocks.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\err\err_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ess\ess_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ess\ess_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ess\ess_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\asymcipher.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\bio_b64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\bio_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\bio_md.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\bio_ok.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\cmeth_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\ctrl_params_translate.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\c_allc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\c_alld.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\dh_ctrl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\dh_support.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\digest.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\dsa_ctrl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\ec_ctrl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\ec_support.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\encode.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_cnf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_fetch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_pbe.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_rand.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\evp_utils.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\exchange.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_aes.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_aes_cbc_hmac_sha1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_aes_cbc_hmac_sha256.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_aria.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_bf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_camellia.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_cast.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_chacha20_poly1305.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_des.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_des3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_idea.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_null.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_old.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_rc2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_rc4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_rc4_hmac_md5.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_rc5.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_seed.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_sm4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\e_xcbc_d.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\kdf_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\kdf_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\kem.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\keymgmt_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\keymgmt_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_blake2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_md4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_md5.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_md5_sha1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_mdc2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_ripemd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_sha.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_wp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\mac_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\mac_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\m_null.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\m_sigver.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\names.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p5_crpt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p5_crpt2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\pbe_scrypt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\pmeth_check.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\pmeth_gn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\pmeth_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_dec.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_legacy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_open.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_seal.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\p_verify.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\evp\signature.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ex_data.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_backend.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_dh.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_key_generate.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_key_validate.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_params.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_params_generate.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ffc\ffc_params_validate.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\getenv.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\hmac\hmac.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\http\http_client.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\http\http_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\http\http_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\idea\i_cbc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\idea\i_cfb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\idea\i_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\idea\i_ofb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\idea\i_skey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\info.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\init.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\initthread.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\kdf\kdf_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\lhash\lhash.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\lhash\lh_stats.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\md4\md4_dgst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\md4\md4_one.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\md5\md5_dgst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\md5\md5_one.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\md5\md5_sha1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\mdc2\mdc2dgst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\mdc2\mdc2_one.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\mem.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\mem_clr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\mem_sec.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\cbc128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\ccm128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\cfb128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\ctr128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\cts128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\gcm128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\ocb128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\ofb128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\siv128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\wrap128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\modes\xts128.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\objects\obj_dat.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\objects\obj_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\objects\obj_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\objects\obj_xref.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\objects\o_names.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_asn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_cl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_ext.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_http.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_srv.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_vfy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ocsp\v3_ocsp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\o_dir.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\o_fopen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\o_init.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\o_str.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\o_time.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\packet.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\params.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\params_dup.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\params_from_text.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\param_build.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\param_build_set.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\passphrase.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_all.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_info.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_oth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_pk8.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_pkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_x509.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pem_xaux.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pem\pvkfmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_add.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_asn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_attr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_crpt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_crt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_decr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_init.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_kiss.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_mutl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_npas.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_p8d.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_p8e.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_sbag.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_utl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs12\pk12err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\bio_pk7.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_attr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_doit.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_mime.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_smime.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pkcs7err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\poly1305\poly1305.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\poly1305\poly1305_ppc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\property\defn_cache.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\property\property.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\property\property_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\property\property_parse.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\property\property_query.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\property\property_string.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\provider.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\provider_child.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\provider_conf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\provider_core.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\provider_predefined.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\punycode.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\prov_seed.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\randfile.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\rand_deprecated.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\rand_egd.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\rand_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\rand_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\rand_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rand\rand_pool.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc2\rc2cfb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc2\rc2ofb64.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc2\rc2_cbc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc2\rc2_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc2\rc2_skey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ripemd\rmd_dgst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ripemd\rmd_one.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_ameth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_backend.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_chk.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_crpt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_depr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_mp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_mp_names.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_none.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_oaep.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_ossl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_pk1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_pmeth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_pss.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_saos.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_schemes.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_sp800_56b_check.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_sp800_56b_gen.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_x931.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_x931g.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\seed\seed.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\seed\seed_cbc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\seed\seed_cfb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\seed\seed_ecb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\seed\seed_ofb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\self_test_core.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\keccak1600.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\sha1dgst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\sha1_one.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\sha256.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\sha3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\sha512.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sha\sha_ppc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\siphash\siphash.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm2\sm2_crypt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm2\sm2_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm2\sm2_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm2\sm2_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm3\legacy_sm3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm3\sm3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sm4\sm4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\sparse_array.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\srp\srp_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\srp\srp_vfy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\stack\stack.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_init.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_register.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_result.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\store\store_strings.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\threads_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\threads_none.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\threads_pthread.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\threads_win.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\trace.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_conf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_req_print.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_req_utils.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_rsp_print.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_rsp_sign.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_rsp_utils.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_rsp_verify.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ts\ts_verify_ctx.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\txt_db\txt_db.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\uid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ui\ui_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ui\ui_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ui\ui_null.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ui\ui_openssl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\ui\ui_util.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\whrlpool\wp_block.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\whrlpool\wp_dgst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\by_dir.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\by_file.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\by_store.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_cache.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_data.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_map.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_node.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_tree.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\t_crl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\t_req.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\t_x509.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_addr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_admis.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_akeya.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_akid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_asid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_bcons.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_bitst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_conf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_cpols.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_crld.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_enum.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_extku.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_genn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_ia5.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_info.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_int.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_ist.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_ncons.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_pci.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_pcia.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_pcons.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_pku.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_pmaps.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_prn.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_purp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_san.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_skid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_sxnet.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_tlsf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_utf8.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\v3_utl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509cset.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509name.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509rset.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509spki.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509type.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_att.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_cmp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_d2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_def.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_ext.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_lu.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_meth.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_obj.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_r2x.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_req.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_set.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_trust.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_txt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_v3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_vfy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x509_vpm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_all.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_attrib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_crl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_exten.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_name.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_pubkey.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_req.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_x509.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\crypto\x509\x_x509a.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_afalg_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_capi.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_capi_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_dasync.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_dasync_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_loader_attic_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_ossltest.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_ossltest_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\engines\e_padlock.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\baseprov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\bio_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\capabilities.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_dsa_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_dsa_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_ecx_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_ec_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_ec_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_rsa_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_rsa_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_sm2_key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\der\der_sm2_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\digest_to_nid.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\provider_ctx.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\provider_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\provider_seeding.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\provider_util.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\securitycheck.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\securitycheck_default.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\common\securitycheck_fips.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\defltprov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\fips\fipsprov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\fips\fips_entry.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\asymciphers\rsa_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\asymciphers\sm2_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_block.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_ccm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_ccm_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_gcm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_gcm_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ccm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ccm_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ocb.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ocb_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_siv.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_siv_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_wrp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_xts.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_xts_fips.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_xts_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_ccm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_ccm_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_gcm.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_gcm_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_blowfish.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_blowfish_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_camellia.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_camellia_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_cast5.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_cast5_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_chacha20.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_chacha20_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_chacha20_poly1305.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_chacha20_poly1305_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_cts.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_des.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_desx.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_desx_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_des_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_idea.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_idea_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_null.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc2_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc4_hmac_md5.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc4_hmac_md5_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc4_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_seed.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_seed_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_sm4.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_sm4_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_common.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_default.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_default_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_wrap.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_wrap_hw.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\blake2b_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\blake2s_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\blake2_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\digestcommon.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\md4_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\md5_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\md5_sha1_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\mdc2_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\null_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\ripemd_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\sha2_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\sha3_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\sm3_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\digests\wp_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\decode_der2key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\decode_epki2pki.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\decode_msblob2key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\decode_pem2der.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\decode_pvk2key.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\decode_spki2typespki.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\encode_key2any.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\encode_key2blob.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\encode_key2ms.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\encode_key2text.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\endecoder_common.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\exchange\dh_exch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\exchange\ecdh_exch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\exchange\ecx_exch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\exchange\kdf_exch.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\hkdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\kbkdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\krb5kdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\pbkdf1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\pbkdf2.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\pbkdf2_fips.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\pkcs12kdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\scrypt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\sshkdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\sskdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\tls1_prf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\x942kdf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\kem\rsa_kem.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\dh_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\dsa_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\ecx_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\ec_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\kdf_legacy_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\mac_legacy_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\rsa_kmgmt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\blake2b_mac.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\blake2s_mac.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\cmac_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\gmac_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\hmac_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\kmac_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\poly1305_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\macs\siphash_prov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\crngt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\drbg.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\drbg_ctr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\drbg_hash.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\drbg_hmac.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\seeding\rand_cpu_x86.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\seeding\rand_tsc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\seeding\rand_win.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\seed_src.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\rands\test_rng.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\signature\dsa_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\signature\ecdsa_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\signature\eddsa_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\signature\mac_legacy_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\signature\rsa_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\signature\sm2_sig.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\storemgmt\file_store.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\implementations\storemgmt\file_store_any2obj.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\legacyprov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\nullprov.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\providers\prov_running.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\bio_ssl.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\d1_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\d1_msg.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\d1_srtp.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ktls.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\methods.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\pqueue.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\dtls1_bitmap.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\rec_layer_d1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\rec_layer_s3.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\ssl3_buffer.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\ssl3_record.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\ssl3_record_tls13.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\record\tls_pad.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\s3_cbc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\s3_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\s3_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\s3_msg.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_asn1.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_cert.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_ciph.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_conf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_err.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_err_legacy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_init.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_mcnf.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_quic.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_rsa.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_rsa_legacy.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_sess.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_stat.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_txt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\ssl_utst.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\extensions.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\extensions_clnt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\extensions_cust.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\extensions_srvr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\statem.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\statem_clnt.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\statem_dtls.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\statem_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\statem_quic.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\statem\statem_srvr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\t1_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\t1_lib.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\t1_trce.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\tls13_enc.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\tls_depr.c" />
+    <ClCompile Include="..\..\third_party\openssl\openssl\ssl\tls_srp.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\aes\aes_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_item_list.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\asn1\asn1_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\asn1\charmap.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\asn1\standard_methods.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\asn1\tbl_standard.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\async\arch\async_win.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\async\async_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\bf\bf_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\bf\bf_pi.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\bio\bio_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\bn\bn_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\bn\bn_prime.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\bn\rsaz_exp.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\camellia\cmll_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\cast\cast_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\cast\cast_s.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\cmp\cmp_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\cms\cms_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\conf\conf_def.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\conf\conf_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\crmf\crmf_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ct\ct_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\des\des_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\des\spr.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\dh\dh_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\dsa\dsa_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\dso\dso_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\arch_32\arch_intrinsics.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\arch_32\f_impl.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\arch_64\arch_intrinsics.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\arch_64\f_impl.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\curve448utils.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\curve448_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\ed448.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\field.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\point_448.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\curve448\word.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\ecx_backend.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ec\ec_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\encode_decode\encoder_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\engine\eng_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\err\err_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\evp\evp_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\evp\legacy_meth.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\hmac\hmac_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\idea\idea_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\lhash\lhash_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\md4\md4_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\md5\md5_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\objects\obj_compat.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\objects\obj_dat.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\objects\obj_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\objects\obj_xref.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ocsp\ocsp_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\pem\pem_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\pkcs12\p12_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\pkcs7\pk7_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\property\property_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\rand\rand_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\rc2\rc2_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\rc4\rc4_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ripemd\rmdconst.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ripemd\rmd_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\rsa\rsa_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\seed\seed_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\sha\sha_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\sm3\sm3_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\store\store_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ts\ts_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\ui\ui_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\whrlpool\wp_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\x509\ext_dat.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\x509\pcy_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\x509\standard_exts.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\x509\v3_admis.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\crypto\x509\x509_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\engines\e_afalg.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\engines\e_afalg_err.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\engines\e_capi_err.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\engines\e_dasync_err.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\engines\e_loader_attic_err.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\engines\e_ossltest_err.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\bio.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\proverr.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\providercommon.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\provider_ctx.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\provider_util.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\securitycheck.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\__DECC_INCLUDE_EPILOGUE.H" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\common\include\prov\__DECC_INCLUDE_PROLOGUE.H" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\ciphercommon_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ccm.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ocb.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_siv.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_xts.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_ccm.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aria_gcm.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_blowfish.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_camellia.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_cast.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_chacha20.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_chacha20_poly1305.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_cts.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_des.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_idea.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc2.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc4.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc4_hmac_md5.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_rc5.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_seed.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_sm4.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_tdes_default.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\digests\blake2_impl.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\encode_decode\endecoder_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\blake2.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\ciphercommon.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\ciphercommon_aead.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\ciphercommon_ccm.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\ciphercommon_gcm.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\digestcommon.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\implementations.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\kdfexchange.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\macsignature.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\md5_sha1.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\names.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\seeding.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\__DECC_INCLUDE_EPILOGUE.H" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\include\prov\__DECC_INCLUDE_PROLOGUE.H" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\kdfs\pbkdf2.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\rands\drbg_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\providers\implementations\storemgmt\file_store_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\record\record.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\record\record_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\sslerr.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\ssl_cert_table.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\ssl_local.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\statem\statem.h" />
+    <ClInclude Include="..\..\third_party\openssl\openssl\ssl\statem\statem_local.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\third_party\openssl\openssl\crypto\asn1\build.info" />
+    <None Include="..\..\third_party\openssl\openssl\crypto\asn1\charmap.pl" />
+    <None Include="..\..\third_party\openssl\openssl\crypto\bn\bn_prime.pl" />
+    <None Include="..\..\third_party\openssl\openssl\crypto\rsa\build.info" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ccm_hw_aesni.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ccm_hw_s390x.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_ccm_hw_t4.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_cts.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm_hw_aesni.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm_hw_armv8.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm_hw_s390x.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_gcm_hw_t4.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_hw_aesni.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_hw_s390x.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_aes_hw_t4.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_camellia_cts.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\ciphers\cipher_camellia_hw_t4.inc" />
+    <None Include="..\..\third_party\openssl\openssl\providers\implementations\keymgmt\ec_kmgmt_imexport.inc" />
+    <None Include="..\..\third_party\openssl\openssl\ssl\build.info" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

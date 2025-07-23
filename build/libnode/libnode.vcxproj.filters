@@ -1,0 +1,1813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e3f43d08-fadb-45f1-b83a-7a3b25ea1ce4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\api">
+      <UniqueIdentifier>{dda7bb34-3a1c-4738-bb6a-ba3c23364759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\crypto">
+      <UniqueIdentifier>{1b299f84-cf22-45db-a2c0-3e7377b88d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dataqueue">
+      <UniqueIdentifier>{740c75a3-8e6e-499d-a040-73ce98d142d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\inspector">
+      <UniqueIdentifier>{fa8eea68-1774-4ad3-8957-02f6b362b709}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\large_pages">
+      <UniqueIdentifier>{0ebe1659-4d77-45c0-834d-963f93e56b05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\permission">
+      <UniqueIdentifier>{c0fbec4f-2950-4582-a199-56c334564ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\quic">
+      <UniqueIdentifier>{aa2dffed-f357-41a1-976b-96919de9265b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tracing">
+      <UniqueIdentifier>{eb6ba4e0-e7ad-40e9-b3aa-cadf44940c8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps">
+      <UniqueIdentifier>{586afd04-016c-498a-91d7-2ade8ae54ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\simdutf">
+      <UniqueIdentifier>{34615f13-5db7-409d-88a0-3ed887426abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64">
+      <UniqueIdentifier>{6e17d5ce-9edd-4bdc-96e7-0239e05ec424}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64\base64">
+      <UniqueIdentifier>{788b4b0d-a82f-49e0-9a34-9c81c604a378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64\base64\lib">
+      <UniqueIdentifier>{f88f4baf-5e1e-4248-b85e-a67dc1f54b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64\base64\lib\tables">
+      <UniqueIdentifier>{b67ad336-cfa1-4998-9482-42a3f4dc03ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64\base64\lib\arch">
+      <UniqueIdentifier>{ab67b758-eb50-4384-92c8-b5665735f3b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64\base64\lib\arch\generic">
+      <UniqueIdentifier>{2db8f8af-47c0-40af-b064-0929e421299a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\base64\base64\lib\arch\generic\32">
+      <UniqueIdentifier>{23a033cf-48ea-43ec-9148-3eff96fb9308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen">
+      <UniqueIdentifier>{82b543ca-3ba5-4814-94d2-60ef7a2c1142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\llhttp">
+      <UniqueIdentifier>{6d040bb5-1166-4cc2-b151-6bb22bc0fa26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\llhttp\include">
+      <UniqueIdentifier>{9730fe72-8ed7-4c11-8da4-1fe89c110a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\uvwasi">
+      <UniqueIdentifier>{bc573153-3833-4bfc-8c64-ee1e327c66fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\uvwasi\include">
+      <UniqueIdentifier>{9c5942ef-2962-4ec0-bf89-08d95e64b1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\uvwasi\src">
+      <UniqueIdentifier>{0a7a794d-c931-4f6d-8057-b9fb93e6bad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\llhttp\src">
+      <UniqueIdentifier>{46d96448-f12e-46d3-8da6-31f349e9aa79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\histogram">
+      <UniqueIdentifier>{78afd9cd-f00b-4222-a2eb-eb3889b2df20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\histogram\src">
+      <UniqueIdentifier>{e7d85edf-9511-4451-a3dc-77ab0ae58533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\cares">
+      <UniqueIdentifier>{9c6a8549-4438-4beb-902c-b7999671734f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\cares\src">
+      <UniqueIdentifier>{ce4b1551-41cb-41e6-95ae-b526dc6511d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\cares\src\lib">
+      <UniqueIdentifier>{6dacc14e-3801-4092-9b5a-3b3dfdf289d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\ada">
+      <UniqueIdentifier>{3e6eccb5-a6d8-4f5c-ad5a-2de36eabc663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\src">
+      <UniqueIdentifier>{88ce907d-c5d0-403a-8af9-7607e359bb2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\src\node">
+      <UniqueIdentifier>{0df05899-2b87-4e90-aac6-b7b0bd865e58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\src\node\inspector">
+      <UniqueIdentifier>{23e11b3f-4583-451f-9280-ea87cb5abacf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen\src\node\inspector\protocol">
+      <UniqueIdentifier>{49512c3c-0e33-4c27-a62a-d4d7705bca76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\ncrypto">
+      <UniqueIdentifier>{bfd41297-b1f5-46a5-b86d-1202409dad55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\nbytes">
+      <UniqueIdentifier>{7d263fdf-6282-40b9-adc0-8c580e7dd9d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\nbytes\include">
+      <UniqueIdentifier>{3fa32c42-fe11-491f-aac0-8e70aeaae7d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\nbytes\src">
+      <UniqueIdentifier>{7703f805-5c2b-4e19-adeb-4f86ac0f8e56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\simdjson">
+      <UniqueIdentifier>{2cd57e4f-bc2a-4fab-aaa6-91a42886f0a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd">
+      <UniqueIdentifier>{e654a62c-4231-45c2-949a-8a05d5eb94aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd\lib">
+      <UniqueIdentifier>{ed9e70a0-39a9-4773-bd6d-c2fcdc29613c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd\lib\common">
+      <UniqueIdentifier>{b5ffaad0-5d70-4a2e-b5f4-51eeecb08d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd\lib\compress">
+      <UniqueIdentifier>{29946c0a-3b28-4e92-addc-a2a7aaa803af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd\lib\decompress">
+      <UniqueIdentifier>{e0885a1f-2991-4477-a92d-20844d4c82df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd\lib\deprecated">
+      <UniqueIdentifier>{8531a33d-35ac-43b8-bb40-68475d462904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="deps\zstd\lib\dictBuilder">
+      <UniqueIdentifier>{28013650-fb7c-4bf0-95b0-cf6d979b4e50}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\libnode\src\acorn_version.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\aliased_buffer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\aliased_buffer-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\aliased_struct.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\aliased_struct-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\async_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\async_wrap-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\base_object.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\base_object_types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\base_object-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\base64.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\base64_version.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\base64-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\blob_serializer_deserializer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\blob_serializer_deserializer-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\callback_queue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\callback_queue-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\cares_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\cjs_module_lexer_version.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\cleanup_queue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\cleanup_queue-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\connect_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\connection_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\debug_utils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\debug_utils-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\diagnosticfilename-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\embedded_data.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\encoding_binding.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\env.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\env_properties.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\env-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\handle_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\histogram.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\histogram-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector_agent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector_io.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector_profiler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector_socket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector_socket_server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\js_native_api.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\js_native_api_types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\js_native_api_v8.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\js_native_api_v8_internals.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\js_stream.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\json_parser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\json_utils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\memory_tracker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\memory_tracker-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\module_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_api.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_api_internals.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_api_types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_binding.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_blob.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_bob.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_bob-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_buffer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_builtins.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_constants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_context_data.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_contextify.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_crypto.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_dir.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_dotenv.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_errors.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_exit_code.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_external_reference.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_file.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_file-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_http_common.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_http_common-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_http2.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_http2_state.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_i18n.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_internals.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_main_instance.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_mem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_mem-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_messaging.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_metadata.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_mutex.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_object_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_options.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_options-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_perf.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_perf_common.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_platform.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_process.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_process-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_realm.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_realm-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_report.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_revert.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_root_certs.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_sea.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_shadow_realm.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_snapshot_builder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_snapshotable.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_sockaddr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_sockaddr-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_stat_watcher.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_threadsafe_cow.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_threadsafe_cow-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_union_bytes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_url.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_v8.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_v8_platform-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_version.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_wasi.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_wasm_web_api.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_watchdog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_worker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\path.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\pipe_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\req_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\req_wrap-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\spawn_sync.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\stream_base.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\stream_base-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\stream_pipe.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\stream_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\string_bytes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\string_decoder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\string_decoder-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\string_search.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tcp_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\threadpoolwork-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\timer_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\timer_wrap-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\timers.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tty_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\udp_wrap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\undici_version.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\util.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\util-inl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\zlib_version.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_aes.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_bio.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_cipher.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_clienthello.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_clienthello-inl.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_common.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_context.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_dh.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_dsa.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_ec.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_hash.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_hkdf.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_hmac.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_keygen.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_keys.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_pbkdf2.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_random.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_rsa.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_scrypt.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_sig.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_spkac.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_timing.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_tls.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_util.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\crypto\crypto_x509.h">
+      <Filter>src\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\dataqueue\queue.h">
+      <Filter>src\dataqueue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\main_thread_interface.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\node_string.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\runtime_agent.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\tracing_agent.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\worker_agent.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\worker_inspector.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\large_pages\node_large_page.h">
+      <Filter>src\large_pages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\child_process_permission.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\fs_permission.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\inspector_permission.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\permission.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\permission_base.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\worker_permission.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\data.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\defs.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\logstream.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\packet.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\preferredaddress.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\sessionticket.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\tlscontext.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\tokens.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\transportparams.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\bindingdata.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\quic\cid.h">
+      <Filter>src\quic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tracing\node_trace_buffer.h">
+      <Filter>src\tracing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tracing\node_trace_writer.h">
+      <Filter>src\tracing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tracing\trace_event.h">
+      <Filter>src\tracing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tracing\trace_event_common.h">
+      <Filter>src\tracing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tracing\traced_value.h">
+      <Filter>src\tracing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\tracing\agent.h">
+      <Filter>src\tracing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\simdutf\simdutf.h">
+      <Filter>deps\simdutf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\base64\base64\lib\codecs.h">
+      <Filter>deps\base64\base64\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\base64\base64\lib\config.h">
+      <Filter>deps\base64\base64\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\base64\base64\lib\env.h">
+      <Filter>deps\base64\base64\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\base64\base64\lib\tables\table_dec_32bit.h">
+      <Filter>deps\base64\base64\lib\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\base64\base64\lib\tables\table_enc_12bit.h">
+      <Filter>deps\base64\base64\lib\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\base64\base64\lib\tables\tables.h">
+      <Filter>deps\base64\base64\lib\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\llhttp\include\llhttp.h">
+      <Filter>deps\llhttp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\fd_table.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\path_resolver.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\poll_oneoff.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\sync_helpers.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\uv_mapping.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\uvwasi_alloc.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\wasi_rights.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\clocks.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\src\debug.h">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\include\wasi_serdes.h">
+      <Filter>deps\uvwasi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\include\wasi_types.h">
+      <Filter>deps\uvwasi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\uvwasi\include\uvwasi.h">
+      <Filter>deps\uvwasi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\histogram\src\hdr_malloc.h">
+      <Filter>deps\histogram\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\histogram\src\hdr_atomic.h">
+      <Filter>deps\histogram\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_inet_net_pton.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_ipv6.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_platform.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_private.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_setup.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_str.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_strcasecmp.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_strsplit.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\config-dos.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\config-win32.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\setup_once.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__buf.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__htable.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__htable_asvp.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__htable_strvp.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__htable_szvp.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__iface_ips.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__llist.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__slist.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares__threads.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_android.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_data.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_dns_private.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_event.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_event_win32.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\cares\src\lib\ares_getenv.h">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\ada\ada.h">
+      <Filter>deps\ada</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\ada\ada_c.h">
+      <Filter>deps\ada</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\Forward.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\Network.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\NodeRuntime.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\NodeTracing.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\NodeWorker.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\Protocol.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\Runtime.h">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\ncrypto\ncrypto.h">
+      <Filter>deps\ncrypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\ncrypto\dh-primes.h">
+      <Filter>deps\ncrypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\permission\wasi_permission.h">
+      <Filter>src\permission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\compile_cache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\async_context_frame.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_config_file.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\nbytes\include\nbytes.h">
+      <Filter>deps\nbytes\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\network_inspector.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\network_agent.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\inspector\node_json.h">
+      <Filter>src\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_modules.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_url_pattern.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_webstorage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\src\node_task_runner.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\simdjson\simdjson.h">
+      <Filter>deps\simdjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\zstd\lib\common\allocations.h">
+      <Filter>deps\zstd\lib\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\zstd\lib\compress\clevels.h">
+      <Filter>deps\zstd\lib\compress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\zstd\lib\decompress\zstd_ddict.h">
+      <Filter>deps\zstd\lib\decompress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\zstd\lib\decompress\zstd_decompress_block.h">
+      <Filter>deps\zstd\lib\decompress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\zstd\lib\decompress\zstd_decompress_internal.h">
+      <Filter>deps\zstd\lib\decompress</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\libnode\deps\zstd\lib\deprecated\zbuff.h">
+      <Filter>deps\zstd\lib\deprecated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\libnode\src\async_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\base_object.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\cares_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\cleanup_queue.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\connect_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\connection_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\debug_utils.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\embedded_data.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\encoding_binding.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\env.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\fs_event_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\handle_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\heap_utils.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\histogram.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector_agent.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector_io.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector_js_api.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector_profiler.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector_socket.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector_socket_server.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\internal_only_v8.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\js_native_api_v8.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\js_stream.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\js_udp_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\json_parser.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\json_utils.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\module_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_api.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_binding.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_blob.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_buffer.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_builtins.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_config.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_constants.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_credentials.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_crypto.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_dir.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_dotenv.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_env_var.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_errors.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_external_reference.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_file.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_http_parser.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_i18n.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_main.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_main_instance.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_messaging.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_metadata.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_options.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_os.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_perf.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_platform.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_postmortem_metadata.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_process_events.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_process_methods.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_process_object.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_realm.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_report.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_report_module.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_report_utils.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_sea.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_serdes.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_shadow_realm.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_snapshot_stub.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_snapshotable.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_sockaddr.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_stat_watcher.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_symbols.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_task_queue.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_trace_events.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_types.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_url.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_util.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_v8.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_wasi.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_wasm_web_api.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_watchdog.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_worker.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_zlib.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\path.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\pipe_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\process_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\signal_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\spawn_sync.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\stream_base.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\stream_pipe.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\stream_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\string_bytes.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\string_decoder.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tcp_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\timer_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\timers.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tty_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\udp_wrap.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\util.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\uv.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\callback.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\embed_helpers.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\encoding.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\environment.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\exceptions.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\hooks.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\utils.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\api\async_resource.cc">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_bio.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_cipher.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_clienthello.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_common.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_context.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_dh.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_dsa.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_ec.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_hash.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_hkdf.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_hmac.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_keygen.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_keys.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_pbkdf2.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_random.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_rsa.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_scrypt.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_sig.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_spkac.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_timing.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_tls.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_util.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_x509.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\crypto\crypto_aes.cc">
+      <Filter>src\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\dataqueue\queue.cc">
+      <Filter>src\dataqueue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\runtime_agent.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\tracing_agent.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\worker_agent.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\worker_inspector.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\main_thread_interface.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\node_string.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\large_pages\node_large_page.cc">
+      <Filter>src\large_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\permission\child_process_permission.cc">
+      <Filter>src\permission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\permission\fs_permission.cc">
+      <Filter>src\permission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\permission\inspector_permission.cc">
+      <Filter>src\permission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\permission\permission.cc">
+      <Filter>src\permission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\permission\worker_permission.cc">
+      <Filter>src\permission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\data.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\logstream.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\packet.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\preferredaddress.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\sessionticket.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\tlscontext.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\tokens.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\transportparams.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\bindingdata.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\quic\cid.cc">
+      <Filter>src\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tracing\node_trace_buffer.cc">
+      <Filter>src\tracing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tracing\node_trace_writer.cc">
+      <Filter>src\tracing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tracing\trace_event.cc">
+      <Filter>src\tracing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tracing\traced_value.cc">
+      <Filter>src\tracing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\tracing\agent.cc">
+      <Filter>src\tracing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\simdutf\simdutf.cpp">
+      <Filter>deps\simdutf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\base64\base64\lib\lib.c">
+      <Filter>deps\base64\base64\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\base64\base64\lib\codec_choose.c">
+      <Filter>deps\base64\base64\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\base64\base64\lib\arch\generic\codec.c">
+      <Filter>deps\base64\base64\lib\arch\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\base64\base64\lib\tables\tables.c">
+      <Filter>deps\base64\base64\lib\tables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\path_resolver.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\poll_oneoff.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\sync_helpers.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\uv_mapping.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\uvwasi.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\wasi_rights.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\wasi_serdes.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\clocks.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\uvwasi\src\fd_table.c">
+      <Filter>deps\uvwasi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\llhttp\src\llhttp_api.c">
+      <Filter>deps\llhttp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\llhttp\src\llhttp_http.c">
+      <Filter>deps\llhttp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\llhttp\src\llhttp.c">
+      <Filter>deps\llhttp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\histogram\src\hdr_histogram.c">
+      <Filter>deps\histogram\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_gethostbyname.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_getnameinfo.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_getsock.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_init.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_library_init.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_math.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_options.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_a_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_aaaa_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_caa_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_mx_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_naptr_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_ns_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_ptr_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_soa_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_srv_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_txt_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_parse_uri_reply.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_platform.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_process.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_qcache.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_query.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_rand.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_search.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_send.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_str.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_strcasecmp.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_strerror.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_strsplit.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_sysconfig.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_sysconfig_files.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_timeout.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_update_servers.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_version.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\inet_net_pton.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\inet_ntop.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\windows_port.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__addrinfo_localhost.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__addrinfo2hostent.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__buf.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__close_sockets.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__hosts_file.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__htable.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__htable_asvp.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__htable_strvp.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__htable_szvp.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__iface_ips.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__llist.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__parse_into_addrinfo.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__slist.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__socket.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__sortaddrinfo.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__threads.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares__timeval.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_android.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_cancel.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_create_query.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_data.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_destroy.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_dns_mapping.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_dns_name.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_dns_parse.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_dns_record.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_dns_write.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_epoll.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_kqueue.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_poll.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_select.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_thread.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_wake_pipe.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_event_win32.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_expand_name.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_expand_string.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_fds.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_free_hostent.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_free_string.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_freeaddrinfo.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_getaddrinfo.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_getenv.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\cares\src\lib\ares_gethostbyaddr.c">
+      <Filter>deps\cares\src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\ada\ada.cpp">
+      <Filter>deps\ada</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\gen\src\node\node_javascript.cc">
+      <Filter>gen\src\node</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\NodeTracing.cpp">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\NodeWorker.cpp">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\Protocol.cpp">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\Network.cpp">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\gen\src\node\inspector\protocol\NodeRuntime.cpp">
+      <Filter>gen\src\node\inspector\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\ncrypto\ncrypto.cc">
+      <Filter>deps\ncrypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\ncrypto\engine.cc">
+      <Filter>deps\ncrypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\permission\wasi_permission.cc">
+      <Filter>src\permission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\compile_cache.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_contextify.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\async_context_frame.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_config_file.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\nbytes\src\nbytes.cpp">
+      <Filter>deps\nbytes\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\network_inspector.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\network_agent.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\inspector\node_json.cc">
+      <Filter>src\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_modules.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_url_pattern.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\src\node_task_runner.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libnode\deps\simdjson\simdjson.cpp">
+      <Filter>deps\simdjson</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\third_party\libnode\src\crypto\README.md">
+      <Filter>src\crypto</Filter>
+    </None>
+    <None Include="..\..\third_party\libnode\deps\base64\base64\lib\tables\table_enc_12bit.py">
+      <Filter>deps\base64\base64\lib\tables</Filter>
+    </None>
+    <None Include="..\..\third_party\cares\src\lib\ares_config.h.cmake">
+      <Filter>deps\cares\src\lib</Filter>
+    </None>
+    <None Include="..\..\third_party\cares\src\lib\ares_config.h.in">
+      <Filter>deps\cares\src\lib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\third_party\cares\src\lib\cares.rc">
+      <Filter>deps\cares\src\lib</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

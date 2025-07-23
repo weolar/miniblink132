@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gin">
+      <UniqueIdentifier>{f6e1cad2-82ac-4474-9d01-0cbadef379d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="v8%255cthird_party%255cinspector_protocol%255ccrdtp">
+      <UniqueIdentifier>{783883a7-6826-4dbb-a0e4-73419b15f65f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\arguments.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\array_buffer.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\converter.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\data_object_builder.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\debug_impl.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\dictionary.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\function_template.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\gin_export.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\gin_features.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\handle.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\interceptor.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\object_template_builder.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\per_context_data.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\per_isolate_data.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\v8_initializer.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\v8_platform_page_allocator.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\wrappable.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\v8_foreground_task_runner.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\v8_foreground_task_runner_base.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\v8_foreground_task_runner_with_locker.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\dispatch.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\error_support.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\export.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\find_by_first.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\frontend_channel.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\glue.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\json.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\json_platform.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\maybe.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\parser_handler.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\protocol_core.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\serializable.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\span.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\status.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\v8\third_party\inspector_protocol\crdtp\cbor.h">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gin\time_clamper.h">
+      <Filter>gin</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gin\v8_platform.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\cppgc.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\arguments.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\array_buffer.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\context_holder.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\converter.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\data_object_builder.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\debug_impl.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\dictionary.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\function_template.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\gin_features.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\interceptor.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\isolate_holder.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\object_template_builder.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\per_context_data.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\per_isolate_data.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\v8_initializer.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\wrapper_info.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\v8_platform_page_allocator.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\wrappable.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\v8_foreground_task_runner.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\v8_foreground_task_runner_base.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\v8_foreground_task_runner_with_locker.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\error_support.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\json_platform_v8.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\protocol_core.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\cbor.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\dispatch.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\serializable.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\span.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\status.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\v8\third_party\inspector_protocol\crdtp\json.cc">
+      <Filter>v8%255cthird_party%255cinspector_protocol%255ccrdtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gin\time_clamper.cc">
+      <Filter>gin</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

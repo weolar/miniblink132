@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\content\common\cJSON.cpp" />
+    <ClCompile Include="..\..\content\common\StringUtil.cpp" />
+    <ClCompile Include="..\..\fastmake\CmdHandler.cpp" />
+    <ClCompile Include="..\..\fastmake\FastMakeMain.cpp" />
+    <ClCompile Include="..\..\fastmake\QjsFastMake.cpp" />
+    <ClCompile Include="..\..\quickjs\cutils.c" />
+    <ClCompile Include="..\..\quickjs\libbf.c" />
+    <ClCompile Include="..\..\quickjs\libregexp.c" />
+    <ClCompile Include="..\..\quickjs\libunicode.c" />
+    <ClCompile Include="..\..\quickjs\quickjs-libc.c" />
+    <ClCompile Include="..\..\quickjs\quickjs.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\content\common\cJSON.h" />
+    <ClInclude Include="..\..\content\common\StringUtil.h" />
+    <ClInclude Include="..\..\fastmake\CmdHandler.h" />
+    <ClInclude Include="..\..\fastmake\FastMakeMain.h" />
+    <ClInclude Include="..\..\quickjs\cutils.h" />
+    <ClInclude Include="..\..\quickjs\libbf.h" />
+    <ClInclude Include="..\..\quickjs\libregexp-opcode.h" />
+    <ClInclude Include="..\..\quickjs\libregexp.h" />
+    <ClInclude Include="..\..\quickjs\libunicode-table.h" />
+    <ClInclude Include="..\..\quickjs\libunicode.h" />
+    <ClInclude Include="..\..\quickjs\list.h" />
+    <ClInclude Include="..\..\quickjs\quickjs-atom.h" />
+    <ClInclude Include="..\..\quickjs\quickjs-libc.h" />
+    <ClInclude Include="..\..\quickjs\quickjs-opcode.h" />
+    <ClInclude Include="..\..\quickjs\quickjs.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\aio.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\aliases.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\alloca.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\argp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\argz.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\asoundlib.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\assert.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\brlapi.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\brlapi_brldefs.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\brlapi_constants.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\brlapi_keycodes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\brlapi_protocol.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\byteswap.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-deprecated.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-features.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-ft.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-gobject.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-pdf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-ps.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-script-interpreter.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-script.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-svg.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-tee.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-version.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-xcb.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-xlib-xrender.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo-xlib.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cairo\cairo.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\complex.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\com_err.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\cpio.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ctype.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\dirent.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\dlfcn.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\elf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\endian.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\envz.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\err.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\errno.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\error.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\execinfo.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\expat.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\expat_external.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\fcntl.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\features.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\fenv.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\fmtmsg.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\fnmatch.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\fstab.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\fts.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ftw.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gbm.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gconv.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gcrypt.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gelf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\getopt.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\galloca.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\garray.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gasyncqueue.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gatomic.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gbacktrace.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gbase64.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gbitlock.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gbookmarkfile.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gbytes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gcharset.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gchecksum.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gconvert.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gdataset.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gdate.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gdatetime.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gdir.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\genviron.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gerror.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gfileutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\ggettext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\ghash.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\ghmac.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\ghook.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\ghostutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gi18n-lib.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gi18n.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\giochannel.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gkeyfile.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\glib-autocleanups.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\glist.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gmacros.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gmain.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gmappedfile.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gmarkup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gmem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gmessages.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gnode.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\goption.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gpattern.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gpoll.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gprimes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gprintf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gqsort.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gquark.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gqueue.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\grand.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\grcbox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\grefcount.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\grefstring.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gregex.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gscanner.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gsequence.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gshell.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gslice.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gslist.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gspawn.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gstdio.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gstrfuncs.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gstring.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gstringchunk.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gtestutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gthread.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gthreadpool.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gtimer.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gtimezone.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gtrashstack.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gtree.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gtypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gunicode.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gurifuncs.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\guuid.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gvariant.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gvarianttype.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gversion.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gversionmacros.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\glib\gwin32.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gbinding.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gboxed.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gclosure.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\genums.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\glib-enumtypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\glib-types.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gmarshal.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gobject-autocleanups.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gobject.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gparam.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gparamspecs.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gsignal.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gsourceclosure.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gtype.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gtypemodule.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gtypeplugin.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gvalue.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gvaluearray.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gvaluecollector.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glib-2.0\gobject\gvaluetypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\glob.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gnu-versions.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\grp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gshadow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gssapi.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdk-autocleanup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdk.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkapplaunchcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkbroadway.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkcairo.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkconfig.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkcursor.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdevice.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdevicemanager.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdevicepad.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdevicetool.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdisplay.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdisplaymanager.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdnd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkdrawingcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkenumtypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkevents.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkframeclock.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkframetimings.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkglcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkkeys.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkkeysyms-compat.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkkeysyms.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkmain.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkmonitor.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkpango.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkpixbuf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkprivate.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkproperty.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkrectangle.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkrgba.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkscreen.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkseat.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkselection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdktestutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkthreads.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdktypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkversionmacros.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkvisual.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkwayland.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkwindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\gdkx.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\wayland\gdkwaylanddevice.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\wayland\gdkwaylanddisplay.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\wayland\gdkwaylandglcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\wayland\gdkwaylandmonitor.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\wayland\gdkwaylandselection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\wayland\gdkwaylandwindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx-autocleanups.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11applaunchcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11cursor.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11device-core.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11device-xi2.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11device.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11devicemanager-core.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11devicemanager-xi2.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11devicemanager.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11display.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11displaymanager.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11dnd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11glcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11keys.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11monitor.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11property.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11screen.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11selection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11utils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11visual.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gdk\x11\gdkx11window.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtk-a11y.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtk-autocleanups.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtk.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkaboutdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkaccelgroup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkaccellabel.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkaccelmap.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkaccessible.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkactionable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkactionbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkadjustment.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkappchooser.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkappchooserbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkappchooserdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkappchooserwidget.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkapplication.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkapplicationwindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkaspectframe.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkassistant.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbbox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbin.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbindings.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkborder.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbuildable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbuilder.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcalendar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellarea.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellareabox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellareacontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcelleditable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcelllayout.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrenderer.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrendereraccel.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrenderercombo.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrendererpixbuf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrendererprogress.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrendererspin.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrendererspinner.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrenderertext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellrenderertoggle.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcellview.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcheckbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcheckmenuitem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkclipboard.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcolorbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcolorchooser.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcolorchooserdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcolorchooserwidget.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcolorutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcombobox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcomboboxtext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcontainer.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcssprovider.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkcsssection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkdebug.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkdnd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkdragdest.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkdragsource.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkdrawingarea.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkeditable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkentry.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkentrybuffer.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkentrycompletion.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkenums.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkeventbox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkeventcontroller.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkeventcontrollerkey.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkeventcontrollermotion.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkeventcontrollerscroll.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkexpander.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfilechooser.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfilechooserbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfilechooserdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfilechoosernative.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfilechooserwidget.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfilefilter.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfixed.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkflowbox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfontbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfontchooser.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfontchooserdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkfontchooserwidget.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkframe.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesture.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturedrag.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturelongpress.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturemultipress.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturepan.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturerotate.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturesingle.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturestylus.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgestureswipe.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgesturezoom.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkglarea.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkgrid.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkheaderbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkicontheme.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkiconview.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkimage.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkimcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkimcontextinfo.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkimcontextsimple.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkimmodule.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkimmulticontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkinfobar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkinvisible.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtklabel.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtklayout.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtklevelbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtklinkbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtklistbox.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkliststore.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtklockbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmain.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmenu.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmenubar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmenubutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmenuitem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmenushell.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmenutoolbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmessagedialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmodelbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmodules.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkmountoperation.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtknativedialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtknotebook.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkoffscreenwindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkorientable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkoverlay.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkpadcontroller.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkpagesetup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkpaned.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkpapersize.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkplacessidebar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkplug.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkpopover.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkpopovermenu.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkprintcontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkprintoperation.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkprintoperationpreview.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkprintsettings.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkprogressbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkradiobutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkradiomenuitem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkradiotoolbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrange.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrecentchooser.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrecentchooserdialog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrecentchoosermenu.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrecentchooserwidget.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrecentfilter.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrecentmanager.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrender.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkrevealer.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkscale.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkscalebutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkscrollable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkscrollbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkscrolledwindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtksearchbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtksearchentry.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkselection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkseparator.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkseparatormenuitem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkseparatortoolitem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtksettings.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkshortcutlabel.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkshortcutsgroup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkshortcutssection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkshortcutsshortcut.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkshortcutswindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkshow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtksizegroup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtksizerequest.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtksocket.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkspinbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkspinner.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkstack.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkstacksidebar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkstackswitcher.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkstatusbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkstylecontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkstyleprovider.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkswitch.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktestutils.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextattributes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextbuffer.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextbufferrichtext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextchild.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextdisplay.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextiter.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextlayout.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextmark.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktexttag.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktexttagtable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktextview.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktogglebutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoggletoolbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoolbar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoolbutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoolitem.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoolitemgroup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoolpalette.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktoolshell.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktooltip.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreednd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreemodel.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreemodelfilter.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreemodelsort.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreeselection.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreesortable.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreestore.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreeview.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktreeviewcolumn.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktypebuiltins.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtktypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkversion.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkviewport.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkvolumebutton.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkwidget.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkwidgetpath.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkwindow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkwindowgroup.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkx-autocleanups.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\gtk-3.0\gtk\gtkx.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\iconv.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ifaddrs.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\inttypes.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\jerror.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\jmorecfg.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\jpegint.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\jpeglib.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\kdb.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\krb5.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\langinfo.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\lastlog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libelf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libgen.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libinput.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libintl.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libspeechd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libspeechd_version.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libsync.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libudev.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\limits.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\link.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\locale.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\malloc.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\math.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\mcheck.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\memory.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\mntent.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\monetary.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\mqueue.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\netdb.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\nlist.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\nl_types.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\nss.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\obstack.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\paths.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcre.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcre2.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcre2posix.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcrecpp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcrecpparg.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcreposix.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcre_scanner.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pcre_stringpiece.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\png.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pngconf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pnglibconf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\poll.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\printf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\proc_service.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\profile.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pthread.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pty.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\pwd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\regex.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\regexp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\resolv.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\re_comp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\sched.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\search.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\semaphore.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\setjmp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\sgtty.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\shadow.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\signal.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\snappy-c.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\snappy-sinksource.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\snappy-stubs-public.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\snappy.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\spawn.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\spd_audio_plugin.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\speechd_defines.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\speechd_types.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stab.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stdc-predef.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stdint.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stdio.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stdio_ext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stdlib.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\string.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\strings.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\stropts.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\syscall.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\sysexits.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\syslog.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\tar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\termio.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\termios.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\tgmath.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\threads.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\thread_db.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\time.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ttyent.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\uchar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ucontext.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\ulimit.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\unistd.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\utime.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\utmp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\utmpx.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\values.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wait.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-client-core.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-client-protocol.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-client.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-cursor.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-egl-core.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-egl.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-server-core.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-server-protocol.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-server.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-util.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wayland-version.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wchar.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wctype.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\wordexp.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\xf86drm.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\xf86drmMode.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\zconf.h" />
+    <ClInclude Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\zlib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="G:\chromium\M84\build\linux\debian_sid_amd64-sysroot\usr\include\libpng" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{AD9B38B5-1602-456E-AA5A-FFE8E8ED7110}</ProjectGuid>
+    <RootNamespace>maindll</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;MAINDLL_EXPORTS;_WINDOWS;OS_WIN;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Winmm.lib;Setupapi.lib;Shlwapi.lib;Version.lib;Dbghelp.lib;Crypt32.lib;Usp10.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;MAINDLL_EXPORTS;_WINDOWS;_USRDLL;OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Winmm.lib;Setupapi.lib;Shlwapi.lib;Version.lib;Dbghelp.lib;Crypt32.lib;Usp10.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;MAINDLL_EXPORTS;_WINDOWS;OS_WIN;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;MAINDLL_EXPORTS;_WINDOWS;_USRDLL;OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(SolutionDir)../</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Winmm.lib;Setupapi.lib;Shlwapi.lib;Version.lib;Dbghelp.lib;Crypt32.lib;Usp10.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

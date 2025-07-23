@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\brotli\common\constants.h" />
+    <ClInclude Include="..\..\third_party\brotli\common\context.h" />
+    <ClInclude Include="..\..\third_party\brotli\common\dictionary.h" />
+    <ClInclude Include="..\..\third_party\brotli\common\platform.h" />
+    <ClInclude Include="..\..\third_party\brotli\common\shared_dictionary_internal.h" />
+    <ClInclude Include="..\..\third_party\brotli\common\transform.h" />
+    <ClInclude Include="..\..\third_party\brotli\common\version.h" />
+    <ClInclude Include="..\..\third_party\brotli\dec\bit_reader.h" />
+    <ClInclude Include="..\..\third_party\brotli\dec\huffman.h" />
+    <ClInclude Include="..\..\third_party\brotli\dec\prefix.h" />
+    <ClInclude Include="..\..\third_party\brotli\dec\state.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\backward_references.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\backward_references_hq.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\backward_references_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\bit_cost.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\bit_cost_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\block_encoder_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\block_splitter.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\block_splitter_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\brotli_bit_stream.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\cluster.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\cluster_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\command.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\compound_dictionary.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\compress_fragment.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\compress_fragment_two_pass.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\dictionary_hash.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\encoder_dict.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\entropy_encode.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\entropy_encode_static.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\fast_log.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\find_match_length.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_composite_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_forgetful_chain_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_longest_match64_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_longest_match_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_longest_match_quickly_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_rolling_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\hash_to_binary_tree_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\histogram.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\histogram_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\literal_cost.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\memory.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\metablock.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\metablock_inc.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\params.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\prefix.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\quality.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\ringbuffer.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\static_dict.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\static_dict_lut.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\utf8_util.h" />
+    <ClInclude Include="..\..\third_party\brotli\enc\write_bits.h" />
+    <ClInclude Include="..\..\third_party\brotli\include\brotli\decode.h" />
+    <ClInclude Include="..\..\third_party\brotli\include\brotli\encode.h" />
+    <ClInclude Include="..\..\third_party\brotli\include\brotli\port.h" />
+    <ClInclude Include="..\..\third_party\brotli\include\brotli\shared_dictionary.h" />
+    <ClInclude Include="..\..\third_party\brotli\include\brotli\types.h" />
+    <ClInclude Include="..\..\third_party\dav1d\config\win\x86\config.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\cdef.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\cdef_apply.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\cdf.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\cpu.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\ctx.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\data.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\decode.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\dequant_tables.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\env.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\fg_apply.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\filmgrain.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\getbits.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\internal.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\intra_edge.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\ipred.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\ipred_prepare.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\itx.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\itx_1d.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\levels.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\lf_apply.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\lf_mask.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\log.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\loopfilter.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\looprestoration.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\lr_apply.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\mc.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\mem.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\msac.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\obu.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\picture.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\qm.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\recon.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\ref.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\refmvs.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\scan.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\tables.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\thread.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\thread_data.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\thread_task.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\warpmv.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\wedge.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\x86\cpu.h" />
+    <ClInclude Include="..\..\third_party\dav1d\libdav1d\src\x86\msac.h" />
+    <ClInclude Include="..\..\third_party\iccjpeg\iccjpeg.h" />
+    <ClInclude Include="..\..\third_party\libavif\src\include\avif\avif.h" />
+    <ClInclude Include="..\..\third_party\libavif\src\include\avif\internal.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\curl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\curlver.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\easy.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\mprintf.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\multi.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\stdcheaders.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\system.h" />
+    <ClInclude Include="..\..\third_party\libcurl\include\curl\typecheck-gcc.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\amigaos.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\arpa_telnet.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\asyn.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-amigaos.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-dos.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-mac.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-os400.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-riscos.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-symbian.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-tpf.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-vxworks.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-win32.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-win32ce.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\conncache.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\connect.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\content_encoding.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cookie.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curlx.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_addrinfo.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_base64.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_ctype.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_des.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_endian.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_fnmatch.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_gethostname.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_gssapi.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_hmac.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_ldap.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_md4.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_md5.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_memory.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_memrchr.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_multibyte.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_ntlm_core.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_ntlm_wb.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_path.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_printf.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_range.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_rtmp.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_sasl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_sec.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_setup.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_setup_once.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_sha256.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_sspi.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_threads.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\dict.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\dotdot.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\easyif.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\escape.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\file.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\fileinfo.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\formdata.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\ftp.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\ftplistparser.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\getinfo.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\gopher.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\hash.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\hostcheck.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\hostip.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http2.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http_chunks.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http_digest.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http_negotiate.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http_ntlm.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http_proxy.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\if2ip.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\imap.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\inet_ntop.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\inet_pton.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\llist.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\memdebug.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\mime.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\multihandle.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\multiif.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\netrc.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\non-ascii.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\nonblock.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\parsedate.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\pingpong.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\pipeline.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\pop3.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\progress.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\psl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\rand.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\rtsp.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\select.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\sendf.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\setopt.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\setup-os400.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\setup-vms.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\share.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\sigpipe.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\slist.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\smb.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\smtp.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\sockaddr.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\socks.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\speedcheck.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\splay.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\ssh.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\strcase.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\strdup.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\strerror.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\strtok.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\strtoofft.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\system_win32.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\telnet.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\tftp.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\timeval.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\transfer.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\url.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\urldata.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vauth\digest.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vauth\ntlm.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vauth\vauth.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\axtls.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\cadata.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\cyassl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\darwinssl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\gskit.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\gtls.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\mbedtls.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\nssg.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\openssl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\polarssl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\polarssl_threadlock.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\schannel.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\vtls.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\warnless.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\wildcard.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\x509asn1.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\cderror.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\cdjpeg.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\cmyk.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jchuff.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jconfig.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jconfigint.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdcoefct.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdct.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdhuff.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdmainct.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdmaster.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdmerge.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jdsample.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jerror.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jinclude.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jmemsys.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jmorecfg.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jpegcomp.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jpegint.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jpeglib.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jpeglibmangler.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jpeg_nbits_table.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jsimd.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jsimddct.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\jversion.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\tjutil.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\transupp.h" />
+    <ClInclude Include="..\..\third_party\libjpeg_turbo\turbojpeg.h" />
+    <ClInclude Include="..\..\third_party\libpng\png.h" />
+    <ClInclude Include="..\..\third_party\libpng\pngconf.h" />
+    <ClInclude Include="..\..\third_party\libpng\pngdebug.h" />
+    <ClInclude Include="..\..\third_party\libpng\pnginfo.h" />
+    <ClInclude Include="..\..\third_party\libpng\pnglibconf.h" />
+    <ClInclude Include="..\..\third_party\libpng\pngprefix.h" />
+    <ClInclude Include="..\..\third_party\libpng\pngpriv.h" />
+    <ClInclude Include="..\..\third_party\libpng\pngstruct.h" />
+    <ClInclude Include="..\..\third_party\liburlpattern\options.h" />
+    <ClInclude Include="..\..\third_party\liburlpattern\parse.h" />
+    <ClInclude Include="..\..\third_party\liburlpattern\pattern.h" />
+    <ClInclude Include="..\..\third_party\liburlpattern\tokenize.h" />
+    <ClInclude Include="..\..\third_party\liburlpattern\utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dec\alphai_dec.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dec\common_dec.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dec\vp8i_dec.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dec\vp8li_dec.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dec\vp8_dec.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dec\webpi_dec.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\common_sse2.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\common_sse41.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\cpu.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\dsp.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\lossless.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\lossless_common.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\msa_macro.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\quant.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\dsp\yuv.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\enc\backward_references_enc.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\enc\cost_enc.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\enc\histogram_enc.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\enc\vp8i_enc.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\enc\vp8li_enc.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\mux\animi.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\mux\muxi.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\bit_reader_inl_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\bit_reader_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\bit_writer_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\color_cache_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\endian_inl_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\filters_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\huffman_encode_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\huffman_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\quant_levels_dec_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\quant_levels_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\random_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\rescaler_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\thread_utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\utils\utils.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\decode.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\demux.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\encode.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\format_constants.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\mux.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\mux_types.h" />
+    <ClInclude Include="..\..\third_party\libwebp\src\src\webp\types.h" />
+    <ClInclude Include="..\..\third_party\libxml\chromium\libxml_utils.h" />
+    <ClInclude Include="..\..\third_party\libxml\chromium\xml_reader.h" />
+    <ClInclude Include="..\..\third_party\libxml\chromium\xml_writer.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\c14n.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\catalog.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\chvalid.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\debugXML.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\dict.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\encoding.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\entities.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\globals.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\hash.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\HTMLparser.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\HTMLtree.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\list.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\nanoftp.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\nanohttp.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\parser.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\parserInternals.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\pattern.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\relaxng.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\SAX.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\SAX2.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\schemasInternals.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\schematron.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\threads.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\tree.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\uri.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\valid.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xinclude.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xlink.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlautomata.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlerror.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlexports.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlIO.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlmemory.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlmodule.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlreader.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlregexp.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlsave.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlschemas.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlschemastypes.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlstring.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlunicode.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xmlwriter.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xpath.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xpathInternals.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\include\libxml\xpointer.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\libxml.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\timsort.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\triodef.h" />
+    <ClInclude Include="..\..\third_party\libxml\src\trionan.h" />
+    <ClInclude Include="..\..\third_party\libxml\win32\config.h" />
+    <ClInclude Include="..\..\third_party\libxml\win32\include\libxml\xmlversion.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libexslt\exslt.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libexslt\exsltexports.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libexslt\libexslt.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\attributes.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\documents.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\extensions.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\extra.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\functions.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\imports.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\keys.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\libxslt.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\namespaces.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\numbersInternals.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\pattern.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\preproc.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\security.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\templates.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\transform.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\trio.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\triodef.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\variables.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\win32config.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\xslt.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\xsltconfig.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\xsltexports.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\xsltInternals.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\xsltlocale.h" />
+    <ClInclude Include="..\..\third_party\libxslt\src\libxslt\xsltutils.h" />
+    <ClInclude Include="..\..\third_party\libxslt\win32\config.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\basic_types.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\compare.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\compare_row.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\convert.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\convert_argb.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\convert_from.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\convert_from_argb.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\cpu_id.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\loongson_intrinsics.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\macros_msa.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\mjpeg_decoder.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\planar_functions.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\rotate.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\rotate_argb.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\rotate_row.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\row.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\scale.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\scale_argb.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\scale_rgb.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\scale_row.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\scale_uv.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\version.h" />
+    <ClInclude Include="..\..\third_party\libyuv\include\libyuv\video_common.h" />
+    <ClInclude Include="..\..\third_party\libyuv\util\psnr.h" />
+    <ClInclude Include="..\..\third_party\libyuv\util\ssim.h" />
+    <ClInclude Include="..\..\third_party\modp_b64\modp_b64.h" />
+    <ClInclude Include="..\..\third_party\modp_b64\modp_b64_data.h" />
+    <ClInclude Include="..\..\third_party\ots\src\include\opentype-sanitiser.h" />
+    <ClInclude Include="..\..\third_party\ots\src\include\ots-memory-stream.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\avar.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\cff.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\cff_charstring.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\cmap.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\cvar.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\cvt.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\feat.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\fpgm.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\fvar.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\gasp.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\gdef.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\glat.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\gloc.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\glyf.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\gpos.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\graphite.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\gsub.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\gvar.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\hdmx.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\head.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\hhea.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\hmtx.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\hvar.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\kern.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\layout.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\loca.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\ltsh.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\math_.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\maxp.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\metrics.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\mvar.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\name.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\os2.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\ots.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\post.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\prep.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\sile.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\silf.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\sill.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\stat.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\variations.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\vdmx.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\vhea.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\vmtx.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\vorg.h" />
+    <ClInclude Include="..\..\third_party\ots\src\src\vvar.h" />
+    <ClInclude Include="..\..\third_party\woff2\include\woff2\decode.h" />
+    <ClInclude Include="..\..\third_party\woff2\include\woff2\encode.h" />
+    <ClInclude Include="..\..\third_party\woff2\include\woff2\output.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\buffer.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\file.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\font.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\glyph.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\normalize.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\port.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\round.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\store_bytes.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\table_tags.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\transform.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\variable_length.h" />
+    <ClInclude Include="..\..\third_party\woff2\src\woff2_common.h" />
+    <ClInclude Include="..\..\third_party\zlib\adler32_simd.h" />
+    <ClInclude Include="..\..\third_party\zlib\chromeconf.h" />
+    <ClInclude Include="..\..\third_party\zlib\cpu_features.h" />
+    <ClInclude Include="..\..\third_party\zlib\crc32.h" />
+    <ClInclude Include="..\..\third_party\zlib\crc32_simd.h" />
+    <ClInclude Include="..\..\third_party\zlib\deflate.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\compression_utils.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\compression_utils_portable.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\redact.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\zip.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\zip_internal.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\zip_reader.h" />
+    <ClInclude Include="..\..\third_party\zlib\google\zip_writer.h" />
+    <ClInclude Include="..\..\third_party\zlib\gzguts.h" />
+    <ClInclude Include="..\..\third_party\zlib\inffast.h" />
+    <ClInclude Include="..\..\third_party\zlib\inffixed.h" />
+    <ClInclude Include="..\..\third_party\zlib\inflate.h" />
+    <ClInclude Include="..\..\third_party\zlib\inftrees.h" />
+    <ClInclude Include="..\..\third_party\zlib\slide_hash_simd.h" />
+    <ClInclude Include="..\..\third_party\zlib\trees.h" />
+    <ClInclude Include="..\..\third_party\zlib\zconf.h" />
+    <ClInclude Include="..\..\third_party\zlib\zlib.h" />
+    <ClInclude Include="..\..\third_party\zlib\zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\brotli\common\constants.c" />
+    <ClCompile Include="..\..\third_party\brotli\common\context.c" />
+    <ClCompile Include="..\..\third_party\brotli\common\dictionary.c" />
+    <ClCompile Include="..\..\third_party\brotli\common\platform.c" />
+    <ClCompile Include="..\..\third_party\brotli\common\shared_dictionary.c" />
+    <ClCompile Include="..\..\third_party\brotli\common\transform_brotli.c" />
+    <ClCompile Include="..\..\third_party\brotli\dec\bit_reader.c" />
+    <ClCompile Include="..\..\third_party\brotli\dec\decode.c" />
+    <ClCompile Include="..\..\third_party\brotli\dec\huffman.c" />
+    <ClCompile Include="..\..\third_party\brotli\dec\state.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\backward_references.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\backward_references_hq.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\bit_cost.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\block_splitter.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\brotli_bit_stream.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\cluster.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\command.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\compound_dictionary.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\compress_fragment.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\compress_fragment_two_pass.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\dictionary_hash.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\encode.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\encoder_dict.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\entropy_encode.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\fast_log.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\histogram.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\literal_cost.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\memory.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\metablock.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\static_dict.c" />
+    <ClCompile Include="..\..\third_party\brotli\enc\utf8_util.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\cdef_apply_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\cdef_init_tmpl_x86_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\cdef_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\fg_apply_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\filmgrain_init_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\filmgrain_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\ipred_init_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\ipred_prepare_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\ipred_tmpl_16_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\itx_init_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\itx_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\lf_apply_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\loopfilter_init_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\loopfilter_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\looprestoration_init_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\looprestoration_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\lr_apply_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\mc_init_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\mc_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\bitdepth16\recon_tmpl_16.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\cdef_apply_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\cdef_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\cdf.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\cpu_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\data_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\decode_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\dequant_tables.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\fg_apply_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\filmgrain_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\getbits.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\intra_edge.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\ipred_prepare_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\ipred_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\itx_1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\itx_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\lf_apply_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\lf_mask.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\lib_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\log_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\loopfilter_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\looprestoration_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\lr_apply_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\mc_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\mem_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\msac_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\obu_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\picture.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\qm_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\recon_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\refmvs_.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\ref_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\scan_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\tables_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\thread_task.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\warpmv.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\wedge.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\win32\thread_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\cdef_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\cpu_x86_dav1d.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\itx_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\loopfilter_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\mc_init_tmpl.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\msac_init.c" />
+    <ClCompile Include="..\..\third_party\dav1d\libdav1d\src\x86\refmvs_init.c" />
+    <ClCompile Include="..\..\third_party\iccjpeg\iccjpeg.c" />
+    <ClCompile Include="..\..\third_party\libavif\src\src\avif.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\avif_alpha.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\codec_dav1d.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\colr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\diag.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\exif.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\io.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\mem.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\obu.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\rawdata.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\read.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\reformat.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\reformat_libsharpyuv.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\reformat_libyuv.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\scale_avif.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\stream.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\utils_avif.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libavif\src\src\write.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\libcurl\src\amigaos.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\asyn-thread.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\base64.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\conncache.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\connect.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\content_encoding.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cookie.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_addrinfo.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_ctype.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_des.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_dict.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_endian.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_fnmatch.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_gethostname.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_gssapi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_hash.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_memrchr.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_multibyte.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_ntlm_core.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_ntlm_wb.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_path.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_range.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_rtmp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_sasl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_security.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_threads.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\dotdot.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\easy.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\escape.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\file.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\fileinfo.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\formdata.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\ftp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\ftplistparser.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\getenv.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\getinfo.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\gopher.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hmac.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hostasyn.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hostcheck.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hostip.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hostip4.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hostip6.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hostsyn.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http2.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http_chunks.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http_digest.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http_negotiate.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http_ntlm.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http_proxy.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\idn_win32.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\if2ip.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\imap.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\inet_ntop.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\inet_pton.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\krb5.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\ldap.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\llist.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\md4.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\md5.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\memdebug.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\mime.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\mprintf.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\multi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\netrc.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\non-ascii.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\nonblock.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\nwlib.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\nwos.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\openldap.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\parsedate.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\pingpong.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\pipeline.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\pop3.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\progress.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\psl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\rand.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\rtsp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\select.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\sendf.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\setopt.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\sha256.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\share.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\slist.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\smb.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\smtp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\socks.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\socks_gssapi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\socks_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\speedcheck.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\splay.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\ssh-libssh.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\ssh.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\strcase.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\strdup.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\strerror.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\strtok.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\strtoofft.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\system_win32.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\telnet.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\tftp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\timeval.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\transfer.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\url.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\cleartext.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\cram.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\digest.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\digest_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\krb5_gssapi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\krb5_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\ntlm.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\ntlm_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\oauth2.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\spnego_gssapi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\spnego_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\vauth.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\version.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\axtls.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\cyassl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\darwinssl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\gskit.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\gtls.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\mbedtls.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\nss.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\openssl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\polarssl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\polarssl_threadlock.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\schannel.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\schannel_verify.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\vtls.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\warnless.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\wildcard.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\x509asn1.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\cdjpeg.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jaricom.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcapimin.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcapistd.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcarith.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jccoefct.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jccolor.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcdctmgr.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jchuff.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcicc.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcinit.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcmainct.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcmarker.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcmaster.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcomapi.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcparam.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcphuff.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcprepct.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jcsample.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jctrans.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdapimin.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdapistd.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdatadst-tj.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdatadst.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdatasrc-tj.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdatasrc.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdcoefct.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdcolor.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jddctmgr.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdhuff.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdicc.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdinput.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdmainct.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdmarker.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdmaster.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdmerge.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdphuff.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdpostct.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdsample.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jdtrans.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jerror.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jfdctflt.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jfdctfst.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jfdctint.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jidctflt.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jidctfst.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jidctint.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jidctred.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jmemmgr.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jmemnobs.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jpeg_nbits_table.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jquant1.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jquant2.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jsimd_none.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\jutils.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\rdbmp.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\rdcolmap.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\rdgif.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\rdppm.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\rdswitch.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\rdtarga.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\tjutil.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\transupp.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\turbojpeg.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\wrbmp.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\wrgif.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\wrppm.c" />
+    <ClCompile Include="..\..\third_party\libjpeg_turbo\wrtarga.c" />
+    <ClCompile Include="..\..\third_party\libpng\intel\filter_sse2_intrinsics.c" />
+    <ClCompile Include="..\..\third_party\libpng\intel\intel_init.c" />
+    <ClCompile Include="..\..\third_party\libpng\png.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngerror.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngget.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngmem.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngpread.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngread.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngrio.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngrtran.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngrutil.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngset.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngtrans.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngwio.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngwrite.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngwtran.c" />
+    <ClCompile Include="..\..\third_party\libpng\pngwutil.c" />
+    <ClCompile Include="..\..\third_party\liburlpattern\url_parse.cc" />
+    <ClCompile Include="..\..\third_party\liburlpattern\url_pattern.cc" />
+    <ClCompile Include="..\..\third_party\liburlpattern\url_tokenize.cc" />
+    <ClCompile Include="..\..\third_party\liburlpattern\url_utils.cc" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\alpha_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\buffer_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\frame_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\idec_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\io_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\quant_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\tree_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\vp8l_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\vp8_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dec\webp_dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\demux\anim_decode.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\demux\demux.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\alpha_processing.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\alpha_processing_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\cost.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\cost_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\cpu.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\dec.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\dec_clip_tables.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\dec_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\dec_sse41.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\enc_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\enc_sse41.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\filters.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\filters_mips_dsp_r2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\filters_msa.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\filters_neon.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\filters_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\lossless.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\lossless_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\lossless_enc_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\lossless_enc_sse41.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\lossless_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\lossless_sse41.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\rescaler.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\rescaler_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\ssim.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\ssim_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\upsampling.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\upsampling_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\upsampling_sse41.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\yuv.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\yuv_neon.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\yuv_sse2.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\dsp\yuv_sse41.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\alpha_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\analysis_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\backward_references_cost_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\backward_references_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\config_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\cost_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\filter_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\frame_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\histogram_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\iterator_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\near_lossless_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\picture_csp_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\picture_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\picture_psnr_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\picture_rescale_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\picture_tools_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\predictor_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\quant_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\syntax_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\token_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\tree_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\vp8l_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\enc\webp_enc.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\mux\anim_encode.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\mux\muxedit.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\mux\muxinternal.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\mux\muxread.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\bit_reader_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\bit_writer_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\color_cache_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\filters_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\huffman_encode_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\huffman_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\quant_levels_dec_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\quant_levels_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\random_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\rescaler_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\thread_utils.c" />
+    <ClCompile Include="..\..\third_party\libwebp\src\src\utils\utils.c" />
+    <ClCompile Include="..\..\third_party\libxml\chromium\libxml_utils.cc" />
+    <ClCompile Include="..\..\third_party\libxml\chromium\xml_reader.cc" />
+    <ClCompile Include="..\..\third_party\libxml\chromium\xml_writer.cc" />
+    <ClCompile Include="..\..\third_party\libxml\src\buf.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\chvalid.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\dict.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\encoding.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\entities.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\error.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\globals.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\hash.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\HTMLparser.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\HTMLtree.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\list.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\nanoftp.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\nanohttp.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\parser.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\parserInternals.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\pattern.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\SAX2.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\threads.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\tree.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\trionan.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\uri.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\valid.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlIO.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlmemory.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlreader.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlsave.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlstring.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlunicode.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xmlwriter.c" />
+    <ClCompile Include="..\..\third_party\libxml\src\xpath.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\common.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\crypto.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\date.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\dynamic.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\exslt.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\functions_exslt.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\math.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\saxon.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\sets.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libexslt\strings.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\attributes.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\attrvt.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\documents.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\extensions.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\extra.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\functions.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\imports.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\keys.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\namespaces.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\numbers.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\patternxslt.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\preproc.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\security.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\templates.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\transform.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\variables.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\xslt.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\xsltlocale.c" />
+    <ClCompile Include="..\..\third_party\libxslt\src\libxslt\xsltutils.c" />
+    <ClCompile Include="..\..\third_party\libyuv\source\compare.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\compare_common.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\compare_win.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert_argb.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert_from.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert_from_argb.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert_jpeg.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert_to_argb.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\convert_to_i420.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\cpu_id.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\mjpeg_decoder.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\mjpeg_validate.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\planar_functions.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_any.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_argb.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_common.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_gcc.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_lsx.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_mmi.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_msa.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_neon.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_neon64.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\rotate_win.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_any.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_common.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_gcc.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_lasx.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_lsx.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_mmi.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_msa.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_neon.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_neon64.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\row_win.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_any.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_argb.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_common.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_gcc.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_lsx.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_mmi.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_msa.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_neon.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_neon64.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_rgb.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_uv.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\scale_win.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\source\video_common.cc" />
+    <ClCompile Include="..\..\third_party\libyuv\util\ssim_yuv.cc" />
+    <ClCompile Include="..\..\third_party\modp_b64\modp_b64.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\avar.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\cff.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\cff_charstring.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\cmap.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\cvar.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\cvt.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\feat.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\fpgm.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\fvar.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\gasp.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\gdef.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\gloc.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\glyf.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\gpos.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\gsub.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\gvar.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\hdmx.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\head.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\hhea.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\hvar.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\kern.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\layout.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\loca.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\ltsh.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\math_ots.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\maxp.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\metrics.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\mvar.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\name.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\os2.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\ots.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\post.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\prep.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\sile.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\sill.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\stat.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\variations.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\vdmx.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\vhea.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\vorg.cc" />
+    <ClCompile Include="..\..\third_party\ots\src\src\vvar.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\font.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\glyph.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\normalize.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\table_tags.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\transform_woff2.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\variable_length.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\woff2_common.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\woff2_dec.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\woff2_enc.cc" />
+    <ClCompile Include="..\..\third_party\woff2\src\woff2_out.cc" />
+    <ClCompile Include="..\..\third_party\zlib\adler32.c" />
+    <ClCompile Include="..\..\third_party\zlib\adler32_simd.c" />
+    <ClCompile Include="..\..\third_party\zlib\compress.c" />
+    <ClCompile Include="..\..\third_party\zlib\cpu_features.c" />
+    <ClCompile Include="..\..\third_party\zlib\crc32.c" />
+    <ClCompile Include="..\..\third_party\zlib\crc32_simd.c" />
+    <ClCompile Include="..\..\third_party\zlib\crc_folding.c" />
+    <ClCompile Include="..\..\third_party\zlib\deflate.c" />
+    <ClCompile Include="..\..\third_party\zlib\google\compression_utils.cc" />
+    <ClCompile Include="..\..\third_party\zlib\google\compression_utils_portable.cc" />
+    <ClCompile Include="..\..\third_party\zlib\google\zip_internal.cc" />
+    <ClCompile Include="..\..\third_party\zlib\google\zip_reader.cc" />
+    <ClCompile Include="..\..\third_party\zlib\google\zip_writer.cc" />
+    <ClCompile Include="..\..\third_party\zlib\gzclose.c" />
+    <ClCompile Include="..\..\third_party\zlib\gzlib.c" />
+    <ClCompile Include="..\..\third_party\zlib\gzread.c" />
+    <ClCompile Include="..\..\third_party\zlib\gzwrite.c" />
+    <ClCompile Include="..\..\third_party\zlib\infback.c" />
+    <ClCompile Include="..\..\third_party\zlib\inffast.c" />
+    <ClCompile Include="..\..\third_party\zlib\inflate.c" />
+    <ClCompile Include="..\..\third_party\zlib\inftrees.c" />
+    <ClCompile Include="..\..\third_party\zlib\trees.c" />
+    <ClCompile Include="..\..\third_party\zlib\uncompr.c" />
+    <ClCompile Include="..\..\third_party\zlib\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\third_party\dav1d\libdav1d\src\dav1d.rc.in" />
+    <None Include="..\..\third_party\dav1d\libdav1d\src\meson.build" />
+    <None Include="..\..\third_party\libxslt\src\libxslt\libxslt.3" />
+    <None Include="..\..\third_party\libxslt\src\libxslt\libxslt.syms" />
+    <None Include="..\..\third_party\libxslt\src\libxslt\Makefile.am" />
+    <None Include="..\..\third_party\libxslt\src\libxslt\xsltconfig.h.in" />
+    <None Include="..\..\third_party\libyuv\source\test.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\cdef16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\cdef16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\cdef_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\cdef_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\cdef_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\cpuid.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain16_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\filmgrain_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred16_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\ipred_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\itx16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\itx16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\itx_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\itx_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\itx_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\loopfilter16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\loopfilter16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\loopfilter_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\loopfilter_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\loopfilter_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration16_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\looprestoration_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\mc16_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\mc16_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\mc16_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\mc_avx2.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\mc_avx512.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\mc_sse.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\msac.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+    <NASM Include="..\..\third_party\dav1d\libdav1d\src\x86\refmvs.asm">
+      <FileType>Document</FileType>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</ErrorReportingFormat>
+    </NASM>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{A9936F16-FCFA-4F0F-BAB5-BB8D7FB2E3DC}</ProjectGuid>
+    <RootNamespace>base</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+    <Import Project="$(ProgramFiles) (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\BuildCustomizations\nasm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X86;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/sanitizer/inculude;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/libyuv/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libavif/src/include;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/libwebp/src;$(SolutionDir)../third_party/libxml;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libcurl/src;$(SolutionDir)../third_party/libcurl/include;$(SolutionDir)../third_party/openssl/;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/dav1d/libdav1d;$(SolutionDir)../third_party/dav1d/libdav1d/include;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src;$(SolutionDir)../gen;$(SolutionDir)../</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DisableSpecificWarnings>4530</DisableSpecificWarnings>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <NASM>
+      <IncludePaths>$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat>1</ErrorReportingFormat>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X86;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/sanitizer/inculude;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/libyuv/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libavif/src/include;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/libwebp/src;$(SolutionDir)../third_party/libxml;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libcurl/src;$(SolutionDir)../third_party/libcurl/include;$(SolutionDir)../third_party/openssl/;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/dav1d/libdav1d;$(SolutionDir)../third_party/dav1d/libdav1d/include;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src;$(SolutionDir)../gen;$(SolutionDir)../</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalOptions>-mno-avx %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <NASM>
+      <IncludePaths>$(SolutionDir)../third_party/dav1d/config/win/x86;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <ErrorReportingFormat>1</ErrorReportingFormat>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/sanitizer/inculude;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/libyuv/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libavif/src/include;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/libwebp/src;$(SolutionDir)../third_party/libxml;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libcurl/src;$(SolutionDir)../third_party/libcurl/include;$(SolutionDir)../third_party/openssl/;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/dav1d/libdav1d;$(SolutionDir)../third_party/dav1d/libdav1d/include;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src;$(SolutionDir)../gen;$(SolutionDir)../</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <NASM>
+      <IncludePaths>$(SolutionDir)../third_party/dav1d/config/win/x64;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>-fwin64 %(AdditionalOptions)</AdditionalOptions>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/sanitizer/inculude;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/libyuv/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libavif/src/include;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/libwebp/src;$(SolutionDir)../third_party/libxml;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libcurl/src;$(SolutionDir)../third_party/libcurl/include;$(SolutionDir)../third_party/openssl/;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/dav1d/libdav1d;$(SolutionDir)../third_party/dav1d/libdav1d/include;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src;$(SolutionDir)../gen;$(SolutionDir)../</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <NASM>
+      <IncludePaths>$(SolutionDir)../third_party/dav1d/config/win/x64;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>-fwin64 %(AdditionalOptions)</AdditionalOptions>
+    </NASM>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+    <Import Project="$(ProgramFiles) (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\BuildCustomizations\nasm.targets" />
+  </ImportGroup>
+</Project>

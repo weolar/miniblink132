@@ -1,0 +1,1574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{b0142d20-74a8-4e32-84b7-019f1bf225e0}</ProjectGuid>
+    <RootNamespace>miniblink108</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <ProjectName>miniblink132</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;OS_WIN;MINIBLINK108_EXPORTS;_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;V8_ENABLE_CHECKS;V8_USE_EXTERNAL_STARTUP_DATA;_USRDLL;USE_AURA;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4003;4819;4291;4530;4530;4334</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\out\debug\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)miniblink108_d.exe</OutputFile>
+    </Link>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;OS_WIN;MINIBLINK108_EXPORTS;_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;V8_USE_EXTERNAL_STARTUP_DATA;_USRDLL;USE_AURA;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4003;4819;4291;4530;4530;4334</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalOptions>-mno-avx %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)miniblink108.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\out\release\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;OS_WIN;MINIBLINK108_EXPORTS;WIN32_LEAN_AND_MEAN;_WINDOWS;NOMINMAX;_USRDLL;USE_AURA;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;OS_WIN;MINIBLINK108_EXPORTS;WIN32_LEAN_AND_MEAN;_WINDOWS;NOMINMAX;_USRDLL;USE_AURA;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\bignum-dtoa.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\bignum.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\cached-powers.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\diy-fp.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\double-conversion.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\double-to-string.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\fast-dtoa.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\fixed-dtoa.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\ieee.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\string-to-double.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\strtod.h" />
+    <ClInclude Include="..\..\base\third_party\double_conversion\double-conversion\utils.h" />
+    <ClInclude Include="..\..\content\browser\BackForwardCacheControllerHostImpl.h" />
+    <ClInclude Include="..\..\content\browser\BroadcastChannelProviderImpl.h" />
+    <ClInclude Include="..\..\content\browser\DomStorageProviderImpl.h" />
+    <ClInclude Include="..\..\content\browser\FileChooserImpl.h" />
+    <ClInclude Include="..\..\content\browser\LocalFrameHostImpl.h" />
+    <ClInclude Include="..\..\content\browser\LocalMainFrameHostImpl.h" />
+    <ClInclude Include="..\..\content\browser\MbWebview.h" />
+    <ClInclude Include="..\..\content\browser\PageNavController.h" />
+    <ClInclude Include="..\..\content\browser\QuotaManagerHostImpl.h" />
+    <ClInclude Include="..\..\content\browser\RenderWidgetHostImpl.h" />
+    <ClInclude Include="..\..\content\browser\RestrictedCookieManagerImpl.h" />
+    <ClInclude Include="..\..\content\browser\SharedTimerWin.h" />
+    <ClInclude Include="..\..\content\browser\TimeZoneMonitorImpl.h" />
+    <ClInclude Include="..\..\content\browser\WebFrameMain.h" />
+    <ClInclude Include="..\..\content\common\BindJsQuery.h" />
+    <ClInclude Include="..\..\content\common\common.h" />
+    <ClInclude Include="..\..\content\common\CreateAndBindTempl.h" />
+    <ClInclude Include="..\..\content\common\LiveIdDetect.h" />
+    <ClInclude Include="..\..\content\common\mbchar.h" />
+    <ClInclude Include="..\..\content\common\MojoObjGc.h" />
+    <ClInclude Include="..\..\content\common\StringConversions.h" />
+    <ClInclude Include="..\..\content\common\StringUtil.h" />
+    <ClInclude Include="..\..\content\common\ThreadCall.h" />
+    <ClInclude Include="..\..\content\common\UrlUtil.h" />
+    <ClInclude Include="..\..\content\common\WebMimeRegistryImpl.h" />
+    <ClInclude Include="..\..\content\renderer\AssociatedInterfaceProviderImpl.h" />
+    <ClInclude Include="..\..\content\renderer\AttributionHostImpl.h" />
+    <ClInclude Include="..\..\content\renderer\BlinkInterfaceRegistryImpl.h" />
+    <ClInclude Include="..\..\content\renderer\BlobRegistryImpl.h" />
+    <ClInclude Include="..\..\content\renderer\BlobURLStoreImpl.h" />
+    <ClInclude Include="..\..\content\renderer\ClipboardHostImpl.h" />
+    <ClInclude Include="..\..\content\renderer\ContentSecurityNotifierImpl.h" />
+    <ClInclude Include="..\..\content\renderer\DataHostImpl.h" />
+    <ClInclude Include="..\..\content\renderer\NoStatePrefetchProcessorImpl.h" />
+    <ClInclude Include="..\..\content\renderer\PermissionServiceImpl.h" />
+    <ClInclude Include="..\..\content\renderer\PlatformEventHandler.h" />
+    <ClInclude Include="..\..\content\renderer\PluginRegistryImpl.h" />
+    <ClInclude Include="..\..\content\renderer\PolicyContainerHostImpl.h" />
+    <ClInclude Include="..\..\content\renderer\RendererBlinkPlatformImpl.h" />
+    <ClInclude Include="..\..\content\renderer\RenderThreadImpl.h" />
+    <ClInclude Include="..\..\content\renderer\ReportingServiceProxyImpl.h" />
+    <ClInclude Include="..\..\content\renderer\V8ValueConverter.h" />
+    <ClInclude Include="..\..\content\renderer\V8ValueConverterImpl.h" />
+    <ClInclude Include="..\..\content\renderer\WebDedicatedWorkerHostFactoryClientImpl.h" />
+    <ClInclude Include="..\..\content\renderer\WebLocalFrameClientImpl.h" />
+    <ClInclude Include="..\..\content\renderer\WebViewClientImpl.h" />
+    <ClInclude Include="..\..\content\renderer\WebWorkerFetchContextImpl.h" />
+    <ClInclude Include="..\..\content\resources\MediaControls.h" />
+    <ClInclude Include="..\..\content\resources\res.h" />
+    <ClInclude Include="..\..\content\ui\ClipboardUtil.h" />
+    <ClInclude Include="..\..\content\ui\ContextMeun.h" />
+    <ClInclude Include="..\..\content\ui\ToolTip.h" />
+    <ClInclude Include="..\..\content\viz\OffscreenDisplayClient.h" />
+    <ClInclude Include="..\..\content\viz\SerializeCF.h" />
+    <ClInclude Include="..\..\content\viz\VizClient.h" />
+    <ClInclude Include="..\..\content\viz\VizHost.h" />
+    <ClInclude Include="..\..\content\viz\VizService.h" />
+    <ClInclude Include="..\..\crypto\openssl_util.h" />
+    <ClInclude Include="..\..\crypto\random.h" />
+    <ClInclude Include="..\..\linux\linuxgdi.h" />
+    <ClInclude Include="..\..\linux\linuxgl.h" />
+    <ClInclude Include="..\..\linux\windows.h" />
+    <ClInclude Include="..\..\mbnet\BlobResourceLoader.h" />
+    <ClInclude Include="..\..\mbnet\cookies\CookieJarMgr.h" />
+    <ClInclude Include="..\..\mbnet\cookies\WebCookieJarCurlImpl.h" />
+    <ClInclude Include="..\..\mbnet\DataURL.h" />
+    <ClInclude Include="..\..\mbnet\DefaultLocalStorageDir.h" />
+    <ClInclude Include="..\..\mbnet\DownloadBlobUrl.h" />
+    <ClInclude Include="..\..\mbnet\FlattenHTTPBodyElement.h" />
+    <ClInclude Include="..\..\mbnet\LoaderFactoryImpl.h" />
+    <ClInclude Include="..\..\mbnet\PageNetExtraData.h" />
+    <ClInclude Include="..\..\mbnet\SingleRequestURLLoader.h" />
+    <ClInclude Include="..\..\mbnet\websocket\SocketStreamError.h" />
+    <ClInclude Include="..\..\mbnet\websocket\SocketStreamErrorBase.h" />
+    <ClInclude Include="..\..\mbnet\websocket\SocketStreamHandle.h" />
+    <ClInclude Include="..\..\mbnet\websocket\SocketStreamHandleBase.h" />
+    <ClInclude Include="..\..\mbnet\websocket\SocketStreamHandleClient.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketChannelCurl.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketDeflateFramer.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketDeflater.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketExtensionDispatcher.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketExtensionParser.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketExtensionProcessor.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketHandshake.h" />
+    <ClInclude Include="..\..\mbnet\websocket\WebSocketOneFrame.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderImplCurl.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderInternal.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderManager.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderManagerAsynTask.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderManagerMainTask.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderManagerSetupInfo.h" />
+    <ClInclude Include="..\..\mbnet\WebURLLoaderManagerUtil.h" />
+    <ClInclude Include="..\..\mbnet\WebURLRequestExtraDataWrap.h" />
+    <ClInclude Include="..\..\mbvip\common\CallbackClosure.h" />
+    <ClInclude Include="..\..\mbvip\core\mb.h" />
+    <ClInclude Include="..\..\mbvip\core\MbInternalApi.h" />
+    <ClInclude Include="..\..\mbvip\core\MbJsValue.h" />
+    <ClInclude Include="..\..\mbvip\download\DownloadUtil.h" />
+    <ClInclude Include="..\..\mbvip\download\SimpleDownload.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\base\big_buffer.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\base\big_buffer_mojom_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\base\shared_memory_version.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\array_data_view.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\array_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\associated_receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\associated_receiver_set.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\associated_remote.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\async_flusher.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\clone_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\connection_error_callback.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\deprecated_interface_types_forward.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\enum_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\equals_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\generic_pending_associated_receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\generic_pending_receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\interface_data_view.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\interface_id.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\array_internal.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\bindings_internal.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\bindings_internal_struct.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\buffer.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\control_message_handler.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\interface_ptr_state.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\interface_serialization.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\map_data_internal.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\message_fragment.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\message_internal.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\native_enum_data.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\serialization.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\serialization_forward.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\serialization_util.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\template_util.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\unserialized_message_context.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\validate_params.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\validation_errors.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\validation_util.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\wtf_clone_equals_util.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\lib\wtf_hash_util.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\map_data_view.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\message.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\pending_associated_receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\pending_associated_remote.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\pending_flush.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\pending_receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\pending_remote.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\raw_ptr_impl_ref_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\receiver_set.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\remote.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\scoped_interface_endpoint_handle.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\self_owned_receiver.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\string_data_view.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\string_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\string_traits_stl.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\string_traits_string_piece.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\string_traits_wtf.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\struct_forward.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\struct_ptr.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\struct_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\type_converter.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\union_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\unique_associated_receiver_set.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\unique_ptr_impl_ref_traits.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\bindings\unique_receiver_set.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\mojo_lite_msg.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\buffer.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\data_pipe.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\handle.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\message.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\message_pipe.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\simple_watcher.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\system_export.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\trap.h" />
+    <ClInclude Include="..\..\mojo\public\cpp\system\wait.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\buffer.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\core.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\data_pipe.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\functions.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\invitation.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\macros.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\message_pipe.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\platform_handle.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\quota.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\system_export.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\thunks.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\trap.h" />
+    <ClInclude Include="..\..\mojo\public\c\system\types.h" />
+    <ClInclude Include="..\..\net\base\auth.h" />
+    <ClInclude Include="..\..\net\base\data_url.h" />
+    <ClInclude Include="..\..\net\base\filename_util.h" />
+    <ClInclude Include="..\..\net\base\host_port_pair.h" />
+    <ClInclude Include="..\..\net\base\ip_address.h" />
+    <ClInclude Include="..\..\net\base\ip_endpoint.h" />
+    <ClInclude Include="..\..\net\base\isolation_info.h" />
+    <ClInclude Include="..\..\net\base\load_timing_info.h" />
+    <ClInclude Include="..\..\net\base\lookup_string_in_fixed_set.h" />
+    <ClInclude Include="..\..\net\base\mime_sniffer.h" />
+    <ClInclude Include="..\..\net\base\mime_util.h" />
+    <ClInclude Include="..\..\net\base\network_anonymization_key.h" />
+    <ClInclude Include="..\..\net\base\net_errors.h" />
+    <ClInclude Include="..\..\net\base\net_error_details.h" />
+    <ClInclude Include="..\..\net\base\net_error_list.h" />
+    <ClInclude Include="..\..\net\base\parse_number.h" />
+    <ClInclude Include="..\..\net\base\platform_mime_util.h" />
+    <ClInclude Include="..\..\net\base\port_util.h" />
+    <ClInclude Include="..\..\net\base\proxy_chain.h" />
+    <ClInclude Include="..\..\net\base\proxy_server.h" />
+    <ClInclude Include="..\..\net\base\registry_controlled_domains\registry_controlled_domain.h" />
+    <ClInclude Include="..\..\net\base\schemeful_site.h" />
+    <ClInclude Include="..\..\net\base\url_util.h" />
+    <ClInclude Include="..\..\net\cert\ct_sct_to_string.h" />
+    <ClInclude Include="..\..\net\cert\ocsp_verify_result.h" />
+    <ClInclude Include="..\..\net\cert\signed_certificate_timestamp.h" />
+    <ClInclude Include="..\..\net\cert\signed_certificate_timestamp_and_status.h" />
+    <ClInclude Include="..\..\net\cookies\canonical_cookie.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_access_params.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_access_result.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_base.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_constants.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_inclusion_status.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_options.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_partition_key.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_partition_key_collection.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_setting_override.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_switches.h" />
+    <ClInclude Include="..\..\net\cookies\cookie_util.h" />
+    <ClInclude Include="..\..\net\cookies\parsed_cookie.h" />
+    <ClInclude Include="..\..\net\cookies\site_for_cookies.h" />
+    <ClInclude Include="..\..\net\dns\public\resolve_error_info.h" />
+    <ClInclude Include="..\..\net\http\http_byte_range.h" />
+    <ClInclude Include="..\..\net\http\http_connection_info.h" />
+    <ClInclude Include="..\..\net\http\http_content_disposition.h" />
+    <ClInclude Include="..\..\net\http\http_request_headers.h" />
+    <ClInclude Include="..\..\net\http\http_response_headers.h" />
+    <ClInclude Include="..\..\net\http\http_util.h" />
+    <ClInclude Include="..\..\net\http\structured_headers.h" />
+    <ClInclude Include="..\..\net\log\net_log_source.h" />
+    <ClInclude Include="..\..\net\socket\socket_tag.h" />
+    <ClInclude Include="..\..\net\ssl\ssl_info.h" />
+    <ClInclude Include="..\..\net\url_request\redirect_info.h" />
+    <ClInclude Include="..\..\net\url_request\redirect_util.h" />
+    <ClInclude Include="..\..\net\url_request\referrer_policy.h" />
+    <ClInclude Include="..\..\net\websockets\websocket_frame.h" />
+    <ClInclude Include="..\..\patch_code\api_xp.h" />
+    <ClInclude Include="..\..\patch_code\bcrypt_xp.h" />
+    <ClInclude Include="..\..\patch_code\cfgmgr32_xp.h" />
+    <ClInclude Include="..\..\patch_code\credui_xp.h" />
+    <ClInclude Include="..\..\patch_code\dbghelp_xp.h" />
+    <ClInclude Include="..\..\patch_code\dxgi_xp.h" />
+    <ClInclude Include="..\..\patch_code\esent_xp.h" />
+    <ClInclude Include="..\..\patch_code\fibersapi_xp.h" />
+    <ClInclude Include="..\..\patch_code\local_name_xp.h" />
+    <ClInclude Include="..\..\patch_code\mfapi_xp.h" />
+    <ClInclude Include="..\..\patch_code\ncrypt_xp.h" />
+    <ClInclude Include="..\..\patch_code\ndfapi_xp.h" />
+    <ClInclude Include="..\..\patch_code\netioapi_xp.h" />
+    <ClInclude Include="..\..\patch_code\powersetting_xp.h" />
+    <ClInclude Include="..\..\patch_code\propidl_xp.h" />
+    <ClInclude Include="..\..\patch_code\propsys_xp.h" />
+    <ClInclude Include="..\..\patch_code\query_full_process_image_name.h" />
+    <ClInclude Include="..\..\patch_code\setupapi_xp.h" />
+    <ClInclude Include="..\..\patch_code\shell_api_xp.h" />
+    <ClInclude Include="..\..\patch_code\simple_tls.h" />
+    <ClInclude Include="..\..\patch_code\std_condition_variable.h" />
+    <ClInclude Include="..\..\patch_code\std_mutex_xp.h" />
+    <ClInclude Include="..\..\patch_code\sync_xp.h" />
+    <ClInclude Include="..\..\patch_code\threadpoolapiset_xp.h" />
+    <ClInclude Include="..\..\patch_code\thread_safe_static_local.h" />
+    <ClInclude Include="..\..\patch_code\ui_automation_core_xp.h" />
+    <ClInclude Include="..\..\patch_code\user_api_xp.h" />
+    <ClInclude Include="..\..\patch_code\winevt_xp.h" />
+    <ClInclude Include="..\..\patch_code\winreg_xp.h" />
+    <ClInclude Include="..\..\patch_code\win_usb_xp.h" />
+    <ClInclude Include="..\..\patch_code\ws2tcpip_xp.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\action_after_pagehide.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\associated_interfaces\associated_interface_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\associated_interfaces\associated_interface_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\attribution_reporting\constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\blob\blob_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\browser_interface_broker_proxy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\cache_storage\cache_storage_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\chrome_debug_urls.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\client_hints\client_hints.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\client_hints\enabled_client_hints.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\common_export.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\context_menu_data\context_menu_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\context_menu_data\context_menu_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\context_menu_data\context_menu_params_builder.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\context_menu_data\edit_flags.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\context_menu_data\menu_item_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\context_menu_data\untrustworthy_context_menu_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\css\forced_colors.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\css\navigation_controls.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\css\page_orientation.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\css\page_size_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\custom_handlers\protocol_handler_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\device_memory\approximated_device_memory.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\dom_storage\session_storage_namespace_id.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\dwrite_rasterizer_support\dwrite_rasterizer_support.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\features.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\fenced_frame\fenced_frame_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\fetch\fetch_api_request_body_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\fetch\fetch_api_request_headers_map.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\fetch\fetch_api_request_headers_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\font_unique_name_lookup\font_table_matcher.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\font_unique_name_lookup\font_table_persistence.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\font_unique_name_lookup\icu_fold_case_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\forcedark\forcedark_switches.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\fenced_frame_permissions_policies.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\fenced_frame_sandbox_flags.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\frame_ad_evidence.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\frame_ad_evidence_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\frame_owner_element_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\frame_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\frame_visual_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\frame_visual_properties_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\from_ad_state.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\fullscreen_request_token.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\payment_request_token.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\transient_allow_fullscreen.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\user_activation_state.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\frame\user_activation_update_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\history\session_history_constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\indexeddb\indexeddb_key.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\indexeddb\indexeddb_key_path.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\indexeddb\indexeddb_key_range.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\indexeddb\indexeddb_metadata.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\indexeddb\indexed_db_default_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\indexeddb\web_idb_types.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\pointer_id.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\synthetic_web_input_event_builders.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_coalesced_input_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_coalesced_input_event_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_gesture_device.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_gesture_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_input_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_input_event_attribution.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_keyboard_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_menu_source_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_mouse_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_mouse_wheel_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_pointer_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_pointer_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_touch_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\input\web_touch_point.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\interest_group\ad_auction_constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\interest_group\auction_config.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\interest_group\auction_config_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\interest_group\interest_group.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\interest_group\interest_group_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\http_body_element_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\inter_process_time_ticks_converter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\loader_constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\loading_behavior_flag.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\mime_sniffing_throttle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\mime_sniffing_url_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\network_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\record_load_histograms.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\referrer_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\resource_type_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\throttling_url_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\url_loader_factory_bundle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\url_loader_factory_bundle_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\url_loader_throttle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\loader\worker_main_script_load_parameters.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\logging\logging_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\manifest\manifest.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\manifest\manifest_icon_selector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\manifest\manifest_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\manifest\manifest_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mediastream\media_devices.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mediastream\media_devices_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mediastream\media_stream_controls.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mediastream\media_stream_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mediastream\media_stream_request.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\media\display_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\media\video_capture.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\media\watch_time_component.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\media\watch_time_reporter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\cloneable_message.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\cloneable_message_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\message_port_channel.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\message_port_descriptor.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\message_port_descriptor_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\string_message_codec.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\task_attribution_id_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\transferable_message.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\transferable_message_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\messaging\web_message_port.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\metrics\accept_language_and_content_language_usage.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\metrics\document_update_reason.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\metrics\form_element_pii_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\metrics\post_message_counter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mime_util\mime_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\mobile_metrics\mobile_friendliness.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\native_io\native_io_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\impression.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\impression_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\navigation_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\navigation_params_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\navigation_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\navigation_policy_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\prefetched_signed_exchange_info_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\navigation\resource_intercept_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\notifications\notification_constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\notifications\notification_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\notifications\notification_resources.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\notifications\platform_notification_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\oom_intervention\oom_intervention_types.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\origin_trials.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\origin_trial_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\origin_trial_public_key.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\scoped_test_origin_trial_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\trial_token.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\trial_token_result.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\origin_trials\trial_token_validator.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page\content_to_visible_time_reporter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page\drag_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page\drag_operation.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page\launching_process_state.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page\page_zoom.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page_state\page_state.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\page_state\page_state_serialization.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\peerconnection\webrtc_ip_handling_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\performance\largest_contentful_paint_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions\permission_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\document_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\document_policy_features.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\origin_with_possible_wildcards.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\permissions_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\permissions_policy_declaration.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\permissions_policy_features.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\policy_helper_public.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\permissions_policy\policy_value.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\active_sampling.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_internal_templates.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_metrics.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_metric_builder.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_sample_collector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_sample_test_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_study_document_created.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_study_settings.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiability_study_settings_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiable_sample.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiable_surface.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiable_token.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\identifiable_token_builder.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\scoped_identifiability_test_sample_collector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\privacy_budget\scoped_switch_sample_collector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\renderer_preferences\renderer_preferences.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\renderer_preferences\renderer_preferences_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\responsiveness_metrics\user_interaction_latency.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\sandbox_support\sandbox_support_mac.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\scheduler\task_attribution_id.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\scheduler\web_scheduler_tracked_feature.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\scheme_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\security\address_space_feature.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\security\protocol_handler_security_level.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\security\security_style.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\security_context\insecure_request_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\service_worker\service_worker_loader_helpers.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\service_worker\service_worker_scope_match.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\service_worker\service_worker_status_code.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\service_worker\service_worker_types.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\service_worker\service_worker_type_converters.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\shared_storage\shared_storage_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\shared_storage\shared_storage_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\sms\webotp_constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\sms\webotp_service_outcome.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\storage_key\storage_key.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\storage_key\storage_key_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\storage_key\storage_key_proto_converter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\switches.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\thread_safe_browser_interface_broker_proxy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\tokens\multi_token.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\tokens\multi_token_internal.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\tokens\tokens.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\tokens\tokens_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\tokens\token_mojom_traits_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\unique_name\unique_name_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\user_agent\user_agent_brand_version_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\user_agent\user_agent_metadata.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\user_agent\user_agent_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\use_counter\use_counter_feature.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\use_counter\use_counter_feature_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\web_cache\web_cache_resource_type_stats.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\web_package\signed_exchange_consts.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\web_package\web_package_request_matcher.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\web_preferences\web_preferences.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\web_preferences\web_preferences_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\widget\constants.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\widget\device_emulation_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\widget\device_emulation_params_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\widget\visual_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\public\common\widget\visual_properties_mojom_traits.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\audio\web_audio_device_source_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\child_url_loader_factory_bundle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\cross_variant_mojo_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\file_path_conversion.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\interface_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\internet_disconnected_web_url_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\interval_map.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\key_system_config_selector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\multi_buffer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\remote_playback_client_wrapper_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\resource_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\url_index.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\video_frame_compositor.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\webmediaplayer_delegate.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\web_encrypted_media_client_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\media\web_media_player_builder.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\media_stream_types.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\secure_display_link_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream_audio_renderer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream_audio_sink.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream_sink.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream_track.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_media_stream_video_renderer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\mediastream\web_platform_media_stream_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\remoteplayback\remote_playback_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\remoteplayback\web_remote_playback_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_error.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_network_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_object_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_provider_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_provider_context.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\service_worker\web_service_worker_registration_object_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\video_capture\web_video_capture_impl_manager.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\modules\webrtc\webrtc_logging.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\platform.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\resource_load_info_notifier_wrapper.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\resource_request_blocked_reason.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\scheduler\web_agent_group_scheduler.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\scheduler\web_rail_mode_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\scheduler\web_renderer_process_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\scheduler\web_resource_loading_task_runner_handle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\scheduler\web_scoped_virtual_time_pauser.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\scheduler\web_thread_scheduler.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\task_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\tracked_child_url_loader_factory_bundle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\url_conversion.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\url_loader_throttle_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\user_metrics_action.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\weak_wrapper_resource_load_info_notifier.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\webaudiosourceprovider_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\websocket_handshake_throttle.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\websocket_handshake_throttle_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_archive_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_audio_bus.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_audio_device.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_audio_latency_hint.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_audio_sink_descriptor.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_audio_source_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_back_forward_cache_loader_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_blob_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_cache.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_callbacks.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_code_cache_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_common.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_computed_ax_tree.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_connection_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_decryption_module.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_decryption_module_access.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_decryption_module_exception.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_decryption_module_result.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_decryption_module_session.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_security_policy_struct.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_content_settings_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_crypto.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_crypto_algorithm.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_crypto_algorithm_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_crypto_key.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_crypto_key_algorithm.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_crypto_key_algorithm_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_dedicated_or_shared_worker_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_dedicated_worker.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_dedicated_worker_host_factory_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_distillability.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_document_subresource_filter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_drag_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_effective_connection_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_encoding_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_encrypted_media_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_encrypted_media_key_information.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_encrypted_media_request.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_encrypted_media_types.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_fenced_frame_reporting.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_fetch_client_settings_object.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_file_system_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_font.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_font_description.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_font_prewarmer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_font_rendering_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_font_render_style.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_frame_request_blocker.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_fullscreen_video_status.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_gesture_curve.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_graphics_context_3d_provider.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_http_body.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_http_header_visitor.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_icon_sizes_parser.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_image_generator.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_inband_text_track.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_inband_text_track_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_input_event_result.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_isolated_world_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_loader_freeze_mode.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_key_system_configuration.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_key_system_media_capability.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_player.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_player_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_player_encrypted_media_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_player_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_media_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_memory_pressure_listener.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_navigation_body_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_network_state_notifier.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_policy_container.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_prescient_networking.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_private_ptr.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_request_peer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_resource_request_sender.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_resource_request_sender_delegate.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_runtime_features.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_scoped_page_pauser.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_scrollbar_overlay_color_theme.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_scroll_anchor_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_security_origin.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_set_sink_id_callbacks.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_source_buffer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_source_buffer_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_source_location.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_spell_check_panel_host_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_string.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_surface_layer_bridge.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_texttrack_metadata.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_text_input_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_text_input_mode.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_text_input_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_text_run.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_theme_engine.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_thread_safe_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_time_range.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_touch_action.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_error.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_loader_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_loader_factory.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_loader_mock_factory.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_loader_test_delegate.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_request.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_request_extra_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_request_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_url_response.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_v8_value_converter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_vector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_video_frame_submitter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\platform\web_worker_fetch_context.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\blink.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\autofill\web_form_element_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\autofill_assistant\node_signals.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\mediastream\encoded_video_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\mediastream\media_stream_video_sink.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\mediastream\media_stream_video_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\mediastream\webmediaplayer_ms.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\mediastream\web_media_stream_device_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\mediastream\web_media_stream_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\media\audio\audio_device_factory.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\media\audio\audio_input_ipc_factory.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\media\audio\audio_output_ipc_factory.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\media\webmediaplayer_util.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\service_worker\web_navigation_preload_request.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\service_worker\web_service_worker_context_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\modules\service_worker\web_service_worker_context_proxy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_array_buffer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_array_buffer_converter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_associated_url_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_associated_url_loader_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_associated_url_loader_options.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_autofill_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_autofill_state.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_ax_context.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_ax_enums.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_ax_object.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_blob.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_console_message.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_content_capture_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_content_holder.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_crypto_normalize.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_css_origin.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_custom_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_disallow_transition_scope.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_document.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_document_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_dom_activity_logger.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_dom_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_dom_file_system.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_dom_media_stream_track.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_dom_message_event.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_draggable_region.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_drag_status.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_element_collection.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_embedded_worker.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_embedded_worker_start_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_form_control_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_form_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame_content_dumper.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame_load_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame_owner_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame_serializer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame_serializer_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_frame_widget.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_heap.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_history_commit_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_history_item.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_hit_test_result.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_image.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_image_cache.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_input_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_input_method_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_label_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_language_detection_details.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_lifecycle_update.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_local_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_local_frame_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_local_frame_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_manifest_manager.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_meaningful_layout.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_media_inspector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_memory_statistics.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_message_port_converter.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_meta_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_navigation_control.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_navigation_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_navigation_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_navigation_timings.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_navigation_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_node.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_non_composited_widget_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_no_state_prefetch_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_option_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_origin_trials.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_page_popup.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_pepper_socket.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_pepper_socket_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_performance.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_picture_in_picture_window_options.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_plugin.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_plugin_container.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_plugin_document.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_plugin_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_plugin_script_forbidden_scope.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_popup_menu_info.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_print_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_print_page_description.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_print_params.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_print_preset_options.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_range.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_remote_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_render_theme.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_savable_resources_test_support.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_scoped_window_focus_allowed_indicator.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_script_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_script_execution_callback.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_script_source.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_searchable_form_data.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_security_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_selector.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_select_element.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_serialized_script_value.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_serialized_script_value_version.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_settings.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_shared_worker.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_shared_worker_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_testing_support.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_text_checking_completion.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_text_checking_result.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_text_check_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_text_decoration_type.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_v8_context_snapshot.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_v8_features.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_view.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_view_client.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_view_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_widget.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\web_window_features.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\win\web_font_family_names.h" />
+    <ClInclude Include="..\..\third_party\blink\public\web\win\web_font_rendering.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\blob.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_backed_blob_factory_dispatcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_error.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_list.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_reader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_data.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_sync.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\public_url_manager.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\url_file_api.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fileapi\url_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\css_selector_directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\css_selector_fragment_anchor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\fragment_directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\fragment_directive_utils.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\same_block_word_iterator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\selector_fragment_anchor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_anchor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_anchor_metrics.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_finder.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_handler.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_selector.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_selector_generator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\ad_script_identifier.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\ad_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\animation_frame_timing_monitor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\attribution_src_loader.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\bar_prop.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\browser_controls.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\cached_permission_status.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\child_frame_compositing_helper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\child_frame_compositor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\coop_access_violation_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\content_security_policy.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\content_security_policy_violation_type.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\conversion_util.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\csp_directive_list.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\csp_source.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\csp_violation_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\execution_context_csp_delegate.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\source_list_directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\test_util.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\csp\trusted_types_directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\dactyloscoper.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\deprecation\deprecation.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\deprecation\deprecation_info.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\deprecation\deprecation_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\device_single_window_event_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\display_cutout_client_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\document_policy_violation_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\dom_viewport.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\dom_visual_viewport.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\dom_window.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\embedded_content_view.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\event_handler_registry.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\external.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\find_in_page.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\font_matching_metrics.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_console.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_content_as_text.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_lifecycle.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_overlay.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_owner.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_serializer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_test_helpers.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_types.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_view.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\frame_view_auto_size_info.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\fullscreen_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\history.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\history_util.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\intervention.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\intervention_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\layout_subtree_root_list.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_dom_window.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_frame_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_frame_client_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_frame_mojo_handler.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_frame_ukm_aggregator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\local_frame_view.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\location.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\location_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigation_rate_limiter.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_concurrent_hardware.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_device_memory.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_id.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_language.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_on_line.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_ua.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_ua_data.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\navigator_user_activation.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\opened_frame_tracker.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\overlay_interstitial_ad_detector.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\page_dismissal_scope.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\page_scale_constraints.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\page_scale_constraints_set.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\pagination_state.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\pausable_script_executor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\performance_monitor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\permissions_policy_violation_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\picture_in_picture_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\platform_event_controller.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\platform_event_dispatcher.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\policy_container.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\remote_dom_window.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\remote_frame.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\remote_frame_client.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\remote_frame_client_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\remote_frame_owner.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\remote_frame_view.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\report.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\reporting_context.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\reporting_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\resize_viewport_anchor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\root_frame_viewport.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\rotation_viewport_anchor.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\savable_resources.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\scheduling.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\screen.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\screen_metrics_emulator.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\selector_directive.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\settings.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\settings_delegate.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\settings_string_converter.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\smart_clip.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\sticky_ad_detector.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\test_report_body.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\user_activation.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\use_counter_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\viewport_data.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\virtual_keyboard_overlay_changed_observer.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\visual_viewport.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\web_feature.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\web_feature_forward.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\web_frame_serializer_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\web_frame_widget_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\web_local_frame_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\web_remote_frame_impl.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\window_controls_overlay_changed_delegate.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\window_event_handlers.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\window_or_worker_global_scope.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\window_popin.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\frame\window_properties.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fullscreen\document_fullscreen.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fullscreen\element_fullscreen.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fullscreen\fullscreen.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fullscreen\fullscreen_request_type.h" />
+    <ClInclude Include="..\..\third_party\blink\renderer\core\fullscreen\scoped_allow_fullscreen.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\cbor.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\chromium\protocol_traits.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\dispatch.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\error_support.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\export.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\find_by_first.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\frontend_channel.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\json.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\json_platform.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\maybe.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\parser_handler.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\protocol_core.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\serializable.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\span.h" />
+    <ClInclude Include="..\..\third_party\inspector_protocol\crdtp\status.h" />
+    <ClInclude Include="..\..\third_party\perfetto\include\perfetto\tracing\traced_value.h" />
+    <ClInclude Include="..\..\third_party\perfetto\include\perfetto\tracing\traced_value_forward.h" />
+    <ClInclude Include="..\..\url\gurl.h" />
+    <ClInclude Include="..\..\url\gurl_abstract_tests.h" />
+    <ClInclude Include="..\..\url\origin.h" />
+    <ClInclude Include="..\..\url\origin_abstract_tests.h" />
+    <ClInclude Include="..\..\url\scheme_host_port.h" />
+    <ClInclude Include="..\..\url\third_party\mozilla\url_parse.h" />
+    <ClInclude Include="..\..\url\url_canon.h" />
+    <ClInclude Include="..\..\url\url_canon_icu.h" />
+    <ClInclude Include="..\..\url\url_canon_icu_test_helpers.h" />
+    <ClInclude Include="..\..\url\url_canon_internal.h" />
+    <ClInclude Include="..\..\url\url_canon_internal_file.h" />
+    <ClInclude Include="..\..\url\url_canon_ip.h" />
+    <ClInclude Include="..\..\url\url_canon_stdstring.h" />
+    <ClInclude Include="..\..\url\url_constants.h" />
+    <ClInclude Include="..\..\url\url_features.h" />
+    <ClInclude Include="..\..\url\url_file.h" />
+    <ClInclude Include="..\..\url\url_parse_internal.h" />
+    <ClInclude Include="..\..\url\url_test_utils.h" />
+    <ClInclude Include="..\..\url\url_util.h" />
+    <ClInclude Include="..\..\url\url_util_internal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\bignum-dtoa.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\bignum.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\cached-powers.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\double-to-string.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\fast-dtoa.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\fixed-dtoa.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\string-to-double.cc" />
+    <ClCompile Include="..\..\base\third_party\double_conversion\double-conversion\strtod.cc" />
+    <ClCompile Include="..\..\content\browser\BroadcastChannelProviderImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\DomStorageProviderImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\FileChooserImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\LocalFrameHostImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\LocalMainFrameHostImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\MbWebview.cpp" />
+    <ClCompile Include="..\..\content\browser\PageNavController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\content\browser\RenderWidgetHostImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\RestrictedCookieManagerImpl.cpp" />
+    <ClCompile Include="..\..\content\browser\SharedTimerWin.cpp" />
+    <ClCompile Include="..\..\content\browser\WebFrameMain.cpp" />
+    <ClCompile Include="..\..\content\common\BindJsQuery.cpp" />
+    <ClCompile Include="..\..\content\common\common.cpp" />
+    <ClCompile Include="..\..\content\common\LiveIdDetect.cpp" />
+    <ClCompile Include="..\..\content\common\MojoObjGc.cpp" />
+    <ClCompile Include="..\..\content\common\StringConversions.cpp" />
+    <ClCompile Include="..\..\content\common\StringUtil.cpp" />
+    <ClCompile Include="..\..\content\common\ThreadCall.cpp" />
+    <ClCompile Include="..\..\content\common\WebMimeRegistryImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\AssociatedInterfaceProviderImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\BlinkInterfaceRegistryImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\BlobRegistryImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\BlobURLStoreImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\ClipboardHostImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\PlatformEventHandler.cpp" />
+    <ClCompile Include="..\..\content\renderer\RendererBlinkPlatformImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\RenderThreadImpl.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Disabled</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\V8ValueConverterImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\WebDedicatedWorkerHostFactoryClientImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\WebLocalFrameClientImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\WebWorkerFetchContextImpl.cpp" />
+    <ClCompile Include="..\..\content\resources\embedded_win_x64.cc" />
+    <ClCompile Include="..\..\content\resources\embedded_win_x86.cc" />
+    <ClCompile Include="..\..\content\resources\icudtl.cpp" />
+    <ClCompile Include="..\..\content\resources\V8108SnapshotBlobBinWinX64.cpp" />
+    <ClCompile Include="..\..\content\resources\V8108SnapshotBlobBinX86.cpp" />
+    <ClCompile Include="..\..\content\ui\ClipboardUtil.cpp" />
+    <ClCompile Include="..\..\content\viz\DeserializeCompositorFrame.cpp" />
+    <ClCompile Include="..\..\content\viz\OffscreenDisplayClient.cpp" />
+    <ClCompile Include="..\..\content\viz\SerializeCompositorFrame.cpp" />
+    <ClCompile Include="..\..\content\viz\VizClient.cpp" />
+    <ClCompile Include="..\..\content\viz\VizHost.cpp" />
+    <ClCompile Include="..\..\content\viz\VizService.cpp" />
+    <ClCompile Include="..\..\crypto\openssl_util.cc" />
+    <ClCompile Include="..\..\crypto\random.cc" />
+    <ClCompile Include="..\..\linux\linuxgdi.cpp" />
+    <ClCompile Include="..\..\linux\linuxgl.cpp" />
+    <ClCompile Include="..\..\linux\linuxwindows.cpp" />
+    <ClCompile Include="..\..\mbnet\BlobResourceLoader.cpp" />
+    <ClCompile Include="..\..\mbnet\cookies\CookieJarMgr.cpp" />
+    <ClCompile Include="..\..\mbnet\cookies\WebCookieJarCurlImpl.cpp" />
+    <ClCompile Include="..\..\mbnet\DataURL.cpp" />
+    <ClCompile Include="..\..\mbnet\DefaultLocalStorageDir.cpp" />
+    <ClCompile Include="..\..\mbnet\DownloadBlobUrl.cpp" />
+    <ClCompile Include="..\..\mbnet\LoaderFactoryImpl.cpp" />
+    <ClCompile Include="..\..\mbnet\PageNetExtraData.cpp" />
+    <ClCompile Include="..\..\mbnet\SingleRequestURLLoader.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\SocketStreamErrorBase.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\SocketStreamHandleBase.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\SocketStreamHandleCurl.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketChannelCurl.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketDeflateFramer.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketDeflater.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketExtensionDispatcher.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketExtensionParser.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketHandshake.cpp" />
+    <ClCompile Include="..\..\mbnet\websocket\WebSocketOneFrame.cpp" />
+    <ClCompile Include="..\..\mbnet\WebURLLoaderImplCurl.cpp" />
+    <ClCompile Include="..\..\mbnet\WebURLLoaderManager.cpp" />
+    <ClCompile Include="..\..\mbnet\WebURLLoaderManagerUtil.cpp" />
+    <ClCompile Include="..\..\mbvip\core\mb.cpp" />
+    <ClCompile Include="..\..\mbvip\core\mbapi.cpp" />
+    <ClCompile Include="..\..\mbvip\core\MbJsValue.cpp" />
+    <ClCompile Include="..\..\mbvip\core\MbnetApi.cpp" />
+    <ClCompile Include="..\..\mbvip\download\SimpleDownload.cpp" />
+    <ClCompile Include="..\..\mojo\public\cpp\base\big_buffer.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\base\big_buffer_mojom_traits.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\base\shared_memory_version.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\base\unguessable_token_mojom_traits.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\bindings\lib\message_internal.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\bindings\lib\pending_remote_state.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\bindings\lib\sync_call_restrictions.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\bindings\lib\task_runner_helper.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\bindings\lib\unserialized_message_context.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\bindings\receiver_set.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\mojo_empty.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\mojo_lite.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\mojo_lite_msg.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\system\simple_watcher.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\system\trap.cc" />
+    <ClCompile Include="..\..\mojo\public\cpp\system\wait.cc" />
+    <ClCompile Include="..\..\net\base\address_family.cc" />
+    <ClCompile Include="..\..\net\base\auth.cc" />
+    <ClCompile Include="..\..\net\base\data_url.cc" />
+    <ClCompile Include="..\..\net\base\features_net.cc" />
+    <ClCompile Include="..\..\net\base\filename_util.cc" />
+    <ClCompile Include="..\..\net\base\filename_util_icu.cc" />
+    <ClCompile Include="..\..\net\base\filename_util_internal.cc" />
+    <ClCompile Include="..\..\net\base\host_port_pair.cc" />
+    <ClCompile Include="..\..\net\base\ip_address.cc" />
+    <ClCompile Include="..\..\net\base\ip_endpoint.cc" />
+    <ClCompile Include="..\..\net\base\isolation_info.cc" />
+    <ClCompile Include="..\..\net\base\load_timing_info.cc" />
+    <ClCompile Include="..\..\net\base\lookup_string_in_fixed_set.cc" />
+    <ClCompile Include="..\..\net\base\mime_sniffer.cc" />
+    <ClCompile Include="..\..\net\base\mime_util_net.cc" />
+    <ClCompile Include="..\..\net\base\network_anonymization_key.cc" />
+    <ClCompile Include="..\..\net\base\network_isolation_key.cc" />
+    <ClCompile Include="..\..\net\base\net_errors.cc" />
+    <ClCompile Include="..\..\net\base\net_string_util_icu.cc" />
+    <ClCompile Include="..\..\net\base\parse_number.cc" />
+    <ClCompile Include="..\..\net\base\platform_mime_util_win.cc" />
+    <ClCompile Include="..\..\net\base\port_util.cc" />
+    <ClCompile Include="..\..\net\base\proxy_chain.cc" />
+    <ClCompile Include="..\..\net\base\proxy_server.cc" />
+    <ClCompile Include="..\..\net\base\registry_controlled_domains\registry_controlled_domain.cc" />
+    <ClCompile Include="..\..\net\base\schemeful_site.cc" />
+    <ClCompile Include="..\..\net\base\url_util_net.cc" />
+    <ClCompile Include="..\..\net\cert\ct_sct_to_string.cc" />
+    <ClCompile Include="..\..\net\cert\ocsp_verify_result.cc" />
+    <ClCompile Include="..\..\net\cert\signed_certificate_timestamp.cc" />
+    <ClCompile Include="..\..\net\cert\signed_certificate_timestamp_and_status.cc" />
+    <ClCompile Include="..\..\net\cookies\canonical_cookie.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_access_result.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_base.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_constants.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_inclusion_status.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_options.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_partition_key.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_partition_key_collection.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_switches.cc" />
+    <ClCompile Include="..\..\net\cookies\cookie_util.cc" />
+    <ClCompile Include="..\..\net\cookies\parsed_cookie.cc" />
+    <ClCompile Include="..\..\net\cookies\site_for_cookies.cc" />
+    <ClCompile Include="..\..\net\dns\public\resolve_error_info.cc" />
+    <ClCompile Include="..\..\net\http\http_byte_range.cc" />
+    <ClCompile Include="..\..\net\http\http_connection_info.cc" />
+    <ClCompile Include="..\..\net\http\http_content_disposition.cc" />
+    <ClCompile Include="..\..\net\http\http_request_headers.cc" />
+    <ClCompile Include="..\..\net\http\http_response_headers.cc" />
+    <ClCompile Include="..\..\net\http\http_util.cc" />
+    <ClCompile Include="..\..\net\http\structured_headers.cc" />
+    <ClCompile Include="..\..\net\log\net_log_source.cc" />
+    <ClCompile Include="..\..\net\socket\socket_tag.cc" />
+    <ClCompile Include="..\..\net\ssl\ssl_info.cc" />
+    <ClCompile Include="..\..\net\url_request\redirect_info.cc" />
+    <ClCompile Include="..\..\net\url_request\redirect_util.cc" />
+    <ClCompile Include="..\..\net\url_request\referrer_policy.cc" />
+    <ClCompile Include="..\..\net\websockets\websocket_frame.cc" />
+    <ClCompile Include="..\..\patch_code\atomic_xp.cpp" />
+    <ClCompile Include="..\..\third_party\blink\common\privacy_budget\identifiable_token_builder.cc" />
+    <ClCompile Include="..\..\third_party\blink\public\platform\modules\modules_mojo_empty.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\blob.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_backed_blob_factory_dispatcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_error.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_list.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_reader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_client.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_data.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\file_reader_sync.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\public_url_manager.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fileapi\url_file_api.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\css_selector_directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\css_selector_fragment_anchor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\fragment_directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\fragment_directive_utils.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\same_block_word_iterator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\selector_fragment_anchor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_anchor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_anchor_metrics.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_finder.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_handler.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_selector.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fragment_directive\text_fragment_selector_generator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\ad_script_identifier.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\ad_tracker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\animation_frame_timing_monitor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\attribution_src_loader.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\bar_prop.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\browser_controls.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\cached_permission_status.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\child_frame_compositing_helper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\coop_access_violation_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\content_security_policy.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\conversion_util.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\csp_directive_list.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\csp_source.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\csp_violation_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\execution_context_csp_delegate.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\source_list_directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\csp\trusted_types_directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\dactyloscoper.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\deprecation\deprecation.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\deprecation\deprecation_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\device_single_window_event_controller.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\display_cutout_client_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\document_policy_violation_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\dom_viewport.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\dom_visual_viewport.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\dom_window.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\embedded_content_view.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\event_handler_registry.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\find_in_page.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\font_matching_metrics.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_console.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_content_as_text.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_lifecycle.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_overlay.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_serializer.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_view.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\frame_view_auto_size_info.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\fullscreen_controller.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\history.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\history_util.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\intervention.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\intervention_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\layout_subtree_root_list.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\local_dom_window.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\local_frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\local_frame_client_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\local_frame_mojo_handler.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\local_frame_ukm_aggregator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\local_frame_view.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\location.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\location_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigation_rate_limiter.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_concurrent_hardware.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_device_memory.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_id.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_language.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_ua.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_ua_data.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\navigator_user_activation.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\opened_frame_tracker.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\overlay_interstitial_ad_detector.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\page_dismissal_scope.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\page_scale_constraints.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\page_scale_constraints_set.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\pagination_state.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\pausable_script_executor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\performance_monitor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\permissions_policy_violation_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\picture_in_picture_controller.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\platform_event_controller.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\platform_event_dispatcher.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\policy_container.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\remote_dom_window.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\remote_frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\remote_frame_client_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\remote_frame_owner.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\remote_frame_view.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\report.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\reporting_context.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\reporting_observer.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\resize_viewport_anchor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\root_frame_viewport.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\rotation_viewport_anchor.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\savable_resources.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\scheduling.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\screen.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\screen_metrics_emulator.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\selector_directive.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\settings.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\settings_delegate.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\smart_clip.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\sticky_ad_detector.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\test_report_body.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\user_activation.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\use_counter_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\viewport_data.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\virtual_keyboard_overlay_changed_observer.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\visual_viewport.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_frame.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_frame_serializer_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_frame_widget_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_local_frame_client.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_local_frame_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_local_frame_observer.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\web_remote_frame_impl.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\window_controls_overlay_changed_delegate.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\window_or_worker_global_scope.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\window_popin.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\frame\window_properties.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fullscreen\document_fullscreen.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fullscreen\element_fullscreen.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fullscreen\fullscreen.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fullscreen\fullscreen_request_type.cc" />
+    <ClCompile Include="..\..\third_party\blink\renderer\core\fullscreen\scoped_allow_fullscreen.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\cbor.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\chromium\json_platform_chromium.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\chromium\protocol_traits.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\dispatch.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\error_support.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\json.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\protocol_core.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\serializable.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\span.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\status_crdtp.cc" />
+    <ClCompile Include="..\..\third_party\inspector_protocol\crdtp\transcode.cc" />
+    <ClCompile Include="..\..\url\gurl.cc" />
+    <ClCompile Include="..\..\url\mojom\origin_mojom_traits.cc" />
+    <ClCompile Include="..\..\url\mojom\scheme_host_port_mojom_traits.cc" />
+    <ClCompile Include="..\..\url\mojom\url_gurl_mojom_traits.cc" />
+    <ClCompile Include="..\..\url\origin.cc" />
+    <ClCompile Include="..\..\url\scheme_host_port.cc" />
+    <ClCompile Include="..\..\url\third_party\mozilla\url_parse.cc" />
+    <ClCompile Include="..\..\url\url_canon.cc" />
+    <ClCompile Include="..\..\url\url_canon_etc.cc" />
+    <ClCompile Include="..\..\url\url_canon_filesystemurl.cc" />
+    <ClCompile Include="..\..\url\url_canon_fileurl.cc" />
+    <ClCompile Include="..\..\url\url_canon_host.cc" />
+    <ClCompile Include="..\..\url\url_canon_icu.cc" />
+    <ClCompile Include="..\..\url\url_canon_internal.cc" />
+    <ClCompile Include="..\..\url\url_canon_ip.cc" />
+    <ClCompile Include="..\..\url\url_canon_mailtourl.cc" />
+    <ClCompile Include="..\..\url\url_canon_non_special_url.cc" />
+    <ClCompile Include="..\..\url\url_canon_path.cc" />
+    <ClCompile Include="..\..\url\url_canon_pathurl.cc" />
+    <ClCompile Include="..\..\url\url_canon_query.cc" />
+    <ClCompile Include="..\..\url\url_canon_relative.cc" />
+    <ClCompile Include="..\..\url\url_canon_stdstring.cc" />
+    <ClCompile Include="..\..\url\url_canon_stdurl.cc" />
+    <ClCompile Include="..\..\url\url_features.cc" />
+    <ClCompile Include="..\..\url\url_idna_icu.cc" />
+    <ClCompile Include="..\..\url\url_parse_file.cc" />
+    <ClCompile Include="..\..\url\url_util.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\mbvip\mbvip.def" />
+    <None Include="..\..\third_party\blink\public\common\frame\OWNERS" />
+    <None Include="..\..\third_party\blink\public\common\input\OWNERS" />
+    <None Include="..\..\third_party\blink\public\common\navigation\OWNERS" />
+    <None Include="..\..\third_party\blink\public\common\origin_trials\origin_trials_token_structure.md" />
+    <None Include="..\..\third_party\blink\public\common\privacy_budget\OWNERS" />
+    <None Include="..\..\third_party\blink\public\common\privacy_budget\README.md" />
+    <None Include="..\..\third_party\blink\public\web\DEPS" />
+    <None Include="..\..\third_party\blink\public\web\OWNERS" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

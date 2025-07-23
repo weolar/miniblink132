@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{411BF6FC-4125-4563-8323-0EE847E79D16}</ProjectGuid>
+    <RootNamespace>base</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;U_STATIC_IMPLEMENTATION;U_IO_IMPLEMENTATION;U_COMMON_IMPLEMENTATION;U_I18N_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DisableSpecificWarnings>4530</DisableSpecificWarnings>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;U_STATIC_IMPLEMENTATION;U_IO_IMPLEMENTATION;U_COMMON_IMPLEMENTATION;U_I18N_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalOptions>-mno-avx %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;U_STATIC_IMPLEMENTATION;U_IO_IMPLEMENTATION;U_COMMON_IMPLEMENTATION;U_I18N_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;U_STATIC_IMPLEMENTATION;U_IO_IMPLEMENTATION;U_COMMON_IMPLEMENTATION;U_I18N_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;SUPPORT_XP_CODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\third_party\icu\source\common\bmpset.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\brkeng.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\bytesinkutil.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\capi_helper.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\charstr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\charstrmap.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\cmemory.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\cpputils.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\cstr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\cstring.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\cwchar.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\dictbe.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\dictionarydata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\emojiprops.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\hash.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\icuplugimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\localeprioritylist.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\localsvc.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\locbased.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\locdistance.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\loclikelysubtags.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\locmap.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\locutil.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\lsr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\lstmbe.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\messageimpl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\msvcres.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\mutex.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\norm2allmodes.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\norm2_nfc_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\normalizer2impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\patternprops.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\pluralmap.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\propname.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\propname_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\propsvec.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\punycode.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\putilimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbidata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbinode.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbirb.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbirpt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbiscan.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbisetb.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbitblb.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\rbbi_cache.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\restrace.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ruleiter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\serv.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\servloc.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\servnotf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\sharedobject.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\sprpimpl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\static_unicode_sets.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uarrsort.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uassert.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ubidiimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ubidi_props.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ubidi_props_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ubrkimpl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucase.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucasemap_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucase_props_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uchar_props_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucln.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucln_cmn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucln_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucmndata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucnvmbcs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucnv_bld.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucnv_cnv.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucnv_ext.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucnv_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucnv_io.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucol_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucol_swp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucptrie_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ucurrimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\udatamem.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\udataswp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uelement.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uenumimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uhash.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uinvchar.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ulayout_props.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ulist.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ulocimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\umapfile.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\umutex.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\appendable.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\brkiter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\bytestream.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\bytestrie.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\bytestriebuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\caniter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\casemap.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\char16ptr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\chariter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\dbbi.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\docmain.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\dtintrv.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\edits.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\enumset.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\errorcode.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\filteredbrk.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\icudataver.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\icuplug.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\idna.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\localebuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\localematcher.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\localpointer.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\locdspnm.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\locid.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\messagepattern.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\normalizer2.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\normlzr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\parseerr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\parsepos.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\platform.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ptypes.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\putil.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\rbbi.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\rep.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\resbund.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\schriter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\simpleformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\std_string.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\strenum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\stringoptions.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\stringpiece.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\stringtriebuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\symtable.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ubidi.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ubiditransform.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ubrk.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucasemap.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucat.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uchar.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucharstrie.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucharstriebuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uchriter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uclean.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucnv.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucnvsel.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucnv_cb.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucnv_err.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uconfig.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucpmap.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucptrie.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ucurr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\udata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\udisplaycontext.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uenum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uidna.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uiter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uldnames.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uloc.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\umachine.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\umisc.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\umutablecptrie.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\unifilt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\unifunct.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\unimatch.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uniset.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\unistr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\unorm.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\unorm2.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uobject.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\urename.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\urep.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ures.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uscript.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uset.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\usetiter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ushape.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\usprep.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ustring.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\ustringtrie.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utext.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utf16.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utf32.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utf8.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utf_old.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utrace.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\utypes.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uvernum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unicode\uversion.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unifiedcache.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uniquecharstr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unisetspan.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unistrappender.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\unormimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uposixdefs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uprops.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uresdata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uresimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ureslocs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\usc_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uset_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ustrenum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ustrfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ustr_cnv.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\ustr_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\util.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\utracimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\utrie.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\utrie2.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\utrie2_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\utypeinfo.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uvector.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uvectr32.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\uvectr64.h" />
+    <ClInclude Include="..\..\third_party\icu\source\common\wintz.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\anytrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\astro.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\bocsu.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\brktrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\buddhcal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\casetrn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\cecal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\chnsecal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collation.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationbuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationcompare.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationdata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationdatabuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationdatareader.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationdatawriter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationfastlatin.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationfastlatinbuilder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationfcd.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationiterator.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationkeys.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationroot.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationrootelements.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationruleparser.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationsets.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationsettings.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationtailoring.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collationweights.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\collunsafe.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\coptccal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\cpdtrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csdetect.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csmatch.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csr2022.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csrecog.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csrmbcs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csrsbcs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csrucode.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\csrutf8.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\currfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\dangical.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\dayperiodrules.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\decContext.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\decNumber.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\decNumberLocal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-bignum-dtoa.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-bignum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-cached-powers.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-diy-fp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-double-to-string.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-fast-dtoa.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-ieee.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-string-to-double.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-strtod.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion-utils.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\double-conversion.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\dtitv_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\dtptngen_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\dt_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\erarules.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\esctrn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\ethpccal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\fmtableimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\formattedval_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\formatted_string_builder.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\fphdlimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\funcrepl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\gregoimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\hebrwcal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\indiancal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\inputext.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\islamcal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\japancal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\measunit_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\msgfmt_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\name2uni.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\nfrlist.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\nfrs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\nfrule.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\nfsubs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\nortrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\nultrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_affixutils.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_asformat.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_compact.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_currencysymbols.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_decimalquantity.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_decimfmtprops.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_decnum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_formatimpl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_longnames.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_mapper.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_microprops.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_modifiers.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_multiplier.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_patternmodifier.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_patternstring.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_roundingutils.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_scientific.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_skeletons.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_types.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_usageprefs.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_utils.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\number_utypes.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_affixes.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_compositions.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_currency.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_decimal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_scientific.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_symbols.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_types.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_utils.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numparse_validators.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numrange_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\numsys_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\olsontz.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\persncal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\pluralranges.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\plurrule_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\quant.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\quantityformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\rbt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\rbt_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\rbt_pars.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\rbt_rule.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\rbt_set.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\regexcmp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\regexcst.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\regeximp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\regexst.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\regextxt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\region_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\reldtfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\remtrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\scriptset.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\selfmtimpl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\sharedbreakiterator.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\sharedcalendar.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\shareddateformatsymbols.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\sharednumberformat.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\sharedpluralrules.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\smpdtfst.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\standardplural.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\string_segment.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\strmatch.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\strrepl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\taiwncal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\titletrn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\tolowtrn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\toupptrn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\transreg.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\tridpars.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\tzgnames.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\tznames_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\ucln_in.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\ucol_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\uitercollationiterator.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\umsg_imp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unesctrn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\uni2name.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\alphaindex.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\basictz.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\calendar.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\choicfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\coleitr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\coll.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\compactdecimalformat.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\curramt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\currpinf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\currunit.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\datefmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\dcfmtsym.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\decimfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\dtfmtsym.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\dtitvfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\dtitvinf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\dtptngen.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\dtrule.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\fieldpos.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\fmtable.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\format.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\formattedvalue.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\fpositer.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\gender.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\gregocal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\listformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\measfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\measunit.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\measure.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\msgfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\nounit.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\numberformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\numberrangeformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\numfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\numsys.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\plurfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\plurrule.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\rbnf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\rbtz.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\regex.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\region.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\reldatefmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\scientificnumberformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\search.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\selfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\simpletz.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\smpdtfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\sortkey.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\stsearch.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tblcoll.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\timezone.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tmunit.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tmutamt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tmutfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\translit.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tzfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tznames.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tzrule.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\tztrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ucal.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ucol.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ucoleitr.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ucsdet.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\udat.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\udateintervalformat.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\udatpg.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ufieldpositer.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\uformattable.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\uformattedvalue.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ugender.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ulistformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ulocdata.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\umsg.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\unirepl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\unounclass.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\unum.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\unumberformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\unumberrangeformatter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\unumsys.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\upluralrules.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\uregex.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\uregion.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\ureldatefmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\usearch.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\uspoof.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\utmscale.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\utrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\unicode\vtzone.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\units_complexconverter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\units_converter.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\units_data.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\units_router.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\uspoof_conf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\uspoof_impl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\usrchimp.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\utf16collationiterator.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\utf8collationiterator.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\vzone.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\windtfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\winnmfmt.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\wintzimpl.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\zonemeta.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\zrule.h" />
+    <ClInclude Include="..\..\third_party\icu\source\i18n\ztrans.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\locbund.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\ucln_io.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\ufile.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\ufmt_cmn.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\unicode\ustdio.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\unicode\ustream.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\uprintf.h" />
+    <ClInclude Include="..\..\third_party\icu\source\io\uscanf.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\third_party\icu\source\common\appendable.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\bmpset.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\brkeng.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\brkiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\bytesinkutil.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\bytestream.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\bytestrie.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\bytestriebuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\bytestrieiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\caniter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\characterproperties.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\chariter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\charstr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\cmemory.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\cstr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\cstring.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\cwchar.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\dictbe.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\dictionarydata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\dtintrv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\edits.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\emojiprops.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\errorcode.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\filteredbrk.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\filterednormalizer2.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\icudataver.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\icuplug.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\loadednormalizer2impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\localebuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\localematcher.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\localeprioritylist.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locavailable.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locbased.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locdispnames.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locdistance.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locdspnm.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locid.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\loclikely.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\loclikelysubtags.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locmap.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locresdata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\locutil.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\lsr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\lstmbe.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\messagepattern.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\normalizer2.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\normalizer2impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\normlzr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\parsepos.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\patternprops.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\pluralmap.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\propname.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\propsvec.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\punycode.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\putil.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbi.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbidata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbinode.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbirb.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbiscan.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbisetb.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbistbl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbitblb.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\rbbi_cache.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\resbund.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\resbund_cnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\resource.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\restrace.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ruleiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\schriter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\serv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\servlk.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\servlkf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\servls.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\servnotf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\servrbf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\servslkf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\sharedobject.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\simpleformatter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\static_unicode_sets.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\stringpiece.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\stringtriebuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uarrsort.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ubidi.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ubidiln.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ubiditransform.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ubidiwrt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ubidi_props.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ubrk.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucase.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucasemap.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucasemap_titlecase_brkiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucat.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uchar.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucharstrie.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucharstriebuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucharstrieiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uchriter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucln_cmn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucmndata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv2022.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvbocu.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvdisp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvhz.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvisci.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvlat1.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvmbcs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvscsu.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnvsel.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_bld.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_cb.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_cnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_ct.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_err.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_ext.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_io.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_lmb.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_set.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_u16.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_u32.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_u7.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucnv_u8.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucol_swp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucptrie.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ucurr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\udata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\udatamem.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\udataswp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uenum.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uhash.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uhash_us.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uidna.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uinit.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uinvchar.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ulist.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uloc.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uloc_keytype.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uloc_tag.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\umapfile.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\umath.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\umutablecptrie.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\umutex.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unames.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unifiedcache.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unifilt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unifunct.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uniset.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unisetspan.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uniset_closure.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uniset_props.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unistr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unistr_case.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unistr_case_locale.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unistr_cnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unistr_props.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unistr_titlecase_brkiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unorm.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\unormcmp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uobject.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uprops.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uresbund.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uresdata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ures_cnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uscript.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uscript_props.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\usc_impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uset.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\usetiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uset_props.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ushape.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\usprep.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustack.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustrcase.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustrcase_locale.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustrenum.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustrfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustring.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustrtrns.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustr_cnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustr_titlecase_brkiter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\ustr_wcs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utext.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utf_impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\util.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\util_props.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utrace.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utrie.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utrie2.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utrie2_builder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utrie_swap.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uts46.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\utypes.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uvector.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uvectr32.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\uvectr64.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\common\wintz.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\alphaindex.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\anytrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\astro.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\basictz.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\bocsu.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\brktrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\buddhcal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\calendar.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\casetrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\cecal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\chnsecal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\choicfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\coleitr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\coll.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collation.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationbuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationcompare.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationdata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationdatabuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationdatareader.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationdatawriter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationfastlatin.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationfastlatinbuilder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationfcd.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationkeys.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationroot.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationrootelements.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationruleparser.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationsets.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationsettings.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationtailoring.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\collationweights.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\compactdecimalformat.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\coptccal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\cpdtrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csdetect.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csmatch.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csr2022.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csrecog.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csrmbcs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csrsbcs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csrucode.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\csrutf8.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\curramt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\currfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\currpinf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\currunit.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dangical.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\datefmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dayperiodrules.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dcfmtsym.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\decContext.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\decimfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\decNumber.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-bignum-dtoa.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-bignum.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-cached-powers.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-double-to-string.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-fast-dtoa.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-string-to-double.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\double-conversion-strtod.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dtfmtsym.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dtitvfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dtitvinf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dtptngen.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\dtrule.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\erarules.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\esctrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ethpccal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\fmtable.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\fmtable_cnv.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\format.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\formattedvalue.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\formattedval_iterimpl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\formattedval_sbimpl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\formatted_string_builder.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\fphdlimp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\fpositer.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\funcrepl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\gender.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\gregocal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\gregoimp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\hebrwcal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\indiancal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\inputext.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\islamcal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\japancal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\listformatter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\measfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\measunit.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\measunit_extra.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\measure.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\msgfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\name2uni.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\nfrs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\nfrule.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\nfsubs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\nortrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\nultrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_affixutils.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_asformat.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_capi.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_compact.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_currencysymbols.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_decimalquantity.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_decimfmtprops.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_fluent.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_formatimpl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_grouping.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_integerwidth.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_longnames.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_mapper.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_modifiers.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_multiplier.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_notation.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_output.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_padding.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_patternmodifier.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_patternstring.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_rounding.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_scientific.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_skeletons.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_symbolswrapper.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_usageprefs.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\number_utils.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_affixes.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_compositions.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_currency.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_decimal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_parsednumber.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_scientific.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_symbols.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numparse_validators.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numrange_capi.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numrange_fluent.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numrange_impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\numsys.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\olsontz.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\persncal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\pluralranges.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\plurfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\plurrule.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\quant.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\quantityformatter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbnf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbtz.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbt_data.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbt_pars.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbt_rule.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rbt_set.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\regexcmp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\regeximp.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\regexst.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\regextxt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\region.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\reldatefmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\reldtfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rematch.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\remtrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\repattrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\rulebasedcollator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\scientificnumberformatter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\scriptset.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\search.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\selfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\sharedbreakiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\simpletz.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\smpdtfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\smpdtfst.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\sortkey.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\standardplural.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\string_segment.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\strmatch.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\strrepl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\stsearch.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\taiwncal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\timezone.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\titletrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tmunit.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tmutamt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tmutfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tolowtrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\toupptrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\translit.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\transreg.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tridpars.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tzfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tzgnames.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tznames.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tznames_impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tzrule.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\tztrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucal.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucln_in.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucol.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucoleitr.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucol_res.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucol_sit.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ucsdet.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\udat.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\udateintervalformat.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\udatpg.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ufieldpositer.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uitercollationiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ulistformatter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ulocdata.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\umsg.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\unesctrn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uni2name.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\units_complexconverter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\units_converter.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\units_data.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\units_router.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\unum.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\unumsys.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\upluralrules.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uregex.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uregexc.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uregion.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\usearch.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uspoof.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uspoof_build.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uspoof_conf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\uspoof_impl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\utf16collationiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\utf8collationiterator.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\utmscale.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\utrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\vtzone.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\vzone.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\windtfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\winnmfmt.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\wintzimpl.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\zonemeta.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\zrule.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\i18n\ztrans.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\locbund.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\sprintf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\sscanf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\ucln_io.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\ufile.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\ufmt_cmn.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\uprintf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\uprntf_p.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\uscanf.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\uscanf_p.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\ustdio.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\io\ustream.cpp" />
+    <ClCompile Include="..\..\third_party\icu\source\stubdata\stubdata.cpp" />
+    <!--<ClCompile Include="..\..\third_party\icu\flutter\icudtl.cpp" />-->
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

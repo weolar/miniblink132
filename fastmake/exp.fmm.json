@@ -1,0 +1,25 @@
+{
+	"objdir":"c:/hahah",
+	"outdir":"c:/hahah2",
+	"cmd":"",
+	"target":"1.exe",
+	"cppToDeps": [{
+		"cpp":"c:/1.cpp",
+		"deps":["c:/1.h", "c:/2.h"]
+	},{
+		"cpp":"c:/2.cpp",
+		"deps":["c:/2.h", "c:/3.h"]
+	}],
+	//---
+	"depsToCpp": [{
+		"dep":"c:/1.h",
+		"cpps":["c:/1.cpp"]
+	},{
+		"dep":"c:/2.h",
+		"cpps":["c:/1.cpp", "c:/2.cpp"]
+	},{
+		"dep":"c:/3.h",
+		"cpps":["c:/2.cpp"]
+	}],
+	"cmd":[]
+}

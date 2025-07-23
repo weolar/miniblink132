@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e3f43d08-fadb-45f1-b83a-7a3b25ea1ce4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\browser">
+      <UniqueIdentifier>{960fa942-5718-41ac-ada6-48fc026818a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\browser\api">
+      <UniqueIdentifier>{74c68b63-fa06-411b-a82c-b72a0223705d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{4a4eea7f-b858-42ea-b3ba-c068d430bf7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\api">
+      <UniqueIdentifier>{a15df98b-58b5-487f-ac59-efcfdd2d02eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\asar">
+      <UniqueIdentifier>{abc632c7-dc49-453d-8052-4e5eb1dbaa8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\renerer">
+      <UniqueIdentifier>{8cda5896-3235-46ed-9420-8777f06efde5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\renerer\api">
+      <UniqueIdentifier>{3c578f5d-91a0-42e9-a61c-2ea4f5567d2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\gin_helper">
+      <UniqueIdentifier>{c5d9a2c4-ca10-41fc-b9da-2ab72c028be3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\gin_helper\public">
+      <UniqueIdentifier>{cc32376d-955e-4249-a435-9bddb1fcde49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\ipc">
+      <UniqueIdentifier>{d68c1fd0-c2e1-4725-833a-77dcd99f7c86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ElectronMain.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\patch_code\atomic_xp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiBrowserWindow.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiDialag.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiDownloadItem.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiElectron.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiMenu.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiProtocol.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiSession.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiTray.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiWebContents.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiWebRequest.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\WindowList.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiApp.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiBrowserView.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiIntlCollator.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiNativeImage.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiOriginalFs.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiScreen.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiShell.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiV8Util.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\Event.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\EventEmitter.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\EventEmitterCaller.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ObjectLifeMonitor.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\RemoteCallbackFreer.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\RemoteObjectFreer.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiAsar.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\api\ApiClipboard.cpp">
+      <Filter>src\common\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\AtomCommandLine.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\IdLiveDetect.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\InitGdiPlus.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\NodeBinding.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\NodeThread.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\OptionsSwitches.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\PlatformUtilWin.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\SystemTray.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\asar\AsarUtil.cpp">
+      <Filter>src\common\asar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\asar\ScopedTemporaryFile.cpp">
+      <Filter>src\common\asar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\asar\Archive.cpp">
+      <Filter>src\common\asar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\renderer\api\ApiContextBridge.cpp">
+      <Filter>src\renerer\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\renderer\api\ApiRendererIpc.cpp">
+      <Filter>src\renerer\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\renderer\api\ApiWebFrame.cpp">
+      <Filter>src\renerer\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\renderer\api\ObjectCache.cpp">
+      <Filter>src\renerer\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\renderer\WebviewPlugin.cpp">
+      <Filter>src\renerer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\renderer\WebviewPluginImpl.cpp">
+      <Filter>src\renerer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\nodeblink.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\dictionary.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\promise.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\arguments.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\converter.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\function_template.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\object_template_builder.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\wrappable.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\interceptor.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\per_context_data.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\per_isolate_data.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\context_holder.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\callback.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\locker.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\microtasks_scope.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\AppBrowserWin.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\asar\AsarJs.cpp">
+      <Filter>src\common\asar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiParentPort.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiUtilityProcess.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\IoThread.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\V8Util.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\ipc\UtilityProcessMsgs.cpp">
+      <Filter>src\common\ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiWebFrameMain.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\error_thrower.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiCommandLine.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiMessagePortMain.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\gin_helper\data_object_builder.cpp">
+      <Filter>src\common\gin_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\PostMessageUtil.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\browser\api\ApiSafestorage.cpp">
+      <Filter>src\browser\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\NodeGin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\electron\common\LoadMiniElectronAsarRes.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\electron\browser\api\ApiBrowserView.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiDownloadItem.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiSession.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiWebContents.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiWebRequest.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\MenuEventNotif.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\PopupWindow.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ProtocolInterface.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\Relauncher.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\WindowInterface.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\WindowList.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\WindowState.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiApp.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\ApiKeyWeakMap.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\ApiNativeImage.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\event.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\EventEmitter.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\EventEmitterCaller.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\GetConstructorFromTls.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\ObjectLifeMonitor.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\RemoteCallbackFreer.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\api\RemoteObjectFreer.h">
+      <Filter>src\common\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\AtomCommandLine.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\AtomVersion.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\ChromeVersion.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\DragAction.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\FileUtil.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\HideWndHelp.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\IconUtil.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\IdLiveDetect.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\InitGdiPlus.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\KeyWeakMap.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\mbexport.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\NodeBinding.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\NodeRegisterHelp.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\NodeThread.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\OptionsSwitches.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\PlatformUtil.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\StringUtil.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\SystemTray.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\ThreadCall.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\WinUserMsg.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\WorldIDs.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\asar\AsarInitJs.h">
+      <Filter>src\common\asar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\asar\AsarJs.h">
+      <Filter>src\common\asar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\asar\AsarUtil.h">
+      <Filter>src\common\asar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\asar\ScopedTemporaryFile.h">
+      <Filter>src\common\asar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\asar\Archive.h">
+      <Filter>src\common\asar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\renderer\api\ApiContextBridge.h">
+      <Filter>src\renerer\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\renderer\api\ObjectCache.h">
+      <Filter>src\renerer\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\renderer\WebviewPlugin.h">
+      <Filter>src\renerer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\renderer\WebviewPluginImpl.h">
+      <Filter>src\renerer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\electron.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\nodeblink.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\Locker.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\UndefCheck.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\ConverterUtil.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\converter.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\dictionary.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\promise.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\arguments.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\function_template.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\object_template_builder.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\wrappable.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\per_context_data.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\per_isolate_data.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\public\wrapper_info.h">
+      <Filter>src\common\gin_helper\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\public\gin_embedders.h">
+      <Filter>src\common\gin_helper\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\interceptor.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\public\context_holder.h">
+      <Filter>src\common\gin_helper\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\TracingControllerImpl.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\CallbackConverter.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\callback.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\AppBrowser.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\IoThread.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\V8Util.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\UtilityProcessMsgs.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\ipc\UtilityProcessMsgs.h">
+      <Filter>src\common\ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\error_thrower.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiWebFrameMain.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\MessageFilterWrap.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\gin_helper\data_object_builder.h">
+      <Filter>src\common\gin_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\ApiMessagePortMain.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\browser\api\PostMessageUtil.h">
+      <Filter>src\browser\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\electron\common\LoadMiniElectronAsarRes.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\electron\electron.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
