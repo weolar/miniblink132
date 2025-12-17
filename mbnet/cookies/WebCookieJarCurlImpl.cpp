@@ -12,6 +12,12 @@
 #include "base/strings/string_split.h"
 #include <windows.h>
 
+extern "C" void OutputCookies(const char* lineptr)
+{
+    //if (strstr(lineptr, "wlfstk_smdl") != nullptr)
+    //    OutputDebugStringA("");
+}
+
 namespace mbnet {
 
 static void readCurlCookieToken(const char*& cookie, std::string& token)
@@ -369,6 +375,9 @@ static std::string getNetscapeCookieFormat(const blink::KURL& url, const std::st
 
 void WebCookieJarImpl::setCookiesFromDOM(const blink::KURL&, const blink::KURL& url, const std::string& value)
 {
+    std::string cookieJarFullPath = getCookieJarFullPath();
+    if (cookieJarFullPath.empty())
+        return;
     // CURL accepts cookies in either Set-Cookie or Netscape file format.
     // However with Set-Cookie format, there is no way to specify that we
     // should not allow cookies to be read from subdomains, which is the
@@ -381,6 +390,8 @@ void WebCookieJarImpl::setCookiesFromDOM(const blink::KURL&, const blink::KURL& 
     CURLSH* curlsh = m_curlShareHandle;
     curl_easy_setopt(curl, CURLOPT_SHARE, curlsh);
     curl_easy_setopt(curl, CURLOPT_COOKIELIST, cookie.c_str());
+    curl_easy_setopt(curl, CURLOPT_COOKIEJAR, cookieJarFullPath.c_str());
+    curl_easy_setopt(curl, CURLOPT_COOKIELIST, "FLUSH");
     curl_easy_cleanup(curl);
 
     m_dirty = true;
@@ -524,8 +535,11 @@ void WebCookieJarImpl::deleteCookies(const blink::KURL& url, const std::string& 
 
 void WebCookieJarImpl::flushCurlCookie(CURL* curl)
 {
-    if (!m_dirty)
+    if (!m_dirty) {
+        if (curl)
+            curl_easy_setopt(curl, CURLOPT_SHARE, m_curlShareHandle);
         return;
+    }
     m_dirty = false;
 
     bool needCleanup = false;
@@ -600,7 +614,7 @@ void WebCookieJarImpl::getAllCookies(const ::blink::KURL& url, const ::net::Site
     std::move(callback).Run(std::move(results));
 }
 
-std::string WebCookieJarImpl::getCookiesForSession(const blink::KURL& kurl, const blink::KURL& url, bool httponly)
+std::string WebCookieJarImpl::getCookiesForSession(const blink::KURL& url, bool httponly)
 {
     std::string cookies;
     CURL* curl = curl_easy_init();
@@ -642,13 +656,32 @@ WebCookieJarImpl* WebCookieJarImpl::create(const std::string& cookieJarFullPath)
     return new WebCookieJarImpl(cookieJarFullPath);
 }
 
+void setCookiePath(CURL* handle, std::string cookieJarPath)
+{
+    if (0 == cookieJarPath.size())
+        return;
+    // 统一用UTF8格式了
+    curl_easy_setopt(handle, CURLOPT_COOKIEJAR, cookieJarPath.c_str());
+    curl_easy_setopt(handle, CURLOPT_COOKIEFILE, cookieJarPath.c_str());
+}
+
 WebCookieJarImpl::WebCookieJarImpl(const std::string& cookieJarFullPath)
 {
     m_curlShareHandle = curl_share_init();
-    curl_share_setopt(m_curlShareHandle, CURLSHOPT_SHARE, CURL_LOCK_DATA_COOKIE);
+    curl_share_setopt(m_curlShareHandle, CURLSHOPT_SHARE, CURL_LOCK_DATA_COOKIE); // 这里面给m_curlShareHandle创建cookie infos，然后后面操作都是操作这个cookie infos
     curl_share_setopt(m_curlShareHandle, CURLSHOPT_SHARE, CURL_LOCK_DATA_DNS);
     curl_share_setopt(m_curlShareHandle, CURLSHOPT_LOCKFUNC, curl_lock_callback);
     curl_share_setopt(m_curlShareHandle, CURLSHOPT_UNLOCKFUNC, curl_unlock_callback);
+
+    CURL* handle = curl_easy_init();
+    curl_easy_setopt(handle, CURLOPT_SHARE, m_curlShareHandle);
+
+    setCookiePath(handle, cookieJarFullPath);
+
+    curl_easy_setopt(handle, CURLOPT_COOKIESESSION, 1);
+    curl_easy_setopt(handle, CURLOPT_COOKIELIST, "RELOAD");
+
+    curl_easy_cleanup(handle);
 
     m_cookieJarFileName = cookieJarFullPath;
     m_dirty = false;
@@ -695,7 +728,7 @@ std::string WebCookieJarImpl::getCookieJarFullPath()
 //
 std::string WebCookieJarImpl::cookieRequestHeaderFieldValue(const blink::WebURL& webUrl, const blink::WebURL& webFirstPartyForCookies)
 {
-    return getCookiesForSession(webFirstPartyForCookies, webUrl, false);
+    return getCookiesForSession(/*webFirstPartyForCookies,*/ webUrl, false);
 }
 //
 // void WebCookieJarImpl::setToRecordFromRawHeads(const KURL& url, const std::string& rawHeadsString)

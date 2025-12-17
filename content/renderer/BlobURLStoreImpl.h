@@ -27,7 +27,7 @@ private:
 
 class BlobURLStoreImpl : public ::blink::mojom::blink::BlobURLStore {
 public:
-    BlobURLStoreImpl(const ::scoped_refptr<const ::blink::SecurityOrigin>& origin);
+    BlobURLStoreImpl(const std::string& origin);
     ~BlobURLStoreImpl();
 
     bool Register(::mojo::PendingRemote<::blink::mojom::blink::Blob> blob, const ::blink::KURL& url, const ::base::UnguessableToken& unsafe_agent_cluster_id,
@@ -47,7 +47,7 @@ public:
 
     void ResolveForWorkerScriptFetch(const ::blink::KURL& url, ::mojo::PendingReceiver< blink::mojom::blink::BlobURLToken> token, ResolveForWorkerScriptFetchCallback callback) override;
 
-    ::scoped_refptr<const ::blink::SecurityOrigin> m_origin;
+    std::string m_origin;
 
 private:
     ::mojo::Remote<::blink::mojom::blink::Blob> m_blobRemote;

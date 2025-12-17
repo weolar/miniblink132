@@ -103,6 +103,11 @@ public:
     {
         return SetImpl(name, CallbackTraits<T>::CreateTemplate(isolate_, callback));
     }
+    // alias name to SetMethod
+    template <typename T> ObjectTemplateBuilder& SetMethodT(const base::StringPiece& name, const T& callback)
+    {
+        return SetMethod(name, callback);
+    }
     template <typename T> ObjectTemplateBuilder& SetProperty(const base::StringPiece& name, const T& getter)
     {
         return SetPropertyImpl(name, CallbackTraits<T>::CreateTemplate(isolate_, getter), v8::Local<v8::FunctionTemplate>());

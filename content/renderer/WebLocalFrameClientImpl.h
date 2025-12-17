@@ -180,6 +180,8 @@ public:
     blink::WebLocalFrame* m_frame = nullptr;
     bool m_hidden = false;
 
+    WTF::String m_srcdoc;
+
     AssociatedInterfaceProviderImpl* m_associatedInterfaceProviderImpl = nullptr;
     mojo::AssociatedReceiver<::blink::mojom::AssociatedInterfaceProvider> m_interfaceProviderReceiver;
     std::unique_ptr<::blink::AssociatedInterfaceProvider> m_associatedInterfaceProvider;

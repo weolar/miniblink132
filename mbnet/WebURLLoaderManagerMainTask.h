@@ -325,20 +325,29 @@ private:
         }
     }
 
-    static void runCrossThreadTasks(WebURLLoaderInternal* job)
+    static void runCrossThreadTasks(int jobId)
     {
         while (true) {
-            job->m_syncTasksLock.Acquire();
-            WebURLLoaderManagerMainTask* task = job->m_crossThreadTasksBegin; // 从头部读起
-            if (!task) {
-                job->m_syncTasksLock.Release();
-                break;
-            }
-            job->m_crossThreadTasksBegin = task->m_next;
-            job->m_syncTasksLock.Release();
+            WebURLLoaderManagerMainTask* task = nullptr;
+            {
+                AutoLockJob autoLockJob(WebURLLoaderManager::sharedInstance(), jobId);
+                WebURLLoaderInternal* job = autoLockJob.lock();
+                if (!job)
+                    break;
 
-            task->run();
-            delete task;
+                job->m_syncTasksLock.Acquire();
+                task = job->m_crossThreadTasksBegin; // 从头部读起
+                if (!task) {
+                    job->m_syncTasksLock.Release();
+                    break;
+                }
+                job->m_crossThreadTasksBegin = task->m_next;
+                job->m_syncTasksLock.Release();
+            }
+            if (task) {
+                task->run();
+                delete task;
+            }
         }
     }
 
@@ -372,7 +381,7 @@ public:
             }
             job->m_syncTasksLock.Release();
 
-            taskRunner->PostTask(FROM_HERE, base::BindOnce(&WebURLLoaderManagerMainTask::runCrossThreadTasks, job));
+            taskRunner->PostTask(FROM_HERE, base::BindOnce(&WebURLLoaderManagerMainTask::runCrossThreadTasks, job->m_jobId));
             return;
         }
         WebURLLoaderManager* manager = WebURLLoaderManager::sharedInstance();
@@ -711,14 +720,17 @@ bool dispatchDownloadToWke(content::MbWebView* webview, WebURLLoaderInternal* jo
     mbDownloadOpt opt = cb(webview->getId(), param, expectedContentLength, url, mime.Utf8().c_str(), contentDisposition.Utf8().c_str(), job, &dataBind);
     if (kMbDownloadOptCancel == opt) {
         job->m_cacheForDownloadOpt = WebURLLoaderInternal::kCacheForDownloadNot;
+        WebURLLoaderManager::sharedInstance()->cancel(job->m_jobId);
         return true;
     } else if (kMbDownloadOptCacheData == opt) {
+        curl_easy_setopt(job->m_handle, CURLOPT_TIMEOUT, 60 * 60 * 3); // 如果是下载模式，就把总时间设置为N小时
         job->m_dataBind = new mbNetJobDataBind();
         *(job->m_dataBind) = dataBind;
 
         return false;
     }
 
+    CHECK(false);
     return true;
 }
 
@@ -998,13 +1010,29 @@ static bool setHttpResponseDataToJobWhenDidReceiveResponseOnMainThread(WebURLLoa
     return true;
 }
 
+// 知乎网的某个url和curl的响应url，只查差最后少了个"?"号，这种就直接用原版的url了
+static bool checkNeedSetResponseUrl(const std::string& responseUrl, const std::string& requestUrl)
+{
+    if (responseUrl.size() != requestUrl.size() - 1)
+        return true;
+    char c = requestUrl.at(requestUrl.size() - 1);
+    if (c != '?')
+        return true;
+    if (0 != memcmp(requestUrl.c_str(), responseUrl.c_str(), responseUrl.size()))
+        return true;
+    return false;
+}
+
 static void setResponseDataToJobWhenDidReceiveResponseOnMainThread(WebURLLoaderInternal* job, MainTaskArgs* args)
 {
     GURL url = job->firstRequest()->url;
     bool needSetResponseFired = true;
 
     job->m_response.SetExpectedContentLength(static_cast<long long int>(args->contentLength));
-    job->m_response.SetCurrentRequestUrl(blink::KURL(args->hdr));
+    if (checkNeedSetResponseUrl(args->hdr, job->m_url))
+        job->m_response.SetCurrentRequestUrl(blink::KURL(args->hdr));
+    else
+        job->m_response.SetCurrentRequestUrl(blink::KURL(url));
     job->m_response.SetHttpStatusCode(args->httpCode);
 
     if (url.SchemeIsFile() && 0 == job->m_response.HttpStatusCode())

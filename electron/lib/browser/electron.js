@@ -154,6 +154,7 @@ electron.TouchBar = TouchBar;
 ////////////////////////////////////////////////////////////////
 
 function AutoUpdater() {}
+Object.setPrototypeOf(AutoUpdater.prototype, EventEmitter.prototype);
 AutoUpdater.prototype.on = function(evt, callback) {}
 AutoUpdater.prototype.setFeedURL= function(url) {}
 AutoUpdater.prototype.checkForUpdates = function() {}
@@ -184,10 +185,12 @@ GlobalShortcut.prototype.unregister= function() {}
 GlobalShortcut.prototype.unregisterAll = function() {}
 electron.globalShortcut = new GlobalShortcut();
 ////////////////////////////////////////////////////////////////
-function PowerMonitor() {}
-PowerMonitor.prototype.on = function(evtName, callback) {}
-PowerMonitor.prototype.removeListener = function(evtName) {}
-electron.powerMonitor = new PowerMonitor();
+//function PowerMonitor() {}
+//Object.setPrototypeOf(PowerMonitor.prototype, EventEmitter.prototype);
+//PowerMonitor.prototype.on = function(evtName, callback) {}
+//PowerMonitor.prototype.removeListener = function(evtName) {}
+//electron.powerMonitor = new PowerMonitor();
+electron.powerMonitor = require("./api/power-monitor");
 ////////////////////////////////////////////////////////////////
 function PowerSaveBlocker() {}
 PowerSaveBlocker.prototype.start = function(type) { return 0; }

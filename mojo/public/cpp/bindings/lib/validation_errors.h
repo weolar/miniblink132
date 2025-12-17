@@ -88,7 +88,7 @@ void ReportValidationErrorForMessage(mojo::Message* message, ValidationError err
 // This class may be used by tests to suppress validation error logging. This is
 // not thread-safe and must only be instantiated on the main thread with no
 // other threads using Mojo bindings at the time of construction or destruction.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) ScopedSuppressValidationErrorLoggingForTests {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ ScopedSuppressValidationErrorLoggingForTests {
 public:
     ScopedSuppressValidationErrorLoggingForTests();
 
@@ -103,7 +103,7 @@ private:
 
 // Only used by validation tests and when there is only one thread doing message
 // validation.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) ValidationErrorObserverForTesting {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ ValidationErrorObserverForTesting {
 public:
     explicit ValidationErrorObserverForTesting(base::RepeatingClosure callback);
 
@@ -136,7 +136,7 @@ bool ReportSerializationWarning(ValidationError error);
 
 // Only used by serialization tests and when there is only one thread doing
 // message serialization.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) SerializationWarningObserverForTesting {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ SerializationWarningObserverForTesting {
 public:
     SerializationWarningObserverForTesting();
 

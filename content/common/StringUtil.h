@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 
 #if defined(WIN32)
 typedef wchar_t WCHAR;
@@ -38,14 +39,7 @@ bool isLocalDebugMachine();
 void setPluginDirectory(const std::u16string& dir);
 std::u16string getPluginDirectory();
 
-// static std::string hashString(const std::string& str, const std::string& key)
-// {
-//     std::string result;
-//     for (size_t i = 0; i < str.size(); ++i) {
-//         result += str[i] ^ (key[i % key.size()]);
-//     }
-//     return result;
-// }
+std::unique_ptr<std::string> urlNormalization(const char* url);
 
 unsigned int hashStringA(const std::string& p);
 unsigned int hashStringW(const std::u16string& p);

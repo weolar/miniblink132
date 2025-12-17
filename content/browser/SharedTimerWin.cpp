@@ -52,7 +52,7 @@ namespace content {
 typedef void(WINAPI* PfnUiThreadHeartbeatCallback)();
 PfnUiThreadHeartbeatCallback g_uiThreadHeartbeatCallback = nullptr;
 
-const LPCWSTR kTimerWindowClassName = L"MiniBlinkTimerWindowClass";
+const LPCWSTR kTimerWindowClassName = L"_TimerWindowClass_";
 
 static UINT s_timerID;
 static void sharedTimerFiredFunction();
@@ -150,7 +150,7 @@ static void WINAPI queueTimerProc(PVOID, BOOLEAN)
     if (s_pendingTimers > 100000) // 太大说明主线程卡死了
         return;
     if (MB_InterlockedIncrement((long*)&s_pendingTimers) == 1)
-        ::PostMessageW(s_timerWindowHandle, /*s_timerFiredMessage*/ WM_NULL, s_timerFiredMessage, s_timerFiredMessage);
+        ::PostMessageW(s_timerWindowHandle, s_timerFiredMessage /*WM_NULL*/, s_timerFiredMessage, s_timerFiredMessage);
 }
 
 static DWORD WINAPI threadTimerProc(void* param)
@@ -172,6 +172,8 @@ static DWORD WINAPI threadTimerProc(void* param)
     }
 #endif
     while (true) {
+        if (!s_timerWindowHandle)
+            ::Sleep(0xffffffff);
         queueTimerProc(nullptr, false);
 
         if (g_uiThreadHeartbeatCallback)
@@ -218,6 +220,7 @@ void stopSharedTimer()
     }
 
     ::DestroyWindow(s_timerWindowHandle);
+    s_timerWindowHandle = NULL;
     ::UnregisterClassW(kTimerWindowClassName, NULL);
 }
 

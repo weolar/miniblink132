@@ -13,7 +13,14 @@ public:
     //using QueryStorageUsageAndQuotaCallback = base::OnceCallback<void(::blink::mojom::blink::QuotaStatusCode, int64_t, int64_t, ::blink::mojom::blink::UsageBreakdownPtr)>;
     void QueryStorageUsageAndQuota(blink::mojom::blink::QuotaManagerHost::QueryStorageUsageAndQuotaCallback callback) override
     {
-        std::move(callback).Run(::blink::mojom::QuotaStatusCode::kOk, 0x100000, 0x100000, nullptr);
+        ::blink::mojom::blink::UsageBreakdownPtr usageBreakdown = ::blink::mojom::blink::UsageBreakdown::New();
+        usageBreakdown->fileSystem = (0);
+        usageBreakdown->webSql = (0);
+        usageBreakdown->indexedDatabase = (0);
+        usageBreakdown->serviceWorkerCache = (0);
+        usageBreakdown->serviceWorker = (0);
+        usageBreakdown->backgroundFetch = (0);
+        std::move(callback).Run(::blink::mojom::QuotaStatusCode::kOk, 0x100, 0x0000000cbb863000, std::move(usageBreakdown));
     }
 };
 

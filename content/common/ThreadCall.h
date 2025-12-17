@@ -32,8 +32,7 @@ public:
     static void exitUiThreadMessageLoop();
 
     static void callBlinkThreadAsyncWithValid(const TraceLocation& caller, mbWebView webView, std::function<void(MbWebView* webview)>&& closure);
-    static void callBlinkThreadAsyncWithValidDelayed(
-        const TraceLocation& caller, mbWebView webView, size_t millisecond, std::function<void(MbWebView* webview)>&& closure);
+    static void callBlinkThreadAsyncWithValidDelayed(const TraceLocation& caller, mbWebView webView, size_t millisecond, std::function<void(MbWebView* webview)>&& closure);
     static void callBlinkThreadAsync(const TraceLocation& caller, std::function<void(void)>&& closure);
     static void callBlinkThreadDelayed(const TraceLocation& caller, std::function<void(void)>&& closure, size_t millisecond);
     static void callBlinkThreadSync(const TraceLocation& caller, std::function<void(void)>&& closure);
@@ -65,10 +64,10 @@ public:
     //static void blinkMessageLoop(uv_loop_t* loop, v8::Platform* platform, v8::Isolate* isolate);
     static void uiMessageLoop();
 
-    //     static DWORD getUiThreadId() { return m_uiThreadId; }
-    //     static DWORD getBlinkThreadId() { return m_blinkThreadId; }
-    //
-    //     static uv_loop_t* getBlinkLoop() { return m_blinkLoop; }
+//     static DWORD getUiThreadId() { return m_uiThreadId; }
+//     static DWORD getBlinkThreadId() { return m_blinkThreadId; }
+// 
+//     static uv_loop_t* getBlinkLoop() { return m_blinkLoop; }
 
     static bool isBlinkThread();
     static bool isUiThread();
@@ -79,14 +78,11 @@ public:
 
     static void setThreadName(const char* szThreadName);
 
-    static uv_loop_t* getBlinkLoop()
-    {
-        return m_blinkUvLoop;
-    }
+    static uv_loop_t* getBlinkLoop() { return m_blinkUvLoop; }
 
 private:
     static void callThreadSync(const TraceLocation& caller, std::function<void(void)>&& closure, scoped_refptr<base::SingleThreadTaskRunner> runner);
-    static void* waitForCallThreadAsync(TaskAsyncData* asyncData);
+    static bool waitForCallThreadAsync(TaskAsyncData* asyncData);
 
     static void onThreadIdle(uv_loop_t* loop, v8::Platform* platform, v8::Isolate* isolate);
 

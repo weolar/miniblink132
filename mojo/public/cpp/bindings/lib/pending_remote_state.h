@@ -16,7 +16,7 @@ namespace internal {
 
 // Generic state owned by every templated InterfacePtrInfo or PendingRemote
 // instance.
-struct COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) PendingRemoteState {
+struct /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ PendingRemoteState {
 public:
     PendingRemoteState();
     PendingRemoteState(ScopedMessagePipeHandle pipe, uint32_t version);

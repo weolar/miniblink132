@@ -38,7 +38,7 @@ public:
     void setToRecordFromRawHeads(const blink::KURL& url, const std::string& rawHeadsString);
 
     void deleteCookies(const blink::KURL& url, const std::string& cookieName);
-    std::string getCookiesForSession(const blink::KURL&, const blink::KURL& url, bool httponly);
+    std::string getCookiesForSession(const blink::KURL& url, bool httponly);
     const curl_slist* getAllCookiesBegin();
     void getAllCookiesEnd(const curl_slist* list);
 
@@ -65,7 +65,7 @@ private:
 
     CURLSH* m_curlShareHandle;
     std::string m_cookieJarFileName;
-    bool m_dirty;
+    bool m_dirty = true;
 };
 
 } // mbnet

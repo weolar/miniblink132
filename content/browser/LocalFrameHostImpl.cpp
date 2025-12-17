@@ -451,6 +451,12 @@ void LocalFrameHostImpl::UpdateFaviconURL(WTF::Vector<::blink::mojom::blink::Fav
 void beginNavigation(std::unique_ptr<blink::WebNavigationInfo> info, blink::WebNavigationControl* navigationControl, int64_t mbwebviewId,
     MojoHandle dataPipeProducerHandle, blink::WebLocalFrame* frame);
 
+static void onDataUrlBlobReadSideData(std::string* dataUrl, std::optional<::mojo_base::BigBuffer> buf)
+{
+    dataUrl->resize(buf->size());
+    memcpy(dataUrl->data(), buf->data(), buf->size());
+}
+
 void LocalFrameHostImpl::DownloadURL(::blink::mojom::blink::DownloadURLParamsPtr params)
 {
     printFuncName(__FUNCTION__, false, false);
@@ -460,6 +466,15 @@ void LocalFrameHostImpl::DownloadURL(::blink::mojom::blink::DownloadURLParamsPtr
     info->url_request.SetReferrerString(params->referrer->url.GetString());
     info->url_request.SetReferrerPolicy(params->referrer->policy);
     //info->navigation_policy = blink::kWebNavigationPolicyDownload;
+
+    if (params->data_url_blob) {
+        ::mojo::Remote<::blink::mojom::blink::Blob> blob(std::move(params->data_url_blob));
+        std::string dataUrl;
+        blob->ReadSideData(base::BindOnce(onDataUrlBlobReadSideData, &dataUrl));
+
+        info->url_request.SetUrl(blink::KURL(String::FromUTF8(dataUrl)));
+    }
+
     m_frameClient->beginDownload(std::move(info), std::make_unique<String>(params->suggested_name));
 }
 
@@ -579,12 +594,12 @@ void LocalFrameHostImpl::GetKeepAliveHandleFactory(::mojo::PendingReceiver<::bli
 void LocalFrameHostImpl::DidAddMessageToConsole(::blink::mojom::blink::ConsoleMessageLevel log_level, const ::WTF::String& msg, uint32_t line_number,
     const ::WTF::String& source_id, const ::WTF::String& untrusted_stack_trace)
 {
-    std::string output = "DidAddMessageToConsole:[";
-    output += msg.Utf8();
-    output += "],[";
-    output += source_id.Utf8();
-    output += "]\n";
-    OutputDebugStringA(output.c_str());
+//     std::string output = "DidAddMessageToConsole:[";
+//     output += msg.Utf8();
+//     output += "],[";
+//     output += source_id.Utf8();
+//     output += "]\n";
+//     OutputDebugStringA(output.c_str());
 }
 
 void LocalFrameHostImpl::FrameSizeChanged(const ::gfx::Size& size)
@@ -602,9 +617,16 @@ void LocalFrameHostImpl::DidInferColorScheme(::blink::mojom::blink::PreferredCol
     printFuncName(__FUNCTION__, false, false);
 }
 
-void LocalFrameHostImpl::DidChangeSrcDoc(const ::blink::FrameToken& child_frame_token, const WTF::String& srcdoc_value)
+void LocalFrameHostImpl::DidChangeSrcDoc(const ::blink::FrameToken& childFrameToken, const WTF::String& srcdocValue)
 {
-    printFuncName(__FUNCTION__, false, false);
+    blink::LocalFrameToken frameToken = childFrameToken.GetAs<blink::LocalFrameToken>();
+    blink::WebLocalFrame* child = blink::WebLocalFrame::FromFrameToken(frameToken);
+    if (!child)
+        return;
+    WebLocalFrameClientImpl* client = (WebLocalFrameClientImpl*)(child->Client());
+    if (!client)
+        return;
+    client->m_srcdoc = srcdocValue;
 }
 
 void LocalFrameHostImpl::DidChangeBaseURL(const ::blink::KURL& base_url)
@@ -743,7 +765,7 @@ void LocalFrameHostImpl::NotifyStorageAccessed(::blink::mojom::blink::StorageTyp
 
 void LocalFrameHostImpl::RecordWindowProxyUsageMetrics(const ::blink::FrameToken& target_frame_token, ::blink::mojom::blink::WindowProxyAccessType access_type)
 {
-    printFuncName(__FUNCTION__, true, false);
+    //printFuncName(__FUNCTION__, true, false);
 }
 
 void LocalFrameHostImpl::NotifyDocumentInteractive()

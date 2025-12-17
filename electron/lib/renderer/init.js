@@ -44,12 +44,12 @@ let isSetModulePaths = false;
 
 // Set the __filename to the path of html file if it is file: protocol.
 function addModulePaths() {
-	if (isSetModulePaths)
-		return;
-	
-	if (window.location.protocol !== 'file:')
-		return;
-	
+    if (isSetModulePaths)
+        return;
+    
+    if (window.location.protocol !== 'file:')
+        return;
+    
     var pathname = process.platform === 'win32' && window.location.pathname[0] === '/' ? window.location.pathname.substr(1) : window.location.pathname;
     window.__filename = path.normalize(decodeURIComponent(pathname));
     window.__dirname = path.dirname(window.__filename);
@@ -64,8 +64,8 @@ function addModulePaths() {
 }
 
 function __mbRequire__(name) {
-	addModulePaths();
-	
+    addModulePaths();
+
     var oldProcess = process;
     process = nodeProcess;
     var result = nodeRequire(name);
@@ -91,7 +91,7 @@ addModulePaths();
 
 function outputObj(obj) {  
     var props = "";  
-	for (var prop in obj) {
+    for (var prop in obj) {
         if (obj.hasOwnProperty(prop)) {
             var propVal = obj[prop];
             props += prop + ' (' + typeof(prop) + ')' + ' = ';
@@ -105,20 +105,20 @@ function outputObj(obj) {
             props += '\n';
         }
     }
-   	console.log(props);  
+       console.log(props);  
 }  
 
 global.process.on('exit', function() {
-	var activeHandles = global.process._getActiveHandles();
-	for (var i in activeHandles) {
-		var handle = activeHandles[i];
-		if (handle.hasOwnProperty('close') || undefined !== handle['close'])
-			handle.close();
-		else if (handle.hasOwnProperty('_handle') && (handle._handle.hasOwnProperty('close') || undefined !== handle._handle['close']))
-			handle._handle.close();
-		else
-			console.log("global.process.on exit fail:" + handle + ", " + handle._handle);
-	}
+    var activeHandles = global.process._getActiveHandles();
+    for (var i in activeHandles) {
+        var handle = activeHandles[i];
+        if (handle.hasOwnProperty('close') || undefined !== handle['close'])
+            handle.close();
+        else if (handle.hasOwnProperty('_handle') && (handle._handle.hasOwnProperty('close') || undefined !== handle._handle['close']))
+            handle._handle.close();
+        else
+            console.log("global.process.on exit fail:" + handle + ", " + handle._handle);
+    }
 });
 
 const resolvePromise = Promise.resolve.bind(Promise);

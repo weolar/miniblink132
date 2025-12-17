@@ -13,7 +13,7 @@
 
 namespace mojo {
 
-template <> struct COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) StringTraits<WTF::String> {
+template <> struct /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ StringTraits<WTF::String> {
     static bool IsNull(const WTF::String& input)
     {
         return input.IsNull();

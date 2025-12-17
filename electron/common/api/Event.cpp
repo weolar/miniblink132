@@ -9,6 +9,8 @@
 #include "electron/common/gin_helper/dictionary.h"
 #include "electron/common/gin_helper/public/gin_embedders.h"
 #include "electron/common/gin_helper/public/wrapper_info.h"
+#include "electron/common/V8Util.h"
+#include "third_party/blink/public/common/messaging/cloneable_message.h"
 
 namespace mate {
 
@@ -33,28 +35,34 @@ void Event::preventDefault(v8::Isolate* isolate)
     gin_helper::Wrappable<Event>::GetWrapper(isolate)->Set(context, gin_helper::StringToV8(isolate, "defaultPrevented"), v8::True(isolate));
 }
 
-bool Event::sendReply(const std::string& json)
+bool Event::sendReply(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
+    CHECK(info.Length() == 1);
+
+    blink::CloneableMessage cloneableMsg;
+    if (!atom::serializeV8Value(info.GetIsolate(), info[0], &cloneableMsg))
+        return false;
+
     if (m_callback)
-        (*m_callback)(json);
+        (*m_callback)(cloneableMsg.encoded_message);
     return true;
 }
 
-std::string Event::returnValueGet()
-{
-    return m_returnValue;
-}
-
-void Event::returnValueSet(std::string json)
-{
-    m_returnValue = json;
-
-    if (m_callback)
-        (*m_callback)(json);
-}
+// std::vector<char> Event::returnValueGet()
+// {
+//     return m_returnValue;
+// }
+// 
+// void Event::returnValueSet(const std::vector<char>& json)
+// {
+//     m_returnValue = json;
+//     DebugBreak();
+//     if (m_callback)
+//         (*m_callback)(json);
+// }
 
 // static
-Event* Event::create(v8::Isolate* isolate, v8::Local<v8::Object> wrapper, std::function<void(std::string)>&& callback)
+Event* Event::create(v8::Isolate* isolate, v8::Local<v8::Object> wrapper, std::function<void(base::span<const uint8_t>)>&& callback)
 {
     Event::init(isolate);
 
@@ -64,7 +72,7 @@ Event* Event::create(v8::Isolate* isolate, v8::Local<v8::Object> wrapper, std::f
 
     v8::MaybeLocal<v8::Object> obj = constructorFunction->NewInstance(context).ToLocalChecked();
     Event* self = (Event*)gin_helper::WrappableBase::GetNativePtr(obj.ToLocalChecked(), &kWrapperInfo);
-    self->m_callback = new std::function<void(std::string)>(std::move(callback));
+    self->m_callback = new std::function<void(base::span<const uint8_t>)>(std::move(callback));
     return self;
 }
 

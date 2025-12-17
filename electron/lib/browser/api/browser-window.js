@@ -16,8 +16,13 @@ Object.defineProperty(BrowserWindow.prototype, "webContents", {
     },
     configurable : true
 });
-	
+
 BrowserWindow.prototype.setTouchBar = function() { }
+
+BrowserWindow.prototype.setTitle = function() {
+    if (typeof(str) == "string")
+        this._setTitle(str);
+}
 
 Object.assign(BrowserWindow.prototype, {
     loadURL (...args) {
@@ -83,7 +88,6 @@ Object.assign(BrowserWindow.prototype, {
     capturePage (...args) {
         return this.webContents.capturePage.apply(this.webContents, args);
     }
-    
 
 });
 

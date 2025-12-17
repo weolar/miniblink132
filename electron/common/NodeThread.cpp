@@ -99,6 +99,7 @@ static void initUiThread(NodeArgc* n)
     v8::V8::SetFlagsFromString("--no-freeze-flags-after-init");
     uv_loop_t* loop = n->uiThreadNodeEnv.uvLoop;
     mbInit(nullptr);
+    mbEnableHighDPISupport();
 
     g_mainThreadId = base::PlatformThread::CurrentId();
 
@@ -126,7 +127,7 @@ static v8::Isolate* initNodeEnvAndRunLoop(NodeArgc* nodeArgc)
         v8::HandleScope handleScope(isolate);
         v8::Local<v8::Context> context = v8::Context::New(isolate);
         v8::Context::Scope contextScope(context);
-        bindMbConsoleLog(context);
+        //bindMbConsoleLog(context);
 
         nodeArgc->m_nodeMultiIsolatePlatform
             = node::CreatePlatform(base::RecommendedMaxNumberOfThreadsInThreadGroup(3, 8, 0.1, 0), new TracingControllerImpl());

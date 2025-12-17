@@ -11,7 +11,7 @@
 
 namespace mojo {
 
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) MessageHeaderValidator : public MessageReceiver {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ MessageHeaderValidator : public MessageReceiver {
 public:
     MessageHeaderValidator();
     explicit MessageHeaderValidator(const std::string& description);

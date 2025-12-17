@@ -24,7 +24,11 @@
 
 namespace cc {
 
+#ifdef _DEBUG
+size_t kMemoryThresholdTSoftwareImageDecodeCache = 5000 * 5000 * 8;
+#else
 size_t kMemoryThresholdTSoftwareImageDecodeCache = 5000 * 5000 * 4;
+#endif // _DEBUG
 
 namespace {
 // If the size of the original sized image breaches kMemoryRatioToSubrect but we

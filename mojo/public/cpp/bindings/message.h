@@ -444,7 +444,7 @@ public:
     [[nodiscard]] virtual bool AcceptWithResponder(Message* message, std::unique_ptr<MessageReceiverWithStatus> responder) = 0;
 };
 
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) PassThroughFilter : public MessageReceiver {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ PassThroughFilter : public MessageReceiver {
 public:
     PassThroughFilter();
 

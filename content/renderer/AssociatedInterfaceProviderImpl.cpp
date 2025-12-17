@@ -12,10 +12,6 @@
 namespace content {
 
 AssociatedInterfaceProviderImpl::AssociatedInterfaceProviderImpl(WebLocalFrameClientImpl* frameClient)
-    //: m_localFrameHostReceiver(new LocalFrameHostImpl(frameClient))
-    //, m_backForwardCacheControllerHostReceiver(new BackForwardCacheControllerHostImpl())
-    //, m_localMainFrameHostReceiver(new LocalMainFrameHostImpl())
-    //, m_broadcastChannelProviderReceiver(new BroadcastChannelProviderImpl(frameClient))
     : m_frameClient(frameClient)
 {
 }
@@ -53,7 +49,7 @@ void AssociatedInterfaceProviderImpl::GetAssociatedInterface(
         if (m_frameClient && m_frameClient->getFrame()) {
             origin = m_frameClient->getFrame()->GetSecurityOrigin();
         }
-        createAndBindInterface<::blink::mojom::blink::BlobURLStore, BlobURLStoreImpl>(std::move(receiver.PassPipe()), origin);
+        createAndBindInterface<::blink::mojom::blink::BlobURLStore, BlobURLStoreImpl>(std::move(receiver.PassPipe()), origin->ToRawString().Utf8());
     } else
         DebugBreak();
 }

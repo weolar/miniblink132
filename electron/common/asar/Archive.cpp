@@ -8,12 +8,14 @@
 #include <vector>
 
 #include "electron/common/asar/ScopedTemporaryFile.h"
+#include "electron/common/asar/AsarUtil.h"
 
+#include "base/files/file_util.h"
 #include "base/files/file.h"
 #include "base/logging.h"
 #include "base/pickle.h"
-#include "base/json/json_reader.h"
 #include "base/values.h"
+#include "base/json/json_reader.h"
 
 #if defined(OS_WIN)
 #include <io.h>
@@ -133,7 +135,7 @@ static mb_open_osfhandle_pfn mb_open_osfhandle = nullptr;
 #endif
 
 Archive::Archive(const base::FilePath& path)
-    : path_(path)
+    : path_(normalizeFile(path))
     , file_(path_, base::File::FLAG_OPEN | base::File::FLAG_READ)
 #if defined(OS_WIN)
     , fd_(_open_osfhandle(reinterpret_cast<intptr_t>(file_.GetPlatformFile()), 0))

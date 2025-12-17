@@ -16,7 +16,7 @@ class MessageReceiverWithStatus;
 
 namespace internal {
 
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) ProxyToResponder {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ ProxyToResponder {
 public:
     ProxyToResponder(const Message& message, std::unique_ptr<MessageReceiverWithStatus> responder);
     ~ProxyToResponder();

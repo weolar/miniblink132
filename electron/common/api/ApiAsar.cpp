@@ -21,6 +21,7 @@
 #include "base/strings/string_util.h"
 #include "base/threading/thread_local.h"
 #include <vector>
+#pragma clang optimize off
 
 namespace node {
 bool g_disable_has_run_bootstrapping_code_error = false;
@@ -255,6 +256,7 @@ public:
 
 gin_helper::WrapperInfo V8Archive::kWrapperInfo = { gin_helper::GinEmbedder::kEmbedderNativeGin };
 
+// »¹µÃ¸ÄW:\mycode\mb132\third_party\libnode\src\node_builtins.cc
 #define FAKE_ASAR 0
 
 void initAsarSupport(const v8::FunctionCallbackInfo<v8::Value>& info)
@@ -266,7 +268,7 @@ void initAsarSupport(const v8::FunctionCallbackInfo<v8::Value>& info)
     std::string buffer;
 
 #if FAKE_ASAR
-    asar::ReadFileToString(base::FilePath::FromUTF8Unsafe("W:\\mycode\\mb132\\electron\\lib\\common\\asar_init.js"), &buffer);
+    asar::readFileToString(base::FilePath::FromUTF8Unsafe("W:\\mycode\\mb132\\electron\\lib\\common\\asar_init.js"), &buffer);
     const char* asarInitNative = &buffer.at(0);
     size_t asarInitNativeLength = buffer.size();
 #else
@@ -285,7 +287,7 @@ void initAsarSupport(const v8::FunctionCallbackInfo<v8::Value>& info)
     v8::Function* resultFunc = v8::Function::Cast(*result);
 
 #if FAKE_ASAR
-    asar::ReadFileToString(base::FilePath::FromUTF8Unsafe("W:\\mycode\\mb132\\electron\\lib\\common\\asar.js"), &buffer);
+    asar::readFileToString(base::FilePath::FromUTF8Unsafe("W:\\mycode\\mb132\\electron\\lib\\common\\asar.js"), &buffer);
     v8::Local<v8::String> asarNativeV8 = v8::String::NewFromUtf8(isolate, &buffer.at(0), v8::NewStringType::kNormal, buffer.size()).ToLocalChecked();
 #else
     v8::Local<v8::String> asarNativeV8 = v8::String::NewFromUtf8(isolate, (const char*)AsarJs, v8::NewStringType::kNormal, AsarJsLength - 1).ToLocalChecked();

@@ -312,9 +312,10 @@ public:
 
         std::string title;
         std::string message;
+        std::string detail;
         std::string type;
         std::vector<std::string> buttons;
-        getMessageOptions(isolate, options, &title, &message, &type, &buttons);
+        getMessageOptions(isolate, options, &title, &message, &detail, &type, &buttons);
 
         UINT uType = MB_ICONINFORMATION;
         if ("error" == type)
@@ -333,6 +334,8 @@ public:
 
         ShowMessageBoxThreadInfo* info = new ShowMessageBoxThreadInfo();
         info->message = base::UTF8ToUTF16(message);
+        info->message += (const char16_t*)L" ";
+        info->message += base::UTF8ToUTF16(detail);
         info->result = -1;
         info->self = this;
         info->uType = uType;
@@ -366,6 +369,8 @@ public:
                 args.GetReturnValue().Set(v8Result);
 
             delete info;
+        } else {
+            args.GetReturnValue().Set(handle);
         }
     }
 
@@ -380,7 +385,13 @@ private:
     };
 
     void getMessageOptions(
-        v8::Isolate* isolate, v8::Local<v8::Object> options, std::string* title, std::string* message, std::string* type, std::vector<std::string>* buttons)
+        v8::Isolate* isolate, 
+        v8::Local<v8::Object> options, 
+        std::string* title, 
+        std::string* message, 
+        std::string* detail,
+        std::string* type, 
+        std::vector<std::string>* buttons)
     {
         base::Value::Dict optionsDict;
         if (options.IsEmpty() || !gin_helper::Converter<base::Value::Dict>::FromV8(isolate, options, &optionsDict))
@@ -392,6 +403,10 @@ private:
         tempStr = optionsDict.FindString("message");
         if (tempStr)
             *message = *tempStr;
+
+        tempStr = optionsDict.FindString("detail");
+        if (tempStr)
+            *detail = *tempStr;
 
         tempStr = optionsDict.FindString("type");
         if (tempStr)
@@ -684,6 +699,74 @@ private:
 
         return;
     }
+    
+    // 辅助函数：将 HRESULT 错误转换为可读信息（调试用）
+    static void CheckHR(HRESULT hr, const std::string& context)
+    {
+        if (FAILED(hr)) {
+            //_com_error err(hr);
+            //std::cerr << "[" << context << "] 错误: " << err.ErrorMessage() << " (HRESULT: 0x"
+            //    << std::hex << hr << ")" << std::endl;
+            //throw std::runtime_error("COM 操作失败");
+        }
+    }
+
+    static bool selectFolderDialog(IFileOpenDialog* pFileOpen, HWND hwndParent, std::u16string* folderPath)
+    {
+        // 1. 创建 IFileOpenDialog 实例
+
+        // 2. 设置选项：只选择文件夹！
+        DWORD dwOptions;
+        HRESULT hr = pFileOpen->GetOptions(&dwOptions);
+        CheckHR(hr, "GetOptions");
+        if (FAILED(hr))
+            return false;
+
+        hr = pFileOpen->SetOptions(dwOptions | FOS_PICKFOLDERS);
+        CheckHR(hr, "SetOptions(FOS_PICKFOLDERS)");
+        if (FAILED(hr))
+            return false;
+
+        // 3. 可选：设置对话框标题
+        hr = pFileOpen->SetTitle(L"请选择一个文件夹");
+        CheckHR(hr, "SetTitle");
+        if (FAILED(hr))
+            return false;
+
+        // 4. 显示对话框
+        hr = pFileOpen->Show(hwndParent);
+        if (hr == HRESULT_FROM_WIN32(ERROR_CANCELLED)) {
+            // 用户按了“取消”
+            pFileOpen->Release();
+            return false;
+        }
+        CheckHR(hr, "Show");
+        if (FAILED(hr))
+            return false;
+
+        // 5. 获取用户选择的项
+        IShellItem* pItem = nullptr;
+        hr = pFileOpen->GetResult(&pItem);
+        CheckHR(hr, "GetResult");
+        if (FAILED(hr))
+            return false;
+
+        // 6. 获取文件夹的路径
+        PWSTR pszFolderPath = nullptr;
+        hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFolderPath);
+        CheckHR(hr, "GetDisplayName");
+        if (FAILED(hr))
+            return false;
+
+        *folderPath = (const char16_t*)pszFolderPath;
+
+        // 7. 释放资源
+        CoTaskMemFree(pszFolderPath);
+        pItem->Release();
+        pFileOpen->Release();
+
+        return true;
+    }
 
     static int CALLBACK browseCallbackProc(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData)
     {
@@ -698,6 +781,20 @@ private:
 
     static unsigned selectDir(HWND parentWindow, const std::u16string& title, const std::u16string& defaultPath, std::u16string* strDir)
     {
+        IFileOpenDialog* pFileOpen = nullptr;
+        HRESULT hr = CoCreateInstance(
+            CLSID_FileOpenDialog,
+            nullptr,
+            CLSCTX_INPROC_SERVER,
+            IID_PPV_ARGS(&pFileOpen)
+        );
+        CheckHR(hr, "CoCreateInstance(IFileOpenDialog)");
+        if (!(FAILED(hr))) { // win vista以上走这
+            selectFolderDialog(pFileOpen, nullptr, strDir);
+            return IDOK;
+        }
+
+        // 兼容xp
         std::vector<char16_t> szDir;
         szDir.resize(MAX_PATH);
         BROWSEINFO bi;

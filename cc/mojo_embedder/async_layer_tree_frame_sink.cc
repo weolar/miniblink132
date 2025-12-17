@@ -207,7 +207,8 @@ void AsyncLayerTreeFrameSink::SubmitCompositorFrame(viz::CompositorFrame frame, 
             last_submitted_size_in_pixels_.height() != frame.size_in_pixels().height() ||
             last_submitted_size_in_pixels_.width() != frame.size_in_pixels().width()) {
             OutputDebugStringA("AsyncLayerTreeFrameSink::SubmitCompositorFrame fail\n");
-            return;
+            //DebugBreak();
+            //return;
         }
     }
 

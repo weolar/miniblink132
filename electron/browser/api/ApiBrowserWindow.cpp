@@ -28,13 +28,31 @@
 #include "third_party/skia/include/core/SkBitmap.h"
 #include "content/common/ThreadCall.h"
 #include "ui/gfx/icon_util.h"
+#include "ui/display/win/screen_win.h"
 #include "base/files/file_path.h"
 #include "base/win/windows_version.h"
 #include "resource.h"
 #include <shellapi.h>
 #include <ole2.h>
 
+#pragma clang optimize off
+namespace content {
+void printCallstack();
+}
+
+extern "C" void PrintPath(const WCHAR * path)
+{
+    std::wstring temp = L"PrintPath";
+    temp += path;
+    temp += L"\n";
+    OutputDebugStringW(temp.c_str());
+}
+
 namespace atom {
+
+const int RESIZE_BORDER = 3; // 窗口尺寸和调整边缘的阈值
+#define GET_X_LPARAM(lp)   ((int)(short)LOWORD(lp))
+#define GET_Y_LPARAM(lp)   ((int)(short)HIWORD(lp))
 
 const wchar_t WindowInterface::kElectronClassName[] = L"mb_electron_window";
 typedef void(MB_CALL_TYPE* mbNetOnViewLoadInfoFn)(mbWebView webView, mbNetViewLoadInfoCallback callback, void* param);
@@ -205,10 +223,12 @@ public:
         builder.SetMethod("isClosable", &BrowserWindow::isClosableApi);
         builder.SetMethod("setAlwaysOnTop", &BrowserWindow::setAlwaysOnTopApi);
         builder.SetMethod("isAlwaysOnTop", &BrowserWindow::isAlwaysOnTopApi);
+        builder.SetMethod("setOpacity", &BrowserWindow::setOpacityApi);
         builder.SetMethod("center", &BrowserWindow::centerApi);
+        builder.SetMethod("setWindowButtonPosition", &BrowserWindow::setWindowButtonPositionApi);
         builder.SetMethod("setPosition", &BrowserWindow::setPositionApi);
         builder.SetMethod("getPosition", &BrowserWindow::getPositionApi);
-        builder.SetMethod("setTitle", &BrowserWindow::setTitleApi);
+        builder.SetMethod("_setTitle", &BrowserWindow::setTitleApi);
         builder.SetMethod("getTitle", &BrowserWindow::getTitleApi);
         builder.SetMethod("flashFrame", &BrowserWindow::flashFrameApi);
         builder.SetMethod("setSkipTaskbar", &BrowserWindow::setSkipTaskbarApi);
@@ -661,7 +681,7 @@ public:
         ::PostMessage(m_hWnd, WM_SETCURSOR /*_ASYN*/, 0, 0);
     }
 
-    bool setCursorInfoTypeByCache()
+    bool setCursorInfoTypeByCache(LPARAM lParam)
     {
         RECT rc;
         ::GetClientRect(m_hWnd, &rc);
@@ -673,6 +693,43 @@ public:
             return false;
 
         HCURSOR hCur = NULL;
+        //if (LOWORD(lParam) == HTCLIENT) 
+        {
+            RECT rc;
+            GetClientRect(m_hWnd, &rc);
+            int x = pt.x;
+            int y = pt.y;
+            int w = rc.right;
+            int h = rc.bottom;
+
+            bool left = (x < RESIZE_BORDER);
+            bool right = (x >= (w - RESIZE_BORDER));
+            bool top = (y < RESIZE_BORDER);
+            bool bottom = (y >= (h - RESIZE_BORDER));
+
+            if (left && top)
+                hCur = LoadCursor(NULL, IDC_SIZENWSE); // 左上角
+            else if (right && top)                     
+                hCur = LoadCursor(NULL, IDC_SIZENESW); // 右上角
+            else if (left && bottom)                   
+                hCur = LoadCursor(NULL, IDC_SIZENESW); // 左下角
+            else if (right && bottom)                  
+                hCur = LoadCursor(NULL, IDC_SIZENWSE); // 右下角
+            else if (left)                              
+                hCur = LoadCursor(NULL, IDC_SIZEWE);   // 左边缘
+            else if (right)                             
+                hCur = LoadCursor(NULL, IDC_SIZEWE);   // 右边缘
+            else if (top)                               
+                hCur = LoadCursor(NULL, IDC_SIZENS);   // 上边缘
+            else if (bottom)                            
+                hCur = LoadCursor(NULL, IDC_SIZENS);   // 下边缘
+
+            if (hCur) {
+                ::SetCursor(hCur);
+                return true;
+            }
+        }
+
         switch (m_cursorInfoType) {
         case kMbCursorInfoPointer:
             hCur = ::LoadCursor(NULL, IDC_ARROW);
@@ -782,8 +839,9 @@ public:
 
         switch (message) {
         case WM_CLOSE: {
+            WindowState state = m_state;
             m_state = WindowDestroying;
-            if (!m_isDestroyApiBeCalled) {
+            if (WindowDestroying != state && !m_isDestroyApiBeCalled) {
                 bool isPreventDefault = mate::EventEmitter<BrowserWindow>::emit("close");
                 if (isPreventDefault)
                     return 0;
@@ -887,7 +945,11 @@ public:
             setRoundWindow();
         }
             return 0;
+//         case WM_SETICON:
+//             return 0;
         case WM_KEYDOWN: {
+            setIcon(hWnd); // !!
+
             if (m_hIMC) {
                 ::ImmAssociateContext(hWnd, m_hIMC);
                 m_hIMC = nullptr;
@@ -1026,7 +1088,7 @@ public:
             return 0;
 
         case WM_SETCURSOR:
-            if (setCursorInfoTypeByCache())
+            if (setCursorInfoTypeByCache(lParam))
                 return 0;
             break;
         case WM_IME_STARTCOMPOSITION: {
@@ -1053,7 +1115,8 @@ public:
             ::ImmReleaseContext(hWnd, hIMC);
 
             delete caret;
-        } break;
+        } 
+            break;
         case WM_DROPFILES:
             //onDragFiles((HDROP)wParam);
             break; //         if (message != WM_TIMER) {
@@ -1066,10 +1129,91 @@ public:
             if (HTCAPTION == wParam && !m_createWindowParam->isMovable) {
                 return 0;
             }
-        } break;
+        }
+            break;
+
+        case WM_ACTIVATE:
+            break;
+        case WM_NCHITTEST:
+        {
+            if (!m_createWindowParam->isResizable)
+                break;
+            // 获取鼠标在窗口中的位置
+            POINT pt = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
+            ScreenToClient(hWnd, &pt);
+
+            RECT rc;
+            GetClientRect(hWnd, &rc);
+
+            int x = pt.x;
+            int y = pt.y;
+            int w = rc.right;
+            int h = rc.bottom;
+
+            // 判断是否在窗口的边缘，用于调整大小
+            bool leftEdge = (x < RESIZE_BORDER);
+            bool rightEdge = (x >= (w - RESIZE_BORDER));
+            bool topEdge = (y < RESIZE_BORDER);
+            bool bottomEdge = (y >= (h - RESIZE_BORDER));
+
+            if (leftEdge && topEdge) 
+                return HTTOPLEFT;
+            if (rightEdge && topEdge) 
+                return HTTOPRIGHT;
+            if (leftEdge && bottomEdge) 
+                return HTBOTTOMLEFT;
+            if (rightEdge && bottomEdge) 
+                return HTBOTTOMRIGHT;
+
+            if (leftEdge) 
+                return HTLEFT;
+            if (rightEdge) 
+                return HTRIGHT;
+            if (topEdge) 
+                return HTTOP;
+            if (bottomEdge) 
+                return HTBOTTOM;
+
+            // 默认返回客户端区域
+            return HTCLIENT;
+        }
         }
 
         return ::DefWindowProcW(hWnd, message, wParam, lParam);
+    }
+
+    void setIcon(HWND hWnd)
+    {
+        static bool m_hadSetIcon = false;
+        if (m_hadSetIcon)
+            return;
+
+        std::string contents; 
+        HICON hIcon = nullptr;
+        if (asar::readFileToString(base::FilePath::FromUTF8Unsafe(
+            //"W:\\WeGameApps\\downloading\\icon.png"
+            m_createWindowParam->m_iconPath
+            //"W:\\mycode\\mb132\\third_party\\skia\\tools\\skiaserve\\favicon.ico"
+        ), &contents)) {
+            void* picture = platform_util::loadIconFromMemory((const uint8_t*)contents.data(), contents.size(), &hIcon);
+            if (picture) {
+                ::SendMessageW(hWnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
+                ::SendMessageW(hWnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+                platform_util::loadIconFromMemoryFree(picture);
+                m_hadSetIcon = true;
+            } else {
+                //sk_sp<SkData> data = SkData::MakeWithoutCopy(contents.data(), contents.size());
+                //std::unique_ptr<SkImageGenerator> xx = SkImageGenerators::MakeFromEncoded(data);
+            }
+        }
+
+        if (!m_hadSetIcon) {
+            hIcon = LoadIcon(::GetModuleHandleW(NULL), MAKEINTRESOURCE(IDI_ICON_ELECTRON32x32));
+            if (NULL != hIcon) {
+                ::SendMessage(hWnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+                ::SendMessage(hWnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
+            }
+        }
     }
 
     static LRESULT CALLBACK staticWindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -1083,11 +1227,7 @@ public:
             ::SetPropW(hWnd, kPropW, (HANDLE)self);
             ::SetTimer(hWnd, (UINT_PTR)self, 70, NULL);
 
-            HICON hIcon = LoadIcon(::GetModuleHandleW(NULL), MAKEINTRESOURCE(IDI_ICON_ELECTRON32x32));
-            if (NULL != hIcon) {
-                ::SendMessage(hWnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
-                ::SendMessage(hWnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
-            }
+            self->setIcon(hWnd);
             return 0;
         }
         if (!self)
@@ -1158,6 +1298,7 @@ private:
     //maximize
     void maximizeApi()
     {
+        content::printCallstack();
         ::ShowWindow(m_hWnd, SW_MAXIMIZE);
     }
 
@@ -1289,6 +1430,11 @@ private:
         info.GetReturnValue().Set(toBuffer(info.GetIsolate(), (void*)(&m_hWnd), sizeof(HWND)));
         //return toBuffer(isolate(), &m_hWnd, sizeof(UINT_PTR));
         //return (UINT_PTR)m_hWnd;
+    }
+
+    void setWindowButtonPositionApi(v8::Local<v8::Object> bounds)
+    {
+
     }
 
     v8::Local<v8::Object> getBoundsApi()
@@ -1444,14 +1590,6 @@ private:
     void setMinimizableApi(bool isMinimizable)
     {
         m_createWindowParam->isMinimizable = isMinimizable;
-        //         DWORD style = ::GetWindowLong(m_hWnd, GWL_EXSTYLE);
-        //         if (isMinimizable)
-        //             style |= WS_MINIMIZEBOX;
-        //         else
-        //             style &= (~WS_MINIMIZEBOX);
-        //         m_createWindowParam->styles = style;
-        //         m_createWindowParam->isMaximizable;
-        //         ::SetWindowLong(m_hWnd, GWL_EXSTYLE, style);
     }
 
     bool isMinimizableApi()
@@ -1475,6 +1613,11 @@ private:
         //         m_createWindowParam->styles = style;
         //         m_createWindowParam->isMaximizable;
         //         ::SetWindowLong(m_hWnd, GWL_EXSTYLE, style);
+    }
+
+    void setOpacityApi(float f)
+    {
+
     }
 
     void setEnableApi(bool b)
@@ -1801,7 +1944,7 @@ private:
             mbNetSetMIMEType(job, (char*)mime);
 
             std::string contents;
-            if (asar::ReadFileToString(base::FilePath::FromUTF16Unsafe((const char16_t*)(localFile)), &contents) && 0 != contents.size())
+            if (asar::readFileToString(base::FilePath::FromUTF16Unsafe((const char16_t*)(localFile)), &contents) && 0 != contents.size())
                 mbNetSetData(job, (void*)contents.data(), contents.size());
 
             OutputDebugStringA("hookedUrl:");
@@ -1835,12 +1978,21 @@ private:
 
     static BOOL MB_CALL_TYPE handleLoadUrlBegin(mbWebView webView, BrowserWindow* self, const char* url, void* job)
     {
+        std::string temp = "apiwindow.load:";
+        temp += url;
+        temp += "\n";
+        OutputDebugStringA(temp.c_str());
+
+        static void* ptr = nullptr;
+        if (!ptr) {
+            HANDLE h = GetModuleHandleW(L"kernel32.dll");
+            void* ptr = GetProcAddress((HMODULE)h, "OutputDebugStringW");
+            char output[100] = { 0 };
+            sprintf_s(output, 99, "OutputDebugStringW: %p\n", ptr);
+            OutputDebugStringA(output);
+        }
+
 //         if (hookUrl(job, url, "chunk-vendors.1682480299277.js", L"G:\\test\\web_test\\ele_test\\windows-common-jiasu\\my_test\\chunk-vendors.1682480299277.js",
-//                 "text/javascript"))
-//             return true;
-//         if (hookUrl(job, url, "cdn/vue.js", L"G:\\test\\web_test\\ele_test\\windows-common-jiasu\\vue.js", "text/javascript"))
-//             return true;
-//         if (hookUrl(job, url, "chunk-common.1685067254486.js", L"G:\\test\\web_test\\ele_test\\windows-common-jiasu\\my_test\\chunk-common.1685067254486.js",
 //                 "text/javascript"))
 //             return true;
 
@@ -1850,16 +2002,11 @@ private:
         //         }
 
         std::string miniElectronAsarRes;
-        if (LoadMiniElectronAsarRes(url, &miniElectronAsarRes)) {
+        int rc = 0;
+        if (checkMiniElectronAsarResStat(url, &rc, &miniElectronAsarRes)) {
             mbNetSetData(job, miniElectronAsarRes.data(), miniElectronAsarRes.size());
             return true;
         }
-
-//         std::string temp = "apiwindow.load:";
-//         temp += url;
-//         temp += "\n";
-//         OutputDebugStringA(temp.c_str());
-
 
         ApiSession* ses = SessionMgr::get()->findOrCreateSession(nullptr, self->m_webContents->m_sessionName, false);
         if (ses) {
@@ -1886,8 +2033,9 @@ private:
         urlString = urlString.substr(fileHeadLength, urlString.size() - fileHeadLength);
         base::FilePath path = base::FilePath::FromUTF8Unsafe(urlString);
         std::string contents;
-        if (!asar::ReadFileToString(path, &contents) || 0 == contents.size())
+        if (!asar::readFileToString(path, &contents) || 0 == contents.size()) {
             return false;
+        }
         mbNetSetData(job, &contents.at(0), contents.size());
 
         return true;
@@ -1947,6 +2095,22 @@ private:
     //             }
     //         });
     //     }
+
+    static BOOL MB_CALL_TYPE onCloseCallback(mbWebView webView, void* param, void* unuse)
+    {
+        BrowserWindow* self = (BrowserWindow*)param;
+
+        WindowState state = self->m_state;
+        self->m_state = WindowDestroying;
+        if (WindowDestroying != state && !self->m_isDestroyApiBeCalled) {
+            v8::HandleScope handleScope(v8::Isolate::GetCurrent());
+            bool isPreventDefault = self->mate::EventEmitter<BrowserWindow>::emit("close");
+            if (isPreventDefault)
+                return FALSE;
+        }
+        ::ShowWindow(self->m_hWnd, SW_HIDE);
+        return TRUE;
+    }
 
     static void MB_CALL_TYPE onURLChangedCallback(mbWebView webView, void* param, const utf8* url, BOOL canGoBack, BOOL canGoForward)
     {
@@ -2146,7 +2310,13 @@ private:
 
         if (createWindowParam->height < createWindowParam->minHeight)
             createWindowParam->height = createWindowParam->minHeight;
-
+#ifdef OS_WIN
+        float f = display::win::ScreenWin::GetScaleFactorForHWND(NULL);
+        if (f > 0.5f) {
+            createWindowParam->width *= f;
+            createWindowParam->height *= f;
+        }
+#endif
         std::string title;
         options->GetBydefaultVal("title", "Electron", &title);
         createWindowParam->title = StringUtil::UTF8ToUTF16(title);
@@ -2157,6 +2327,9 @@ private:
         } else {
             createWindowParam->styles = WS_POPUP | WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_CLIPSIBLINGS | WS_CLIPCHILDREN;
             createWindowParam->styleEx = 0;
+
+            if (!createWindowParam->isFrame)
+                createWindowParam->styles = WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_POPUP;
         }
 
         if (createWindowParam->isMinimizable)
@@ -2164,12 +2337,9 @@ private:
         if (createWindowParam->isMaximizable)
             createWindowParam->styles |= WS_MAXIMIZEBOX;
 
-        if (createWindowParam->isResizable)
+        if (createWindowParam->isResizable && createWindowParam->isFrame)
             createWindowParam->styles |= WS_THICKFRAME;
         createWindowParam->styleEx |= WS_EX_ACCEPTFILES;
-
-        if (!createWindowParam->isFrame)
-            createWindowParam->styles = WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_POPUP;
 
         if (createWindowParam->isShow)
             createWindowParam->styles |= WS_VISIBLE;
@@ -2184,17 +2354,17 @@ private:
 
     static void matchDpi(mbWebView webview)
     {
-        if (base::win::OSInfo::GetInstance()->version() < base::win::Version::WIN8)
-            return;
-
-        HDC hdc = ::GetDC(nullptr);
-        int t = ::GetDeviceCaps(hdc, DESKTOPHORZRES);
-        int d = ::GetDeviceCaps(hdc, HORZRES);
-        int logPixelsx = ::GetDeviceCaps(hdc, LOGPIXELSX);
-        float s_kScaleX = (float)t / (float)d;
-        s_kScaleX = logPixelsx / 96.0f;
-
-        mbSetZoomFactor(webview, s_kScaleX);
+//         if (base::win::OSInfo::GetInstance()->version() < base::win::Version::WIN8)
+//             return;
+// 
+//         HDC hdc = ::GetDC(nullptr);
+//         int t = ::GetDeviceCaps(hdc, DESKTOPHORZRES);
+//         int d = ::GetDeviceCaps(hdc, HORZRES);
+//         int logPixelsx = ::GetDeviceCaps(hdc, LOGPIXELSX);
+//         float s_kScaleX = (float)t / (float)d;
+//         s_kScaleX = logPixelsx / 96.0f;
+// 
+//         mbSetZoomFactor(webview, s_kScaleX);
     }
 
     void newWindowTaskInUiThread(WebContents::BrowserWindowConstructorOptions* createWindowParam)
@@ -2244,32 +2414,21 @@ private:
         mbOnLoadUrlEnd(webview, (mbLoadUrlEndCallback)handleLoadUrlEnd, this);
 
         mbOnURLChanged(webview, onURLChangedCallback, this);
+        mbOnClose(webview, onCloseCallback, this);
 
-        //mbNetOnViewLoadInfoFn pmbNetOnViewLoadInfo = (mbNetOnViewLoadInfoFn)mbGetProcAddr("mbNetOnViewLoadInfo");
-        //pmbNetOnViewLoadInfo(webview, onViewLoadInfo, this);
-
+        // mbNetOnViewLoadInfoFn pmbNetOnViewLoadInfo = (mbNetOnViewLoadInfoFn)mbGetProcAddr("mbNetOnViewLoadInfo");
+        // pmbNetOnViewLoadInfo(webview, onViewLoadInfo, this);
         // mbOnDraggableRegionsChanged(webview, onDraggableRegionsChanged, this);
         // mbOnStartDragging(webview, onStartDraggingCallback, this);
-        mbSetFocus(webview);
-        mbSetDebugConfig(webview, "decodeUrlRequest", "");
-        //mbSetDragDropEnable(webview, true);
-        //mbAddNpapiPlugin(webview, /*"application/browser-plugin",*/ &Webview_NP_Initialize, &Webview_NP_GetEntryPoints, &Webview_NP_Shutdown);
-        mbSetNavigationToNewWindowEnable(webview, true);
-        //mbOnCreateView(webview, PopupWindow::onCreateViewCallbackStatic, nullptr);
-
+        // mbSetDragDropEnable(webview, true);
+        // mbAddNpapiPlugin(webview, /*"application/browser-plugin",*/ &Webview_NP_Initialize, &Webview_NP_GetEntryPoints, &Webview_NP_Shutdown);
+        // mbOnCreateView(webview, PopupWindow::onCreateViewCallbackStatic, nullptr);
         //         if (createWindowParam->transparent)
         //             mbSetTransparent(webview, true);
-
-        std::string contents;
-        if (asar::ReadFileToString(base::FilePath::FromUTF8Unsafe(m_createWindowParam->m_iconPath), &contents)) {
-            HICON hIcon = nullptr;
-            void* picture = platform_util::loadIconFromMemory((const uint8_t*)contents.data(), contents.size(), &hIcon);
-            if (picture) {
-                ::SendMessageW(m_hWnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
-                ::SendMessageW(m_hWnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
-                platform_util::loadIconFromMemoryFree(picture);
-            }
-        }
+        mbSetFocus(webview);
+        mbSetDebugConfig(webview, "decodeUrlRequest", "");
+        mbSetNavigationToNewWindowEnable(webview, true);
+        //setIcon(m_hWnd);
 
         MenuEventNotif::onWindowDidCreated(this);
 
@@ -2296,10 +2455,13 @@ private:
         v8::Isolate* isolate = args.GetIsolate();
 
         if (args.IsConstructCall()) {
-            if (args.Length() > 1)
+            int conut = args.Length();
+            if (conut > 1)
                 return;
 
-            gin_helper::Dictionary options(isolate, args[0]->ToObject(args.GetIsolate()->GetCurrentContext()).ToLocalChecked());
+            gin_helper::Dictionary options(isolate, (conut != 0 ? 
+                args[0]->ToObject(args.GetIsolate()->GetCurrentContext()).ToLocalChecked() : 
+                v8::Object::New(isolate)));
             BrowserWindow* self = newWindow(&options, args.This());
             WindowList::getInstance()->addWindow(self);
 
@@ -2440,7 +2602,7 @@ static void initializeWindowApi(v8::Local<v8::Object> target, v8::Local<v8::Valu
         wndClass.cbClsExtra = 0;
         wndClass.cbWndExtra = 0;
         wndClass.hInstance = hMod;
-        wndClass.hIcon = LoadIcon(hMod, MAKEINTRESOURCE(IDC_SMALL));
+        wndClass.hIcon = nullptr;// LoadIcon(hMod, MAKEINTRESOURCE(IDC_SMALL));
         wndClass.hCursor = LoadCursor(hMod, IDC_ARROW);
         wndClass.hbrBackground = NULL;
         wndClass.lpszMenuName = NULL;

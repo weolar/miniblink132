@@ -166,10 +166,7 @@ public:
     }
 
     //using ReadSideDataCallback = base::OnceCallback<void(absl::optional<::mojo_base::BigBuffer>)>;
-    void ReadSideData(ReadSideDataCallback callback) override
-    {
-        content::printFuncName(__FUNCTION__, true, true);
-    }
+    void ReadSideData(ReadSideDataCallback callback) override;
 
     bool CaptureSnapshot(uint64_t* out_length, absl::optional<::base::Time>* out_modification_time) override
     {
@@ -317,6 +314,29 @@ void BlobReceiver::ReadAll(::mojo::ScopedDataPipeProducerHandle pipe, ::mojo::Pe
         onReadAllFinish(totalSize);
     else
         base::SequencedTaskRunner::GetCurrentDefault()->PostTask(FROM_HERE, base::BindOnce(&BlobReceiver::onReadAllFinish, m_weakFactory.GetWeakPtr(), totalSize));
+}
+
+void BlobReceiver::ReadSideData(ReadSideDataCallback callback)
+{
+    // 目前只在LocalFrameHostImpl::DownloadURL里用到，所以本函数简化了实现
+    uint64_t totalSize = 0;
+
+    BlobEntry* blobEntry = BlobEntry::findByUuid(m_uuid);
+    CHECK(blobEntry->m_elements.size() == 1);
+
+    for (size_t i = 0; blobEntry && i < blobEntry->m_elements.size(); ++i) {
+        DataElementImpl* ele = blobEntry->m_elements[i];
+        if (ele->tag == DataElementType::kBytes) {
+            totalSize += ele->u.bytes->length;
+
+            uint32_t numBytes = ele->u.bytes->embeddedData.size();
+            ::mojo_base::BigBuffer buf(base::span<const uint8_t>(ele->u.bytes->embeddedData.data(), numBytes));
+            std::optional<::mojo_base::BigBuffer> bufOpt(std::move(buf));
+            std::move(callback).Run(std::move(bufOpt));
+        } else {
+            CHECK(false);
+        }
+    }
 }
 
 struct WaitForDataInfo {

@@ -37,21 +37,24 @@ WebContents.prototype._init = function () {
     
     // Dispatch IPC messages to the ipc module.
     // 从electron\lib\renderer\api\ipc-renderer.js的ipcRendererBinding.send过来
-    this.on('ipc-message', function (event, channel, ...args) {
+    this.on('ipc-message', function (event, channel, ...args) { mbConsoleLog("ipc-message!!!!!!!!!!!!!");
+        event.innnerChannel = 'ipc-message';
         ipcMain.emit(channel, event, ...args);
         this.ipc.emit(channel, event, ...args);
     });
     this.on('ipc-message-sync', function (event, channel, ...args) {
         Object.defineProperty(event, 'returnValue', {
             set: function (value) {
-                return event.sendReply(JSON.stringify(value));
+                return event.sendReply(value);
             },
         get: function () {}
         });
+        event.innnerChannel = 'ipc-message-sync';
         ipcMain.emit(channel, event, ...args);
         this.ipc.emit(channel, event, ...args);
     });
     this.on('ipc-render-invoke', function (event, channel, ...args) {
+        event.innnerChannel = 'ipc-render-invoke';
         ipcMain.emit(channel, event, ...args); // channel='ScanGames'
         this.ipc.emit(channel, event, ...args);
     });
@@ -93,11 +96,15 @@ WebContents.prototype.postMessage = function (channel, data, transfer /*?: Messa
 // WebContents::sendToAll(channel, args..)
 WebContents.prototype.send = function (channel, ...args) {
     if (channel == null) throw new Error('Missing required channel argument');
-    return this._send(false, channel, args);
+    return this._send(0, false, channel, ...args);
 }
 WebContents.prototype.sendToAll = function (channel, ...args) {
     if (channel == null) throw new Error('Missing required channel argument');
-    return this._send(true, channel, args);
+    return this._send(0, true, channel, ...args);
+}
+WebContents.prototype.sendToFrame = function (frameId, channel, ...args) {
+    if (channel == null) throw new Error('Missing required channel argument');
+    return this._send(frameId, true, channel, ...args);
 }
 
 WebContents.prototype.getURL = function (url) {
@@ -131,6 +138,16 @@ WebContents.prototype.loadFile = function (filePath) {
     }));
 }
 
+WebContents.prototype.insertCSS = function (css, options) {
+    return new Promise((resolve, reject) => {
+        ;
+    });
+}
+
+WebContents.prototype.setDevToolsWebContents = function() {
+    mbConsoleLog("WebContents.prototype.setDevToolsWebContents not impl\n");
+}
+
 let nextId = 0;
 const getNextId = function () {
     return ++nextId;
@@ -157,7 +174,7 @@ const errorConstructors = {
 
 const asyncWebFrameMethods = function (requestId, method, callback, ...args) {
     return new Promise((resolve, reject) => {
-        this.send('ELECTRON_INTERNAL_RENDERER_ASYNC_WEB_FRAME_METHOD', requestId, method, args)
+        this.send('ELECTRON_INTERNAL_RENDERER_ASYNC_WEB_FRAME_METHOD', requestId, method, ...args)
         ipcMain.once(`ELECTRON_INTERNAL_BROWSER_ASYNC_WEB_FRAME_RESPONSE_${requestId}`, function (event, error, result) {
             if (error == null) {
                 if (typeof callback === 'function')

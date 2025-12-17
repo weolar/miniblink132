@@ -14,15 +14,20 @@
 #include "electron/common/gin_helper/arguments.h"
 #include "electron/common/gin_helper/wrappable.h"
 #include "electron/common/gin_helper/dictionary.h"
+#include "electron/browser/api/ApiSession.h"
 #include "electron/browser/api/WindowList.h"
 #include "electron/browser/api/WindowInterface.h"
 #include "electron/browser/api/AppBrowser.h"
 #include "electron/nodeblink.h"
 #include "base/values.h"
+#include "base/base_paths.h"
+#include "base/path_service.h"
+#include "base/base64.h"
 #include "base/json/json_writer.h"
 #include "base/files/file_path.h"
 #include "base/strings/string_util.h"
 #include "base/strings/utf_string_conversions.h"
+#include "base/win/scoped_co_mem.h"
 #include "third_party/libnode/src/node.h"
 #include "third_party/libnode/src/node_binding.h"
 #include "third_party/libuv/include/uv.h"
@@ -108,6 +113,8 @@ void App::init(v8::Local<v8::Object> target, v8::Isolate* isolate)
     builder.SetMethod("getName", &App::getNameApi);
     builder.SetMethod("setName", &App::setNameApi);
     builder.SetMethod("isReady", &App::isReadyApi);
+    builder.SetProperty("isPackaged", &App::isPackagedApi);
+    builder.SetMethod("_setAppPath", &App::_setAppPathApi);
     builder.SetMethod("_setIsReady", &App::_setIsReadyApi);
     builder.SetMethod("isOnline", &App::isOnlineApi);
     builder.SetMethod("addRecentDocument", &App::addRecentDocumentApi);
@@ -160,13 +167,6 @@ void App::quitApi()
 
     content::printCallstack();
 
-    //     quit();
-    //
-    //     if (ThreadCall::isUiThread()) {
-    //         quit();
-    //         return;
-    //     }
-
     App* self = this;
     content::ThreadCall::callUiThreadAsync(FROM_HERE, [self] {
         content::ThreadCall::callUiThreadAsync(FROM_HERE, [self] { self->emit("before-quit"); });
@@ -192,6 +192,22 @@ bool App::isReadyApi() const
 void App::_setIsReadyApi()
 {
     m_isReady = true;
+}
+
+bool App::isPackagedApi()
+{
+    return true; // weolar!!!
+//     if (-1 == m_isPackaged) {
+//         std::string appPath = m_appPath;
+//         std::transform(appPath.begin(), appPath.end(), appPath.begin(), [](unsigned char c) { return std::tolower(c); });
+//         m_isPackaged = (appPath.find(".asar") != std::string::npos) ? 1 : 0;
+//     }
+//     return m_isPackaged == 1;
+}
+
+void App::_setAppPathApi(const std::string& path)
+{
+    m_appPath = path;
 }
 
 bool App::isOnlineApi()
@@ -280,12 +296,17 @@ void App::setAppUserModelIdApi(const std::string& id)
 
 bool App::requestSingleInstanceLockApi()
 {
+    base::FilePath path;
+    base::PathService::Get(base::DIR_EXE, &path);
+    std::string temp = path.AsUTF8Unsafe();
+    temp = base::Base64Encode(std::string_view(temp.c_str(), temp.size()));
+
     HANDLE hMutex = NULL;
-    hMutex = ::CreateMutex(NULL, FALSE, L"mini_electron_exe");
+    hMutex = ::CreateMutexA(NULL, FALSE, (temp).c_str());
     if (hMutex != NULL) {
         if (ERROR_ALREADY_EXISTS == ::GetLastError()) {
             ::ReleaseMutex(hMutex);
-            return true;
+            return false;
         }
     }
     return true;
@@ -847,6 +868,74 @@ base::FilePath getHomeDir()
     return base::FilePath(L"C:\\");
 }
 
+// Generic function to call SHGetFolderPath().
+bool getUserDirectory(int csidl_folder, base::FilePath* result) {
+    // We need to go compute the value. It would be nice to support paths
+    // with names longer than MAX_PATH, but the system functions don't seem
+    // to be designed for it either, with the exception of GetTempPath
+    // (but other things will surely break if the temp path is too long,
+    // so we don't bother handling it.
+    wchar_t pathBuf[MAX_PATH];
+    pathBuf[0] = 0;
+    if (FAILED(::SHGetFolderPath(nullptr, csidl_folder, nullptr,
+        SHGFP_TYPE_CURRENT, pathBuf))) {
+        return false;
+    }
+    *result = base::FilePath(pathBuf);
+    return true;
+}
+
+bool getUserDocumentsDirectory(base::FilePath* result) 
+{
+    return getUserDirectory(CSIDL_MYDOCUMENTS, result);
+}
+
+bool getUserMusicDirectory(base::FilePath* result) 
+{
+    return getUserDirectory(CSIDL_MYMUSIC, result);
+}
+
+bool getUserPicturesDirectory(base::FilePath* result)
+{
+    return getUserDirectory(CSIDL_MYPICTURES, result);
+}
+
+bool getUserVideosDirectory(base::FilePath* result) 
+{
+    return getUserDirectory(CSIDL_MYVIDEO, result);
+}
+
+bool getUserRecentDirectory(base::FilePath* result)
+{
+    return getUserDirectory(CSIDL_RECENT, result);
+}
+
+// Return a default path for downloads that is safe.
+// We just use 'Downloads' under DIR_USER_DOCUMENTS. Localizing
+// 'downloads' is not a good idea because Chrome's UI language
+// can be changed.
+bool getUserDownloadsDirectorySafe(base::FilePath* result) 
+{
+    if (!getUserDocumentsDirectory(result))
+        return false;
+
+    *result = result->Append(L"Downloads");
+    return true;
+}
+
+// Get the downloads known folder. Since it can be relocated to point to a
+// "dangerous" folder, callers should validate that the returned path is not
+// dangerous before using it.
+bool getUserDownloadsDirectory(base::FilePath* result)
+{
+    base::win::ScopedCoMem<wchar_t> pathBuf;
+    if (SUCCEEDED(::SHGetKnownFolderPath(FOLDERID_Downloads, 0, nullptr, &pathBuf))) {
+        *result = base::FilePath(std::wstring(pathBuf));
+        return true;
+    }
+    return getUserDownloadsDirectorySafe(result);
+}
+
 std::string App::getPathApi(const std::string& name) const
 {
     base::FilePath path;
@@ -856,14 +945,14 @@ std::string App::getPathApi(const std::string& name) const
     if (name == "appData") {
         if ((::SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, (LPWSTR)(systemBuffer.data()))) < 0)
             return "";
-    } else if (name == "userData" || name == "documents" || name == "downloads" || name == "music" || name == "videos" || name == "pepperFlashSystemPlugin") {
-        std::map<std::string, std::string>::const_iterator it = m_pathMap.find(name);
-        if (it == m_pathMap.end())
-            return "";
-        return it->second;
+//     } else if (name == "userData" || name == "documents" || name == "downloads" || name == "music" || name == "videos" || name == "pepperFlashSystemPlugin") {
+//         std::map<std::string, std::string>::const_iterator it = m_pathMap.find(name);
+//         if (it == m_pathMap.end())
+//             return "";
+//         return it->second;
     } else if (name == "home")
         systemBuffer = getHomeDir().AsUTF16Unsafe();
-    else if (name == "temp") {
+    else if (name == "temp" || name == "crashDumps") { // 暂时把crashDumps放这
         if (!getTempDir(&path))
             return "";
         systemBuffer = path.AsUTF16Unsafe();
@@ -872,16 +961,43 @@ std::string App::getPathApi(const std::string& name) const
             return "";
     } else if (name == "exe") {
         ::GetModuleFileName(NULL, (LPWSTR)(systemBuffer.data()), MAX_PATH);
-    } else if (name == "module")
+    } else if (name == "module") {
         ::GetModuleFileName(NULL, (LPWSTR)(systemBuffer.data()), MAX_PATH);
-    else if (name == "cache" || name == "userCache") {
+    } else if (name == "cache" || name == "userCache") {
         if ((::SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, (LPWSTR)(systemBuffer.data()))) < 0)
             return "";
 
         pathBuffer = systemBuffer.c_str();
         pathBuffer += (const char16_t*)mbu16("\\electron");
-    } else
+    } else if (name == "documents") {
+        if (!getUserDocumentsDirectory(&path))
+            return "";
+        systemBuffer = path.AsUTF16Unsafe();
+    } else if (name == "music") {
+        if (!getUserMusicDirectory(&path))
+            return "";
+        systemBuffer = path.AsUTF16Unsafe();
+    } else if (name == "pictures") {
+        if (!getUserPicturesDirectory(&path))
+            return "";
+        systemBuffer = path.AsUTF16Unsafe();
+    } else if (name == "videos") {
+        if (!getUserVideosDirectory(&path))
+            return "";
+        systemBuffer = path.AsUTF16Unsafe();
+    } else if (name == "recent") {
+        if (!getUserRecentDirectory(&path))
+            return "";
+        systemBuffer = path.AsUTF16Unsafe();
+    } else if (name == "downloads") {
+        if (!getUserDownloadsDirectory(&path))
+            return "";
+        systemBuffer = path.AsUTF16Unsafe();
+    } else if (name == "userData") {
+        systemBuffer = SessionMgr::get()->getRootDir().AsUTF16Unsafe();
+    } else {
         return "";
+    }
 
     pathBuffer = systemBuffer.c_str();
     return base::UTF16ToUTF8(pathBuffer);

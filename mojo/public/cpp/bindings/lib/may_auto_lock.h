@@ -15,7 +15,7 @@ namespace internal {
 
 // Similar to base::AutoLock, except that it does nothing if |lock| passed into
 // the constructor is null.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) MayAutoLock {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ MayAutoLock {
 public:
     explicit MayAutoLock(absl::optional<base::Lock>* lock)
         : lock_(lock->has_value() ? &lock->value() : nullptr)
@@ -43,7 +43,7 @@ private:
 
 // Similar to base::AutoUnlock, except that it does nothing if |lock| passed
 // into the constructor is null.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) MayAutoUnlock {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ MayAutoUnlock {
 public:
     explicit MayAutoUnlock(absl::optional<base::Lock>* lock)
         : lock_(lock->has_value() ? &lock->value() : nullptr)

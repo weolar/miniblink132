@@ -8,6 +8,7 @@
 #include "common/api/EventEmitter.h"
 
 #include "mbvip/core/mb.h"
+#include "base/files/file_path.h"
 #include <vector>
 #include <map>
 
@@ -30,13 +31,14 @@ public:
 
     std::string getPath() const
     {
-        return m_path;
+        return m_path.AsUTF8Unsafe();
     }
     std::string getName() const
     {
         return m_name;
     }
 
+    std::vector<std::string> getPreloadsApi();
     void onLoadUrlBeginInBlinkThread(mbWebView webView, const char* url, void* job);
 
     mbDownloadOpt onDownloadCallback(WebContents*, mbWebView, size_t, const char*, const char*, const char*, mbNetJob, mbNetJobDataBind*);
@@ -51,14 +53,18 @@ private:
     void setDownloadPathApi(const std::string& path);
     void setPermissionRequestHandlerApi();
     void setPermissionCheckHandlerApi();
+    void setDevicePermissionHandlerApi();
+    void setPreloadsApi(const std::vector<std::string>& paths);
 
     void dispatchSendHeaders(mbWebView webView, const char* url, mbNetJob job, v8::Persistent<v8::Value>* persistentCb);
 
     ApiWebRequest* m_webRequest;
     ProtocolInterface* m_protocol;
-    std::string m_path; // 在磁盘存储的路径，如G:\mycode\mb\out\Release\minieleses\default
+    base::FilePath m_path; // 在磁盘存储的路径，如G:\mycode\mb\out\Release\minieleses\default
     std::string m_name; // js设置的name
     v8::Persistent<v8::Object> m_liveSelf;
+
+    std::vector<std::string> m_preloadPaths;
 
     std::string m_downloadPath;
 
@@ -71,12 +77,17 @@ class SessionMgr {
 public:
     static SessionMgr* get();
     ApiSession* findOrCreateSession(v8::Isolate* isolate, const std::string& name, bool createIfNotExist);
+    static base::FilePath createSessionDirname(const std::string& name);
+    base::FilePath getRootDir() const { return m_rootDir; }
 
 private:
+    bool createRootDir();
     SessionMgr();
 
     CRITICAL_SECTION m_lock;
     std::map<std::string, ApiSession*> m_map;
+    base::FilePath m_rootDir; // rootdir/minieleses/ 这个目录
+
     static SessionMgr* m_inst;
 };
 

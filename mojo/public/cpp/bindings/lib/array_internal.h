@@ -64,7 +64,7 @@ template <typename T> struct ArrayDataTraits {
 template <> struct ArrayDataTraits<bool> {
     // Helper class to emulate a reference to a bool, used for direct element
     // access.
-    class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) BitRef {
+    class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ BitRef {
     public:
         ~BitRef();
         BitRef& operator=(bool value);

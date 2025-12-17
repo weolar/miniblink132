@@ -97,6 +97,11 @@ public:
         return m_id;
     }
 
+    UINT getAction() const
+    {
+        return m_action;
+    }
+
     void insertPlatformMenu(size_t pos, HMENU hMenu) const;
 
     void clear();
@@ -297,7 +302,7 @@ public:
         Menu* self = this;
         if (!m_hideWndHelp) {
             m_hideWndHelp = new HideWndHelp(L"HideParentWindowClass",
-                [self](HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) -> LRESULT { return hideWndProc(hWnd, uMsg, wParam, lParam); });
+                [self](HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) -> LRESULT { return self->hideWndProc(hWnd, uMsg, wParam, lParam); });
         }
 
         buildMenus(false);
@@ -414,10 +419,8 @@ private:
         return -1;
     }
 
-    static LRESULT APIENTRY hideWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+    LRESULT hideWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
-        MenuItem* item = nullptr;
-
         switch (uMsg) {
         case WM_COMMAND: {
             MenuEventNotif::onMenuCommon(uMsg, wParam, lParam);
@@ -429,7 +432,6 @@ private:
         return 0;
     }
 
-    //base::ListValue* m_menuTemplate;
     HMENU m_hMenu;
     std::vector<MenuItem*> m_items;
     bool m_isItemNeedRebuilt;
@@ -446,13 +448,15 @@ private:
 
 //////////////////////////////////////////////////////////////////////////
 
+static int s_menuItemCount = 1;
+
 MenuItem::MenuItem(v8::Isolate* isolate, Menu* menu)
 {
     m_isolate = isolate;
     m_type = ActionType;
     m_isEnabled = true;
     m_isChecked = false;
-    m_action = (UINT)this;
+    m_action = s_menuItemCount++;
     m_menu = menu;
     m_subMenu = nullptr;
     m_id = 0;
@@ -531,11 +535,14 @@ void MenuEventNotif::onWindowDidCreated(WindowInterface* window)
 
 void MenuEventNotif::onMenuCommon(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    MenuItem* item = (MenuItem*)wParam;
-    if (!Menu::m_liveMenuItem || Menu::m_liveMenuItem->find(item) == Menu::m_liveMenuItem->end())
-        return;
-
-    item->getMenu()->onCommon(item, uMsg, wParam, lParam);
+    UINT menuID = LOWORD(wParam);
+    for (std::set<MenuItem*>::const_iterator it = Menu::m_liveMenuItem->begin(); it != Menu::m_liveMenuItem->end(); ++it) {
+        MenuItem* item = *it;
+        if (item->getAction() == menuID) {
+            item->getMenu()->onCommon(item, uMsg, wParam, lParam);
+            return;
+        }
+    }
 }
 
 v8::Persistent<v8::Function> Menu::constructor;

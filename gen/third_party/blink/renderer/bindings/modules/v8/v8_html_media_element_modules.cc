@@ -887,7 +887,6 @@ void OnencryptedAttributeSetCallback(const v8::FunctionCallbackInfo<v8::Value>& 
 
 void OnwaitingforkeyAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    *(int*)1 = 1;
 //     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_HTMLMediaElement_onwaitingforkey_Getter");
 //     BLINK_BINDINGS_TRACE_EVENT("HTMLMediaElement.onwaitingforkey.get");
 // 
@@ -902,7 +901,6 @@ void OnwaitingforkeyAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Valu
 
 void OnwaitingforkeyAttributeSetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    *(int*)1 = 1;
 //     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_HTMLMediaElement_onwaitingforkey_Setter");
 //     BLINK_BINDINGS_TRACE_EVENT("HTMLMediaElement.onwaitingforkey.set");
 // 
@@ -916,7 +914,6 @@ void OnwaitingforkeyAttributeSetCallback(const v8::FunctionCallbackInfo<v8::Valu
 
 void RemoteAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    *(int*)1 = 1;
 //     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_HTMLMediaElement_remote_Getter");
 //     BLINK_BINDINGS_TRACE_EVENT("HTMLMediaElement.remote.get");
 //     v8::Isolate* isolate = info.GetIsolate();
@@ -936,7 +933,6 @@ void RemoteAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 
 void DisableRemotePlaybackAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    *(int*)1 = 1;
 //     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_HTMLMediaElement_disableRemotePlayback_Getter");
 //     BLINK_BINDINGS_TRACE_EVENT("HTMLMediaElement.disableRemotePlayback.get");
 // 
@@ -951,7 +947,6 @@ void DisableRemotePlaybackAttributeGetCallback(const v8::FunctionCallbackInfo<v8
 
 void DisableRemotePlaybackAttributeSetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    *(int*)1 = 1;
 //     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_HTMLMediaElement_disableRemotePlayback_Setter");
 //     BLINK_BINDINGS_TRACE_EVENT("HTMLMediaElement.disableRemotePlayback.set");
 // 

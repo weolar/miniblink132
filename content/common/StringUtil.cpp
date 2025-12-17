@@ -11,6 +11,10 @@
 #include <iconv.h>
 #endif
 
+#include "base/strings/string_util.h"
+#include "base/base64.h"
+#include "third_party/blink/renderer/platform/wtf/text/ascii_fast_path.h"
+
 extern HMODULE g_hModule;
 
 namespace content {
@@ -405,6 +409,29 @@ unsigned int hashStringA(const std::string& p)
         }
     }
     return h % prime;
+}
+
+std::unique_ptr<std::string> urlNormalization(const char* url)
+{
+    if (!url)
+        return nullptr;
+    size_t len = strlen(url);
+
+    std::unique_ptr<std::string> ret = std::make_unique<std::string>(url);
+
+    if (base::StartsWith(*(ret.get()), ".\\file:")) {
+        ret = std::make_unique<std::string>(ret->substr(2));
+    }
+
+    if (base::StartsWith(*(ret.get()), "file:")) {
+        if (!WTF::CharacterAttributes(ret->c_str(), ret->size()).contains_only_ascii && std::string::npos == ret->find("?__base64__=")) {
+            std::string base64 = base::Base64Encode(base::span<const uint8_t>((const uint8_t*)(ret->c_str()), ret->size()));
+            *ret += "?__base64__=";
+            *ret += base64;
+        }
+    }
+
+    return ret;
 }
 
 }

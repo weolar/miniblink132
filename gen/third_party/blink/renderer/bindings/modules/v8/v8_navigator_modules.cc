@@ -115,7 +115,7 @@
 // #include "third_party/blink/renderer/modules/battery/battery_manager.h"
 // #include "third_party/blink/renderer/modules/beacon/navigator_beacon.h"
 // #include "third_party/blink/renderer/modules/bluetooth/bluetooth.h"
-// #include "third_party/blink/renderer/modules/buckets/storage_bucket_manager.h"
+ #include "third_party/blink/renderer/modules/buckets/storage_bucket_manager.h"
 #include "third_party/blink/renderer/modules/clipboard/clipboard.h"
 #include "third_party/blink/renderer/modules/contacts_picker/contacts_manager.h"
 #include "third_party/blink/renderer/modules/cookie_deprecation_label/cookie_deprecation_label.h"
@@ -155,9 +155,9 @@
 #include "third_party/blink/renderer/modules/plugins/navigator_plugins.h"
 #include "third_party/blink/renderer/modules/presentation/presentation.h"
 #include "third_party/blink/renderer/modules/printing/web_printing_manager.h"
-// #include "third_party/blink/renderer/modules/quota/deprecated_storage_quota.h"
-// #include "third_party/blink/renderer/modules/quota/navigator_storage_quota.h"
-// #include "third_party/blink/renderer/modules/quota/storage_manager.h"
+#include "third_party/blink/renderer/modules/quota/deprecated_storage_quota.h"
+#include "third_party/blink/renderer/modules/quota/navigator_storage_quota.h"
+#include "third_party/blink/renderer/modules/quota/storage_manager.h"
 // #include "third_party/blink/renderer/modules/serial/serial.h"
 #include "third_party/blink/renderer/modules/service_worker/navigator_service_worker.h"
 #include "third_party/blink/renderer/modules/service_worker/service_worker_container.h"
@@ -853,21 +853,21 @@ void PdfViewerEnabledAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Val
 //         "Return type from native call is incompatible to the type specified in IDL");
 //     bindings::V8SetReturnValue(info, return_value, blink_receiver);
 // }
-// 
-// void StorageAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
-// {
-// 
-//     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_Navigator_storage_Getter");
-//     BLINK_BINDINGS_TRACE_EVENT("Navigator.storage.get");
-// 
-//     v8::Isolate* isolate = info.GetIsolate();
-//     v8::Local<v8::Object> v8_receiver = info.This();
-//     Navigator* blink_receiver = V8Navigator::ToWrappableUnsafe(isolate, v8_receiver);
-//     auto&& return_value = NavigatorStorageQuota::storage(*blink_receiver);
-//     static_assert(bindings::IsReturnTypeCompatible<StorageManager, std::remove_cvref_t<decltype(return_value)>>,
-//         "Return type from native call is incompatible to the type specified in IDL");
-//     bindings::V8SetReturnValue(info, return_value, blink_receiver);
-// }
+
+void StorageAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
+{
+
+    RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_Navigator_storage_Getter");
+    BLINK_BINDINGS_TRACE_EVENT("Navigator.storage.get");
+
+    v8::Isolate* isolate = info.GetIsolate();
+    v8::Local<v8::Object> v8_receiver = info.This();
+    Navigator* blink_receiver = V8Navigator::ToWrappableUnsafe(isolate, v8_receiver);
+    auto&& return_value = NavigatorStorageQuota::storage(*blink_receiver);
+    static_assert(bindings::IsReturnTypeCompatible<StorageManager, std::remove_cvref_t<decltype(return_value)>>,
+        "Return type from native call is incompatible to the type specified in IDL");
+    bindings::V8SetReturnValue(info, return_value, blink_receiver);
+}
 
 void ServiceWorkerAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
@@ -2366,11 +2366,12 @@ void JavaEnabledOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& inf
 //     bindings::V8SetReturnValue(info, return_value);
 // }
 //
-// void SendBeaconOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
-// {
-//     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_Navigator_sendBeacon");
-//     BLINK_BINDINGS_TRACE_EVENT("Navigator.sendBeacon");
-// 
+void SendBeaconOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
+{
+    RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_Navigator_sendBeacon");
+    BLINK_BINDINGS_TRACE_EVENT("Navigator.sendBeacon");
+
+    bindings::V8SetReturnValue(info, true, bindings::V8ReturnValue::PrimitiveType<bool>());
 //     v8::Isolate* isolate = info.GetIsolate();
 //     v8::Local<v8::Context> current_context = isolate->GetCurrentContext();
 //     ScriptState* current_script_state = ScriptState::From(isolate, current_context);
@@ -2409,7 +2410,7 @@ void JavaEnabledOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& inf
 //         return;
 //     }
 //     bindings::V8SetReturnValue(info, return_value, bindings::V8ReturnValue::PrimitiveType<bool>());
-// }
+}
 //
 // void SetAppBadgeOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 // {
@@ -2828,9 +2829,9 @@ void V8Navigator::Impl::InstallUnconditionalProperties(v8::Isolate* isolate, con
             { "javaEnabled", "Navigator", JavaEnabledOperationCallback, 0, unsigned(v8::None), unsigned(IDLMemberInstaller::FlagLocation::kPrototype),
                 unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds), unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck),
                 unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(v8::SideEffectType::kHasSideEffect) },
-//             { "sendBeacon", "Navigator", SendBeaconOperationCallback, 1, unsigned(v8::None), unsigned(IDLMemberInstaller::FlagLocation::kPrototype),
-//                 unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds), unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck),
-//                 unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(v8::SideEffectType::kHasSideEffect) },
+            { "sendBeacon", "Navigator", SendBeaconOperationCallback, 1, unsigned(v8::None), unsigned(IDLMemberInstaller::FlagLocation::kPrototype),
+                unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds), unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck),
+                unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(v8::SideEffectType::kHasSideEffect) },
 //             { "vibrate", "Navigator", VibrateOperationCallback, 1, unsigned(v8::None), unsigned(IDLMemberInstaller::FlagLocation::kPrototype),
 //                 unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds), unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck),
 //                 unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(v8::SideEffectType::kHasSideEffect) },
@@ -2952,10 +2953,10 @@ void V8Navigator::Impl::InstallContextDependentProperties(v8::Local<v8::Context>
 //                 unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck), unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck),
 //                 unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(v8::SideEffectType::kHasNoSideEffect),
 //                 unsigned(V8PrivateProperty::CachedAccessor::kNone) },
-//             { "storage", "Navigator", StorageAttributeGetCallback, nullptr, unsigned(v8::None), unsigned(IDLMemberInstaller::FlagLocation::kPrototype),
-//                 unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds), unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck),
-//                 unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck),
-//                 unsigned(v8::SideEffectType::kHasNoSideEffect), unsigned(V8PrivateProperty::CachedAccessor::kNone) },
+            { "storage", "Navigator", StorageAttributeGetCallback, nullptr, unsigned(v8::None), unsigned(IDLMemberInstaller::FlagLocation::kPrototype),
+                unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds), unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck),
+                unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck), unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck),
+                unsigned(v8::SideEffectType::kHasNoSideEffect), unsigned(V8PrivateProperty::CachedAccessor::kNone) },
             { "serviceWorker", "Navigator", ServiceWorkerAttributeGetCallback, nullptr, unsigned(v8::None),
                 unsigned(IDLMemberInstaller::FlagLocation::kPrototype), unsigned(IDLMemberInstaller::FlagWorld::kAllWorlds),
                 unsigned(IDLMemberInstaller::FlagReceiverCheck::kCheck), unsigned(IDLMemberInstaller::FlagCrossOriginCheck::kCheck),

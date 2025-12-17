@@ -11,7 +11,7 @@ const ipcRenderer = v8Util.getHiddenValue(global, 'ipc'); //var ipcRenderer = ne
 ipcRenderer.invoke = function(...args) {
     var channel = arguments[0];
     var promise = new Promise(function(resolve, reject) {
-        ipcRendererBinding.send('ipc-render-invoke', args);
+        ipcRendererBinding.send('ipc-render-invoke', ...args);
         ipcRenderer.once('ipc-main-handle-reply-' + channel, function(event, result) {
             resolve(result);
         });
@@ -20,16 +20,16 @@ ipcRenderer.invoke = function(...args) {
     return promise;
 }
 
-ipcRenderer.send = function (...args) {
-    return ipcRendererBinding.send('ipc-message', args);
+ipcRenderer.send = function (...args) { mbConsoleLog("ipcRenderer.send:" + args[0]);
+    return ipcRendererBinding.send('ipc-message', ...args);
 }
 
 ipcRenderer.sendSync = function (...args) {
-    return JSON.parse(ipcRendererBinding.sendSync('ipc-message-sync', args));
+    return /*JSON.parse*/(ipcRendererBinding.sendSync('ipc-message-sync', ...args));
 }
 
 ipcRenderer.sendToHost = function (...args) {
-    return ipcRendererBinding.send('ipc-message-host', args);
+    return ipcRendererBinding.send('ipc-message-host', ...args);
 }
 
 ipcRenderer.sendTo = function (webContentsId, channel, ...args) {

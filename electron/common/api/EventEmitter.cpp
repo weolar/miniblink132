@@ -55,7 +55,7 @@ v8::Local<v8::Object> createJSEvent(v8::Isolate* isolate, v8::Local<v8::Object> 
     return event;
 }
 
-v8::Local<v8::Object> createJSEventWithSender(v8::Isolate* isolate, v8::Local<v8::Object> object, std::function<void(std::string)>&& callback)
+v8::Local<v8::Object> createJSEventWithSender(v8::Isolate* isolate, v8::Local<v8::Object> object, std::function<void(base::span<const uint8_t>)>&& callback)
 {
     Event* event = mate::Event::create(isolate, v8::Object::New(isolate), std::move(callback));
     v8::MaybeLocal<v8::Object> wrapper = event->GetWrapper(isolate);

@@ -536,23 +536,23 @@ bool bitmapHasInvalidPremultipliedColors(const SkBitmap& bitmap)
     return false;
 }
 
-void makeBitmapOpaque(const SkBitmap& bitmap)
+static void makeBitmapOpaque(const SkBitmap& bitmap)
 {
     for (int x = 0; x < bitmap.width(); ++x) {
         for (int y = 0; y < bitmap.height(); ++y) {
-            *bitmap.getAddr32(x, y) = SkColorSetA(*bitmap.getAddr32(x, y), 0xFF);
+            uint32_t* addr = bitmap.getAddr32(x, y);
+            *addr = SkColorSetA(*addr, 0xFF);
         }
     }
 }
 
-BYTE* flipDIBVertically(BYTE* pBits, int width, int height, bool isDib32Or24)
+static BYTE* flipDIBVertically(BYTE* pBits, int width, int height, bool isDib32Or24)
 {
     const int count = isDib32Or24 ? 4 : 3;
     // 计算每行的字节数（可能包含填充字节）
     int stride = (width * count + 3) & ~3; // 向上对齐到4字节
 
-    BYTE* pFlippedBits = new BYTE[height * stride];
-
+    BYTE* pFlippedBits = new BYTE[height * (width * count + 3)];
     for (int y = 0; y < height; y++) {
         memcpy(
             pFlippedBits + (height - 1 - y) * stride,  // 目标行
@@ -560,14 +560,126 @@ BYTE* flipDIBVertically(BYTE* pBits, int width, int height, bool isDib32Or24)
             stride                                    // 行大小
         );
     }
-
     return pFlippedBits;
+}
+
+struct Bitmap32ConvertResult {
+    size_t totalSize = 0;            // 总内存大小
+    BITMAPINFO* pBitmapInfo = nullptr; // 指向BITMAPINFO部分的指针[BITMAPINFO][颜色表][32位像素数据]
+    BYTE* pPixelData = nullptr;       // 指向像素数据部分的指针（方便访问）
+    int width = 0;                   // 图像宽度
+    int height = 0;                  // 图像高度
+    bool success = false;
+    const char* errorMsg = nullptr;
+};
+
+static Bitmap32ConvertResult convert24BitTo32BitBitmapInfo(const BITMAPINFO* pBmi)
+{
+    Bitmap32ConvertResult result;
+
+    // 将输入视为BITMAPINFO结构
+    const BITMAPINFOHEADER& header = pBmi->bmiHeader;
+
+    // 验证是否为24位
+    if (header.biBitCount != 24) {
+        result.errorMsg = "Input is not 24-bit bitmap";
+        return result;
+    }
+
+    if (header.biCompression != BI_RGB) {
+        result.errorMsg = "Compressed bitmaps not supported";
+        return result;
+    }
+
+    // 计算尺寸参数
+    int width = header.biWidth;
+    int height = abs(header.biHeight);
+    bool topDown = (header.biHeight < 0);
+    result.width = width;
+    result.height = height;
+
+    // 计算颜色表大小
+    UINT colorTableSize = 0;
+    if (header.biBitCount <= 8) {
+        colorTableSize = (header.biClrUsed > 0) ? header.biClrUsed : (1u << header.biBitCount);
+    }
+
+    // 定位输入像素数据起始位置
+    const BYTE* pPixelData24 = nullptr;
+
+    if (colorTableSize > 0 && pBmi->bmiColors) {
+        // 如果有颜色表，像素数据在颜色表之后
+        pPixelData24 = reinterpret_cast<const BYTE*>(pBmi->bmiColors + colorTableSize);
+    } else {
+        // 如果没有颜色表（24位通常如此），像素数据紧跟在BITMAPINFOHEADER之后
+        pPixelData24 = reinterpret_cast<const BYTE*>(pBmi) + sizeof(BITMAPINFOHEADER);
+    }
+
+    // 计算24位行字节数（4字节对齐）
+    int srcRowSize = ((width * 24 + 31) / 32) * 4;
+    // 计算32位行字节数
+    int dstRowSize = width * 4;  // 32位，每像素4字节
+    size_t pixelDataSize = dstRowSize * height;
+
+    // 计算总内存大小：[BITMAPINFOHEADER][颜色表][32位像素数据]
+    size_t totalSize = sizeof(BITMAPINFOHEADER) + colorTableSize * sizeof(RGBQUAD) + pixelDataSize;
+
+    BYTE* pAllData = new BYTE[totalSize];
+    if (!pAllData) {
+        result.errorMsg = "Memory allocation failed";
+        return result;
+    }
+
+    memset(pAllData, 0, totalSize);
+
+    // 设置各个部分的指针
+    result.pBitmapInfo = reinterpret_cast<BITMAPINFO*>(pAllData);
+    result.pPixelData = pAllData + sizeof(BITMAPINFOHEADER) + colorTableSize * sizeof(RGBQUAD);
+
+    BITMAPINFOHEADER& newHeader = result.pBitmapInfo->bmiHeader;
+    newHeader = header;                           // 复制基础信息
+    newHeader.biBitCount = 32;                    // 改为32位
+    newHeader.biSizeImage = static_cast<DWORD>(pixelDataSize);  // 更新图像数据大小
+    newHeader.biClrUsed = 0;                      // 32位不使用调色板
+
+    // 复制颜色表（如果有）
+    if (colorTableSize > 0) {
+        // 对于32位，我们仍然保留颜色表结构（虽然不使用）
+        // 复制原始颜色表以保持兼容性
+        if (pBmi->bmiColors) {
+            memcpy(result.pBitmapInfo->bmiColors, pBmi->bmiColors, colorTableSize * sizeof(RGBQUAD));
+        }
+    }
+
+    // 执行像素格式转换：24位BGR -> 32位BGRA，并直接存储到内联缓冲区
+    for (int y = 0; y < height; y++) {
+        int srcY = topDown ? y : (height - 1 - y);
+        const BYTE* pSrcRow = pPixelData24 + srcY * srcRowSize;
+        BYTE* pDstRow = result.pPixelData + y * dstRowSize;
+
+        for (int x = 0; x < width; x++) {
+            // 24位格式：BGR (Blue, Green, Red)
+            BYTE blue = pSrcRow[x * 3 + 0];
+            BYTE green = pSrcRow[x * 3 + 1];
+            BYTE red = pSrcRow[x * 3 + 2];
+
+            // 32位格式：BGRA (Blue, Green, Red, Alpha)
+            pDstRow[x * 4 + 0] = blue;   // Blue
+            pDstRow[x * 4 + 1] = green;  // Green
+            pDstRow[x * 4 + 2] = red;    // Red  
+            pDstRow[x * 4 + 3] = 255;    // Alpha (完全不透明)
+        }
+    }
+
+    result.totalSize = totalSize;
+    result.success = true;
+
+    return result;
 }
 
 static void onReleaseProc(void* addr, void* context)
 {
-    BYTE* bitmapBitsCopy = (BYTE*)addr;
-    delete[] bitmapBitsCopy;
+    delete context;
 }
 
 bool ClipboardHostImpl::ReadPng(::blink::mojom::blink::ClipboardBuffer buffer, ::mojo_base::BigBuffer* outPng)
@@ -592,8 +704,12 @@ bool ClipboardHostImpl::ReadPng(::blink::mojom::blink::ClipboardBuffer buffer, :
     HDC hdcMem = nullptr;
     BYTE* bitmapBitsCopy = nullptr;
     bool isOk = false;
+    BITMAPINFO* bmi = static_cast<BITMAPINFO*>(GlobalLock(hBitmap));
+    BITMAPINFO* newBmi = nullptr;
+    void* needFreeByte = nullptr;
+    bool needLoop = false;
     do {
-        BITMAPINFO* bmi = static_cast<BITMAPINFO*>(GlobalLock(hBitmap));
+        needLoop = false;
         if (!bmi)
             break;
         int colorTableLength = 0;
@@ -615,18 +731,35 @@ bool ClipboardHostImpl::ReadPng(::blink::mojom::blink::ClipboardBuffer buffer, :
         }
         if (32 != bmi->bmiHeader.biBitCount && 24 != bmi->bmiHeader.biBitCount) // 只管这两种色深，其他的应该没系统会出现吧？
             break;
+        if (24 == bmi->bmiHeader.biBitCount) {
+            Bitmap32ConvertResult convertResult = convert24BitTo32BitBitmapInfo(bmi);
+            newBmi = convertResult.pBitmapInfo;
+            ::GlobalUnlock(hBitmap);
+            hBitmap = nullptr;
+            bmi = newBmi;
+            if (!convertResult.success)
+                break;
+            needLoop = true;
+            continue;
+        }
 
         const void* bitmapBits = reinterpret_cast<const char*>(bmi) + bmi->bmiHeader.biSize + colorTableLength * sizeof(RGBQUAD);
-
         int width = std::abs((int)bmi->bmiHeader.biWidth);
         int height = std::abs((int)bmi->bmiHeader.biHeight);
 
-        bitmapBitsCopy = flipDIBVertically((BYTE*)bitmapBits, width, height, bmi->bmiHeader.biBitCount == 32);
+        if (newBmi) {
+            bitmapBitsCopy = (BYTE*)bitmapBits;
+            needFreeByte = newBmi;
+        } else {
+            bitmapBitsCopy = flipDIBVertically((BYTE*)bitmapBits, width, height, bmi->bmiHeader.biBitCount == 32);
+            needFreeByte = bitmapBitsCopy;
+        }
 
         SkImageInfo skInfo = SkImageInfo::MakeN32Premul(width, height);
-        if (!skBitmap.installPixels(skInfo, (void*)bitmapBitsCopy, skInfo.minRowBytes(), onReleaseProc, nullptr))
+        if (!skBitmap.installPixels(skInfo, (void*)bitmapBitsCopy, skInfo.minRowBytes(), onReleaseProc, needFreeByte))
             break;
-        bitmapBitsCopy = nullptr;
+        newBmi = nullptr; // 在onReleaseProc里会自动释放
+        needFreeByte = nullptr;
 
         // Windows doesn't really handle alpha channels well in many situations. When
         // the source image is < 32 bpp, we force the bitmap to be opaque. When the
@@ -637,20 +770,24 @@ bool ClipboardHostImpl::ReadPng(::blink::mojom::blink::ClipboardBuffer buffer, :
         // opaque as well. Note that this  heuristic will fail on a transparent bitmap
         // containing only black pixels...
         {
-            bool hasInvalidAlphaChannel = bmi->bmiHeader.biBitCount < 32 || bitmapHasInvalidPremultipliedColors(skBitmap);
+            bool hasInvalidAlphaChannel = bmi->bmiHeader.biBitCount >= 32 && bitmapHasInvalidPremultipliedColors(skBitmap);
             if (hasInvalidAlphaChannel)
                 makeBitmapOpaque(skBitmap);
         }
 
         isOk = true;
-    } while (false);
+    } while (needLoop);
 
     if (hdcMem)
         ::DeleteDC(hdcMem);
-    ::GlobalUnlock(hBitmap);
+    if (hBitmap)
+        ::GlobalUnlock(hBitmap);
 
-    if (bitmapBitsCopy)
-        delete[] bitmapBitsCopy;
+    if (needFreeByte)
+        delete needFreeByte;
+
+    if (newBmi)
+        delete newBmi;
 
     if (!isOk)
         return false;

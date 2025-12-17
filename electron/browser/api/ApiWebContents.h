@@ -145,17 +145,20 @@ public:
         return m_owner;
     }
 
-    //void onNewWindowInUiThread(int x, int y, int width, int height, const CreateWindowParam* createWindowParam);
+    std::vector<std::string> getPreloadScript();
 
-    void rendererPostMessageToMain(const std::string& channel, const base::Value::List& listParams);
-    void rendererSendMessageToMain(const std::string& channel, const base::Value::List& listParams, std::string* jsonRet);
-    void anyPostMessageToRenderer(const std::string& channel, const base::Value::List& listParams);
-    static void rendererSendMessageToRenderer(mbWebView view, mbWebFrameHandle frame, const std::string& channel, const base::Value::List& args);
+    void rendererPostMessageToMain(mbWebFrameHandle frame, const std::string& channel, std::unique_ptr<std::vector<blink::CloneableMessage>> listParams);
+    void rendererSendMessageToMain(mbWebFrameHandle frame, const std::string& channel, std::unique_ptr<std::vector<blink::CloneableMessage>> listParams, 
+        std::vector<uint8_t>* encodedMessageRet);
+    void anyPostMessageToRenderer(int64_t frameId, const std::string& channel, std::unique_ptr<std::vector<blink::CloneableMessage>> listParams);
+    static void rendererSendMessageToRenderer(mbWebView view, mbWebFrameHandle frame, const std::string& channel, const std::vector<blink::CloneableMessage>& args);
 
     int getIdApi() const;
     static WebContents* fromId(int id);
 
 private:
+    void runPreloadScript(mbWebView webView, mbWebFrameHandle frame, int worldId, std::string& preloadScriptPath);
+
     static void newFunction(const v8::FunctionCallbackInfo<v8::Value>& args);
     void getMainFrameApi(const v8::FunctionCallbackInfo<v8::Value>& info) const;
     void getSessionApi(const v8::FunctionCallbackInfo<v8::Value>& info) const;
@@ -189,7 +192,8 @@ private:
     bool isCrashedApi();
     void setUserAgentApi(const std::string userAgent);
     std::string getUserAgentApi();
-    void insertCSSApi(const std::string& cssText);
+    void setZoomFactorApi(float factor);
+    v8::Local<v8::Promise> insertCSSApi(const std::string& cssText, gin_helper::Arguments* args);
     void savePageApi();
     void openDevToolsApi();
     void closeDevToolsApi();
@@ -217,7 +221,10 @@ private:
     void focusApi();
     bool isFocusedApi();
     void tabTraverseApi();
-    bool _sendApi(bool isAllFrames, const std::string& channel, const base::Value::List& args);
+    bool _sendApi(
+        //int64_t frameId, bool isAllFrames, const std::string& channel, const base::Value::List& args
+        const v8::FunctionCallbackInfo<v8::Value>& info
+    );
     bool _postMessageApi(const v8::FunctionCallbackInfo<v8::Value>& info);
     void _testPostMessageApi(const v8::FunctionCallbackInfo<v8::Value>& info);
     void sendInputEventApi();

@@ -181,17 +181,16 @@ namespace v8_worker_navigator {
 
 void StorageAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    *(int*)1 = 1;
-//     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_WorkerNavigator_storage_Getter");
-//     BLINK_BINDINGS_TRACE_EVENT("WorkerNavigator.storage.get");
-// 
-//     v8::Isolate* isolate = info.GetIsolate();
-//     v8::Local<v8::Object> v8_receiver = info.This();
-//     WorkerNavigator* blink_receiver = V8WorkerNavigator::ToWrappableUnsafe(isolate, v8_receiver);
-//     auto&& return_value = NavigatorStorageQuota::storage(*blink_receiver);
-//     static_assert(bindings::IsReturnTypeCompatible<StorageManager, std::remove_cvref_t<decltype(return_value)>>,
-//         "Return type from native call is incompatible to the type specified in IDL");
-//     bindings::V8SetReturnValue(info, return_value, blink_receiver);
+    RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_WorkerNavigator_storage_Getter");
+    BLINK_BINDINGS_TRACE_EVENT("WorkerNavigator.storage.get");
+
+    v8::Isolate* isolate = info.GetIsolate();
+    v8::Local<v8::Object> v8_receiver = info.This();
+    WorkerNavigator* blink_receiver = V8WorkerNavigator::ToWrappableUnsafe(isolate, v8_receiver);
+    auto&& return_value = NavigatorStorageQuota::storage(*blink_receiver);
+    static_assert(bindings::IsReturnTypeCompatible<StorageManager, std::remove_cvref_t<decltype(return_value)>>,
+        "Return type from native call is incompatible to the type specified in IDL");
+    bindings::V8SetReturnValue(info, return_value, blink_receiver);
 }
 
 // void WakeLockAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)

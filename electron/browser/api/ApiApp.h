@@ -31,6 +31,8 @@ public:
     void focusApi();
     bool isReadyApi() const;
     void _setIsReadyApi();
+    bool isPackagedApi();
+    void _setAppPathApi(const std::string& path);
     bool isOnlineApi();
     void getFileIconApi(const v8::FunctionCallbackInfo<v8::Value>& args);
     void addRecentDocumentApi(const std::string& path);
@@ -106,6 +108,8 @@ private:
     bool m_isReady = false;
     std::string m_version;
     std::string m_name;
+    std::string m_appPath;
+    int m_isPackaged = -1;
     std::map<std::string, std::string> m_pathMap;
 };
 

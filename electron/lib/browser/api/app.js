@@ -33,7 +33,8 @@ App.prototype.getAppPath = function() {
 }
 
 App.prototype.setAppPath = function(path) {
-    appPath = path
+    appPath = path;
+    this._setAppPath(path);
 }
 
 App.prototype.getApplicationMenu = function() {

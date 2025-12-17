@@ -192,7 +192,7 @@ void NativeImage::createFromPathApi(const v8::FunctionCallbackInfo<v8::Value> in
         path = *pathString;
     }
 
-    if (0 == path.size() || !asar::ReadFileToString(base::FilePath::FromUTF8Unsafe(path), &fileContents))
+    if (0 == path.size() || !asar::readFileToString(base::FilePath::FromUTF8Unsafe(path), &fileContents))
         return;
 
     const unsigned char* data = reinterpret_cast<const unsigned char*>(fileContents.data());

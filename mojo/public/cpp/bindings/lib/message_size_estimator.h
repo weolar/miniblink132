@@ -16,7 +16,7 @@ namespace mojo::internal {
 
 // TODO(andreaorru): Add a template parameter to help construct
 // a vector of the right size for the interface.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) MessageSizeEstimator {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ MessageSizeEstimator {
 public:
     MessageSizeEstimator();
     ~MessageSizeEstimator();

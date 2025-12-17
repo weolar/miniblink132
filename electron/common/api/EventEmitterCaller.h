@@ -22,6 +22,10 @@ v8::Local<v8::Value> callEmitWithArgs(v8::Isolate* isolate, v8::Local<v8::Object
 v8::Local<v8::Value> emitEventImpl(
     v8::Isolate* isolate, v8::Local<v8::Object> obj, internal::ValueVector& converted_args, v8::Local<v8::Object> event, const base::Value::List& args);
 
+v8::Local<v8::Value> emitEventImpl(
+    v8::Isolate* isolate, v8::Local<v8::Object> obj, internal::ValueVector& converted_args, v8::Local<v8::Object> event, 
+    const std::vector<blink::CloneableMessage>& args);
+
 } // namespace internal
 
 // obj.emit.apply(obj, name, args...);
@@ -52,6 +56,14 @@ v8::Local<v8::Value> emitEvent(v8::Isolate* isolate, v8::Local<v8::Object> obj, 
 template <typename StringType, typename... Args>
 v8::Local<v8::Value> emitEvent(
     v8::Isolate* isolate, v8::Local<v8::Object> obj, const StringType& name, v8::Local<v8::Object> event, const base::Value::List& args)
+{
+    internal::ValueVector converted_args = { gin_helper::StringToV8(isolate, name), gin_helper::ConvertToV8(isolate, event) };
+    return internal::emitEventImpl(isolate, obj, converted_args, event, args);
+}
+
+template <typename StringType, typename... Args>
+v8::Local<v8::Value> emitEvent(
+    v8::Isolate* isolate, v8::Local<v8::Object> obj, const StringType& name, v8::Local<v8::Object> event, const std::vector<blink::CloneableMessage>& args)
 {
     internal::ValueVector converted_args = { gin_helper::StringToV8(isolate, name), gin_helper::ConvertToV8(isolate, event) };
     return internal::emitEventImpl(isolate, obj, converted_args, event, args);

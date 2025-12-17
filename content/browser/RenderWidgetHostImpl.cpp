@@ -62,6 +62,7 @@ void RenderWidgetHostImpl::destroy()
 {
     if (m_webWiew)
         m_webWiew->Close(); // 这里面AsyncLayerTreeFrameSink同步销毁
+    m_webWiew = nullptr;
 
     if (getHostFrameSinkManager()) {
         viz::FrameSinkId rootFrameSinkId(0xdead, 0xbeef);
@@ -86,6 +87,11 @@ bool RenderWidgetHostImpl::isSinkReady() const
     return !!m_sinkClient;
 }
 
+void RenderWidgetHostImpl::allowResize()
+{
+    m_allowResize = true;
+}
+
 void RenderWidgetHostImpl::resizeOnBlinkThread(int w, int h)
 {
     if (!m_sinkClient)
@@ -106,8 +112,14 @@ void RenderWidgetHostImpl::resizeOnBlinkThread(int w, int h)
     // 这是每一帧embedSurfaceDrawquad的surfaceid，另外还有个root的surfaceid作为SubmitCompositorFrame的参数
     m_visualProperties.local_surface_id = newLocalSurfaceId;
 
+    time_t now;
+    struct tm* current;
+    now = time(NULL);
+    current = localtime(&now);
+
     char* output = (char*)malloc(400);
-    sprintf(output, "RenderWidgetHostImpl::resizeOnBlinkThread: hash:%d w:%d, tid:%d\n", newLocalSurfaceId.hash(), w, ::GetCurrentThreadId());
+    sprintf(output, "RenderWidgetHostImpl::resizeOnBlinkThread: hash:%d w:%d, (%02d:%02d)\n", 
+        newLocalSurfaceId.hash(), w, current->tm_min, current->tm_sec);
     OutputDebugStringA(output);
     free(output);
 
@@ -120,19 +132,6 @@ void RenderWidgetHostImpl::resizeOnBlinkThread(int w, int h)
         m_webWiew->MainFrameWidget()->SetScreenRects(widgetScreenRect, widgetScreenRect);
     }
     m_sinkHost->resizeOnBlinkThread(viewportRect.size());
-
-    //--
-    //     size_t hash = newLocalSurfaceId.hash();
-    //
-    //     RenderThreadImpl::get()->getCompositorTaskRunner()->PostTask(FROM_HERE, base::BindOnce([](int w, int h, size_t hash) {
-    //         RenderThreadImpl::get()->getCompositorTaskRunner()->PostTask(FROM_HERE, base::BindOnce([](int w, int h, size_t hash) {
-    //             char* output = (char*)malloc(0x500);
-    //             sprintf(output, "RenderWidgetHostImpl::resizeOnBlinkThread on Compositor: %d,%d, hash:%d, tid:%d\n",
-    //                 w, h, hash,::GetCurrentThreadId());
-    //             OutputDebugStringA(output);
-    //             free(output);
-    //         }, w, h, hash));
-    //     }, w, h, hash));
 }
 
 void RenderWidgetHostImpl::bindPopupWidget(::mojo::PendingAssociatedReceiver<::blink::mojom::blink::PopupWidgetHost> popupHost,
@@ -151,7 +150,7 @@ void RenderWidgetHostImpl::bindPopupWidget(::mojo::PendingAssociatedReceiver<::b
     initVisualProperties();
 }
 
-void RenderWidgetHostImpl::initVisualProperties()
+display::Screen* getScreenOrCreate()
 {
     display::Screen* screen = display::Screen::GetScreen();
     if (!screen) {
@@ -163,13 +162,20 @@ void RenderWidgetHostImpl::initVisualProperties()
         display::Screen::SetScreenInstance(screenNew, base::Location::Current());
         screen = display::Screen::GetScreen();
     }
+    return screen;
+}
 
+void RenderWidgetHostImpl::initVisualProperties()
+{
+    display::Screen* screen = getScreenOrCreate();
     std::vector<display::Display> displays = screen->GetAllDisplays();
+    if (displays.size() == 0)
+        DebugBreak();
     for (size_t i = 0; i < displays.size(); ++i) {
         const display::Display& dis = displays[i];
         display::ScreenInfo screenInfo;
-
         display::DisplayUtil::DisplayToScreenInfo(&screenInfo, dis);
+
         m_visualProperties.screen_infos.screen_infos.push_back(screenInfo);
     }
 

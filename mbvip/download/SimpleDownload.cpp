@@ -58,19 +58,14 @@ SimpleDownload::SimpleDownload(mbWebView mbView, size_t expectedContentLength, c
     dataBind->recvCallback = onDataRecv;
     dataBind->finishCallback = onDataFinish;
 
-    m_callbackBind.param = nullptr;
-    m_callbackBind.recvCallback = nullptr;
-    m_callbackBind.finishCallback = nullptr;
-    m_callbackBind.saveNameCallback = nullptr;
+    memset(&m_callbackBind, 0, sizeof(mbDownloadBind));
 
     content::MbWebView* webview = (content::MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr((int64_t)m_mbView);
-    if (webview) {
-        m_saveTempFullPath = webview->getDownloadDirPath();
+    m_saveTempFullPath = webview->getDownloadDirPath();
 
-        char temp[100] = { 0 };
-        sprintf(temp, "%p%p.tmp", &mbView, &expectedContentLength);
-        m_saveTempFullPath = m_saveTempFullPath.AppendASCII(temp);
-    }
+    char temp[100] = { 0 };
+    sprintf(temp, "%p%p.tmp", &mbView, &expectedContentLength);
+    m_saveTempFullPath = m_saveTempFullPath.AppendASCII(temp);
 
     if (callbackBind)
         m_callbackBind = *callbackBind;
@@ -87,13 +82,26 @@ SimpleDownload* SimpleDownload::create(mbWebView webView, const WCHAR* savePath,
     if (m_dialogCount > 0)
         return nullptr;
 
+    content::MbWebView* webview = (content::MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr((int64_t)webView);
+    base::FilePath saveTempFullPath = webview->getDownloadDirPath();
+
+    if (!base::PathExists(saveTempFullPath)) {
+        base::File::Error error;
+        if (!base::CreateDirectoryAndGetError(saveTempFullPath, &error)) {
+            std::string temp = "CreateDirectoryAndGetError fail:";
+            temp += saveTempFullPath.AsUTF8Unsafe();
+            temp += "\n";
+            OutputDebugStringA(temp.c_str());
+            return nullptr;
+        }
+    }
+
     SimpleDownload* self = new SimpleDownload(webView, expectedContentLength, url, mime, disposition, job, dataBind, callbackBind);
 
     if (dialogOpt && dialogOpt->magic == 'mbdo' && dialogOpt->defaultPath)
         self->dialogOpt.defaultPath = dialogOpt->defaultPath;
 
     if (savePath) {
-        content::MbWebView* webview = (content::MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr((int64_t)webView);
         webview->setIsMouseKeyMessageEnable(true);
 
         std::vector<WCHAR>* fileResult = nullptr;
@@ -169,6 +177,29 @@ void SimpleDownload::onBeginSaveCallback()
     }
 }
 
+// 检测是否有重名，如果有，就加个数字
+base::FilePath checkAndRenameSaveFullPath(const base::FilePath& path)
+{
+    if (!base::PathExists(path))
+        return path;
+
+    time_t currentTime;
+    time(&currentTime);
+    struct tm* timeInfo = localtime(&currentTime);
+    char timeString[20]; // 足够存放 "YYYY-MM-DD HH:MM:SS\0"
+
+    static int s_count = 1;
+    strftime(timeString, sizeof(timeString), "%Y-%m-%d-%H-%M-%S", timeInfo);
+    char temp[150];
+    snprintf(temp, sizeof(temp), "[%s](%d)", timeString, s_count++);
+
+    base::FilePath newPath = path.InsertBeforeExtensionASCII(base::StringPiece(temp));
+    if (!base::PathExists(newPath))
+        return newPath;
+
+    return path;
+}
+
 // 本函数会在还没收到正确的文件名的时候就开始下载，反正下载的内容也是先存在temp路径里
 void SimpleDownload::doSave()
 {
@@ -217,7 +248,8 @@ void SimpleDownload::doSave()
     }
     m_cacheData.clear();
 
-    if (!m_hadCallDataFinish || m_dialogCount > 0) // 有时候下载完了，下载对话框还没打开
+    // 有时候下载完了，下载对话框还没打开，或者下载完了还没调用startSave
+    if (!m_hadCallDataFinish || m_dialogCount > 0 || !m_hasStartSave)
         return;
 
     // 下载成功
@@ -230,6 +262,8 @@ void SimpleDownload::doSave()
     m_saveFullPathLock.Release();
     base::FilePath savePathDir = saveFullPath.DirName();
     base::CreateDirectory(savePathDir);
+
+    saveFullPath = checkAndRenameSaveFullPath(saveFullPath);
 
     if (!base::internal::MoveUnsafe(m_saveTempFullPath, saveFullPath))
         m_loadingResult = MB_LOADING_FAILED;
@@ -250,9 +284,8 @@ void SimpleDownload::startSave(/*std::vector<WCHAR>* path*/bool ok)
             m_callbackBind.finishCallback(m_callbackBind.param, nullptr, m_loadingResult);
         return;
     }
-    //m_saveFullPath = (const char16_t*)path->data();
-    //delete path;
 
+    m_hasStartSave = true;
     doSave();
 }
 
@@ -298,8 +331,14 @@ unsigned int SimpleDownload::dialogThread(void* param)
         defaultSaveName = defaultSaveName.substr(0, 150);
     wcscpy(fileResult->data(), (const WCHAR*)defaultSaveName.c_str());
 
+    HWND hwndOwner = nullptr;
+    mbWebView mbWebview = self->m_mbView;
+    content::MbWebView* webview = (content::MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr((int64_t)mbWebview);
+    if (webview)
+        hwndOwner = webview->getHostWnd();
+
     ofn.lStructSize = sizeof(ofn);
-    ofn.hwndOwner = nullptr;
+    ofn.hwndOwner = hwndOwner;
     ofn.lpstrFile = (LPWSTR)(fileResult->data());
     ofn.nMaxFile = MAX_PATH;
     ofn.lpstrFilter = L"All\0*.*\0\0";
@@ -313,8 +352,6 @@ unsigned int SimpleDownload::dialogThread(void* param)
         delete fileResult;
         fileResult = nullptr;
     }
-
-    mbWebView mbWebview = self->m_mbView;
 
     content::ThreadCall::callUiThreadAsync(MB_FROM_HERE, [mbWebview] {
         content::MbWebView* webview = (content::MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr((int64_t)mbWebview);

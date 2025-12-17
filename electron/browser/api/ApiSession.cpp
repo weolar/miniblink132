@@ -22,6 +22,7 @@
 #include "third_party/libnode/src/node.h"
 #include "third_party/libnode/src/node_binding.h"
 #include "third_party/libuv/include/uv.h"
+#include "base/files/file_util.h"
 #include <vector>
 #include <shlwapi.h>
 
@@ -56,6 +57,9 @@ void ApiSession::init(v8::Isolate* isolate, v8::Local<v8::Object> target)
     builder.SetMethod("setDownloadPath", &ApiSession::setDownloadPathApi);
     builder.SetMethod("setPermissionRequestHandler", &ApiSession::setPermissionRequestHandlerApi);
     builder.SetMethod("setPermissionCheckHandler", &ApiSession::setPermissionCheckHandlerApi);
+    builder.SetMethod("setDevicePermissionHandler", &ApiSession::setDevicePermissionHandlerApi);
+    builder.SetMethod("getPreloads", &ApiSession::getPreloadsApi);
+    builder.SetMethod("setPreloads", &ApiSession::setPreloadsApi);
 
     v8::Local<v8::Function> fun = funTempl->GetFunction(context).ToLocalChecked();
     gin_helper::Dictionary sessionClass(isolate, fun);
@@ -75,27 +79,26 @@ void ApiSession::newFunction(const v8::FunctionCallbackInfo<v8::Value>& args)
     }
 }
 
-static std::string createSessionDirname(const std::string& name, std::wstring* fullpathW)
+base::FilePath SessionMgr::createSessionDirname(const std::string& name)
 {
-    std::vector<WCHAR> buffer;
-    buffer.resize(MAX_PATH + 1);
-    memset(buffer.data(), 0, sizeof(wchar_t) * (MAX_PATH + 1));
-    ::GetModuleFileNameW(NULL, buffer.data(), MAX_PATH);
-    ::PathRemoveFileSpecW(buffer.data());
+    base::FilePath path;
+    path = SessionMgr::get()->m_rootDir;
 
     unsigned int hash = StringUtil::hashString(name.c_str());
 
-    wchar_t temp[20] = { 0 };
-    wsprintf(temp, L"%x", hash);
-    ::PathAppendW(buffer.data(), StringUtil::UTF8ToUTF16(ApiSession::kDefaultDir).c_str());
-    if (name == ApiSession::kDefaultSessionName)
-        ::PathAppendW(buffer.data(), StringUtil::UTF8ToUTF16(name).c_str());
-    else
-        ::PathAppendW(buffer.data(), temp);
+    char temp[20] = { 0 };
+    sprintf(temp, "%x", hash);
+    //::PathAppendW(buffer.data(), StringUtil::UTF8ToUTF16(ApiSession::kDefaultDir).c_str());
+    path = path.AppendASCII(ApiSession::kDefaultDir);
 
-    *fullpathW = buffer.data();
-
-    return StringUtil::UTF16ToUTF8(*fullpathW);
+    if (name == ApiSession::kDefaultSessionName) {
+        //::PathAppendW(buffer.data(), StringUtil::UTF8ToUTF16(name).c_str());
+        path = path.AppendASCII(ApiSession::kDefaultSessionName);
+    } else {
+        //::PathAppendW(buffer.data(), temp);
+        path = path.Append(base::FilePath::FromUTF8Unsafe(temp));
+    }
+    return path;
 }
 
 ApiSession* ApiSession::create(v8::Isolate* isolate, const std::string& name)
@@ -114,12 +117,12 @@ ApiSession* ApiSession::create(v8::Isolate* isolate, const std::string& name)
     self->m_liveSelf.Reset(isolate, objV8);
     self->m_name = name;
 
-    std::wstring fullpathW;
-    self->m_path = createSessionDirname(name, &fullpathW); // rootdir/minieleses/11223344/ 这种形式的目录
-    self->m_downloadPath = self->m_path;
+    base::FilePath fullpath = SessionMgr::createSessionDirname(name); // rootdir/minieleses/11223344/ 这种形式的目录
+    self->m_path = fullpath;
+    self->m_downloadPath = fullpath.AsUTF8Unsafe();
 
-    if (!FileUtil::isDirExist(fullpathW)) {
-        if (!::CreateDirectory(fullpathW.c_str(), NULL)) {
+    if (!base::PathExists(fullpath)) {
+        if (!base::CreateDirectory(fullpath)) {
             MessageBoxW(0, L"创建session目录失败，请把本程序安装到有权限的目录", L"失败", 0);
             return nullptr;
         }
@@ -440,37 +443,76 @@ void ApiSession::setPermissionCheckHandlerApi()
 {
 }
 
+void ApiSession::setDevicePermissionHandlerApi()
+{
+}
+
+std::vector<std::string> ApiSession::getPreloadsApi()
+{
+    return m_preloadPaths;
+}
+
+void ApiSession::setPreloadsApi(const std::vector<std::string>& paths)
+{
+    m_preloadPaths = paths;
+}
+
 SessionMgr* SessionMgr::m_inst = nullptr;
 const char* ApiSession::kDefaultSessionName = "default";
 const char* ApiSession::kDefaultDir = "minieleses";
 
-static bool createDir()
+bool SessionMgr::createRootDir()
 {
-    std::vector<WCHAR> fullpath;
-    fullpath.resize(MAX_PATH + 1);
-    memset(fullpath.data(), 0, sizeof(wchar_t) * (MAX_PATH + 1));
-    ::GetModuleFileNameW(NULL, fullpath.data(), MAX_PATH);
-    ::PathRemoveFileSpecW(fullpath.data());
+//     std::vector<WCHAR> fullpath;
+//     fullpath.resize(MAX_PATH + 1);
+//     memset(fullpath.data(), 0, sizeof(wchar_t) * (MAX_PATH + 1));
+//     ::GetModuleFileNameW(NULL, fullpath.data(), MAX_PATH);
+//     ::PathRemoveFileSpecW(fullpath.data());
+// 
+//     std::wstring name = fullpath.data();
+//     name += L"\\";
+//     name += StringUtil::UTF8ToUTF16(ApiSession::kDefaultDir);
+// 
+//     if (!FileUtil::isDirExist(name)) {
+//         if (!::CreateDirectory(name.c_str(), NULL)) {
+//             MessageBoxW(0, L"创建minieleses目录失败，请把本程序安装到有权限的目录", L"失败", 0);
+//             return false;
+//         }
+//     }
+// 
+//     name += L"\\";
+//     name += StringUtil::UTF8ToUTF16(ApiSession::kDefaultSessionName);
+//     if (!FileUtil::isDirExist(name)) {
+//         if (!::CreateDirectory(name.c_str(), NULL)) {
+//             MessageBoxW(0, L"创建default目录失败，请把本程序安装到有权限的目录", L"失败", 0);
+//             return false;
+//         }
+//     }
 
-    std::wstring name = fullpath.data();
-    name += L"\\";
-    name += StringUtil::UTF8ToUTF16(ApiSession::kDefaultDir);
+    std::vector<char16_t> buffer;
+    buffer.resize(MAX_PATH + 1);
+    memset(buffer.data(), 0, sizeof(char16_t) * (MAX_PATH + 1));
+    ::GetModuleFileNameW(NULL, (WCHAR*)buffer.data(), MAX_PATH);
+    ::PathRemoveFileSpecW((WCHAR*)buffer.data());
 
-    if (!FileUtil::isDirExist(name)) {
-        if (!::CreateDirectory(name.c_str(), NULL)) {
+    m_rootDir = base::FilePath::FromUTF16Unsafe(std::u16string_view(buffer.data()));
+    m_rootDir = m_rootDir.AppendASCII(ApiSession::kDefaultDir);
+
+    if (!base::DirectoryExists(m_rootDir)) {
+        if (!base::CreateDirectory(m_rootDir)) {
             MessageBoxW(0, L"创建minieleses目录失败，请把本程序安装到有权限的目录", L"失败", 0);
             return false;
         }
     }
 
-    name += L"\\";
-    name += StringUtil::UTF8ToUTF16(ApiSession::kDefaultSessionName);
-    if (!FileUtil::isDirExist(name)) {
-        if (!::CreateDirectory(name.c_str(), NULL)) {
-            MessageBoxW(0, L"创建default目录失败，请把本程序安装到有权限的目录", L"失败", 0);
+    base::FilePath defaultSessionDir = m_rootDir.AppendASCII(ApiSession::kDefaultSessionName);
+    if (!base::DirectoryExists(defaultSessionDir)) {
+        if (!base::CreateDirectory(defaultSessionDir)) {
+            MessageBoxW(0, L"创建minieleses目录失败，请把本程序安装到有权限的目录", L"失败", 0);
             return false;
         }
     }
+
     return true;
 }
 
@@ -481,13 +523,14 @@ SessionMgr::SessionMgr()
 
 SessionMgr* SessionMgr::get()
 {
-    //  先创建rootdir/minielectronsession/default/目录
-    if (!createDir())
-        return nullptr;
-
     if (m_inst)
         return m_inst;
     m_inst = new SessionMgr();
+
+    //  先创建rootdir/minieleses/default/目录
+    if (!m_inst->createRootDir())
+        return nullptr; // TODO: 如果创建失败了，没处理
+   
     return m_inst;
 }
 

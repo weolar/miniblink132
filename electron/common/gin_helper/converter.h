@@ -247,6 +247,10 @@ v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const std::vector<intptr_
 
 v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const base::Value::List& input);
 
+v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const blink::CloneableMessage& input);
+
+v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const std::vector<blink::CloneableMessage>& input);
+
 template <typename T, bool = ToV8ReturnsMaybe<T>::value> struct ToV8Traits;
 
 template <typename T> struct ToV8Traits<T, true> {
@@ -291,11 +295,20 @@ v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, std::function<void(const 
 
 GIN_EXPORT std::string V8ToString(v8::Local<v8::Value> value);
 
-template <>
-struct Converter<blink::CloneableMessage> {
+template <> struct GIN_EXPORT Converter<blink::CloneableMessage> {
     static v8::Local<v8::Value> ToV8(v8::Isolate* isolate, const blink::CloneableMessage& in);
 
     static bool FromV8(v8::Isolate* isolate, v8::Local<v8::Value> val, blink::CloneableMessage* out);
+};
+
+template <> struct GIN_EXPORT Converter<std::vector<blink::CloneableMessage>> {
+    static v8::Local<v8::Value> ToV8(v8::Isolate* isolate, const std::vector<blink::CloneableMessage>& val);
+    static bool FromV8(v8::Isolate* isolate, v8::Local<v8::Value> val, std::vector<blink::CloneableMessage>* out);
+};
+
+template <> struct GIN_EXPORT Converter<std::unique_ptr<std::vector<blink::CloneableMessage>> > {
+    static v8::Local<v8::Value> ToV8(v8::Isolate* isolate, const std::unique_ptr<std::vector<blink::CloneableMessage>>& val);
+    static bool FromV8(v8::Isolate* isolate, v8::Local<v8::Value> val, std::unique_ptr<std::vector<blink::CloneableMessage>>* out);
 };
 
 } // namespace gin_helper 

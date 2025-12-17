@@ -16,9 +16,11 @@
 #include "electron/common/PlatformUtil.h"
 #include "electron/common/api/EventEmitter.h"
 #include "electron/common/api/EventEmitterCaller.h"
+#include "electron/common/gin_helper/converter.h"
 #include "electron/common/gin_helper/object_template_builder.h"
 #include "electron/common/gin_helper/dictionary.h"
 #include "electron/common/gin_helper/wrappable.h"
+#include "electron/common/gin_helper/promise.h"
 #include "electron/common/gin_helper/public/gin_embedders.h"
 #include "electron/common/gin_helper/public/wrapper_info.h"
 #include "gin/handle.h"
@@ -28,10 +30,12 @@
 #include "mojo/public/cpp/system/message_pipe.h"
 #include "third_party/blink/renderer/platform/bindings/v8_per_context_data.h"
 #include "third_party/blink/renderer/platform/wtf/wtf.h"
+#include "third_party/blink/public/common/messaging/cloneable_message.h"
+#include "third_party/blink/public/web/web_css_origin.h"
+#include "third_party/blink/public/web/blink.h"
 #include "third_party/libnode/src/node.h"
 #include "third_party/libnode/src/node_binding.h"
 #include "third_party/libuv/include/uv.h"
-#include "third_party/blink/public/web/blink.h"
 #include "base/values.h"
 #include <shlwapi.h>
 
@@ -76,6 +80,7 @@ void WebContents::init(v8::Isolate* isolate, v8::Local<v8::Object> target, node:
     builder.SetMethod("isDevToolsOpened", &WebContents::isDevToolsOpenedApi);
     builder.SetMethod("isDevToolsFocused", &WebContents::isDevToolsFocusedApi);
     builder.SetMethod("insertCSS", &WebContents::insertCSSApi);
+    builder.SetMethod("setZoomFactor", &WebContents::setZoomFactorApi);
     builder.SetMethod("enableDeviceEmulation", &WebContents::enableDeviceEmulationApi);
     builder.SetMethod("disableDeviceEmulation", &WebContents::disableDeviceEmulationApi);
     builder.SetMethod("toggleDevTools", &WebContents::toggleDevToolsApi);
@@ -340,15 +345,56 @@ static void disableNodejsOfWindow(mbWebView webView, mbWebFrameHandle frame)
     mbRunJs(webView, frame, "window.require = null;", false, nullptr, nullptr, nullptr);
 }
 
+static bool needLoadPreload(int worldId, bool isContextIsolation)
+{
+    if (isContextIsolation)
+        return (WorldIDs::ISOLATED_WORLD_ID == worldId);
+    return (WorldIDs::MAIN_WORLD_ID == worldId);
+}
+
+std::vector<std::string> WebContents::getPreloadScript()
+{
+    ApiSession* ses = SessionMgr::get()->findOrCreateSession(v8::Isolate::GetCurrent(), m_sessionName, false);
+    std::vector<std::string> preloads = ses->getPreloadsApi();
+
+    if (!m_preloadScriptPath.empty())
+        preloads.push_back(m_preloadScriptPath);
+    return preloads;
+}
+
+void WebContents::runPreloadScript(mbWebView webView, mbWebFrameHandle frame, int worldId, std::string& preloadScriptPath)
+{
+    for (size_t i = 0; i < preloadScriptPath.size(); ++i) {
+        if ('\\' == preloadScriptPath[i])
+            preloadScriptPath[i] = '/';
+    }
+
+    std::string contents = "try {window.require('";
+    contents += preloadScriptPath;
+    contents += "');} catch(e) { mbConsoleLog('window.require fail:' + e.name); }";
+
+    char output[100] = { 0 };
+    sprintf_s(output, 99, "onDidCreateScriptContext preload begin: %p, %d\n", frame, worldId);
+    OutputDebugStringA(output);
+
+    mbRunJs(webView, frame, contents.c_str(), false, nullptr, nullptr, (void*)worldId);
+
+    sprintf_s(output, 99, "onDidCreateScriptContext preload end: %p, %d\n", frame, worldId);
+    OutputDebugStringA(output);
+}
+
 void WebContents::onDidCreateScriptContext(mbWebView webView, mbWebFrameHandle frame, v8::Local<v8::Context>* context, int extensionGroup, int worldId)
 {
     v8::MicrotasksScope microtasksScope((*context), v8::MicrotasksScope::Type::kRunMicrotasks);
-    if (!m_preloadScriptPath.empty()) {
-        char* output = (char*)malloc(0x300);
-        sprintf_s(output, 0x299, "preload,WebContents::onDidCreateScriptContext: %p, %s\n", this, m_preloadScriptPath.c_str());
-        OutputDebugStringA(output);
-        free(output);
-    }
+    bool isMainWorld = WorldIDs::MAIN_WORLD_ID == worldId;
+    bool shouldLoadNodejs = false;
+    bool shouldPreLoad = false;
+    bool shouldDisableNodejsOfWindow = false;
+
+    if (m_createWindowParam->m_isNodeIntegration && !m_createWindowParam->m_isContextIsolation && !isMainWorld)
+        return;
+
+    std::vector<std::string> preloadPaths = WebContents::getPreloadScript();
 
     content::ThreadCall::callUiThreadAsync(FROM_HERE, [webView] {
         std::string temp = "preload,onDidCreateScriptContext, url:";
@@ -362,16 +408,11 @@ void WebContents::onDidCreateScriptContext(mbWebView webView, mbWebFrameHandle f
     const utf8* script = "window.Notification = function(){};";
     mbRunJs(webView, frame, script, false, nullptr, nullptr, nullptr);
 
-    bool isMainWorld = WorldIDs::MAIN_WORLD_ID == worldId;
-    bool shouldLoadNodejs = false;
-    bool shouldPreLoad = false;
-    bool shouldDisableNodejsOfWindow = false;
-
     if (m_createWindowParam->m_isContextIsolation) {
         // 有预加载，只有隔离世界有nodejs。主世界没nodejs
         if (!isMainWorld) {
             shouldLoadNodejs = true;
-        } else if (mbIsMainFrame(webView, frame) && !m_preloadScriptPath.empty()) {
+        } else if (mbIsMainFrame(webView, frame) && !preloadPaths.empty()) {
             char output[100] = { 0 };
             sprintf_s(output, 99, "onDidCreateScriptContext 1: %p, %d\n", frame, worldId);
             OutputDebugStringA(output);
@@ -380,8 +421,8 @@ void WebContents::onDidCreateScriptContext(mbWebView webView, mbWebFrameHandle f
         }
     } else if (m_createWindowParam->m_isNodeIntegration && !m_createWindowParam->m_isContextIsolation) {
         // 有预加载，预加载里有nodejs，而且预加载没隔离。主世界有nodejs
-        if (!isMainWorld)
-            DebugBreak();
+        //if (!isMainWorld)
+        //    DebugBreak();
         shouldLoadNodejs = true;
     } else if (!m_createWindowParam->m_isNodeIntegration && !m_createWindowParam->m_isContextIsolation) {
         shouldLoadNodejs = true; // 有预加载，预加载里有nodejs，而且预加载没隔离。主世界没nodejs
@@ -418,8 +459,6 @@ void WebContents::onDidCreateScriptContext(mbWebView webView, mbWebFrameHandle f
         content::ThreadCall::runBlinkThreadNode(uvloop, isolate);
         nodeBlinkMicrotaskSuppressionLeave(handle);
 
-        //perCtx->AddData("NodeBindings", nodeBinding);
-
         if (m_nodeBindings->getUvEnv() == nullptr && WorldIDs::MAIN_WORLD_ID == worldId) { // 给主world main frame设置uv env
             // Make uv loop being wrapped by window context.
             m_nodeBindings->setUvEnv(env);
@@ -428,25 +467,11 @@ void WebContents::onDidCreateScriptContext(mbWebView webView, mbWebFrameHandle f
             //m_nodeBindings->StartPolling();
         }
 
-        if (!m_preloadScriptPath.empty() && mbIsMainFrame(webView, frame) && WorldIDs::ISOLATED_WORLD_ID == worldId) {
-            std::string preloadScriptPath = m_preloadScriptPath;
-            for (size_t i = 0; i < preloadScriptPath.size(); ++i) {
-                if ('\\' == preloadScriptPath[i])
-                    preloadScriptPath[i] = '/';
+        if (!preloadPaths.empty() && mbIsMainFrame(webView, frame) && needLoadPreload(worldId, m_createWindowParam->m_isContextIsolation)) {
+            for (size_t i = 0; i < preloadPaths.size(); ++i) {
+                std::string preloadScriptPath = preloadPaths[i];
+                runPreloadScript(webView, frame, worldId, preloadScriptPath);
             }
-
-            std::string contents = "try {window.require('";
-            contents += preloadScriptPath;
-            contents += "');} catch(e) { mbConsoleLog('window.require fail:' + e); }";
-
-            char output[100] = { 0 };
-            sprintf_s(output, 99, "onDidCreateScriptContext preload begin: %p, %d\n", frame, worldId);
-            OutputDebugStringA(output);
-
-            mbRunJs(webView, frame, contents.c_str(), false, nullptr, nullptr, (void*)worldId);
-
-            sprintf_s(output, 99, "onDidCreateScriptContext preload end: %p, %d\n", frame, worldId);
-            OutputDebugStringA(output);
         }
     }
     if (shouldDisableNodejsOfWindow)
@@ -519,29 +544,53 @@ mbDownloadOpt WebContents::staticOnDownloadCallback(mbWebView webView, void* par
 
 int testEventEmitter = 0;
 
+struct ReplyCallbackInfo {
+    WebContents* webContents = nullptr;
+    mbWebFrameHandle frame = 0;
+};
+
+// 主进程通过 reply 回复给渲染进程的消息
+static void replyCallback(const v8::FunctionCallbackInfo<v8::Value>& arg)
+{
+    v8::Local<v8::External> ext = arg.Data().As<v8::External>();
+    ReplyCallbackInfo* info = (ReplyCallbackInfo*)ext->Value();
+    gin_helper::Arguments arguments(arg);
+    std::string channel;
+    if (!arguments.GetNext(&channel)) {
+        arguments.ThrowError();
+        return;
+    }
+
+    std::vector<blink::CloneableMessage>* messages = new std::vector<blink::CloneableMessage>();
+    if (!arguments.GetRemaining(messages)) {
+        delete messages;
+        arguments.ThrowError();
+        return;
+    }
+
+    info->webContents->anyPostMessageToRenderer((int64_t)(info->frame), channel, std::unique_ptr<std::vector<blink::CloneableMessage>>(messages));
+}
+
+static void replyWeakCallback(const v8::WeakCallbackInfo<void>& data)
+{
+    ReplyCallbackInfo* info = (ReplyCallbackInfo*)(data.GetParameter());
+    delete info;
+}
+
 // channel是"ipc-message"字符串，和用户发送的channel不是一回事
-void WebContents::rendererPostMessageToMain(const std::string& channel, const base::Value::List& listParams)
+void WebContents::rendererPostMessageToMain(
+    mbWebFrameHandle frame, 
+    const std::string& channel, 
+    std::unique_ptr<std::vector<blink::CloneableMessage>> listParams)
 {
     int id = m_id;
     WebContents* self = this;
-    base::Value::List* listParamsCopy = new base::Value::List(listParams.Clone());
     std::string* channelCopy = new std::string(channel);
     if (channel != "ipc-message" && channel != "ipc-render-invoke")
         DebugBreak();
 
-//     if (listParams.size() == 2) {
-//         const base::Value& a0 = listParams[0];
-//         const base::Value& a1 = listParams[1];
-//         if (a0.type() == base::Value::Type::STRING && a1.type() == base::Value::Type::NONE) {
-//             const std::string* str = a0.GetIfString();
-//             if (*str == "vscode:message") {
-//                 testEventEmitter = 1;
-//                 content::printCallstack();
-//             }
-//         }
-//     }
-
-    content::ThreadCall::callUiThreadAsync(FROM_HERE, [self, id, channelCopy, listParamsCopy] {
+    std::vector<blink::CloneableMessage>* listParamsPtr = listParams.release();
+    content::ThreadCall::callUiThreadAsync(FROM_HERE, [self, frame, id, channelCopy, listParamsPtr] {
         if (IdLiveDetect::get()->isLive(id)) {
             //self->mate::EventEmitter<WebContents>::emit(channelCopy->c_str(), *listParamsCopy);
 
@@ -561,38 +610,64 @@ void WebContents::rendererPostMessageToMain(const std::string& channel, const ba
 
             v8::Local<v8::Object> webContentsV8 = self->GetWrapper(isolate);
             event->Set(context, gin_helper::StringToV8(isolate, "sender"), webContentsV8);
+            event->Set(context, gin_helper::StringToV8(isolate, "frameId"), gin_helper::ConvertToV8(isolate, (int64_t)frame));
 
-            self->mate::EventEmitter<WebContents>::emitCustomEvent(channelCopy->c_str(), event, *listParamsCopy);
+            ReplyCallbackInfo* info = new ReplyCallbackInfo();
+            info->frame = frame;
+            info->webContents = self;
+            v8::Local<v8::Value> dataLocal = v8::External::New(isolate, info);
+            v8::Local<v8::FunctionTemplate> replyFunTemplate = v8::FunctionTemplate::New(isolate, replyCallback, dataLocal);
+            v8::Local<v8::Function> replyFunction;
+            CHECK(replyFunTemplate->GetFunction(context).ToLocal(&replyFunction));
+            event->Set(context, gin_helper::StringToV8(isolate, "reply"), replyFunction);
 
-//             if (testEventEmitter) {
-//                 base::Value::List::const_iterator it = listParamsCopy->begin();
-//                 for (; it != listParamsCopy->end(); ++it) {
-//                     const base::Value& item = *it;
-//                     base::Value::Type type = item.type();
-//                     if (type == base::Value::Type::STRING) {
-//                         const std::string* str = item.GetIfString();
-//                         OutputDebugStringA("");
-//                     }
-//                     OutputDebugStringA("");
-//                 }
-//             }
+            // 将其包装为 Persistent，并设置为 Weak，附带回调
+            v8::Persistent<v8::Function> persistentReplyFunction(isolate, replyFunction);
+            persistentReplyFunction.SetWeak((void*)info, replyWeakCallback,
+                v8::WeakCallbackType::kParameter  // 或 kInternalFields
+            );
+
+            self->mate::EventEmitter<WebContents>::emitCustomEvent(channelCopy->c_str(), event, *listParamsPtr);
         }
-        delete listParamsCopy;
+        delete listParamsPtr;
         delete channelCopy;
     });
 }
 
-void WebContents::rendererSendMessageToMain(const std::string& channel, const base::Value::List& listParams, std::string* jsonRet)
+void WebContents::rendererSendMessageToMain(
+    mbWebFrameHandle frame,
+    const std::string& channel, 
+    std::unique_ptr<std::vector<blink::CloneableMessage>> listParams,
+    std::vector<uint8_t>* encodedMessageRet)
 {
     WebContents* self = this;
-    const base::Value::List* listParamsPtr = &listParams;
 
     if (channel != "ipc-message-sync")
         DebugBreak();
 
-    content::ThreadCall::callUiThreadSync(FROM_HERE, [self, listParamsPtr, jsonRet] {
-        self->mate::EventEmitter<WebContents>::emitWithSender(
-            "ipc-message-sync", [jsonRet](const std::string& json) { jsonRet->assign(json.c_str(), json.size()); }, *listParamsPtr);
+    std::vector<blink::CloneableMessage>* listParamsPtr = listParams.release();
+    content::ThreadCall::callUiThreadSync(FROM_HERE, [self, frame, listParamsPtr, encodedMessageRet] {
+        //         self->mate::EventEmitter<WebContents>::emitWithSender(
+        //             "ipc-message-sync", [jsonRet](const std::string& json) { jsonRet->assign(json.c_str(), json.size()); }, *listParamsPtr);
+        v8::Isolate* isolate = v8::Isolate::GetCurrent();
+        v8::HandleScope handleScope(isolate);
+
+        v8::Local<v8::Object> webContentsV8 = self->getWrapper();
+
+        v8::Local<v8::Object> event = mate::internal::createJSEventWithSender(isolate, webContentsV8,
+            [encodedMessageRet](base::span<const uint8_t> encodedMessage) {
+                if (encodedMessage.size() > 0) {
+                    encodedMessageRet->resize(encodedMessage.size());
+                    memcpy(encodedMessageRet->data(), encodedMessage.data(), encodedMessage.size());
+                }
+        });
+
+        v8::Local<v8::Context> context = webContentsV8->GetCreationContextChecked();
+        event->Set(context, gin_helper::StringToV8(isolate, "sender"), webContentsV8);
+        event->Set(context, gin_helper::StringToV8(isolate, "frameId"), gin_helper::ConvertToV8(isolate, (int64_t)frame));
+
+        self->mate::EventEmitter<WebContents>::emitCustomEvent("ipc-message-sync", event, *listParamsPtr);
+        delete listParamsPtr;
     });
 }
 
@@ -610,16 +685,24 @@ static bool getIPCObject(v8::Isolate* isolate, v8::Local<v8::Context> context, v
     return true;
 }
 
-static std::vector<v8::Local<v8::Value>> listValueToVector(v8::Isolate* isolate, const base::Value::List& list)
+static std::vector<v8::Local<v8::Value>> listValueToVector(v8::Isolate* isolate, const std::vector<blink::CloneableMessage>& list)
 {
-    v8::Local<v8::Value> array = gin_helper::ConvertToV8(isolate, list);
     std::vector<v8::Local<v8::Value>> result;
-    gin_helper::ConvertFromV8(isolate, array, &result);
+    for (size_t i = 0 ; i < list.size(); ++i) {
+        v8::Local<v8::Value> it = gin_helper::ConvertToV8(isolate, list[i]);
+        result.push_back(it);
+    }
+    
     return result;
 }
 
 static void emitIPCEventToRendererImpl(
-    WebContents* webContents, mbWebView view, mbWebFrameHandle frame, int worldID, const std::string& channel, const base::Value::List& args)
+    WebContents* webContents, 
+    mbWebView view, 
+    mbWebFrameHandle frame, 
+    int worldID, 
+    const std::string& channel, 
+    const std::vector<blink::CloneableMessage>& args)
 {
     CHECK(WTF::IsMainThread());
     if (!frame /*|| wkeIsWebRemoteFrame(view, frame)*/)
@@ -652,33 +735,47 @@ static void emitIPCEventToRendererImpl(
 #else
         evt.Set("sender", webContents->GetWrapper(isolate));
 #endif
+        evt.Set("frameId", (int64_t)frame);
         argsVector.insert(argsVector.begin(), evt.GetHandle());
         mate::emitEvent(isolate, ipc, channel, argsVector);
     }
 }
 
-static void emitIPCEventToRenderer(WebContents* webContents, mbWebView view, mbWebFrameHandle frame, const std::string& channel, const base::Value::List& args)
+static void emitIPCEventToRenderer(
+    WebContents* webContents, 
+    mbWebView view, 
+    mbWebFrameHandle frame, 
+    const std::string& channel, 
+    const std::vector<blink::CloneableMessage>& args)
 {
     emitIPCEventToRendererImpl(webContents, view, frame, WorldIDs::MAIN_WORLD_ID, channel, args);
     emitIPCEventToRendererImpl(webContents, view, frame, WorldIDs::ISOLATED_WORLD_ID, channel, args);
 }
 
-void WebContents::rendererSendMessageToRenderer(mbWebView view, mbWebFrameHandle frame, const std::string& channel, const base::Value::List& args)
+void WebContents::rendererSendMessageToRenderer(mbWebView view, mbWebFrameHandle frame, const std::string& channel, const std::vector<blink::CloneableMessage>& args)
 {
     emitIPCEventToRenderer(nullptr, view, frame, channel, args);
 }
 
-void WebContents::anyPostMessageToRenderer(const std::string& channel, const base::Value::List& listParams)
+void WebContents::anyPostMessageToRenderer(int64_t frameId, const std::string& channel, std::unique_ptr<std::vector<blink::CloneableMessage>> listParams)
 {
     int id = m_id;
     WebContents* self = this;
     std::string* channelWrap = new std::string(channel);
-    base::Value::List* listParamsWrap = new base::Value::List(listParams.Clone());
+    //base::Value::List* listParamsWrap = new base::Value::List(listParams.Clone());
 
-    content::ThreadCall::callBlinkThreadAsync(FROM_HERE, [self, id, channelWrap, listParamsWrap] {
+    std::vector<blink::CloneableMessage>* listParamsPtr = listParams.release();
+    content::ThreadCall::callBlinkThreadAsync(FROM_HERE, [self, frameId, id, channelWrap, listParamsPtr] {
         if (IdLiveDetect::get()->isLive(id)) {
-            emitIPCEventToRenderer(self, self->m_view, mbWebFrameGetMainFrame(self->m_view), *channelWrap, *listParamsWrap);
+            mbWebFrameHandle frame = (mbWebFrameHandle)frameId;
+            if (0 == frameId)
+                frame = mbWebFrameGetMainFrame(self->m_view);
+            else {
+                OutputDebugStringA("anyPostMessageToRenderer frameId not 0\n");
+            }
+            emitIPCEventToRenderer(self, self->m_view, frame, *channelWrap, *listParamsPtr);
         }
+        delete listParamsPtr;
 
 //         if (listParamsWrap->size() == 1) {
 //             const base::Value& a0 = (*listParamsWrap)[0];
@@ -693,7 +790,6 @@ void WebContents::anyPostMessageToRenderer(const std::string& channel, const bas
 //         }
 
         delete channelWrap;
-        delete listParamsWrap;
     });
 }
 
@@ -1173,9 +1269,50 @@ bool WebContents::isDevToolsFocusedApi()
     return true;
 }
 
-void WebContents::insertCSSApi(const std::string& cssText)
+// std::u16string InsertCSS(v8::Isolate* isolate, const std::string& css, gin::Arguments* args) 
+// {
+//     blink::WebCssOrigin css_origin = blink::WebCssOrigin::kAuthor;
+// 
+//     gin_helper::Dictionary options;
+//     if (args->GetNext(&options))
+//         options.Get("cssOrigin", &css_origin);
+// 
+//     content::RenderFrame* render_frame;
+//     if (!MaybeGetRenderFrame(isolate, "insertCSS", &render_frame))
+//         return std::u16string();
+// 
+//     blink::WebFrame* web_frame = render_frame->GetWebFrame();
+//     if (web_frame->IsWebLocalFrame()) {
+//         return web_frame->ToWebLocalFrame()->GetDocument().InsertStyleSheet(blink::WebString::FromUTF8(css), nullptr, css_origin).Utf16();
+//     }
+//     return std::u16string();
+// }
+
+void MB_CALL_TYPE onInsertCSSByFrameResultCallback(mbWebView webView, void* param, const utf8* key)
 {
-    mbInsertCSSByFrame(m_view, mbWebFrameGetMainFrame(m_view), cssText.c_str());
+    gin_helper::Promise<v8::Local<v8::Value>>* promise = (gin_helper::Promise<v8::Local<v8::Value>>*)param;
+    v8::Local<v8::Value> xx = gin_helper::Converter<std::string>::ToV8(v8::Isolate::GetCurrent(), std::string(key));
+    promise->Resolve(xx);
+}
+
+v8::Local<v8::Promise> WebContents::insertCSSApi(const std::string& cssText, gin_helper::Arguments* args)
+{
+    gin_helper::Promise<v8::Local<v8::Value>>* promise = new gin_helper::Promise<v8::Local<v8::Value>>(isolate());
+    v8::Local<v8::Promise> ret = promise->GetHandle();
+
+    int cssOrigin = (int)blink::WebCssOrigin::kAuthor;
+    gin_helper::Dictionary options(isolate());
+    if (args->GetNext(&options))
+        options.Get("cssOrigin", &cssOrigin);
+
+    mbInsertCSSByFrameWithResult(m_view, mbWebFrameGetMainFrame(m_view), cssText.c_str(), cssOrigin, onInsertCSSByFrameResultCallback, promise);
+
+    return ret;
+}
+
+void WebContents::setZoomFactorApi(float factor)
+{
+
 }
 
 void WebContents::enableDeviceEmulationApi()
@@ -1293,17 +1430,47 @@ void WebContents::tabTraverseApi()
     //todo
 }
 
-bool WebContents::_sendApi(bool isAllFrames, const std::string& channel, const base::Value::List& args)
+bool WebContents::_sendApi(
+    const v8::FunctionCallbackInfo<v8::Value>& info
+    //int64_t frameId, bool isAllFrames, const std::string& channel, const base::Value::List& args
+    )
 {
+    gin_helper::Arguments arg(info);
+
+    int64_t frameId;
+    bool isAllFrames;
+    if (!arg.GetNext(&frameId)) {
+        arg.ThrowError();
+        return false;
+    }
+
+    if (!arg.GetNext(&isAllFrames)) {
+        arg.ThrowError();
+        return false;
+    }
+
+    std::string channel;
+    if (!arg.GetNext(&channel)) {
+        arg.ThrowError();
+        return false;
+    }
+
+    std::vector<blink::CloneableMessage>* args = new std::vector<blink::CloneableMessage>();
+    if (!arg.GetRemaining(args)) {
+        delete args;
+        arg.ThrowError();
+        return false;
+    }
+
     if (!isAllFrames) {
-        anyPostMessageToRenderer(channel, args);
+        anyPostMessageToRenderer(frameId, channel, std::unique_ptr<std::vector<blink::CloneableMessage>>(args));
         return true;
     }
     WindowList::iterator winIt = WindowList::getInstance()->begin();
     for (; winIt != WindowList::getInstance()->end(); ++winIt) {
         WindowInterface* windowInterface = *winIt;
         WebContents* webContents = windowInterface->getWebContents();
-        webContents->anyPostMessageToRenderer(channel, args);
+        webContents->anyPostMessageToRenderer(frameId, channel, std::unique_ptr<std::vector<blink::CloneableMessage>>(args));
     }
     return true;
 }

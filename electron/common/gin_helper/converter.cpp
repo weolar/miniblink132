@@ -90,8 +90,10 @@ v8::Local<v8::Value> Converter<int64_t>::ToV8(v8::Isolate* isolate, int64_t val)
 
 bool Converter<int64_t>::FromV8(Isolate* isolate, Local<Value> val, int64_t* out)
 {
-    if (!val->IsNumber())
+    if (!val->IsNumber()) {
+        content::printCallstack();
         return false;
+    }
     // Even though IntegerValue returns int64_t, JavaScript cannot represent
     // the full precision of int64_t, which means some rounding might occur.
     return FromMaybe(val->IntegerValue(isolate->GetCurrentContext()), out);
@@ -789,6 +791,50 @@ v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const base::Value& input)
         return v8::Null(isolate);
         break;
     }
+}
+
+v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const blink::CloneableMessage& in)
+{
+    return Converter<blink::CloneableMessage>::ToV8(isolate, in);
+}
+
+v8::Local<v8::Value> ConvertToV8(v8::Isolate* isolate, const std::vector<blink::CloneableMessage>& input)
+{
+    return Converter<std::vector<blink::CloneableMessage>>::ToV8(isolate, input);
+}
+
+v8::Local<v8::Value> Converter<std::vector<blink::CloneableMessage>>::ToV8(v8::Isolate* isolate, const std::vector<blink::CloneableMessage>& val)
+{
+    std::vector<v8::Local<v8::Value>> retTemp;
+    for (size_t i = 0; i < val.size(); ++i) {
+        v8::Local<v8::Value> it = Converter<blink::CloneableMessage>::ToV8(isolate, val[i]);
+        retTemp.push_back(it);
+    }
+
+    return v8::Array::New(isolate, retTemp.data(), retTemp.size());
+}
+
+bool Converter<std::vector<blink::CloneableMessage>>::FromV8(v8::Isolate* isolate, v8::Local<v8::Value> val, std::vector<blink::CloneableMessage>* out)
+{
+    DebugBreak();
+    return false;
+}
+
+
+v8::Local<v8::Value> Converter<std::unique_ptr<std::vector<blink::CloneableMessage>>>::ToV8(
+    v8::Isolate* isolate, 
+    const std::unique_ptr<std::vector<blink::CloneableMessage>>& val)
+{
+    DebugBreak();
+    return v8::Local<v8::Value>();
+}
+
+bool Converter<std::unique_ptr<std::vector<blink::CloneableMessage>>>::FromV8(
+    v8::Isolate* isolate, 
+    v8::Local<v8::Value> val, 
+    std::unique_ptr<std::vector<blink::CloneableMessage>>* out)
+{
+    return false;
 }
 
 struct TranslaterHolder {

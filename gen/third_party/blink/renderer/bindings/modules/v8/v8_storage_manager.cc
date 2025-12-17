@@ -29,6 +29,7 @@
 #include "third_party/blink/renderer/platform/bindings/v8_binding.h"
 #include "third_party/blink/renderer/platform/bindings/wrapper_type_info.h"
 #include "third_party/blink/renderer/platform/instrumentation/use_counter.h"
+#include <windows.h>
 
 namespace blink {
 
@@ -115,36 +116,37 @@ void EstimateOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 
 void GetDirectoryOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-    RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_StorageManager_getDirectory");
-    BLINK_BINDINGS_TRACE_EVENT("StorageManager.getDirectory");
-    // Promise returning function: Convert a TypeError to a reject promise.
-    ExceptionToRejectPromiseScope reject_promise_scope(info);
-
-    v8::Isolate* isolate = info.GetIsolate();
-    v8::Local<v8::Object> v8_receiver = info.This();
-    if (!V8StorageManager::HasInstance(isolate, v8_receiver)) {
-        V8ThrowException::ThrowTypeError(isolate, "Illegal invocation");
-        return;
-    }
-
-    v8::Local<v8::Context> current_context = isolate->GetCurrentContext();
-    ScriptState* current_script_state = ScriptState::From(isolate, current_context);
-    ExecutionContext* current_execution_context = ToExecutionContext(current_script_state);
-    // [Measure], [MeasureAs]
-    UseCounter::Count(current_execution_context, WebFeature::kV8StorageManager_GetDirectory_Method);
-
-    ScriptState* receiver_script_state = ScriptState::ForRelevantRealm(isolate, v8_receiver);
-    ScriptState* script_state = receiver_script_state;
-    StorageManager* blink_receiver = V8StorageManager::ToWrappableUnsafe(isolate, v8_receiver);
-    const v8::ExceptionContext exception_context_type = v8::ExceptionContext::kOperation;
-    const char* const class_like_name = "StorageManager";
-    const char* const property_name = "getDirectory";
-    ExceptionState exception_state(isolate, exception_context_type, class_like_name, property_name);
-    ScriptPromise<FileSystemDirectoryHandle> return_value = StorageManagerFileSystemAccess::getDirectory(script_state, *blink_receiver, exception_state);
-    if (exception_state.HadException()) [[unlikely]] {
-        return;
-    }
-    bindings::V8SetReturnValue(info, return_value);
+    OutputDebugStringA("GetDirectoryOperationCallback not impl\n");
+//     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_StorageManager_getDirectory");
+//     BLINK_BINDINGS_TRACE_EVENT("StorageManager.getDirectory");
+//     // Promise returning function: Convert a TypeError to a reject promise.
+//     ExceptionToRejectPromiseScope reject_promise_scope(info);
+// 
+//     v8::Isolate* isolate = info.GetIsolate();
+//     v8::Local<v8::Object> v8_receiver = info.This();
+//     if (!V8StorageManager::HasInstance(isolate, v8_receiver)) {
+//         V8ThrowException::ThrowTypeError(isolate, "Illegal invocation");
+//         return;
+//     }
+// 
+//     v8::Local<v8::Context> current_context = isolate->GetCurrentContext();
+//     ScriptState* current_script_state = ScriptState::From(isolate, current_context);
+//     ExecutionContext* current_execution_context = ToExecutionContext(current_script_state);
+//     // [Measure], [MeasureAs]
+//     UseCounter::Count(current_execution_context, WebFeature::kV8StorageManager_GetDirectory_Method);
+// 
+//     ScriptState* receiver_script_state = ScriptState::ForRelevantRealm(isolate, v8_receiver);
+//     ScriptState* script_state = receiver_script_state;
+//     StorageManager* blink_receiver = V8StorageManager::ToWrappableUnsafe(isolate, v8_receiver);
+//     const v8::ExceptionContext exception_context_type = v8::ExceptionContext::kOperation;
+//     const char* const class_like_name = "StorageManager";
+//     const char* const property_name = "getDirectory";
+//     ExceptionState exception_state(isolate, exception_context_type, class_like_name, property_name);
+//     ScriptPromise<FileSystemDirectoryHandle> return_value = StorageManagerFileSystemAccess::getDirectory(script_state, *blink_receiver, exception_state);
+//     if (exception_state.HadException()) [[unlikely]] {
+//         return;
+//     }
+//     bindings::V8SetReturnValue(info, return_value);
 }
 
 void PersistOperationCallback(const v8::FunctionCallbackInfo<v8::Value>& info)

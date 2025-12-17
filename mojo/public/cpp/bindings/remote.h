@@ -152,7 +152,8 @@ public:
     }
     explicit operator bool() const
     {
-        return is_bound();
+        //return is_bound();
+        return remote_impl_.is_valid();
     }
 
     // Indicates whether this Remote is connected to a receiver. Must only be

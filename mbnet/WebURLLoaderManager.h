@@ -65,6 +65,7 @@ struct BlobTempFileInfo;
 struct InitializeHandleInfo;
 struct MainTaskArgs;
 class WebURLLoaderManagerMainTask;
+struct SyncJob;
 
 class AutoLockJob {
 public:
@@ -163,7 +164,7 @@ private:
     void startOnIoThread(int jobId);
     void timeoutOnMainThread(int jobId);
 
-    void dispatchSynchronousJobOnIoThread(WebURLLoaderInternal* job, InitializeHandleInfo* info, CURLcode* ret, int* isCallFinish);
+    void dispatchSynchronousJobOnIoThread(WebURLLoaderInternal* job, InitializeHandleInfo* info, SyncJob* syncJob);
 
     void initCookieSession(const char* cookiePath);
 

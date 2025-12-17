@@ -31,11 +31,6 @@
 #include <windows.h>
 #include <combaseapi.h>
 
-// EXTERN_C HRESULT CoInitializeEx(LPVOID pvReserved, DWORD dwCoInit)
-// {
-//     return 0;
-// }
-
 bool blink::mojom::blink::MimeRegistry::GetMimeTypeFromExtension(WTF::String const&, WTF::String*)
 {
     *(int*)1 = 1;
@@ -273,6 +268,8 @@ std::string RendererBlinkPlatformImpl::GetDataResourceString(int resourceId)
 blink::WebString RendererBlinkPlatformImpl::QueryLocalizedString(int resourceId)
 {
     switch (resourceId) {
+    case IDS_PLUGIN_INITIALIZATION_ERROR:
+        return blink::WebString::FromUTF8("plugin initialization error");
     case IDS_FORM_MULTIPLE_FILES_BUTTON_LABEL:
     case IDS_FORM_FILE_BUTTON_LABEL:
         return blink::WebString::FromUTF8("select");
@@ -435,6 +432,16 @@ blink::WebString RendererBlinkPlatformImpl::QueryLocalizedString(int resourceId)
         return blink::WebString::FromUTF8("Week description");
     case IDS_PRETTY_PRINT_JSON:
         return blink::WebString::FromUTF8("print json");
+    case IDS_FORM_VALIDATION_BAD_INPUT_NUMBER:
+        return blink::WebString::FromUTF8("validation bad input number");
+    case IDS_FORM_VALIDATION_VALUE_NOT_EQUAL:
+        return blink::WebString::FromUTF8("validation value not equal");
+    case IDS_FORM_VALIDATION_RANGE_OVERFLOW:
+        return blink::WebString::FromUTF8("validation range overflow");
+    case IDS_FORM_VALIDATION_RANGE_UNDERFLOW:
+        return blink::WebString::FromUTF8("validation range underflow");
+    case IDS_FORM_VALIDATION_RANGE_REVERSED:
+        return blink::WebString::FromUTF8("validation range reversed");
 
     default:
         break;
@@ -460,8 +467,29 @@ blink::WebString RendererBlinkPlatformImpl::QueryLocalizedString(int resourceId,
     return blink::WebString();
 }
 
-blink::WebString RendererBlinkPlatformImpl::QueryLocalizedString(int resource_id, const blink::WebString& parameter1, const blink::WebString& parameter2)
+blink::WebString RendererBlinkPlatformImpl::QueryLocalizedString(int resourceId, const blink::WebString& parameter1, const blink::WebString& parameter2)
 {
+    if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL_NO_AT_SIGN == resourceId) {
+        return String::Format("Please include an '%s@' in the email address. 'user' is missing an '%s@", parameter1.Utf8().c_str(), parameter1.Utf8().c_str());
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL_EMPTY_LOCAL == resourceId) {
+        return String::Format("Please enter a part followed by '%s@'. '%s@example.com' is incomplete.", parameter1.Utf8().c_str(), parameter2.Utf8().c_str());
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL_EMPTY_DOMAIN == resourceId) {
+        return String::Format("Please enter a part following '%s@'. '%s@' is incomplete.", parameter1.Utf8().c_str(), parameter2.Utf8().c_str());
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL_INVALID_LOCAL == resourceId) {
+        return String::Format("A part followed by '%s' should not contain the symbol '%s", parameter1.Utf8().c_str(), parameter2.Utf8().c_str());
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL_INVALID_DOMAIN == resourceId) {
+        return String::Format("A part following '%s' should not contain the symbol '%s'", parameter1.Utf8().c_str(), parameter2.Utf8().c_str());
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL_INVALID_DOTS == resourceId) {
+        return String::Format("'%s.' is used at a wrong position in '%s example..com'", parameter1.Utf8().c_str(), parameter2.Utf8().c_str());
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_MULTIPLE_EMAIL == resourceId) {
+        return blink::WebString::FromUTF8("Please enter a comma separated list of email addresses.");
+    } else if (IDS_FORM_VALIDATION_TYPE_MISMATCH_EMAIL == resourceId) {
+        return blink::WebString::FromUTF8("Please enter an email address.");
+    } else if (IDS_FORM_VALIDATION_STEP_MISMATCH_CLOSE_TO_LIMIT == resourceId) {
+        return blink::WebString::FromUTF8("validation step mismatch close to limit");
+    } else if (IDS_FORM_VALIDATION_STEP_MISMATCH == resourceId) {
+        return blink::WebString::FromUTF8("validation step mismatch");
+    }
     DebugBreak();
     return blink::WebString();
 }
@@ -473,7 +501,11 @@ std::string* s_ua = nullptr;
 RendererBlinkPlatformImpl::RendererBlinkPlatformImpl()
 {
     s_ua = new std::string();
-    *s_ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
+#ifdef _WIN32
+    *s_ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36";
+#else
+    *s_ua = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36";
+#endif // _WIN32
 }
 
 void RendererBlinkPlatformImpl::setUserAgent(const std::string& ua)
@@ -546,9 +578,12 @@ void RendererBlinkPlatformImpl::WillStopWorkerThread()
     //OutputDebugStringA("RendererBlinkPlatformImpl::WillStopWorkerThread not impl\n");
 }
 
+void bindOnWebWorkers(v8::Local<v8::Context> context);
+
 void RendererBlinkPlatformImpl::WorkerContextCreated(const v8::Local<v8::Context>& worker)
 {
-    //OutputDebugStringA("RendererBlinkPlatformImpl::WorkerContextCreated not impl\n");
+    v8::HandleScope handleScope(worker->GetIsolate());
+    bindOnWebWorkers(worker);
 }
 
 bool RendererBlinkPlatformImpl::AllowScriptExtensionForServiceWorker(const blink::WebSecurityOrigin& script_origin)

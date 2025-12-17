@@ -20,7 +20,7 @@ class InterfaceEndpointController;
 
 // An internal interface used to manage endpoints within an associated group,
 // which corresponds to one end of a message pipe.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) AssociatedGroupController : public base::RefCountedThreadSafe<AssociatedGroupController> {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ AssociatedGroupController : public base::RefCountedThreadSafe<AssociatedGroupController> {
 public:
     // Associates an interface with this AssociatedGroupController's message pipe.
     // It takes ownership of |handle_to_send| and returns an interface ID that

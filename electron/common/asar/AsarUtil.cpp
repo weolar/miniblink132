@@ -2,14 +2,15 @@
 // Use of this source code is governed by the MIT license that can be
 // found in the LICENSE file.
 
-#include "common/asar/AsarUtil.h"
+#include "electron/common/asar/AsarUtil.h"
 
 #include <map>
 #include <string>
 
-#include "common/asar/Archive.h"
+#include "electron/common/asar/Archive.h"
 #include "base/files/file_path.h"
 #include "base/files/file_util.h"
+#include "base/strings/escape.h"
 #include <windows.h>
 
 namespace asar {
@@ -25,7 +26,7 @@ const base::FilePath::CharType kAsarExtension[] = FILE_PATH_LITERAL(".asar");
 
 } // namespace
 
-Archive* GetOrCreateAsarArchive(const base::FilePath& path)
+Archive* getOrCreateAsarArchive(const base::FilePath& path)
 {
     if (!g_archive_map)
         g_archive_map = new ArchiveMap();
@@ -42,7 +43,7 @@ Archive* GetOrCreateAsarArchive(const base::FilePath& path)
     return archive_map[path];
 }
 
-bool GetAsarArchivePath(const base::FilePath& full_path, base::FilePath* asar_path, base::FilePath* relative_path)
+bool getAsarArchivePath(const base::FilePath& full_path, base::FilePath* asar_path, base::FilePath* relative_path)
 {
     base::FilePath iter = full_path;
     while (true) {
@@ -63,7 +64,7 @@ bool GetAsarArchivePath(const base::FilePath& full_path, base::FilePath* asar_pa
     return true;
 }
 
-bool ReadFileToString(const wchar_t* path, std::string* buffer)
+bool readFileToString(const wchar_t* path, std::string* buffer)
 {
     HANDLE hFile = ::CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (INVALID_HANDLE_VALUE == hFile)
@@ -79,13 +80,13 @@ bool ReadFileToString(const wchar_t* path, std::string* buffer)
     return !!b && 0 != numberOfBytesRead;
 }
 
-bool ReadFileToString(const base::FilePath& path, std::string* contents)
+static bool readFileToStringImpl(const base::FilePath& path, std::string* contents)
 {
     base::FilePath asar_path, relative_path;
-    if (!GetAsarArchivePath(path, &asar_path, &relative_path))
+    if (!getAsarArchivePath(path, &asar_path, &relative_path))
         return base::ReadFileToString(path, contents);
 
-    Archive* archive = GetOrCreateAsarArchive(asar_path);
+    Archive* archive = getOrCreateAsarArchive(asar_path);
     if (!archive)
         return false;
 
@@ -106,6 +107,27 @@ bool ReadFileToString(const base::FilePath& path, std::string* contents)
 
     contents->resize(info.size);
     return static_cast<int>(info.size) == src.Read(info.offset, const_cast<char*>(contents->data()), contents->size());
+}
+
+bool readFileToString(const base::FilePath& path, std::string* contents)
+{
+    base::FilePath pathTemp = path;
+    if (!readFileToStringImpl(pathTemp, contents) || 0 == contents->size()) {
+        pathTemp = normalizeFile(pathTemp);
+        if (!readFileToStringImpl(pathTemp, contents) || 0 == contents->size())
+            return false;
+    }
+    return true;
+}
+
+// 把%xx这种符号替换成正常的
+base::FilePath normalizeFile(const base::FilePath& path)
+{
+    if (base::PathExists(path))
+        return path;
+
+    std::string newPathStr = base::UnescapeURLComponent(std::string_view(path.AsUTF8Unsafe()), base::UnescapeRule::SPACES);
+    return base::FilePath::FromUTF8Unsafe(newPathStr);
 }
 
 } // namespace asar

@@ -216,10 +216,7 @@ public:
     {
         return m_allowResize;
     }
-    void allowResize()
-    {
-        m_allowResize = true;
-    }
+    void allowResize();
     void disallowResize()
     {
         m_allowResize = false;

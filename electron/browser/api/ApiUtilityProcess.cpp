@@ -139,7 +139,8 @@ void ApiUtilityProcess::init(v8::Isolate* isolate, v8::Local<v8::Object> target,
     s_ApiUtilityProcessConstructor.Reset(isolate, prototypFunc);
 }
 
-void traverseObjectForEnvMap(v8::Isolate* isolate, v8::Local<v8::Object> obj, base::EnvironmentMap* envMap) {
+void traverseObjectForEnvMap(v8::Isolate* isolate, v8::Local<v8::Object> obj, base::EnvironmentMap* envMap)
+{
     v8::TryCatch tryCatch(isolate); // 捕获可能的异常
 
     if (obj.IsEmpty())

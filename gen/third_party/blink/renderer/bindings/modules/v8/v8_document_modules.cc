@@ -5310,22 +5310,21 @@ void AdoptedStyleSheetsAttributeSetCallback(const v8::FunctionCallbackInfo<v8::V
 
 void PictureInPictureElementAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
-
     RUNTIME_CALL_TIMER_SCOPE_DISABLED_BY_DEFAULT(info.GetIsolate(), "Blink_Document_pictureInPictureElement_Getter");
     BLINK_BINDINGS_TRACE_EVENT("Document.pictureInPictureElement.get");
-    v8::Isolate* isolate = info.GetIsolate();
-    v8::Local<v8::Context> current_context = isolate->GetCurrentContext();
-    ScriptState* current_script_state = ScriptState::From(isolate, current_context);
-    ExecutionContext* current_execution_context = ToExecutionContext(current_script_state);
-    // [Measure], [MeasureAs]
-    UseCounter::Count(current_execution_context, WebFeature::kV8Document_PictureInPictureElement_AttributeGetter);
-
-    v8::Local<v8::Object> v8_receiver = info.This();
-    Document* blink_receiver = V8Document::ToWrappableUnsafe(isolate, v8_receiver);
-    auto&& return_value = blink_receiver->pictureInPictureElement();
-    static_assert(bindings::IsReturnTypeCompatible<IDLNullable<Element>, std::remove_cvref_t<decltype(return_value)>>,
-        "Return type from native call is incompatible to the type specified in IDL");
-    bindings::V8SetReturnValue(info, return_value, blink_receiver);
+//     v8::Isolate* isolate = info.GetIsolate();
+//     v8::Local<v8::Context> current_context = isolate->GetCurrentContext();
+//     ScriptState* current_script_state = ScriptState::From(isolate, current_context);
+//     ExecutionContext* current_execution_context = ToExecutionContext(current_script_state);
+//     // [Measure], [MeasureAs]
+//     UseCounter::Count(current_execution_context, WebFeature::kV8Document_PictureInPictureElement_AttributeGetter);
+// 
+//     v8::Local<v8::Object> v8_receiver = info.This();
+//     Document* blink_receiver = V8Document::ToWrappableUnsafe(isolate, v8_receiver);
+//     auto&& return_value = blink_receiver->pictureInPictureElement();
+//     static_assert(bindings::IsReturnTypeCompatible<IDLNullable<Element>, std::remove_cvref_t<decltype(return_value)>>,
+//         "Return type from native call is incompatible to the type specified in IDL");
+//     bindings::V8SetReturnValue(info, return_value, blink_receiver);
 }
 
 void FontsAttributeGetCallback(const v8::FunctionCallbackInfo<v8::Value>& info)

@@ -17,7 +17,7 @@ namespace mate {
 namespace internal {
 
 v8::Local<v8::Object> createJSEvent(v8::Isolate* isolate, v8::Local<v8::Object> object);
-v8::Local<v8::Object> createJSEventWithSender(v8::Isolate* isolate, v8::Local<v8::Object> object, std::function<void(std::string)>&& callback);
+v8::Local<v8::Object> createJSEventWithSender(v8::Isolate* isolate, v8::Local<v8::Object> object, std::function<void(base::span<const uint8_t>)>&& callback);
 v8::Local<v8::Object> createCustomEvent(v8::Isolate* isolate, v8::Local<v8::Object> object, v8::Local<v8::Object> event);
 v8::Local<v8::Object> createEventFromFlags(v8::Isolate* isolate, int flags);
 
@@ -42,8 +42,13 @@ public:
     // this.emit(name, event, args...);
     template <typename... Args> bool emitCustomEvent(const std::string& name, v8::Local<v8::Object> event, const Args&... args)
     {
-        return emitWithEvent(name, /*internal::createCustomEvent(isolate(), GetWrapper(isolate()), event)*/event, args...);
+        return emitWithEvent(name, event, args...);
     }
+
+//     template <typename... Args> bool emitCustomEvent(const std::string& name, v8::Local<v8::Object> event, const std::vector<blink::CloneableMessage>& args)
+//     {
+//         return emitWithEvent(name, event, args);
+//     }
 
     // this.emit(name, new Event(flags), args...);
     template <typename... Args> bool emitWithFlags(const base::StringPiece& name, int flags, const Args&... args)
@@ -82,6 +87,18 @@ protected:
     }
 
 private:
+//     bool emitWithEvent(const std::string& name, v8::Local<v8::Object> event, const std::vector<blink::CloneableMessage>& args)
+//     {
+//         //v8::Locker locker(isolate());
+//         v8::HandleScope handle_scope(isolate());
+//         //v8::TryCatch block(isolate());
+//         emitEvent(isolate(), getWrapper(), name, event, args);
+//         v8::MaybeLocal<v8::Value> ret = event->Get(event->GetCreationContextChecked(), gin_helper::StringToV8(isolate(), "defaultPrevented"));
+//         if (ret.IsEmpty())
+//             return false;
+//         return ret.ToLocalChecked()->BooleanValue(isolate());
+//     }
+
     // this.emit(name, event, args...);
     template <typename... Args> bool emitWithEvent(const std::string& name, v8::Local<v8::Object> event, const Args&... args)
     {

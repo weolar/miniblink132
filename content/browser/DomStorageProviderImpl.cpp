@@ -282,8 +282,9 @@ private:
         if (!base::DirectoryExists(dir)) {
             base::File::Error error;
             bool b = base::CreateDirectoryAndGetError(dir, &error);
-            if (!b)
+            if (!base::DirectoryExists(dir)) {
                 return;
+            }
         }
         if (buffer.size() == 0) {
             base::DeleteFile(m_localPath);
@@ -368,28 +369,29 @@ public:
     void addObserverImpl(::mojo::PendingRemote<::blink::mojom::blink::StorageAreaObserver> observer)
     {
         CHECK(ThreadCall::isBlinkThread());
-
         mojo::Remote<::blink::mojom::blink::StorageAreaObserver> observerRemote(std::move(observer));
 
         // 清理掉那些已经失效的
         mojo::RemoteSet<::blink::mojom::blink::StorageAreaObserver> newObservers;
-        for (const mojo::RemoteSet<::blink::mojom::blink::StorageAreaObserver>::Iterator& it = (m_observers.begin()); 
+        for (mojo::RemoteSet<::blink::mojom::blink::StorageAreaObserver>::Iterator it = (m_observers.begin()); 
             it != m_observers.end();) {
             ::mojo::Remote<::blink::mojom::blink::StorageAreaObserver>& observer = (::mojo::Remote<::blink::mojom::blink::StorageAreaObserver>&)(*it);
             if (observer.TryGet()) {
+                CHECK(observer.is_bound());
                 newObservers.Add(std::move(observer));
             } else
                 ++((mojo::RemoteSet<::blink::mojom::blink::StorageAreaObserver>::Iterator&)it);
         }
         m_observers.Clear();
 
-        for (const mojo::RemoteSet<::blink::mojom::blink::StorageAreaObserver>::Iterator& it = (newObservers.begin());
-            it != newObservers.end();) {
+        for (mojo::RemoteSet<::blink::mojom::blink::StorageAreaObserver>::Iterator it = (newObservers.begin());
+            it != newObservers.end(); ++it) {
             ::mojo::Remote<::blink::mojom::blink::StorageAreaObserver>& observer = (::mojo::Remote<::blink::mojom::blink::StorageAreaObserver>&)(*it);
             m_observers.Add(std::move(observer));
         }
 
-        m_observers.Add(std::move(observerRemote));
+        if (observerRemote.is_bound())
+            m_observers.Add(std::move(observerRemote));
     }
 
     // components/services/storage/dom_storage/storage_area_impl.cc

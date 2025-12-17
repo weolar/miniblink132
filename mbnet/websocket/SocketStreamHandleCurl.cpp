@@ -233,7 +233,12 @@ int SocketStreamHandle::waitForAvailableData(CURL* curlHandle, long long selectT
     fd_set fdread;
     FD_ZERO(&fdread);
     FD_SET(socket, &fdread);
-    int rc = ::select(0, &fdread, nullptr, nullptr, &timeout);
+#ifdef OS_WIN
+    int nfds = 0;
+#else
+    int nfds = socket + 1; // linux 需要传入值, windows 可以传入0是因为其内部实现保存了相关信息
+#endif
+    int rc = ::select(nfds, &fdread, nullptr, nullptr, &timeout);
 
     if (rc != 1 && rc != 0) {
         char* output = (char*)malloc(0x100);

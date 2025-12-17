@@ -55,7 +55,7 @@ static_assert(sizeof(MessageHeaderV2) == 48, "Bad sizeof(MessageHeaderV2)");
 
 #pragma pack(pop)
 
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) MessageDispatchContext {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ MessageDispatchContext {
 public:
     explicit MessageDispatchContext(Message* message);
 

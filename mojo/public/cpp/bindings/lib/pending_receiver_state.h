@@ -14,7 +14,7 @@ namespace internal {
 
 // Generic state owned by every templated InterfaceRequest or PendingReceiver
 // instance.
-struct COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) PendingReceiverState {
+struct /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ PendingReceiverState {
 public:
     PendingReceiverState();
     explicit PendingReceiverState(ScopedMessagePipeHandle pipe);

@@ -1,6 +1,4 @@
-(function () {
-    //mbConsoleLog("asar.js !!!!!!!!!!!");
-    
+(function () {    
     const ArchiveClass = process._linkedBinding('electron_common_asar').Archive; // asar
     const childProcess = require('child_process');
     const path = require('path');
@@ -284,13 +282,13 @@
         }
 
         const lstatSync = fs.lstatSync;
-        fs.lstatSync = function (p) {
+        fs.lstatSync = function (p, options) {
             const paths = splitPath(p);
             const isAsar = paths[0];
             const asarPath = paths[1];
             const filePath = paths[2];
             if (!isAsar) {
-                return lstatSync(p);
+                return lstatSync(p, options);
             }
             const archive = getOrCreateArchive(asarPath);
             if (!archive) {
@@ -801,8 +799,6 @@
         }
         
         internalBinding('modules').readPackageJSON = function (p, isESM, base, specifier) {
-            //mbConsoleLog("asar.js, readPackageJSON:" + p);
-            
             const paths = splitPath(p);
             const isAsar = paths[0];
             const asarPath = paths[1];
@@ -824,9 +820,10 @@
             }
             if (info.unpacked) {
                 const realPath = archive.copyFileOut(filePath);
-                return fs.readFileSync(realPath, {
+                let jsonStr = fs.readFileSync(realPath, {
                     encoding: 'utf8'
                 });
+                return serializePackageJSON(p, jsonStr);
             }
             const buffer = new Buffer(info.size);
             const fd = archive.getFd();
@@ -844,7 +841,7 @@
             const asarPath = paths[1];
             const filePath = paths[2];
 
-            if (!isAsar) { 
+            if (!isAsar) {
                 return internalModuleStat(internalFsBinding, p);
             }
 
@@ -855,9 +852,8 @@
             }
             const stats = archive.stat(filePath);
             
-
             // -ENOENT
-            if (!stats) { //mbConsoleLog("fail 2 internalModuleStat:" + asarPath + ", " + filePath);
+            if (!stats) {
                 return -34;
             }
             if (stats.isDirectory) {
@@ -923,7 +919,8 @@
         overrideAPISync(fs, 'copyFileSync');
         
         overrideAPI(fs, 'open');
-        //overrideAPI(fs, 'openFileHandle');
+        //overrideAPI(fs, 'openFileHandle'); 
+        overrideAPI(process.binding('fs'), 'openFileHandle'); 
         overrideAPI(childProcess, 'execFile');
         overrideAPISync(process, 'dlopen', 1, false);
         overrideAPISync(require('module')._extensions, '.node', 1, false);

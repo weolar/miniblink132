@@ -14,7 +14,7 @@
 namespace mojo {
 namespace internal {
 
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) UnserializedMessageContext {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ UnserializedMessageContext {
 public:
     struct Tag { };
 

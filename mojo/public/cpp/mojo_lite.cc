@@ -80,7 +80,6 @@
 
 static int s_MojoHandleEntryCount = 0;
 static void onConnectorClose(void* ptr);
-//#pragma clang optimize off
 
 namespace content {
 void printCallstack();
@@ -209,23 +208,6 @@ std::string printStackTrace()
 
     return out;
 }
-
-// template <typename Interface> class PendingRemoteTest {
-// public:
-//     PendingRemoteTest(Interface* test)
-//     {
-//         m_test = test;
-//     }
-//
-//     void print()
-//     {
-//         char output[100] = { 0 };
-//         sprintf_s(output, 99, "Function name: %s\n", __PRETTY_FUNCTION__);
-//         OutputDebugStringA(output);
-//     }
-//
-//     Interface* m_test = nullptr;
-// };
 #endif // DEBUG
 
 struct DebugRecordMojo {
@@ -270,7 +252,7 @@ public:
     CrossProcessConnector(base::ProcessId pid)
     {
         char output[100] = { 0 };
-        sprintf_s(output, 99, "CrossProcessConnector: %p\n", this);
+        sprintf(output, "CrossProcessConnector: %p\n", this);
         OutputDebugStringA(output);
 
         m_pid = pid;
@@ -357,6 +339,7 @@ public:
         bool m_isCloseing = false;
         bool m_enableUnassociatedUsage = false;
         bool m_handle0IsRemote = false;
+        bool m_isPostingArmTrapEventDelay = false;
         // =====
 
         //---给Connector用
@@ -503,7 +486,7 @@ public:
             return;
         }
 
-        armTrapEventDelayNotLock(entry, MOJO_HANDLE_SIGNAL_PEER_CLOSED);
+        armTrapEventDelayNotLock(FROM_HERE, entry, MOJO_HANDLE_SIGNAL_PEER_CLOSED);
     }
 
     void handleBlinkMessagePortClose(MojoHandle handle, MojoHandleEntry* entry)
@@ -949,40 +932,70 @@ public:
                 trapHandler));
     }
 
-    void armTrapEventDelayNotLock(MojoHandleEntry* entry, MojoHandleSignals signals)
+    void armTrapEventDelayNotLock(const base::Location& from_here, MojoHandleEntry* entry, MojoHandleSignals signals)
     {
         if (MOJO_HANDLE_SIGNAL_READABLE == signals && entry->m_readTrapDirty)
             return;
         if (MOJO_HANDLE_SIGNAL_READABLE == signals)
             entry->m_readTrapDirty = true;
 
-        entry->m_receiverRunner->PostTask(FROM_HERE,
-            base::BindOnce(
-                [](MojoHandle handle, MojoHandleSignals signals) {
-                    MojoHandleMgr* self = MojoHandleMgr::GetInst();
-                    self->m_lock.lock();
-                    MojoHandleMgr::MojoHandleEntry* entry = self->findEntryNotLock(handle);
-                    if (!entry) {
-                        self->m_lock.unlock();
-                        return;
-                    }
+        auto func = base::BindOnce([](MojoHandle handle, MojoHandleSignals signals) {
+            MojoHandleMgr* self = MojoHandleMgr::GetInst();
+            self->m_lock.lock();
+            MojoHandleMgr::MojoHandleEntry* entry = self->findEntryNotLock(handle);
+            if (!entry) {
+                self->m_lock.unlock();
+                return;
+            }
 
-                    if (MOJO_HANDLE_SIGNAL_PEER_CLOSED == signals)
-                        entry->m_closeTrapDirty = true;
-                    std::vector<TrapEventEntry*> trapEventEntrys = entry->m_trapEventEntrys; // 拷贝一份，防止entry被销毁了
-                    self->m_lock.unlock();
+            if (MOJO_HANDLE_SIGNAL_PEER_CLOSED == signals)
+                entry->m_closeTrapDirty = true;
+            std::vector<TrapEventEntry*> trapEventEntrys = entry->m_trapEventEntrys; // 拷贝一份，防止entry被销毁了
+            self->m_lock.unlock();
 
-                    for (size_t i = 0; i < trapEventEntrys.size(); ++i) {
-                        self->armTrapImpl(trapEventEntrys[i]->m_trapHandler, signals);
-                    }
+            for (size_t i = 0; i < trapEventEntrys.size(); ++i) {
+                self->armTrapImpl(trapEventEntrys[i]->m_trapHandler, signals);
+            }
 
-                    self->m_lock.lock();
-                    entry = self->findEntryNotLock(handle);
-                    if (entry && MOJO_HANDLE_SIGNAL_READABLE == signals)
-                        entry->m_readTrapDirty = false;
-                    self->m_lock.unlock();
-                },
-                entry->m_handle0, signals));
+            self->m_lock.lock();
+            entry = self->findEntryNotLock(handle);
+            if (entry && MOJO_HANDLE_SIGNAL_READABLE == signals)
+                entry->m_readTrapDirty = false;
+            self->m_lock.unlock();
+        }, entry->m_handle0, signals);
+
+        m_lock.lock();
+        if (m_armTrapEventTasks == nullptr)
+            m_armTrapEventTasks = new std::vector<base::OnceClosure>();
+        m_armTrapEventTasks->push_back(std::move(func));
+
+        if (entry->m_isPostingArmTrapEventDelay) {
+            m_lock.unlock();
+            return;
+        }
+        entry->m_isPostingArmTrapEventDelay = true;
+        m_lock.unlock();
+
+        entry->m_receiverRunner->PostTask(from_here, base::BindOnce([](MojoHandle handle) {
+            MojoHandleMgr* self = MojoHandleMgr::GetInst();
+            self->m_lock.lock();
+            MojoHandleMgr::MojoHandleEntry* entry = self->findEntryNotLock(handle);
+            if (!entry) {
+                self->m_lock.unlock();
+                return;
+            }
+
+            entry->m_isPostingArmTrapEventDelay = false;
+            std::vector<base::OnceClosure>* tasks = self->m_armTrapEventTasks;
+            self->m_armTrapEventTasks = nullptr;
+            self->m_lock.unlock();
+
+            for (size_t i = 0; tasks && i < tasks->size(); ++i) {
+                std::move(tasks->at(i)).Run();
+            }
+            if (tasks)
+                delete tasks;
+        }, entry->m_handle0));
     }
 
     void writeData(MojoHandle dataPipeProducerHandle, const void* elements, uint32_t* numBytes, const MojoWriteDataOptions* options)
@@ -1012,7 +1025,7 @@ public:
         if (MojoHandleEntry::kNotDataNotTrap == entry->m_dataTrapState)
             entry->m_dataTrapState = MojoHandleEntry::kHasDataNotTrap;
 
-        armTrapEventDelayNotLock(entry, MOJO_HANDLE_SIGNAL_READABLE);
+        armTrapEventDelayNotLock(FROM_HERE, entry, MOJO_HANDLE_SIGNAL_READABLE);
         m_lock.unlock();
     }
 
@@ -1208,14 +1221,14 @@ public:
         }
 
         char output[100] = { 0 };
-        sprintf_s(output, 99, "changeToRemoteServiceMode: %d\n", handle);
+        sprintf(output, "changeToRemoteServiceMode: %d\n", handle);
         OutputDebugStringA(output);
     }
 
     bool changeToRemoteClientModeNoLock(MojoHandle handle, base::ProcessId pid, MojoHandle* localHandle)
     {
         char output[100] = { 0 };
-        sprintf_s(output, 99, "changeToRemoteClientModeNoLock: %d\n", handle);
+        sprintf(output, "changeToRemoteClientModeNoLock: %d\n", handle);
         OutputDebugStringA(output);
 
         std::unordered_map<base::ProcessId, MojoProcessInfo*>::const_iterator it = m_processInfo.find(pid);
@@ -1242,7 +1255,7 @@ public:
         char output[100] = { 0 };
         std::unordered_map<base::ProcessId, MojoProcessInfo*>::const_iterator it = getProcessInfo().find(pid);
         if (it == getProcessInfo().end()) {
-            sprintf_s(output, 99, "findRemoteServiceHandle fail 1: %d %d\n", handle, pid);
+            sprintf(output, "findRemoteServiceHandle fail 1: %d %d\n", handle, pid);
             OutputDebugStringA(output);
             return false;
         }
@@ -1255,7 +1268,7 @@ public:
             }
         }
 
-        sprintf_s(output, 99, "findRemoteServiceHandle fail 2: %d %d\n", handle, pid);
+        sprintf(output, "findRemoteServiceHandle fail 2: %d %d\n", handle, pid);
         OutputDebugStringA(output);
         return false;
     }
@@ -1308,6 +1321,10 @@ private:
     int m_totalEntryCount = 0;
     int m_totalMsgConnelEntryCount = 0;
     base::Time m_gcTime;
+
+    // 缓解armTrapEventDelayNotLock太频繁用的
+    //WTF::RecursiveMutex m_armTrapEventTasksLock;
+    std::vector<base::OnceClosure>* m_armTrapEventTasks = nullptr;
 
     //std::map<size_t, void*> m_connectors; // id查Connector
     std::set<void*> m_connectors;
@@ -1981,10 +1998,6 @@ mojo::Message::Message(base::span<const uint8_t> payload, base::span<mojo::Scope
     payload_buffer_ = mojo::internal::Buffer(buffer, payload.size(), payload.size());
     //std::copy(payload.begin(), payload.end(), static_cast<uint8_t*>(payload_buffer_.data()));
 
-    //     char output[131] = { 0 };
-    //     sprintf_s(output, 130, "Message(base::span<const uint8_t>: %p, %p, %p\n", this, buffer, payload_buffer_.data());
-    //     OutputDebugStringA(output);
-
     transferable_ = true;
 }
 
@@ -2051,9 +2064,9 @@ mojo::ScopedHandleBase<mojo::MessagePipeHandle> mojo::Connector::PassMessagePipe
 
 mojo::Connector::~Connector(void)
 {
-    char output[100] = { 0 };
-    sprintf_s(output, 99, "~Connector: %p\n", this);
-    OutputDebugStringA(output);
+//     char output[100] = { 0 };
+//     sprintf(output, "~Connector: %p\n", this);
+//     OutputDebugStringA(output);
 
     clearConnector(message_pipe_, this, true);
 }
@@ -2077,9 +2090,9 @@ mojo::Connector::Connector(mojo::ScopedHandleBase<mojo::MessagePipeHandle> pipe,
     MojoHandleMgr::MojoHandleEntry* entry = mgr->findEntryNotLock(message_pipe_->value());
     CHECK(entry);
 
-    char output[100] = { 0 };
-    sprintf_s(output, 99, "Connector 1: %p\n", this);
-    OutputDebugStringA(output);
+//     char output[100] = { 0 };
+//     sprintf(output, "Connector 1: %p\n", this);
+//     OutputDebugStringA(output);
 
     //     static int s_idGen = 1;
     //     mojo_lite_id_ = s_idGen++; // 这个字段冒充id了
@@ -2205,10 +2218,6 @@ void MojoProcessInfo::onPostMessageOnIoThread(
 // 收到其他进程Connector::Accept传来的消息
 void MojoProcessInfo::onPostMessage(uintptr_t senderPid, MojoHandle handle, int senderState, const std::vector<char>& data, std::vector<uintptr_t> handles)
 {
-//     char output[100] = { 0 };
-//     sprintf_s(output, 99, "MojoProcessInfo::onPostMessage: %d, %d\n", senderPid, handles.size());
-//     OutputDebugStringA(output);
-
     MojoHandleMgr* mgr = MojoHandleMgr::GetInst();
     WTF::Locker<WTF::RecursiveMutex> locker(*(mgr->getLock()));
     mojo::Connector* otherConnector = nullptr;
@@ -2321,10 +2330,6 @@ bool mojo::Connector::Accept(mojo::Message* msg)
     const std::vector<mojo::ScopedHandle>& handles = *msg->mutable_handles();
     std::vector<uintptr_t> mojoHandles;
     for (size_t i = 0; i < handles.size(); ++i) {
-//         char output[100] = { 0 };
-//         sprintf_s(output, 99, "Connector::Accept mojoHandles: %d\n", handles[i].get().value());
-//         OutputDebugStringA(output);
-
         MojoHandleMgr::MojoHandleEntry* entryTest = mgr->findEntryNotLock(handles[i].get().value());
         content::printCallstack();
 
@@ -2340,17 +2345,9 @@ bool mojo::Connector::Accept(mojo::Message* msg)
             if (!mgr->findRemoteServiceHandle(recvHandle, servicePid, &recvHandle))
                 return false;
         }
-
-//         char output[100] = { 0 };
-//         sprintf_s(output, 99, "Connector::Accept 1: %d %d %d %d\n", recvHandle, entry->m_handle0, entry->m_handle1, entry->m_connectorType);
-//         OutputDebugStringA(output);
-
         cpCon->postMessageNoLock(mgr, recvHandle, entry->m_connectorType, std::move(data), mojoHandles);
         return true;
     } else if (entry->m_connectorType == ConnectorType::kCon1IsRemoteService) {
-//         char output[100] = { 0 };
-//         sprintf_s(output, 99, "Connector::Accept 2: %d %d %d\n", entry->m_handle0, entry->m_handle1, entry->m_connectorType);
-//         OutputDebugStringA(output);
 
         CrossProcessConnector* cpCon = (CrossProcessConnector*)entry->m_connector1;
         cpCon->postMessageNoLock(mgr, entry->m_handle1, entry->m_connectorType, std::move(data), mojoHandles);
@@ -2759,7 +2756,7 @@ void mojo::internal::ReceiverImplBase::OnRemoteImplBaseClose(int64_t id, MojoHan
     if (!self)
         return;
 
-    std::unique_ptr<CloseCbInfo> closeCbInfo = std::make_unique<CloseCbInfo>();
+    CloseCbInfo* closeCbInfo = new CloseCbInfo();
     closeCbInfo->error_handler_ = std::move(self->error_handler_);
     closeCbInfo->error_with_reason_handler_ = std::move(self->error_with_reason_handler_);
     closeCbInfo->handle = handle;
@@ -2772,7 +2769,7 @@ void mojo::internal::ReceiverImplBase::OnRemoteImplBaseClose(int64_t id, MojoHan
     else if (self->runner_.get()) {
         self->runner_->PostTask(FROM_HERE,
             base::BindOnce(
-                [](std::unique_ptr<CloseCbInfo> closeCbInfo, base::OnceClosure cb) {
+                [](CloseCbInfo* closeCbInfo, base::OnceClosure cb) {
                     //             mojo::internal::ReceiverImplBase* self = (mojo::internal::ReceiverImplBase*)common::LiveIdDetect::get()->getPtrLocked(id);
                     //             if (!self)
                     //                 return;
@@ -2791,6 +2788,7 @@ void mojo::internal::ReceiverImplBase::OnRemoteImplBaseClose(int64_t id, MojoHan
 
                     if (cb)
                         std::move(cb).Run();
+                    delete closeCbInfo;
                 },
                 std::move(closeCbInfo), std::move(cb)));
     }
@@ -3004,6 +3002,13 @@ bool mojo::internal::RemoteImplBase::is_bound() const
     return handle_.is_valid();
 }
 
+bool mojo::internal::RemoteImplBase::is_valid() const
+{
+    if (!is_bound())
+        return false;
+    return !!TryGetInstance();
+}
+
 mojo::MessagePipeHandle mojo::internal::RemoteImplBase::handle() const
 {
     return handle_.get();
@@ -3020,7 +3025,7 @@ void mojo::internal::RemoteImplBase::OnReceiverImplBaseClose(int64_t id, MojoHan
     if (!self)
         return;
 
-    std::unique_ptr<CloseCbInfo> closeCbInfo = std::make_unique<CloseCbInfo>();
+    CloseCbInfo* closeCbInfo = new CloseCbInfo();
     closeCbInfo->error_handler_ = std::move(self->error_handler_);
     closeCbInfo->error_with_reason_handler_ = std::move(self->connection_error_handler_);
     closeCbInfo->handle = handle;
@@ -3040,7 +3045,7 @@ void mojo::internal::RemoteImplBase::OnReceiverImplBaseClose(int64_t id, MojoHan
     if (self->runner_.get()) {
         self->runner_->PostTask(FROM_HERE,
             base::BindOnce(
-                [](std::unique_ptr<CloseCbInfo> closeCbInfo, base::OnceClosure cb) {
+                [](CloseCbInfo* closeCbInfo, base::OnceClosure cb) {
                     MojoHandleMgr* mgr = MojoHandleMgr::GetInst();
                     mgr->lock();
                     MojoHandleMgr::MojoHandleEntry* entry = mgr->findEntryNotLock(closeCbInfo->handle);
@@ -3053,6 +3058,7 @@ void mojo::internal::RemoteImplBase::OnReceiverImplBaseClose(int64_t id, MojoHan
 
                     if (cb)
                         std::move(cb).Run();
+                    delete closeCbInfo;
                 },
                 std::move(closeCbInfo), std::move(reset_handler)));
     }
@@ -3151,7 +3157,7 @@ void* mojo::internal::RemoteImplBase::GetInstance()
     return cache_interface_ptr_;
 }
 
-void* mojo::internal::RemoteImplBase::TryGetInstance()
+void* mojo::internal::RemoteImplBase::TryGetInstance() const
 {
     MojoHandleMgr* mgr = MojoHandleMgr::GetInst();
 
@@ -3472,7 +3478,7 @@ void mojo::internal::RemoteImplBase::PauseReceiverUntilFlushCompletes(mojo::Pend
 //     return nullptr;
 // }
 
-void mojo::InterfaceEndpointClient::CloseWithReason(unsigned int, std::string_view)
+void mojo::InterfaceEndpointClient::CloseWithReason(uint32_t custom_reason, base::StringPiece)
 {
     OutputDebugStringA("");
 }

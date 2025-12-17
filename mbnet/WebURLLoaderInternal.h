@@ -234,8 +234,9 @@ public:
     bool m_isProxyConnect; // 是否使用代理的Connect请求
     bool m_isProxyHeadRequest;
     bool m_needParseMime; // 如果response为空的时候，是否需要在recv data的时候分析
-
     bool m_hadHandleDidSentData = false;
+
+    int m_recvTotalSize = 0;
 
     InitializeHandleInfo* m_initializeHandleInfo;
     bool m_isHoldJobToAsynCommit;

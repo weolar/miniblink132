@@ -10,6 +10,10 @@
 
 extern "C" void __stdcall OutputDebugStringA(const char* lpOutputString);
 
+namespace content {
+void printCallstack();
+}
+
 namespace gin_helper {
 
 // Arguments is a wrapper around v8::FunctionCallbackInfo that integrates
@@ -44,8 +48,10 @@ public:
         }
         v8::Local<v8::Value> val = (*info_)[next_++];
         bool ok = ConvertFromV8(isolate_, val, out);
-        if (!ok)
+        if (!ok) {
+            content::printCallstack();
             OutputDebugStringA("GetNext failed!\n");
+        }
         return ok;
     }
 

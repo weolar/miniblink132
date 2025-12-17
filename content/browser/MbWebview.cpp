@@ -17,6 +17,7 @@
 #include "content/viz/VizHost.h"
 #include "mbnet/PageNetExtraData.h"
 #include "mbnet/WebURLLoaderManager.h"
+#include "mbnet/cookies/WebCookieJarCurlImpl.h"
 #include "mbvip/core/MbJsValue.h"
 #include "mbvip/core/MbInternalApi.h"
 #include "third_party/blink/renderer/core/loader/document_loader.h"
@@ -56,6 +57,7 @@
 #include "content/common/StringUtil.h"
 // test
 #include "content/common/Util.h"
+#include <windowsx.h>
 #include <shellapi.h>
 
 namespace mbnet {
@@ -143,7 +145,6 @@ void MbWebView::preDestroyOnBlinkThread()
     int* aysnCount = (int*)malloc(sizeof(int));
     *aysnCount = 2;
     auto destroyCb = [self, aysnCount] {
-        OutputDebugStringA("MbWebView::preDestroyOnBlinkThread, aysnCount\n");
         *aysnCount -= 1;
         if (0 != *aysnCount)
             return;
@@ -160,6 +161,8 @@ void MbWebView::preDestroyOnBlinkThread()
     m_service->destroy(destroyCb);
     m_service.release(); // TODO:
 
+    clearUiHwnd(m_hWnd, (UINT_PTR)this);
+
     int count = 0;
     while (m_hWnd && ::IsWindow(m_hWnd)) {
         ++count;
@@ -169,13 +172,13 @@ void MbWebView::preDestroyOnBlinkThread()
             break;
 #endif // DEBUG
     }
+    CHECK(ThreadCall::isBlinkThread());
 
     char output[100] = { 0 };
     sprintf(output, "MbWebView::preDestroyOnBlinkThread: %p %p\n", m_hWnd, this);
     OutputDebugStringA(output);
-
-    clearUiHwnd(m_hWnd, (UINT_PTR)this);
     m_hWnd = nullptr;
+
 #if defined(OS_WIN)
     if (m_memoryBMP)
         ::DeleteObject(m_memoryBMP);
@@ -200,8 +203,11 @@ void MbWebView::preDestroyOnBlinkThread()
     ::DeleteCriticalSection(&m_userKeyValuesLock);
 }
 
-void MbWebView::preDestroyOnUiThread()
+bool MbWebView::preDestroyOnUiThread()
 {
+    if (m_state >= kPageDestroying)
+        return false;
+
     char output[100] = { 0 };
     sprintf(output, "MbWebView::preDestroyOnUiThread: %p %p\n", m_hWnd, this);
     OutputDebugStringA(output);
@@ -222,6 +228,7 @@ void MbWebView::preDestroyOnUiThread()
     // 在linux下，窗口句柄有可能是LinuxGdiBindWindowByGtk创建的，此时是收不到窗口关闭的消息（因为外部手动关闭了），所以要手动来一次
     ::DestroyWindow(m_hWnd);
 #endif
+    return true;
 }
 
 // 本函数在webkit线程
@@ -267,7 +274,7 @@ void MbWebView::setHostWnd(HWND hWnd)
 
 void MbWebView::createWebWindowImplInUiThread(HWND parent, DWORD style, DWORD styleEx, int x, int y, int width, int height)
 {
-    const WCHAR* szClassName = mbu16("MtMbWebWindow");
+    const WCHAR* szClassName = mbu16("_WebWindow_");
     WNDCLASSEXW wndClass = { 0 };
     static bool isFirstRegister = true;
     if (isFirstRegister) {
@@ -467,8 +474,6 @@ blink::WebView* MbWebView::initializeViewInBlinkThread(blink::WebView* opener, b
     m_renderWidgetHostImpl->m_webWiew = webWiew;
     m_renderWidgetHostImpl->m_mbWebView = this;
 
-    setDefaultPreferences((blink::WebViewImpl*)webWiew);
-
     blink::DocumentLoader::DisableCodeCacheForTesting();
 
     //constexpr viz::FrameSinkId root_frame_sink_id(0xdead, 0xbeef);
@@ -486,6 +491,7 @@ blink::WebView* MbWebView::initializeViewInBlinkThread(blink::WebView* opener, b
     webFrameWidget->InitializeCompositing(
         /**m_renderWidgetHostImpl->m_agentGroupScheduler, */createFrameWidgetParams->visualProperties.screen_infos, /*settings=*/nullptr);
 
+    setDefaultPreferences((blink::WebViewImpl*)webWiew);
     m_renderWidgetHostImpl->m_webFrameWidget = webFrameWidget;
 
     webWiew->DidAttachLocalMainFrame();
@@ -493,12 +499,6 @@ blink::WebView* MbWebView::initializeViewInBlinkThread(blink::WebView* opener, b
     if (m_isTransparent)
         setIsTransparent(m_isTransparent);
     return webWiew;
-}
-
-void MbWebView::setPaintUpdatedCallback(mbPaintUpdatedCallback callback, void* param)
-{
-    getClosure().setPaintUpdatedCallback(callback, param);
-    //m_hasSetPaintUpdatedCallback = true;
 }
 
 void MbWebView::handlePopup(UINT message)
@@ -560,6 +560,12 @@ void MbWebView::setDefaultPreferences(blink::WebViewImpl* webWiew)
     if (0x0804 == langId) {
         setSetLanguage("zh-cn");
     }
+
+    blink::web_pref::WebPreferences webPreferences = webWiew->GetWebPreferences();
+    webPreferences.touch_event_feature_detection_enabled = false; // 桌面版不提供ontouchstart等document
+    webPreferences.allow_universal_access_from_file_urls = true;
+    webPreferences.allow_file_access_from_file_urls = true;
+    webWiew->SetWebPreferences(webPreferences);
 
     webWiew->SetPageAttributionSupport(network::mojom::AttributionSupport::kWeb);
     webWiew->SetSupportsDraggableRegions(true);
@@ -842,8 +848,10 @@ LRESULT MbWebView::windowProcImpl(HWND hWnd, UINT message, WPARAM wParam, LPARAM
     }
     case WM_MOUSEWHEEL: {
         POINT pt;
-        pt.x = LOWORD(lParam);
-        pt.y = HIWORD(lParam);
+        POINT pt2;
+        pt.x = GET_X_LPARAM(lParam);
+        pt.y = GET_Y_LPARAM(lParam);
+
         ::ScreenToClient(hWnd, &pt);
 
         int delta = GET_WHEEL_DELTA_WPARAM(wParam);
@@ -951,8 +959,13 @@ void MbWebView::setClientSizeLocked(int w, int h)
     m_clientResizeRepaintDirty = true;
     ::LeaveCriticalSection(&m_clientSizeLock);
 
+    time_t now;
+    struct tm* current;
+    now = time(NULL);
+    current = localtime(&now);
+
     char output[100] = { 0 };
-    sprintf(output, "setClientSizeLocked: %d, %d\n", w, h);
+    sprintf(output, "MbWebView::setClientSizeLocked: %d, %d, (%02d:%02d)\n", w, h, current->tm_min, current->tm_sec);
     OutputDebugStringA(output);
 }
 
@@ -1019,6 +1032,14 @@ blink::WebFrame* MbWebView::getMainFrame() const
 void MbWebView::draggableRegionsChanged(blink::WebVector<blink::WebDraggableRegion> regions)
 {
     m_draggableRegion = regions;
+
+    float f = content::RenderThreadImpl::get()->getZoom();
+    if (f != 1.f) {
+        for (size_t i = 0; i < m_draggableRegion.size(); ++i) {
+            blink::WebDraggableRegion r = m_draggableRegion[i];
+            m_draggableRegion[i].bounds = gfx::ScaleToEnclosingRect(r.bounds, f);
+        }
+    }
 }
 
 void MbWebView::onPaintUpdatedInUiThread(const HDC hdc, int x, int y, int cx, int cy)
@@ -1040,24 +1061,38 @@ void MbWebView::onPaintUpdatedInUiThread(const HDC hdc, int x, int y, int cx, in
 
     ::EnterCriticalSection(&m_clientSizeLock);
     m_clientSizeDirty = false;
+    m_isAsynResizing = false;
+    bool sizeChange = !(m_clientSizeCache.cx == m_clientSize.cx && m_clientSizeCache.cy == m_clientSize.cy);
     ::LeaveCriticalSection(&m_clientSizeLock);
+
+    if (sizeChange) // 如果上次resize的时候还没Paint消息，就会缺一次resize
+        updataBlinkSize();
 }
 
 void MbWebView::updataBlinkSize()
 {
     mbWebView webviewHandle = (mbWebView)m_id;
-    if (m_isAsynResizing)
+    if (m_updataBlinkSizeAsyn || m_isAsynResizing)
         return;
-    m_isAsynResizing = true;
+    m_updataBlinkSizeAsyn = true;
 
-    ThreadCall::callBlinkThreadAsyncWithValidDelayed(MB_FROM_HERE, webviewHandle, 600, [](MbWebView* self) {
-        self->m_isAsynResizing = false;
+    ThreadCall::callBlinkThreadAsyncWithValid(MB_FROM_HERE, webviewHandle, [](MbWebView* self) {
         SIZE clientSize = self->getClientSizeLocked();
-        if (self->m_host && self->m_renderWidgetHostImpl && self->m_renderWidgetHostImpl->isSinkReady()
-            && self->m_renderWidgetHostImpl /*m_host*/->isAllowResize()) {
-            self->m_renderWidgetHostImpl->resizeOnBlinkThread(clientSize.cx, clientSize.cy);
-        } else
+        self->m_updataBlinkSizeAsyn = false;
+
+        if (self->m_host && self->m_renderWidgetHostImpl && self->m_renderWidgetHostImpl->isSinkReady()) {
+            //RenderFrameMetadataObserverClientImpl::OnRenderFrameMetadataChanged没走的时候isAllowResize为false
+            if (self->m_renderWidgetHostImpl->isAllowResize()) {
+                ::EnterCriticalSection(&self->m_clientSizeLock);
+                self->m_clientSizeCache = clientSize;
+                self->m_isAsynResizing = true; // 一帧绘制完后才允许resize
+                ::LeaveCriticalSection(&self->m_clientSizeLock);
+
+                self->m_renderWidgetHostImpl->resizeOnBlinkThread(clientSize.cx, clientSize.cy);
+            }
+        } else {
             self->updataBlinkSize();
+        }
     });
 }
 
@@ -1529,7 +1564,7 @@ void MbWebView::onPaint(HWND hWnd, WPARAM wParam)
     if (0 != width && 0 != height) {
 #if defined(OS_WIN)
         if (m_clientResizeRepaintDirty) {
-            ::FillRect(hdc, &ps.rcPaint, (HBRUSH)::GetStockObject(LTGRAY_BRUSH)); // resize的时候设置这个
+            //::FillRect(hdc, &ps.rcPaint, (HBRUSH)::GetStockObject(LTGRAY_BRUSH)); // resize的时候设置这个
             m_clientResizeRepaintDirty = false;
         }
 
@@ -1543,12 +1578,12 @@ void MbWebView::onPaint(HWND hWnd, WPARAM wParam)
         } else
             ::FillRect(hdc, &ps.rcPaint, (HBRUSH)::GetStockObject(WHITE_BRUSH));
 
-        //         RECT rcPaintxx = { 10, 10, 200, 150 };
-        //         HBRUSH brush = CreateSolidBrush(0xff0000 | (RGB(0xff, 0x22, 0x34)));
-        //         ::FillRect(hMbDC, &rcPaintxx, brush); // !!!
-        //         ::DeleteObject(brush);
-
         unlockViewDC();
+
+        //RECT rcPaintxx = { 10, 10, 200, 150 };
+        //HBRUSH brush = CreateSolidBrush(RGB(255, 22, 34));
+        //::FillRect(hdc, &ps.rcPaint, brush);
+        //::DeleteObject(brush);
 #else
         if (IsLinuxOpenglDraw() && m_bitmapByte) {
             m_memoryCanvasLock->Acquire();
@@ -1613,7 +1648,7 @@ void MbWebView::setShow(int nCmdShow /*, bool isActivate*/)
     ::ShowWindow(m_hWnd, nCmdShow);
 }
 
-static void setWindowTitleImpl(content::MbWebView* webview, int count)
+static void setWindowTitleDalay(content::MbWebView* webview, int count)
 {
     int64_t id = webview->getId();
     base::SequencedTaskRunner::GetCurrentDefault()->PostNonNestableDelayedTask(MB_FROM_HERE,
@@ -1623,9 +1658,13 @@ static void setWindowTitleImpl(content::MbWebView* webview, int count)
                 content::MbWebView* webview = (content::MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr(id);
                 if (!webview || count > 3)
                     return;
-                if (webview->setWindowTitle(webview->getWindowTitle()))
+
+                if (webview->getHostWnd()) {
+                    std::u16string titleW = utf8ToUtf16(webview->getWindowTitle());
+                    ::SetWindowTextW(webview->getHostWnd(), (LPCWSTR)titleW.c_str());
                     return;
-                setWindowTitleImpl(webview, count);
+                }
+                setWindowTitleDalay(webview, count);
             }, id, count),
         base::Microseconds(1000));
 }
@@ -1641,7 +1680,7 @@ bool MbWebView::setWindowTitle(const std::string& title)
     }
 
     int count = 0;
-    setWindowTitleImpl(this, count);
+    setWindowTitleDalay(this, count);
     return false;
 }
 
@@ -1652,26 +1691,30 @@ extern const char* kDefaultAcceptHeader;
 
 void MbWebView::loadUrl(const char* urlStr)
 {
+    std::unique_ptr<std::string> urlPtr = urlNormalization(urlStr);
+
     if (!m_frameClient) { // gtk模式下，有可能要等到s_gtkActivate以后才有m_frameClient
         mbWebView webviewHandle = (mbWebView)m_id;
-        std::string* urlString = new std::string(urlStr);
-        content::ThreadCall::callBlinkThreadAsyncWithValid(MB_FROM_HERE, webviewHandle, [urlString](MbWebView* self) {
-            self->loadUrl(urlString->c_str());
-            delete urlString;
+        std::string* urlPtrTemp = urlPtr.release();
+        content::ThreadCall::callBlinkThreadAsyncWithValid(MB_FROM_HERE, webviewHandle, [urlPtrTemp](MbWebView* self) {
+            self->loadUrl(urlPtrTemp->c_str());
+            delete urlPtrTemp;
         });
         return;
     }
 
     blink::WebNavigationControl* navigationControl = m_frameClient->m_navigationControl;
 
-    blink::KURL url(WTF::String::FromUTF8(urlStr));
+    blink::KURL url(WTF::String::FromUTF8(std::string_view(urlPtr->c_str(), urlPtr->size())));
     if (!url.IsValid()) {
         String protocol = url.Protocol();
         if (protocol.empty() && protocol != "about:blank") {
-            std::string urlTemp = urlStr;
-            urlTemp = "http://" + urlTemp;
+            std::string urlTemp = *(urlPtr.get());
+            urlTemp = "https://" + urlTemp;
             url = blink::KURL(WTF::String::FromUTF8(urlTemp.c_str()));
         }
+    } else {
+        mbnet::WebURLLoaderManager::sharedInstance()->cancelAllJobsOfWebview(m_id);
     }
 
     blink::WebNavigationInfo info;
@@ -1708,6 +1751,8 @@ void MbWebView::reload(bool force)
 {
     if (!m_renderWidgetHostImpl || !m_renderWidgetHostImpl->m_mainFrame)
         return;
+    mbnet::WebURLLoaderManager::sharedInstance()->cancelAllJobsOfWebview(m_id);
+    m_renderWidgetHostImpl->m_mainFrame->DeprecatedStopLoading();
     m_renderWidgetHostImpl->m_mainFrame->StartReload(force ? blink::WebFrameLoadType::kReload : blink::WebFrameLoadType::kReloadBypassingCache);
 }
 
@@ -1725,6 +1770,24 @@ scoped_refptr<mbnet::PageNetExtraData> MbWebView::getPageNetExtraData()
     return nullptr;
 }
 
+std::string MbWebView::getCookie()
+{
+    blink::WebLocalFrame* frame = (blink::WebLocalFrame*)(m_renderWidgetHostImpl->m_webWiew->MainFrame());
+    if (!frame)
+        return "";
+
+    blink::WebDocument webDocument = frame->GetDocument();
+    if (webDocument.IsNull())
+        return "";
+
+    mbnet::WebCookieJarImpl* cookieJar = getWebCookieJarImpl();
+    if (!cookieJar)
+        return "";
+
+    const blink::Document* doc = webDocument.ConstUnwrap<blink::Document>();
+    return cookieJar->getCookiesForSession(doc->CookieURL(), true);
+}
+
 mbnet::WebCookieJarImpl* MbWebView::getWebCookieJarImpl()
 {
     mbnet::WebCookieJarImpl* ret = nullptr;
@@ -1733,6 +1796,24 @@ mbnet::WebCookieJarImpl* MbWebView::getWebCookieJarImpl()
     if (ret)
         return ret;
     return mbnet::WebURLLoaderManager::sharedInstance()->getShareCookieJar();
+}
+
+void MbWebView::setCookie(const std::string& ck)
+{
+    blink::WebLocalFrame* frame = (blink::WebLocalFrame*)(m_renderWidgetHostImpl->m_webWiew->MainFrame());
+    if (!frame)
+        return;
+
+    blink::WebDocument webDocument = frame->GetDocument();
+    if (webDocument.IsNull())
+        return;
+
+    mbnet::WebCookieJarImpl* cookieJar = getWebCookieJarImpl();
+    if (!cookieJar)
+        return;
+
+    const blink::Document* doc = webDocument.ConstUnwrap<blink::Document>();
+    return cookieJar->setCookiesFromDOM(blink::KURL(), /*doc->CookieURL()*/blink::KURL(), ck);
 }
 
 void MbWebView::setCookieJarFullPath(const char* path)
@@ -1769,6 +1850,9 @@ void MbWebView::dispatchUrlCheanged(const std::string& url)
     BOOL canGoForward = historyForwardListCount() > 0;
 
     m_url = url;
+
+    if (getFrameClient())
+        getFrameClient()->onLoadingSucceeded();
 
     if (!(getClosure().m_URLChangedCallback))
         return;

@@ -18,6 +18,7 @@
 #include "gin/v8_platform_page_allocator.h"
 #include "gin/dictionary.h"
 #include "base/files/file_path.h"
+#include "base/strings/utf_string_conversions.h"
 #include "base/path_service.h"
 #include <xstring>
 #include <vector>
@@ -25,7 +26,6 @@
 #include <shlwapi.h>
 
 namespace content {
-void fixStringWelFormed(v8::Local<v8::Context> context);
 void* v8ContextToMbWebFrameHandle(v8::Local<v8::Context> context);
 void printCallstack();
 }
@@ -148,7 +148,12 @@ std::wstring getResourcesPath(const std::wstring& name)
 
     std::vector<WCHAR> path;
     path.resize(MAX_PATH + 1);
-    ::GetModuleFileName(nullptr, &path[0], MAX_PATH);
+    ::GetModuleFileName(nullptr, path.data(), MAX_PATH);
+    std::wstring selfPathW = path.data();
+
+    //std::string selfPath = base::UTF16ToUTF8(std::u16string_view((const char16_t*)selfPathW.data(), selfPathW.size()));
+    //setMiniElectronAsarResPath(selfPath);
+
     ::PathRemoveFileSpecW(&path[0]);
     out += &path[0];
 
@@ -157,20 +162,22 @@ std::wstring getResourcesPath(const std::wstring& name)
     if (::PathFileExists(temp.c_str())) {
         out += L"..\\..\\..\\electron\\lib\\";
     } else { // release模式下，直接用打包好的数据
-        //out += L"\\..\\..\\electron\\lib\\";
-        WCHAR drive = L'c';
-        for (size_t i = 0; path[i] != L'\0'; ++i) { // 取一个可用的盘符
-            if (path[i] == L':') {
-                CHECK(i != 0);
-                drive = path[i - 1];
-                if (drive >= 'A' && drive <= 'Z') {
-                    drive += 32;
-                }
-                break;
-            }
-        }
-        out = drive;
-        out += L":\\" kMiniElectronAsarPrefix "\\lib\\";
+        out = out + L"\\" kMiniElectronAsarPrefix "\\lib\\";
+        setMiniElectronAsarResPath(base::WideToUTF8(out));
+
+//         WCHAR drive = L'c';
+//         for (size_t i = 0; path[i] != L'\0'; ++i) { // 取一个可用的盘符
+//             if (path[i] == L':') {
+//                 CHECK(i != 0);
+//                 drive = path[i - 1];
+//                 if (drive >= 'A' && drive <= 'Z') {
+//                     drive += 32;
+//                 }
+//                 break;
+//             }
+//         }
+//         out = drive;
+//         out += L":\\" kMiniElectronAsarPrefix "\\lib\\";
     }
 
     kResPath = new std::wstring(out);
@@ -437,7 +444,7 @@ void bindMbConsoleLog(v8::Local<v8::Context> context)
     addFunction(context, "mbConsoleLog", mbConsoleLog, isBrowserProcess);
     addFunction(context, "mbGetV8NameIdHash", mbGetV8NameIdHash, isBrowserProcess);
     addFunction(context, "mbTestMessageChannelMain", mbTestMessageChannelMain, isBrowserProcess);
-    content::fixStringWelFormed(context);
+    addFunction(context, "_isInElectronEnv", isInElectronEnv, isBrowserProcess);
 }
 
 node::Environment* NodeBindings::createEnvironment(v8::Local<v8::Context> context)
@@ -445,8 +452,6 @@ node::Environment* NodeBindings::createEnvironment(v8::Local<v8::Context> contex
     v8::Isolate* isolate = context->GetIsolate();
     uv_async_init(m_uvLoop, m_callNextTickAsync, onCallNextTick);
     m_callNextTickAsync->data = this;
-
-    addFunction(context, "_isInElectronEnv", isInElectronEnv, m_isBrowser);
 
     std::vector<std::string> args = AtomCommandLine::argv();
     // Feed node the path to initialization script.
@@ -486,9 +491,8 @@ node::Environment* NodeBindings::createEnvironment(v8::Local<v8::Context> contex
     if (!m_isolateData) {
         g_nodeArgc->m_registerIsolatesLock.Acquire();
         if (g_nodeArgc->m_registerIsolates.end() == g_nodeArgc->m_registerIsolates.find(isolate)) {
+            g_nodeArgc->m_registerIsolates.insert(isolate);
             g_nodeArgc->m_nodeMultiIsolatePlatform->RegisterIsolate(isolate, m_uvLoop); // 所有线程的isolate都必须调用这个注册
-        } else {
-            *(int*)1 = 1;
         }
         m_isolateData = node::CreateIsolateData(isolate, m_uvLoop, g_nodeArgc->m_nodeMultiIsolatePlatform);
         g_nodeArgc->m_registerIsolatesLock.Release();

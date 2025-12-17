@@ -23,11 +23,11 @@ namespace mojo {
 // automatically inherit a Ref to the same group. Likewise if a PendingReceiver
 // belongs to a group, any Receiver which consumes and binds that
 // PendingReceiver inherits its group membership.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) ConnectionGroup : public base::RefCountedThreadSafe<ConnectionGroup> {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ ConnectionGroup : public base::RefCountedThreadSafe<ConnectionGroup> {
 public:
     // A single opaque reference to a ConnectionGroup. May be freely moved and
     // copied.
-    class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) Ref {
+    class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ Ref {
     public:
         Ref();
         Ref(const Ref&);

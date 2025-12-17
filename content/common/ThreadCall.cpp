@@ -60,32 +60,30 @@ void ThreadCall::callBlinkThreadAsyncWithValid(const TraceLocation& caller, mbWe
 
 void ThreadCall::callBlinkThreadAsync(const TraceLocation& caller, std::function<void(void)>&& closure)
 {
-    RenderThreadImpl::get()->getTaskRunner()->PostNonNestableTask(
-        caller, base::BindOnce([](std::function<void(void)>&& closure) { (closure)(); }, std::move(closure)));
+    RenderThreadImpl::get()->getTaskRunner()->PostTask(caller, base::BindOnce([](std::function<void(void)>&& closure) {
+        (closure)();
+    }, std::move(closure)));
 }
 
 void ThreadCall::callBlinkThreadAsyncWithValidDelayed(
     const TraceLocation& caller, mbWebView webviewHandle, size_t millisecond, std::function<void(MbWebView* webview)>&& closure)
 {
     int64_t id = (int64_t)webviewHandle;
-    std::function<void(MbWebView * webview)>* closureDummy = new std::function<void(MbWebView * webview)>(std::move(closure));
+    std::function<void(MbWebView* webview)>* closureDummy = new std::function<void(MbWebView* webview)>(std::move(closure));
 
-    RenderThreadImpl::get()->getTaskRunner()->PostDelayedTask(caller,
-        base::BindOnce(
-            [](std::function<void(MbWebView * webview)>* closure, int64_t id) {
-                MbWebView* webview = (MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr(id);
-                if (webview)
-                    (*closure)(webview);
-                delete closure;
-            },
-            base::Unretained(closureDummy), id),
-        base::Milliseconds(millisecond));
+    RenderThreadImpl::get()->getTaskRunner()->PostDelayedTask(caller, base::BindOnce([](std::function<void(MbWebView* webview)>* closure, int64_t id) {
+        MbWebView* webview = (MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtr(id);
+        if (webview)
+            (*closure)(webview);
+        delete closure;
+    }, closureDummy, id), base::Milliseconds(millisecond));
 }
 
 void ThreadCall::callBlinkThreadDelayed(const TraceLocation& caller, std::function<void(void)>&& closure, size_t millisecond)
 {
-    RenderThreadImpl::get()->getTaskRunner()->PostDelayedTask(
-        caller, base::BindOnce([](std::function<void(void)>&& closure) { (closure)(); }, std::move(closure)), base::Milliseconds(millisecond));
+    RenderThreadImpl::get()->getTaskRunner()->PostDelayedTask(caller, base::BindOnce([](std::function<void(void)>&& closure) {
+        (closure)();
+    }, std::move(closure)), base::Milliseconds(millisecond));
 }
 
 void ThreadCall::callUiThreadDelayed(const TraceLocation& caller, std::function<void(void)>&& closure, size_t millisecond)
@@ -105,20 +103,20 @@ struct TaskAsyncData {
     void* data;
     void* dataEx;
     BOOL evt;
-    void* ret;
+    //void* ret;
     DWORD fromThreadId;
-    DWORD toThreadId;
+    //DWORD toThreadId;
     DWORD destroyThreadId;
     TraceLocation caller;
 };
 
-TaskAsyncData* cretaeAsyncData(const TraceLocation& caller, DWORD toThreadId, void* dataEx, DWORD destroyThreadId)
+TaskAsyncData* cretaeAsyncData(const TraceLocation& caller, void* dataEx, DWORD destroyThreadId)
 {
     TaskAsyncData* asyncData = new TaskAsyncData();
     asyncData->evt = FALSE;
     asyncData->dataEx = dataEx;
     asyncData->fromThreadId = ::GetCurrentThreadId();
-    asyncData->toThreadId = toThreadId;
+    //asyncData->toThreadId = 0;
     asyncData->destroyThreadId = destroyThreadId;
     asyncData->caller = caller;
 
@@ -127,17 +125,22 @@ TaskAsyncData* cretaeAsyncData(const TraceLocation& caller, DWORD toThreadId, vo
 
 void ThreadCall::callThreadSync(const TraceLocation& caller, std::function<void(void)>&& closure, scoped_refptr<base::SingleThreadTaskRunner> runner)
 {
-    TaskAsyncData* asyncData = cretaeAsyncData(caller, RenderThreadImpl::get()->GetBlinkThreadId(), &closure, ::GetCurrentThreadId());
+    TaskAsyncData* asyncData = cretaeAsyncData(caller, &closure, ::GetCurrentThreadId());
 
-    runner->PostNonNestableTask(caller,
-        base::BindOnce(
-            [](std::function<void(void)>&& closure, TaskAsyncData* asyncData) {
+    runner->PostTask(caller, base::BindOnce([](
+        std::function<void(void)>&& closure, TaskAsyncData* asyncData) {
+            (closure)();
+        asyncData->evt = TRUE;
+    }, std::move(closure), base::Unretained(asyncData)));
+
+    if (!waitForCallThreadAsync(asyncData)) {
+        runner->PostTask(caller, base::BindOnce([](
+            std::function<void(void)>&& closure, TaskAsyncData* asyncData) {
                 (closure)();
                 asyncData->evt = TRUE;
-            },
-            std::move(closure), base::Unretained(asyncData)));
-
-    waitForCallThreadAsync(asyncData);
+            }, std::move(closure), base::Unretained(asyncData)));
+        waitForCallThreadAsync(asyncData);
+    }
     delete asyncData;
 }
 
@@ -159,27 +162,40 @@ void ThreadCall::callBlinkThreadSync(const TraceLocation& caller, std::function<
     callThreadSync(caller, std::move(closure), RenderThreadImpl::get()->getTaskRunner());
 }
 
-void* ThreadCall::waitForCallThreadAsync(TaskAsyncData* asyncData)
+bool ThreadCall::waitForCallThreadAsync(TaskAsyncData* asyncData)
 {
+    bool ok = false;
     bool firstPost = false;
-    void* ret = asyncData->ret;
-    while (!asyncData->evt) {
-        ::Sleep(1);
 
-#if 0
+    int count = 0;
+    while (!asyncData->evt) {
+        ::Sleep(100);
+
+#ifdef _WIN32
         // 有npapi插件的时候，createwebview会死等，然后主窗口又可能会发消息给npapi窗口，造成死锁
         MSG msg;
         if (::PeekMessageW(&msg, NULL, 0, 0, PM_REMOVE) != FALSE) {
             ::TranslateMessage(&msg);
             ::DispatchMessageW(&msg);
         }
-#endif
+
         if (!firstPost)
             ::PostThreadMessageW(::GetCurrentThreadId(), WM_NULL, 0, 0);
         firstPost = true;
+#else
+        count++;
+        if (count % 41 == 0) {
+            char output[100] = { 0 };
+            sprintf(output, "waitForCallThreadAsync: %d\n", count);
+            OutputDebugStringA(output);
+        }
+
+        if (count > 30) // linux下有时候会莫名其妙的失败
+            return false;
+#endif // _WIN32
     }
 
-    return ret;
+    return true;
 }
 
 bool ThreadCall::isBlinkThread()
@@ -239,6 +255,28 @@ bool ThreadCall::isInitUiThread()
 void ThreadCall::exitUiThreadMessageLoop()
 {
     g_mainThreadRunLoop->Quit();
+}
+
+void ThreadCall::setThreadIdle(mbThreadCallback callback, void* param1, void* param2)
+{
+//     common::ThreadCallballInfo* info = nullptr;
+//     if (common::ThreadCall::isBlinkThread()) {
+//         info = &common::ThreadCall::s_blinkThreadIdleInfo;
+//     } else if (common::ThreadCall::isUiThread()) {
+//         info = &common::ThreadCall::s_uiThreadIdleInfo;
+//     } else
+//         return;
+// 
+//     info->cb = callback;
+//     info->param1 = param1;
+//     info->param2 = param2;
+}
+
+void ThreadCall::setBlinkThreadInited(mbThreadCallback callback, void* param1, void* param2)
+{
+//     common::ThreadCall::s_blinkThreadInitedInfo.cb = callback;
+//     common::ThreadCall::s_blinkThreadInitedInfo.param1 = param1;
+//     common::ThreadCall::s_blinkThreadInitedInfo.param2 = param2;
 }
 
 }

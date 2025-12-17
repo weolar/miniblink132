@@ -28,6 +28,7 @@
 #include <cstdint>
 #include <vector>
 #include <algorithm>
+#include <gdiplus.h>
 #include "third_party/skia/include/core/SkBitmap.h"
 #include "ui/gfx/image/image.h"  // 用于 gfx::Image::CreateFrom1xPNGBytes
 
@@ -675,19 +676,158 @@ static HRESULT createStreamOnMemory(const BYTE* pData, DWORD dwSize, IStream** p
     return hr;
 }
 
+HRESULT loadPngFromMemoryToIPicture(const uint8_t* pPngData, DWORD dwDataSize, IPicture** ppPicture)
+{
+    if (!pPngData || dwDataSize == 0 || !ppPicture)
+        return E_INVALIDARG;
+    *ppPicture = NULL;
+
+    // 1. GDI+ 从内存流加载 PNG
+    IStream* pStream = NULL;
+    HRESULT hr = CreateStreamOnHGlobal(NULL, TRUE, &pStream);
+    if (FAILED(hr))
+        return hr;
+
+    // 将 PNG 内存数据写入流
+    ULONG ulWritten = 0;
+    hr = pStream->Write(pPngData, dwDataSize, &ulWritten);
+    if (FAILED(hr) || ulWritten != dwDataSize) {
+        pStream->Release();
+        return E_FAIL;
+    }
+
+    // 流指针重置到起始位置
+    LARGE_INTEGER liPos = { 0 };
+    hr = pStream->Seek(liPos, STREAM_SEEK_SET, NULL);
+    if (FAILED(hr)) {
+        pStream->Release();
+        return hr;
+    }
+
+    // GDI+ 从流加载图片
+    Gdiplus::Image* pGdipImage = Gdiplus::Image::FromStream(pStream);
+    pStream->Release(); // 流已被 Image 引用，此处可释放
+
+    if (!pGdipImage || pGdipImage->GetLastStatus() != Gdiplus::Ok) {
+        delete pGdipImage;
+        return E_FAIL;
+    }
+
+    // 2. 创建兼容位图并绘制 GDI+ 图片
+    HDC hdcScreen = GetDC(NULL);
+    HDC hdcMem = CreateCompatibleDC(hdcScreen);
+    HBITMAP hBmp = CreateCompatibleBitmap(hdcScreen,
+        pGdipImage->GetWidth(), pGdipImage->GetHeight());
+    ReleaseDC(NULL, hdcScreen);
+
+    HBITMAP hBmpOld = (HBITMAP)SelectObject(hdcMem, hBmp);
+    Gdiplus::Graphics graphics(hdcMem);
+    graphics.Clear(Gdiplus::Color::Transparent); // 支持 PNG 透明通道
+    graphics.DrawImage(pGdipImage, 0, 0, pGdipImage->GetWidth(), pGdipImage->GetHeight());
+
+    // 3. 位图转换为 IPicture 接口
+    PICTDESC picDesc = { 0 };
+    picDesc.cbSizeofstruct = sizeof(PICTDESC);
+    picDesc.picType = PICTYPE_BITMAP;
+    picDesc.bmp.hbitmap = hBmp;
+
+    hr = OleCreatePictureIndirect(&picDesc, IID_IPicture, TRUE, (VOID**)ppPicture);
+
+    // 4. 释放临时资源
+    SelectObject(hdcMem, hBmpOld);
+    DeleteDC(hdcMem);
+    delete pGdipImage;
+
+    return hr;
+}
+
+HRESULT loadPngFromMemoryToHICON(const uint8_t* pPngData, DWORD dwDataSize, HICON* phIcon)
+{
+    if (!pPngData || dwDataSize == 0 || !phIcon)
+        return E_INVALIDARG;
+    *phIcon = nullptr;
+
+    // 1. 将内存数据包装为IStream
+    IStream* pStream = nullptr;
+    HRESULT hr = CreateStreamOnHGlobal(nullptr, TRUE, &pStream);
+    if (FAILED(hr)) return hr;
+
+    // 写入PNG数据到流
+    ULONG written = 0;
+    hr = pStream->Write(pPngData, dwDataSize, &written);
+    if (FAILED(hr) || written != dwDataSize) {
+        pStream->Release();
+        return E_FAIL;
+    }
+
+    // 重置流指针
+    LARGE_INTEGER liPos = { 0 };
+    pStream->Seek(liPos, STREAM_SEEK_SET, nullptr);
+
+    // 2. GDI+加载PNG图像
+    Gdiplus::Image* pImage = Gdiplus::Image::FromStream(pStream);
+    pStream->Release(); // 释放流资源
+
+    if (!pImage || pImage->GetLastStatus() != Gdiplus::Ok) {
+        delete pImage;
+        return E_FAIL;
+    }
+
+    // 3. 创建带alpha通道的位图（保留透明）
+    HBITMAP hBmp = nullptr;
+    BITMAPINFO bmi = { 0 };
+    bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+    bmi.bmiHeader.biWidth = pImage->GetWidth();
+    bmi.bmiHeader.biHeight = -pImage->GetHeight(); // 负号表示顶部为原点
+    bmi.bmiHeader.biPlanes = 1;
+    bmi.bmiHeader.biBitCount = 32; // 32位带alpha
+    bmi.bmiHeader.biCompression = BI_RGB;
+
+    BYTE* pBits = nullptr;
+    HDC hdcScreen = GetDC(nullptr);
+    hBmp = CreateDIBSection(hdcScreen, &bmi, DIB_RGB_COLORS, (void**)&pBits, nullptr, 0);
+    ReleaseDC(nullptr, hdcScreen);
+
+    if (!hBmp || !pBits) {
+        delete pImage;
+        return E_OUTOFMEMORY;
+    }
+
+    // 4. 绘制PNG到DIB（含透明通道）
+    HDC hdcMem = CreateCompatibleDC(nullptr);
+    HBITMAP hOldBmp = (HBITMAP)SelectObject(hdcMem, hBmp);
+
+    Gdiplus::Graphics graphics(hdcMem);
+    graphics.Clear(Gdiplus::Color::Transparent); // 初始化透明背景
+    graphics.DrawImage(pImage, 0, 0, pImage->GetWidth(), pImage->GetHeight());
+
+    // 5. 从DIB创建图标
+    ICONINFO iconInfo = { 0 };
+    iconInfo.fIcon = TRUE;
+    iconInfo.hbmColor = hBmp;
+    iconInfo.hbmMask = CreateCompatibleBitmap(hdcMem, pImage->GetWidth(), pImage->GetHeight());
+    *phIcon = CreateIconIndirect(&iconInfo);
+
+    // 6. 清理资源
+    DeleteObject(iconInfo.hbmMask);
+    SelectObject(hdcMem, hOldBmp);
+    DeleteDC(hdcMem);
+    DeleteObject(hBmp); // 图标已引用像素数据，可释放原位图
+    delete pImage;
+
+    return *phIcon ? S_OK : E_FAIL;
+}
+
+struct IconInfo {
+    BOOL isIPicture = TRUE; 
+    IPicture* pPicture = nullptr;
+    HICON hIcon = nullptr;
+};
+
 void* loadIconFromMemory(const uint8_t* pData, size_t dwSize, void* hIcon)
 {
     if (!pData || dwSize == 0)
         return nullptr;
-
-//     HICON xx = CreateIconFromResourceEx(
-//         (PBYTE)pData,
-//         (DWORD)dwSize,
-//         TRUE,
-//         0x00030000,
-//         0,
-//         0,
-//         LR_DEFAULTSIZE | LR_SHARED);
 
     IStream* pStream = nullptr;
     HRESULT hr = createStreamOnMemory(pData, dwSize, &pStream);
@@ -698,9 +838,17 @@ void* loadIconFromMemory(const uint8_t* pData, size_t dwSize, void* hIcon)
     IPicture* pPicture = nullptr;
     hr = OleLoadPicture(pStream, dwSize, FALSE, IID_IPicture, (void**)&pPicture);
     pStream->Release(); // 释放流，因为 OleLoadPicture 已经增加了引用计数
-    if (FAILED(hr))
-        return nullptr;
+    if (FAILED(hr)) {
+        hr = loadPngFromMemoryToHICON(pData, dwSize, (HICON*)(hIcon));
+        if (FAILED(hr))
+            return nullptr;
 
+        IconInfo* ret = new IconInfo();
+        ret->isIPicture = FALSE;
+        ret->hIcon = *(HICON*)hIcon;
+        return ret;
+    }
+    
     SHORT type = 0;
     pPicture->get_Type(&type);
     if (PICTYPE_ICON != type) {
@@ -718,13 +866,21 @@ void* loadIconFromMemory(const uint8_t* pData, size_t dwSize, void* hIcon)
 
     // OLE_HANDLE 实际上是一个 UINT_PTR，在 Windows 中就是 HICON
     *(HICON*)hIcon = (HICON)hIconHandle;
-    return pPicture;
+
+    IconInfo* ret = new IconInfo();
+    ret->pPicture = pPicture;
+    return ret;
 }
 
 void loadIconFromMemoryFree(void* picture)
 {
-    IPicture* pPicture = (IPicture*)picture;
-    //pPicture->Release();
+    IconInfo* info = (IconInfo*)picture;
+    if (info->isIPicture) {
+        //info->pPicture->Release();
+    } else {
+        //::DestroyIcon(info->hIcon);
+    }
+    delete info;
 }
 
 } // namespace platform_util

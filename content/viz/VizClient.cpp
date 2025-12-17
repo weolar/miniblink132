@@ -387,8 +387,9 @@ void VizClient::OnBeginFrame(const ::viz::BeginFrameArgs& args, const base::flat
                     //self->m_firstSetEmbeds = true;
                     //self->allowResize(); // 这一次只是预热，所以可能走不到DidReceiveCompositorFrameAck
                     self->getPtr()->SetNeedsBeginFrame(true); // 再触发一次OnBeginFrame
-                } else
+                } else {
                     self->getPtr()->SetNeedsBeginFrame(false);
+                }
             },
             base::Unretained(this), std::move(frame), localSurfaceId));
 }

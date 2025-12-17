@@ -27,7 +27,7 @@
 #define PA_BUILDFLAG_INTERNAL_FORCE_ENABLE_RAW_PTR_EXCLUSION() (0)
 #define PA_BUILDFLAG_INTERNAL_FORWARD_THROUGH_MALLOC() (0)
 
-#if defined(_M_X64) || defined(__LP64__)
+#if defined(_M_X64) || defined(__LP64__) || defined(_M_ARM64)
 #define PA_BUILDFLAG_INTERNAL_HAS_64_BIT_POINTERS() (1)
 #else
 #define PA_BUILDFLAG_INTERNAL_HAS_64_BIT_POINTERS() (0)

@@ -17,6 +17,7 @@
 #include "ui/latency/latency_info.h"
 #include "ui/events/keycodes/dom/dom_code.h"
 #include "ui/events/keycodes/dom/dom_key.h"
+#include <windowsx.h>
 
 namespace content {
 
@@ -212,8 +213,8 @@ void PlatformEventHandler::fireWheelEventOnCompositorThread(int x, int y, bool s
 
 LRESULT PlatformEventHandler::fireWheelEvent(HWND hWnd, WPARAM wParam, LPARAM lParam)
 {
-    int x = LOWORD(lParam);
-    int y = HIWORD(lParam);
+    int x = GET_X_LPARAM(lParam);
+    int y = GET_Y_LPARAM(lParam);
     POINT point = { x, y };
     ::ScreenToClient(hWnd, &point);
     x = point.x;

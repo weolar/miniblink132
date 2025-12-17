@@ -24,7 +24,7 @@ namespace internal {
 
 // ValidationContext is used when validating object sizes, pointers and handle
 // indices in the payload of incoming messages.
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) ValidationContext {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ ValidationContext {
 public:
     enum ValidatorType { kUnspecifiedValidator, kRequestValidator, kResponseValidator };
 

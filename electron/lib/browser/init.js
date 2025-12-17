@@ -103,7 +103,12 @@ const mainStartupScript = packageJson.main || 'index.js';
 // Finally load app's main.js and transfer control to C++.
 Module._load(path.join(packagePath, mainStartupScript), Module, true);
 
-app.emit('will-finish-launching', {});
-app.emit('ready', {});
-app._setIsReady();
-console.log("browser.init.js.packagePath::" + packagePath);
+setImmediate(function() {
+    try {
+        app._setIsReady();
+        app.emit('will-finish-launching', {});
+        app.emit('ready', {});
+    } catch(e) {
+        console.log("browser/init.js, app.ready fail::" + e + ", \n" + e.stack);
+    }
+});

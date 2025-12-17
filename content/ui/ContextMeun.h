@@ -19,7 +19,7 @@ namespace content {
 uint32_t g_contextMenuItemMask = kMbMenuSelectedAllId | kMbMenuSelectedTextId | kMbMenuUndoId | kMbMenuCopyImageId | kMbMenuSaveImageId |
 kMbMenuInspectElementAtId | kMbMenuCutId | kMbMenuPasteId;
 
-#define kContextMenuClassName L"MbContextMenu"
+#define kContextMenuClassName L"_ContextMenu_"
 //extern WebPageImpl* g_saveImageingWebPage;
 
 // 本类是个单例，所有webview共用一个菜单
@@ -59,10 +59,10 @@ public:
             return;
 
         registerClass();
-        m_hWnd = CreateWindowExW(WS_EX_TOOLWINDOW, kContextMenuClassName, kContextMenuClassName, WS_POPUP, 0, 0, 1, 1, HWND_DESKTOP, NULL, nullptr, this);
+        m_hWnd = CreateWindowExW(WS_EX_TOOLWINDOW | WS_EX_NOACTIVATE, kContextMenuClassName, kContextMenuClassName, WS_POPUP, 0, 0, 1, 1, HWND_DESKTOP, NULL, nullptr, this);
+        ::ShowWindow(m_hWnd, SW_HIDE);
         ::SetPropW(m_hWnd, kContextMenuClassName, (HANDLE)this);
         ::SetForegroundWindow(m_hWnd);
-        ::ShowWindow(m_hWnd, SW_SHOW);
     }
 
     ~ContextMenu()
@@ -381,8 +381,8 @@ public:
 
     static LRESULT CALLBACK wndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
-        //         String output = String::format("ContextMenu.wndProc: %d\n", uMsg);
-        //         OutputDebugStringA(output.utf8().data());
+        //String output = String::Format("ContextMenu.wndProc: %d\n", uMsg);
+        //OutputDebugStringA(output.Utf8().c_str());
 
         PAINTSTRUCT ps;
         HDC hdc = nullptr;

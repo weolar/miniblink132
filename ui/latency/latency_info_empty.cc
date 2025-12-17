@@ -91,11 +91,11 @@ LatencyInfo& LatencyInfo::operator=(const LatencyInfo& other) = default;
 
 bool LatencyInfo::Verify(const std::vector<LatencyInfo>& latency_info, const char* referring_msg)
 {
-    if (latency_info.size() > kMaxLatencyInfoNumber) {
-        LOG(ERROR) << referring_msg << ", LatencyInfo vector size " << latency_info.size() << " is too big.";
-        TRACE_EVENT_INSTANT1("input,benchmark,latencyInfo", "LatencyInfo::Verify Fails", TRACE_EVENT_SCOPE_GLOBAL, "size", latency_info.size());
-        return false;
-    }
+//     if (latency_info.size() > kMaxLatencyInfoNumber) {
+//         LOG(ERROR) << referring_msg << ", LatencyInfo vector size " << latency_info.size() << " is too big.";
+//         TRACE_EVENT_INSTANT1("input,benchmark,latencyInfo", "LatencyInfo::Verify Fails", TRACE_EVENT_SCOPE_GLOBAL, "size", latency_info.size());
+//         return false;
+//     }
     return true;
 }
 

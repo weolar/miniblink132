@@ -16,7 +16,7 @@ namespace debug {
 // Helper class for storing |mojo_message_error| in the right crash key (when
 // initiating a base::debug::DumpWithoutCrashing because of a bad message
 // report).
-class COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE) ScopedMessageErrorCrashKey : public base::debug::ScopedCrashKeyString {
+class /*COMPONENT_EXPORT(MOJO_CPP_BINDINGS_BASE)*/ ScopedMessageErrorCrashKey : public base::debug::ScopedCrashKeyString {
 public:
     explicit ScopedMessageErrorCrashKey(const std::string& mojo_message_error);
     ~ScopedMessageErrorCrashKey();

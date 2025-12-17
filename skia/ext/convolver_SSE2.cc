@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+#if defined(_M_X64) || defined(__LP64__) || defined(_M_IX86)
+
 #ifdef UNSAFE_BUFFERS_BUILD
 // TODO(crbug.com/351564777): Remove this and convert code to safer constructs.
 #pragma allow_unsafe_buffers
@@ -440,3 +442,5 @@ void ConvolveVertically_SSE2(const ConvolutionFilter1D::Fixed* filter_values, in
 }
 
 } // namespace skia
+
+#endif

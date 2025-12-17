@@ -15,7 +15,6 @@
 #include "gen/services/network/public/mojom/url_loader.mojom.h"
 #include "gen/services/network/public/mojom/url_loader.mojom-blink.h"
 #include "base/functional/bind.h"
-#pragma clang optimize off
 
 bool blink::mojom::blink::BlobURLStore::Register(::mojo::PendingRemote<::blink::mojom::blink::Blob> blob, const ::blink::KURL& url,
     const ::base::UnguessableToken& unsafe_agent_cluster_id, const absl::optional<::blink::BlinkSchemefulSite>& unsafe_top_level_site)
@@ -87,14 +86,14 @@ void BlobURLStoreSet::removeBySecurityOriginToken(const std::string& securityOri
 
 //-----
 
-BlobURLStoreImpl::BlobURLStoreImpl(const ::scoped_refptr<const ::blink::SecurityOrigin>& origin)
+BlobURLStoreImpl::BlobURLStoreImpl(const std::string& origin)
     : m_origin(origin)
 {
 }
 
 BlobURLStoreImpl::~BlobURLStoreImpl()
 {
-    BlobURLStoreSet::get()->removeBySecurityOriginToken(m_origin->ToTokenForFastCheck().Utf8());
+    BlobURLStoreSet::get()->removeBySecurityOriginToken(m_origin);
 }
 
 bool BlobURLStoreImpl::Register(::mojo::PendingRemote<::blink::mojom::blink::Blob> blob, const ::blink::KURL& url,
@@ -103,11 +102,11 @@ bool BlobURLStoreImpl::Register(::mojo::PendingRemote<::blink::mojom::blink::Blo
 //     std::string urlStr = "BlobURLStoreImpl::Register, url: ";
 //     urlStr += url.GetString().Utf8();
 //     urlStr += ",,,,,";
-//     urlStr += m_origin->ToTokenForFastCheck().Utf8();
+//     urlStr += m_origin->ToString().Utf8();
 //     urlStr += "\n";
 //     OutputDebugStringA(urlStr.c_str());
 
-    BlobURLStoreSet::get()->addUrlBlob(url.GetString().Utf8(), m_origin->ToRawString().Utf8(), std::move(blob));
+    BlobURLStoreSet::get()->addUrlBlob(url.GetString().Utf8(), m_origin, std::move(blob));
 
     //     BlobURLStoreImpl* self = this;
     //     ThreadCall::callBlinkThreadAsync(MB_FROM_HERE, [self] {
@@ -134,7 +133,7 @@ void BlobURLStoreImpl::Register(::mojo::PendingRemote<::blink::mojom::blink::Blo
     ::blink::mojom::blink::BlobURLStore::RegisterCallback callback)
 {
     DebugBreak();
-    BlobURLStoreSet::get()->addUrlBlob(url.GetString().Utf8(), m_origin->ToTokenForFastCheck().Utf8(), std::move(blob));
+    BlobURLStoreSet::get()->addUrlBlob(url.GetString().Utf8(), m_origin, std::move(blob));
 }
 
 void BlobURLStoreImpl::Revoke(const ::blink::KURL& url)
@@ -261,9 +260,9 @@ public:
         new BlobURLStoreLoader(std::move(loader), requestId, options, request, std::move(client), trafficAnnotation);
     }
 
+    // LoaderFactoryForWorker::CreateURLLoader会走到这个函数
     void Clone(::mojo::PendingReceiver<network::mojom::URLLoaderFactory> factory) override
     {
-        DebugBreak();
         createAndBindInterface<::network::mojom::URLLoaderFactory, BlobURLStoreLoaderFactoryImpl>(factory.PassPipe(), m_url);
     }
 

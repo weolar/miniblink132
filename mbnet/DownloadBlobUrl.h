@@ -37,7 +37,7 @@ class WebURLLoaderClient;
 namespace mbnet {
 
 class WebURLLoaderInternal;
-void handleDownloadBlobUrl(WebURLLoaderInternal* job, const GURL& kurl, bool isSync);
+void handleDownloadBlobOrDataUrl(WebURLLoaderInternal* job, const GURL& kurl, bool isSync);
 
 }
 

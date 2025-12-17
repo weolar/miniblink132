@@ -8,9 +8,7 @@ namespace content {
 
 class RestrictedCookieManagerImpl : public ::network::mojom::blink::RestrictedCookieManager {
 public:
-    RestrictedCookieManagerImpl(int64_t webviewId)
-    {
-    }
+    RestrictedCookieManagerImpl(int64_t webviewId);
 
     virtual void GetAllForUrl(const ::blink::KURL& url, const ::net::SiteForCookies& site_for_cookies,
         const ::scoped_refptr<const ::blink::SecurityOrigin>& top_frame_origin, ::net::StorageAccessApiStatus storage_access_api_status,
@@ -49,6 +47,9 @@ public:
     void CookiesEnabledFor(const ::blink::KURL& url, const ::net::SiteForCookies& site_for_cookies,
         const ::scoped_refptr<const ::blink::SecurityOrigin>& top_frame_origin, ::net::StorageAccessApiStatus storage_access_api_status,
         CookiesEnabledForCallback callback) override;
+
+private:
+    int64_t m_webviewId = 0;
 };
 
 }

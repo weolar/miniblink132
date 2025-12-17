@@ -11,12 +11,18 @@
 #include "electron/common/gin_helper/dictionary.h"
 #include "electron/common/gin_helper/public/gin_embedders.h"
 #include "electron/common/gin_helper/public/wrapper_info.h"
+#include "electron/common/V8Util.h"
 #include "third_party/libnode/src/node.h"
 #include "third_party/libnode/src/node_binding.h"
 #include "third_party/libnode/src/node_version.h"
 #include "third_party/libuv/include/uv.h"
+#include "third_party/blink/public/common/messaging/cloneable_message.h"
 #include "base/values.h"
 #include <xstring>
+
+namespace content {
+void printCallstack();
+}
 
 namespace atom {
 
@@ -42,10 +48,27 @@ public:
     }
 
     // 这个channel和js里event.channel不是一个东西
-    void rendererIpcSend(const std::string& channel, const base::Value::List& arguments)
+    void rendererIpcSend(
+        const v8::FunctionCallbackInfo<v8::Value>& info
+        //const std::string& channel, std::unique_ptr<std::vector<blink::CloneableMessage>> arguments
+    )
     {
+        gin_helper::Arguments arg(info);
+        std::string channel;
+        if (!arg.GetNext(&channel)) {
+            arg.ThrowError();
+            return;
+        }
+
+        std::vector<blink::CloneableMessage>* args = new std::vector<blink::CloneableMessage>();
+        if (!arg.GetRemaining(args)) {
+            delete args;
+            arg.ThrowError();
+            return;
+        }
+
         if ("ipc-message-host" == channel) {
-            sendToHost(arguments);
+            sendToHost(std::unique_ptr<std::vector<blink::CloneableMessage>>(args));
             return;
         }
 
@@ -56,48 +79,75 @@ public:
         if (!webContents)
             return;
 
-        webContents->rendererPostMessageToMain(channel, arguments);
+        mbWebFrameHandle frame = mbGetWebFrameForCurrentContext();
+        if (0 == frame)
+            return;
+
+        webContents->rendererPostMessageToMain(frame, channel, std::unique_ptr<std::vector<blink::CloneableMessage>>(args));
     }
 
-    std::string rendererIpcSendSync(const std::string& channel, const base::Value::List& arguments)
+    v8::Local<v8::Value> rendererIpcSendSync(
+        //const std::string& channel, std::unique_ptr<std::vector<blink::CloneableMessage>> arguments
+        const v8::FunctionCallbackInfo<v8::Value>& info
+        )
     {
+        gin_helper::Arguments arg(info);
+        std::string channel;
+        if (!arg.GetNext(&channel)) {
+            arg.ThrowError();
+            return v8::Local<v8::Value>();
+        }
+
+        std::vector<blink::CloneableMessage>* args = new std::vector<blink::CloneableMessage>();
+        if (!arg.GetRemaining(args)) {
+            delete args;
+            arg.ThrowError();
+            return v8::Local<v8::Value>();
+        }
+
         mbWebView view = mbGetWebViewForCurrentContext();
         if (!view)
-            return "";
+            return v8::Undefined(isolate());
         WebContents* webContents = (WebContents*)mbGetUserKeyValue(view, "WebContents");
         if (!webContents)
-            return "";
+            return v8::Undefined(isolate());
 
-        std::string json;
-        webContents->rendererSendMessageToMain(channel, arguments, &json);
+        mbWebFrameHandle frame = mbGetWebFrameForCurrentContext();
+        if (0 == frame)
+            return v8::Undefined(isolate());
 
-        if (0 == json.size())
-            json = "{}";
+        std::vector<uint8_t> encodedMessage;
+        webContents->rendererSendMessageToMain(frame, channel, std::unique_ptr<std::vector<blink::CloneableMessage>>(args), &encodedMessage);
 
-        return json;
+        if (0 == encodedMessage.size())
+            return v8::Undefined(isolate());
+
+        base::span<const uint8_t> data((const uint8_t*)(encodedMessage.data()), encodedMessage.size());
+        return deserializeV8Value(isolate(), data);
     }
 
-    void sendToHost(const base::Value::List& arguments)
+    void sendToHost(std::unique_ptr<std::vector<blink::CloneableMessage>> arguments)
     {
-        if (arguments.empty())
-            return;
-
-        const base::Value& arg0 = arguments[0];
-        if (!arg0.is_string())
-            return;
-        const std::string* evtChannel = arg0.GetIfString();
-        if (!evtChannel || evtChannel->empty())
-            return;
-
-        mbWebView view = mbGetWebViewForCurrentContext();
-        if (!view)
-            return;
-        WebviewPluginImpl* pluginHost = (WebviewPluginImpl*)mbGetUserKeyValue(view, "WebviewPluginImpl");
-        if (!pluginHost)
-            return;
-
-        std::string json;
-        pluginHost->guestSendMessageToHost(*evtChannel, arguments);
+        DebugBreak();
+//         if (arguments->empty())
+//             return;
+// 
+//         const base::Value& arg0 = arguments->at(0);
+//         if (!arg0.is_string())
+//             return;
+//         const std::string* evtChannel = arg0.GetIfString();
+//         if (!evtChannel || evtChannel->empty())
+//             return;
+// 
+//         mbWebView view = mbGetWebViewForCurrentContext();
+//         if (!view)
+//             return;
+//         WebviewPluginImpl* pluginHost = (WebviewPluginImpl*)mbGetUserKeyValue(view, "WebviewPluginImpl");
+//         if (!pluginHost)
+//             return;
+// 
+//         std::string json;
+//         pluginHost->guestSendMessageToHost(*evtChannel, arguments);
     }
 
     static void newFunction(const v8::FunctionCallbackInfo<v8::Value>& args)

@@ -6,9 +6,11 @@
 
 namespace content {
 
-template <typename MojoInterface, typename Interface, typename... Pack> void createAndBindBrokerProxy(mojo::ScopedMessagePipeHandle handle, Pack... params)
+template <typename MojoInterface, typename Interface, typename... Pack> 
+Interface* createAndBindBrokerProxy(mojo::ScopedMessagePipeHandle handle, Pack... params)
 {
-    mojo::Receiver<MojoInterface>* receiver = new mojo::Receiver<MojoInterface>(new Interface(params...));
+    Interface* interfacePtr = new Interface(params...);
+    mojo::Receiver<MojoInterface>* receiver = new mojo::Receiver<MojoInterface>(interfacePtr);
     mojo::PendingReceiver<MojoInterface> pendingReceiver(std::move(handle));
     receiver->Bind(std::move(pendingReceiver));
     MojoInterface* ptr = receiver->internal_state()->impl();
@@ -18,11 +20,13 @@ template <typename MojoInterface, typename Interface, typename... Pack> void cre
             delete receiver;
         },
         base::Unretained(receiver), base::Unretained(ptr)));
+    return interfacePtr;
 }
 
-template <typename MojoInterface, typename Interface, typename... Pack> void createAndBindInterface(mojo::ScopedMessagePipeHandle handle, Pack... params)
+template <typename MojoInterface, typename Interface, typename... Pack> 
+Interface* createAndBindInterface(mojo::ScopedMessagePipeHandle handle, Pack... params)
 {
-    createAndBindBrokerProxy<MojoInterface, Interface>(std::move(handle), params...);
+    return createAndBindBrokerProxy<MojoInterface, Interface>(std::move(handle), params...);
 }
 
 // template <typename MojoInterface, typename Interface>

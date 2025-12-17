@@ -64,7 +64,8 @@ private:
     mbWebView m_mbView;
 
     std::vector<char> m_cacheData;
-    bool m_hadCallDataFinish; // 是否调用过onDataFinishImpl
+    bool m_hadCallDataFinish = false; // 是否调用过onDataFinishImpl
+    bool m_hasStartSave = false;// 是否调用过startSave
     mbLoadingResult m_loadingResult;
 
     struct DialogOptions {

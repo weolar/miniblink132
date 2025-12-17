@@ -489,6 +489,8 @@ typedef void(MB_CALL_TYPE* mbConsoleCallback)(
 typedef void(MB_CALL_TYPE* mbOnCallUiThread)(mbWebView webView, void* paramOnInThread);
 typedef void(MB_CALL_TYPE* mbCallUiThread)(mbWebView webView, mbOnCallUiThread func, void* param);
 
+typedef void(MB_CALL_TYPE* mbInsertCSSByFrameResultCallback)(mbWebView webView, void* param, const utf8* key);
+
 //mbNet--------------------------------------------------------------------------------------
 typedef BOOL(MB_CALL_TYPE* mbLoadUrlBeginCallback)(mbWebView webView, void* param, const char* url, void* job);
 typedef void(MB_CALL_TYPE* mbLoadUrlEndCallback)(mbWebView webView, void* param, const char* url, void* job, void* buf, int len);
@@ -854,10 +856,12 @@ typedef void(MB_CALL_TYPE* mbNetViewLoadInfoCallback)(mbWebView webView, void* p
 //     if (!name) \
 //         MessageBoxA(((HWND)0), "mb api not found", #name, 0);
 
-#define MB_GET_PTR_ITERATOR(name)                                                                                                                              \
-    name = (FN_##name)GetProcAddress(g_hMiniblinkMod, #name);                                                                                                  \
-    if (!name)                                                                                                                                                 \
-        OutputDebugStringA(#name);
+#define MB_GET_PTR_ITERATOR(name) \
+    name = (FN_##name)GetProcAddress(g_hMiniblinkMod, #name); \
+    if (!name) { \
+        OutputDebugStringA(#name); \
+        OutputDebugStringA("\n"); \
+    }
 #else
 #define MB_GET_PTR_ITERATOR(name)                                                                                                                              \
     name = (FN_##name)dlsym(g_hMiniblinkMod, #name);                                                                                                           \
@@ -1148,7 +1152,8 @@ typedef void(MB_CALL_TYPE* mbNetViewLoadInfoCallback)(mbWebView webView, void* p
     ITERATOR2(void, mbUtilSetDefaultPrinterSettings, mbWebView webView, const mbDefaultPrinterSettings* setting, "")                                           \
     ITERATOR1(int, mbGetContentWidth, mbWebView webView, "")                                                                                                   \
     ITERATOR1(int, mbGetContentHeight, mbWebView webView, "")                                                                                                  \
-    ITERATOR0(mbWebView, mbGetWebViewForCurrentContext, "")                                                                                                    \
+    ITERATOR0(mbWebView, mbGetWebViewForCurrentContext, "") \
+    ITERATOR0(mbWebFrameHandle, mbGetWebFrameForCurrentContext, "") \
     ITERATOR5(BOOL, mbRegisterEmbedderCustomElement, mbWebView webviewHandle, mbWebFrameHandle frameId, const char* name, void* options, void* outResult, "")  \
     ITERATOR3(void, mbOnNodeCreateProcess, mbWebView webviewHandle, mbNodeOnCreateProcessCallback callback, void* param, "")                                   \
     ITERATOR2(mbJsExecState, mbGetGlobalExecByFrame, mbWebView webView, mbWebFrameHandle frameId, "")                                                          \
@@ -1167,6 +1172,7 @@ typedef void(MB_CALL_TYPE* mbNetViewLoadInfoCallback)(mbWebView webView, void* p
     ITERATOR1(void, mbEditorUnSelect, mbWebView webView, "")                                                                                                   \
     ITERATOR0(v8Isolate, mbGetBlinkMainThreadIsolate, "")                                                                                                      \
     ITERATOR3(void, mbInsertCSSByFrame, mbWebView webView, mbWebFrameHandle frameId, const utf8* cssText, "")                                                  \
+    ITERATOR6(void, mbInsertCSSByFrameWithResult, mbWebView webView, mbWebFrameHandle frameId, const utf8* cssText, int cssOrigin, mbInsertCSSByFrameResultCallback callback, void* param, "") \
     ITERATOR3(void, mbWebFrameGetMainWorldScriptContext, mbWebView webView, mbWebFrameHandle frameId, v8ContextPtr contextOut, "")                             \
     ITERATOR1(const char*, mbNetGetReferrer, mbNetJob jobPtr, "获取request的referrer")                                                                         \
     ITERATOR2(void, mbPostToUiThread, mbOnCallUiThread callback, void* param, "")                                                                              \

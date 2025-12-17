@@ -133,7 +133,7 @@ async function loadApplicationPackage(packagePath) {
             packagePath = path.join(packagePath, packageJson.main);
         }
         
-        mbConsoleLog("default_app main.js packagePath," + packagePath);
+        mbConsoleLog("default_app/main.js, packagePath: " + packagePath);
 
         try {
             Module._resolveFilename(packagePath, module, true);
@@ -142,10 +142,18 @@ async function loadApplicationPackage(packagePath) {
             process.exit(1);
             return;
         }
+        
+        function formatFilePath(str) {
+            return 'file://' + str.replace(/\\/g, '/');
+        }
 
         // Run the app.
-        //Module._load(packagePath, module, true);
-        await import(url.pathToFileURL(packagePath).toString());
+        let p = url.pathToFileURL(packagePath).toString();
+        //let p = formatFilePath(packagePath);
+        //p = "file://Q:/Program Files/he3/resources/app/electron/main/index.js";
+        mbConsoleLog("default_app/main.js, loadApplicationPackage, p:" + p);
+        //p = "file://Q:/Program Files/he3/resources/app.asar/electron/main/index.js?xxxx=1";
+        await import(p);
     } catch (e) {
         console.error('App threw an error during load');
         console.error(e.stack || e);
@@ -162,6 +170,7 @@ function showErrorMessage(message) {
 
 function loadApplicationByUrl(appUrl) {
     mbConsoleLog("default_app.js, loadApplicationByUrl: " + appUrl);
+    app.setAppPath(appUrl);
     require('./default_app').load(appUrl);
 }
 

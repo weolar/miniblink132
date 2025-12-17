@@ -15,6 +15,7 @@
 
 namespace mbnet {
 
+bool parseDataURL(const GURL& kurl, String& mimeType, String& charset, Vector<char>& out);
 bool dispatchDownloadToWke(content::MbWebView* webview, WebURLLoaderInternal* job, const utf8* url, const AtomicString& contentType, String* downloadName);
 
 static void finishHandleBlobUrl(bool isSync, std::function<void(void)>&& closure)
@@ -44,31 +45,46 @@ static void onFinishHandleBlobUrl(int jobId, const GURL& gurl, blink::URLLoaderC
         if (WebURLLoaderInternal::kCacheForDownloadYes != job->m_cacheForDownloadOpt)
             break;
 
-        ::mojo::Remote<::blink::mojom::blink::Blob>* blob = content::BlobURLStoreSet::get()->getBlobByUrl(gurl.possibly_invalid_spec());
-        if (!blob)
-            break;
-
-        std::string* uuidStr = nullptr;
-        (*blob)->GetInternalUUID(base::BindOnce([](std::string** uuidStr, const WTF::String& uid) { *uuidStr = new std::string(uid.Ascii()); }, &uuidStr));
-        content::BlobEntry* blobEntry = content::BlobEntry::findByUuid(*uuidStr);
-        delete uuidStr;
-
-        if (!blobEntry)
-            break;
-
+        uint32_t numBytes = 0;
+        const char* bufData = nullptr;
+        Vector<char> blinkBuffer;
         std::vector<char> buffer;
-        int64_t allSize = 0;
-        blobEntry->read(&buffer, 0, -1, &allSize);
-        uint32_t numBytes = (uint32_t)buffer.size();
+        if (gurl.SchemeIs("data")) {
+            String mimeType;
+            String charset;
+            
+            isOk = parseDataURL(gurl, mimeType, charset, blinkBuffer);
+            if (!isOk)
+                break;
+            response->SetMimeType(mimeType);
+            bufData = blinkBuffer.data();
+            numBytes = (uint32_t)blinkBuffer.size();
+        } else {
+            ::mojo::Remote<::blink::mojom::blink::Blob>* blob = content::BlobURLStoreSet::get()->getBlobByUrl(gurl.possibly_invalid_spec());
+            if (!blob)
+                break;
 
-        response->SetMimeType(blink::WebString::FromUTF8(blobEntry->m_contentType));
+            std::string* uuidStr = nullptr;
+            (*blob)->GetInternalUUID(base::BindOnce([](std::string** uuidStr, const WTF::String& uid) { *uuidStr = new std::string(uid.Ascii()); }, &uuidStr));
+            content::BlobEntry* blobEntry = content::BlobEntry::findByUuid(*uuidStr);
+            delete uuidStr;
+
+            if (!blobEntry)
+                break;
+
+            int64_t allSize = 0;
+            blobEntry->read(&buffer, 0, -1, &allSize);
+            response->SetMimeType(blink::WebString::FromUTF8(blobEntry->m_contentType));
+            numBytes = (uint32_t)buffer.size();
+            bufData = (char*)buffer.data();
+        }
+       
         response->SetExpectedContentLength(numBytes);
         absl::variant<mojo::ScopedDataPipeConsumerHandle, SegmentedBuffer> body;
-
         client->DidReceiveResponse(*response, std::move(body), std::nullopt);
 
         if (job->m_dataBind) {
-            job->m_dataCacheForDownload.insert(job->m_dataCacheForDownload.end(), (char*)buffer.data(), (char*)buffer.data() + buffer.size());
+            job->m_dataCacheForDownload.insert(job->m_dataCacheForDownload.end(), bufData, bufData + numBytes);
             job->m_dataBind->recvCallback(job->m_dataBind->param, job, job->m_dataCacheForDownload.data(), job->m_dataCacheForDownload.size());
             job->m_dataCacheForDownload.clear();
             job->m_dataBind->finishCallback(job->m_dataBind->param, job, MB_LOADING_SUCCEEDED);
@@ -93,7 +109,7 @@ static void onFinishHandleBlobUrl(int jobId, const GURL& gurl, blink::URLLoaderC
     delete response;
 }
 
-void handleDownloadBlobUrl(WebURLLoaderInternal* job, const GURL& gurl, bool isSync)
+void handleDownloadBlobOrDataUrl(WebURLLoaderInternal* job, const GURL& gurl, bool isSync)
 {
     blink::URLLoader* handle = job->loader();
     blink::URLLoaderClient* client = job->client();

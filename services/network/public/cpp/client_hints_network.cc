@@ -97,8 +97,49 @@ const DecodeMap& GetDecodeMap()
 
 absl::optional<std::vector<network::mojom::WebClientHintsType>> ParseClientHintsHeader(const std::string& header)
 {
-    *(int*)1 = 1;
-    return absl::nullopt;
+    auto StrToClientHintsType = [](std::string str) -> network::mojom::WebClientHintsType {
+        std::string temp;
+        for (char& c : str) {
+            temp.push_back(static_cast<char>(std::tolower(static_cast<unsigned char>(c))));
+        }
+        if (temp == "wiewport-width")
+            return network::mojom::WebClientHintsType::kViewportWidth;
+        else if (temp == "width")
+            return network::mojom::WebClientHintsType::kViewportWidth;
+        else if (temp == "ua")
+            return network::mojom::WebClientHintsType::kUA;
+        else if (temp == "sec-ch-ua-arch")
+            return network::mojom::WebClientHintsType::kUAArch;
+        else if (temp == "sec-ch-ua-platform")
+            return network::mojom::WebClientHintsType::kUAPlatform;
+        else if (temp == "sec-ch-ua-model")
+            return network::mojom::WebClientHintsType::kUAModel;
+        else if (temp == "sec-ch-ua-platform-version")
+            return network::mojom::WebClientHintsType::kUAPlatformVersion;
+
+        return network::mojom::WebClientHintsType(-1);
+    };
+
+    std::vector<network::mojom::WebClientHintsType> ret;
+    size_t start = 0;
+    size_t end = header.find(',');
+
+    while (end != std::string::npos) {
+        // 从 start 到 end（不包括 end）截取子串
+        network::mojom::WebClientHintsType type = StrToClientHintsType(header.substr(start, end - start));
+        if (type != (network::mojom::WebClientHintsType)(-1))
+            ret.push_back(type);
+        start = end + 1;            // 更新起始位置为逗号后一位
+        end = header.find(',', start); // 继续查找下一个逗号
+    }
+
+    // 添加最后一个子串（end == npos，即最后一个逗号之后的部分）
+    network::mojom::WebClientHintsType type = StrToClientHintsType(header.substr(start));
+    if (type != (network::mojom::WebClientHintsType)(-1))
+        ret.push_back(type);
+
+    return ret;
+
     // Accept-CH is an sh-list of tokens; see:
     // https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-header-structure-19#section-3.1
     //   absl::optional<net::structured_headers::List> maybe_list = net::structured_headers::ParseList(header);

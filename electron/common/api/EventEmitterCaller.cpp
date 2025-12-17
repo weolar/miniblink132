@@ -36,6 +36,20 @@ v8::Local<v8::Value> callEmitWithArgs(v8::Isolate* isolate, v8::Local<v8::Object
 }
 
 v8::Local<v8::Value> emitEventImpl(
+    v8::Isolate* isolate,
+    v8::Local<v8::Object> obj,
+    internal::ValueVector& converted_args,
+    v8::Local<v8::Object> event,
+    const std::vector<blink::CloneableMessage>& args)
+{
+    for (size_t i = 0; i < args.size(); ++i) {
+        v8::Local<v8::Value> val = gin_helper::ConvertToV8(isolate, args[i]);
+        converted_args.push_back(val);
+    }
+    return callEmitWithArgs(isolate, obj, &converted_args);
+}
+
+v8::Local<v8::Value> emitEventImpl(
     v8::Isolate* isolate, v8::Local<v8::Object> obj, internal::ValueVector& converted_args, v8::Local<v8::Object> event, const base::Value::List& args)
 {
     std::optional<bool> boolVal;

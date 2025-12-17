@@ -87,8 +87,10 @@ void handleDataURL(int jobId, blink::URLLoader* handle, blink::URLLoaderClient* 
     finishHandleDataURL(isSync, [jobId, client, /*readHandle,*/ response, data] {
 //         client->DidReceiveResponse(*response);
 //         client->DidReceiveData(data->data(), data->size());
-        DebugBreak();
+        //DebugBreak();
 
+        client->DidReceiveResponse(*response, absl::variant<mojo::ScopedDataPipeConsumerHandle, SegmentedBuffer>(), std::optional<mojo_base::BigBuffer>());
+        client->DidReceiveDataForTesting(base::span<const char>(data->data(), data->size()));
         client->DidFinishLoading(base::TimeTicks::Now(), data->size(), data->size(), data->size());
 
         WebURLLoaderManager* manager = WebURLLoaderManager::sharedInstance();
@@ -136,17 +138,18 @@ bool parseDataURL(const GURL& kurl, String& mimeType, String& charset, Vector<ch
         charset = "US-ASCII";
 
     int64_t totalEncodedDataLength = 0;
+    String data2;
     if (base64) {
-        data = /*WTF::ensureStringToUTF8String*/ (blink::DecodeURLEscapeSequences(data, url::DecodeURLMode::kUTF8));
-        if (!(WTF::Base64Decode(data, out/*, shouldIgnoreCharacter*/) && out.size() > 0))
+        data2 = /*WTF::ensureStringToUTF8String*/ (blink::DecodeURLEscapeSequences(data, url::DecodeURLMode::kUTF8));
+        if (!(WTF::Base64Decode(data2, out/*, shouldIgnoreCharacter*/) && out.size() > 0))
             return false;
 
         totalEncodedDataLength = out.size();
     } else {
         WTF::TextEncoding encoding(charset);
-        data = /*WTF::ensureStringToUTF8String*/ (blink::DecodeURLEscapeSequences(data, /*encoding*/ url::DecodeURLMode::kUTF8));
+        data2 = /*WTF::ensureStringToUTF8String*/ (blink::DecodeURLEscapeSequences(data, /*encoding*/ url::DecodeURLMode::kUTF8));
 
-        std::string encodedData = encoding.Encode(data, WTF::kURLEncodedEntitiesForUnencodables);
+        std::string encodedData = encoding.Encode(data2, WTF::kURLEncodedEntitiesForUnencodables);
         if (0 == encodedData.length())
             return false;
 

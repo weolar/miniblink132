@@ -1,8 +1,9 @@
-
+Ôªø
 #include "content/browser/MbWebview.h"
 #include "content/common/BindJsQuery.h"
 #include "content/common/LiveIdDetect.h"
 #include "content/common/ThreadCall.h"
+#include "content/resources/InjectScript.h"
 #include "mbvip/core/MbJsValue.h"
 #include "base/strings/utf_string_conversions.h"
 #include <string>
@@ -10,88 +11,7 @@
 
 extern bool g_isElectronMode;
 
-namespace v8 {
-bool ApiStringIsWellFormed(v8::Isolate* isolate, v8::Local<v8::String> source);
-v8::Local<v8::String> ApiStringToWellFormed(v8::Isolate* isolate, v8::Local<v8::String> source);
-}
-
 namespace content {
-
-static const char* injectScript =
-    //"window.chrome = {app:null, runtime:null};\n"
-    "if (!('chrome' in window)) {\n"
-    "    Object.defineProperty(window, \"chrome\", {\n"
-    "        get: function() {\n"
-    "            return {\n"
-    "                app:null, \n"
-    "                runtime: {\n"
-    "                    sendMessage:function() {} \n"
-    "                }\n"
-    "            };\n"
-    "        },\n"
-    "        set : function(val) {\n"
-    "        },\n"
-    "        enumerable : true,\n"
-    "    });\n"
-    "}\n"
-    "window.__g_callbackMap__ = {};\n"
-    "window.__g_callbackMapIdGen__ = 0;\n"
-    "window.__onMbQuery__ = function(id, customMsg, response) {\n"
-    "    var cb = window.__g_callbackMap__[id];\n"
-    "    console.log('__onMbQuery__ cb:' + customMsg);\n"
-    "    if (cb) {\n"
-    "        cb(customMsg, response);\n"
-    "        delete window.__g_callbackMap__[id];\n"
-    "    }\n"
-    "}\n"
-    "window.__setMbQuery__ = function(func, func2) {\n"
-    "    window.mbQuery = function(customMsg, request, cb) {\n"
-    "        var id = -1\n"
-    "        if ('function' == typeof cb) {\n"
-    "            id = ++window.__g_callbackMapIdGen__;"
-    "            window.__g_callbackMap__[id] = cb;\n"
-    "        }\n"
-    "        func(customMsg, request, id);\n"
-    "        console.log('mbQuery cb:' + typeof cb);\n"
-    "    }\n"
-    "    window.mbSendToNative = func2;"
-    "    window.mbSendToNative2 = function(request) {\n"
-    "        var args = Array.prototype.slice.call(arguments);\n"
-    "        func2(args);\n"
-    "        console.log('mbSendToNative cb:' + typeof cb);\n"
-    "    }\n"
-    "}\n"
-    "function __Audio__(url) {\n"
-    "    this.paused = false;\n"
-    "    this.loop = false;\n"
-    "    this.playbackRate = 1;\n"
-    "    this.defaultPlaybackRate = false;\n"
-    "    this.src = false;\n"
-    "    this.duration = 1;\n"
-    "}\n"
-    "__Audio__.prototype.addEventListener = function() {\n"
-    "    return this;\n"
-    "};\n"
-    "__Audio__.prototype.pause = function() {\n"
-    "    return this;\n"
-    "};\n"
-    "__Audio__.prototype.load = function() {\n"
-    "    return this;\n"
-    "};\n"
-    "__Audio__.prototype.play = function() {\n"
-    "    return this;\n"
-    "};\n"
-    "\n"
-    "window.Audio = __Audio__\n";
-
-static const char* injectStringWellFormed = "String.prototype.toWellFormed = function() { return __ApiStringToWellFormed__(this); }\n"
-                                            "String.prototype.isWellFormed = function() { return __ApiStringIsWellFormed__(this); }\n";
-
-// "function __NumberFormat__() {}\n"
-// "__NumberFormat__.prototype.format = function(num) { return num; }\n"
-// "window.Intl = {};\n"
-// "Intl.NumberFormat = __NumberFormat__;\n"
-;
 
 void printCallstackIsolate(v8::Isolate* isolate)
 {
@@ -165,8 +85,20 @@ static void mbConsoleLog(const v8::FunctionCallbackInfo<v8::Value>& info)
     str += *param0String;
     str += "\n";
 
-//     if (std::string::npos != str.find("utility-process.js"))
-//         MessageBoxA(0, "utility-process.js", 0, 0);
+    if (std::string::npos != str.find("__writre__")) {
+        HANDLE hFile = CreateFileA("G:\\test\\web_test\\ggzuhao\\1.js", GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        DWORD fileSizeHigh;
+        const DWORD bufferSize = ::GetFileSize(hFile, &fileSizeHigh);
+        DWORD numberOfBytesRead = 0;
+        std::vector<char> buffer;
+        buffer.resize(bufferSize);
+        BOOL b = ::ReadFile(hFile, buffer.data(), bufferSize, &numberOfBytesRead, nullptr);
+        ::CloseHandle(hFile);
+
+        v8::Local<v8::String> ret = v8::String::NewFromUtf8(isolate, buffer.data(), v8::NewStringType::kNormal, bufferSize).ToLocalChecked();
+        info.GetReturnValue().Set(ret);
+        return;
+    }
 
     if (std::string::npos != str.find("__alert__")) {
         MessageBoxA(0, str.c_str(), 0, 0);
@@ -180,7 +112,7 @@ static void mbConsoleLog(const v8::FunctionCallbackInfo<v8::Value>& info)
     OutputDebugStringW((const WCHAR*)strW.c_str());
 }
 
-// –¬‘ˆº”“ª∏ˆ≤ª∂®≤Œ ˝µƒ∞Ê±æ
+// Êñ∞Â¢ûÂä†‰∏Ä‰∏™‰∏çÂÆöÂèÇÊï∞ÁöÑÁâàÊú¨
 void BindJsQuery::jsCallback2(const v8::FunctionCallbackInfo<v8::Value>& info)
 {
     v8::Local<v8::External> ext = info.Data().As<v8::External>();
@@ -320,41 +252,21 @@ static void bindGlobalFunction(v8::Local<v8::Context> context, const char* name,
     object->Set(context, nameV8, func);
 }
 
-// static void V8StringToWellFormed(const v8::FunctionCallbackInfo<v8::Value>& info)
-// {
-//     if (1 != info.Length())
-//         return;
-//     if (!info[0]->IsStringObject())
-//         return;
-//     v8::Local<v8::StringObject> a0 = info[0].As<v8::StringObject>();
-//     v8::Local<v8::String> ret = v8::ApiStringToWellFormed(info.GetIsolate(), a0->ValueOf());
-//     info.GetReturnValue().Set(ret);
-// }
-//
-// static void V8StringIsWellFormed(const v8::FunctionCallbackInfo<v8::Value>& info)
-// {
-//     if (1 != info.Length())
-//         return;
-//     if (!info[0]->IsStringObject())
-//         return;
-//     v8::Local<v8::StringObject> a0 = info[0].As<v8::StringObject>();
-//     bool ret = v8::ApiStringIsWellFormed(info.GetIsolate(), a0->ValueOf());
-//     info.GetReturnValue().Set(ret);
-// }
-
-void fixStringWelFormed(v8::Local<v8::Context> context)
+void bindOnWebWorkers(v8::Local<v8::Context> context)
 {
-//     bindGlobalFunction(context, "__ApiStringToWellFormed__", V8StringToWellFormed);
-//     bindGlobalFunction(context, "__ApiStringIsWellFormed__", V8StringIsWellFormed);
+    v8::Isolate* isolate = context->GetIsolate();
+    v8::HandleScope handleScope(isolate);
+    v8::Context::Scope contextScope(context);
+    v8::MicrotasksScope miscrotaskScope(context, v8::MicrotasksScope::Type::kRunMicrotasks);
+    bindGlobalFunction(context, "mbConsoleLog", mbConsoleLog);
 
-//     v8::Isolate* isolate = context->GetIsolate();
-//     v8::Isolate::Scope isolateScope(isolate);
-//     v8::HandleScope handleScope(isolate);
-//     v8::Context::Scope contextScope(context);
-// 
-//     v8::Local<v8::String> source = v8::String::NewFromUtf8(isolate, injectStringWellFormed).ToLocalChecked();
-//     v8::Local<v8::Script> script = v8::Script::Compile(context, source).ToLocalChecked();
-//     script->Run(context);
+    std::string injectScriptStr(kInjectScript);
+
+    v8::Local<v8::String> code = v8::String::NewFromUtf8(isolate, injectScriptStr.c_str(), v8::NewStringType::kNormal, injectScriptStr.size()).ToLocalChecked();
+    v8::ScriptOrigin origin(v8::String::NewFromUtf8(isolate, "bindOnWebWorkers.js", v8::NewStringType::kNormal, -1).ToLocalChecked());
+    v8::ScriptCompiler::Source source(code, origin);
+    v8::MaybeLocal<v8::Script> script = v8::ScriptCompiler::Compile(context, &source, v8::ScriptCompiler::kNoCompileOptions);
+    script.ToLocalChecked()->Run(context);
 }
 
 void BindJsQuery::bindFun(v8::Local<v8::Context> context, QueryFn* queryFn, QueryFn2* queryFn2, MbWebView* webview, const blink::LocalFrameToken& frameToken)
@@ -369,15 +281,14 @@ void BindJsQuery::bindFun(v8::Local<v8::Context> context, QueryFn* queryFn, Quer
     if (!g_isElectronMode)
         bindGlobalFunction(context, "mbConsoleLog", mbConsoleLog);
 
-    fixStringWelFormed(context);
-
     size_t frameId = (blink::LocalFrameToken::Hasher()(frameToken));
-    std::string injectScriptStr(injectScript);
+    std::string injectScriptStr(kInjectScript);
+
     mb::MbJsValue* mbVal = webview->runJsOnBlinkThreadImpl((mbWebFrameHandle)frameId, 0, &injectScriptStr, false, nullptr, nullptr);
     if (mbVal)
         mbVal->deref();
 
-    // ππΩ®func≤Œ ˝
+    // ÊûÑÂª∫funcÂèÇÊï∞
     BindJsQuery* self = new BindJsQuery();
     self->m_webviewId = webviewId;
     self->m_frameToken = frameToken;
@@ -402,7 +313,7 @@ void BindJsQuery::bindFun(v8::Local<v8::Context> context, QueryFn* queryFn, Quer
 
     v8::Local<v8::String> setMbQueryStr = v8::String::NewFromUtf8(isolate, "__setMbQuery__", v8::NewStringType::kNormal, -1).ToLocalChecked();
     v8::Local<v8::Value> setMbQueryStrValue = windowObj->Get(context, setMbQueryStr).ToLocalChecked();
-    if (!setMbQueryStrValue->IsFunction()) // https://www.hao123.com/?tn=48021271_79_hao_pg ’‚Õ¯“≥≤ª÷™µ¿Œ™…∂”– ±∞Û∂® ß∞‹
+    if (!setMbQueryStrValue->IsFunction()) // https://www.hao123.com/?tn=48021271_79_hao_pg ËøôÁΩëÈ°µ‰∏çÁü•ÈÅì‰∏∫Âï•ÊúâÊó∂ÁªëÂÆöÂ§±Ë¥•
         return;
 
     v8::Function* setMbQueryFunc = v8::Function::Cast(*setMbQueryStrValue);

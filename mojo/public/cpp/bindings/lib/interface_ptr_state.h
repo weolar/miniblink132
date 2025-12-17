@@ -53,6 +53,7 @@ public:
 
     uint32_t version() const;
     bool is_bound() const;
+    bool is_valid() const;
 
     void CloseWithReason(uint32_t custom_reason, const std::string& description);
 
@@ -86,7 +87,7 @@ public:
         return runner_;
     }
 
-    void* TryGetInstance();
+    void* TryGetInstance() const;
 
 protected:
     void OnDisconnectError(MojoHandle handle, base::OnceClosure reset_handler);
@@ -134,7 +135,7 @@ private:
     ScopedMessagePipeHandle handle_;
     scoped_refptr<base::SequencedTaskRunner> runner_; // 这个好像没用到
 
-    void* cache_interface_ptr_ = nullptr; // 缓存从handle_里获取的真实interface的指针
+    mutable void* cache_interface_ptr_ = nullptr; // 缓存从handle_里获取的真实interface的指针
 
     uint32_t version_ = 0;
 

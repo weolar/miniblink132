@@ -66,6 +66,10 @@ private:
     SkCanvas* m_canvas = nullptr;
     bool m_isAutoDrawToHwnd = true;
 
+    bool m_isPostDamageRect = false;
+    base::Lock m_damageRectLock;
+    std::vector<gfx::Rect> m_damageRects;
+
 #if BUILDFLAG(IS_LINUX)
     cairo_surface_t* m_surface = nullptr;
     std::unique_ptr<SkCanvas> m_memCanvasForUi;
@@ -250,6 +254,24 @@ void OffscreenWindowUpdater::OnAllocatedSharedMemory(const gfx::Size& pixelSize,
 
 DWORD g_lastOffscreenWindowUpdaterTime = 0;
 
+void mergeDirtyRects(std::vector<gfx::Rect>* damageRects, const gfx::Rect& rect)
+{
+    for (size_t i = 0; i < damageRects->size(); ++i) {
+        const gfx::Rect& r = damageRects->at(i);
+        if (r.Contains(rect))
+            return;
+        int sumOfArea = r.width() * r.height() + rect.width() * rect.height();
+
+        gfx::Rect unionRect = gfx::UnionRects(r, rect);
+        int unionRectArea = unionRect.width() * unionRect.height();
+        if (unionRectArea < sumOfArea) {
+            (*damageRects)[i] = unionRect;
+            return;
+        }
+    }
+    damageRects->push_back(rect);
+}
+
 // 本函数是在合成线程
 void OffscreenWindowUpdater::Draw(const gfx::Rect& damageRect, DrawCallback drawCallback)
 {
@@ -289,7 +311,6 @@ void OffscreenWindowUpdater::Draw(const gfx::Rect& damageRect, DrawCallback draw
         RECT wr;
         ::GetWindowRect(m_hwnd, &wr);
 
-        //SIZE size = { wr.right - wr.left, wr.bottom - wr.top };
         SIZE size = { m_pixelSize.width(), m_pixelSize.height() };
         POINT position = { wr.left, wr.top };
         POINT zero = { 0, 0 };
@@ -371,24 +392,42 @@ void OffscreenWindowUpdater::Draw(const gfx::Rect& damageRect, DrawCallback draw
     ::InvalidateRect(m_hwnd, &rc, false);
 #endif
 
-#if defined(OS_WIN)
     int64_t webviewId = m_mbwebviewId;
     OffscreenWindowUpdater* self = this;
-    content::ThreadCall::callUiThreadAsync(MB_FROM_HERE, [webviewId, damageRect, self] {
-        MbWebView* webview = (MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtrLocked(webviewId);
-        if (!webview)
-            return;
-        common::LiveIdDetect::getMbWebviewIds()->unlock(webviewId, webview);
 
-        self->m_hwnd = webview->getHostWnd();
+    m_damageRectLock.Acquire();
+    mergeDirtyRects(&m_damageRects, damageRect);
+    m_damageRectLock.Release();
 
-        self->m_canvasLock->Acquire();
-        HDC memoryDC = skia::GetNativeDrawingContext(self->m_canvas);
-        if (webview)
-            webview->onPaintUpdatedInUiThread(memoryDC, damageRect.x(), damageRect.y(), damageRect.width(), damageRect.height());
-        self->m_canvasLock->Release();
-    });
+    if (!m_isPostDamageRect) {
+        m_isPostDamageRect = true;
+        content::ThreadCall::callUiThreadAsync(MB_FROM_HERE, [webviewId, self] {
+            MbWebView* webview = (MbWebView*)common::LiveIdDetect::getMbWebviewIds()->getPtrLocked(webviewId);
+            if (!webview)
+                return;
+            common::LiveIdDetect::getMbWebviewIds()->unlock(webviewId, webview);
+
+            self->m_isPostDamageRect = false;
+            self->m_hwnd = webview->getHostWnd();
+
+            self->m_canvasLock->Acquire();
+            HDC memoryDC = nullptr;
+#if defined(OS_WIN)
+            memoryDC = skia::GetNativeDrawingContext(self->m_canvas);
 #endif
+            if (webview) {
+                self->m_damageRectLock.Acquire();
+                std::vector<gfx::Rect> damageRects = self->m_damageRects;
+                self->m_damageRects.clear();
+                self->m_damageRectLock.Release();
+                for (size_t i = 0; i < damageRects.size(); ++i) {
+                    webview->onPaintUpdatedInUiThread(memoryDC, damageRects[i].x(), damageRects[i].y(),
+                        damageRects[i].width(), damageRects[i].height());
+                }
+            }
+            self->m_canvasLock->Release();
+        });
+    }
 
     runDrawCallback(m_mbwebviewId, std::move(drawCallback));
 }
