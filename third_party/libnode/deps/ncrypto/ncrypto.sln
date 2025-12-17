@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2022
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ncrypto", "ncrypto.vcxproj", "{AE326D9F-89E1-954E-FB17-07A8D7DC679D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openssl", "..\openssl\openssl.vcxproj", "{671F9992-AE44-8315-8D8D-F5647DF3ABAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{671F9992-AE44-8315-8D8D-F5647DF3ABAE}.Release|x64.ActiveCfg = Release|x64
+		{671F9992-AE44-8315-8D8D-F5647DF3ABAE}.Release|x64.Build.0 = Release|x64
+		{671F9992-AE44-8315-8D8D-F5647DF3ABAE}.Debug|x64.ActiveCfg = Debug|x64
+		{671F9992-AE44-8315-8D8D-F5647DF3ABAE}.Debug|x64.Build.0 = Debug|x64
+		{AE326D9F-89E1-954E-FB17-07A8D7DC679D}.Release|x64.ActiveCfg = Release|x64
+		{AE326D9F-89E1-954E-FB17-07A8D7DC679D}.Release|x64.Build.0 = Release|x64
+		{AE326D9F-89E1-954E-FB17-07A8D7DC679D}.Debug|x64.ActiveCfg = Debug|x64
+		{AE326D9F-89E1-954E-FB17-07A8D7DC679D}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

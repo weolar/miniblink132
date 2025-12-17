@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2022
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libuv", "..\uv\libuv.vcxproj", "{722FA4E1-5B1B-B669-E231-11399DF5C589}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uvwasi", "uvwasi.vcxproj", "{22FF7A47-A4D8-194A-0025-B3E1CF5A79B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(uv)", "..\..\uv", "{6B6526F7-2D1B-CE7D-2178-56EDD8DDB56D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22FF7A47-A4D8-194A-0025-B3E1CF5A79B4}.Release|x64.ActiveCfg = Release|x64
+		{22FF7A47-A4D8-194A-0025-B3E1CF5A79B4}.Release|x64.Build.0 = Release|x64
+		{22FF7A47-A4D8-194A-0025-B3E1CF5A79B4}.Debug|x64.ActiveCfg = Debug|x64
+		{22FF7A47-A4D8-194A-0025-B3E1CF5A79B4}.Debug|x64.Build.0 = Debug|x64
+		{722FA4E1-5B1B-B669-E231-11399DF5C589}.Release|x64.ActiveCfg = Release|x64
+		{722FA4E1-5B1B-B669-E231-11399DF5C589}.Release|x64.Build.0 = Release|x64
+		{722FA4E1-5B1B-B669-E231-11399DF5C589}.Debug|x64.ActiveCfg = Debug|x64
+		{722FA4E1-5B1B-B669-E231-11399DF5C589}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{722FA4E1-5B1B-B669-E231-11399DF5C589} = {6B6526F7-2D1B-CE7D-2178-56EDD8DDB56D}
+	EndGlobalSection
+EndGlobal

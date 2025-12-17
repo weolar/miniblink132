@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{492659C8-7892-FD1D-EA1D-B8B0C54188B7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>openssl-cli</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\;$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
+    <OutDir>..\..\out\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm\include;openssl\include;openssl\crypto\include;config\archs\VC-WIN32\asm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;4090;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_API_COMPAT=0x10100001L;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;CMLL_ASM;DES_ASM;ECP_NISTZ256_ASM;GHASH_ASM;MD5_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;PADLOCK_ASM;POLY1305_ASM;RC4_ASM;RMD160_ASM;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;WHIRLPOOL_ASM;OPENSSL_PIC;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdi32.lib;advapi32.lib;crypt32.lib;user32.lib</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName)$(TargetExt)</OutputFile>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm\include;openssl\include;openssl\crypto\include;config\archs\VC-WIN32\asm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_API_COMPAT=0x10100001L;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;CMLL_ASM;DES_ASM;ECP_NISTZ256_ASM;GHASH_ASM;MD5_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;PADLOCK_ASM;POLY1305_ASM;RC4_ASM;RMD160_ASM;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;WHIRLPOOL_ASM;OPENSSL_PIC;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm\include;openssl\include;openssl\crypto\include;config\archs\VC-WIN32\asm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;4090;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_API_COMPAT=0x10100001L;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;CMLL_ASM;DES_ASM;ECP_NISTZ256_ASM;GHASH_ASM;MD5_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;PADLOCK_ASM;POLY1305_ASM;RC4_ASM;RMD160_ASM;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;WHIRLPOOL_ASM;OPENSSL_PIC;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdi32.lib;advapi32.lib;crypt32.lib;user32.lib</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName)$(TargetExt)</OutputFile>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm\include;openssl\include;openssl\crypto\include;config\archs\VC-WIN32\asm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_API_COMPAT=0x10100001L;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;CMLL_ASM;DES_ASM;ECP_NISTZ256_ASM;GHASH_ASM;MD5_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;PADLOCK_ASM;POLY1305_ASM;RC4_ASM;RMD160_ASM;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;WHIRLPOOL_ASM;OPENSSL_PIC;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="openssl.gyp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\apps\lib\cmp_mock_srv.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\cmp_mock_srv.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\asn1parse.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\asn1parse.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ca.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\ca.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ciphers.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\ciphers.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\cmp.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\cmp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\cms.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\cms.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\crl.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\crl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\crl2pkcs7.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\crl2pkcs7.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dgst.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\dgst.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dhparam.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\dhparam.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dsa.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\dsa.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dsaparam.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\dsaparam.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ec.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\ec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ecparam.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\ecparam.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\enc.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\enc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\engine.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\engine.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\errstr.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\errstr.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\fipsinstall.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\fipsinstall.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\gendsa.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\gendsa.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\genpkey.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\genpkey.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\genrsa.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\genrsa.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\info.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\info.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\kdf.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\kdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\list.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\list.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\mac.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\mac.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\nseq.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\nseq.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ocsp.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\ocsp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\openssl.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\openssl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\passwd.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\passwd.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkcs12.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\pkcs12.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkcs7.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\pkcs7.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkcs8.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\pkcs8.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkey.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\pkey.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkeyparam.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\pkeyparam.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkeyutl.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\pkeyutl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\prime.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\prime.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\apps\progs.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\apps\progs.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rand.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\rand.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rehash.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\rehash.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\req.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\req.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rsa.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\rsa.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rsautl.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\rsautl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\s_client.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\s_client.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\s_server.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\s_server.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\s_time.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\s_time.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\sess_id.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\sess_id.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\smime.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\smime.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\speed.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\speed.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\spkac.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\spkac.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\srp.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\srp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\storeutl.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\storeutl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ts.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\ts.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\verify.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\verify.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\version.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\version.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\x509.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\x509.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_libctx.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\app_libctx.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_params.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\app_params.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_provider.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\app_provider.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_rand.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\app_rand.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_x509.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\app_x509.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\apps.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\apps.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\apps_ui.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\apps_ui.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\columns.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\columns.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\engine.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\engine.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\engine_loader.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\engine_loader.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\fmt.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\fmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\http_server.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\http_server.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\names.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\names.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\opt.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\opt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\s_cb.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\s_cb.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\s_socket.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\s_socket.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\tlssrp_depr.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\tlssrp_depr.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\win32_init.c">
+      <ObjectFileName>$(IntDir)\openssl\apps\lib\win32_init.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="openssl.vcxproj">
+      <Project>{4A952AB3-FACB-AC7D-1036-A5E586E96363}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>

@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FA553F61-8B4D-6666-C968-AC3A927CA6F3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>openssl-fipsmodule</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="openssl-fipsmodule.props"/>
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\;$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
+    <OutDir>..\..\out\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm;config\archs\VC-WIN32\asm\include;config\archs\VC-WIN32\asm\crypto;config\archs\VC-WIN32\asm\crypto\include\internal;config\archs\VC-WIN32\asm\providers\common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;4090;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;DES_ASM;ECP_NISTZ256_ASM;FIPS_MODULE;GHASH_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdi32.lib;advapi32.lib;crypt32.lib;user32.lib</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm;config\archs\VC-WIN32\asm\include;config\archs\VC-WIN32\asm\crypto;config\archs\VC-WIN32\asm\crypto\include\internal;config\archs\VC-WIN32\asm\providers\common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;DES_ASM;ECP_NISTZ256_ASM;FIPS_MODULE;GHASH_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm;config\archs\VC-WIN32\asm\include;config\archs\VC-WIN32\asm\crypto;config\archs\VC-WIN32\asm\crypto\include\internal;config\archs\VC-WIN32\asm\providers\common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;4090;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;DES_ASM;ECP_NISTZ256_ASM;FIPS_MODULE;GHASH_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdi32.lib;advapi32.lib;crypt32.lib;user32.lib</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>openssl\apps\include;openssl;openssl\include;openssl\crypto;openssl\crypto\include;openssl\crypto\modes;openssl\crypto\ec\curve448;openssl\crypto\ec\curve448\arch_32;openssl\providers\common\include;openssl\providers\implementations\include;config;config\archs\VC-WIN32\asm;config\archs\VC-WIN32\asm\include;config\archs\VC-WIN32\asm\crypto;config\archs\VC-WIN32\asm\crypto\include\internal;config\archs\VC-WIN32\asm\providers\common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;ICU_NO_USER_DATA_OVERRIDE;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NDEBUG;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;AES_ASM;DES_ASM;ECP_NISTZ256_ASM;FIPS_MODULE;GHASH_ASM;OPENSSL_BN_ASM_GF2m;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;SHA1_ASM;SHA256_ASM;SHA512_ASM;VPAES_ASM;OPENSSLDIR=&quot;C:\\Program\ Files\\Common\ Files\\SSL&quot;;ENGINESDIR=&quot;NUL&quot;;L_ENDIAN;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="openssl.gyp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\crypto\aes\aes_ecb.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\aes\aes_ecb.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\aes\aes_misc.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\aes\aes_misc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_add.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_add.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_blind.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_blind.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_const.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_const.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_conv.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_conv.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_ctx.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_ctx.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_dh.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_dh.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_div.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_div.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_exp.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_exp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_exp2.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_exp2.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_gcd.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_gcd.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_gf2m.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_gf2m.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_intern.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_intern.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_kron.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_kron.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_mod.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_mod.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_mont.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_mont.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_mpi.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_mpi.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_mul.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_mul.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_nist.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_nist.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_prime.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_prime.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_rand.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_rand.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_recp.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_recp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_rsa_fips186_4.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_rsa_fips186_4.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_shift.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_shift.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_sqr.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_sqr.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_sqrt.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_sqrt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bn\bn_word.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bn\bn_word.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\buffer\buffer.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\buffer\buffer.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\cmac\cmac.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\cmac\cmac.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\des\ecb3_enc.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\des\ecb3_enc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\des\set_key.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\des\set_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_backend.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_backend.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_check.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_check.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_gen.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_group_params.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_group_params.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_kdf.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_kdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_key.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dh\dh_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dh\dh_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_backend.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_backend.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_check.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_check.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_gen.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_key.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_ossl.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_ossl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_sign.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_sign.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\dsa\dsa_vrf.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\dsa\dsa_vrf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\arch_32\f_impl32.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\arch_32\f_impl32.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\arch_64\f_impl64.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\arch_64\f_impl64.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\curve448.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\curve448.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\curve448_tables.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\curve448_tables.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\eddsa.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\eddsa.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\f_generic.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\f_generic.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve448\scalar.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve448\scalar.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\curve25519.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\curve25519.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec2_oct.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec2_oct.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec2_smpl.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec2_smpl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_asn1.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_asn1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_backend.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_backend.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_check.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_check.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_curve.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_curve.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_cvt.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_cvt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_key.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_kmeth.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_kmeth.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_mult.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_mult.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ec_oct.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ec_oct.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecdh_kdf.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecdh_kdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecdh_ossl.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecdh_ossl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecdsa_ossl.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecdsa_ossl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecdsa_sign.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecdsa_sign.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecdsa_vrf.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecdsa_vrf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecp_mont.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecp_mont.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecp_nist.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecp_nist.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecp_nistz256.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecp_oct.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecp_oct.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecp_smpl.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecp_smpl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecx_backend.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecx_backend.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecx_key.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ec\ecx_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\asymcipher.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\asymcipher.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\dh_support.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\dh_support.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\digest.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\digest.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\ec_support.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\ec_support.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\evp_enc.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\evp_enc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\evp_fetch.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\evp_fetch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\evp_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\evp_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\evp_rand.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\evp_rand.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\evp_utils.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\evp_utils.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\exchange.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\exchange.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\kdf_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\kdf_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\kdf_meth.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\kdf_meth.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\kem.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\kem.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\keymgmt_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\keymgmt_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\keymgmt_meth.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\keymgmt_meth.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\m_sigver.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\m_sigver.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\mac_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\mac_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\mac_meth.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\mac_meth.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\p_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\p_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\pmeth_check.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\pmeth_check.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\pmeth_gn.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\pmeth_gn.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\pmeth_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\pmeth_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\evp\signature.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\evp\signature.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_backend.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_backend.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_dh.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_dh.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_key_generate.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_key_generate.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_key_validate.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_key_validate.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_params.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_params.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_params_generate.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_params_generate.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ffc\ffc_params_validate.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ffc\ffc_params_validate.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\hmac\hmac.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\hmac\hmac.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\lhash\lhash.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\lhash\lhash.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\asn1_dsa.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\asn1_dsa.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\bsearch.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\bsearch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\context.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\context.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\core_algorithm.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\core_algorithm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\core_fetch.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\core_fetch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\core_namemap.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\core_namemap.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\cpuid.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\cpuid.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\cryptlib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\cryptlib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ctype.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ctype.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\der_writer.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\der_writer.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\ex_data.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\ex_data.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\initthread.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\initthread.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\o_str.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\o_str.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\packet.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\packet.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\param_build.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\param_build.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\param_build_set.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\param_build_set.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\params.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\params.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\params_dup.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\params_dup.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\params_from_text.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\params_from_text.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\provider_core.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\provider_core.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\provider_predefined.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\provider_predefined.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\self_test_core.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\self_test_core.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\sparse_array.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\sparse_array.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\threads_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\threads_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\threads_none.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\threads_none.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\threads_pthread.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\threads_pthread.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\threads_win.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\threads_win.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\cbc128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\cbc128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\ccm128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\ccm128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\cfb128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\cfb128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\ctr128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\ctr128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\gcm128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\gcm128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\ofb128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\ofb128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\wrap128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\wrap128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\modes\xts128.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\modes\xts128.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\property\defn_cache.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\property\defn_cache.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\property\property.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\property\property.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\property\property_parse.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\property\property_parse.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\property\property_query.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\property\property_query.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\property\property_string.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\property\property_string.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rand\rand_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rand\rand_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_acvp_test_params.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_acvp_test_params.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_backend.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_backend.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_chk.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_chk.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_crpt.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_crpt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_gen.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_lib.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_mp_names.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_mp_names.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_none.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_none.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_oaep.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_oaep.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_ossl.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_ossl.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_pk1.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_pk1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_pss.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_pss.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_schemes.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_schemes.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_sign.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_sign.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_sp800_56b_check.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_sp800_56b_check.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_sp800_56b_gen.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_sp800_56b_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\rsa\rsa_x931.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\rsa\rsa_x931.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\sha\keccak1600.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\sha\keccak1600.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\sha\sha1dgst.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\sha\sha1dgst.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\sha\sha256.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\sha\sha256.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\sha\sha3.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\sha\sha3.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\sha\sha512.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\sha\sha512.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\crypto\stack\stack.c">
+      <ObjectFileName>$(IntDir)\openssl\crypto\stack\stack.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_rsa_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_rsa_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\bio_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\bio_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\capabilities.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\capabilities.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\digest_to_nid.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\digest_to_nid.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\provider_seeding.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\provider_seeding.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\provider_util.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\provider_util.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\securitycheck.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\securitycheck.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\securitycheck_fips.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\securitycheck_fips.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\fips\fipsprov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\fips\fipsprov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\fips\self_test.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\fips\self_test.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\fips\self_test_kats.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\fips\self_test_kats.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\asymciphers\rsa_enc.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\asymciphers\rsa_enc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_ccm.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_ccm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_ccm_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_ccm_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_gcm.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_gcm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_gcm_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_gcm_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_ocb.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_ocb.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_ocb_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_ocb_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_wrp.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_wrp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_xts.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_xts.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_xts_fips.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_xts_fips.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_aes_xts_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_aes_xts_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_cts.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_cts.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_tdes.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_tdes.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_tdes_common.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_tdes_common.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\cipher_tdes_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\cipher_tdes_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\digests\sha2_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\digests\sha2_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\digests\sha3_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\digests\sha3_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\exchange\dh_exch.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\exchange\dh_exch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\exchange\ecdh_exch.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\exchange\ecdh_exch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\exchange\ecx_exch.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\exchange\ecx_exch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\exchange\kdf_exch.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\exchange\kdf_exch.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\hkdf.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\hkdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\kbkdf.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\kbkdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\pbkdf2.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\pbkdf2.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\pbkdf2_fips.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\pbkdf2_fips.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\sshkdf.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\sshkdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\sskdf.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\sskdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\tls1_prf.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\tls1_prf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kdfs\x942kdf.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kdfs\x942kdf.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\kem\rsa_kem.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\kem\rsa_kem.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\dh_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\dh_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\dsa_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\dsa_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\ec_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\ec_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\ecx_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\ecx_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\kdf_legacy_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\kdf_legacy_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\mac_legacy_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\mac_legacy_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\keymgmt\rsa_kmgmt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\keymgmt\rsa_kmgmt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\macs\cmac_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\macs\cmac_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\macs\gmac_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\macs\gmac_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\macs\hmac_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\macs\hmac_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\macs\kmac_prov.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\macs\kmac_prov.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\rands\crngt.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\rands\crngt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\rands\drbg.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\rands\drbg.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\rands\drbg_ctr.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\rands\drbg_ctr.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\rands\drbg_hash.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\rands\drbg_hash.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\rands\drbg_hmac.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\rands\drbg_hmac.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\rands\test_rng.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\rands\test_rng.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\signature\dsa_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\signature\dsa_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\signature\ecdsa_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\signature\ecdsa_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\signature\eddsa_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\signature\eddsa_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\signature\mac_legacy_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\signature\mac_legacy_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\signature\rsa_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\signature\rsa_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\ssl\s3_cbc.c">
+      <ObjectFileName>$(IntDir)\openssl\ssl\s3_cbc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_dsa_key.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_dsa_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_dsa_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_dsa_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_ec_key.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_ec_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_ec_sig.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_ec_sig.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_ecx_key.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_ecx_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\der\der_rsa_key.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\der\der_rsa_key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\provider_ctx.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\provider_ctx.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\common\provider_err.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\common\provider_err.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon_block.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon_block.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon_ccm.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon_ccm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon_ccm_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon_ccm_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon_gcm.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon_gcm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon_gcm_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon_gcm_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\ciphers\ciphercommon_hw.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\ciphers\ciphercommon_hw.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\implementations\digests\digestcommon.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\implementations\digests\digestcommon.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\ssl\record\tls_pad.c">
+      <ObjectFileName>$(IntDir)\openssl\ssl\record\tls_pad.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="openssl\providers\fips\fips_entry.c">
+      <ObjectFileName>$(IntDir)\openssl\providers\fips\fips_entry.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_sm2_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_sm2_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_digests_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_digests_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_dsa_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_dsa_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_ec_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_ec_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_ecx_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_ecx_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_rsa_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_rsa_gen.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\providers\common\der\der_wrap_gen.c">
+      <ObjectFileName>$(IntDir)\config\archs\VC-WIN32\asm\providers\common\der\der_wrap_gen.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\aes\aes-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\aes\aesni-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\aes\vpaes-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\bf\bf-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\bn\bn-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\bn\co-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\bn\x86-gf2m.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\bn\x86-mont.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\camellia\cmll-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\chacha\chacha-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\des\crypt586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\des\des-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\ec\ecp_nistz256-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\x86cpuid.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\md5\md5-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\modes\ghash-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\poly1305\poly1305-x86.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\rc4\rc4-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\ripemd\rmd-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\sha\sha1-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\sha\sha256-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\sha\sha512-586.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\crypto\whrlpool\wp-mmx.asm"/>
+    <Assemble Include="config\archs\VC-WIN32\asm\engines\e_padlock-x86.asm"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="openssl-cli.vcxproj">
+      <Project>{492659C8-7892-FD1D-EA1D-B8B0C54188B7}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="openssl-fipsmodule.targets"/>
+  </ImportGroup>
+</Project>

@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2022
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openssl-cli", "openssl-cli.vcxproj", "{492659C8-7892-FD1D-EA1D-B8B0C54188B7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A952AB3-FACB-AC7D-1036-A5E586E96363} = {4A952AB3-FACB-AC7D-1036-A5E586E96363}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openssl-fipsmodule", "openssl-fipsmodule.vcxproj", "{FA553F61-8B4D-6666-C968-AC3A927CA6F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{492659C8-7892-FD1D-EA1D-B8B0C54188B7} = {492659C8-7892-FD1D-EA1D-B8B0C54188B7}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openssl", "openssl.vcxproj", "{4A952AB3-FACB-AC7D-1036-A5E586E96363}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{492659C8-7892-FD1D-EA1D-B8B0C54188B7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{492659C8-7892-FD1D-EA1D-B8B0C54188B7}.Debug|Win32.Build.0 = Debug|Win32
+		{492659C8-7892-FD1D-EA1D-B8B0C54188B7}.Release|Win32.ActiveCfg = Release|Win32
+		{492659C8-7892-FD1D-EA1D-B8B0C54188B7}.Release|Win32.Build.0 = Release|Win32
+		{4A952AB3-FACB-AC7D-1036-A5E586E96363}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A952AB3-FACB-AC7D-1036-A5E586E96363}.Debug|Win32.Build.0 = Debug|Win32
+		{4A952AB3-FACB-AC7D-1036-A5E586E96363}.Release|Win32.ActiveCfg = Release|Win32
+		{4A952AB3-FACB-AC7D-1036-A5E586E96363}.Release|Win32.Build.0 = Release|Win32
+		{FA553F61-8B4D-6666-C968-AC3A927CA6F3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FA553F61-8B4D-6666-C968-AC3A927CA6F3}.Debug|Win32.Build.0 = Debug|Win32
+		{FA553F61-8B4D-6666-C968-AC3A927CA6F3}.Release|Win32.ActiveCfg = Release|Win32
+		{FA553F61-8B4D-6666-C968-AC3A927CA6F3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

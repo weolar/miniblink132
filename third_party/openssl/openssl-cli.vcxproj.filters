@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{31A163C0-193D-20CC-1C7F-55B57F22C481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\archs">
+      <UniqueIdentifier>{AA4DFAFC-A515-321B-F21B-806B4E0317EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\archs\VC-WIN32">
+      <UniqueIdentifier>{FF4917ED-84E4-78E9-C0EA-E260DAAAB3F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\archs\VC-WIN32\asm">
+      <UniqueIdentifier>{FCB20295-9805-239A-10B2-41A081E97F07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\archs\VC-WIN32\asm\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl">
+      <UniqueIdentifier>{A2039617-BE22-2E2D-B4F3-3B64B7BAFB84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps">
+      <UniqueIdentifier>{FF146ABB-CCAF-AE8D-FCAE-A2FDD3368B36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="openssl\apps\lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\apps\lib\cmp_mock_srv.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\asn1parse.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ca.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ciphers.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\cmp.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\cms.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\crl.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\crl2pkcs7.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dgst.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dhparam.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dsa.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\dsaparam.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ec.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ecparam.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\enc.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\engine.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\errstr.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\fipsinstall.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\gendsa.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\genpkey.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\genrsa.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\info.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\kdf.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\list.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\mac.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\nseq.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ocsp.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\openssl.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\passwd.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkcs12.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkcs7.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkcs8.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkey.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkeyparam.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\pkeyutl.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\prime.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="config\archs\VC-WIN32\asm\apps\progs.c">
+      <Filter>config\archs\VC-WIN32\asm\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rand.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rehash.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\req.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rsa.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\rsautl.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\s_client.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\s_server.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\s_time.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\sess_id.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\smime.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\speed.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\spkac.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\srp.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\storeutl.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\ts.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\verify.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\version.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\x509.c">
+      <Filter>openssl\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_libctx.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_params.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_provider.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_rand.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\app_x509.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\apps.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\apps_ui.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\columns.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\engine.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\engine_loader.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\fmt.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\http_server.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\names.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\opt.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\s_cb.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\s_socket.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\tlssrp_depr.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="openssl\apps\lib\win32_init.c">
+      <Filter>openssl\apps\lib</Filter>
+    </ClCompile>
+    <None Include="openssl.gyp"/>
+  </ItemGroup>
+</Project>

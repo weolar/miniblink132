@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crdtp">
+      <UniqueIdentifier>{DC7FD4A3-4B4A-D4BD-88F3-E906A67B2BE7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crdtp\cbor.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\cbor.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\dispatch.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\dispatch.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\error_support.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\error_support.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="crdtp\export.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="crdtp\find_by_first.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="crdtp\frontend_channel.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\json.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\json.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\json_platform.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\json_platform.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="crdtp\maybe.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClInclude Include="crdtp\parser_handler.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\protocol_core.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\protocol_core.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\serializable.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\serializable.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\span.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\span.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <ClCompile Include="crdtp\status.cc">
+      <Filter>crdtp</Filter>
+    </ClCompile>
+    <ClInclude Include="crdtp\status.h">
+      <Filter>crdtp</Filter>
+    </ClInclude>
+    <None Include="inspector_protocol.gyp"/>
+  </ItemGroup>
+</Project>

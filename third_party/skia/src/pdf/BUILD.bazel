@@ -1,0 +1,99 @@
+load("//bazel:skia_rules.bzl", "generate_cpp_files_for_headers", "skia_cc_library", "split_srcs_and_hdrs")
+
+package(
+    default_applicable_licenses = ["//:license"],
+)
+
+licenses(["notice"])
+
+PDF_FILES = [
+    "SkBitmapKey.h",
+    "SkClusterator.cpp",
+    "SkClusterator.h",
+    "SkDeflate.cpp",
+    "SkDeflate.h",
+    "SkKeyedImage.cpp",
+    "SkKeyedImage.h",
+    "SkPDFBitmap.cpp",
+    "SkPDFBitmap.h",
+    "SkPDFDevice.cpp",
+    "SkPDFDevice.h",
+    "SkPDFDocument.cpp",
+    "SkPDFDocumentPriv.h",
+    "SkPDFFont.cpp",
+    "SkPDFFont.h",
+    "SkPDFFormXObject.cpp",
+    "SkPDFFormXObject.h",
+    "SkPDFGlyphUse.h",
+    "SkPDFGradientShader.cpp",
+    "SkPDFGradientShader.h",
+    "SkPDFGraphicStackState.cpp",
+    "SkPDFGraphicStackState.h",
+    "SkPDFGraphicState.cpp",
+    "SkPDFGraphicState.h",
+    "SkPDFMakeCIDGlyphWidthsArray.cpp",
+    "SkPDFMakeCIDGlyphWidthsArray.h",
+    "SkPDFMakeToUnicodeCmap.cpp",
+    "SkPDFMakeToUnicodeCmap.h",
+    "SkPDFMetadata.cpp",
+    "SkPDFMetadata.h",
+    "SkPDFResourceDict.cpp",
+    "SkPDFResourceDict.h",
+    "SkPDFShader.cpp",
+    "SkPDFShader.h",
+    "SkPDFSubsetFont.cpp",
+    "SkPDFSubsetFont.h",
+    "SkPDFTag.cpp",
+    "SkPDFTag.h",
+    "SkPDFType1Font.cpp",
+    "SkPDFType1Font.h",
+    "SkPDFTypes.cpp",
+    "SkPDFTypes.h",
+    "SkPDFUnion.h",
+    "SkPDFUtils.cpp",
+    "SkPDFUtils.h",
+    "SkUUID.h",
+]
+
+split_srcs_and_hdrs(
+    name = "_pdf",
+    files = PDF_FILES,
+)
+
+generate_cpp_files_for_headers(
+    name = "headers_to_compile",
+    headers = [
+        "SkBitmapKey.h",
+        "SkPDFDocumentPriv.h",
+        "SkPDFUnion.h",
+        "SkUUID.h",
+    ],
+)
+
+skia_cc_library(
+    name = "pdf",
+    srcs = [
+        ":_pdf_hdrs",
+        ":_pdf_srcs",
+    ],
+    hdrs = [
+        "//include/docs:pdf_hdrs",
+    ],
+    local_defines = ["SK_PDF_USE_HARFBUZZ_SUBSET"],
+    visibility = ["//:__pkg__"],
+    deps = [
+        "//:core",
+        "//:jpeg_decode_codec",
+        "//:jpeg_encode_codec",
+        "//:pathops",
+        "//src/core:core_priv",
+        "//src/utils:clip_stack_utils",
+        "//src/utils:float_to_decimal",
+        "@zlib_skia//:zlib",
+    ] +
+    # We have this harfbuzz dependency all by itself because we need to turn this into a
+    # select statement when rolling into G3.
+    [
+        "@harfbuzz",
+    ],
+)

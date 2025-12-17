@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\decompress">
+      <UniqueIdentifier>{1078AABD-6343-D5C9-A316-62212A773C50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\common">
+      <UniqueIdentifier>{2F5FD094-EF52-77F7-7AA8-4327A01BF747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\compress">
+      <UniqueIdentifier>{ABF298C8-0A72-F718-7FD1-15EAFDF17A29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\decompress">
+      <UniqueIdentifier>{1078AABD-6343-D5C9-A316-62212A773C50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\decompress">
+      <UniqueIdentifier>{1078AABD-6343-D5C9-A316-62212A773C50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{2739B19F-16DF-601C-060A-FF86F6A40045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\decompress">
+      <UniqueIdentifier>{1078AABD-6343-D5C9-A316-62212A773C50}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\common\debug.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\entropy_common.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\fse_decompress.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\fse_compress.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\huf_compress.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\decompress\huf_decompress.c">
+      <Filter>lib\decompress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\pool.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\threading.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\xxhash.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\zstd_common.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\common\error_private.c">
+      <Filter>lib\common</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\hist.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_compress.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_compress_literals.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_compress_sequences.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_compress_superblock.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_double_fast.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_fast.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_lazy.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_ldm.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstd_opt.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\compress\zstdmt_compress.c">
+      <Filter>lib\compress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\decompress\zstd_ddict.c">
+      <Filter>lib\decompress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\decompress\zstd_decompress.c">
+      <Filter>lib\decompress</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\decompress\zstd_decompress_block.c">
+      <Filter>lib\decompress</Filter>
+    </ClCompile>
+    <None Include="zstd.gyp"/>
+  </ItemGroup>
+</Project>

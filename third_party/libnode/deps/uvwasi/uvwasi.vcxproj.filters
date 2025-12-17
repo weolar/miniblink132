@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\clocks.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fd_table.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\path_resolver.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\poll_oneoff.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sync_helpers.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uv_mapping.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uvwasi.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wasi_rights.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wasi_serdes.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <None Include="uvwasi.gyp"/>
+  </ItemGroup>
+</Project>
