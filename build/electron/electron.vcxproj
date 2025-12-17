@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -29,6 +37,7 @@
     <ClCompile Include="..\..\electron\browser\api\ApiMenu.cpp" />
     <ClCompile Include="..\..\electron\browser\api\ApiMessagePortMain.cpp" />
     <ClCompile Include="..\..\electron\browser\api\ApiParentPort.cpp" />
+    <ClCompile Include="..\..\electron\browser\api\ApiPowerMonitor.cpp" />
     <ClCompile Include="..\..\electron\browser\api\ApiProtocol.cpp" />
     <ClCompile Include="..\..\electron\browser\api\ApiSafestorage.cpp" />
     <ClCompile Include="..\..\electron\browser\api\ApiSession.cpp" />
@@ -44,6 +53,7 @@
     <ClCompile Include="..\..\electron\browser\api\WindowList.cpp" />
     <ClCompile Include="..\..\electron\common\api\ApiAsar.cpp" />
     <ClCompile Include="..\..\electron\common\api\ApiClipboard.cpp" />
+    <ClCompile Include="..\..\electron\common\api\ApiFeatures.cpp" />
     <ClCompile Include="..\..\electron\common\api\ApiIntlCollator.cpp" />
     <ClCompile Include="..\..\electron\common\api\ApiNativeImage.cpp" />
     <ClCompile Include="..\..\electron\common\api\ApiOriginalFs.cpp" />
@@ -221,7 +231,20 @@
     <PlatformToolset>ClangCL</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
@@ -244,7 +267,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -265,9 +294,17 @@
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
     <TargetName>$(TargetName)_x64</TargetName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <TargetName>$(TargetName)_x64</TargetName>
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+    <TargetName>$(TargetName)_x64_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <TargetName>$(TargetName)_x64_d</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -292,7 +329,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)mb_renderer.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)gen_2.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x32_1.lib;$(OutDir)v8_gen_x32_2.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x32_1.lib;$(OutDir)v8_gen_x32_2.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;Wtsapi32.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/errorlimit:0 %(AdditionalOptions)</AdditionalOptions>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
@@ -327,7 +364,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(SolutionDir)../patch_code/YY_Thunks_x86.obj;$(SolutionDir)../patch_code/YY_Thunks_weak_x86.obj;$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)mb_renderer.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)gen_2.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x32_1.lib;$(OutDir)v8_gen_x32_2.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)../patch_code/YY_Thunks_x86.obj;$(SolutionDir)../patch_code/YY_Thunks_weak_x86.obj;$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x32_1.lib;$(OutDir)v8_gen_x32_2.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
       <AdditionalOptions>/errorlimit:0 %(AdditionalOptions)</AdditionalOptions>
@@ -357,10 +394,35 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)mb_renderer.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)gen_2.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x64_1.lib;$(OutDir)v8_gen_x64_2.lib;$(OutDir)v8_gen_x64_3.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x64_1.lib;$(OutDir)v8_gen_x64_2.lib;$(OutDir)v8_gen_x64_3.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;Wtsapi32.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <StackReserveSize>3000000</StackReserveSize>
       <StackCommitSize>12000</StackCommitSize>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WIN32;WIN32_LEAN_AND_MEAN;NOMINMAX;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;USE_AURA;INSIDE_BLINK;V8_ENABLE_CHECKS;OS_WIN;SK_SUPPORT_LEGACY_DRAWLOOPER;_WINSOCK_DEPRECATED_NO_WARNINGS;ENABLE_MB=1;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;ICU_NO_USER_DATA_OVERRIDE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;NODE_ARCH="ia32";NODE_WANT_INTERNALS=1;V8_DEPRECATION_WARNINGS=1;NODE_OPENSSL_SYSTEM_CERT_PATH="";NODE_USE_NODE_CODE_CACHE=1;HAVE_INSPECTOR=1;FD_SETSIZE=1024;NODE_PLATFORM="win32";NODE_USE_V8_PLATFORM=1;NODE_V8_SHARED_RO_HEAP;NODE_HAVE_I18N_SUPPORT=1;NODE_BUNDLED_ZLIB;HAVE_OPENSSL=1;OPENSSL_API_COMPAT=0x10100000L;BASE64_STATIC_DEFINE;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;NGHTTP2_STATICLIB;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;OPENSSL_PIC;NGTCP2_STATICLIB;NGHTTP3_STATICLIB;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../electron;$(SolutionDir)../third_party/libnode/deps/simdjson;$(SolutionDir)../third_party/libuv/include;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x64_1.lib;$(OutDir)v8_gen_x64_2.lib;$(OutDir)v8_gen_x64_3.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>3000000</StackReserveSize>
+      <StackCommitSize>12000</StackCommitSize>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -391,8 +453,47 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(SolutionDir)../patch_code/YY_Thunks_x64.obj;$(SolutionDir)../patch_code/YY_Thunks_weak_x64.obj;$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)mb_renderer.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)gen_2.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x64_1.lib;$(OutDir)v8_gen_x64_2.lib;$(OutDir)v8_gen_x64_3.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)../patch_code/YY_Thunks_x64.obj;$(SolutionDir)../patch_code/YY_Thunks_weak_x64.obj;$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x64_1.lib;$(OutDir)v8_gen_x64_2.lib;$(OutDir)v8_gen_x64_3.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+    </Link>
+    <ResourceCompile>
+      <ResourceOutputFileName>$(IntDir)%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WIN32;WIN32_LEAN_AND_MEAN;NOMINMAX;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;USE_AURA;INSIDE_BLINK;V8_ENABLE_CHECKS;OS_WIN;SK_SUPPORT_LEGACY_DRAWLOOPER;_WINSOCK_DEPRECATED_NO_WARNINGS;ENABLE_MB=1;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;ICU_NO_USER_DATA_OVERRIDE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;NODE_ARCH="ia32";NODE_WANT_INTERNALS=1;V8_DEPRECATION_WARNINGS=1;NODE_OPENSSL_SYSTEM_CERT_PATH="";NODE_USE_NODE_CODE_CACHE=1;HAVE_INSPECTOR=1;FD_SETSIZE=1024;NODE_PLATFORM="win32";NODE_USE_V8_PLATFORM=1;NODE_V8_SHARED_RO_HEAP;NODE_HAVE_I18N_SUPPORT=1;NODE_BUNDLED_ZLIB;HAVE_OPENSSL=1;OPENSSL_API_COMPAT=0x10100000L;BASE64_STATIC_DEFINE;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;NGHTTP2_STATICLIB;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;OPENSSL_PIC;NGTCP2_STATICLIB;NGHTTP3_STATICLIB;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../electron;$(SolutionDir)../third_party/libnode/deps/simdjson;$(SolutionDir)../third_party/libuv/include;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)../patch_code/YY_Thunks_x64.obj;$(SolutionDir)../patch_code/YY_Thunks_weak_x64.obj;$(OutDir)libnode.lib;$(OutDir)libuv.lib;$(OutDir)mb_platform.lib;$(OutDir)miniblink132.lib;$(OutDir)chromium.lib;$(OutDir)gen_1.lib;$(OutDir)harfbuzz.lib;$(OutDir)icu.lib;$(OutDir)skia.lib;$(OutDir)util.lib;$(OutDir)v8_1.lib;$(OutDir)v8_2.lib;$(OutDir)v8_3.lib;$(OutDir)v8_gen_x64_1.lib;$(OutDir)v8_gen_x64_2.lib;$(OutDir)v8_gen_x64_3.lib;$(OutDir)v8_gin.lib;$(OutDir)openssl.lib;Kernel32.lib;Psapi.lib;Wldap32.lib;Userenv.lib;Dbghelp.lib;Crypt32.lib;Winmm.lib;Shlwapi.lib;Imm32.lib;gdiplus.lib;Usp10.lib;SetupAPI.lib;Cfgmgr32.lib;Version.lib;Shcore.lib;PowrProf.lib;Propsys.lib;runtimeobject.lib;Dwmapi.lib;mincore.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>W:\test\web_test\yunci\ru1\minielectron_x64.exe</OutputFile>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
     </Link>
     <ResourceCompile>
       <ResourceOutputFileName>$(IntDir)%(Filename).res</ResourceOutputFileName>

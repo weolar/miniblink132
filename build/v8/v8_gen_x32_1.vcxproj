@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -46,7 +54,20 @@
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
@@ -67,7 +88,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -83,6 +110,7 @@
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
@@ -166,7 +194,49 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;DEBUG;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_NO_ASM;V8_TARGET_ARCH_X64;NOMINMAX;_WIN32_WINNT=0x0602;ENABLE_DISASSEMBLER;OBJECT_PRINT;V8_INTL_SUPPORT;V8_USE_EXTERNAL_STARTUP_DATA;V8_GYP_BUILD;V8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;V8_EMBEDDER_STRING1111="-node.8";V8_PROMISE_INTERNAL_FIELD_COUNT=1;V8_SHORT_BUILTIN_CALLS;V8_ATOMIC_OBJECT_FIELD_WRITES;V8_ENABLE_LAZY_SOURCE_POSITIONS;V8_USE_SIPHASH;V8_SHARED_RO_HEAP;V8_WIN64_UNWINDING_INFO;V8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH;V8_USE_ZLIB;V8_ENABLE_SYSTEM_INSTRUMENTATION;V8_ENABLE_ETW_STACK_WALKING;V8_ENABLE_WEBASSEMBLY;V8_ENABLE_JAVASCRIPT_PROMISE_HOOKS;V8_ALLOCATION_FOLDING;V8_ALLOCATION_SITE_TRACKING;V8_ADVANCED_BIGINT_ALGORITHMS;V8_ENABLE_CHECKS;V8_ENABLE_ALLOCATION_TIMEOUT;V8_ENABLE_FORCE_SLOW_PATH;ENABLE_HANDLE_ZAPPING;ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_SHARED;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../gen/v8;$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../v8;$(SolutionDir)../v8/include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251;4275;4661;4661;4291;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;NODE_OPENSSL_HAS_QUIC;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;OPENSSL_NO_ASM;V8_TARGET_ARCH_X64;NOMINMAX;_WIN32_WINNT=0x0602;ENABLE_DISASSEMBLER;OBJECT_PRINT;V8_INTL_SUPPORT;V8_USE_EXTERNAL_STARTUP_DATA;V8_GYP_BUILD;V8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;V8_EMBEDDER_STRING22="-node.8";V8_PROMISE_INTERNAL_FIELD_COUNT=1;V8_SHORT_BUILTIN_CALLS;V8_ATOMIC_OBJECT_FIELD_WRITES;V8_ENABLE_LAZY_SOURCE_POSITIONS;V8_USE_SIPHASH;V8_SHARED_RO_HEAP;V8_WIN64_UNWINDING_INFO;V8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH;V8_USE_ZLIB;V8_ENABLE_SYSTEM_INSTRUMENTATION;V8_ENABLE_ETW_STACK_WALKING;V8_ENABLE_WEBASSEMBLY;V8_ENABLE_JAVASCRIPT_PROMISE_HOOKS;V8_ALLOCATION_FOLDING;V8_ALLOCATION_SITE_TRACKING;V8_ADVANCED_BIGINT_ALGORITHMS;V8_ENABLE_ALLOCATION_TIMEOUT;V8_ENABLE_FORCE_SLOW_PATH;ENABLE_HANDLE_ZAPPING;ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_SHARED;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../gen/v8;$(SolutionDir)../gen;$(SolutionDir)../;$(SolutionDir)../v8;$(SolutionDir)../v8/include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251;4275;4661;4661;4291;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>

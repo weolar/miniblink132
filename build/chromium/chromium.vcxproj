@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -45,7 +53,20 @@
     <PlatformToolset>ClangCL</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
@@ -66,7 +87,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -82,9 +109,14 @@
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -160,6 +192,25 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;OS_WIN;MINIBLINK108_EXPORTS;WIN32_LEAN_AND_MEAN;_WINDOWS;NOMINMAX;_USRDLL;USE_AURA;WCHAR_T_IS_16_BIT;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -182,6 +233,38 @@
       <OmitFramePointers>false</OmitFramePointers>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;OS_WIN;MINIBLINK108_EXPORTS;WIN32_LEAN_AND_MEAN;_WINDOWS;NOMINMAX;_USRDLL;USE_AURA;WCHAR_T_IS_16_BIT;SUPPORT_XP_CODE=1;U_STATIC_IMPLEMENTATION;U_DEFINE_FALSE_AND_TRUE;LIBXML_STATIC;LIBXSLT_STATIC;CURL_STATICLIB;SK_SUPPORT_LEGACY_DRAWLOOPER;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;INSIDE_BLINK=1;ENABLE_MB=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/iccjpeg;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libwebp/src/src;$(SolutionDir)../third_party/libpng;$(SolutionDir)../third_party/harfbuzz-ng/src/src;$(SolutionDir)../third_party/khronos;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src/;$(SolutionDir)../;$(SolutionDir)../gen/;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../v8/include;$(SolutionDir)../third_party/skia;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libxml/win32/include;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include;$(SolutionDir)../gpu</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>
+      </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -1862,6 +1945,7 @@
     <ClInclude Include="..\..\ui\base\cursor\cursor_size.h" />
     <ClInclude Include="..\..\ui\base\cursor\platform_cursor.h" />
     <ClInclude Include="..\..\ui\base\data_transfer_policy\data_transfer_endpoint.h" />
+    <ClInclude Include="..\..\ui\base\idle\idle.h" />
     <ClInclude Include="..\..\ui\base\ime\ime_text_span.h" />
     <ClInclude Include="..\..\ui\base\mojom\clipboard_blink_mojom_traits.h" />
     <ClInclude Include="..\..\ui\base\mojom\ui_base_types_mojom_traits.h" />
@@ -1874,6 +1958,8 @@
     <ClInclude Include="..\..\ui\base\ui_base_switches_util.h" />
     <ClInclude Include="..\..\ui\base\ui_base_types.h" />
     <ClInclude Include="..\..\ui\base\win\internal_constants.h" />
+    <ClInclude Include="..\..\ui\base\win\lock_state.h" />
+    <ClInclude Include="..\..\ui\base\win\session_change_observer.h" />
     <ClInclude Include="..\..\ui\base\win\shell.h" />
     <ClInclude Include="..\..\ui\color\color_id.h" />
     <ClInclude Include="..\..\ui\color\color_mixer.h" />
@@ -3154,12 +3240,17 @@
     <ClCompile Include="..\..\ui\base\clipboard\url_file_parser.cc" />
     <ClCompile Include="..\..\ui\base\cursor\cursor.cc" />
     <ClCompile Include="..\..\ui\base\data_transfer_policy\data_transfer_endpoint.cc" />
+    <ClCompile Include="..\..\ui\base\idle\idle.cc" />
+    <ClCompile Include="..\..\ui\base\idle\idle_internal.cc" />
+    <ClCompile Include="..\..\ui\base\idle\idle_win.cc" />
     <ClCompile Include="..\..\ui\base\ime\ime_text_span.cc" />
     <ClCompile Include="..\..\ui\base\prediction\empty_predictor.cc" />
     <ClCompile Include="..\..\ui\base\prediction\prediction_metrics_handler.cc" />
     <ClCompile Include="..\..\ui\base\ui_base_features_lite.cc" />
     <ClCompile Include="..\..\ui\base\ui_base_switches_util.cc" />
     <ClCompile Include="..\..\ui\base\win\internal_constants.cc" />
+    <ClCompile Include="..\..\ui\base\win\lock_state.cc" />
+    <ClCompile Include="..\..\ui\base\win\session_change_observer.cc" />
     <ClCompile Include="..\..\ui\base\win\shell.cc" />
     <ClCompile Include="..\..\ui\color\color_mixer.cc" />
     <ClCompile Include="..\..\ui\color\color_mixers.cc" />

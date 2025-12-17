@@ -3460,6 +3460,9 @@
     <ClInclude Include="..\..\content\renderer\DataHostImpl.h">
       <Filter>src\content\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\content\resources\FakeIndexeddb.h">
+      <Filter>src\content\resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\url\third_party\mozilla\url_parse.cc">

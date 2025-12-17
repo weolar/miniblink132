@@ -699,9 +699,10 @@ void sortStr();
 void findLinkError();
 int codeSizeViewmmain();
 void findChromiumIco();
-
+std::string genNapiStub();
 void testMain()
 {
+    //genNapiStub();
     //findChromiumIco();
     //codeSizeViewmmain();
     //sortStr();
@@ -741,14 +742,14 @@ void testMain()
     //ssFileToCC("W:\\mycode\\mb108\\content\\resources\\embedded_linux_arm64.S", "W:\\mycode\\mb108\\content\\resources\\embedded_linux_arm64.cc");
     //printRepetition();
     //genHexFile();
-    //printVcxproj("W:\\mycode\\guomi\\src_import\\third_party\\boringssl\\boringssl.vcxproj.filters");
+    //printVcxproj("W:\\mycode\\mb108\\build\\util\\util.vcxproj.filters");
     //printVcxproj("G:\\mycode\\miniblink57\\build\\tassl\\tassl.vcxproj.filters");
     //printVcxproj("G:\\mycode\\miniblink57\\build\\tongsuo\\tongsuo.vcxproj.filters");
-    printVcxproj("W:\\mycode\\mb108\\build\\miniblink108\\gen_2.vcxproj.filters");
+    //printVcxproj("W:\\mycode\\mb108\\build\\miniblink108\\gen_2.vcxproj.filters");
 
-    //formatClang(L"G:\\test\\exe_test\\apache-tomcat-7.0.79");
+    //formatClang(L"W:\\mycode\\mb108\\webdriver\\civetweb");
 //     formatClang(L"W:\\mycode\\mb108\\third_party\\libuv");
-    //formatClang(L"W:\\mycode\\mb108\\third_party\\re2\\");
+    //formatClang(L"W:\\mycode\\mb132\\out\\win_Debug_x64\\resources\\app\\node_modules\\@serialport\\bindings-cpp\\src");
 
     //clearMojo();
 

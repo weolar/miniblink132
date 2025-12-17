@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -607,7 +615,20 @@
     <PlatformToolset>ClangCL</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
@@ -630,7 +651,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -643,6 +670,10 @@
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
@@ -730,6 +761,24 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WIN32;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;ICU_NO_USER_DATA_OVERRIDE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NODE_ARCH="x64";NODE_WANT_INTERNALS=1;V8_DEPRECATION_WARNINGS=1;NODE_OPENSSL_SYSTEM_CERT_PATH="";NODE_USE_NODE_CODE_CACHE=1;HAVE_INSPECTOR=1;FD_SETSIZE=1024;NODE_PLATFORM="win32";NOMINMAX;_UNICODE=1;NODE_USE_V8_PLATFORM=1;NODE_V8_SHARED_RO_HEAP;NODE_HAVE_I18N_SUPPORT=1;NODE_BUNDLED_ZLIB;HAVE_OPENSSL=1;OPENSSL_API_COMPAT=0x10100000L;BASE64_STATIC_DEFINE;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;NGHTTP2_STATICLIB;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;OPENSSL_PIC;NGTCP2_STATICLIB;NGHTTP3_STATICLIB;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../v8/include;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/inspector_protocol;$(SolutionDir)../third_party/libuv/include;$(SolutionDir)../third_party/cares/include;$(SolutionDir)../third_party/libnode/src;$(SolutionDir)../third_party/libnode/gen;$(SolutionDir)../third_party/libnode/gen/src;$(SolutionDir)../third_party/libnode/deps/ncrypto;$(SolutionDir)../third_party/libnode/deps/simdutf;$(SolutionDir)../third_party/libnode/deps/nbytes/include;$(SolutionDir)../third_party/libnode/deps/ada;$(SolutionDir)../third_party/libnode/deps/histogram/include;$(SolutionDir)../third_party/libnode/deps/base64/base64/include;$(SolutionDir)../third_party/libnode/deps/uvwasi/include;$(SolutionDir)../third_party/libnode/deps/simdjson;$(SolutionDir)../third_party/libnode/deps/llhttp/include;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include/</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -752,6 +801,38 @@
       <OmitFramePointers>false</OmitFramePointers>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WIN32;_GLIBCXX_USE_CXX11_ABI=1;NODE_OPENSSL_CONF_NAME=nodejs_conf;ICU_NO_USER_DATA_OVERRIDE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NODE_ARCH="x64";NODE_WANT_INTERNALS=1;V8_DEPRECATION_WARNINGS=1;NODE_OPENSSL_SYSTEM_CERT_PATH="";NODE_USE_NODE_CODE_CACHE=1;HAVE_INSPECTOR=1;FD_SETSIZE=1024;NODE_PLATFORM="win32";NOMINMAX;_UNICODE=1;NODE_USE_V8_PLATFORM=1;NODE_V8_SHARED_RO_HEAP;NODE_HAVE_I18N_SUPPORT=1;NODE_BUNDLED_ZLIB;HAVE_OPENSSL=1;OPENSSL_API_COMPAT=0x10100000L;BASE64_STATIC_DEFINE;UCONFIG_NO_SERVICE=1;U_ENABLE_DYLOAD=0;U_STATIC_IMPLEMENTATION=1;U_HAVE_STD_STRING=1;UCONFIG_NO_BREAK_ITERATION=0;NGHTTP2_STATICLIB;OPENSSL_BUILDING_OPENSSL;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WINSOCK_DEPRECATED_NO_WARNINGS;OPENSSL_PIC;NGTCP2_STATICLIB;NGHTTP3_STATICLIB;V8_USE_EXTERNAL_STARTUP_DATA;V8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0;V8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0;V8_PROMISE_INTERNAL_FIELD_COUNT=0;V8_COMPRESS_POINTERS;V8_COMPRESS_POINTERS_IN_SHARED_CAGE;V8_31BIT_SMIS_ON_64BIT_ARCH;V8_DEPRECATION_WARNINGS;V8_HAVE_TARGET_OS;V8_TARGET_OS_WIN;CPPGC_CAGED_HEAP;CPPGC_YOUNG_GENERATION;CPPGC_POINTER_COMPRESSION;CPPGC_ENABLE_LARGER_CAGE;CPPGC_SLIM_WRITE_BARRIER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../v8/include;$(SolutionDir)../gen/v8/include;$(SolutionDir)../third_party/inspector_protocol;$(SolutionDir)../third_party/libuv/include;$(SolutionDir)../third_party/cares/include;$(SolutionDir)../third_party/libnode/src;$(SolutionDir)../third_party/libnode/gen;$(SolutionDir)../third_party/libnode/gen/src;$(SolutionDir)../third_party/libnode/deps/ncrypto;$(SolutionDir)../third_party/libnode/deps/simdutf;$(SolutionDir)../third_party/libnode/deps/nbytes/include;$(SolutionDir)../third_party/libnode/deps/ada;$(SolutionDir)../third_party/libnode/deps/histogram/include;$(SolutionDir)../third_party/libnode/deps/base64/base64/include;$(SolutionDir)../third_party/libnode/deps/uvwasi/include;$(SolutionDir)../third_party/libnode/deps/simdjson;$(SolutionDir)../third_party/libnode/deps/llhttp/include;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/icu/source/i18n;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/boringssl/src/include/</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>
+      </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>

@@ -61,7 +61,7 @@ static std::string getUrl()
 //     HMODULE module1 = ::LoadLibraryW(L"C:\\Windows\\System32\\Macromed\\Flash\\NPSWF32.dll");
 
     if (!isRunTestUrl())
-        return "miniblink.net";
+        return "http://192.168.51.19/print.htm";
 
     //     std::vector<wchar_t> path;
     //     path.resize(MAX_PATH + 1);
@@ -79,11 +79,112 @@ static std::string getUrl()
     //urlA = utf16ToUtf8(L"file:///D:/我Storage/selectone.html");
     
     const char* url = //urlA.c_str();
+        "www.modelscope.cn";
+        "https://www.sketchupbar.com/portal.php?mod=topic&topicid=4"; // 点击“我是真人”会崩溃
+        "http://erphz2.zhikesys.top/sheetmanager/lysheet.aspx?txzusername=90902835&fileid=1217&optype=1"; //崩溃
+        "https://content-static.cctvnews.cctv.com/snow-book/index.html?item_id=16383730472020492370&toc_style_id=feeds_default&share_to=copy_url&track_id=ced454a0-fca5-4c1f-a682-508b8347d075";
+        "aardio.com";
+        "file:///Q:/Download/%E8%82%A1%E5%AE%87%E5%AE%99/html_test/upload.htm";
+        "lanhuapp.com";
+        "file:///W:/opencode/fakeindexeddb/index.html";
+        "https://www.alipay.com";
+        "https://www.56dr.com/register/?u_atoken=692fc434-d670-12af-52a3-83a1eaf83072&u_asession=01ifylaoEQxWppHQTkMz1rz83qF60_A29SooVCT2OzRoHe9YxBBa5RExJhn7rdr28LIvGrEKmelZ_sINyy7CsKLNsq8AL43dpOnCClYrgFm6o&u_asig=05uI-T_Bavjg2Z1FQG6B1Ncx5ambuydMypk3mfZeNR2n0goBi71MdDYgCMwVO9uxLSZS0bYDHJcjiJ8n7zsInZNAhvCYwBAUEPCER0smIYx0jgyEZ5zsVxbfY_tDzHfaeee2_FWea-sAz_yDT9aKlWYnbaMaGbEWFdl1mDwi2ouVrT0RGvkDTVTYaYtdsYJ-5ZksmHjM0JOodanL5-M1Qs1dp9MtSIDSpFpMvyPxdAqEhBMOfLEmZYxDBdmaGq_aKzee1DrPnSZfVXQIo99blfJjVuARMxeFRVfreEohtDMPXUpLHxH1iRKZmnjAu0Zefw&u_aref=GqgFg1%2FEDnCQ70IX%2BYAMvjCETHc%3D";
+        "http://169.254.31.122:8091/sync_xhr.htm";
+        "https://clientwbtest.dailianmama.com/";
+        "https://pre-dxzg-guyuzhou.dexunzhenggu.cn/universe/pc/web/information/index.html?web=2&stockcode=601727&secumarket=sh&isGG=1&firstOpen=1&SkinType=1";
+        "https://gyzpc-h5.dexunzhenggu.cn/universe/pc_new/web/information/index.html?web=2&stockcode=601727&secumarket=sh&isGG=1&firstOpen=1&SkinType=1";
+        "https://gyzpc-h5.dexunzhenggu.cn/universe/pc_new/libs/PDFJSDemo/PDFJS/pdfjs/web/viewer.html?file=https%3A%2F%2Fdxzg-api.dexunzhenggu.cn%2Fdx%2Ffile%2Fremote%3Ffile%3Dhttp%253A%252F%252Fstatic.sse.com.cn%252Fdisclosure%252Flistedinfo%252Fannouncement%252Fc%252Fnew%252F2025-11-25%252F601727_20251125_MDUD.pdf&SkinType=0";
+        "https://www.56dr.com/";
+        
+        "https://pre-dxzg-guyuzhou.dexunzhenggu.cn/universe/pc/web/DX_buySignal/index.html";
+        "file:///W:/WeGameApps/downloading/111.htm";
+        "file:///W:/WeGameApps/downloading/event_source.htm";
+        "xiumi.us";
+        "file:///W:/WeGameApps/downloading/test/indexeddb.htm";
+
+        "https://api.m.jd.com/?h5st=";
+        "https://www.doubao.com/chat/?channel=RPLMw";
+        "file:///W:/WeGameApps/downloading/test/navigator_storage.htm";
+        "http://ht.9gdl.com/chongzhi/cz.html?username=13422626616&token=306d9aa2e7db0f3f1f9e4c3a8cc090ee";
+
+        "file:///W:/WeGameApps/downloading/event_source.htm";
+        "jd.com";
+        "file:///G:/test/ele_test/webview_shadow/webview.htm";
+        "people.com.cn";
+        "https://zhihu.com";
+        "https://www.zhihu.com/question/1968258409435498358/answer/1968261022105208005";
+        "https://pro-components.antdigital.dev/components/table?tab=api&current=1&pageSize=5";
+        "https://google.com.hk";
+        "https://youku.com";
+        "file:///Q:/imdata/xwechat_files/weolar_d57e/msg/file/2025-10/testNumver.html";
+        "https://amap.com/";
+        "file:///O:/chromium/cef138node/out/r64/Renderer/test.htm"; // srcdoc地址无效
+        "https://pakeplus.com/zh/guide/"; // 崩溃
+        "http://ht.9gdl.com/chongzhi/cz.html?username=17760190211&token=5de82517ff30424037d5921129d904d8";
+        "https://dxzg-guyuzhou.dexunzhenggu.cn/universe/pc/libs/PDFJSDemo/PDFJS/pdfjs/web/viewer.html?file=https%3A%2F%2Ftest-dxzg-api.dexunzhenggu.cn%2Fdx%2Ffile%2Fremote%3Ffile%3Dhttp%3A%2F%2Fdisc.static.szse.cn%2Fdownload%2Fdisc%2Fdisk03%2Ffinalpage%2F2025-10-10%2F9ecc2049-4787-4c09-9d68-d250f99c8bd0.PDF";
+        "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fwww.jd.com%2F";
+        
+        "file:///O:/chromium/cef138node/out/r64/Renderer/test.htm";
+        "https://iconpark.oceanengine.com/official"; // 崩溃
+
+        "file:///G:/test/web_test/ggzuhao/srcdoc.htm";
+        "https://echarts.apache.org/examples/zh/editor.html?c=line-gradient";
+        "file:///G:/Program Files/CAZTP-Agent/indexdb.htm";
+        "http://windbg.org";
+        "file:///G:/test/ele_test/birdview/download/test2.html";
+        "https://apifox.com/";
+        "https://baidu.com";
+        "http://oa.gysoft.cn/zwhtml/pz.html";
+        "https://www.zhihu.com/question/442622908/answer/1936559620173853311?";
+
+        "file:///G:/test/ele_test/birdview/download/db_worker.htm";
+        "https://www.jd.com/";
+        "http://datav.jiaminghi.com/demo/construction-data/index.html";
+        "https://www.sf-express.com/chn/sc";
+
+        "file:///G:/test/ele_test/chiyanjiasu=/resources/app/src/main/download_svg.htm";
+        "https://www.pconline.com.cn/";
+        "openeuler.org";
+        "https://cloud.redis.io/?utm_medium=referral&utm_campaign=client&utm_term=not%20specified&utm_content=not%20specified&_gl=1*1bslt3p*_gcl_au*MTcwMzQzMDE3NC4xNzU3OTk0Mzcz#/";
+        "https://www.w3school.com.cn/";
+        "https://chat.deepseek.com/";
+        "https://www.iconfont.cn/collections/detail?spm=a313x.home_2025.i1.dfa9d9a29.58a33a811gOzDm&cid=51002";
+        "https://lanhuapp.com";
+        "https://yiyan.baidu.com/";
+        "https://www.kjson.com/jsoneditor/";
+        "http://192.168.10.6:8091/m1.htm";
+        "https://leetcode.cn/";
+        "http://web-platform.test:8000/tools/runner/index.html";
+        "https://www.360.com/";
+        "https://rizhuti.com/";
+
+        "https://im.qq.com/pcqq/";
+        "http://web-platform.test:8000/tools/runner/index.html";
+        "https://web-platform.test:8443/resources/testharness.js";
+        "file:///W:/test/web_test/yunci/download_test.htm";
+        "http://192.168.10.28:8091/wrok_download.html";
+        "https://web-platform.test:8443/fs/idlharness.https.any.worker.html";
+
+        "http://192.168.10.28:8091/cross_orgi.htm";
+        "https://web-platform.test:8443/fs/FileSystemBaseHandle-IndexedDB.https.any.html";
+        "http://web-platform.test:8000/FileAPI/url/sandboxed-iframe.html";
+        "www.youku.com";
+        "file:///Q:/dev_tools/Tabby/test_prop.htm";
+        "http://dx.hyzfs.com/PayLe/pay_dome.php?price=6&type=1&name=00000&out_trade_no=1256789789";
+
+        "https://ditu.amap.com";
+        "http://dx.hyzfs.com/PayLe/pay_dome.php?price=6&type=1&name=00000&out_trade_no=1256789789";
+        "file:///G:/test/exe_test/Program Files/486-1cef1/print.htm";
+        "https://etax.guangdong.chinatax.gov.cn:8443/loginb/";
+        "https://www.bilibili.com:443";
+        "http://6.ipw.cn/";
+        "https://www.china-ipv6.cn/#/";
+        "http://ip.cn/";
         "https://www.tw.coupang.com/products/473266195988501?itemId=494390065741825&vendorItemId=494390065725440";
         "file:///G:/test/exe_test/ConsoleApplication1/blockUI/xhr_test.html";
         "https://www.xiaohongshu.com/explore/6868e8da0000000010012213?xsec_token=ABYREMz0AsH1dUxvEYQYfWik90VuynVZMOt1wb1r914GU=&xsec_source=";
         "file:///G:/test/exe_test/apache-tomcat-7.0.79/compositionstart.htm";
-        "https://baidu.com";
+
         "https://sso.gjzq.cn/esc-sso/login/page";
         "https://zpsso.zhaopin.com/cas/login?service=https%3A%2F%2Fzsvpn.zhaopin.com%2Fcas%2Fclient%2Fauth%3Fstate%3Dhttps%3A%2F%2Fzsvpn.zhaopin.com%2Fterminal%2Fcode-suc.html";
         "https://zta.gjzq.cn/changeUrl.html?goto=https://zta.gjzq.cn:10443/terminal/code-suc.html";
@@ -240,7 +341,6 @@ static std::string getUrl()
     "https://www.ctrip.com/";
     "https://www.wangeditor.com";
     "https://csdn.net";
-    "https://www.bilibili.com/";
     "file:///G:/test/sln_test/QueueByMiniBlink/zhifudemo/test.htm";
     "file:///G:/test/exe_test/avmedia/ws_test.html"; // ws没法获取close事件
     "v.qq.com";
@@ -473,7 +573,6 @@ static std::string getUrl()
     "https://element.eleme.cn/#/zh-CN/component/transition";
     "http://wonzilerv2.danweiapp.com/";
     "file:///G:/test/exe_test/meng/img.htm";
-    "www.bilibili.com";
     "file:///G:/mycode/miniblink57/Debug/plugins/test.html";
     "http://seer.61.com.tw/Client.swf";
     "http://192.168.222.1:8000/pdfjs/web/viewer.html";
@@ -1346,6 +1445,8 @@ static mbDownloadOpt MB_CALL_TYPE onDownloadCallback(mbWebView webView, void* pa
     OutputDebugStringA(output);
     free(output);
 
+    //return kMbDownloadOptCancel;
+
     DownInfo* info = new DownInfo();
     info->url = url;
     info->recvSize = 0;
@@ -1358,7 +1459,7 @@ static mbDownloadOpt MB_CALL_TYPE onDownloadCallback(mbWebView webView, void* pa
     bind.saveNameCallback = nullptr;
 
     return mbPopupDialogAndDownload(webView, nullptr, expectedContentLength, url, mime, disposition, job, dataBind, &bind);
-    //return mbDownloadByPath(webView, param, L"P:\\", expectedContentLength, url, mime, disposition, job, dataBind, &bind);
+    //return mbDownloadByPath(webView, nullptr, L"G:\\test\\ele_test\\birdview\\download\\", expectedContentLength, url, mime, disposition, job, dataBind, &bind);
 }
 
 const UINT kBaseId = 100;
@@ -1429,10 +1530,12 @@ LRESULT RootWindow::hideWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPar
         //testUtil(m_mbView, m_hWnd);
         //mbGetCookie(m_mbView, onGetCookieCallback, nullptr);
         //printToPdf(m_mbView);
-        MessageBoxW(0, L"暂未实现该功能，请等待下个版本实现", L"miniblink菜单", 0);
+        //mbSetCookie(m_mbView, "youku.com", ".baidu.com\tTRUE\t/\tFALSE\t3902499520\tPSTM	1755015873");
+        //mbSetCookie(m_mbView, "", "X_HTTP_TOKEN=xx; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.baidu.com");
+        // 
+        testUtil(m_mbView, m_hWnd);
     } else if (kBaseId + 12 == id) {
-        //testUtil(m_mbView);
-        MessageBoxW(0, L"暂未实现该功能，请等待下个版本实现", L"miniblink菜单", 0);
+        //MessageBoxW(0, L"暂未实现该功能，请等待下个版本实现", L"miniblink菜单", 0);
     }
 
     return ::DefWindowProc(hwnd, uMsg, wParam, lParam);
@@ -2242,23 +2345,21 @@ mbWebView RootWindow::createRootWindow()
     //     if (isEnableDiskCache())
     //         mbSetDiskCacheEnabled(NULL_WEBVIEW, TRUE);
 
-    //mbSetLocalStorageFullPath(nullptr, L"d:\\我Storage\\");
-    //mbSetCookieJarFullPath(nullptr, L"d:\\我Storage\\init_cookie.txt");
-
     mbWebView mbView = mbCreateWebWindow(MB_WINDOW_TYPE_CONTROL, m_hWnd, 0, urlbarHeight, width - 8, height - urlbarHeight - 20);
     setMBView(mbView);
 
     //mbSetDebugConfig(mbView, "disableCookieFlushToFile", nullptr);
 
-#if 1
+#if 0
     mbProxy proxy;
     memset(&proxy, 0, sizeof(proxy));
     strcpy(proxy.hostname, "127.0.0.1");
-    proxy.port = 10909;
+    proxy.port = 8818;
+    //proxy.port = 10909;
     proxy.type = MB_PROXY_HTTP;
-//     strcpy(proxy.username, "us");
-//     strcpy(proxy.password, "pa");
-    //mbSetProxy(mbView, &proxy);
+    //strcpy(proxy.username, "wenyue");
+    //strcpy(proxy.password, "Httproxy20250722_");
+    mbSetProxy(mbView, &proxy);
 #endif
     //mbSetCookie(mbView, "youku.com", "cna=4UvTFE12fEECAXFKf4SFW5eo; expires=Tue, 23-Jan-29 13:17:21 GMT; path=/; domain=.youku.com");
     initSettings();
@@ -2389,6 +2490,8 @@ void RootWindow::initSettings()
 
     //mbSetZoomFactor(m_mbView, 1.5f);
 
+    //mbSetCookieJarFullPath(NULL_WEBVIEW, L"W:\\download\\我\\1.txt");
+
     //     static int count = 1;
     //     wchar_t* cookiesPath = (wchar_t*)malloc(0x100);
     //     wsprintf(cookiesPath, L"G:\\test\\exe_test\\publicdll\\%d.dat", count++);
@@ -2450,90 +2553,101 @@ static BOOL MB_CALL_TYPE handleLoadUrlBegin(mbWebView webView, void* param, cons
     urlStrDebug += "\n";
     OutputDebugStringA(urlStrDebug.c_str());
 
-    //mbNetSetHTTPHeaderField(job, L"Accept-Language", L"en-US, en;q=0.9,zh;q=0.8, zh-CN;q=0", FALSE);
-
-    if (!isRunTestUrl())
+    //     if (hookUrl(job, url, "C:\Users\wang\Desktop\1928.app.e03e0b9cd0dac238c712.js", 
+    //       L"C:\Users\wang\Desktop\1928.app.e03e0b9cd0dac238c712.js", "text/html", "application/html"))
+    //         return true;
+    
+    if (hookUrl(job, url, "https://www.doubao.com/chat/?channel=RPLMw", L"W:\\WeGameApps\\downloading\\test\\main.htm",
+        "text/html", "application/html"))
         return true;
 
-//     if (hookUrl(job, url, "chunk-vendors.fa62e573.js", L"G:\\test\\exe_test\\low_memory\\wiredjs\\chunk-vendors.fa62e573.js", "text/javascript", "application/javascript"))
-//         return true;
-// 
-//     if (hookUrl(job, url, "pauth.ef8f012f.js", L"G:\\test\\exe_test\\low_memory\\wiredjs\\pauth.ef8f012f.js", "text/javascript", "application/javascript"))
-//         return true;
+    if (hookUrl(job, url, "async-infra-message.698083ef.js", 
+         L"W:\\WeGameApps\\downloading\\test\\async-infra-message.698083ef.js", "text/javascript", "application/javascript"))
+        return true;
 
-    //     if (hookUrl(job, url, "common.4af53171.js", L"G:\\test\\web_test\\javah5\\common.4af53171.js", "text/javascript", "application/javascript"))
-    //         return true;
+    if (hookUrl(job, url, "56108.0617ac01.js",
+        L"W:\\WeGameApps\\downloading\\test\\56108.0617ac01.js", "text/javascript", "application/javascript"))
+        return true;
 
-    //     if (hookUrl(job, url, "ubt.minl.e2d2db5a9e8c49479f17fbd6b0aa37c7.js", L"G:\\test\\sln_test\\QueueByMiniBlink\\zhifudemo\\ubt.minl.e2d2db5a9e8c49479f17fbd6b0aa37c7.js", "text/javascript", "application/javascript"))
-    //         return true;
+    if (hookUrl(job, url, "chat.6833dad7.js",
+        L"W:\\WeGameApps\\downloading\\test\\chat.6833dad7.js", "text/javascript", "application/javascript"))
+        return true;
 
-    //     if (hookUrl(job, url, "https://account.wps.cn/v1/chooseaccount?cb=https%3A%2F%2Faccount.wps.cn%2Fusercenter&logintype=weblogin_v2&verifyresult=ok",
-    //       L"G:\\test\\web_test\\javah5\\main2.htm", "text/html", "application/html"))
-    //         return true;
+    if (hookUrl(job, url, "96390.a6a46ec1.js",
+        L"W:\\WeGameApps\\downloading\\test\\96390.a6a46ec1.js", "text/javascript", "application/javascript"))
+        return true;
 
-    //     if (hookUrl(job, url, "csdn-login-box.js", L"G:\\test\\sln_test\\QueueByMiniBlink\\csdn-login-box.js", "text/javascript", "application/javascript"))
-    //         return true;
-    //
-    //     if (hookUrl(job, url, "www-index-new/index.", L"G:\\test\\sln_test\\QueueByMiniBlink\\1.js", "text/javascript", "application/javascript"))
-    //         return true;
-    //
-    //     if (hookUrl(job, url, "jquery/1.12.4/jquery.min.js,user-tooltip/2.7/user-tooltip.js,lib/qrcode/1.0.0/qrcode.min.js",
-    //         L"G:\\test\\sln_test\\QueueByMiniBlink\\qrcode.min.js", "text/javascript", "application/javascript"))
-    //         return true;
-
-//     if (hookUrl(job, url, "g.alicdn.com/AWSC/et/1.82.2/et_f.js", L"G:\\test\\exe_test\\T1_err_mb108\\222\\et_f.js", "text/javascript", "application/javascript"))
-//         return true;
-
-    //     if (hookUrl(job, url, "main.min.js", L"G:\\test\\exe_test\\low_memory\\unrunjs\\main.min.js", "text/javascript", "application/javascript"))
-    //         return true;
-
-    //     if (hookUrl(job, url, "ppui-static-wap.cdn.bcebos.com/static/sdk-machine/js/mkd_v2.js?",
-    //         L"G:\\test\\sln_test\\QueueByMiniBlink\\mkd_v2.js", "text/javascript", "application/javascript"))
-    //         return true;
+    if (hookUrl(job, url, "85283.2dbce859.js",
+        L"W:\\WeGameApps\\downloading\\test\\85283.2dbce859.js", "text/javascript", "application/javascript"))
+        return true;
 
     //     if (strstr(url, "daxiansheng/images/header.png")) {
     //         //mbNetSetData(job, " ", 1);
     //         OutputDebugStringA("trackMi.tml!!!!!!!!!!!!!!!!!!\n");
     //         return false;
     //     }
-    //
-    if (0 != strstr(url, "blob:"))
+    // 
+    if (strstr(url, "about:blank"))
         OutputDebugStringA("");
 
     //     std::vector<char> buffer;
     //     readFile(L"E:\\test_code\\bemo\\res\\1.asar", &buffer);
-    //
+    // 
     //     static void* s_packetMgr = nullptr;
     //     if (!s_packetMgr)
     //         s_packetMgr = wkeCreateResPacketMgr(buffer.data(), buffer.size());
-    //
+    // 
     //     wkeOnUrlBeginResPacketMgr(s_packetMgr, url, job);
 
-    //     if (hookUrl(job, url, "wangeditor@3.1.1/release/wangEditor.min.js", L"G:\\test\\web_test\\wangeditor\\wangeditor.js", "text/javascript"))
-    //         return true;
+//     if (hookUrl(job, url, "pre-dxzg-guyuzhou.dexunzhenggu.cn/universe/pc/util/require.js", L"W:\\WeGameApps\\downloading\\test\\require.js", "text/javascript", "application/javascript"))
+//         return true;
+// 
+//     if (hookUrl(job, url, "pre-dxzg-guyuzhou.dexunzhenggu.cn/universe/pc/web/DX_buySignal/main.js?times=11111", L"W:\\WeGameApps\\downloading\\test\\main.js", "text/javascript", "application/javascript"))
+//         return true;
 
-    if (0 == strcmp(url, "https://data.10jqka.com.cn/market/zdfph/field/zdf5/order/DESC/ajax/1/free/1/free/1/"))
-        mbNetHookRequest(job);
+    //W:\WeGameApps\downloading\test\main.js
 
-    //      if (0 != strstr(url, "graph.qq.com/oauth2.0/authorize")) {
-    //          mbNetHookRequest(job);
-    //      }
+//      if (0 == strcmp(url, "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fwww.jd.com%2F")) 
+//          mbNetHookRequest(job);
 
-    //     if (0 != strstr(url, "video.webm")) {
-    //         mbNetChangeRequestUrl(job, "file:///G:/test/web_test/icoc/index-4.mp4");
-    //     }
+//     if (0 != strstr(url, "https://api.m.jd.com/api?h5st=")) {
+//         mbNetHookRequest(job);
+//     }
+// 
+//     if (0 != strstr(url, "https://api.m.jd.com/?h5st=")) {
+//         mbNetHookRequest(job);
+//     }
+
+//     if (0 != strstr(url, "api.m.jd.com/?appid")) {
+//         mbNetHookRequest(job);
+//     }
+
+//     if (0 != strstr(url, "video.webm")) {
+//         mbNetChangeRequestUrl(job, "file:///G:/test/web_test/icoc/index-4.mp4");
+//     }
 
     return false;
 }
 
 static void MB_CALL_TYPE handleLoadUrlEnd(mbWebView webView, void* param, const char* url, void* job, void* buf, int len)
 {
-    std::string urlStr("handleLoadUrlEnd:");
+    std::string urlStr("hook:");
     urlStr += url;
     urlStr += "\n";
     OutputDebugStringA(urlStr.c_str());
 
-    saveDumpFile(L"G:\\test\\web_test\\51iwifi\\mofang.htm", (const char*)buf, len);
+    WCHAR temp[200] = { 0 };
+
+    if (0 != strstr(url, "https://api.m.jd.com/?h5st=")) {
+        swprintf(temp, L"h5st%p_%d.js", job, len);
+    } else {
+        swprintf(temp, L"api_%p_%d.js", job, len);
+    }
+
+    std::wstring fileName(L"W:\\WeGameApps\\downloading\\test\\");
+    fileName += temp;
+
+    saveDumpFile(fileName.c_str(), (const char*)buf, len);
     //
     //     std::vector<char> buffer;
     //     readFile(L"G:\\test\\web_test\\m_baidu\\index.htm", &buffer);

@@ -41,6 +41,9 @@
     <ClCompile Include="test\CodeSizeView.cpp">
       <Filter>src\test</Filter>
     </ClCompile>
+    <ClCompile Include="test\GenNapiStub.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HideWndHelp.h">

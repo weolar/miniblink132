@@ -1,23 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerCommand>G:\test\exe_test\apache-tomcat-7.0.79\demo.exe</LocalDebuggerCommand>
-    <LocalDebuggerWorkingDirectory>G:\test\exe_test\apache-tomcat-7.0.79\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>G:\test\exe_test\1396658\Debug\testMB.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>G:\test\exe_test\1396658\</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>
+    </LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LocalDebuggerCommand>W:\mycode\mb132\out\win_Release_Win32\pay.exe</LocalDebuggerCommand>
-    <LocalDebuggerWorkingDirectory>W:\mycode\mb132\out\win_Release_Win32</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>Q:\Download\股宇宙\Guyuzhou.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>Q:\Download\股宇宙\</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerCommand>G:\test\exe_test\ConsoleApplication1\TeAgentEditor.exe</LocalDebuggerCommand>
-    <LocalDebuggerWorkingDirectory>G:\test\exe_test\ConsoleApplication1\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>Q:\Program Files\he3\minielectron_x64.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>Q:\Program Files\he3\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <LocalDebuggerCommand>Q:\dev_tools\Tabby\minielectron_x64.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>Q:\dev_tools\Tabby\</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommand>G:\test\exe_test\ConsoleApplication1\TeAgentEditor.exe</LocalDebuggerCommand>
-    <LocalDebuggerWorkingDirectory>G:\test\exe_test\ConsoleApplication1\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>G:\test\exe_test\bbb\Demo.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>G:\test\exe_test\bbb\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <LocalDebuggerCommand>G:\test\exe_test\bbb\Demo.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>G:\test\exe_test\bbb\</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

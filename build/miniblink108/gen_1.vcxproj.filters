@@ -7243,6 +7243,24 @@
     <ClInclude Include="..\..\gen\third_party\blink\renderer\modules\media_controls\resources\grit\media_controls_resources.h">
       <Filter>src\gen\third_party\blink\renderer\modules\media_controls\resources\grit</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_usage_details.h">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_quota_callback.h">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_usage_callback.h">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_manager.h">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_interest_group.h">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_error_callback.h">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gen\third_party\blink\renderer\core\css\properties\css_property_instances.cc">
@@ -11440,6 +11458,24 @@
       <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_worker_global_scope_modules.cc">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_usage_details.cc">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_quota_callback.cc">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_usage_callback.cc">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_manager.cc">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_interest_group.cc">
+      <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\third_party\blink\renderer\bindings\modules\v8\v8_storage_error_callback.cc">
       <Filter>src\gen\third_party\blink\renderer\bindings\modules\v8</Filter>
     </ClCompile>
   </ItemGroup>

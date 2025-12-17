@@ -58,6 +58,7 @@ namespace atom {
     fn(electron_common_asar) \
     fn(electron_common_nativeImage) \
     fn(electron_common_clipboard) \
+    fn(electron_common_features) \
     fn(electron_browser_browserview) \
     fn(electron_browser_session) \
     fn(electron_browser_webrequest) \
@@ -67,7 +68,8 @@ namespace atom {
     fn(electron_browser_web_frame_main) \
     fn(electron_browser_commandline) \
     fn(electron_browser_message_port) \
-    fn(electron_browser_safe_storage) 
+    fn(electron_browser_safe_storage) \
+    fn(electron_browser_powermonitor)
 
 NODE_MODULE_CONTEXT_AWARE_BUILTIN_SCRIPT_REG_IN_MAIN(NODE_MODULE_CONTEXT_AWARE_BUILTIN_SCRIPT_DECLARE_IN_MAIN)
 
@@ -104,7 +106,39 @@ void initV8Data();
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
 {
-    //MessageBoxA(0, 0, 0, 0);
+//     std::wstring cmdline = L"cmd.exe /k \"W:\\mycode\\mb132\\out\\win_Debug_x64\\resources\\extras\\clink\\clink_x64.exe\" --inject";
+//     std::unique_ptr<wchar_t[]> mutableCommandline = std::make_unique<wchar_t[]>(cmdline.length() + 1);
+//     memcpy(mutableCommandline.get(), cmdline.c_str(), cmdline.length() * 2);
+// 
+//     std::wstring cwd = L"C:\\Users\\wang";
+// 
+//     LPWSTR envArg = L"ALLUSERSPROFILE=C:\\ProgramData";
+//     std::unique_ptr<wchar_t[]> mutableCwd = std::make_unique<wchar_t[]>(cwd.length() + 1);
+//     memcpy(mutableCwd.get(), cwd.c_str(), cwd.length() * 2);
+// 
+//     STARTUPINFOEXW siEx = { 0 };
+//     siEx.StartupInfo.cb = sizeof(STARTUPINFOEXW);
+//     siEx.StartupInfo.dwFlags |= STARTF_USESTDHANDLES;
+//     siEx.StartupInfo.hStdError = nullptr;
+//     siEx.StartupInfo.hStdInput = nullptr;
+//     siEx.StartupInfo.hStdOutput = nullptr;
+// 
+//     PROCESS_INFORMATION piClient = {0};
+//     BOOL fSuccess = !!CreateProcessW(nullptr, 
+//         mutableCommandline.get(),
+//         nullptr, // lpProcessAttributes
+//         nullptr, // lpThreadAttributes
+//         false, // bInheritHandles VERY IMPORTANT that this is false
+//         EXTENDED_STARTUPINFO_PRESENT | CREATE_UNICODE_ENVIRONMENT, // dwCreationFlags
+//         nullptr, // envArg, // lpEnvironment
+//         mutableCwd.get(), // lpCurrentDirectory
+//         &siEx.StartupInfo, // lpStartupInfo
+//         &piClient // lpProcessInformation
+//     );
+// 
+//     WaitForSingleObject(piClient.hProcess, INFINITE);
+    ///
+
     g_isElectronMode = true;
     ::OleInitialize(nullptr);
     atom::initGDIPlusClsids();

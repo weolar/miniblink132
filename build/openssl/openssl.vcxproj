@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -8,6 +12,10 @@
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -52,6 +60,10 @@
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
@@ -78,6 +90,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <CallingConvention>Cdecl</CallingConvention>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -103,6 +116,51 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_DEBUG;_REENTRANT;PURIFY;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;I386_ONLY;OPENSSL_NO_ASM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <MASM>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.;openssl;openssl\crypto;openssl\crypto\asn1;openssl\crypto\evp;openssl\crypto\md2;openssl\crypto\modes;openssl\crypto\store;openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_REENTRANT;PURIFY;OPENSSL_NO_COMP;OPENSSL_NO_SSL3;OPENSSL_NO_HEARTBEATS;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;AES_ASM;CPUID_ASM;OPENSSL_BN_ASM_MONT;OPENSSL_CPUID_OBJ;SHA1_ASM;SHA256_ASM;SHA512_ASM;GHASH_ASM;VPAES_ASM;BN_ASM;BF_ASM;BNCO_ASM;DES_ASM;LIB_BN_ASM;MD5_ASM;OPENSSL_BN_ASM;RIP_ASM;RMD160_ASM;WHIRLPOOL_ASM;WP_ASM;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_NO_CAPIENG;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -230,6 +288,62 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <SDLCheck>false</SDLCheck>
       <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <MapExports>true</MapExports>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <MASM>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.;openssl;openssl\crypto;openssl\crypto\asn1;openssl\crypto\evp;openssl\crypto\md2;openssl\crypto\modes;openssl\crypto\store;openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_REENTRANT;PURIFY;OPENSSL_NO_COMP;OPENSSL_NO_SSL3;OPENSSL_NO_HEARTBEATS;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;AES_ASM;CPUID_ASM;OPENSSL_BN_ASM_MONT;OPENSSL_CPUID_OBJ;SHA1_ASM;SHA256_ASM;SHA512_ASM;GHASH_ASM;VPAES_ASM;BN_ASM;BF_ASM;BNCO_ASM;DES_ASM;LIB_BN_ASM;MD5_ASM;OPENSSL_BN_ASM;RIP_ASM;RMD160_ASM;WHIRLPOOL_ASM;WP_ASM;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_NO_CAPIENG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/;$(SolutionDir)../third_party/openssl;$(SolutionDir)../third_party/openssl/openssl/;$(SolutionDir)../third_party/openssl/openssl/crypto;$(SolutionDir)../third_party/openssl/openssl/crypto/asn1;$(SolutionDir)../third_party/openssl/openssl/crypto/evp;$(SolutionDir)../third_party/openssl/openssl/crypto/md2;$(SolutionDir)../third_party/openssl/openssl/crypto/modes;$(SolutionDir)../third_party/openssl/openssl/crypto/store;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/openssl/openssl/providers/common/include;$(SolutionDir)../third_party/openssl/openssl/providers/implementations/include;$(SolutionDir)../third_party/openssl/config/archs/VC-WIN32/no-asm/providers/common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>NDEBUG;_REENTRANT;PURIFY;MK1MF_BUILD;WIN32_LEAN_AND_MEAN;OPENSSL_SYSNAME_WIN32;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;L_ENDIAN;OPENSSL_BN_ASM_PART_WORDS;DSO_WIN32;I386_ONLY;OPENSSL_NO_ASM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalOptions>
+      </AdditionalOptions>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>

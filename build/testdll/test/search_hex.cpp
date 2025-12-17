@@ -1402,24 +1402,25 @@ void ReplaceINIP4(std::string* sdp, const std::string& webrtc_public_ip)
 void searchHex2(HINSTANCE hInstance)
 {
     unsigned char code[] = {
-        /*00007FF7A8963E74*/ 0x4C, 0x8D, 0xB4, 0x24, 0x88, 0x00, 0x00, 0x00, // lea         r14,[rsp + 88h]
-        /*00007FF7A8963E7C*/ 0x49, 0x89, 0x06, //mov         qword ptr[r14],rax
-        /*00007FF7A8963E7F*/ 0x49, 0xC7, 0x46, 0x08, 0x27, 0x00, 0x00, 0x00, // mov         qword ptr[r14 + 8],27h
-        /*00007FF7A8963E87*/ 0x48, 0x8B, 0x0B, //mov         rcx,qword ptr[rbx]
-        /*00007FF7A8963E8A*/ 0x48, 0x8B, 0x01, //mov         rax,qword ptr[rcx]
-        /*00007FF7A8963E8D*/ 0x48, 0x8B, 0x40, 0x30, //mov         rax,qword ptr[rax + 30h]
+
+0x48, 0x8B, 0x0B,      // mov         rcx,qword ptr[rbx]
+0x48, 0x8B, 0xF0,             // mov         rsi,rax
+0x48, 0x8B, 0x59, 0x08,          // mov         rbx,qword ptr[rcx + 8]
+0x48, 0x8B, 0x48, 0x18,          // mov         rcx,qword ptr[rax + 18h]
+0x48, 0x85, 0xC9,             // test        rcx,rcx
+
     };
 
-    const WCHAR* path = L"O:\\chromium\\ele32fp\\out\\rx64\\electron.exe";
+    const WCHAR* path = L"G:\\test\\ele_test\\better-sqlite3\\node_modules\\better-sqlite3\\build\\Release\\better_sqlite3.node";
     //HMODULE hMod = LoadLibraryW(path);
     //wkeInitialize();
     HMODULE hMod = (HMODULE)hInstance;
 
     std::vector<char> buffer;
     readFile(path, &buffer);
-    for (size_t i = 0; i < buffer.size(); ++i) {
-        //unsigned char* addr = (unsigned char*)buffer.data();
-        unsigned char* addr = (unsigned char*)hMod;
+    for (size_t i = 0; i < buffer.size() - sizeof(code); ++i) {
+        unsigned char* addr = (unsigned char*)buffer.data();
+        //unsigned char* addr = (unsigned char*)hMod;
         addr += i;
 
         bool notFind = false;
@@ -1431,7 +1432,7 @@ void searchHex2(HINSTANCE hInstance)
         }
         if (!notFind) {
             char* output = (char*)malloc(0x100);
-            sprintf_s(output, 0x99, "searchHex find: 0x%p\n", (addr));
+            sprintf_s(output, 0x99, "searchHex find: 0x%p, 0x%p\n", (addr), i);
             OutputDebugStringA(output);
             free(output);
         }

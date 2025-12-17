@@ -947,6 +947,9 @@
     <Filter Include="src\third_party\blink\renderer\core\xmlhttprequest">
       <UniqueIdentifier>{ae857863-074a-43ca-980a-eb0b2d98fc30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\third_party\blink\renderer\platform\quota">
+      <UniqueIdentifier>{6ff07d06-2d2b-41f6-93ad-c45cd406e041}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\third_party\blink\renderer\build\win\precompile.h">
@@ -13459,6 +13462,21 @@
     <ClInclude Include="..\..\third_party\blink\renderer\core\xmlhttprequest\xml_http_request_upload.h">
       <Filter>src\third_party\blink\renderer\core\xmlhttprequest</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\modules\quota\deprecated_storage_quota.h">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\modules\quota\navigator_storage_quota.h">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\modules\quota\quota_utils.h">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\modules\quota\storage_manager.h">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third_party\blink\renderer\modules\file_system_access\storage_manager_file_system_access.h">
+      <Filter>src\third_party\blink\renderer\modules\file_system_access</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\third_party\blink\renderer\build\win\precompile.cc">
@@ -24200,6 +24218,18 @@
     </ClCompile>
     <ClCompile Include="..\..\third_party\blink\renderer\platform\weborigin\scheme_registry_weborigin.cc">
       <Filter>src\third_party\blink\renderer\platform\weborigin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\modules\quota\deprecated_storage_quota.cc">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\modules\quota\navigator_storage_quota.cc">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\modules\quota\quota_utils.cc">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third_party\blink\renderer\modules\quota\storage_manager.cc">
+      <Filter>src\third_party\blink\renderer\platform\quota</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

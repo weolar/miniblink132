@@ -571,6 +571,9 @@
     <Filter Include="src\ui\base\resource">
       <UniqueIdentifier>{18c88451-b68d-45f7-902f-fe88f51f8bd6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui\base\idle">
+      <UniqueIdentifier>{1a322b3a-375c-461e-9d46-5ac91380d5f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -6270,6 +6273,15 @@
     <ClInclude Include="..\..\components\attribution_reporting\registration_info.h">
       <Filter>src\components\attribution_reporting</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ui\base\idle\idle.h">
+      <Filter>src\ui\base\idle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ui\base\win\lock_state.h">
+      <Filter>src\ui\base\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ui\base\win\session_change_observer.h">
+      <Filter>src\ui\base\win</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\cc\mojo_embedder\async_layer_tree_frame_sink.cc">
@@ -9958,6 +9970,21 @@
     </ClCompile>
     <ClCompile Include="..\..\ui\base\clipboard\scoped_clipboard_writer.cc">
       <Filter>src\ui\base\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ui\base\idle\idle.cc">
+      <Filter>src\ui\base\idle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ui\base\idle\idle_win.cc">
+      <Filter>src\ui\base\idle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ui\base\idle\idle_internal.cc">
+      <Filter>src\ui\base\idle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ui\base\win\lock_state.cc">
+      <Filter>src\ui\base\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ui\base\win\session_change_observer.cc">
+      <Filter>src\ui\base\win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

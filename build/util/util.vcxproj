@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -133,17 +141,25 @@
     <ClInclude Include="..\..\third_party\libcurl\include\curl\stdcheaders.h" />
     <ClInclude Include="..\..\third_party\libcurl\include\curl\system.h" />
     <ClInclude Include="..\..\third_party\libcurl\include\curl\typecheck-gcc.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\altsvc.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\amigaos.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\arpa_telnet.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\asyn.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\bufq.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\bufref.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\c-hyper.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cf-h1-proxy.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cf-h2-proxy.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cf-haproxy.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cf-https-connect.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cf-socket.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\cfilters.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-amigaos.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-dos.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-mac.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-os400.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\config-plan9.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-riscos.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\config-symbian.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\config-tpf.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\config-vxworks.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-win32.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\config-win32ce.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\conncache.h" />
@@ -158,8 +174,10 @@
     <ClInclude Include="..\..\third_party\libcurl\src\curl_endian.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_fnmatch.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_gethostname.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_get_line.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_gssapi.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_hmac.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_krb5.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_ldap.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_md4.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_md5.h" />
@@ -173,68 +191,81 @@
     <ClInclude Include="..\..\third_party\libcurl\src\curl_range.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_rtmp.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_sasl.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\curl_sec.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_setup.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_setup_once.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_sha256.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_sspi.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\curl_threads.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\curl_trc.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\dict.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\dotdot.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\doh.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\dynbuf.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\dynhds.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\easyif.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\easyoptions.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\easy_lock.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\escape.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\file.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\fileinfo.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\fopen.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\formdata.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\ftp.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\ftplistparser.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\functypes.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\getinfo.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\gopher.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\hash.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\hostcheck.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\headers.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\hostip.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\hsts.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http1.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http2.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\http_aws_sigv4.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http_chunks.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http_digest.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http_negotiate.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http_ntlm.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\http_proxy.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\idn.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\if2ip.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\imap.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\inet_ntop.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\inet_pton.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\llist.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\macos.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\memdebug.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\mime.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\mqtt.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\multihandle.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\multiif.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\netrc.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\non-ascii.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\nonblock.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\noproxy.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\parsedate.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\pingpong.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\pipeline.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\pop3.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\progress.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\psl.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\rand.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\rename.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\rtsp.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\select.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\sendf.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\setopt.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\setup-os400.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\setup-vms.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\setup-win32.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\share.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\sigpipe.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\slist.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\smb.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\smtp.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\sockaddr.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\socketpair.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\socks.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\speedcheck.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\splay.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\ssh.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\strcase.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\strdup.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\strerror.h" />
@@ -243,29 +274,39 @@
     <ClInclude Include="..\..\third_party\libcurl\src\system_win32.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\telnet.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\tftp.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\timediff.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\timeval.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\transfer.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\url.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\urlapi-int.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\urldata.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vauth\digest.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vauth\ntlm.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vauth\vauth.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\axtls.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\cadata.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\cyassl.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\darwinssl.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\gskit.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\version_win32.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vquic\curl_msh3.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vquic\curl_ngtcp2.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vquic\curl_quiche.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vquic\vquic.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vquic\vquic_int.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vssh\ssh.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\bearssl.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vtls\gtls.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\hostcheck.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\keylog.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vtls\mbedtls.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\nssg.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\mbedtls_threadlock.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vtls\openssl.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\polarssl.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\vtls\polarssl_threadlock.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\rustls.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vtls\schannel.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\schannel_int.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\sectransp.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\vtls\vtls.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\vtls_int.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\wolfssl.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\vtls\x509asn1.h" />
     <ClInclude Include="..\..\third_party\libcurl\src\warnless.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\wildcard.h" />
-    <ClInclude Include="..\..\third_party\libcurl\src\x509asn1.h" />
+    <ClInclude Include="..\..\third_party\libcurl\src\ws.h" />
     <ClInclude Include="..\..\third_party\libjpeg_turbo\cderror.h" />
     <ClInclude Include="..\..\third_party\libjpeg_turbo\cdjpeg.h" />
     <ClInclude Include="..\..\third_party\libjpeg_turbo\cmyk.h" />
@@ -652,11 +693,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\avif_alpha.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\codec_dav1d.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -665,56 +708,67 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\diag.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\exif.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\io.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\mem.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\obu.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\rawdata.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\read.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\reformat.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\reformat_libsharpyuv.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\reformat_libyuv.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\scale_avif.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -724,6 +778,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\third_party\libavif\src\src\utils_avif.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -732,23 +787,36 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\third_party\libcurl\src\altsvc.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\amigaos.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\asyn-ares.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\asyn-thread.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\base64.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\bufq.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\bufref.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\c-hyper.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cf-h1-proxy.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cf-h2-proxy.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cf-haproxy.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cf-https-connect.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cf-socket.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\cfilters.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\conncache.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\connect.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\content_encoding.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\cookie.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_addrinfo.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\curl_ctype.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_des.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_dict.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_endian.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_fnmatch.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_gethostname.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_get_line.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_gssapi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_hash.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_hmac.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_memrchr.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_multibyte.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_ntlm_core.c" />
@@ -757,35 +825,45 @@
     <ClCompile Include="..\..\third_party\libcurl\src\curl_range.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_rtmp.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_sasl.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\curl_security.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_sha256.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_sspi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\curl_threads.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\dotdot.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\curl_trc.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\doh.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\dynbuf.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\dynhds.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\easy.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\easygetopt.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\easyoptions.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\escape.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\file.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\fileinfo.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\fopen.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\formdata.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\ftp.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\ftplistparser.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\getenv.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\getenv_curl.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\getinfo.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\gopher.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\headers.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\hmac.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\hostasyn.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\hostcheck.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\hostip.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\hostip4.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\hostip6.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\hostsyn.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\hsts.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http1.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http2.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\http_aws_sigv4.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http_chunks.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http_digest.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http_negotiate.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http_ntlm.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\http_proxy.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\idn_win32.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\idn.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\if2ip.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\imap.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\inet_ntop.c" />
@@ -793,41 +871,39 @@
     <ClCompile Include="..\..\third_party\libcurl\src\krb5.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\ldap.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\llist.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\macos.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\md4.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\md5.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\memdebug.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\mime.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\mprintf.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\mqtt.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\multi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\netrc.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\non-ascii.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\nonblock.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\nwlib.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\nwos.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\noproxy.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\openldap.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\parsedate.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\pingpong.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\pipeline.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\pop3.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\progress.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\psl.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\rand.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\rename.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\rtsp.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\select.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\sendf.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\setopt.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\sha256.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\share.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\slist.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\smb.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\smtp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\socketpair.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\socks.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\socks_gssapi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\socks_sspi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\speedcheck.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\splay.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\ssh-libssh.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\ssh.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\strcase.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\strdup.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\strerror.c" />
@@ -836,13 +912,17 @@
     <ClCompile Include="..\..\third_party\libcurl\src\system_win32.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\telnet.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\tftp.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\timediff.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\timeval.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\transfer.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\url.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\urlapi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\cleartext.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\cram.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\digest.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\digest_curl.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\digest_sspi.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vauth\gsasl.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\krb5_gssapi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\krb5_sspi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\ntlm.c" />
@@ -852,22 +932,30 @@
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\spnego_sspi.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vauth\vauth.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\version.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\axtls.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\cyassl.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\darwinssl.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\gskit.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\version_win32.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vquic\curl_msh3.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vquic\curl_ngtcp2.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vquic\curl_quiche.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vquic\vquic.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vssh\libssh.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vssh\libssh2.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vssh\wolfssh.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\bearssl.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vtls\gtls.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\hostcheck.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\keylog.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vtls\mbedtls.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\nss.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\mbedtls_threadlock.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vtls\openssl.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\polarssl.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\vtls\polarssl_threadlock.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\rustls.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vtls\schannel.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vtls\schannel_verify.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\sectransp.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\vtls\vtls.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\wolfssl.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\vtls\x509asn1.c" />
     <ClCompile Include="..\..\third_party\libcurl\src\warnless.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\wildcard.c" />
-    <ClCompile Include="..\..\third_party\libcurl\src\x509asn1.c" />
+    <ClCompile Include="..\..\third_party\libcurl\src\ws.c" />
     <ClCompile Include="..\..\third_party\libjpeg_turbo\cdjpeg.c" />
     <ClCompile Include="..\..\third_party\libjpeg_turbo\jaricom.c" />
     <ClCompile Include="..\..\third_party\libjpeg_turbo\jcapimin.c" />
@@ -1479,7 +1567,20 @@
     <PlatformToolset>ClangCL</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
@@ -1502,7 +1603,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -1518,6 +1625,10 @@
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\out\win_$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(ProjectName)\win_$(Configuration)_$(PlatformName)\</IntDir>
@@ -1526,7 +1637,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X86;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;USE_IPV6=1;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X86;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -1556,7 +1667,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X86;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;USE_IPV6=1;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X86;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -1588,7 +1699,29 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;USE_IPV6=1;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/sanitizer/inculude;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/libyuv/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libavif/src/include;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/libwebp/src;$(SolutionDir)../third_party/libxml;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libcurl/src;$(SolutionDir)../third_party/libcurl/include;$(SolutionDir)../third_party/openssl/;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/dav1d/libdav1d;$(SolutionDir)../third_party/dav1d/libdav1d/include;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src;$(SolutionDir)../gen;$(SolutionDir)../</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <NASM>
+      <IncludePaths>$(SolutionDir)../third_party/dav1d/config/win/x64;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>-fwin64 %(AdditionalOptions)</AdditionalOptions>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;USE_IPV6=1;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -1612,7 +1745,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;USE_IPV6=1;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -1628,6 +1761,42 @@
       <OmitFramePointers>false</OmitFramePointers>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AdditionalOptions>-mno-avx </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <NASM>
+      <IncludePaths>$(SolutionDir)../third_party/dav1d/config/win/x64;$(SolutionDir)../third_party/dav1d/dav1d/src;$(SolutionDir)../third_party/dav1d/libdav1d/src;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>-fwin64 %(AdditionalOptions)</AdditionalOptions>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;AVIF_CODEC_DAV1D;CPU_NO_SIMD;LIBXML_STATIC;LIBXSLT_STATIC;USE_IPV6=1;PNG_SET_OPTION_SUPPORTED;_CRT_SECURE_NO_WARNINGS;SUPPORT_XP_CODE;CURL_STATICLIB=1;CURLRES_ARES=1;BUILDING_LIBCURL=1;HAVE_LIBZ=1;HAVE_ZLIB_H=1;HAVE_BROTLI=1;USE_SCHANNEL=1;USE_WINSOCK=0;USE_WINDOWS_SSPI=1;USE_WIN32_LDAP=1;USE_OPENSSL=1;ARCH_X64;BITDEPTH=8;_FILE_OFFSET_BITS=64;_POSIX_C_SOURCE=200112L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)../third_party/sanitizer/inculude;$(SolutionDir)../third_party/brotli/include;$(SolutionDir)../third_party/libyuv/include;$(SolutionDir)../third_party/libxslt/src;$(SolutionDir)../third_party/libjpeg_turbo;$(SolutionDir)../third_party/libavif/src/include;$(SolutionDir)../third_party/zlib;$(SolutionDir)../third_party/libwebp/src;$(SolutionDir)../third_party/libxml;$(SolutionDir)../third_party/libxml/src/include;$(SolutionDir)../third_party/abseil-cpp;$(SolutionDir)../third_party/icu/source/common;$(SolutionDir)../third_party/libcurl/src;$(SolutionDir)../third_party/libcurl/include;$(SolutionDir)../third_party/openssl/;$(SolutionDir)../third_party/openssl/openssl/include;$(SolutionDir)../third_party/dav1d/libdav1d;$(SolutionDir)../third_party/dav1d/libdav1d/include;$(SolutionDir)../base/allocator/partition_allocator/src;$(SolutionDir)../gen/base/allocator/partition_allocator/src;$(SolutionDir)../gen;$(SolutionDir)../</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>
+      </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>

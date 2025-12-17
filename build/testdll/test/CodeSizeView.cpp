@@ -144,7 +144,8 @@ std::unique_ptr<FunctionInfo> parseFunctionDeclaration(const std::string& declar
     // 3. 提取参数部分
     size_t parenEnd = declaration.find(')', parenStart);
     if (parenEnd == std::string::npos) {
-        throw std::runtime_error("Invalid function declaration: no ')' found");
+        //throw std::runtime_error("Invalid function declaration: no ')' found");
+        DebugBreak();
     }
 
     std::string paramsStr = declaration.substr(parenStart + 1, parenEnd - parenStart - 1);

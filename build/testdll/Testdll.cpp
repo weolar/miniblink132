@@ -175,7 +175,7 @@ unsigned int RSHash(const char* str, unsigned int len)
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
 {
 #if 1 // def _DEBUG
-    //testMain();
+    testMain();
     //return 0;
 #endif
 
@@ -280,6 +280,30 @@ int WINAPI wWinMain2(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
 //     ::mbLoadURL(mbView2, "https://www.baidu.com/");
 //     ::mbShowWindow(mbView2, TRUE);
 
+    mbRunMessageLoop();
+    return 0;
+}
+
+int WINAPI wWinMain4(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
+{
+#if defined(_M_X64) || defined(__x86_64__)
+#ifdef _DEBUG
+    mbSetMbMainDllPath(L"mb132_x64_d.dll");
+#else
+    mbSetMbMainDllPath(L"mb132_x64.dll");
+#endif
+#else
+#ifdef _DEBUG
+    mbSetMbMainDllPath(L"mb132_x32_d.dll");
+#else
+    mbSetMbMainDllPath(L"mb132_x32.dll");
+#endif
+#endif
+    mbInit(NULL);
+    mbEnableHighDPISupport();
+
+    mbWebView web_view = mbCreateWebView();
+    mbLoadURL(web_view, "https://baidu.com");
     mbRunMessageLoop();
     return 0;
 }
