@@ -13,6 +13,8 @@
 #include "content/renderer/DevicePostureProviderImpl.h"
 #include "content/renderer/PermissionServiceImpl.h"
 #include "content/renderer/SpeculationHostImpl.h"
+#include "content/renderer/npapi/PluginQuirkSet.h"
+#include "content/renderer/npapi/WebPluginImpl.h"
 #include "content/browser/QuotaManagerHostImpl.h"
 #include "content/browser/FileChooserImpl.h"
 #include "content/browser/RestrictedCookieManagerImpl.h"
@@ -1035,6 +1037,7 @@ void WebLocalFrameClientImpl::onLoadingSucceeded()
 
 void WebLocalFrameClientImpl::DidFinishLoad()
 {
+    WebPluginImpl::notifyManualLoadFinishedForFrame(m_frame);
     OutputDebugStringA(m_isMainFrame ? "WebLocalFrameClientImpl::DidFinishLoad main\n" : "WebLocalFrameClientImpl::DidFinishLoad not main\n");
 }
 
@@ -1243,6 +1246,53 @@ void WebLocalFrameClientImpl::GetInterface(::mojo::GenericPendingReceiver receiv
         createAndBindInterface<::blink::mojom::blink::SharedWorkerConnector, SharedWorkerConnectorImpl>(receiver.PassPipe());
     } else
         DebugBreak();
+}
+
+blink::WebPlugin* WebLocalFrameClientImpl::CreatePlugin(const blink::WebPluginParams& params)
+{
+    if (!isNpapiPluginsEnabled() || !m_frame)
+        return nullptr;
+
+    blink::WebPluginParams newParams = params;
+    std::vector<blink::WebString> attrNames;
+    std::vector<blink::WebString> attrValues;
+    size_t count = std::min(params.attribute_names.size(), params.attribute_values.size());
+    attrNames.reserve(count + 1);
+    attrValues.reserve(count + 1);
+
+    bool hasWmode = false;
+    for (size_t i = 0; i < count; ++i) {
+        attrNames.push_back(params.attribute_names[i]);
+        std::string key = params.attribute_names[i].Utf8();
+        if (base::EqualsCaseInsensitiveASCII(key, "wmode")) {
+            hasWmode = true;
+            std::string val = params.attribute_values[i].Utf8();
+            if (!base::EqualsCaseInsensitiveASCII(val, "opaque") && !base::EqualsCaseInsensitiveASCII(val, "transparent")) {
+                attrValues.push_back(blink::WebString::FromASCII("opaque"));
+            } else {
+                attrValues.push_back(params.attribute_values[i]);
+            }
+        } else {
+            attrValues.push_back(params.attribute_values[i]);
+        }
+    }
+    if (!hasWmode) {
+        attrNames.push_back(blink::WebString::FromASCII("wmode"));
+        attrValues.push_back(blink::WebString::FromASCII("opaque"));
+    }
+    newParams.attribute_names = blink::WebVector<blink::WebString>(attrNames);
+    newParams.attribute_values = blink::WebVector<blink::WebString>(attrValues);
+
+    HWND hostWnd = nullptr;
+    POINT offset { 0, 0 };
+    if (MbWebView* webview = static_cast<MbWebView*>(common::LiveIdDetect::getMbWebviewIds()->getPtr(m_mbwebviewId))) {
+        hostWnd = webview->getHostWnd();
+        offset = webview->getOffset();
+    }
+
+    scoped_refptr<WebPluginImpl> plugin = base::MakeRefCounted<WebPluginImpl>(m_frame, newParams, m_mbwebviewId, hostWnd, offset);
+    plugin->AddRef();
+    return plugin.get();
 }
 
 }

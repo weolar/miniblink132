@@ -8,10 +8,15 @@
 #include "content/browser/MbWebview.h"
 #include "content/browser/SharedTimerWin.h"
 #include "content/common/LiveIdDetect.h"
+#include "content/common/StringUtil.h"
 #include "content/common/ThreadCall.h"
 #include "content/common/mbchar.h"
 #include "content/renderer/WebLocalFrameClientImpl.h"
 #include "content/renderer/RenderThreadImpl.h"
+#include "content/renderer/npapi/PluginDatabase.h"
+#include "content/renderer/npapi/PluginQuirkSet.h"
+#include "third_party/blink/renderer/core/exported/web_view_impl.h"
+#include "third_party/blink/renderer/core/page/plugin_data.h"
 #include "mbnet/WebURLLoaderInternal.h"
 #include "mbnet/cookies/WebCookieJarCurlImpl.h"
 #include "third_party/blink/public/web/web_frame_serializer.h"
@@ -595,7 +600,15 @@ void MB_CALL_TYPE mbSetLanguage(mbWebView webviewHandle, const char* language)
 }
 void MB_CALL_TYPE mbAddPluginDirectory(mbWebView webviewHandle, const WCHAR* path)
 {
-    OutputDebugStringA("mbAddPluginDirectory not impl\n");
+    if (!path || !path[0])
+        return;
+    std::string dirUtf8 = content::utf16ToUtf8(path);
+    if (dirUtf8.empty())
+        return;
+    content::ThreadCall::callBlinkThreadAsync(MB_FROM_HERE, [dirUtf8]() {
+        content::PluginDatabase::installedPlugins()->addExtraPluginDirectory(WTF::String::FromUTF8(dirUtf8));
+        blink::PluginData::RefreshBrowserSidePluginCache();
+    });
 }
 
 void MB_CALL_TYPE mbSetDiskCacheEnabled(mbWebView webviewHandle, BOOL enable)
@@ -670,22 +683,33 @@ void MB_CALL_TYPE mbSetDragEnable(mbWebView webviewHandle, BOOL b)
 
 void MB_CALL_TYPE mbSetHandleOffset(mbWebView webviewHandle, int x, int y)
 {
-    OutputDebugStringA("mbSetHandleOffset not impl\n");
-//     checkThreadCallIsValid(__FUNCTION__);
-// 
-//     mb::MbWebView* webview = (mb::MbWebView*)common::LiveIdDetect::get()->getPtr((int64_t)webviewHandle);
-//     if (!webview)
-//         return;
-//     webview->setOffset(x, y);
-// 
-//     common::ThreadCall::callBlinkThreadAsyncWithValid(MB_FROM_HERE, webviewHandle, [x, y](mb::MbWebView* webview) {
-//         wkeSetHandleOffset(webview->getWkeWebView(), x, y);
-//         });
+    if (!webviewHandle)
+        return;
+    content::ThreadCall::callBlinkThreadAsyncWithValid(MB_FROM_HERE, webviewHandle, [x, y](content::MbWebView* webview) {
+        webview->setOffset(x, y);
+    });
 }
 
 void MB_CALL_TYPE mbSetNpapiPluginsEnabled(mbWebView webviewHandle, BOOL b)
 {
-    OutputDebugStringA("mbSetNpapiPluginsEnabled not impl\n");
+    bool enabled = !!b;
+    content::setNpapiPluginsEnabled(enabled);
+    if (!webviewHandle) {
+        content::ThreadCall::callBlinkThreadAsync(MB_FROM_HERE, []() {
+            blink::PluginData::RefreshBrowserSidePluginCache();
+        });
+        return;
+    }
+    content::ThreadCall::callBlinkThreadAsyncWithValid(MB_FROM_HERE, webviewHandle, [enabled](content::MbWebView* self) {
+        blink::WebViewImpl* webView = static_cast<blink::WebViewImpl*>(self->getWebView());
+        if (webView) {
+            blink::web_pref::WebPreferences prefs = webView->GetWebPreferences();
+            prefs.plugins_enabled = enabled;
+            prefs.allow_non_empty_navigator_plugins = enabled;
+            webView->SetWebPreferences(prefs);
+        }
+        blink::PluginData::RefreshBrowserSidePluginCache();
+    });
 }
 
 void MB_CALL_TYPE mbSetMemoryCacheEnable(mbWebView webviewHandle, BOOL b)

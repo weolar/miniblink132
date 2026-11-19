@@ -5,6 +5,7 @@
 #include "content/renderer/RenderThreadImpl.h"
 #include "content/renderer/PolicyContainerHostImpl.h"
 #include "content/renderer/WebLocalFrameClientImpl.h"
+#include "content/renderer/npapi/PluginQuirkSet.h"
 #include "content/renderer/BlinkInterfaceRegistryImpl.h"
 #include "content/renderer/PlatformEventHandler.h"
 #include "content/browser/RenderWidgetHostImpl.h"
@@ -565,6 +566,9 @@ void MbWebView::setDefaultPreferences(blink::WebViewImpl* webWiew)
     webPreferences.touch_event_feature_detection_enabled = false; // 桌面版不提供ontouchstart等document
     webPreferences.allow_universal_access_from_file_urls = true;
     webPreferences.allow_file_access_from_file_urls = true;
+    bool npapiEnabled = content::isNpapiPluginsEnabled();
+    webPreferences.plugins_enabled = npapiEnabled;
+    webPreferences.allow_non_empty_navigator_plugins = npapiEnabled;
     webWiew->SetWebPreferences(webPreferences);
 
     webWiew->SetPageAttributionSupport(network::mojom::AttributionSupport::kWeb);
