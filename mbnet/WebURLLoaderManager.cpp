@@ -51,6 +51,8 @@
 #include "mbnet/SharedMemoryDataConsumerHandle.h"
 #include "mbnet/FixedReceivedData.h"
 #include "mbnet/WebURLLoaderManagerUtil.h"
+#include "base/strings/string_util.h"
+#include "content/renderer/npapi/PluginDatabase.h"
 #include "mbnet/WebURLLoaderManagerMainTask.h"
 #include "mbnet/FlattenHTTPBodyElement.h"
 #include "mbnet/WebURLLoaderManagerSetupInfo.h"
@@ -367,6 +369,10 @@ static void parseMimeIfNeeded(WebURLLoaderManager* manager, WebURLLoaderInternal
 
     if (dataLengt > 6 && 0 == memcmp(data, "%PDF-", 5)) {
         job->m_response.SetMimeType(blink::WebString::FromUTF8("application/pdf"));
+    } else if (dataLengt >= 4
+        && (0 == memcmp(data, "FWS", 3) || 0 == memcmp(data, "CWS", 3) || 0 == memcmp(data, "ZWS", 3))
+        && static_cast<unsigned char>(data[3]) >= 1 && static_cast<unsigned char>(data[3]) <= 64) {
+        job->m_response.SetMimeType(blink::WebString::FromUTF8("application/x-shockwave-flash"));
     }
 }
 

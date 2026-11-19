@@ -657,6 +657,13 @@ static bool isResourceTypeFrame(WebURLLoaderInternal* job)
 
 // content\public\common\resource_type.cc
 // content\browser\loader\mime_type_resource_handler.cc
+static bool isSwfOrSplUrl(const GURL& gurl)
+{
+    std::string path = gurl.path();
+    return base::EndsWith(path, ".swf", base::CompareCase::INSENSITIVE_ASCII)
+        || base::EndsWith(path, ".spl", base::CompareCase::INSENSITIVE_ASCII);
+}
+
 static bool isDownloadResponse(WebURLLoaderInternal* job, const AtomicString& contentType, const AtomicString& contentLength)
 {
     if (!isResourceTypeFrame(job))
@@ -671,7 +678,20 @@ static bool isDownloadResponse(WebURLLoaderInternal* job, const AtomicString& co
     if (contentType.empty() || contentType.IsNull())
         return false;
 
-    String contentMime = contentType.LowerASCII();
+    String contentMime = blink::ExtractMIMETypeFromMediaType(contentType).LowerASCII();
+    if (contentMime.empty())
+        contentMime = contentType.LowerASCII();
+
+    if (content::isNpapiPluginsEnabled()) {
+        std::string mimeUtf8 = contentMime.Utf8();
+        if (content::PluginDatabase::installedPlugins()->isMIMETypeRegistered(mimeUtf8))
+            return false;
+        if ((contentMime == "application/octet-stream" || contentMime == "binary/octet-stream")
+            && job->firstRequest() && isSwfOrSplUrl(job->firstRequest()->url)
+            && content::PluginDatabase::installedPlugins()->isMIMETypeRegistered("application/x-shockwave-flash")) {
+            return false;
+        }
+    }
 
     const char* disableDownloadMimes[] = { "text/css", "text/javascript", "text/plain", "text/html", "text/xml", "text/xsl", "image/png", "image/gif",
         "image/jpeg", "image/bmp", "image/webp", "image/x-icon", "image/svg+xml", "audio/ogg", "audio/midi", "audio/x-midi", "video/x-msvideo", "video/mpeg",
@@ -918,6 +938,20 @@ static bool setHttpResponseDataToJobWhenDidReceiveResponseOnMainThread(WebURLLoa
     blink::WebString contentType = job->m_response.HttpHeaderField(blink::WebString::FromUTF8("Content-Type"));
     if (!contentType.IsEmpty())
         job->m_response.SetMimeType(blink::ExtractMIMETypeFromMediaType(contentType).LowerASCII());
+
+    GURL effectiveUrl = job->firstRequest() ? job->firstRequest()->url : GURL();
+    if (!job->m_response.CurrentRequestUrl().IsEmpty())
+        effectiveUrl = GURL(job->m_response.CurrentRequestUrl().GetString().Utf8());
+
+    if (content::isNpapiPluginsEnabled() && effectiveUrl.is_valid() && isSwfOrSplUrl(effectiveUrl)
+        && !IsContentDispositionAttachment(job->m_response.HttpHeaderField("Content-Disposition"))
+        && content::PluginDatabase::installedPlugins()->isMIMETypeRegistered("application/x-shockwave-flash")) {
+        String curMime = String(job->m_response.MimeType()).LowerASCII();
+        if (curMime.empty() || curMime == "application/octet-stream" || curMime == "binary/octet-stream" || curMime == "text/plain") {
+            contentType = blink::WebString::FromASCII("application/x-shockwave-flash");
+            job->m_response.SetMimeType(contentType);
+        }
+    }
 
     blink::WebString contentLength = job->m_response.HttpHeaderField(blink::WebString::FromUTF8("Content-Length"));
 

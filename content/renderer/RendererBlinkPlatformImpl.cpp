@@ -12,6 +12,7 @@
 #include "content/resources/ImageRes.h"
 #include "content/resources/MediaControls.h"
 #include "content/common/CreateAndBindTempl.h"
+#include "net/base/mime_util.h"
 #include "mbnet/LoaderFactoryImpl.h"
 #include "components/webcrypto/webcrypto_impl.h"
 //#include "third_party/blink/public/platform/web_url_loader_factory.h"
@@ -50,13 +51,13 @@ public:
         if (WTF::EqualIgnoringASCIICase(extension, "css")) {
             *out_mime_type = "text/css";
             return true;
-        } else if (WTF::EqualIgnoringASCIICase(extension, "js")) {
+        } else if (WTF::EqualIgnoringASCIICase(extension, "js") || WTF::EqualIgnoringASCIICase(extension, "mjs")) {
             *out_mime_type = "text/javascript";
             return true;
         } else if (WTF::EqualIgnoringASCIICase(extension, "html") || WTF::EqualIgnoringASCIICase(extension, "htm")) {
             *out_mime_type = "text/html";
             return true;
-        } else if (WTF::EqualIgnoringASCIICase(extension, "svg")) {
+        } else if (WTF::EqualIgnoringASCIICase(extension, "svg") || WTF::EqualIgnoringASCIICase(extension, "svgz")) {
             *out_mime_type = "image/svg+xml";
             return true;
         } else if (WTF::EqualIgnoringASCIICase(extension, "webp")) {
@@ -64,6 +65,67 @@ public:
             return true;
         } else if (WTF::EqualIgnoringASCIICase(extension, "png")) {
             *out_mime_type = "image/png";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "jpg") || WTF::EqualIgnoringASCIICase(extension, "jpeg")) {
+            *out_mime_type = "image/jpeg";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "gif")) {
+            *out_mime_type = "image/gif";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "bmp")) {
+            *out_mime_type = "image/bmp";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "ico") || WTF::EqualIgnoringASCIICase(extension, "cur")) {
+            *out_mime_type = "image/x-icon";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "json")) {
+            *out_mime_type = "application/json";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "xml") || WTF::EqualIgnoringASCIICase(extension, "xsl")) {
+            *out_mime_type = "text/xml";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "txt")) {
+            *out_mime_type = "text/plain";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "wasm")) {
+            *out_mime_type = "application/wasm";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "mp3")) {
+            *out_mime_type = "audio/mpeg";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "mp4")) {
+            *out_mime_type = "video/mp4";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "ogg")) {
+            *out_mime_type = "audio/ogg";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "wav")) {
+            *out_mime_type = "audio/wav";
+            return true;
+        } else if (WTF::EqualIgnoringASCIICase(extension, "pdf")) {
+            *out_mime_type = "application/pdf";
+            return true;
+        }
+
+        if (isNpapiPluginsEnabled()) {
+            std::string pluginMime = PluginDatabase::installedPlugins()->MIMETypeForExtension(extension.Utf8());
+            if (!pluginMime.empty()) {
+                *out_mime_type = WTF::String::FromUTF8(pluginMime);
+                return true;
+            }
+            if (WTF::EqualIgnoringASCIICase(extension, "swf")) {
+                *out_mime_type = "application/x-shockwave-flash";
+                return true;
+            } else if (WTF::EqualIgnoringASCIICase(extension, "spl")) {
+                *out_mime_type = "application/futuresplash";
+                return true;
+            }
+        }
+
+        std::string wellKnownMime;
+        if (net::GetWellKnownMimeTypeFromExtension(base::FilePath::FromUTF8Unsafe(extension.Utf8()).value(), &wellKnownMime)
+            && !wellKnownMime.empty()) {
+            *out_mime_type = WTF::String::FromUTF8(wellKnownMime);
             return true;
         }
 

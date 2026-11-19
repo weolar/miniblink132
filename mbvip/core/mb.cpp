@@ -14,6 +14,9 @@
 #include "content/common/mbchar.h"
 #include "content/renderer/RenderThreadImpl.h"
 #include "content/renderer/RendererBlinkPlatformImpl.h"
+#include "content/renderer/npapi/PluginQuirkSet.h"
+#include "base/files/file_path.h"
+#include "third_party/blink/public/mojom/plugins/plugin_registry.mojom-blink.h"
 #include "mbnet/WebURLLoaderInternal.h"
 #include "mbnet/cookies/WebCookieJarCurlImpl.h"
 #include "third_party/blink/renderer/core/frame/local_frame.h"
@@ -717,10 +720,7 @@ BOOL MB_CALL_TYPE mbOnDestroy(mbWebView webviewHandle, mbDestroyCallback callbac
 
 void MB_CALL_TYPE mbOnPluginList(mbWebView webviewHandle, mbGetPluginListCallback callback, void* param)
 {
-//     mb::MbWebView* webview = (mb::MbWebView*)common::LiveIdDetect::get()->getPtr(webviewHandle);
-//     if (!webview)
-//         return;
-//     wkeSetDebugConfig(nullptr, "setPluginListCallback", (const char*)callback);
+    content::setNpapiPluginListCallback(callback, param);
 }
 
 BOOL MB_CALL_TYPE mbOnPrinting(mbWebView webviewHandle, mbPrintingCallback callback, void* param)
@@ -1477,20 +1477,35 @@ void MB_CALL_TYPE mbGetPdfPageData(mbWebView webviewHandle, mbOnGetPdfPageDataCa
 
 void MB_CALL_TYPE mbPluginListBuilderAddPlugin(void* builder, const utf8* name, const utf8* description, const utf8* fileName)
 {
-    OutputDebugStringA("mbPluginListBuilderAddPlugin not impl\n");
-    *(int*)1 = 1;
+    auto* plugins = static_cast<WTF::Vector<::blink::mojom::blink::PluginInfoPtr>*>(builder);
+    if (!plugins)
+        return;
+    auto info = ::blink::mojom::blink::PluginInfo::New();
+    info->name = WTF::String::FromUTF8(name ? name : "");
+    info->description = WTF::String::FromUTF8(description ? description : "");
+    info->filename = base::FilePath::FromUTF8Unsafe(fileName ? fileName : "");
+    info->background_color = 0xFFFFFFFF;
+    info->may_use_external_handler = false;
+    plugins->push_back(std::move(info));
 }
 
 void MB_CALL_TYPE mbPluginListBuilderAddMediaTypeToLastPlugin(void* builder, const utf8* name, const utf8* description)
 {
-    OutputDebugStringA("mbPluginListBuilderAddMediaTypeToLastPlugin not impl\n");
-    *(int*)1 = 1;
+    auto* plugins = static_cast<WTF::Vector<::blink::mojom::blink::PluginInfoPtr>*>(builder);
+    if (!plugins || plugins->empty())
+        return;
+    auto mime = ::blink::mojom::blink::PluginMimeType::New();
+    mime->mime_type = WTF::String::FromUTF8(name ? name : "");
+    mime->description = WTF::String::FromUTF8(description ? description : "");
+    plugins->back()->mime_types.push_back(std::move(mime));
 }
 
 void MB_CALL_TYPE mbPluginListBuilderAddFileExtensionToLastMediaType(void* builder, const utf8* fileExtension)
 {
-    OutputDebugStringA("mbPluginListBuilderAddFileExtensionToLastMediaType not impl\n");
-    *(int*)1 = 1;
+    auto* plugins = static_cast<WTF::Vector<::blink::mojom::blink::PluginInfoPtr>*>(builder);
+    if (!plugins || plugins->empty() || plugins->back()->mime_types.empty())
+        return;
+    plugins->back()->mime_types.back()->file_extensions.push_back(WTF::String::FromUTF8(fileExtension ? fileExtension : ""));
 }
 
 void MB_CALL_TYPE mbOnLoadUrlFinish(mbWebView webView, mbLoadUrlFinishCallback callback, void* callbackParam)

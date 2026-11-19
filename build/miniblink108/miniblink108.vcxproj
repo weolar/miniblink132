@@ -149,7 +149,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>$(SolutionDir)..\out\debug\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Imm32.lib;Wininet.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)miniblink108_d.exe</OutputFile>
     </Link>
     <Lib>
@@ -185,7 +185,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>base.lib;skia.lib;icu.lib;v8.lib;v8_1.lib;v8_2.lib;v8_3.lib;v8_gin.lib;chromium.lib;util.lib;gen.lib;gen_2.lib;harfbuzz.lib;Shlwapi.lib;Winmm.lib;Dbghelp.lib;Setupapi.lib;Version.lib;Imm32.lib;Wininet.lib;Ws2_32.lib;usp10.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)miniblink108.exe</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\out\release\</AdditionalLibraryDirectories>
     </Link>
@@ -347,6 +347,15 @@
     <ClInclude Include="..\..\content\renderer\V8ValueConverterImpl.h" />
     <ClInclude Include="..\..\content\renderer\WebDedicatedWorkerHostFactoryClientImpl.h" />
     <ClInclude Include="..\..\content\renderer\WebLocalFrameClientImpl.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\npruntime_priv.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\PluginDatabase.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\PluginMainThreadScheduler.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\PluginMessageThrottlerWin.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\PluginPackage.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\PluginQuirkSet.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\PluginStream.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\WebPluginImeWin.h" />
+    <ClInclude Include="..\..\content\renderer\npapi\WebPluginImpl.h" />
     <ClInclude Include="..\..\content\renderer\WebViewClientImpl.h" />
     <ClInclude Include="..\..\content\renderer\WebWorkerFetchContextImpl.h" />
     <ClInclude Include="..\..\content\resources\FakeIndexeddb.h" />
@@ -1336,6 +1345,20 @@
     <ClCompile Include="..\..\content\renderer\V8ValueConverterImpl.cpp" />
     <ClCompile Include="..\..\content\renderer\WebDedicatedWorkerHostFactoryClientImpl.cpp" />
     <ClCompile Include="..\..\content\renderer\WebLocalFrameClientImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\npapi.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\npruntime.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\NPV8Object.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\PluginDatabase.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\PluginMainThreadScheduler.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\PluginMessageThrottlerWin.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\PluginPackage.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\PluginStream.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\V8NPObject.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImeWin.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImpl.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImplInputWin.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImplPaintWin.cpp" />
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImplRequest.cpp" />
     <ClCompile Include="..\..\content\renderer\WebWorkerFetchContextImpl.cpp" />
     <ClCompile Include="..\..\content\resources\embedded_win_x64.cc" />
     <ClCompile Include="..\..\content\resources\embedded_win_x86.cc" />

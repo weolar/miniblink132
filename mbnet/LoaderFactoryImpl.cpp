@@ -120,8 +120,15 @@ void BodyLoaderClient::DidStartLoadingResponseBody(mojo::ScopedDataPipeConsumerH
     navigationParams->policy_container = std::make_unique<blink::WebPolicyContainer>(
         blink::WebPolicyContainerPolicies(), blink::ToCrossVariantAssociatedMojoType(std::move(policyContainerRemote)));
 
-    if (m_response->MimeType().IsNull() || m_response->MimeType().IsEmpty())
-        m_response->SetMimeType(blink::WebString::FromASCII("text/html")); // 有的网站，比如https://mofang.163.com/下面的，没这个字段
+    if (m_response->MimeType().IsNull() || m_response->MimeType().IsEmpty()) {
+        WTF::String pathLower = url.GetPath().ToString().LowerASCII();
+        if (pathLower.EndsWith(".swf"))
+            m_response->SetMimeType(blink::WebString::FromASCII("application/x-shockwave-flash"));
+        else if (pathLower.EndsWith(".spl"))
+            m_response->SetMimeType(blink::WebString::FromASCII("application/futuresplash"));
+        else
+            m_response->SetMimeType(blink::WebString::FromASCII("text/html")); // 有的网站，比如https://mofang.163.com/下面的，没这个字段
+    }
 
     ::network::mojom::URLResponseHeadPtr urlResponseHead = ::network::mojom::URLResponseHead::New();
     //urlResponseHead->headers;

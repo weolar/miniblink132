@@ -374,6 +374,9 @@
     <Filter Include="src\content\renderer">
       <UniqueIdentifier>{d23e578e-ddf3-4ebf-99b7-6fb86e8daaec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\content\renderer\npapi">
+      <UniqueIdentifier>{9d3a1c54-8b2f-4e61-a5c7-1e8b34f92017}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\content\browser">
       <UniqueIdentifier>{1439491c-1b22-4372-b188-fd0eae5d442b}</UniqueIdentifier>
     </Filter>
@@ -2563,6 +2566,33 @@
     <ClInclude Include="..\..\content\renderer\WebLocalFrameClientImpl.h">
       <Filter>src\content\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\npruntime_priv.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\PluginDatabase.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\PluginMainThreadScheduler.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\PluginMessageThrottlerWin.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\PluginPackage.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\PluginQuirkSet.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\PluginStream.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\WebPluginImeWin.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\renderer\npapi\WebPluginImpl.h">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\content\renderer\AssociatedInterfaceProviderImpl.h">
       <Filter>src\content\renderer</Filter>
     </ClInclude>
@@ -3635,6 +3665,48 @@
     </ClCompile>
     <ClCompile Include="..\..\content\renderer\WebLocalFrameClientImpl.cpp">
       <Filter>src\content\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\npapi.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\npruntime.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\NPV8Object.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\PluginDatabase.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\PluginMainThreadScheduler.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\PluginMessageThrottlerWin.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\PluginPackage.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\PluginStream.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\V8NPObject.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImeWin.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImpl.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImplInputWin.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImplPaintWin.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\renderer\npapi\WebPluginImplRequest.cpp">
+      <Filter>src\content\renderer\npapi</Filter>
     </ClCompile>
     <ClCompile Include="..\..\content\renderer\AssociatedInterfaceProviderImpl.cpp">
       <Filter>src\content\renderer</Filter>

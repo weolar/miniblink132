@@ -2449,12 +2449,43 @@ mojo::DataPipeDrainer::DataPipeDrainer(mojo::DataPipeDrainer::Client* client, mo
     , source_(std::move(source))
     , handle_watcher_(FROM_HERE, mojo::SimpleWatcher::ArmingPolicy::AUTOMATIC, base::SequencedTaskRunner::GetCurrentDefault())
 {
-    *(int*)1 = 1;
+    DCHECK(client_);
+    if (source_.is_valid()) {
+        handle_watcher_.Watch(source_.get(), MOJO_HANDLE_SIGNAL_READABLE | MOJO_HANDLE_SIGNAL_PEER_CLOSED,
+            base::BindRepeating(&mojo::DataPipeDrainer::WaitComplete, weak_factory_.GetWeakPtr()));
+    }
 }
 
-mojo::DataPipeDrainer::~DataPipeDrainer(void)
+mojo::DataPipeDrainer::~DataPipeDrainer(void) = default;
+
+void mojo::DataPipeDrainer::ReadData()
 {
-    *(int*)1 = 1;
+    if (!source_.is_valid() || !client_)
+        return;
+    base::WeakPtr<mojo::DataPipeDrainer> self = weak_factory_.GetWeakPtr();
+    while (self && source_.is_valid()) {
+        base::span<const uint8_t> buffer;
+        MojoResult rv = source_->BeginReadData(MOJO_READ_DATA_FLAG_NONE, buffer);
+        if (rv == MOJO_RESULT_OK) {
+            size_t numBytes = buffer.size();
+            std::vector<uint8_t> copy(buffer.begin(), buffer.end());
+            source_->EndReadData(numBytes);
+            client_->OnDataAvailable(base::span<const uint8_t>(copy.data(), copy.size()));
+            if (!self || !source_.is_valid())
+                return;
+        } else if (rv == MOJO_RESULT_FAILED_PRECONDITION) {
+            handle_watcher_.Cancel();
+            client_->OnDataComplete();
+            return;
+        } else {
+            break;
+        }
+    }
+}
+
+void mojo::DataPipeDrainer::WaitComplete(MojoResult)
+{
+    ReadData();
 }
 
 mojo::GenericPendingReceiver::GenericPendingReceiver(base::StringPiece interface_name, mojo::ScopedMessagePipeHandle receiving_pipe)
